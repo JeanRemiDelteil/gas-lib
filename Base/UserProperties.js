@@ -82,16 +82,14 @@ UserProperties.getProperty = function(key){};
  * Bulk-sets all the properties drawn from the given object.
 
  <pre class="prettyprint"><code>
- // This deletes all other properties
- UserProperties.setProperties({special: &#39;sauce&#39;, &#39;meaning&#39;: 42}, true);
+ UserProperties.setProperties({special: &#39;sauce&#39;, &#39;meaning&#39;: 42});
  </code></pre>
  *
  * @param {Object} properties - an object containing the properties to set.
- * @param {Boolean} deleteAllOthers - whether to delete all existing properties.
  *
  * @return {UserProperties} this object, for chaining
  */
-UserProperties.setProperties = function(properties, deleteAllOthers){};
+UserProperties.setProperties = function(properties){};
 
 /**
  * Persists the specified in value with the provided key. Any existing value associated with this

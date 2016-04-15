@@ -5,29 +5,50 @@ var Jdbc = {};
  * Attempts to establish a connection to the given Google Cloud SQL URL.
  *
  * @param {String} url - a database URL of the form <code>jdbc:google:rdbms:subname</code>
- * @param {String} userName - the username to pass to the database
- * @param {String} password - the user's password
  *
  * @return {Jdbc.JdbcConnection} a JdbcConnection object
  */
-Jdbc.getCloudSqlConnection = function(url, userName, password){};
+Jdbc.getCloudSqlConnection = function(url){};
 
 /**
- * Attempts to establish a connection to the given database using a username and password.
+ * Attempts to establish a connection to the given Google Cloud SQL URL.
+ *
+ * @param {String} url - a database URL of the form <code>jdbc:google:rdbms:subname</code>
+ * @param {Object} info - optional JavaScript object specifying advanced parameters as defined below
+ *
+ * @return {Jdbc.JdbcConnection} a JdbcConnection object
+ */
+Jdbc.getCloudSqlConnection = function(url, info){};
+
+/**
+ * Attempts to establish a connection to the given database URL.
+
+ <pre class="prettyprint">
+ <code>
+  var conn = Jdbc.getConnection(&#39;jdbc:mysql://yoursqlserver.example.com:3306/database_name&#39;);
+ </code></pre>
+ *
+ * @param {String} url - a database URL of the form <code>jdbc:subprotocol:subname</code>
+ *
+ * @return {Jdbc.JdbcConnection} a JdbcConnection object
+ */
+Jdbc.getConnection = function(url){};
+
+/**
+ * Attempts to establish a connection to the given database URL.
 
  <pre class="prettyprint">
  <code>
   var conn = Jdbc.getConnection(&#39;jdbc:mysql://yoursqlserver.example.com:3306/database_name&#39;,
-                                &#39;username&#39;, &#39;password&#39;);
+                                {user: &#39;username&#39;, password: &#39;password&#39;});
  </code></pre>
  *
  * @param {String} url - a database URL of the form <code>jdbc:subprotocol:subname</code>
- * @param {String} userName - the username to pass to the database
- * @param {String} password - the user's password
+ * @param {Object} info - optional JavaScript object specifying advanced parameters as defined below
  *
  * @return {Jdbc.JdbcConnection} a JdbcConnection object
  */
-Jdbc.getConnection = function(url, userName, password){};
+Jdbc.getConnection = function(url, info){};
 
 /**
  * Create a date from milliseconds since epoch.
@@ -94,14 +115,11 @@ Jdbc.JdbcArray = function(){};
 Jdbc.JdbcArray.prototype.free = function(){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Array.html#getArray(long, int)">java.sql.Array#getArray(long, int)</a></code>.
- *
- * @param {number} index - 
- * @param {number} count - 
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Array.html#getArray()">java.sql.Array#getArray()</a></code>.
  *
  * @return {Object}
  */
-Jdbc.JdbcArray.prototype.getArray = function(index, count){};
+Jdbc.JdbcArray.prototype.getArray = function(){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Array.html#getBaseType()">java.sql.Array#getBaseType()</a></code>.
@@ -118,14 +136,11 @@ Jdbc.JdbcArray.prototype.getBaseType = function(){};
 Jdbc.JdbcArray.prototype.getBaseTypeName = function(){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Array.html#getResultSet(long, int)">java.sql.Array#getResultSet(long, int)</a></code>.
- *
- * @param {number} index - 
- * @param {number} count - 
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Array.html#getResultSet()">java.sql.Array#getResultSet()</a></code>.
  *
  * @return {Jdbc.JdbcResultSet}
  */
-Jdbc.JdbcArray.prototype.getResultSet = function(index, count){};
+Jdbc.JdbcArray.prototype.getResultSet = function(){};
 
 /** @constructor */
 Jdbc.JdbcBlob = function(){};
@@ -171,9 +186,9 @@ Jdbc.JdbcBlob.prototype.getAs = function(contentType){};
 Jdbc.JdbcBlob.prototype.getBytes = function(position, length){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Blob.html#position(java.sql.Blob, long)">java.sql.Blob#position(java.sql.Blob, long)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Blob.html#position(byte[], long)">java.sql.Blob#position(byte[], long)</a></code>.
  *
- * @param {Jdbc.JdbcBlob} pattern - 
+ * @param {Byte[]} pattern - 
  * @param {number} start - 
  *
  * @return {number}
@@ -181,16 +196,36 @@ Jdbc.JdbcBlob.prototype.getBytes = function(position, length){};
 Jdbc.JdbcBlob.prototype.position = function(pattern, start){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Blob.html#setBytes(long, byte[], int, int)">java.sql.Blob#setBytes(long, byte[], int, int)</a></code>.
+ * Convenience method for BlobSources.
  *
  * @param {number} position - 
- * @param {Byte[]} bytes - 
+ * @param {BlobSource} blobSource - 
+ *
+ * @return {number}
+ */
+Jdbc.JdbcBlob.prototype.setBytes = function(position, blobSource){};
+
+/**
+ * Convenience method for BlobSources.
+ *
+ * @param {number} position - 
+ * @param {BlobSource} blobSource - 
  * @param {number} offset - 
  * @param {number} length - 
  *
  * @return {number}
  */
-Jdbc.JdbcBlob.prototype.setBytes = function(position, bytes, offset, length){};
+Jdbc.JdbcBlob.prototype.setBytes = function(position, blobSource, offset, length){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Blob.html#setBytes(long, byte[])">java.sql.Blob#setBytes(long, byte[])</a></code>.
+ *
+ * @param {number} position - 
+ * @param {Byte[]} bytes - 
+ *
+ * @return {number}
+ */
+Jdbc.JdbcBlob.prototype.setBytes = function(position, bytes){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Blob.html#truncate(long)">java.sql.Blob#truncate(long)</a></code>.
@@ -205,13 +240,11 @@ Jdbc.JdbcBlob.prototype.truncate = function(length){};
 Jdbc.JdbcCallableStatement = function(){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#addBatch(String)">java.sql.Statement#addBatch(String)</a></code>.
- *
- * @param {String} sql - 
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#addBatch()">java.sql.PreparedStatement#addBatch()</a></code>.
  *
  * @return void
  */
-Jdbc.JdbcCallableStatement.prototype.addBatch = function(sql){};
+Jdbc.JdbcCallableStatement.prototype.addBatch = function(){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#cancel()">java.sql.Statement#cancel()</a></code>.
@@ -249,14 +282,40 @@ Jdbc.JdbcCallableStatement.prototype.clearWarnings = function(){};
 Jdbc.JdbcCallableStatement.prototype.close = function(){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#execute(String, String[])">java.sql.Statement#execute(String, String[])</a></code>.
- *
- * @param {String} sql - 
- * @param {String[]} columnNames - 
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#execute()">java.sql.PreparedStatement#execute()</a></code>.
  *
  * @return {Boolean}
  */
-Jdbc.JdbcCallableStatement.prototype.execute = function(sql, columnNames){};
+Jdbc.JdbcCallableStatement.prototype.execute = function(){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#execute(String)">java.sql.Statement#execute(String)</a></code>.
+ *
+ * @param {String} sql - 
+ *
+ * @return {Boolean}
+ */
+Jdbc.JdbcCallableStatement.prototype.execute = function(sql){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#execute(String, int)">java.sql.Statement#execute(String, int)</a></code>.
+ *
+ * @param {String} sql - 
+ * @param {number} autoGeneratedKeys - 
+ *
+ * @return {Boolean}
+ */
+Jdbc.JdbcCallableStatement.prototype.execute = function(sql, autoGeneratedKeys){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#execute(String, int[])">java.sql.Statement#execute(String, int[])</a></code>.
+ *
+ * @param {String} sql - 
+ * @param {Integer[]} columnIndexes - 
+ *
+ * @return {Boolean}
+ */
+Jdbc.JdbcCallableStatement.prototype.execute = function(sql, columnIndexes){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#executeBatch()">java.sql.Statement#executeBatch()</a></code>.
@@ -266,94 +325,117 @@ Jdbc.JdbcCallableStatement.prototype.execute = function(sql, columnNames){};
 Jdbc.JdbcCallableStatement.prototype.executeBatch = function(){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#executeQuery(String)">java.sql.Statement#executeQuery(String)</a></code>.
- *
- * @param {String} sql - 
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#executeQuery()">java.sql.PreparedStatement#executeQuery()</a></code>.
  *
  * @return {Jdbc.JdbcResultSet}
  */
-Jdbc.JdbcCallableStatement.prototype.executeQuery = function(sql){};
+Jdbc.JdbcCallableStatement.prototype.executeQuery = function(){};
 
 /**
- * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#executeUpdate(String, String[])">java.sql.Statement#executeUpdate(String, String[])</a></code>.
- *
- * @param {String} sql - 
- * @param {String[]} columnNames - 
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#executeUpdate()">java.sql.PreparedStatement#executeUpdate()</a></code>.
  *
  * @return {number}
  */
-Jdbc.JdbcCallableStatement.prototype.executeUpdate = function(sql, columnNames){};
+Jdbc.JdbcCallableStatement.prototype.executeUpdate = function(){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#executeUpdate(String)">java.sql.Statement#executeUpdate(String)</a></code>.
+ *
+ * @param {String} sql - 
+ *
+ * @return {number}
+ */
+Jdbc.JdbcCallableStatement.prototype.executeUpdate = function(sql){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#executeUpdate(String, int)">java.sql.Statement#executeUpdate(String, int)</a></code>.
+ *
+ * @param {String} sql - 
+ * @param {number} autoGeneratedKeys - 
+ *
+ * @return {number}
+ */
+Jdbc.JdbcCallableStatement.prototype.executeUpdate = function(sql, autoGeneratedKeys){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#executeUpdate(String, int)">java.sql.Statement#executeUpdate(String, int)</a></code>.
+ *
+ * @param {String} sql - 
+ * @param {Integer[]} columnIndexes - 
+ *
+ * @return {number}
+ */
+Jdbc.JdbcCallableStatement.prototype.executeUpdate = function(sql, columnIndexes){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getArray(String)">java.sql.CallableStatement#getArray(String)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getArray(int)">java.sql.CallableStatement#getArray(int)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  *
  * @return {Jdbc.JdbcArray}
  */
-Jdbc.JdbcCallableStatement.prototype.getArray = function(parameterName){};
+Jdbc.JdbcCallableStatement.prototype.getArray = function(parameterIndex){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getBigDecimal(String)">java.sql.CallableStatement#getBigDecimal(String)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getBigDecimal(int)">java.sql.CallableStatement#getBigDecimal(int)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  *
  * @return {BigNumber}
  */
-Jdbc.JdbcCallableStatement.prototype.getBigDecimal = function(parameterName){};
+Jdbc.JdbcCallableStatement.prototype.getBigDecimal = function(parameterIndex){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getBlob(String)">java.sql.CallableStatement#getBlob(String)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getBlob(int)">java.sql.CallableStatement#getBlob(int)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  *
  * @return {Jdbc.JdbcBlob}
  */
-Jdbc.JdbcCallableStatement.prototype.getBlob = function(parameterName){};
+Jdbc.JdbcCallableStatement.prototype.getBlob = function(parameterIndex){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getBoolean(String)">java.sql.CallableStatement#getBoolean(String)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getBoolean(int)">java.sql.CallableStatement#getBoolean(int)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  *
  * @return {Boolean}
  */
-Jdbc.JdbcCallableStatement.prototype.getBoolean = function(parameterName){};
+Jdbc.JdbcCallableStatement.prototype.getBoolean = function(parameterIndex){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getByte(String)">java.sql.CallableStatement#getByte(String)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getByte(int)">java.sql.CallableStatement#getByte(int)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  *
  * @return {Byte}
  */
-Jdbc.JdbcCallableStatement.prototype.getByte = function(parameterName){};
+Jdbc.JdbcCallableStatement.prototype.getByte = function(parameterIndex){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getBytes(String)">java.sql.CallableStatement#getBytes(String)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getBytes(int)">java.sql.CallableStatement#getBytes(int)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  *
  * @return {Byte[]}
  */
-Jdbc.JdbcCallableStatement.prototype.getBytes = function(parameterName){};
+Jdbc.JdbcCallableStatement.prototype.getBytes = function(parameterIndex){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getClob(String)">java.sql.CallableStatement#getClob(String)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getClob(int)">java.sql.CallableStatement#getClob(int)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  *
  * @return {Jdbc.JdbcClob}
  */
-Jdbc.JdbcCallableStatement.prototype.getClob = function(parameterName){};
+Jdbc.JdbcCallableStatement.prototype.getClob = function(parameterIndex){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#getConnection()">java.sql.Statement#getConnection()</a></code>.
@@ -364,24 +446,44 @@ Jdbc.JdbcCallableStatement.prototype.getConnection = function(){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getDate(String, java.util.Calendar)">java.sql.CallableStatement#getDate(String, java.util.Calendar)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getDate(int)">java.sql.CallableStatement#getDate(int)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
+ *
+ * @return {Jdbc.JdbcDate}
+ */
+Jdbc.JdbcCallableStatement.prototype.getDate = function(parameterIndex){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getDate(int, java.util.Calendar)">java.sql.CallableStatement#getDate(int, java.util.Calendar)</a></code>.
+ *
+ * @param {number} parameterIndex - 
  * @param {String} timeZone - 
  *
  * @return {Jdbc.JdbcDate}
  */
-Jdbc.JdbcCallableStatement.prototype.getDate = function(parameterName, timeZone){};
+Jdbc.JdbcCallableStatement.prototype.getDate = function(parameterIndex, timeZone){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getDouble(String)">java.sql.CallableStatement#getDouble(String)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getDate(String)">java.sql.CallableStatement#getDate(String)</a></code>.
  *
  * @param {String} parameterName - 
  *
+ * @return {Jdbc.JdbcDate}
+ */
+Jdbc.JdbcCallableStatement.prototype.getDate = function(parameterName){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getDouble(int)">java.sql.CallableStatement#getDouble(int)</a></code>.
+ *
+ * @param {number} parameterIndex - 
+ *
  * @return {Number}
  */
-Jdbc.JdbcCallableStatement.prototype.getDouble = function(parameterName){};
+Jdbc.JdbcCallableStatement.prototype.getDouble = function(parameterIndex){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#getFetchDirection()">java.sql.Statement#getFetchDirection()</a></code>.
@@ -399,13 +501,13 @@ Jdbc.JdbcCallableStatement.prototype.getFetchSize = function(){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getFloat(String)">java.sql.CallableStatement#getFloat(String)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getFloat(int)">java.sql.CallableStatement#getFloat(int)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  *
  * @return {Number}
  */
-Jdbc.JdbcCallableStatement.prototype.getFloat = function(parameterName){};
+Jdbc.JdbcCallableStatement.prototype.getFloat = function(parameterIndex){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#getGeneratedKeys()">java.sql.Statement#getGeneratedKeys()</a></code>.
@@ -416,23 +518,23 @@ Jdbc.JdbcCallableStatement.prototype.getGeneratedKeys = function(){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getInt(String)">java.sql.CallableStatement#getInt(String)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getInt(int)">java.sql.CallableStatement#getInt(int)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  *
  * @return {number}
  */
-Jdbc.JdbcCallableStatement.prototype.getInt = function(parameterName){};
+Jdbc.JdbcCallableStatement.prototype.getInt = function(parameterIndex){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getLong(String)">java.sql.CallableStatement#getLong(String)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getLong(int)">java.sql.CallableStatement#getLong(int)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  *
  * @return {number}
  */
-Jdbc.JdbcCallableStatement.prototype.getLong = function(parameterName){};
+Jdbc.JdbcCallableStatement.prototype.getLong = function(parameterIndex){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#getMaxFieldSize()">java.sql.Statement#getMaxFieldSize()</a></code>.
@@ -456,43 +558,41 @@ Jdbc.JdbcCallableStatement.prototype.getMaxRows = function(){};
 Jdbc.JdbcCallableStatement.prototype.getMetaData = function(){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#getMoreResults(int)">java.sql.Statement#getMoreResults(int)</a></code>.
- *
- * @param {number} current - 
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#getMoreResults()">java.sql.Statement#getMoreResults()</a></code>.
  *
  * @return {Boolean}
  */
-Jdbc.JdbcCallableStatement.prototype.getMoreResults = function(current){};
+Jdbc.JdbcCallableStatement.prototype.getMoreResults = function(){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getNClob(String)">java.sql.CallableStatement#getNClob(String)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getNClob(int)">java.sql.CallableStatement#getNClob(int)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  *
  * @return {Jdbc.JdbcClob}
  */
-Jdbc.JdbcCallableStatement.prototype.getNClob = function(parameterName){};
+Jdbc.JdbcCallableStatement.prototype.getNClob = function(parameterIndex){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getNString(String)">java.sql.CallableStatement#getNString(String)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getNString(int)">java.sql.CallableStatement#getNString(int)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  *
  * @return {String}
  */
-Jdbc.JdbcCallableStatement.prototype.getNString = function(parameterName){};
+Jdbc.JdbcCallableStatement.prototype.getNString = function(parameterIndex){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getObject(String)">java.sql.CallableStatement#getObject(String)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getObject(int)">java.sql.CallableStatement#getObject(int)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  *
  * @return {Object}
  */
-Jdbc.JdbcCallableStatement.prototype.getObject = function(parameterName){};
+Jdbc.JdbcCallableStatement.prototype.getObject = function(parameterIndex){};
 
 /**
  * For documentation of this method, see
@@ -511,13 +611,13 @@ Jdbc.JdbcCallableStatement.prototype.getQueryTimeout = function(){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getRef(String)">java.sql.CallableStatement#getRef(String)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getRef(int)">java.sql.CallableStatement#getRef(int)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  *
  * @return {Jdbc.JdbcRef}
  */
-Jdbc.JdbcCallableStatement.prototype.getRef = function(parameterName){};
+Jdbc.JdbcCallableStatement.prototype.getRef = function(parameterIndex){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#getResultSet()">java.sql.Statement#getResultSet()</a></code>.
@@ -549,75 +649,115 @@ Jdbc.JdbcCallableStatement.prototype.getResultSetType = function(){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getRowId(String)">java.sql.CallableStatement#getRowId(String)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getRowId(int)">java.sql.CallableStatement#getRowId(int)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  *
  * @return {Jdbc.JdbcRowId}
  */
-Jdbc.JdbcCallableStatement.prototype.getRowId = function(parameterName){};
+Jdbc.JdbcCallableStatement.prototype.getRowId = function(parameterIndex){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getSQLXML(String)">java.sql.CallableStatement#getSQLXML(String)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getSQLXML(int)">java.sql.CallableStatement#getSQLXML(int)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  *
  * @return {Jdbc.JdbcSQLXML}
  */
-Jdbc.JdbcCallableStatement.prototype.getSQLXML = function(parameterName){};
+Jdbc.JdbcCallableStatement.prototype.getSQLXML = function(parameterIndex){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getShort(String)">java.sql.CallableStatement#getShort(String)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getShort(int)">java.sql.CallableStatement#getShort(int)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  *
  * @return {number}
  */
-Jdbc.JdbcCallableStatement.prototype.getShort = function(parameterName){};
+Jdbc.JdbcCallableStatement.prototype.getShort = function(parameterIndex){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getString(String)">java.sql.CallableStatement#getString(String)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getString(int)">java.sql.CallableStatement#getString(int)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  *
  * @return {String}
  */
-Jdbc.JdbcCallableStatement.prototype.getString = function(parameterName){};
+Jdbc.JdbcCallableStatement.prototype.getString = function(parameterIndex){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getTime(String, java.util.Calendar)">java.sql.CallableStatement#getTime(String, java.util.Calendar)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getTime(int)">java.sql.CallableStatement#getTime(int)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
+ *
+ * @return {Jdbc.JdbcTime}
+ */
+Jdbc.JdbcCallableStatement.prototype.getTime = function(parameterIndex){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getTime(int, java.util.Calendar)">java.sql.CallableStatement#getTime(int, java.util.Calendar)</a></code>.
+ *
+ * @param {number} parameterIndex - 
  * @param {String} timeZone - 
  *
  * @return {Jdbc.JdbcTime}
  */
-Jdbc.JdbcCallableStatement.prototype.getTime = function(parameterName, timeZone){};
+Jdbc.JdbcCallableStatement.prototype.getTime = function(parameterIndex, timeZone){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getTimestamp(String, java.util.Calendar)">java.sql.CallableStatement#getTimestamp(String, java.util.Calendar)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getTime(String)">java.sql.CallableStatement#getTime(String)</a></code>.
  *
  * @param {String} parameterName - 
+ *
+ * @return {Jdbc.JdbcTime}
+ */
+Jdbc.JdbcCallableStatement.prototype.getTime = function(parameterName){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getTimestamp(int)">java.sql.CallableStatement#getTimestamp(int)</a></code>.
+ *
+ * @param {number} parameterIndex - 
+ *
+ * @return {Jdbc.JdbcTimestamp}
+ */
+Jdbc.JdbcCallableStatement.prototype.getTimestamp = function(parameterIndex){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getTimestamp(int, java.util.Calendar)">java.sql.CallableStatement#getTimestamp(int, java.util.Calendar)</a></code>.
+ *
+ * @param {number} parameterIndex - 
  * @param {String} timeZone - 
  *
  * @return {Jdbc.JdbcTimestamp}
  */
-Jdbc.JdbcCallableStatement.prototype.getTimestamp = function(parameterName, timeZone){};
+Jdbc.JdbcCallableStatement.prototype.getTimestamp = function(parameterIndex, timeZone){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getURL(String)">java.sql.CallableStatement#getURL(String)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getTimestamp(String)">java.sql.CallableStatement#getTimestamp(String)</a></code>.
  *
  * @param {String} parameterName - 
  *
+ * @return {Jdbc.JdbcTimestamp}
+ */
+Jdbc.JdbcCallableStatement.prototype.getTimestamp = function(parameterName){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#getURL(int)">java.sql.CallableStatement#getURL(int)</a></code>.
+ *
+ * @param {number} parameterIndex - 
+ *
  * @return {String}
  */
-Jdbc.JdbcCallableStatement.prototype.getURL = function(parameterName){};
+Jdbc.JdbcCallableStatement.prototype.getURL = function(parameterIndex){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#getUpdateCount()">java.sql.Statement#getUpdateCount()</a></code>.
@@ -650,15 +790,61 @@ Jdbc.JdbcCallableStatement.prototype.isPoolable = function(){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#registerOutParameter(String, int, String)">java.sql.CallableStatement#registerOutParameter(String, int, String)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#registerOutParameter(int, int)">java.sql.CallableStatement#registerOutParameter(int, int)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
+ * @param {number} sqlType - 
+ *
+ * @return void
+ */
+Jdbc.JdbcCallableStatement.prototype.registerOutParameter = function(parameterIndex, sqlType){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#registerOutParameter(int, int, int)">java.sql.CallableStatement#registerOutParameter(int, int, int)</a></code>.
+ *
+ * @param {number} parameterIndex - 
+ * @param {number} sqlType - 
+ * @param {number} scale - 
+ *
+ * @return void
+ */
+Jdbc.JdbcCallableStatement.prototype.registerOutParameter = function(parameterIndex, sqlType, scale){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#registerOutParameter(int, int, String)">java.sql.CallableStatement#registerOutParameter(int, int, String)</a></code>.
+ *
+ * @param {number} parameterIndex - 
  * @param {number} sqlType - 
  * @param {String} typeName - 
  *
  * @return void
  */
-Jdbc.JdbcCallableStatement.prototype.registerOutParameter = function(parameterName, sqlType, typeName){};
+Jdbc.JdbcCallableStatement.prototype.registerOutParameter = function(parameterIndex, sqlType, typeName){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#registerOutParameter(String, int)">java.sql.CallableStatement#registerOutParameter(String, int)</a></code>.
+ *
+ * @param {String} parameterName - 
+ * @param {number} sqlType - 
+ *
+ * @return void
+ */
+Jdbc.JdbcCallableStatement.prototype.registerOutParameter = function(parameterName, sqlType){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#registerOutParameter(String, int, int)">java.sql.CallableStatement#registerOutParameter(String, int, int)</a></code>.
+ *
+ * @param {String} parameterName - 
+ * @param {number} sqlType - 
+ * @param {number} scale - 
+ *
+ * @return void
+ */
+Jdbc.JdbcCallableStatement.prototype.registerOutParameter = function(parameterName, sqlType, scale){};
 
 /**
  * For documentation of this method, see
@@ -673,69 +859,68 @@ Jdbc.JdbcCallableStatement.prototype.setArray = function(parameterIndex, x){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setBigDecimal(String, java.math.BigDecimal)">java.sql.CallableStatement#setBigDecimal(String, java.math.BigDecimal)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setBigDecimal(int, java.math.BigDecimal)">java.sql.PreparedStatement#setBigDecimal(int, java.math.BigDecimal)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  * @param {BigNumber} x - 
  *
  * @return void
  */
-Jdbc.JdbcCallableStatement.prototype.setBigDecimal = function(parameterName, x){};
+Jdbc.JdbcCallableStatement.prototype.setBigDecimal = function(parameterIndex, x){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setBlob(String, java.sql.Blob)">java.sql.CallableStatement#setBlob(String, java.sql.Blob)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setBlob(int, java.sql.Blob)">java.sql.PreparedStatement#setBlob(int, java.sql.Blob)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  * @param {Jdbc.JdbcBlob} x - 
  *
  * @return void
  */
-Jdbc.JdbcCallableStatement.prototype.setBlob = function(parameterName, x){};
+Jdbc.JdbcCallableStatement.prototype.setBlob = function(parameterIndex, x){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setBoolean(String, boolean)">java.sql.CallableStatement#setBoolean(String, boolean)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setBoolean(int, boolean)">java.sql.PreparedStatement#setBoolean(int, boolean)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  * @param {Boolean} x - 
  *
  * @return void
  */
-Jdbc.JdbcCallableStatement.prototype.setBoolean = function(parameterName, x){};
+Jdbc.JdbcCallableStatement.prototype.setBoolean = function(parameterIndex, x){};
 
 /**
- * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setByte(String, byte)">java.sql.CallableStatement#setByte(String, byte)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setByte(int, byte)">java.sql.PreparedStatement#setByte(int, byte)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  * @param {Byte} x - 
  *
  * @return void
  */
-Jdbc.JdbcCallableStatement.prototype.setByte = function(parameterName, x){};
+Jdbc.JdbcCallableStatement.prototype.setByte = function(parameterIndex, x){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setBytes(String, byte[])">java.sql.CallableStatement#setBytes(String, byte[])</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setBytes(int, byte[])">java.sql.PreparedStatement#setBytes(int, byte[])</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  * @param {Byte[]} x - 
  *
  * @return void
  */
-Jdbc.JdbcCallableStatement.prototype.setBytes = function(parameterName, x){};
+Jdbc.JdbcCallableStatement.prototype.setBytes = function(parameterIndex, x){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setClob(String, java.sql.Clob)">java.sql.CallableStatement#setClob(String, java.sql.Clob)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setClob(int, java.sql.Clob)">java.sql.PreparedStatement#setClob(int, java.sql.Clob)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  * @param {Jdbc.JdbcClob} x - 
  *
  * @return void
  */
-Jdbc.JdbcCallableStatement.prototype.setClob = function(parameterName, x){};
+Jdbc.JdbcCallableStatement.prototype.setClob = function(parameterIndex, x){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#setCursorName(String)">java.sql.Statement#setCursorName(String)</a></code>.
@@ -748,26 +933,48 @@ Jdbc.JdbcCallableStatement.prototype.setCursorName = function(name){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setDate(String, java.sql.Date, java.util.Calendar)">java.sql.CallableStatement#setDate(String, java.sql.Date, java.util.Calendar)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setDate(int, java.sql.Date)">java.sql.PreparedStatement#setDate(int, java.sql.Date)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
+ * @param {Jdbc.JdbcDate} x - 
+ *
+ * @return void
+ */
+Jdbc.JdbcCallableStatement.prototype.setDate = function(parameterIndex, x){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setDate(int, java.sql.Date, java.util.Calendar)">java.sql.PreparedStatement#setDate(int, java.sql.Date, java.util.Calendar)</a></code>.
+ *
+ * @param {number} parameterIndex - 
  * @param {Jdbc.JdbcDate} x - 
  * @param {String} timeZone - 
  *
  * @return void
  */
-Jdbc.JdbcCallableStatement.prototype.setDate = function(parameterName, x, timeZone){};
+Jdbc.JdbcCallableStatement.prototype.setDate = function(parameterIndex, x, timeZone){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setDouble(String, double)">java.sql.CallableStatement#setDouble(String, double)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setDate(String, java.sql.Date)">java.sql.CallableStatement#setDate(String, java.sql.Date)</a></code>.
  *
  * @param {String} parameterName - 
+ * @param {Jdbc.JdbcDate} x - 
+ *
+ * @return void
+ */
+Jdbc.JdbcCallableStatement.prototype.setDate = function(parameterName, x){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setDouble(int, double)">java.sql.PreparedStatement#setDouble(int, double)</a></code>.
+ *
+ * @param {number} parameterIndex - 
  * @param {Number} x - 
  *
  * @return void
  */
-Jdbc.JdbcCallableStatement.prototype.setDouble = function(parameterName, x){};
+Jdbc.JdbcCallableStatement.prototype.setDouble = function(parameterIndex, x){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#setEscapeProcessing(boolean)">java.sql.Statement#setEscapeProcessing(boolean)</a></code>.
@@ -797,37 +1004,34 @@ Jdbc.JdbcCallableStatement.prototype.setFetchDirection = function(direction){};
 Jdbc.JdbcCallableStatement.prototype.setFetchSize = function(rows){};
 
 /**
- * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setFloat(String, float)">java.sql.CallableStatement#setFloat(String, float)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setFloat(int, float)">java.sql.PreparedStatement#setFloat(int, float)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  * @param {Number} x - 
  *
  * @return void
  */
-Jdbc.JdbcCallableStatement.prototype.setFloat = function(parameterName, x){};
+Jdbc.JdbcCallableStatement.prototype.setFloat = function(parameterIndex, x){};
 
 /**
- * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setInt(String, int)">java.sql.CallableStatement#setInt(String, int)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setInt(int, int)">java.sql.PreparedStatement#setInt(int, int)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  * @param {number} x - 
  *
  * @return void
  */
-Jdbc.JdbcCallableStatement.prototype.setInt = function(parameterName, x){};
+Jdbc.JdbcCallableStatement.prototype.setInt = function(parameterIndex, x){};
 
 /**
- * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setLong(String, long)">java.sql.CallableStatement#setLong(String, long)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setLong(int, long)">java.sql.PreparedStatement#setLong(int, long)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  * @param {number} x - 
  *
  * @return void
  */
-Jdbc.JdbcCallableStatement.prototype.setLong = function(parameterName, x){};
+Jdbc.JdbcCallableStatement.prototype.setLong = function(parameterIndex, x){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#setMaxFieldSize(int)">java.sql.Statement#setMaxFieldSize(int)</a></code>.
@@ -849,50 +1053,117 @@ Jdbc.JdbcCallableStatement.prototype.setMaxRows = function(max){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setNClob(String, java.sql.NClob)">java.sql.CallableStatement#setNClob(String, java.sql.NClob)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setNClob(int, java.sql.NClob)">java.sql.PreparedStatement#setNClob(int, java.sql.NClob)</a></code>.
  *
- * @param {String} parameterName - 
- * @param {Jdbc.JdbcClob} value - 
- *
- * @return void
- */
-Jdbc.JdbcCallableStatement.prototype.setNClob = function(parameterName, value){};
-
-/**
- * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setNString(String, String)">java.sql.CallableStatement#setNString(String, String)</a></code>.
- *
- * @param {String} parameterName - 
- * @param {String} value - 
+ * @param {number} parameterIndex - 
+ * @param {Jdbc.JdbcClob} x - 
  *
  * @return void
  */
-Jdbc.JdbcCallableStatement.prototype.setNString = function(parameterName, value){};
+Jdbc.JdbcCallableStatement.prototype.setNClob = function(parameterIndex, x){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setNull(String, int, String)">java.sql.CallableStatement#setNull(String, int, String)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setNString(int, String)">java.sql.PreparedStatement#setNString(int, String)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
+ * @param {String} x - 
+ *
+ * @return void
+ */
+Jdbc.JdbcCallableStatement.prototype.setNString = function(parameterIndex, x){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setNull(int, int)">java.sql.PreparedStatement#setNull(int, int)</a></code>.
+ *
+ * @param {number} parameterIndex - 
+ * @param {number} sqlType - 
+ *
+ * @return void
+ */
+Jdbc.JdbcCallableStatement.prototype.setNull = function(parameterIndex, sqlType){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setNull(int, int, String)">java.sql.PreparedStatement#setNull(int, int, String)</a></code>.
+ *
+ * @param {number} parameterIndex - 
  * @param {number} sqlType - 
  * @param {String} typeName - 
  *
  * @return void
  */
-Jdbc.JdbcCallableStatement.prototype.setNull = function(parameterName, sqlType, typeName){};
+Jdbc.JdbcCallableStatement.prototype.setNull = function(parameterIndex, sqlType, typeName){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setObject(String, Object, int, int)">java.sql.CallableStatement#setObject(String, Object, int, int)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setNull(String, int)">java.sql.CallableStatement#setNull(String, int)</a></code>.
+ *
+ * @param {String} parameterName - 
+ * @param {number} sqlType - 
+ *
+ * @return void
+ */
+Jdbc.JdbcCallableStatement.prototype.setNull = function(parameterName, sqlType){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setObject(int, Object)">java.sql.PreparedStatement#setObject(int, Object)</a></code>.
+ *
+ * @param {number} index - 
+ * @param {Object} x - 
+ *
+ * @return void
+ */
+Jdbc.JdbcCallableStatement.prototype.setObject = function(index, x){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setObject(int, Object, int)">java.sql.PreparedStatement#setObject(int, Object, int)</a></code>.
+ *
+ * @param {number} parameterIndex - 
+ * @param {Object} x - 
+ * @param {number} targetSqlType - 
+ *
+ * @return void
+ */
+Jdbc.JdbcCallableStatement.prototype.setObject = function(parameterIndex, x, targetSqlType){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setObject(int, Object, int, int)">java.sql.PreparedStatement#setObject(int, Object, int, int)</a></code>.
+ *
+ * @param {number} parameterIndex - 
+ * @param {Object} x - 
+ * @param {number} targetSqlType - 
+ * @param {number} scaleOrLength - 
+ *
+ * @return void
+ */
+Jdbc.JdbcCallableStatement.prototype.setObject = function(parameterIndex, x, targetSqlType, scaleOrLength){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setObject(String, Object)">java.sql.CallableStatement#setObject(String, Object)</a></code>.
+ *
+ * @param {String} parameterName - 
+ * @param {Object} x - 
+ *
+ * @return void
+ */
+Jdbc.JdbcCallableStatement.prototype.setObject = function(parameterName, x){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setObject(String, Object, int)">java.sql.CallableStatement#setObject(String, Object, int)</a></code>.
  *
  * @param {String} parameterName - 
  * @param {Object} x - 
  * @param {number} targetSqlType - 
- * @param {number} scale - 
  *
  * @return void
  */
-Jdbc.JdbcCallableStatement.prototype.setObject = function(parameterName, x, targetSqlType, scale){};
+Jdbc.JdbcCallableStatement.prototype.setObject = function(parameterName, x, targetSqlType){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#setPoolable(boolean)">java.sql.Statement#setPoolable(boolean)</a></code>.
@@ -925,81 +1196,125 @@ Jdbc.JdbcCallableStatement.prototype.setRef = function(parameterIndex, x){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setRowId(String, java.sql.RowId)">java.sql.CallableStatement#setRowId(String, java.sql.RowId)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setRowId(int, java.sql.RowId)">java.sql.PreparedStatement#setRowId(int, java.sql.RowId)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  * @param {Jdbc.JdbcRowId} x - 
  *
  * @return void
  */
-Jdbc.JdbcCallableStatement.prototype.setRowId = function(parameterName, x){};
+Jdbc.JdbcCallableStatement.prototype.setRowId = function(parameterIndex, x){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setSQLXML(String, java.sql.SQLXML)">java.sql.CallableStatement#setSQLXML(String, java.sql.SQLXML)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setSQLXML(int, java.sql.SQLXML)">java.sql.PreparedStatement#setSQLXML(int, java.sql.SQLXML)</a></code>.
  *
- * @param {String} parameterName - 
- * @param {Jdbc.JdbcSQLXML} xmlObject - 
+ * @param {number} parameterIndex - 
+ * @param {Jdbc.JdbcSQLXML} x - 
  *
  * @return void
  */
-Jdbc.JdbcCallableStatement.prototype.setSQLXML = function(parameterName, xmlObject){};
+Jdbc.JdbcCallableStatement.prototype.setSQLXML = function(parameterIndex, x){};
 
 /**
- * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setShort(String, short)">java.sql.CallableStatement#setShort(String, short)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setShort(int, short)">java.sql.PreparedStatement#setShort(int, short)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  * @param {number} x - 
  *
  * @return void
  */
-Jdbc.JdbcCallableStatement.prototype.setShort = function(parameterName, x){};
+Jdbc.JdbcCallableStatement.prototype.setShort = function(parameterIndex, x){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setString(String, String)">java.sql.CallableStatement#setString(String, String)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setString(int, String)">java.sql.PreparedStatement#setString(int, String)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
  * @param {String} x - 
  *
  * @return void
  */
-Jdbc.JdbcCallableStatement.prototype.setString = function(parameterName, x){};
+Jdbc.JdbcCallableStatement.prototype.setString = function(parameterIndex, x){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setTime(String, java.sql.Time, java.util.Calendar)">java.sql.CallableStatement#setTime(String, java.sql.Time, java.util.Calendar)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setTime(int, java.sql.Time)">java.sql.PreparedStatement#setTime(int, java.sql.Time)</a></code>.
  *
- * @param {String} parameterName - 
+ * @param {number} parameterIndex - 
+ * @param {Jdbc.JdbcTime} x - 
+ *
+ * @return void
+ */
+Jdbc.JdbcCallableStatement.prototype.setTime = function(parameterIndex, x){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setTime(int, java.sql.Time, java.util.Calendar)">java.sql.PreparedStatement#setTime(int, java.sql.Time, java.util.Calendar)</a></code>.
+ *
+ * @param {number} parameterIndex - 
  * @param {Jdbc.JdbcTime} x - 
  * @param {String} timeZone - 
  *
  * @return void
  */
-Jdbc.JdbcCallableStatement.prototype.setTime = function(parameterName, x, timeZone){};
+Jdbc.JdbcCallableStatement.prototype.setTime = function(parameterIndex, x, timeZone){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setTimestamp(String, java.sql.Timestamp, java.util.Calendar)">java.sql.CallableStatement#setTimestamp(String, java.sql.Timestamp, java.util.Calendar)</a></code>.
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setTime(String, java.sql.Time)">java.sql.CallableStatement#setTime(String, java.sql.Time)</a></code>.
  *
  * @param {String} parameterName - 
+ * @param {Jdbc.JdbcTime} x - 
+ *
+ * @return void
+ */
+Jdbc.JdbcCallableStatement.prototype.setTime = function(parameterName, x){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setTimestamp(int, java.sql.Timestamp)">java.sql.PreparedStatement#setTimestamp(int, java.sql.Timestamp)</a></code>.
+ *
+ * @param {number} parameterIndex - 
+ * @param {Jdbc.JdbcTimestamp} x - 
+ *
+ * @return void
+ */
+Jdbc.JdbcCallableStatement.prototype.setTimestamp = function(parameterIndex, x){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setTimestamp(int, java.sql.Timestamp, java.util.Calendar)">java.sql.PreparedStatement#setTimestamp(int, java.sql.Timestamp, java.util.Calendar)</a></code>.
+ *
+ * @param {number} parameterIndex - 
  * @param {Jdbc.JdbcTimestamp} x - 
  * @param {String} timeZone - 
  *
  * @return void
  */
-Jdbc.JdbcCallableStatement.prototype.setTimestamp = function(parameterName, x, timeZone){};
+Jdbc.JdbcCallableStatement.prototype.setTimestamp = function(parameterIndex, x, timeZone){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setURL(String, java.net.URL)">java.sql.CallableStatement#setURL(String, java.net.URL)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/CallableStatement.html#setTimestamp(String, java.sql.Timestamp)">java.sql.CallableStatement#setTimestamp(String, java.sql.Timestamp)</a></code>.
  *
  * @param {String} parameterName - 
- * @param {String} val - 
+ * @param {Jdbc.JdbcTimestamp} x - 
  *
  * @return void
  */
-Jdbc.JdbcCallableStatement.prototype.setURL = function(parameterName, val){};
+Jdbc.JdbcCallableStatement.prototype.setTimestamp = function(parameterName, x){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setURL(int, java.net.URL)">java.sql.PreparedStatement#setURL(int, java.net.URL)</a></code>.
+ *
+ * @param {number} parameterIndex - 
+ * @param {String} x - 
+ *
+ * @return void
+ */
+Jdbc.JdbcCallableStatement.prototype.setURL = function(parameterIndex, x){};
 
 /**
  * For documentation of this method, see
@@ -1053,9 +1368,9 @@ Jdbc.JdbcClob.prototype.getAs = function(contentType){};
 Jdbc.JdbcClob.prototype.getSubString = function(position, length){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Clob.html#position(String, long)">java.sql.Clob#position(String, long)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Clob.html#position(java.sql.Clob, long)">java.sql.Clob#position(java.sql.Clob, long)</a></code>.
  *
- * @param {String} search - 
+ * @param {Jdbc.JdbcClob} search - 
  * @param {number} start - 
  *
  * @return {number}
@@ -1063,16 +1378,36 @@ Jdbc.JdbcClob.prototype.getSubString = function(position, length){};
 Jdbc.JdbcClob.prototype.position = function(search, start){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Clob.html#setString(long, String, int, int)">java.sql.Clob#setString(long, String, int, int)</a></code>.
+ * Convenience method for BlobSources.
  *
  * @param {number} position - 
- * @param {String} value - 
+ * @param {BlobSource} blobSource - 
+ *
+ * @return {number}
+ */
+Jdbc.JdbcClob.prototype.setString = function(position, blobSource){};
+
+/**
+ * Convenience method for BlobSources.
+ *
+ * @param {number} position - 
+ * @param {BlobSource} blobSource - 
  * @param {number} offset - 
  * @param {number} len - 
  *
  * @return {number}
  */
-Jdbc.JdbcClob.prototype.setString = function(position, value, offset, len){};
+Jdbc.JdbcClob.prototype.setString = function(position, blobSource, offset, len){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Clob.html#setString(long, String)">java.sql.Clob#setString(long, String)</a></code>.
+ *
+ * @param {number} position - 
+ * @param {String} value - 
+ *
+ * @return {number}
+ */
+Jdbc.JdbcClob.prototype.setString = function(position, value){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Clob.html#truncate(long)">java.sql.Clob#truncate(long)</a></code>.
@@ -1180,7 +1515,32 @@ Jdbc.JdbcConnection.prototype.createSQLXML = function(){};
 /**
  * Creates a JdbcStatement object for sending SQL statements to the database.
 
- This version allows the result set type, concurrency and holdability to be overridden.
+ <pre class="prettyprint">
+ <code>
+ // This sample code assumes authentication is off
+ var conn = Jdbc.getConnection(&quot;jdbc:mysql://&lt;host&gt;:3306/&lt;instance&gt;&quot;)
+ var stmt = conn.createStatement();
+
+ stmt.setMaxRows(100);
+ var rs = stmt.execute(&quot;select * from person&quot;);
+
+ while(rs.next()) {
+   // Do something
+ }
+
+ rs.close();
+ stmt.close();
+ conn.close();
+</code></pre>
+ *
+ * @return {Jdbc.JdbcStatement} a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/jdbc/jdbc-statement.html'>JdbcStatement</a></code> instance to execute queries with
+ */
+Jdbc.JdbcConnection.prototype.createStatement = function(){};
+
+/**
+ * Creates a JdbcStatement object for sending SQL statements to the database.
+
+ This version allows the result set type and concurrency to be overridden.
 
  <pre class="prettyprint">
  <code>
@@ -1189,8 +1549,7 @@ Jdbc.JdbcConnection.prototype.createSQLXML = function(){};
  //  http://docs.oracle.com/javase/6/docs/api/java/sql/Connection.html#createStatement(int, int)
  var conn = Jdbc.getConnection(&quot;jdbc:mysql://&lt;host&gt;:3306/&lt;instance&gt;&quot;)
  var stmt = conn.createStatement(Jdbc.ResultSet.TYPE_FORWARD_ONLY,
-                                 Jdbc.ResultSet.CONCUR_READ_ONLY,
-                                 Jdbc.ResultSet.HOLD_CURSORS_OVER_COMMIT);
+                                 Jdbc.ResultSet.CONCUR_READ_ONLY);
 
  stmt.setMaxRows(100);
  var rs = stmt.execute(&quot;select * from person&quot;);
@@ -1209,13 +1568,10 @@ Jdbc.JdbcConnection.prototype.createSQLXML = function(){};
                       Jdbc.ResultSet.TYPE_SCROLL_SENSITIVE
  * @param {number} resultSetConcurrency - a concurrency type; one of Jdbc.ResultSet.CONCUR_READ_ONLY or
                       Jdbc.ResultSet.CONCUR_UPDATABLE
- * @param {number} resultSetHoldability - a Jdbc.ResultSet holdability constant; one of
-                      Jdbc.ResultSet.HOLD_CURSORS_OVER_COMMIT or
-                      Jdbc.ResultSet.CLOSE_CURSORS_AT_COMMIT
  *
  * @return {Jdbc.JdbcStatement} a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/jdbc/jdbc-statement.html'>JdbcStatement</a></code> instance to execute queries with
  */
-Jdbc.JdbcConnection.prototype.createStatement = function(resultSetType, resultSetConcurrency, resultSetHoldability){};
+Jdbc.JdbcConnection.prototype.createStatement = function(resultSetType, resultSetConcurrency){};
 
 /**
  * For documentation of this method, see
@@ -1303,30 +1659,57 @@ Jdbc.JdbcConnection.prototype.isValid = function(timeout){};
 Jdbc.JdbcConnection.prototype.nativeSQL = function(sql){};
 
 /**
- * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Connection.html#prepareCall(String, int, int, int)">java.sql.Connection#prepareCall(String, int, int, int)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Connection.html#prepareCall(String)">java.sql.Connection#prepareCall(String)</a></code>.
  *
  * @param {String} sql - 
- * @param {number} resultSetType - 
- * @param {number} resultSetConcurrency - 
- * @param {number} resultSetHoldability - 
  *
  * @return {Jdbc.JdbcCallableStatement}
  */
-Jdbc.JdbcConnection.prototype.prepareCall = function(sql, resultSetType, resultSetConcurrency, resultSetHoldability){};
+Jdbc.JdbcConnection.prototype.prepareCall = function(sql){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Connection.html#prepareStatement(String, int, int, int)">java.sql.Connection#prepareStatement(String, int, int, int)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Connection.html#prepareCall(String, int, int)">java.sql.Connection#prepareCall(String, int, int)</a></code>.
  *
  * @param {String} sql - 
  * @param {number} resultSetType - 
  * @param {number} resultSetConcurrency - 
- * @param {number} resultSetHoldability - 
+ *
+ * @return {Jdbc.JdbcCallableStatement}
+ */
+Jdbc.JdbcConnection.prototype.prepareCall = function(sql, resultSetType, resultSetConcurrency){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Connection.html#prepareStatement(String)">java.sql.Connection#prepareStatement(String)</a></code>.
+ *
+ * @param {String} sql - 
  *
  * @return {Jdbc.JdbcPreparedStatement}
  */
-Jdbc.JdbcConnection.prototype.prepareStatement = function(sql, resultSetType, resultSetConcurrency, resultSetHoldability){};
+Jdbc.JdbcConnection.prototype.prepareStatement = function(sql){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Connection.html#prepareStatement(String, int)">java.sql.Connection#prepareStatement(String, int)</a></code>.
+ *
+ * @param {String} sql - 
+ * @param {number} autoGeneratedKeys - 
+ *
+ * @return {Jdbc.JdbcPreparedStatement}
+ */
+Jdbc.JdbcConnection.prototype.prepareStatement = function(sql, autoGeneratedKeys){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Connection.html#prepareStatement(String, int, int)">java.sql.Connection#prepareStatement(String, int, int)</a></code>.
+ *
+ * @param {String} sql - 
+ * @param {number} resultSetType - 
+ * @param {number} resultSetConcurrency - 
+ *
+ * @return {Jdbc.JdbcPreparedStatement}
+ */
+Jdbc.JdbcConnection.prototype.prepareStatement = function(sql, resultSetType, resultSetConcurrency){};
 
 /**
  * For documentation of this method, see
@@ -1361,14 +1744,11 @@ Jdbc.JdbcConnection.prototype.prepareStatementByName = function(sql, columnNames
 Jdbc.JdbcConnection.prototype.releaseSavepoint = function(savepoint){};
 
 /**
- * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Connection.html#rollback(java.sql.Savepoint)">java.sql.Connection#rollback(java.sql.Savepoint)</a></code>.
- *
- * @param {Jdbc.JdbcSavepoint} savepoint - 
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Connection.html#rollback()">java.sql.Connection#rollback()</a></code>.
  *
  * @return void
  */
-Jdbc.JdbcConnection.prototype.rollback = function(savepoint){};
+Jdbc.JdbcConnection.prototype.rollback = function(){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Connection.html#setAutoCommit(boolean)">java.sql.Connection#setAutoCommit(boolean)</a></code>.
@@ -1407,13 +1787,11 @@ Jdbc.JdbcConnection.prototype.setHoldability = function(holdability){};
 Jdbc.JdbcConnection.prototype.setReadOnly = function(readOnly){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Connection.html#setSavepoint(String)">java.sql.Connection#setSavepoint(String)</a></code>.
- *
- * @param {String} name - 
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Connection.html#setSavepoint()">java.sql.Connection#setSavepoint()</a></code>.
  *
  * @return {Jdbc.JdbcSavepoint}
  */
-Jdbc.JdbcConnection.prototype.setSavepoint = function(name){};
+Jdbc.JdbcConnection.prototype.setSavepoint = function(){};
 
 /**
  * For documentation of this method, see
@@ -2017,14 +2395,11 @@ Jdbc.JdbcDatabaseMetaData.prototype.getSchemaTerm = function(){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/DatabaseMetaData.html#getSchemas(String, String)">java.sql.DatabaseMetaData#getSchemas(String, String)</a></code>.
- *
- * @param {String} catalog - 
- * @param {String} schemaPattern - 
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/DatabaseMetaData.html#getSchemas()">java.sql.DatabaseMetaData#getSchemas()</a></code>.
  *
  * @return {Jdbc.JdbcResultSet}
  */
-Jdbc.JdbcDatabaseMetaData.prototype.getSchemas = function(catalog, schemaPattern){};
+Jdbc.JdbcDatabaseMetaData.prototype.getSchemas = function(){};
 
 /**
  * For documentation of this method, see
@@ -2444,14 +2819,11 @@ Jdbc.JdbcDatabaseMetaData.prototype.supportsColumnAliasing = function(){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/DatabaseMetaData.html#supportsConvert(int, int)">java.sql.DatabaseMetaData#supportsConvert(int, int)</a></code>.
- *
- * @param {number} fromType - 
- * @param {number} toType - 
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/DatabaseMetaData.html#supportsConvert()">java.sql.DatabaseMetaData#supportsConvert()</a></code>.
  *
  * @return {Boolean}
  */
-Jdbc.JdbcDatabaseMetaData.prototype.supportsConvert = function(fromType, toType){};
+Jdbc.JdbcDatabaseMetaData.prototype.supportsConvert = function(){};
 
 /**
  * For documentation of this method, see
@@ -3087,13 +3459,11 @@ Jdbc.JdbcParameterMetaData.prototype.isSigned = function(param){};
 Jdbc.JdbcPreparedStatement = function(){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#addBatch(String)">java.sql.Statement#addBatch(String)</a></code>.
- *
- * @param {String} sql - 
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#addBatch()">java.sql.PreparedStatement#addBatch()</a></code>.
  *
  * @return void
  */
-Jdbc.JdbcPreparedStatement.prototype.addBatch = function(sql){};
+Jdbc.JdbcPreparedStatement.prototype.addBatch = function(){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#cancel()">java.sql.Statement#cancel()</a></code>.
@@ -3131,14 +3501,40 @@ Jdbc.JdbcPreparedStatement.prototype.clearWarnings = function(){};
 Jdbc.JdbcPreparedStatement.prototype.close = function(){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#execute(String, String[])">java.sql.Statement#execute(String, String[])</a></code>.
- *
- * @param {String} sql - 
- * @param {String[]} columnNames - 
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#execute()">java.sql.PreparedStatement#execute()</a></code>.
  *
  * @return {Boolean}
  */
-Jdbc.JdbcPreparedStatement.prototype.execute = function(sql, columnNames){};
+Jdbc.JdbcPreparedStatement.prototype.execute = function(){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#execute(String)">java.sql.Statement#execute(String)</a></code>.
+ *
+ * @param {String} sql - 
+ *
+ * @return {Boolean}
+ */
+Jdbc.JdbcPreparedStatement.prototype.execute = function(sql){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#execute(String, int)">java.sql.Statement#execute(String, int)</a></code>.
+ *
+ * @param {String} sql - 
+ * @param {number} autoGeneratedKeys - 
+ *
+ * @return {Boolean}
+ */
+Jdbc.JdbcPreparedStatement.prototype.execute = function(sql, autoGeneratedKeys){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#execute(String, int[])">java.sql.Statement#execute(String, int[])</a></code>.
+ *
+ * @param {String} sql - 
+ * @param {Integer[]} columnIndexes - 
+ *
+ * @return {Boolean}
+ */
+Jdbc.JdbcPreparedStatement.prototype.execute = function(sql, columnIndexes){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#executeBatch()">java.sql.Statement#executeBatch()</a></code>.
@@ -3148,24 +3544,47 @@ Jdbc.JdbcPreparedStatement.prototype.execute = function(sql, columnNames){};
 Jdbc.JdbcPreparedStatement.prototype.executeBatch = function(){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#executeQuery(String)">java.sql.Statement#executeQuery(String)</a></code>.
- *
- * @param {String} sql - 
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#executeQuery()">java.sql.PreparedStatement#executeQuery()</a></code>.
  *
  * @return {Jdbc.JdbcResultSet}
  */
-Jdbc.JdbcPreparedStatement.prototype.executeQuery = function(sql){};
+Jdbc.JdbcPreparedStatement.prototype.executeQuery = function(){};
 
 /**
- * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#executeUpdate(String, String[])">java.sql.Statement#executeUpdate(String, String[])</a></code>.
- *
- * @param {String} sql - 
- * @param {String[]} columnNames - 
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#executeUpdate()">java.sql.PreparedStatement#executeUpdate()</a></code>.
  *
  * @return {number}
  */
-Jdbc.JdbcPreparedStatement.prototype.executeUpdate = function(sql, columnNames){};
+Jdbc.JdbcPreparedStatement.prototype.executeUpdate = function(){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#executeUpdate(String)">java.sql.Statement#executeUpdate(String)</a></code>.
+ *
+ * @param {String} sql - 
+ *
+ * @return {number}
+ */
+Jdbc.JdbcPreparedStatement.prototype.executeUpdate = function(sql){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#executeUpdate(String, int)">java.sql.Statement#executeUpdate(String, int)</a></code>.
+ *
+ * @param {String} sql - 
+ * @param {number} autoGeneratedKeys - 
+ *
+ * @return {number}
+ */
+Jdbc.JdbcPreparedStatement.prototype.executeUpdate = function(sql, autoGeneratedKeys){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#executeUpdate(String, int)">java.sql.Statement#executeUpdate(String, int)</a></code>.
+ *
+ * @param {String} sql - 
+ * @param {Integer[]} columnIndexes - 
+ *
+ * @return {number}
+ */
+Jdbc.JdbcPreparedStatement.prototype.executeUpdate = function(sql, columnIndexes){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#getConnection()">java.sql.Statement#getConnection()</a></code>.
@@ -3217,13 +3636,11 @@ Jdbc.JdbcPreparedStatement.prototype.getMaxRows = function(){};
 Jdbc.JdbcPreparedStatement.prototype.getMetaData = function(){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#getMoreResults(int)">java.sql.Statement#getMoreResults(int)</a></code>.
- *
- * @param {number} current - 
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#getMoreResults()">java.sql.Statement#getMoreResults()</a></code>.
  *
  * @return {Boolean}
  */
-Jdbc.JdbcPreparedStatement.prototype.getMoreResults = function(current){};
+Jdbc.JdbcPreparedStatement.prototype.getMoreResults = function(){};
 
 /**
  * For documentation of this method, see
@@ -3384,15 +3801,14 @@ Jdbc.JdbcPreparedStatement.prototype.setCursorName = function(name){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setDate(int, java.sql.Date, java.util.Calendar)">java.sql.PreparedStatement#setDate(int, java.sql.Date, java.util.Calendar)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setDate(int, java.sql.Date)">java.sql.PreparedStatement#setDate(int, java.sql.Date)</a></code>.
  *
  * @param {number} parameterIndex - 
  * @param {Jdbc.JdbcDate} x - 
- * @param {String} timeZone - 
  *
  * @return void
  */
-Jdbc.JdbcPreparedStatement.prototype.setDate = function(parameterIndex, x, timeZone){};
+Jdbc.JdbcPreparedStatement.prototype.setDate = function(parameterIndex, x){};
 
 /**
  * For documentation of this method, see
@@ -3503,29 +3919,37 @@ Jdbc.JdbcPreparedStatement.prototype.setNClob = function(parameterIndex, x){};
 Jdbc.JdbcPreparedStatement.prototype.setNString = function(parameterIndex, x){};
 
 /**
- * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setNull(int, int, String)">java.sql.PreparedStatement#setNull(int, int, String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setNull(int, int)">java.sql.PreparedStatement#setNull(int, int)</a></code>.
  *
  * @param {number} parameterIndex - 
  * @param {number} sqlType - 
- * @param {String} typeName - 
  *
  * @return void
  */
-Jdbc.JdbcPreparedStatement.prototype.setNull = function(parameterIndex, sqlType, typeName){};
+Jdbc.JdbcPreparedStatement.prototype.setNull = function(parameterIndex, sqlType){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setObject(int, Object, int, int)">java.sql.PreparedStatement#setObject(int, Object, int, int)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setObject(int, Object)">java.sql.PreparedStatement#setObject(int, Object)</a></code>.
+ *
+ * @param {number} index - 
+ * @param {Object} x - 
+ *
+ * @return void
+ */
+Jdbc.JdbcPreparedStatement.prototype.setObject = function(index, x){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setObject(int, Object, int)">java.sql.PreparedStatement#setObject(int, Object, int)</a></code>.
  *
  * @param {number} parameterIndex - 
  * @param {Object} x - 
  * @param {number} targetSqlType - 
- * @param {number} scaleOrLength - 
  *
  * @return void
  */
-Jdbc.JdbcPreparedStatement.prototype.setObject = function(parameterIndex, x, targetSqlType, scaleOrLength){};
+Jdbc.JdbcPreparedStatement.prototype.setObject = function(parameterIndex, x, targetSqlType){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#setPoolable(boolean)">java.sql.Statement#setPoolable(boolean)</a></code>.
@@ -3601,27 +4025,25 @@ Jdbc.JdbcPreparedStatement.prototype.setString = function(parameterIndex, x){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setTime(int, java.sql.Time, java.util.Calendar)">java.sql.PreparedStatement#setTime(int, java.sql.Time, java.util.Calendar)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setTime(int, java.sql.Time)">java.sql.PreparedStatement#setTime(int, java.sql.Time)</a></code>.
  *
  * @param {number} parameterIndex - 
  * @param {Jdbc.JdbcTime} x - 
- * @param {String} timeZone - 
  *
  * @return void
  */
-Jdbc.JdbcPreparedStatement.prototype.setTime = function(parameterIndex, x, timeZone){};
+Jdbc.JdbcPreparedStatement.prototype.setTime = function(parameterIndex, x){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setTimestamp(int, java.sql.Timestamp, java.util.Calendar)">java.sql.PreparedStatement#setTimestamp(int, java.sql.Timestamp, java.util.Calendar)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html#setTimestamp(int, java.sql.Timestamp)">java.sql.PreparedStatement#setTimestamp(int, java.sql.Timestamp)</a></code>.
  *
  * @param {number} parameterIndex - 
  * @param {Jdbc.JdbcTimestamp} x - 
- * @param {String} timeZone - 
  *
  * @return void
  */
-Jdbc.JdbcPreparedStatement.prototype.setTimestamp = function(parameterIndex, x, timeZone){};
+Jdbc.JdbcPreparedStatement.prototype.setTimestamp = function(parameterIndex, x){};
 
 /**
  * For documentation of this method, see
@@ -3731,67 +4153,67 @@ Jdbc.JdbcResultSet.prototype.findColumn = function(columnLabel){};
 Jdbc.JdbcResultSet.prototype.first = function(){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getArray(String)">java.sql.ResultSet#getArray(String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getArray(int)">java.sql.ResultSet#getArray(int)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  *
  * @return {Jdbc.JdbcArray}
  */
-Jdbc.JdbcResultSet.prototype.getArray = function(columnLabel){};
+Jdbc.JdbcResultSet.prototype.getArray = function(columnIndex){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getBigDecimal(String)">java.sql.ResultSet#getBigDecimal(String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getBigDecimal(int)">java.sql.ResultSet#getBigDecimal(int)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  *
  * @return {BigNumber}
  */
-Jdbc.JdbcResultSet.prototype.getBigDecimal = function(columnLabel){};
+Jdbc.JdbcResultSet.prototype.getBigDecimal = function(columnIndex){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getBlob(String)">java.sql.ResultSet#getBlob(String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getBlob(int)">java.sql.ResultSet#getBlob(int)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  *
  * @return {Jdbc.JdbcBlob}
  */
-Jdbc.JdbcResultSet.prototype.getBlob = function(columnLabel){};
+Jdbc.JdbcResultSet.prototype.getBlob = function(columnIndex){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getBoolean(String)">java.sql.ResultSet#getBoolean(String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getBoolean(int)">java.sql.ResultSet#getBoolean(int)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  *
  * @return {Boolean}
  */
-Jdbc.JdbcResultSet.prototype.getBoolean = function(columnLabel){};
+Jdbc.JdbcResultSet.prototype.getBoolean = function(columnIndex){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getByte(String)">java.sql.ResultSet#getByte(String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getByte(int)">java.sql.ResultSet#getByte(int)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  *
  * @return {Byte}
  */
-Jdbc.JdbcResultSet.prototype.getByte = function(columnLabel){};
+Jdbc.JdbcResultSet.prototype.getByte = function(columnIndex){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getBytes(String)">java.sql.ResultSet#getBytes(String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getBytes(int)">java.sql.ResultSet#getBytes(int)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  *
  * @return {Byte[]}
  */
-Jdbc.JdbcResultSet.prototype.getBytes = function(columnLabel){};
+Jdbc.JdbcResultSet.prototype.getBytes = function(columnIndex){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getClob(String)">java.sql.ResultSet#getClob(String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getClob(int)">java.sql.ResultSet#getClob(int)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  *
  * @return {Jdbc.JdbcClob}
  */
-Jdbc.JdbcResultSet.prototype.getClob = function(columnLabel){};
+Jdbc.JdbcResultSet.prototype.getClob = function(columnIndex){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getConcurrency()">java.sql.ResultSet#getConcurrency()</a></code>.
@@ -3808,24 +4230,42 @@ Jdbc.JdbcResultSet.prototype.getConcurrency = function(){};
 Jdbc.JdbcResultSet.prototype.getCursorName = function(){};
 
 /**
- * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getDate(String, java.util.Calendar)">java.sql.ResultSet#getDate(String, java.util.Calendar)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getDate(int)">java.sql.ResultSet#getDate(int)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
+ *
+ * @return {Jdbc.JdbcDate}
+ */
+Jdbc.JdbcResultSet.prototype.getDate = function(columnIndex){};
+
+/**
+ * For documentation of this method, see
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getDate(int, java.util.Calendar)">java.sql.ResultSet#getDate(int, java.util.Calendar)</a></code>.
+ *
+ * @param {number} columnIndex - 
  * @param {String} timeZone - 
  *
  * @return {Jdbc.JdbcDate}
  */
-Jdbc.JdbcResultSet.prototype.getDate = function(columnLabel, timeZone){};
+Jdbc.JdbcResultSet.prototype.getDate = function(columnIndex, timeZone){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getDouble(String)">java.sql.ResultSet#getDouble(String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getDate(String)">java.sql.ResultSet#getDate(String)</a></code>.
  *
  * @param {String} columnLabel - 
  *
+ * @return {Jdbc.JdbcDate}
+ */
+Jdbc.JdbcResultSet.prototype.getDate = function(columnLabel){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getDouble(int)">java.sql.ResultSet#getDouble(int)</a></code>.
+ *
+ * @param {number} columnIndex - 
+ *
  * @return {Number}
  */
-Jdbc.JdbcResultSet.prototype.getDouble = function(columnLabel){};
+Jdbc.JdbcResultSet.prototype.getDouble = function(columnIndex){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getFetchDirection()">java.sql.ResultSet#getFetchDirection()</a></code>.
@@ -3842,13 +4282,13 @@ Jdbc.JdbcResultSet.prototype.getFetchDirection = function(){};
 Jdbc.JdbcResultSet.prototype.getFetchSize = function(){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getFloat(String)">java.sql.ResultSet#getFloat(String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getFloat(int)">java.sql.ResultSet#getFloat(int)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  *
  * @return {Number}
  */
-Jdbc.JdbcResultSet.prototype.getFloat = function(columnLabel){};
+Jdbc.JdbcResultSet.prototype.getFloat = function(columnIndex){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getHoldability()">java.sql.ResultSet#getHoldability()</a></code>.
@@ -3858,22 +4298,22 @@ Jdbc.JdbcResultSet.prototype.getFloat = function(columnLabel){};
 Jdbc.JdbcResultSet.prototype.getHoldability = function(){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getInt(String)">java.sql.ResultSet#getInt(String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getInt(int)">java.sql.ResultSet#getInt(int)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  *
  * @return {number}
  */
-Jdbc.JdbcResultSet.prototype.getInt = function(columnLabel){};
+Jdbc.JdbcResultSet.prototype.getInt = function(columnIndex){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getLong(String)">java.sql.ResultSet#getLong(String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getLong(int)">java.sql.ResultSet#getLong(int)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  *
  * @return {number}
  */
-Jdbc.JdbcResultSet.prototype.getLong = function(columnLabel){};
+Jdbc.JdbcResultSet.prototype.getLong = function(columnIndex){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getMetaData()">java.sql.ResultSet#getMetaData()</a></code>.
@@ -3883,40 +4323,40 @@ Jdbc.JdbcResultSet.prototype.getLong = function(columnLabel){};
 Jdbc.JdbcResultSet.prototype.getMetaData = function(){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getNClob(String)">java.sql.ResultSet#getNClob(String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getNClob(int)">java.sql.ResultSet#getNClob(int)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  *
  * @return {Jdbc.JdbcClob}
  */
-Jdbc.JdbcResultSet.prototype.getNClob = function(columnLabel){};
+Jdbc.JdbcResultSet.prototype.getNClob = function(columnIndex){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getNString(String)">java.sql.ResultSet#getNString(String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getNString(int)">java.sql.ResultSet#getNString(int)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  *
  * @return {String}
  */
-Jdbc.JdbcResultSet.prototype.getNString = function(columnLabel){};
+Jdbc.JdbcResultSet.prototype.getNString = function(columnIndex){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getObject(String)">java.sql.ResultSet#getObject(String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getObject(int)">java.sql.ResultSet#getObject(int)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  *
  * @return {Object}
  */
-Jdbc.JdbcResultSet.prototype.getObject = function(columnLabel){};
+Jdbc.JdbcResultSet.prototype.getObject = function(columnIndex){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getRef(String)">java.sql.ResultSet#getRef(String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getRef(int)">java.sql.ResultSet#getRef(int)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  *
  * @return {Jdbc.JdbcRef}
  */
-Jdbc.JdbcResultSet.prototype.getRef = function(columnLabel){};
+Jdbc.JdbcResultSet.prototype.getRef = function(columnIndex){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getRow()">java.sql.ResultSet#getRow()</a></code>.
@@ -3926,31 +4366,31 @@ Jdbc.JdbcResultSet.prototype.getRef = function(columnLabel){};
 Jdbc.JdbcResultSet.prototype.getRow = function(){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getRowId(String)">java.sql.ResultSet#getRowId(String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getRowId(int)">java.sql.ResultSet#getRowId(int)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  *
  * @return {Jdbc.JdbcRowId}
  */
-Jdbc.JdbcResultSet.prototype.getRowId = function(columnLabel){};
+Jdbc.JdbcResultSet.prototype.getRowId = function(columnIndex){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getSQLXML(String)">java.sql.ResultSet#getSQLXML(String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getSQLXML(int)">java.sql.ResultSet#getSQLXML(int)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  *
  * @return {Jdbc.JdbcSQLXML}
  */
-Jdbc.JdbcResultSet.prototype.getSQLXML = function(columnLabel){};
+Jdbc.JdbcResultSet.prototype.getSQLXML = function(columnIndex){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getShort(String)">java.sql.ResultSet#getShort(String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getShort(int)">java.sql.ResultSet#getShort(int)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  *
  * @return {number}
  */
-Jdbc.JdbcResultSet.prototype.getShort = function(columnLabel){};
+Jdbc.JdbcResultSet.prototype.getShort = function(columnIndex){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getStatement()">java.sql.ResultSet#getStatement()</a></code>.
@@ -3960,35 +4400,71 @@ Jdbc.JdbcResultSet.prototype.getShort = function(columnLabel){};
 Jdbc.JdbcResultSet.prototype.getStatement = function(){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getString(String)">java.sql.ResultSet#getString(String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getString(int)">java.sql.ResultSet#getString(int)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  *
  * @return {String}
  */
-Jdbc.JdbcResultSet.prototype.getString = function(columnLabel){};
+Jdbc.JdbcResultSet.prototype.getString = function(columnIndex){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getTime(int)">java.sql.ResultSet#getTime(int)</a></code>.
+ *
+ * @param {number} columnIndex - 
+ *
+ * @return {Jdbc.JdbcTime}
+ */
+Jdbc.JdbcResultSet.prototype.getTime = function(columnIndex){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getTime(String, java.util.Calendar)">java.sql.ResultSet#getTime(String, java.util.Calendar)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getTime(int, java.util.Calendar)">java.sql.ResultSet#getTime(int, java.util.Calendar)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  * @param {String} timeZone - 
  *
  * @return {Jdbc.JdbcTime}
  */
-Jdbc.JdbcResultSet.prototype.getTime = function(columnLabel, timeZone){};
+Jdbc.JdbcResultSet.prototype.getTime = function(columnIndex, timeZone){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getTime(String)">java.sql.ResultSet#getTime(String)</a></code>.
+ *
+ * @param {String} columnLabel - 
+ *
+ * @return {Jdbc.JdbcTime}
+ */
+Jdbc.JdbcResultSet.prototype.getTime = function(columnLabel){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getTimestamp(int)">java.sql.ResultSet#getTimestamp(int)</a></code>.
+ *
+ * @param {number} columnIndex - 
+ *
+ * @return {Jdbc.JdbcTimestamp}
+ */
+Jdbc.JdbcResultSet.prototype.getTimestamp = function(columnIndex){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getTimestamp(String, java.util.Calendar)">java.sql.ResultSet#getTimestamp(String, java.util.Calendar)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getTimestamp(int, java.util.Calendar)">java.sql.ResultSet#getTimestamp(int, java.util.Calendar)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  * @param {String} timeZone - 
  *
  * @return {Jdbc.JdbcTimestamp}
  */
-Jdbc.JdbcResultSet.prototype.getTimestamp = function(columnLabel, timeZone){};
+Jdbc.JdbcResultSet.prototype.getTimestamp = function(columnIndex, timeZone){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getTimestamp(String)">java.sql.ResultSet#getTimestamp(String)</a></code>.
+ *
+ * @param {String} columnLabel - 
+ *
+ * @return {Jdbc.JdbcTimestamp}
+ */
+Jdbc.JdbcResultSet.prototype.getTimestamp = function(columnLabel){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getType()">java.sql.ResultSet#getType()</a></code>.
@@ -3998,13 +4474,13 @@ Jdbc.JdbcResultSet.prototype.getTimestamp = function(columnLabel, timeZone){};
 Jdbc.JdbcResultSet.prototype.getType = function(){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getURL(String)">java.sql.ResultSet#getURL(String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#getURL(int)">java.sql.ResultSet#getURL(int)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  *
  * @return {String}
  */
-Jdbc.JdbcResultSet.prototype.getURL = function(columnLabel){};
+Jdbc.JdbcResultSet.prototype.getURL = function(columnIndex){};
 
 /**
  * Returns the current set of warnings reported by the driver.
@@ -4147,183 +4623,201 @@ Jdbc.JdbcResultSet.prototype.setFetchSize = function(rows){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateArray(String, java.sql.Array)">java.sql.ResultSet#updateArray(String, java.sql.Array)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateArray(int, java.sql.Array)">java.sql.ResultSet#updateArray(int, java.sql.Array)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  * @param {Jdbc.JdbcArray} x - 
  *
  * @return void
  */
-Jdbc.JdbcResultSet.prototype.updateArray = function(columnLabel, x){};
+Jdbc.JdbcResultSet.prototype.updateArray = function(columnIndex, x){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateBigDecimal(String, java.math.BigDecimal)">java.sql.ResultSet#updateBigDecimal(String, java.math.BigDecimal)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateBigDecimal(int, java.math.BigDecimal)">java.sql.ResultSet#updateBigDecimal(int, java.math.BigDecimal)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  * @param {BigNumber} x - 
  *
  * @return void
  */
-Jdbc.JdbcResultSet.prototype.updateBigDecimal = function(columnLabel, x){};
+Jdbc.JdbcResultSet.prototype.updateBigDecimal = function(columnIndex, x){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateBlob(String, java.sql.Blob)">java.sql.ResultSet#updateBlob(String, java.sql.Blob)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateBlob(int, java.sql.Blob)">java.sql.ResultSet#updateBlob(int, java.sql.Blob)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  * @param {Jdbc.JdbcBlob} x - 
  *
  * @return void
  */
-Jdbc.JdbcResultSet.prototype.updateBlob = function(columnLabel, x){};
+Jdbc.JdbcResultSet.prototype.updateBlob = function(columnIndex, x){};
 
 /**
- * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateBoolean(String, boolean)">java.sql.ResultSet#updateBoolean(String, boolean)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateBoolean(int, boolean)">java.sql.ResultSet#updateBoolean(int, boolean)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  * @param {Boolean} x - 
  *
  * @return void
  */
-Jdbc.JdbcResultSet.prototype.updateBoolean = function(columnLabel, x){};
+Jdbc.JdbcResultSet.prototype.updateBoolean = function(columnIndex, x){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateByte(String, byte)">java.sql.ResultSet#updateByte(String, byte)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateByte(int, byte)">java.sql.ResultSet#updateByte(int, byte)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  * @param {Byte} x - 
  *
  * @return void
  */
-Jdbc.JdbcResultSet.prototype.updateByte = function(columnLabel, x){};
+Jdbc.JdbcResultSet.prototype.updateByte = function(columnIndex, x){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateBytes(String, byte[])">java.sql.ResultSet#updateBytes(String, byte[])</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateBytes(int, byte[])">java.sql.ResultSet#updateBytes(int, byte[])</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  * @param {Byte[]} x - 
  *
  * @return void
  */
-Jdbc.JdbcResultSet.prototype.updateBytes = function(columnLabel, x){};
+Jdbc.JdbcResultSet.prototype.updateBytes = function(columnIndex, x){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateClob(String, java.sql.Clob)">java.sql.ResultSet#updateClob(String, java.sql.Clob)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateClob(int, java.sql.Clob)">java.sql.ResultSet#updateClob(int, java.sql.Clob)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  * @param {Jdbc.JdbcClob} x - 
  *
  * @return void
  */
-Jdbc.JdbcResultSet.prototype.updateClob = function(columnLabel, x){};
+Jdbc.JdbcResultSet.prototype.updateClob = function(columnIndex, x){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateDate(String, java.sql.Date)">java.sql.ResultSet#updateDate(String, java.sql.Date)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateDate(int, java.sql.Date)">java.sql.ResultSet#updateDate(int, java.sql.Date)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  * @param {Jdbc.JdbcDate} x - 
  *
  * @return void
  */
-Jdbc.JdbcResultSet.prototype.updateDate = function(columnLabel, x){};
+Jdbc.JdbcResultSet.prototype.updateDate = function(columnIndex, x){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateDouble(String, double)">java.sql.ResultSet#updateDouble(String, double)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateDouble(int, double)">java.sql.ResultSet#updateDouble(int, double)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  * @param {Number} x - 
  *
  * @return void
  */
-Jdbc.JdbcResultSet.prototype.updateDouble = function(columnLabel, x){};
+Jdbc.JdbcResultSet.prototype.updateDouble = function(columnIndex, x){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateFloat(String, float)">java.sql.ResultSet#updateFloat(String, float)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateFloat(int, float)">java.sql.ResultSet#updateFloat(int, float)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  * @param {Number} x - 
  *
  * @return void
  */
-Jdbc.JdbcResultSet.prototype.updateFloat = function(columnLabel, x){};
+Jdbc.JdbcResultSet.prototype.updateFloat = function(columnIndex, x){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateInt(String, int)">java.sql.ResultSet#updateInt(String, int)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateInt(int, int)">java.sql.ResultSet#updateInt(int, int)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  * @param {number} x - 
  *
  * @return void
  */
-Jdbc.JdbcResultSet.prototype.updateInt = function(columnLabel, x){};
+Jdbc.JdbcResultSet.prototype.updateInt = function(columnIndex, x){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateLong(String, long)">java.sql.ResultSet#updateLong(String, long)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateLong(int, long)">java.sql.ResultSet#updateLong(int, long)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  * @param {number} x - 
  *
  * @return void
  */
-Jdbc.JdbcResultSet.prototype.updateLong = function(columnLabel, x){};
+Jdbc.JdbcResultSet.prototype.updateLong = function(columnIndex, x){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateNClob(String, java.sql.NClob)">java.sql.ResultSet#updateNClob(String, java.sql.NClob)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateNClob(int, java.sql.NClob)">java.sql.ResultSet#updateNClob(int, java.sql.NClob)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  * @param {Jdbc.JdbcClob} x - 
  *
  * @return void
  */
-Jdbc.JdbcResultSet.prototype.updateNClob = function(columnLabel, x){};
+Jdbc.JdbcResultSet.prototype.updateNClob = function(columnIndex, x){};
 
 /**
- * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateNString(String, String)">java.sql.ResultSet#updateNString(String, String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateNString(int, String)">java.sql.ResultSet#updateNString(int, String)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  * @param {String} x - 
  *
  * @return void
  */
-Jdbc.JdbcResultSet.prototype.updateNString = function(columnLabel, x){};
+Jdbc.JdbcResultSet.prototype.updateNString = function(columnIndex, x){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateNull(String)">java.sql.ResultSet#updateNull(String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateNull(int)">java.sql.ResultSet#updateNull(int)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  *
  * @return void
  */
-Jdbc.JdbcResultSet.prototype.updateNull = function(columnLabel){};
+Jdbc.JdbcResultSet.prototype.updateNull = function(columnIndex){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateObject(int, Object)">java.sql.ResultSet#updateObject(int, Object)</a></code>.
+ *
+ * @param {number} columnIndex - 
+ * @param {Object} x - 
+ *
+ * @return void
+ */
+Jdbc.JdbcResultSet.prototype.updateObject = function(columnIndex, x){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateObject(String, Object, int)">java.sql.ResultSet#updateObject(String, Object, int)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateObject(int, Object, int)">java.sql.ResultSet#updateObject(int, Object, int)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  * @param {Object} x - 
  * @param {number} scaleOrLength - 
  *
  * @return void
  */
-Jdbc.JdbcResultSet.prototype.updateObject = function(columnLabel, x, scaleOrLength){};
+Jdbc.JdbcResultSet.prototype.updateObject = function(columnIndex, x, scaleOrLength){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateRef(String, java.sql.Ref)">java.sql.ResultSet#updateRef(String, java.sql.Ref)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateObject(String, Object)">java.sql.ResultSet#updateObject(String, Object)</a></code>.
  *
  * @param {String} columnLabel - 
+ * @param {Object} x - 
+ *
+ * @return void
+ */
+Jdbc.JdbcResultSet.prototype.updateObject = function(columnLabel, x){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateRef(int, java.sql.Ref)">java.sql.ResultSet#updateRef(int, java.sql.Ref)</a></code>.
+ *
+ * @param {number} columnIndex - 
  * @param {Jdbc.JdbcRef} x - 
  *
  * @return void
  */
-Jdbc.JdbcResultSet.prototype.updateRef = function(columnLabel, x){};
+Jdbc.JdbcResultSet.prototype.updateRef = function(columnIndex, x){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateRow()">java.sql.ResultSet#updateRow()</a></code>.
@@ -4334,67 +4828,67 @@ Jdbc.JdbcResultSet.prototype.updateRow = function(){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateRowId(String, java.sql.RowId)">java.sql.ResultSet#updateRowId(String, java.sql.RowId)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateRowId(int, java.sql.RowId)">java.sql.ResultSet#updateRowId(int, java.sql.RowId)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  * @param {Jdbc.JdbcRowId} x - 
  *
  * @return void
  */
-Jdbc.JdbcResultSet.prototype.updateRowId = function(columnLabel, x){};
+Jdbc.JdbcResultSet.prototype.updateRowId = function(columnIndex, x){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateSQLXML(String, java.sql.SQLXML)">java.sql.ResultSet#updateSQLXML(String, java.sql.SQLXML)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateSQLXML(int, java.sql.SQLXML)">java.sql.ResultSet#updateSQLXML(int, java.sql.SQLXML)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  * @param {Jdbc.JdbcSQLXML} x - 
  *
  * @return void
  */
-Jdbc.JdbcResultSet.prototype.updateSQLXML = function(columnLabel, x){};
+Jdbc.JdbcResultSet.prototype.updateSQLXML = function(columnIndex, x){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateShort(String, short)">java.sql.ResultSet#updateShort(String, short)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateShort(int, short)">java.sql.ResultSet#updateShort(int, short)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  * @param {number} x - 
  *
  * @return void
  */
-Jdbc.JdbcResultSet.prototype.updateShort = function(columnLabel, x){};
+Jdbc.JdbcResultSet.prototype.updateShort = function(columnIndex, x){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateString(String, String)">java.sql.ResultSet#updateString(String, String)</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateString(int, String)">java.sql.ResultSet#updateString(int, String)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  * @param {String} x - 
  *
  * @return void
  */
-Jdbc.JdbcResultSet.prototype.updateString = function(columnLabel, x){};
+Jdbc.JdbcResultSet.prototype.updateString = function(columnIndex, x){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateTime(String, java.sql.Time)">java.sql.ResultSet#updateTime(String, java.sql.Time)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateTime(int, java.sql.Time)">java.sql.ResultSet#updateTime(int, java.sql.Time)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  * @param {Jdbc.JdbcTime} x - 
  *
  * @return void
  */
-Jdbc.JdbcResultSet.prototype.updateTime = function(columnLabel, x){};
+Jdbc.JdbcResultSet.prototype.updateTime = function(columnIndex, x){};
 
 /**
  * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateTimestamp(String, java.sql.Timestamp)">java.sql.ResultSet#updateTimestamp(String, java.sql.Timestamp)</a></code>.
+ <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#updateTimestamp(int, java.sql.Timestamp)">java.sql.ResultSet#updateTimestamp(int, java.sql.Timestamp)</a></code>.
  *
- * @param {String} columnLabel - 
+ * @param {number} columnIndex - 
  * @param {Jdbc.JdbcTimestamp} x - 
  *
  * @return void
  */
-Jdbc.JdbcResultSet.prototype.updateTimestamp = function(columnLabel, x){};
+Jdbc.JdbcResultSet.prototype.updateTimestamp = function(columnIndex, x){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/ResultSet.html#wasNull()">java.sql.ResultSet#wasNull()</a></code>.
@@ -4694,14 +5188,33 @@ Jdbc.JdbcStatement.prototype.clearWarnings = function(){};
 Jdbc.JdbcStatement.prototype.close = function(){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#execute(String, String[])">java.sql.Statement#execute(String, String[])</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#execute(String)">java.sql.Statement#execute(String)</a></code>.
  *
  * @param {String} sql - 
- * @param {String[]} columnNames - 
  *
  * @return {Boolean}
  */
-Jdbc.JdbcStatement.prototype.execute = function(sql, columnNames){};
+Jdbc.JdbcStatement.prototype.execute = function(sql){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#execute(String, int)">java.sql.Statement#execute(String, int)</a></code>.
+ *
+ * @param {String} sql - 
+ * @param {number} autoGeneratedKeys - 
+ *
+ * @return {Boolean}
+ */
+Jdbc.JdbcStatement.prototype.execute = function(sql, autoGeneratedKeys){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#execute(String, int[])">java.sql.Statement#execute(String, int[])</a></code>.
+ *
+ * @param {String} sql - 
+ * @param {Integer[]} columnIndexes - 
+ *
+ * @return {Boolean}
+ */
+Jdbc.JdbcStatement.prototype.execute = function(sql, columnIndexes){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#executeBatch()">java.sql.Statement#executeBatch()</a></code>.
@@ -4720,15 +5233,33 @@ Jdbc.JdbcStatement.prototype.executeBatch = function(){};
 Jdbc.JdbcStatement.prototype.executeQuery = function(sql){};
 
 /**
- * For documentation of this method, see
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#executeUpdate(String, String[])">java.sql.Statement#executeUpdate(String, String[])</a></code>.
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#executeUpdate(String)">java.sql.Statement#executeUpdate(String)</a></code>.
  *
  * @param {String} sql - 
- * @param {String[]} columnNames - 
  *
  * @return {number}
  */
-Jdbc.JdbcStatement.prototype.executeUpdate = function(sql, columnNames){};
+Jdbc.JdbcStatement.prototype.executeUpdate = function(sql){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#executeUpdate(String, int)">java.sql.Statement#executeUpdate(String, int)</a></code>.
+ *
+ * @param {String} sql - 
+ * @param {number} autoGeneratedKeys - 
+ *
+ * @return {number}
+ */
+Jdbc.JdbcStatement.prototype.executeUpdate = function(sql, autoGeneratedKeys){};
+
+/**
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#executeUpdate(String, int)">java.sql.Statement#executeUpdate(String, int)</a></code>.
+ *
+ * @param {String} sql - 
+ * @param {Integer[]} columnIndexes - 
+ *
+ * @return {number}
+ */
+Jdbc.JdbcStatement.prototype.executeUpdate = function(sql, columnIndexes){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#getConnection()">java.sql.Statement#getConnection()</a></code>.
@@ -4773,13 +5304,11 @@ Jdbc.JdbcStatement.prototype.getMaxFieldSize = function(){};
 Jdbc.JdbcStatement.prototype.getMaxRows = function(){};
 
 /**
- * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#getMoreResults(int)">java.sql.Statement#getMoreResults(int)</a></code>.
- *
- * @param {number} current - 
+ * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#getMoreResults()">java.sql.Statement#getMoreResults()</a></code>.
  *
  * @return {Boolean}
  */
-Jdbc.JdbcStatement.prototype.getMoreResults = function(current){};
+Jdbc.JdbcStatement.prototype.getMoreResults = function(){};
 
 /**
  * For documentation of this method, see <code><a href="http://docs.oracle.com/javase/6/docs/api/java/sql/Statement.html#getQueryTimeout()">java.sql.Statement#getQueryTimeout()</a></code>.

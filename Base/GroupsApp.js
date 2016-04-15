@@ -133,17 +133,17 @@ GroupsApp.Group.prototype.getEmail = function(){};
    Logger.log(&#39;These are the group owners:&#39;);
    for (var i = 0; i &lt; users.length; i++) {
      var user = users[i];
-     if (group.getRole(user) == GroupsApp.Role.OWNER) {
+     if (group.getRole(user.getEmail()) == GroupsApp.Role.OWNER) {
        Logger.log(user.getEmail());
      }
    }
  </code></pre>
  *
- * @param {User} user - the user whose role to retrieve
+ * @param {String} email - a user's email address
  *
  * @return {GroupsApp.Role} that user's role within the group
  */
-GroupsApp.Group.prototype.getRole = function(user){};
+GroupsApp.Group.prototype.getRole = function(email){};
 
 /**
  * Retrieves all the direct members of the group. Throws an exception if you
@@ -177,22 +177,22 @@ GroupsApp.Group.prototype.getRole = function(user){};
 GroupsApp.Group.prototype.getUsers = function(){};
 
 /**
- * Tests if a user is a direct member of the group. Throws an exception if you
- do not have permission to view the group's member list.
+ * Tests if a user is a direct member of the group. Throws an exception if
+ you do not have permission to view the group's member list.
 
  Here's an example which checks if the current user is a member of a group:
  <pre class="prettyprint">
  <code>
    var group = GroupsApp.getGroupByEmail(&quot;example@googlegroups.com&quot;);
    var currentUser = Session.getActiveUser();
-   if (group.hasUser(currentUser)) {
+   if (group.hasUser(currentUser.getEmail())) {
      Logger.log(&quot;You are a member&quot;);
    }
  </code></pre>
  *
- * @param {User} user - the user whose membership to test
+ * @param {String} email - a user's email address
  *
  * @return {Boolean} true if that user is a member of the group
  */
-GroupsApp.Group.prototype.hasUser = function(user){};
+GroupsApp.Group.prototype.hasUser = function(email){};
 

@@ -2,7 +2,7 @@ var UrlFetchApp = {};
 
 
 /**
- * Makes a request to fetch a URL using optional advanced parameters.
+ * Makes a request to fetch a URL.
 
  This works over HTTP as well as HTTPS.
 
@@ -12,59 +12,33 @@ var UrlFetchApp = {};
  var response = UrlFetchApp.fetch(&quot;http://www.google.com/&quot;);
  Logger.log(response.getContentText());
  </code></pre>
+ *
+ * @param {String} url - the URL to fetch
+ *
+ * @return {UrlFetchApp.HTTPResponse} the HTTP response data
+ */
+UrlFetchApp.fetch = function(url){};
+
+/**
+ * Returns the request that would be made if the operation was invoked.
+
+ This method does not actually issue the request.
 
  <pre class="prettyprint">
  <code>
- // This sample sends POST payload data in the style of an HTML form, including
- // a file.
-
- function sendHttpPost() {
-
-   // Download a file now (GET), so we can upload it in the HTTP POST below.
-   var response = UrlFetchApp.fetch(&quot;http://example.com/image_to_download.jpg&quot;);
-   var fileBlob = response.getBlob();
-
-   var payload =
-   {
-     &quot;fieldOne&quot; : &quot;value for field one&quot;,
-     &quot;fieldTwo&quot; : &quot;value for field two&quot;,
-     &quot;fileAttachment&quot;: fileBlob
-   };
-
-   // Because payload is a JavaScript object, it will be interpreted as
-   // an HTML form. (We do not need to specify contentType; it will
-   // automatically default to either &#39;application/x-www-form-urlencoded&#39;
-   // or &#39;multipart/form-data&#39;)
-
-   var options =
-   {
-     &quot;method&quot; : &quot;post&quot;,
-     &quot;payload&quot; : payload
-   };
-
-   UrlFetchApp.fetch(&quot;http://example.com/upload_form.cgi&quot;, options);
+ // The code below logs the value for every key of the returned map.
+ var response = UrlFetchApp.getRequest(&quot;http://www.google.com/&quot;);
+ for(i in response) {
+   Logger.log(i + &quot;: &quot; + response[i]);
  }
  </code></pre>
  *
- * @param {String} url - the URL to fetch
- * @param {Object} params - optional JavaScript object specifying advanced parameters as defined below
- *
- * @return {UrlFetchApp.HTTPResponse} the http response data
- */
-UrlFetchApp.fetch = function(url, params){};
-
-/**
- * Returns the request that would be made if the operation were invoked.
-
- This method does not actually issue the request.
- *
- * @param {String} url - the url to look up
- * @param {Object} params - optional JavaScript object specifying advanced parameters as defined below
+ * @param {String} url - the URL to look up
  *
  * @return {Object} a map of Field Name to Value. The map has at least the following keys:
          url, method, contentType, useIntranet, payload, headers.
  */
-UrlFetchApp.getRequest = function(url, params){};
+UrlFetchApp.getRequest = function(url){};
 
 /** @constructor */
 UrlFetchApp.HTTPResponse = function(){};
@@ -123,21 +97,18 @@ UrlFetchApp.HTTPResponse.prototype.getBlob = function(){};
 UrlFetchApp.HTTPResponse.prototype.getContent = function(){};
 
 /**
- * Returns the content of an HTTP response encoded as a string of the given charset.
+ * Gets the content of an HTTP response encoded as a string.
 
  <pre class="prettyprint">
  <code>
-   // The code below logs the HTML code of the Google home page with the UTF-8 charset.
+   // The code below logs the HTML code of the Google home page.
    var response = UrlFetchApp.fetch(&quot;http://www.google.com/&quot;);
-   Logger.log(response.getContentText(&quot;UTF-8&quot;));
+   Logger.log(response.getContentText());
  </code></pre>
  *
- * @param {String} charset - a string representing the charset to be used for encoding the HTTP response
-        content
- *
- * @return {String} the content of the HTTP response, encoded using the given charset
+ * @return {String} the content of the HTTP response, as a string
  */
-UrlFetchApp.HTTPResponse.prototype.getContentText = function(charset){};
+UrlFetchApp.HTTPResponse.prototype.getContentText = function(){};
 
 /**
  * Returns an attribute/value map of headers for the HTTP response.

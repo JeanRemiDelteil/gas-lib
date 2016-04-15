@@ -29,21 +29,12 @@ Logger.clear = function(){};
 Logger.getLog = function(){};
 
 /**
- * Writes a formatted string to the logging console, using the format and values provided. The
- string can include multiple <code>%s</code> placeholders, which are replaced with corresponding
- values from the list of arguments, converted to strings.
-
- <pre class="prettyprint">
- // Log the number of Google Groups you belong to.
- var groups = GroupsApp.getGroups();
- Logger.log('You are a member of %s Google Groups.', groups.length);
- </pre>
+ * Writes the string to the logging console. To view the logged output, select
+ <strong>View > Show logs</strong>. This can be very useful for debugging scripts.
  *
- * @param {String} format - a format string that contains as many instances of <code>%s</code> as the number of
-     <code>values</code> arguments
- * @param {Object...} values - a variable number of values to insert into the format string
+ * @param {Object} data - the message to log
  *
- * @return {Logger} the Logger, for chaining
+ * @return {Logger} the Logger, for chaining.
  */
-Logger.log = function(format, values){};
+Logger.log = function(data){};
 

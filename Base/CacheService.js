@@ -84,31 +84,31 @@ CacheService.Cache.prototype.get = function(key){};
 CacheService.Cache.prototype.getAll = function(keys){};
 
 /**
- * Adds a key/value pair to the cache, with an expiration time (in seconds).
+ * Adds a key/value pair to the cache.
 
- The maximum length of a key is 250 characters.
- The maximum amount of data that can be stored per key is 100KB.
+ The maximum length of a key is 250 characters. The maximum amount of data that can be stored
+ per key is 100KB. The value will expire from the cache after 600 seconds (10 minutes).
 
  <pre class="prettyprint">
- // Puts the value 'bar' into the cache using the key 'foo', but only for the next 20 seconds.
- cache.put('foo', 'bar', 20);
- </pre>
+ <code>
+ // Puts the value &#39;bar&#39; into the cache using the key &#39;foo&#39;
+ cache.put(&#39;foo&#39;, &#39;bar&#39;);
+ </code></pre>
  *
  * @param {String} key - the key to store the value under
  * @param {String} value - the value to be cached
- * @param {number} expirationInSeconds - the maximum time the value will remain in the cache, in seconds.
-   The minimum is 1 second and the maximum is 21600 seconds (6 hours).
  *
  * @return void
  */
-CacheService.Cache.prototype.put = function(key, value, expirationInSeconds){};
+CacheService.Cache.prototype.put = function(key, value){};
 
 /**
- * Adds a set of key/value pairs to the cache, with an expiration time (in seconds).
+ * Adds a set of key/value pairs to the cache.
 
  Similar to repeated calls to "put", but more efficient as it only makes one call to the
  memcache server to set all values. The maximum length of a key is 250 characters.
- The maximum amount of data that can be stored per key is 100KB.
+ The maximum amount of data that can be stored per key is
+ 100KB. The values will expire from the cache after 600 seconds (10 minutes).
 
  <pre class="prettyprint">
  <code>
@@ -118,17 +118,14 @@ CacheService.Cache.prototype.put = function(key, value, expirationInSeconds){};
    &#39;x&#39;:&#39;y&#39;,
    &#39;key&#39;: &#39;value&#39;
  };
- cache.putAll(values, 20);
+ cache.putAll(values);
  </code></pre>
  *
- * @param {Object} values - A JavaScript Object containing string keys and values
- * @param {number} expirationInSeconds - The maximum time the value will remain in the cache, in seconds
-   The minimum allowed expiration is 1 second, and the maximum allowed expiration is 21600
-   seconds (6 hours). The default expiration is 600 seconds (10 minutes).
+ * @param {Object} values - a JavaScript Object containing string keys and values
  *
  * @return void
  */
-CacheService.Cache.prototype.putAll = function(values, expirationInSeconds){};
+CacheService.Cache.prototype.putAll = function(values){};
 
 /**
  * Removes an entry from the cache using the given key.

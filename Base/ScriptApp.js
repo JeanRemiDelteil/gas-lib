@@ -306,21 +306,38 @@ ScriptApp.getScriptTriggers = function(){};
 ScriptApp.getService = function(){};
 
 /**
- * Gets all installable triggers owned by this user in the given spreadsheet, for this script or
+ * Gets all installable triggers owned by this user in the given document, for this script or
  add-on only. This method cannot be used to see the triggers attached to other scripts.
 
  <pre class="prettyprint"><code>
- var ss = SpreadsheetApp.getActiveSpreadsheet();
- var triggers = ScriptApp.getUserTriggers(ss);
- // Log the event type for the first trigger in the array.
- Logger.log(triggers[0].getEventType());
+ var doc = DocumentApp.getActiveDocument();
+ var triggers = ScriptApp.getUserTriggers(doc);
+ // Log the handler function for the first trigger in the array.
+ Logger.log(triggers[0].getHandlerFunction());
  </code></pre>
  *
- * @param {SpreadsheetApp.Spreadsheet} spreadsheet - a Google Sheets file that may contain installable triggers
+ * @param {DocumentApp.Document} document - a Google Docs file that may contain installable triggers
  *
- * @return {ScriptApp.Trigger[]} an array of triggers owned by this user in the given spreadsheet
+ * @return {ScriptApp.Trigger[]} an array of triggers owned by this user in the given document
  */
-ScriptApp.getUserTriggers = function(spreadsheet){};
+ScriptApp.getUserTriggers = function(document){};
+
+/**
+ * Gets all installable triggers owned by this user in the given form, for this script or
+ add-on only. This method cannot be used to see the triggers attached to other scripts.
+
+ <pre class="prettyprint"><code>
+ var form = FormApp.getActiveForm();
+ var triggers = ScriptApp.getUserTriggers(form);
+ // Log the trigger source for the first trigger in the array.
+ Logger.log(triggers[0].getTriggerSource());
+ </code></pre>
+ *
+ * @param {FormApp.Form} form - a Google Forms file that may contain installable triggers
+ *
+ * @return {ScriptApp.Trigger[]} an array of triggers owned by this user in the given form
+ */
+ScriptApp.getUserTriggers = function(form){};
 
 /**
  * Invalidates the authorization this user has to execute the current script. Used to invalidate
@@ -1047,56 +1064,55 @@ ScriptApp.Trigger.prototype.getUniqueId = function(){};
 ScriptApp.TriggerBuilder = function(){};
 
 /**
- * Creates and returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/document-trigger-builder.html'>DocumentTriggerBuilder</a></code> tied to the document with the given ID.
+ * Creates and returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/document-trigger-builder.html'>DocumentTriggerBuilder</a></code> tied to the given document.
 
  <pre class="prettyprint">
  <code>
  ScriptApp.newTrigger(&#39;myFunction&#39;)
-   .forDocument(&#39;1234567890abcdefghijklmnopqrstuvwxyz&#39;)
+   .forDocument(DocumentApp.getActiveDocument())
    .onOpen()
    .create();
  </code></pre>
  *
- * @param {String} key - the ID for the document
+ * @param {DocumentApp.Document} document - the document
  *
  * @return {ScriptApp.DocumentTriggerBuilder} the new DocumentTriggerBuilder
  */
-ScriptApp.TriggerBuilder.prototype.forDocument = function(key){};
+ScriptApp.TriggerBuilder.prototype.forDocument = function(document){};
 
 /**
- * Creates and returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/form-trigger-builder.html'>FormTriggerBuilder</a></code> tied to the form with the given ID.
+ * Creates and returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/form-trigger-builder.html'>FormTriggerBuilder</a></code> tied to the given form.
 
  <pre class="prettyprint">
  <code>
  ScriptApp.newTrigger(&#39;myFunction&#39;)
-   .forForm(&#39;1234567890abcdefghijklmnopqrstuvwxyz&#39;)
+   .forForm(FormApp.getActiveForm())
    .onFormSubmit()
    .create();
  </code></pre>
  *
- * @param {String} key - the ID for the form
+ * @param {FormApp.Form} form - the form
  *
  * @return {ScriptApp.FormTriggerBuilder} the new FormTriggerBuilder
  */
-ScriptApp.TriggerBuilder.prototype.forForm = function(key){};
+ScriptApp.TriggerBuilder.prototype.forForm = function(form){};
 
 /**
- * Creates and returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/spreadsheet-trigger-builder.html'>SpreadsheetTriggerBuilder</a></code> tied to the spreadsheet with the given
- ID.
+ * Creates and returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/spreadsheet-trigger-builder.html'>SpreadsheetTriggerBuilder</a></code> tied to the given spreadsheet.
 
  <pre class="prettyprint">
  <code>
  ScriptApp.newTrigger(&#39;myFunction&#39;)
-   .forSpreadsheet(&#39;1234567890abcdefghijklmnopqrstuvwxyz&#39;)
+   .forSpreadsheet(SpreadsheetApp.getActive())
    .onEdit()
    .create();
  </code></pre>
  *
- * @param {String} key - the ID for the spreadsheet
+ * @param {SpreadsheetApp.Spreadsheet} sheet - the spreadsheet
  *
  * @return {ScriptApp.SpreadsheetTriggerBuilder} the new SpreadsheetTriggerBuilder
  */
-ScriptApp.TriggerBuilder.prototype.forSpreadsheet = function(key){};
+ScriptApp.TriggerBuilder.prototype.forSpreadsheet = function(sheet){};
 
 /**
  * Creates and returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/clock-trigger-builder.html'>ClockTriggerBuilder</a></code> for building time-based triggers.

@@ -126,42 +126,52 @@ Maps.ElevationSampler = function(){};
 Maps.ElevationSampler.prototype.sampleLocation = function(latitude, longitude){};
 
 /**
- * Returns elevation data for the points in an encoded polyline.
+ * Returns elevation data for a series of points (lat/lng).
 
  <pre class="prettyprint">
  <code>
- // Gets the elevation of Times Square and Central Park using a polyline.
- var data = Maps.newElevationSampler().sampleLocations(&#39;yvwwF|aqbMwoBiw@&#39;);
+ // Gets the elevation of Times Square and Central Park using points.
+ var data = Maps.newElevationSampler().sampleLocations([
+     // Times Square
+     40.759011, -73.984472,
+     // Central Park
+     40.777052, -73.975464
+ ]);
  Logger.log(&#39;Times Square: &#39; + data.results[0].elevation);
  Logger.log(&#39;Central Park: &#39; + data.results[1].elevation);
  </code></pre>
  *
- * @param {String} encodedPolyline - an encoded polyline of points to sample
+ * @param {Number[]} points - an array of latitude/longitude pairs
  *
  * @return {Object} a JSON Object containing the elevation data, as described
      <a href="/maps/documentation/elevation/#ElevationResponses">here</a>
  */
-Maps.ElevationSampler.prototype.sampleLocations = function(encodedPolyline){};
+Maps.ElevationSampler.prototype.sampleLocations = function(points){};
 
 /**
- * Returns elevation data for a number of samples along a line, defined using an encoded polyline.
+ * Returns elevation data for a number of samples along a line, defined using a series of points.
 
  <pre class="prettyprint">
  <code>
  // Gets the elevation of five points between Times Square and Central Park.
- var data = Maps.newElevationSampler().samplePath(&#39;yvwwF|aqbMwoBiw@&#39;, 5);
+ var data = Maps.newElevationSampler().samplePath([
+     // Times Square
+     40.759011, -73.984472,
+     // Central Park
+     40.777052, -73.975464
+ ], 5);
  for (var i = 0; i &lt; data.results.length; i++) {
    Logger.log(data.results[i].elevation);
  }
  </code></pre>
  *
- * @param {String} encodedPolyline - an encoded polyline of points defining a path to sample over
+ * @param {Number[]} points - an array of latitude/longitude pairs defining a path to sample over
  * @param {number} numSamples - the number of points to sample along the path of points
  *
  * @return {Object} a JSON Object containing the elevation data, as described
      <a href="/maps/documentation/elevation/#ElevationResponses">here</a>
  */
-Maps.ElevationSampler.prototype.samplePath = function(encodedPolyline, numSamples){};
+Maps.ElevationSampler.prototype.samplePath = function(points, numSamples){};
 
 /** @constructor */
 Maps.Format = function(){};
@@ -191,12 +201,12 @@ Maps.Geocoder = function(){};
 Maps.Geocoder.prototype.geocode = function(address){};
 
 /**
- * Gets the approximate addresses for a given area.
+ * Gets the approximate addresses for a given geographic point.
 
  <pre class="prettyprint">
  <code>
- // Gets the address of an area around Central Park.
- var response = Maps.newGeocoder().reverseGeocode(40.764941, -73.98262, 40.799133, -73.947558);
+ // Gets the address of a point in Times Square.
+ var response = Maps.newGeocoder().reverseGeocode(40.758577, -73.984464);
  for (var i = 0; i &lt; response.results.length; i++) {
    var result = response.results[i];
    Logger.log(&#39;%s: %s, %s&#39;, result.formatted_address, result.geometry.location.lat,
@@ -204,15 +214,13 @@ Maps.Geocoder.prototype.geocode = function(address){};
  }
  </code></pre>
  *
- * @param {Number} swLatitude - the latitude of the south west corner of the bounds
- * @param {Number} swLongitude - the longitude of the south west corner of the bounds
- * @param {Number} neLatitude - the latitude of the north east corner of the bounds
- * @param {Number} neLongitude - the longitude of the north east corner of the bounds
+ * @param {Number} latitude - the latitude of the point
+ * @param {Number} longitude - the longitude of the point
  *
  * @return {Object} a JSON Object containing the reverse geocoding data, as described
      <a href="/maps/documentation/geocoding/#ReverseGeocoding">here</a>
  */
-Maps.Geocoder.prototype.reverseGeocode = function(swLatitude, swLongitude, neLatitude, neLongitude){};
+Maps.Geocoder.prototype.reverseGeocode = function(latitude, longitude){};
 
 /**
  * Sets the bounds of an area that should be given extra preference in the results.

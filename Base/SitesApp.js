@@ -150,25 +150,23 @@ SitesApp.getActivePage = function(){};
 SitesApp.getActiveSite = function(){};
 
 /**
- * Retrieves all Sites belonging to this domain.
+ * Retrieves first page of Sites belonging to this domain.
 
  <pre class="prettyprint">
  <code>
- // This writes the a list of sites owned by the user running
- // the script in positions bounded by the start and max values to the log.
- var sites = SitesApp.getAllSites(&quot;example.com&quot;, 25, 50);
+ // This writes the first page of sites belonging to a Google Apps
+ // domain to the log.
+ var sites = SitesApp.getAllSites(&quot;example.com&quot;);
  for(var i in sites) {
    Logger.log(sites[i].getUrl());
  }
  </code></pre>
  *
  * @param {String} domain - The Google Apps hosted domain (e.g. example.com)
- * @param {number} start - the index of the first site to return
- * @param {number} max - the maximum number of results to return
  *
  * @return {SitesApp.Site[]} an array of sites belonging to the domain
  */
-SitesApp.getAllSites = function(domain, start, max){};
+SitesApp.getAllSites = function(domain){};
 
 /**
  * Retrieves a Page by url.
@@ -190,20 +188,20 @@ SitesApp.getAllSites = function(domain, start, max){};
 SitesApp.getPageByUrl = function(url){};
 
 /**
- * Retrieves a Site for the given Google Site.
+ * Retrieves a Site for the given Google Site, if the user is a consumer
+ who does not have a hosted domain.
 
  <pre class="prettyprint">
  <code>
  // Returns a Site instance
- var site = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;);
+ var site = SitesApp.getSite(&#39;mysite&#39;);
  </code></pre>
  *
- * @param {String} domain - The Google Apps hosted domain (e.g. example.com)
  * @param {String} name - The webspace name found in the URL (e.g. mySite)
  *
- * @return {SitesApp.Site} A Site instance corresponding to a hosted domain
+ * @return {SitesApp.Site} A Site instance corresponding to a consumer site
  */
-SitesApp.getSite = function(domain, name){};
+SitesApp.getSite = function(name){};
 
 /**
  * Retrieves a Site by url.
@@ -224,26 +222,60 @@ SitesApp.getSite = function(domain, name){};
 SitesApp.getSiteByUrl = function(url){};
 
 /**
- * Retrieves all Sites belonging to this user in this domain for the given
- range given.
+ * Retrieves first page of Sites for a user, if the user is a consumer
+ who does not have a hosted domain.
 
  <pre class="prettyprint">
  <code>
- // This writes the a list of sites owned by the user running
- // the script in positions bounded by the start and max values to the log.
- var sites = SitesApp.getSites(&quot;example.com&quot;, 25, 50);
+ // This writes the first page of sites owned by the user running
+ // the script to the log.
+ var sites = SitesApp.getSites();
+ for(var i in sites) {
+   Logger.log(sites[i].getUrl());
+ }
+ </code></pre>
+ *
+ * @return {SitesApp.Site[]} An array of sites beloning to the user running the script
+ */
+SitesApp.getSites = function(){};
+
+/**
+ * Retrieves Sites for a user between the given bounds if the user is a
+ consumer who does not have a hosted domain.
+
+ <pre class="prettyprint">
+ <code>
+ var sites = SitesApp.getSites(25, 50);
+ for(var i in sites) {
+   Logger.log(sites[i].getUrl());
+ }
+ </code></pre>
+ *
+ * @param {number} start - the index of the first site to return
+ * @param {number} max - the maximum number of results to return
+ *
+ * @return {SitesApp.Site[]} an array of all the sites owned for a user
+ */
+SitesApp.getSites = function(start, max){};
+
+/**
+ * Retrieves first page of Sites belonging to this user in this domain.
+
+ <pre class="prettyprint">
+ <code>
+ // This writes the first page of sites owned by the user running
+ // the script to the log.
+ var sites = SitesApp.getSites(&quot;example.com&quot;);
  for(var i in sites) {
    Logger.log(sites[i].getUrl());
  }
  </code></pre>
  *
  * @param {String} domain - The Google Apps hosted domain (e.g. example.com)
- * @param {number} start - the index of the first site to return
- * @param {number} max - the maximum number of results to return
  *
- * @return {SitesApp.Site[]} an array of sites belonging to the user
+ * @return {SitesApp.Site[]} An array of sites beloning to the user running the script
  */
-SitesApp.getSites = function(domain, start, max){};
+SitesApp.getSites = function(domain){};
 
 /** @constructor */
 SitesApp.Attachment = function(){};
@@ -939,27 +971,26 @@ SitesApp.Page.prototype.addColumn = function(name){};
 SitesApp.Page.prototype.addComment = function(content){};
 
 /**
- * Add an attachment to the page. This version of the function allows for a description.
+ * Add an attachment to the page.
 
  <pre class="prettyprint">
  <code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
 
- // Create a new blob and attach it. Many useful: functions also return
+ // Create a new blob and attach it. Many useful functions also return
  // blobs file uploads, URLFetch
  var blob = Utilities.newBlob(&quot;Here is some data&quot;, &quot;text/plain&quot;, &quot;data.txt&quot;);
 
  // Note that the filename must be unique or this call will fail
- page.addHostedAttachment(blob, &quot;Some newly created data&quot;);
+ page.addHostedAttachment(blob);
  </code></pre>
  *
  * @param {BlobSource} blob - the data for the attachment
- * @param {String} description - a description of the attachment
  *
  * @return {SitesApp.Attachment} the newly created attachment
  */
-SitesApp.Page.prototype.addHostedAttachment = function(blob, description){};
+SitesApp.Page.prototype.addHostedAttachment = function(blob){};
 
 /**
  * Add a list item to the list. Only valid for list pages.
@@ -1018,18 +1049,15 @@ SitesApp.Page.prototype.addWebAttachment = function(title, description, url){};
  // if this method can be called:
  //    if(page.getPageType() == SitesApp.PageType.ANNOUNCEMENTS_PAGE))
  var page = site.getChildByName(&quot;news&quot;);
- page.createAnnouncement(&quot;Breaking news!&quot;,
-                         &quot;&lt;h1&gt;Apps Script rocks!&lt;/h1&gt;&quot;,
-                         true);
+ page.createAnnouncement(&quot;Breaking news!&quot;, &quot;&lt;h1&gt;Apps Script rocks!&lt;/h1&gt;&quot;);
  </code></pre>
  *
  * @param {String} title - the page title
  * @param {String} html - the page content
- * @param {Boolean} asDraft - whether to make the announcement a draft
  *
  * @return {SitesApp.Page} the newly created Announcements
  */
-SitesApp.Page.prototype.createAnnouncement = function(title, html, asDraft){};
+SitesApp.Page.prototype.createAnnouncement = function(title, html){};
 
 /**
  * Create a new announcements page. Note that a parent site or page cannot have more than 500
@@ -1182,34 +1210,20 @@ SitesApp.Page.prototype.createWebPage = function(title, name, html){};
 SitesApp.Page.prototype.deletePage = function(){};
 
 /**
- * Gets an array of descendant pages, with optional advanced arguments.
- 
+ * Gets an array of descendant pages (direct and indirect), up to a limit of 200 pages.
+
  <pre class="prettyprint">
  <code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
- var descendants = site.getAllDescendants({
-   type: SitesApp.PageType.WEB_PAGE,
-   start: 0,
-   max: 25,
-   includeDrafts: false,
-   includeDeleted: true,
-   search: &quot;target&quot;
- });
-
- for(var i in descendants) {
-   Logger.log(descendants[i].getName());
- }
+ var pages = site.getAllDescendants();
  </code></pre>
  *
- * @param {Object} options - JavaScript object fields defined in the Advanced Arguments section below
- *
- * @return {SitesApp.Page[]} an array of direct and indirect child pages of the given type
+ * @return {SitesApp.Page[]} an array of direct and indirect child pages
  */
-SitesApp.Page.prototype.getAllDescendants = function(options){};
+SitesApp.Page.prototype.getAllDescendants = function(){};
 
 /**
  * Get the announcements for this page. Only valid for announcement pages.
-
 
  <pre class="prettyprint">
  <code>
@@ -1220,22 +1234,16 @@ SitesApp.Page.prototype.getAllDescendants = function(options){};
  // if this method can be called:
  //    if(page.getPageType() == SitesApp.PageType.ANNOUNCEMENTS_PAGE))
  var page = site.getChildByName(&quot;news&quot;);
- var announcements = page.getAnnouncements({ start: 0,
-                                             max: 20,
-                                             includeDrafts: false,
-                                             includeDeleted: false,
-                                             search: &quot;Breaking&quot; });
+ var announcements = page.getAnnouncements();
 
  for(var i in announcements) {
    Logger.log(announcements[i].getHtmlContent());
  }
  </code></pre>
  *
- * @param {Object} optOptions - A JavaScript object containing advanced parameters
- *
  * @return {SitesApp.Page[]} an array of Announcements
  */
-SitesApp.Page.prototype.getAnnouncements = function(optOptions){};
+SitesApp.Page.prototype.getAnnouncements = function(){};
 
 /**
  * Get the attachments for this page.
@@ -1245,18 +1253,15 @@ SitesApp.Page.prototype.getAnnouncements = function(optOptions){};
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
 
- // This returns only one attachment
- var attachments = page.getAttachments({ start: 0, max: 1});
+ var attachments = page.getAttachments();
  for(var i in attachments) {
    Logger.log(attachments[i].getTitle());
  }
  </code></pre>
  *
- * @param {Object} optOptions - a JavaScript object containing optional parameters
- *
  * @return {SitesApp.Attachment[]} an array of Attachments
  */
-SitesApp.Page.prototype.getAttachments = function(optOptions){};
+SitesApp.Page.prototype.getAttachments = function(){};
 
 /**
  * Get the emails of the authors of the page
@@ -1292,30 +1297,17 @@ SitesApp.Page.prototype.getAuthors = function(){};
 SitesApp.Page.prototype.getChildByName = function(name){};
 
 /**
- * Gets an array of child pages, with optional advanced arguments.
+ * Gets an array of child pages, up to a limit of 200 pages.
 
  <pre class="prettyprint">
  <code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
- var childPages = site.getChildren({
-   type: SitesApp.PageType.WEB_PAGE,
-   start: 0,
-   max: 25,
-   includeDrafts: false,
-   includeDeleted: true,
-   search: &quot;target&quot;
- });
-
- for(var i in childPages) {
-   Logger.log(childPages[i].getName());
- }
+ var pages = site.getChildren();
  </code></pre>
  *
- * @param {Object} options - JavaScript object fields defined in the Advanced Arguments section below
- *
- * @return {SitesApp.Page[]} an array of direct child pages of the given type
+ * @return {SitesApp.Page[]} an array of direct child pages
  */
-SitesApp.Page.prototype.getChildren = function(options){};
+SitesApp.Page.prototype.getChildren = function(){};
 
 /**
  * Get the columns for the list. Only valid for list pages.
@@ -1340,23 +1332,21 @@ SitesApp.Page.prototype.getColumns = function(){};
 
 /**
  * Get the comments for this page.
+
  <pre class="prettyprint">
  <code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
 
- // Return only one comment
- var comments = page.getComments({ start:0, max: 1});
+ var comments = page.getComments();
  for(var i in comments) {
    Logger.log(comments[i].getContent());
  }
  </code></pre>
  *
- * @param {Object} optOptions - a JavaScript object containing optional parameters
- *
  * @return {SitesApp.Comment[]} an array of Comments.
  */
-SitesApp.Page.prototype.getComments = function(optOptions){};
+SitesApp.Page.prototype.getComments = function(){};
 
 /**
  * Return the date this page was first published.
@@ -1438,19 +1428,16 @@ SitesApp.Page.prototype.getLastUpdated = function(){};
  var page = site.getChildByName(&quot;listpage&quot;);
  // Only valid on List pages. Check for the type like so:
  //     if(page.getPageType() == SitesApp.PageType.LIST_PAGE))
- // Returns only one item
- var items = page.getListItems({ start:0, max: 1 });
+ var items = page.getListItems();
 
  for(var i in items) {
    Logger.log(items[i].getValueByName(&quot;Status&quot;));
  }
  </code></pre>
  *
- * @param {Object} optOptions - A JavaScript object of optional parameters
- *
  * @return {SitesApp.ListItem[]} an array of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/list-item.html'>ListItem</a></code> instances
  */
-SitesApp.Page.prototype.getListItems = function(optOptions){};
+SitesApp.Page.prototype.getListItems = function(){};
 
 /**
  * Return the page's name.
@@ -1609,31 +1596,23 @@ SitesApp.Page.prototype.isTemplate = function(){};
 SitesApp.Page.prototype.publishAsTemplate = function(name){};
 
 /**
- * Gets an array of descendant pages that match a search query, with optional advanced arguments.
+ * Gets an array of descendant pages that match a search query, up to a limit of 200 pages.
 
  <pre class="prettyprint">
  <code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
- var childPages = site.getChildren({
-   type: SitesApp.PageType.WEB_PAGE,
-   start: 0,
-   max: 25,
-   includeDrafts: false,
-   includeDeleted: true,
-   search: &quot;target&quot;
- });
+ var matches = site.search(&quot;targetText&quot;);
 
- for(var i in childPages) {
-   Logger.log(childPages[i].getName());
+ for(var i in matches) {
+   Logger.log(matches[i].getName());
  }
  </code></pre>
  *
  * @param {String} query - the full text search query to match
- * @param {Object} options - JavaScript object fields defined in the Advanced Arguments section below
  *
  * @return {SitesApp.Page[]} an array of direct and indirect child pages of the given type
  */
-SitesApp.Page.prototype.search = function(query, options){};
+SitesApp.Page.prototype.search = function(query){};
 
 /**
  * Set the HTML content of the page.
@@ -1722,30 +1701,29 @@ SitesApp.Page.prototype.setTitle = function(title){};
 SitesApp.Site = function(){};
 
 /**
- * Add a new collaborator to the website
+ * Add a new collaborator to the site
 
  <pre class="prettyprint">
  <code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
- var currentUser = Session.getActiveUser();
- site.addCollaborator(currentUser);
+ site.addCollaborator(&quot;eric@example.com&quot;);
  </code></pre>
  *
- * @param {User} user - The user to add as a collaborator
+ * @param {String} email - The email of the user to add as a collaborator
  *
  * @return {SitesApp.Site} this site for chaining
  */
-SitesApp.Site.prototype.addCollaborator = function(user){};
+SitesApp.Site.prototype.addCollaborator = function(email){};
 
 /**
  * Adds the given user to the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. If the user was already
  on the list of viewers, this method promotes the user out of the list of viewers.
  *
- * @param {User} user - a representation of the user to add
+ * @param {String} emailAddress - the email address of the user to add
  *
  * @return {SitesApp.Site} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>, for chaining
  */
-SitesApp.Site.prototype.addEditor = function(user){};
+SitesApp.Site.prototype.addEditor = function(emailAddress){};
 
 /**
  * Adds the given array of users to the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. If any of the
@@ -1764,25 +1742,24 @@ SitesApp.Site.prototype.addEditors = function(emailAddresses){};
  <pre class="prettyprint">
  <code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
- var currentUser = Session.getActiveUser();
- site.addOwner(currentUser);
+ site.addOwner(&quot;eric@example.com&quot;);
  </code></pre>
  *
- * @param {User} user - The user to add as an owner
+ * @param {String} email - The email of the user to add as an owner
  *
  * @return {SitesApp.Site} this site for chaining
  */
-SitesApp.Site.prototype.addOwner = function(user){};
+SitesApp.Site.prototype.addOwner = function(email){};
 
 /**
  * Adds the given user to the list of viewers for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. If the user was already
  on the list of editors, this method has no effect.
  *
- * @param {User} user - a representation of the user to add
+ * @param {String} emailAddress - the email address of the user to add
  *
  * @return {SitesApp.Site} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>, for chaining
  */
-SitesApp.Site.prototype.addViewer = function(user){};
+SitesApp.Site.prototype.addViewer = function(emailAddress){};
 
 /**
  * Adds the given array of users to the list of viewers for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. If any of the
@@ -1991,30 +1968,17 @@ SitesApp.Site.prototype.createWebPage = function(title, name, html){};
 SitesApp.Site.prototype.deleteSite = function(){};
 
 /**
- * Gets an array of descendant pages, with optional advanced arguments.
- 
+ * Gets an array of descendant pages (direct and indirect), up to a limit of 200 pages.
+
  <pre class="prettyprint">
  <code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
- var descendants = site.getAllDescendants({
-   type: SitesApp.PageType.WEB_PAGE,
-   start: 0,
-   max: 25,
-   includeDrafts: false,
-   includeDeleted: true,
-   search: &quot;target&quot;
- });
-
- for(var i in descendants) {
-   Logger.log(descendants[i].getName());
- }
+ var pages = site.getAllDescendants();
  </code></pre>
  *
- * @param {Object} options - JavaScript object fields defined in the Advanced Arguments section below
- *
- * @return {SitesApp.Page[]} an array of direct and indirect child pages of the given type
+ * @return {SitesApp.Page[]} an array of direct and indirect child pages
  */
-SitesApp.Site.prototype.getAllDescendants = function(options){};
+SitesApp.Site.prototype.getAllDescendants = function(){};
 
 /**
  * Retrieves a list of announcements for the given Google Site.
@@ -2084,30 +2048,17 @@ SitesApp.Site.prototype.getAttachments = function(){};
 SitesApp.Site.prototype.getChildByName = function(name){};
 
 /**
- * Gets an array of child pages, with optional advanced arguments.
+ * Gets an array of child pages, up to a limit of 200 pages.
 
  <pre class="prettyprint">
  <code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
- var childPages = site.getChildren({
-   type: SitesApp.PageType.WEB_PAGE,
-   start: 0,
-   max: 25,
-   includeDrafts: false,
-   includeDeleted: true,
-   search: &quot;target&quot;
- });
-
- for(var i in childPages) {
-   Logger.log(childPages[i].getName());
- }
+ var pages = site.getChildren();
  </code></pre>
  *
- * @param {Object} options - JavaScript object fields defined in the Advanced Arguments section below
- *
- * @return {SitesApp.Page[]} an array of direct child pages of the given type
+ * @return {SitesApp.Page[]} an array of direct child pages
  */
-SitesApp.Site.prototype.getChildren = function(options){};
+SitesApp.Site.prototype.getChildren = function(){};
 
 /**
  * Retrieves list of collaborators for the site
@@ -2360,86 +2311,79 @@ SitesApp.Site.prototype.getWebAttachments = function(){};
 SitesApp.Site.prototype.getWebPages = function(){};
 
 /**
- * Removes a collaborator from the site
+ * Removes a collaborator from the site by user email
 
  <pre class="prettyprint">
  <code>
- // This snippet removes the current user from the list of collaborators
+ // This snippet removes the user with the given email from the collaborators list
  var site = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;);
- site.removeCollaborator(Session.getActiveUser());
+ site.removeCollaborator(&quot;eric@example.com&quot;);
  </code></pre>
  *
- * @param {User} user - A user to remove from the list of collaborators
+ * @param {String} email - The email of the user to remove from the collaborators
  *
  * @return {SitesApp.Site} the site instance for method chaining
  */
-SitesApp.Site.prototype.removeCollaborator = function(user){};
+SitesApp.Site.prototype.removeCollaborator = function(email){};
 
 /**
  * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. This method does not
  block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> if they belong to a class of users who have
  general access ? for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> is shared with the user's entire domain.
  *
- * @param {User} user - a representation of the user to remove
+ * @param {String} emailAddress - the email address of the user to remove
  *
  * @return {SitesApp.Site} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>, for chaining
  */
-SitesApp.Site.prototype.removeEditor = function(user){};
+SitesApp.Site.prototype.removeEditor = function(emailAddress){};
 
 /**
- * Removes owner from the site
+ * Removes owner from the site by user email
 
  <pre class="prettyprint">
  <code>
- // This snippet removes the current user from the list of owners
+ // This snippet removes the user with the given email from the owners list
  var site = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;);
- site.removeOwner(Session.getActiveUser());
+ site.removeOwner(&quot;eric@example.com&quot;);
  </code></pre>
  *
- * @param {User} user - A user to remove from the list of owners
+ * @param {String} email - The email of the user to remove from the owners
  *
  * @return {SitesApp.Site} the site instance for method chaining
  */
-SitesApp.Site.prototype.removeOwner = function(user){};
+SitesApp.Site.prototype.removeOwner = function(email){};
 
 /**
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>.  This
- method has no effect if the user is an editor, not a viewer. This method also does not block
- users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> if they belong to a class of users who have general
- access ? for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> is shared with the user's entire domain.
+ method has no effect if the user is an editor, not a viewer or commenter. This method also does
+ not block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> if they belong to a class of users who
+ have general access ? for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> is shared with the user's entire
+ domain.
  *
- * @param {User} user - a representation of the user to remove
+ * @param {String} emailAddress - the email address of the user to remove
  *
  * @return {SitesApp.Site} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> for chaining
  */
-SitesApp.Site.prototype.removeViewer = function(user){};
+SitesApp.Site.prototype.removeViewer = function(emailAddress){};
 
 /**
- * Gets an array of descendant pages that match a search query, with optional advanced arguments.
+ * Gets an array of descendant pages that match a search query, up to a limit of 200 pages.
 
  <pre class="prettyprint">
  <code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
- var childPages = site.getChildren({
-   type: SitesApp.PageType.WEB_PAGE,
-   start: 0,
-   max: 25,
-   includeDrafts: false,
-   includeDeleted: true,
-   search: &quot;target&quot;
- });
+ var matches = site.search(&quot;targetText&quot;);
 
- for(var i in childPages) {
-   Logger.log(childPages[i].getName());
+ for(var i in matches) {
+   Logger.log(matches[i].getName());
  }
  </code></pre>
  *
  * @param {String} query - the full text search query to match
- * @param {Object} options - JavaScript object fields defined in the Advanced Arguments section below
  *
  * @return {SitesApp.Page[]} an array of direct and indirect child pages of the given type
  */
-SitesApp.Site.prototype.search = function(query, options){};
+SitesApp.Site.prototype.search = function(query){};
 
 /**
  * Set the summary of the web site

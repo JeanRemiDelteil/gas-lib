@@ -223,23 +223,20 @@ SpreadsheetApp.ProtectionType.prototype.RANGE = {};
 SpreadsheetApp.ProtectionType.prototype.SHEET = {};
 
 /**
- * Creates a new spreadsheet with the given name and the specified number of rows and columns.
+ * Creates a new spreadsheet with the given name.
 
  <pre class="prettyprint">
  <code>
- // The code below creates a new spreadsheet &quot;Finances&quot; with 50 rows and 5 columns and logs the
- // URL for it
- var ssNew = SpreadsheetApp.create(&quot;Finances&quot;, 50, 5);
+ // The code below creates a new spreadsheet &quot;Finances&quot; and logs the URL for it
+ var ssNew = SpreadsheetApp.create(&quot;Finances&quot;);
  Logger.log(ssNew.getUrl());
  </code></pre>
  *
  * @param {String} name - the name for the spreadsheet
- * @param {number} rows - the number of rows for the spreadsheet
- * @param {number} columns - the number of columns for the spreadsheet
  *
  * @return {SpreadsheetApp.Spreadsheet} a new spreadsheet
  */
-SpreadsheetApp.create = function(name, rows, columns){};
+SpreadsheetApp.create = function(name){};
 
 /**
  * Applies all pending Spreadsheet changes.
@@ -1108,43 +1105,37 @@ SpreadsheetApp.DataValidationBuilder.prototype.requireTextIsEmail = function(){}
 SpreadsheetApp.DataValidationBuilder.prototype.requireTextIsUrl = function(){};
 
 /**
- * Sets the data-validation rule to require that the input is equal to one of the given values,
- with an option to hide the dropdown menu.
+ * Sets the data-validation rule to require that the input is equal to one of the given values.
 
  <pre class="prettyprint">
- // Set the data validation for cell A1 to require "Yes" or "No", with no dropdown menu.
+ // Set the data validation for cell A1 to require "Yes" or "No", with a dropdown menu.
  var cell = SpreadsheetApp.getActive().getRange('A1');
- var rule = SpreadsheetApp.newDataValidation().requireValueInList(['Yes', 'No'], false).build();
+ var rule = SpreadsheetApp.newDataValidation().requireValueInList(['Yes', 'No']).build();
  cell.setDataValidation(rule);
  </pre>
  *
  * @param {String[]} values - an array of acceptable values
- * @param {Boolean} showDropdown - <code>true</code> if the spreadsheet should show a dropdown menu for the values;
-     <code>false</code> if not
  *
  * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
  */
-SpreadsheetApp.DataValidationBuilder.prototype.requireValueInList = function(values, showDropdown){};
+SpreadsheetApp.DataValidationBuilder.prototype.requireValueInList = function(values){};
 
 /**
- * Sets the data-validation rule to require that the input is equal to a value in the given range,
- with an option to hide the dropdown menu.
+ * Sets the data-validation rule to require that the input is equal to a value in the given range.
 
  <pre class="prettyprint">
- // Set the data validation for cell A1 to require value from B1:B10, with no dropdown menu.
+ // Set the data validation for cell A1 to require a value from B1:B10, with a dropdown menu.
  var cell = SpreadsheetApp.getActive().getRange('A1');
  var range = SpreadsheetApp.getActive().getRange('B1:B10');
- var rule = SpreadsheetApp.newDataValidation().requireValueInRange(range, false).build();
+ var rule = SpreadsheetApp.newDataValidation().requireValueInRange(range).build();
  cell.setDataValidation(rule);
  </pre>
  *
  * @param {SpreadsheetApp.Range} range - a range that contains the acceptable values
- * @param {Boolean} showDropdown - <code>true</code> if the spreadsheet should show a dropdown menu for the values;
-     <code>false</code> if not
  *
  * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
  */
-SpreadsheetApp.DataValidationBuilder.prototype.requireValueInRange = function(range, showDropdown){};
+SpreadsheetApp.DataValidationBuilder.prototype.requireValueInRange = function(range){};
 
 /**
  * Sets whether to show a warning when input fails data validation or whether to reject the input
@@ -4924,25 +4915,33 @@ SpreadsheetApp.EmbeddedTableChartBuilder.prototype.asTableChart = function(){};
 SpreadsheetApp.EmbeddedTableChartBuilder.prototype.build = function(){};
 
 /**
- * Enables paging, sets the number of rows in each page and the first table page to display
- (page numbers are zero based).
+ * Sets whether to enable paging through the data.
  <p>
- The default page size is 10, and the default start page is 0.
-
- <pre class="prettyprint">
- <code>
- // Creates a table chart builder and enables paging with page size of 5 and displays page 2
- // first.
- var builder = Charts.newTableChart();
- builder.enablePaging(5, 2);
- </code></pre>
+ The default behavior is paging disabled. If paging is enabled the default page size is 10.
  *
- * @param {number} pageSize - the number of rows in each page of the table
- * @param {number} startPage - the first table page to display (page numbers are zero based)
+ * @param {Boolean} enablePaging - true if paging should be enabled, false otherwise
  *
  * @return {SpreadsheetApp.EmbeddedTableChartBuilder} this builder, useful for chaining
  */
-SpreadsheetApp.EmbeddedTableChartBuilder.prototype.enablePaging = function(pageSize, startPage){};
+SpreadsheetApp.EmbeddedTableChartBuilder.prototype.enablePaging = function(enablePaging){};
+
+/**
+ * Enables paging and sets the number of rows in each page.
+ <p>
+ The default page size is 10.
+
+ <pre class="prettyprint">
+ <code>
+ // Creates a table chart builder and enables paging with page size of 5.
+ var builder = Charts.newTableChart();
+ builder.enablePaging(5);
+ </code></pre>
+ *
+ * @param {number} pageSize - the number of rows in each page of the table
+ *
+ * @return {SpreadsheetApp.EmbeddedTableChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedTableChartBuilder.prototype.enablePaging = function(pageSize){};
 
 /**
  * Adds basic support for right-to-left languages (such as Arabic or Hebrew) by reversing
@@ -5390,13 +5389,13 @@ SpreadsheetApp.Protection = function(){};
 /**
  * Adds the given user to the list of editors for the protected sheet or range. This method does
  not automatically give the user permission to edit the spreadsheet itself; to do that in
- addition, call <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html#addEditor(User)'>Spreadsheet.addEditor(user)</a></code>.
+ addition, call <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html#addEditor(String)'>Spreadsheet.addEditor(emailAddress)</a></code>.
  *
- * @param {User} user - a representation of the user to add
+ * @param {String} emailAddress - the email address of the user to add
  *
  * @return {SpreadsheetApp.Protection} the object representing the protection settings, for chaining
  */
-SpreadsheetApp.Protection.prototype.addEditor = function(user){};
+SpreadsheetApp.Protection.prototype.addEditor = function(emailAddress){};
 
 /**
  * Adds the given array of users to the list of editors for the protected sheet or range. This
@@ -5579,14 +5578,14 @@ SpreadsheetApp.Protection.prototype.remove = function(){};
 /**
  * Removes the given user from the list of editors for the protected sheet or range. Note that if
  the user is a member of a Google Group that has edit permission, or if all users in the domain
- have edit permission, the user will still be able to edit the protected area as well. Neither
- the owner of the spreadsheet nor the current user can be removed.
+ have edit permission, the user will still be able to edit the protected area. Neither the
+ owner of the spreadsheet nor the current user can be removed.
  *
- * @param {User} user - a representation of the user to remove
+ * @param {String} emailAddress - the email address of the user to remove
  *
  * @return {SpreadsheetApp.Protection} the object representing the protection settings, for chaining
  */
-SpreadsheetApp.Protection.prototype.removeEditor = function(user){};
+SpreadsheetApp.Protection.prototype.removeEditor = function(emailAddress){};
 
 /**
  * Removes the given array of users from the list of editors for the protected sheet or range.
@@ -5772,21 +5771,20 @@ SpreadsheetApp.Range.prototype.breakApart = function(){};
 SpreadsheetApp.Range.prototype.canEdit = function(){};
 
 /**
- * Clears the range of contents, format, data-validation rules, and/or comments, as specified with
- the given advanced options. By default all data will be cleared.
+ * Clears the range of contents, formats, and data-validation rules.
 
  <pre class="prettyprint">
  <code>
- // The code below will clear range C2:G8 in the active sheet, but preserve the format,
- // data-validation rules, and comments.
- SpreadsheetApp.getActiveSheet().getRange(2, 3, 6, 4).clear({contentsOnly: true});
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+
+ var range = sheet.getRange(&quot;A1:D10&quot;);
+ range.clear();
  </code></pre>
- *
- * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
-SpreadsheetApp.Range.prototype.clear = function(options){};
+SpreadsheetApp.Range.prototype.clear = function(){};
 
 /**
  * Clears the content of the range, leaving the formatting intact.
@@ -5857,20 +5855,22 @@ SpreadsheetApp.Range.prototype.clearNote = function(){};
  smaller than the source range then the source will be repeated or truncated accordingly. Note
  that this method copies the formatting only.
 
+ For a detailed description of the gridId parameter, see <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/range.html#getGridId()'>getGridId()</a></code>.
+
  <pre class="prettyprint">
  <code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var source = ss.getSheets()[0];
- var destination = ss.getSheets()[1];
 
  var range = source.getRange(&quot;B2:D4&quot;);
 
  // This copies the formatting in B2:D4 in the source sheet to
- // D4:F6 in the second sheet
- range.copyFormatToRange(destination, 4, 6, 4, 6);
+ // D4:F6 in the sheet with gridId 1555299895. Note that you can get the gridId
+ // of a sheet by calling sheet.getSheetId() or range.getGridId().
+ range.copyFormatToRange(1555299895, 4, 6, 4, 6);
  </code></pre>
  *
- * @param {SpreadsheetApp.Sheet} sheet - the target sheet
+ * @param {number} gridId - the unique ID of the sheet within the spreadsheet, irrespective of position
  * @param {number} column - the first column of the target range
  * @param {number} columnEnd - the end column of the target range
  * @param {number} row - the start row of the target range
@@ -5878,43 +5878,44 @@ SpreadsheetApp.Range.prototype.clearNote = function(){};
  *
  * @return void
  */
-SpreadsheetApp.Range.prototype.copyFormatToRange = function(sheet, column, columnEnd, row, rowEnd){};
+SpreadsheetApp.Range.prototype.copyFormatToRange = function(gridId, column, columnEnd, row, rowEnd){};
 
 /**
- * Copies the data from a range of cells to another range of cells. By default both the values
- and formatting are copied, but this can be overridden using advanced arguments.
+ * Copies the data from a range of cells to another range of cells. Both the values and formatting
+ are copied.
 
  <pre class="prettyprint">
- // The code below will copy only the values of the first 5 columns over to the 6th column.
+ // The code below will copy the first 5 columns over to the 6th column.
  var sheet = SpreadsheetApp.getActiveSheet();
- sheet.getRange("A:E").copyTo(sheet.getRange("F1"), {contentsOnly:true});
+ var rangeToCopy = sheet.getRange(1, 1, sheet.getMaxRows(), 5);
+ rangeToCopy.copyTo(sheet.getRange(1, 6));
  }</pre>
  *
  * @param {SpreadsheetApp.Range} destination - a destination range to copy to; only the top-left cell position is relevant
- * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
  *
  * @return void
  */
-SpreadsheetApp.Range.prototype.copyTo = function(destination, options){};
+SpreadsheetApp.Range.prototype.copyTo = function(destination){};
 
 /**
  * Copy the content of the range to the given location. If the destination is larger or
  smaller than the source range then the source will be repeated or truncated accordingly.
 
+ For a detailed description of the gridId parameter, see <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/range.html#getGridId()'>getGridId()</a></code>.
+
  <pre class="prettyprint">
  <code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var source = ss.getSheets()[0];
- var destination = ss.getSheets()[1];
 
  var range = source.getRange(&quot;B2:D4&quot;);
 
  // This copies the data in B2:D4 in the source sheet to
- // D4:F6 in the second sheet
- range.copyValuesToRange(destination, 4, 6, 4, 6);
+ // D4:F6 in the sheet with gridId 0
+ range.copyValuesToRange(0, 4, 6, 4, 6);
  </code></pre>
  *
- * @param {SpreadsheetApp.Sheet} sheet - the target sheet
+ * @param {number} gridId - the unique ID of the sheet within the spreadsheet, irrespective of position
  * @param {number} column - the first column of the target range
  * @param {number} columnEnd - the end column of the target range
  * @param {number} row - the start row of the target range
@@ -5922,7 +5923,7 @@ SpreadsheetApp.Range.prototype.copyTo = function(destination, options){};
  *
  * @return void
  */
-SpreadsheetApp.Range.prototype.copyValuesToRange = function(sheet, column, columnEnd, row, rowEnd){};
+SpreadsheetApp.Range.prototype.copyValuesToRange = function(gridId, column, columnEnd, row, rowEnd){};
 
 /**
  * Returns a string description of the range, in A1 notation.
@@ -6048,35 +6049,11 @@ SpreadsheetApp.Range.prototype.getColumn = function(){};
 SpreadsheetApp.Range.prototype.getDataSourceUrl = function(){};
 
 /**
- * Return the data inside this Range as a DataTable.
-
- <pre class="prettyprint">
- <code>
- var ss = SpreadsheetApp.getActiveSpreadsheet();
- var sheet = ss.getSheets()[0];
- var range = sheet.getRange(&quot;A1:B7&quot;);
-
- // Calling this method with &quot;true&quot; sets the first line to be the title of the axes
- var datatable = range.getDataTable(true);
-
- // Note that this doesn&#39;t build an EmbeddedChart, so we can&#39;t just use
- // Sheet#insertChart(). If we want to do that, we should use
- // sheet.newChart().addRange() instead.
- var chart = Charts.newBarChart()
-     .setDataTable(datatable)
-     .setOption(&quot;title&quot;, &quot;Your Title Here&quot;)
-     .build();
-
- var app = UiApp.createApplication();
- app.add(chart);
- ss.show(app);
- </code></pre>
+ * Return the data inside this object as a DataTable.
  *
- * @param {Boolean} firstRowIsHeader - whether to treat the first row as a header
- *
- * @return {DataTable} the data as a datatable
+ * @return {DataTable} the data as a datatable.
  */
-SpreadsheetApp.Range.prototype.getDataTable = function(firstRowIsHeader){};
+SpreadsheetApp.Range.prototype.getDataTable = function(){};
 
 /**
  * Returns the data-validation rule for the top-left cell in the range. If data validation has not
@@ -6992,9 +6969,8 @@ SpreadsheetApp.Range.prototype.mergeVertically = function(){};
 SpreadsheetApp.Range.prototype.moveTo = function(target){};
 
 /**
- * Returns a new range that is relative to the current range, whose upper left point is offset
- from the current range by the given rows and columns, and with the given height and width in
- cells.
+ * Returns a new range that is offset from this range by the given number of rows and columns
+ (which can be negative). The new range will be the same size as the original range.
 
  <pre class="prettyprint">
  <code>
@@ -7003,8 +6979,32 @@ SpreadsheetApp.Range.prototype.moveTo = function(target){};
 
  var cell = sheet.getRange(&quot;A1&quot;);
 
- // newCell references B2:C3
- var newRange = cell.offset(1, 1, 2, 2);
+ // newCell references B2
+ var newCell = cell.offset(1, 1);
+ </code></pre>
+ *
+ * @param {number} rowOffset - number of rows down from the range's top-left cell; negative values represent
+     rows up from the range's top-left cell
+ * @param {number} columnOffset - number of columns right from the range's top-left cell; negative values
+     represent columns left from the range's top-left cell
+ *
+ * @return {SpreadsheetApp.Range} the range for chaining
+ */
+SpreadsheetApp.Range.prototype.offset = function(rowOffset, columnOffset){};
+
+/**
+ * Returns a new range that is relative to the current range, whose  upper left point is offset
+ from the current range by the given rows and columns, and with the given height in cells.
+
+ <pre class="prettyprint">
+ <code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+
+ var cell = sheet.getRange(&quot;A1&quot;);
+
+ // newCell references B2:B3
+ var newRange = cell.offset(1, 1, 2);
  </code></pre>
  *
  * @param {number} rowOffset - number of rows down from the range's top-left cell; negative values represent
@@ -7012,11 +7012,10 @@ SpreadsheetApp.Range.prototype.moveTo = function(target){};
  * @param {number} columnOffset - number of columns right from the range's top-left cell; negative values
      represent columns left from the range's top-left cell
  * @param {number} numRows - the height in rows of the new range
- * @param {number} numColumns - the width in columns of the new range
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
-SpreadsheetApp.Range.prototype.offset = function(rowOffset, columnOffset, numRows, numColumns){};
+SpreadsheetApp.Range.prototype.offset = function(rowOffset, columnOffset, numRows){};
 
 /**
  * Creates an object that can protect the range from being edited except by users who have
@@ -7123,10 +7122,8 @@ SpreadsheetApp.Range.prototype.setBackgroundRGB = function(red, green, blue){};
 SpreadsheetApp.Range.prototype.setBackgrounds = function(color){};
 
 /**
- * Sets the border property with color and/or style.
-  Valid values are <code>true</code> (on), <code>false</code> (off) and
- <code>null</code> (no change). For color, use Color in CSS notation (like <code>&#39;#ffffff&#39;</code> or
- <code>&#39;white&#39;</code>)
+ * Sets the border property. Valid values are <code>true</code> (on), <code>false</code> (off) and
+ <code>null</code> (no change).
 
  <pre class="prettyprint">
  <code>
@@ -7135,8 +7132,7 @@ SpreadsheetApp.Range.prototype.setBackgrounds = function(color){};
 
  var cell = sheet.getRange(&quot;B2&quot;);
  // Sets borders on the top and bottom, but leaves the left and right unchanged
- // Also sets the color to &quot;red&quot;, and the border to &quot;DASHED&quot;.
- cell.setBorder(true, null, true, null, false, false, &quot;red&quot;, Range.BorderStyle.DASHED);
+ cell.setBorder(true, null, true, null, false, false);
  </code></pre>
  *
  * @param {Boolean} top - <code>true</code> for border, <code>false</code> for none, <code>null</code> for no change
@@ -7147,13 +7143,10 @@ SpreadsheetApp.Range.prototype.setBackgrounds = function(color){};
      <code>null</code> for no change
  * @param {Boolean} horizontal - <code>true</code> for internal horizontal borders, <code>false</code> for none,
      <code>null</code> for no change
- * @param {String} color - Color in CSS notation (like <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>),
-     <code>null</code> for default color (black).
- * @param {SpreadsheetApp.BorderStyle} style - Style for the borders, <code>null</code> for default style (solid).
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
-SpreadsheetApp.Range.prototype.setBorder = function(top, left, bottom, right, vertical, horizontal, color, style){};
+SpreadsheetApp.Range.prototype.setBorder = function(top, left, bottom, right, vertical, horizontal){};
 
 /**
  * Sets one data-validation rule for all cells in the range.
@@ -7908,27 +7901,19 @@ SpreadsheetApp.Sheet.prototype.appendRow = function(rowContents){};
 SpreadsheetApp.Sheet.prototype.autoResizeColumn = function(columnPosition){};
 
 /**
- * Clears the sheet of contents and/or format, as specified with the given
- advanced options.
-
- The advanced options are:
- <ul>
-   <li>contentsOnly</li>
-   <li>formatOnly</li>
- </ul>
+ * Clears the sheet of content and formatting information.
 
  <pre class="prettyprint">
  <code>
+ // This example assumes there is a sheet named &quot;first&quot;
  var ss = SpreadsheetApp.getActiveSpreadsheet();
- var sheet = ss.getSheets()[0];
- sheet.clear({ formatOnly: true, contentsOnly: true });
+ var first = ss.getSheetByName(&quot;first&quot;);
+ first.clear();
  </code></pre>
  *
- * @param {Object} options - a JavaScript map containing advanced options
- *
- * @return {SpreadsheetApp.Sheet} the sheet for chaining
+ * @return {SpreadsheetApp.Sheet} the cleared sheet
  */
-SpreadsheetApp.Sheet.prototype.clear = function(options){};
+SpreadsheetApp.Sheet.prototype.clear = function(){};
 
 /**
  * Clears the sheet of contents, while preserving formatting information.
@@ -8369,21 +8354,80 @@ SpreadsheetApp.Sheet.prototype.getParent = function(){};
 SpreadsheetApp.Sheet.prototype.getProtections = function(type){};
 
 /**
- * Returns the range as specified in A1 notation or R1C1 notation.
+ * Returns the range with the top left cell at the given coordinates.
 
  <pre class="prettyprint">
  <code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
- // Returns the first cell
- var cell = sheet.getRange(&quot;A1&quot;);
+ // Passing only two arguments returns a &quot;range&quot; with a single cell.
+ var range = sheet.getRange(1, 1);
+ var values = range.getValues();
+ Logger.log(values[0][0]);
  </code></pre>
  *
- * @param {String} a1Notation - the range to return, as specified in A1 notation or R1C1 notation
+ * @param {number} row - the row of the cell to return
+ * @param {number} column - the column of the cell to return
  *
- * @return {SpreadsheetApp.Range} the range at the location designated
+ * @return {SpreadsheetApp.Range} a Range containing only this cell
  */
-SpreadsheetApp.Sheet.prototype.getRange = function(a1Notation){};
+SpreadsheetApp.Sheet.prototype.getRange = function(row, column){};
+
+/**
+ * Returns the range with the top left cell at the given coordinates, and with the given
+ number of rows.
+
+ <pre class="prettyprint">
+ <code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+ // When the &quot;numRows&quot; argument is used, only a single column of data is returned.
+ var range = sheet.getRange(1, 1, 3);
+ var values = range.getValues();
+
+ // Prints 3 values from the first column, starting from row 1.
+ for (var row in values) {
+   for (var col in values[row]) {
+     Logger.log(values[row][col]);
+   }
+ }
+ </code></pre>
+ *
+ * @param {number} row - the starting row of the range
+ * @param {number} column - the column of the range
+ * @param {number} numRows - the number of rows to return
+ *
+ * @return {SpreadsheetApp.Range} a Range containing a single column of data with the number of rows specified
+ */
+SpreadsheetApp.Sheet.prototype.getRange = function(row, column, numRows){};
+
+/**
+ * Returns the range with the top left cell at the given coordinates with the given
+ number of rows and columns.
+
+ <pre class="prettyprint">
+ <code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+ var range = sheet.getRange(1, 1, 3, 3);
+ var values = range.getValues();
+
+ // Print values from a 3x3 box.
+ for (var row in values) {
+   for (var col in values[row]) {
+     Logger.log(values[row][col]);
+   }
+ }
+ </code></pre>
+ *
+ * @param {number} row - the starting row of the range
+ * @param {number} column - the starting column of the range
+ * @param {number} numRows - the number of rows to return
+ * @param {number} numColumns - the number of columns to return
+ *
+ * @return {SpreadsheetApp.Range} a Range corresponding to the area specified
+ */
+SpreadsheetApp.Sheet.prototype.getRange = function(row, column, numRows, numColumns){};
 
 /**
  * Gets the height in pixels of the given row.
@@ -8526,22 +8570,21 @@ SpreadsheetApp.Sheet.prototype.getTabColor = function(){};
 SpreadsheetApp.Sheet.prototype.hideColumn = function(column){};
 
 /**
- * Hides one or more consecutive columns starting at the given index.
+ * Hides the column at the given index.
 
  <pre class="prettyprint">
  <code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
- // Hides the first three columns
- sheet.hideColumns(1, 3);
+ // Hides the first column
+ sheet.hideColumns(1);
  </code></pre>
  *
- * @param {number} columnIndex - the starting index of the columns to hide
- * @param {number} numColumns - the number of columns to hide
+ * @param {number} columnIndex - the index of the column to hide
  *
  * @return void
  */
-SpreadsheetApp.Sheet.prototype.hideColumns = function(columnIndex, numColumns){};
+SpreadsheetApp.Sheet.prototype.hideColumns = function(columnIndex){};
 
 /**
  * Hides the rows in the given range.
@@ -8563,22 +8606,21 @@ SpreadsheetApp.Sheet.prototype.hideColumns = function(columnIndex, numColumns){}
 SpreadsheetApp.Sheet.prototype.hideRow = function(row){};
 
 /**
- * Hides one or more consecutive rows starting at the given index.
+ * Hides the row at the given index.
 
  <pre class="prettyprint">
  <code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
- // Hides the first three rows
- sheet.hideRows(1, 3);
+ // Hides the first row
+ sheet.hideRows(1);
  </code></pre>
  *
- * @param {number} rowIndex - the starting index of the rows to hide
- * @param {number} numRows - the number of rows to hide
+ * @param {number} rowIndex - the index of the row to hide
  *
  * @return void
  */
-SpreadsheetApp.Sheet.prototype.hideRows = function(rowIndex, numRows){};
+SpreadsheetApp.Sheet.prototype.hideRows = function(rowIndex){};
 
 /**
  * Hides this sheet.  Has no effect if the sheet is already hidden.  If this method is called
@@ -8656,22 +8698,21 @@ SpreadsheetApp.Sheet.prototype.insertColumnAfter = function(afterPosition){};
 SpreadsheetApp.Sheet.prototype.insertColumnBefore = function(beforePosition){};
 
 /**
- * Inserts one or more consecutive blank columns in a sheet starting at the specified location.
+ * Inserts a blank column in a sheet at the specified location.
 
  <pre class="prettyprint">
  <code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
- // Shifts all columns by three
- sheet.insertColumns(1, 3);
+ // Shifts all columns by one
+ sheet.insertColumns(1);
  </code></pre>
  *
  * @param {number} columnIndex - the index to insert a column
- * @param {number} numColumns - the number of columns to insert
  *
  * @return void
  */
-SpreadsheetApp.Sheet.prototype.insertColumns = function(columnIndex, numColumns){};
+SpreadsheetApp.Sheet.prototype.insertColumns = function(columnIndex){};
 
 /**
  * Inserts a number of columns after the given column position.
@@ -8712,17 +8753,40 @@ SpreadsheetApp.Sheet.prototype.insertColumnsAfter = function(afterPosition, howM
 SpreadsheetApp.Sheet.prototype.insertColumnsBefore = function(beforePosition, howMany){};
 
 /**
- * Inserts an image in the document at a given row and column, with a pixel offset.
+ * Inserts a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../base/blob.html'>Blob</a></code> as an image in the document at a given row and column. The image size
+ is retrieved from the blob contents.
 
  <pre class="prettyprint">
  <code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
- sheet.insertImage(&quot;https://www.google.com/images/srpr/logo3w.png&quot;, 1, 1, 10, 10);
+ var blob = Utilities.newBlob(binaryData, &#39;image/png&#39;, &#39;MyImageName&#39;);
+ sheet.insertImage(blob, 1, 1);
  </code></pre>
  *
- * @param {String} url - the url for the image
+ * @param {Blob} blob - blob containing the image contents, MIME type and, optionally, a name
+ * @param {number} column - the column position
+ * @param {number} row - the row position
+ *
+ * @return void
+ */
+SpreadsheetApp.Sheet.prototype.insertImage = function(blob, column, row){};
+
+/**
+ * Inserts a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../base/blob.html'>Blob</a></code> as an image in the document at a given row and column, with a pixel
+ offset. The image size is retrieved from the blob contents.
+
+ <pre class="prettyprint">
+ <code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+
+ var blob = Utilities.newBlob(binaryData, &#39;image/png&#39;, &#39;MyImageName&#39;);
+ sheet.insertImage(blob, 1, 1, 10, 10);
+ </code></pre>
+ *
+ * @param {Blob} blob - blob containing the image contents, MIME type and, optionally, a name
  * @param {number} column - the column position
  * @param {number} row - the row position
  * @param {number} offsetX - horizontal offset from cell corner in pixels
@@ -8730,7 +8794,26 @@ SpreadsheetApp.Sheet.prototype.insertColumnsBefore = function(beforePosition, ho
  *
  * @return void
  */
-SpreadsheetApp.Sheet.prototype.insertImage = function(url, column, row, offsetX, offsetY){};
+SpreadsheetApp.Sheet.prototype.insertImage = function(blob, column, row, offsetX, offsetY){};
+
+/**
+ * Inserts an image in the document at a given row and column.
+
+ <pre class="prettyprint">
+ <code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+
+ sheet.insertImage(&quot;https://www.google.com/images/srpr/logo3w.png&quot;, 1, 1);
+ </code></pre>
+ *
+ * @param {String} url - the url of the image
+ * @param {number} column - the grid column position
+ * @param {number} row - the grid row position
+ *
+ * @return void
+ */
+SpreadsheetApp.Sheet.prototype.insertImage = function(url, column, row){};
 
 /**
  * Inserts a row after the given row position.
@@ -8769,22 +8852,21 @@ SpreadsheetApp.Sheet.prototype.insertRowAfter = function(afterPosition){};
 SpreadsheetApp.Sheet.prototype.insertRowBefore = function(beforePosition){};
 
 /**
- * Inserts one or more consecutive blank rows in a sheet starting at the specified location.
+ * Inserts a blank row in a sheet at the specified location.
 
  <pre class="prettyprint">
  <code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
- // Shifts all rows down by three
- sheet.insertRows(1, 3);
+ // Shifts all rows down by one
+ sheet.insertRows(1);
  </code></pre>
  *
  * @param {number} rowIndex - the index to insert a row
- * @param {number} numRows - the number of rows to insert
  *
  * @return void
  */
-SpreadsheetApp.Sheet.prototype.insertRows = function(rowIndex, numRows){};
+SpreadsheetApp.Sheet.prototype.insertRows = function(rowIndex){};
 
 /**
  * Inserts a number of rows after the given row position.
@@ -8930,21 +9012,22 @@ SpreadsheetApp.Sheet.prototype.removeChart = function(chart){};
 SpreadsheetApp.Sheet.prototype.setActiveRange = function(range){};
 
 /**
- * Sets the active selection, as specified in A1 notation or R1C1 notation.
+ * Sets the active selection region for this sheet.
 
  <pre class="prettyprint">
  <code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
- sheet.setActiveSelection(&quot;A1:D4&quot;);
+ var range = sheet.getRange(&quot;A1:D4&quot;);
+ sheet.setActiveSelection(range);
  </code></pre>
  *
- * @param {String} a1Notation - the range to set as active, as specified in A1 notation or R1C1 notation
+ * @param {SpreadsheetApp.Range} range - the range to set as the active selection
  *
  * @return {SpreadsheetApp.Range} the newly active range
  */
-SpreadsheetApp.Sheet.prototype.setActiveSelection = function(a1Notation){};
+SpreadsheetApp.Sheet.prototype.setActiveSelection = function(range){};
 
 /**
  * Sets the width of the given column in pixels.
@@ -9077,40 +9160,38 @@ SpreadsheetApp.Sheet.prototype.setSheetProtection = function(permissions){};
 SpreadsheetApp.Sheet.prototype.setTabColor = function(color){};
 
 /**
- * Unhides one or more consecutive columns starting at the given index.
+ * Unhides the column at the given index.
 
  <pre class="prettyprint">
  <code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
- // Unhides the first three columns
- sheet.showColumns(1, 3);
+ // Unhides the first column
+ sheet.showColumns(1);
  </code></pre>
  *
- * @param {number} columnIndex - the starting index of the columns to unhide
- * @param {number} numColumns - the number of columns to unhide
+ * @param {number} columnIndex - the index of the column to unhide
  *
  * @return void
  */
-SpreadsheetApp.Sheet.prototype.showColumns = function(columnIndex, numColumns){};
+SpreadsheetApp.Sheet.prototype.showColumns = function(columnIndex){};
 
 /**
- * Unhides one or more consecutive rows starting at the given index.
+ * Unhides the row at the given index.
 
  <pre class="prettyprint">
  <code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
- // Unhides the first three rows
- sheet.showRows(1, 3);
+ // Unhides the first row
+ sheet.showRows(1);
  </code></pre>
  *
- * @param {number} rowIndex - the starting index of the rows to unhide
- * @param {number} numRows - the number of rows to unhide
+ * @param {number} rowIndex - the index of the row to unhide
  *
  * @return void
  */
-SpreadsheetApp.Sheet.prototype.showRows = function(rowIndex, numRows){};
+SpreadsheetApp.Sheet.prototype.showRows = function(rowIndex){};
 
 /**
  * Makes the sheet visible.  Has no effect if the sheet is already visible.
@@ -9126,23 +9207,22 @@ SpreadsheetApp.Sheet.prototype.showRows = function(rowIndex, numRows){};
 SpreadsheetApp.Sheet.prototype.showSheet = function(){};
 
 /**
- * Sorts a sheet by column. Takes a parameter to specify ascending or descending.
+ * Sorts a sheet by column, ascending.
 
  <pre class="prettyprint">
  <code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
- // Sorts the sheet by the first column, descending
- sheet.sort(1, false);
+ // Sorts the sheet by the first column, ascending
+ sheet.sort(1);
  </code></pre>
  *
  * @param {number} columnPosition - the column to sort by
- * @param {Boolean} ascending - <code>true</code> for ascending, <code>false</code> for descending
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
-SpreadsheetApp.Sheet.prototype.sort = function(columnPosition, ascending){};
+SpreadsheetApp.Sheet.prototype.sort = function(columnPosition){};
 
 /**
  * Unhides the column in the given range.
@@ -9216,11 +9296,11 @@ SpreadsheetApp.Spreadsheet = function(){};
  * Adds the given user to the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>. If the user was already
  on the list of viewers, this method promotes the user out of the list of viewers.
  *
- * @param {User} user - a representation of the user to add
+ * @param {String} emailAddress - the email address of the user to add
  *
  * @return {SpreadsheetApp.Spreadsheet} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>, for chaining
  */
-SpreadsheetApp.Spreadsheet.prototype.addEditor = function(user){};
+SpreadsheetApp.Spreadsheet.prototype.addEditor = function(emailAddress){};
 
 /**
  * Adds the given array of users to the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>. If any of the
@@ -9267,11 +9347,11 @@ SpreadsheetApp.Spreadsheet.prototype.addMenu = function(name, subMenus){};
  * Adds the given user to the list of viewers for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>. If the user was already
  on the list of editors, this method has no effect.
  *
- * @param {User} user - a representation of the user to add
+ * @param {String} emailAddress - the email address of the user to add
  *
  * @return {SpreadsheetApp.Spreadsheet} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>, for chaining
  */
-SpreadsheetApp.Spreadsheet.prototype.addViewer = function(user){};
+SpreadsheetApp.Spreadsheet.prototype.addViewer = function(emailAddress){};
 
 /**
  * Adds the given array of users to the list of viewers for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>. If any of the
@@ -10099,17 +10179,40 @@ SpreadsheetApp.Spreadsheet.prototype.insertColumnsAfter = function(afterPosition
 SpreadsheetApp.Spreadsheet.prototype.insertColumnsBefore = function(beforePosition, howMany){};
 
 /**
- * Inserts an image in the document at a given row and column, with a pixel offset.
+ * Inserts a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../base/blob.html'>Blob</a></code> as an image in the document at a given row and column. The image size
+ is retrieved from the blob contents.
 
  <pre class="prettyprint">
  <code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
- sheet.insertImage(&quot;https://www.google.com/images/srpr/logo3w.png&quot;, 1, 1, 10, 10);
+ var blob = Utilities.newBlob(binaryData, &#39;image/png&#39;, &#39;MyImageName&#39;);
+ sheet.insertImage(blob, 1, 1);
  </code></pre>
  *
- * @param {String} url - the url for the image
+ * @param {Blob} blob - blob containing the image contents, MIME type and, optionally, a name
+ * @param {number} column - the column position
+ * @param {number} row - the row position
+ *
+ * @return void
+ */
+SpreadsheetApp.Spreadsheet.prototype.insertImage = function(blob, column, row){};
+
+/**
+ * Inserts a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../base/blob.html'>Blob</a></code> as an image in the document at a given row and column, with a pixel
+ offset. The image size is retrieved from the blob contents.
+
+ <pre class="prettyprint">
+ <code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+
+ var blob = Utilities.newBlob(binaryData, &#39;image/png&#39;, &#39;MyImageName&#39;);
+ sheet.insertImage(blob, 1, 1, 10, 10);
+ </code></pre>
+ *
+ * @param {Blob} blob - blob containing the image contents, MIME type and, optionally, a name
  * @param {number} column - the column position
  * @param {number} row - the row position
  * @param {number} offsetX - horizontal offset from cell corner in pixels
@@ -10117,7 +10220,26 @@ SpreadsheetApp.Spreadsheet.prototype.insertColumnsBefore = function(beforePositi
  *
  * @return void
  */
-SpreadsheetApp.Spreadsheet.prototype.insertImage = function(url, column, row, offsetX, offsetY){};
+SpreadsheetApp.Spreadsheet.prototype.insertImage = function(blob, column, row, offsetX, offsetY){};
+
+/**
+ * Inserts an image in the document at a given row and column.
+
+ <pre class="prettyprint">
+ <code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+
+ sheet.insertImage(&quot;https://www.google.com/images/srpr/logo3w.png&quot;, 1, 1);
+ </code></pre>
+ *
+ * @param {String} url - the url of the image
+ * @param {number} column - the grid column position
+ * @param {number} row - the grid row position
+ *
+ * @return void
+ */
+SpreadsheetApp.Spreadsheet.prototype.insertImage = function(url, column, row){};
 
 /**
  * Inserts a row after the given row position.
@@ -10194,7 +10316,60 @@ SpreadsheetApp.Spreadsheet.prototype.insertRowsAfter = function(afterPosition, h
 SpreadsheetApp.Spreadsheet.prototype.insertRowsBefore = function(beforePosition, howMany){};
 
 /**
- * Inserts a new sheet in the spreadsheet with the given name and uses optional advanced
+ * Inserts a new sheet in the spreadsheet, with a default name.
+
+ As a side effect, it makes it the active sheet.
+
+ <pre class="prettyprint">
+ <code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ ss.insertSheet();
+ </code></pre>
+ *
+ * @return {SpreadsheetApp.Sheet} the new sheet
+ */
+SpreadsheetApp.Spreadsheet.prototype.insertSheet = function(){};
+
+/**
+ * Inserts a new sheet in the spreadsheet at the given index.
+
+ As a side effect, it makes it the active sheet.
+
+ <pre class="prettyprint">
+ <code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ ss.insertSheet(1);
+ </code></pre>
+ *
+ * @param {number} sheetIndex - the index of the newly created sheet. To insert a sheet as the first one in
+    the spreadsheet, set it to 0.
+ *
+ * @return {SpreadsheetApp.Sheet} the new sheet
+ */
+SpreadsheetApp.Spreadsheet.prototype.insertSheet = function(sheetIndex){};
+
+/**
+ * Inserts a new sheet in the spreadsheet at the given index and uses optional advanced arguments.
+
+ As a side effect, it makes it the active sheet.
+
+ <pre class="prettyprint">
+ <code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var templateSheet = ss.getSheetByName(&#39;Sales&#39;);
+ ss.insertSheet(1, {template: templateSheet});
+ </code></pre>
+ *
+ * @param {number} sheetIndex - index of the newly created sheet. To insert a sheet as the first one in the
+    spreadsheet, set it to 0.
+ * @param {Object} options - optional JavaScript advanced arguments
+ *
+ * @return {SpreadsheetApp.Sheet} the new sheet
+ */
+SpreadsheetApp.Spreadsheet.prototype.insertSheet = function(sheetIndex, options){};
+
+/**
+ * Inserts a new sheet in the spreadsheet, with a default name and uses optional advanced
  arguments.
 
  As a side effect, it makes it the active sheet.
@@ -10203,15 +10378,73 @@ SpreadsheetApp.Spreadsheet.prototype.insertRowsBefore = function(beforePosition,
  <code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var templateSheet = ss.getSheetByName(&#39;Sales&#39;);
- ss.insertSheet(&#39;My New Sheet&#39;, {template: templateSheet});
+ ss.insertSheet({template: templateSheet});
  </code></pre>
  *
- * @param {String} sheetName - the name of the new sheet
  * @param {Object} options - optional JavaScript advanced arguments
  *
  * @return {SpreadsheetApp.Sheet} the new sheet
  */
-SpreadsheetApp.Spreadsheet.prototype.insertSheet = function(sheetName, options){};
+SpreadsheetApp.Spreadsheet.prototype.insertSheet = function(options){};
+
+/**
+ * Inserts a new sheet in the spreadsheet with the given name.
+
+ As a side effect, it makes it the active sheet.
+
+ <pre class="prettyprint">
+ <code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ ss.insertSheet(&#39;My New Sheet&#39;);
+ </code></pre>
+ *
+ * @param {String} sheetName - the name of the new sheet
+ *
+ * @return {SpreadsheetApp.Sheet} the new sheet
+ */
+SpreadsheetApp.Spreadsheet.prototype.insertSheet = function(sheetName){};
+
+/**
+ * Inserts a new sheet in the spreadsheet with the given name
+ at the given index.
+
+ As a side effect, it makes it the active sheet.
+
+ <pre class="prettyprint">
+ <code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ ss.insertSheet(&#39;My New Sheet&#39;, 1);
+ </code></pre>
+ *
+ * @param {String} sheetName - the name of the new sheet
+ * @param {number} sheetIndex - the index of the newly created sheet. To insert a sheet as the first one in
+    the spreadsheet, set it to 0.
+ *
+ * @return {SpreadsheetApp.Sheet} the new sheet
+ */
+SpreadsheetApp.Spreadsheet.prototype.insertSheet = function(sheetName, sheetIndex){};
+
+/**
+ * Inserts a new sheet in the spreadsheet with the given name at the given index and uses optional
+ advanced arguments.
+
+ As a side effect, it makes it the active sheet.
+
+ <pre class="prettyprint">
+ <code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var templateSheet = ss.getSheetByName(&#39;Sales&#39;);
+ ss.insertSheet(&#39;My New Sheet&#39;, 1, {template: templateSheet});
+ </code></pre>
+ *
+ * @param {String} sheetName - the name of the new sheet
+ * @param {number} sheetIndex - index of the newly inserted sheet. To insert a sheet as the first one in a
+    spreadsheet, set it to 0.
+ * @param {Object} options - optional JavaScript advanced arguments
+ *
+ * @return {SpreadsheetApp.Sheet} the new sheet
+ */
+SpreadsheetApp.Spreadsheet.prototype.insertSheet = function(sheetName, sheetIndex, options){};
 
 /**
  * Indicates whether the document allows anonymous viewing. As this is no longer supported in the
@@ -10291,11 +10524,11 @@ SpreadsheetApp.Spreadsheet.prototype.moveActiveSheet = function(pos){};
  block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> if they belong to a class of users who have
  general access ? for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> is shared with the user's entire domain.
  *
- * @param {User} user - a representation of the user to remove
+ * @param {String} emailAddress - the email address of the user to remove
  *
  * @return {SpreadsheetApp.Spreadsheet} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>, for chaining
  */
-SpreadsheetApp.Spreadsheet.prototype.removeEditor = function(user){};
+SpreadsheetApp.Spreadsheet.prototype.removeEditor = function(emailAddress){};
 
 /**
  * Removes a menu that was added by <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html#addMenu(String,Object)'>addMenu(name, subMenus)</a></code>. The <code>name</code> argument
@@ -10343,15 +10576,16 @@ SpreadsheetApp.Spreadsheet.prototype.removeNamedRange = function(name){};
 
 /**
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>.  This
- method has no effect if the user is an editor, not a viewer. This method also does not block
- users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> if they belong to a class of users who have general
- access ? for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> is shared with the user's entire domain.
+ method has no effect if the user is an editor, not a viewer or commenter. This method also does
+ not block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> if they belong to a class of users who
+ have general access ? for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> is shared with the user's entire
+ domain.
  *
- * @param {User} user - a representation of the user to remove
+ * @param {String} emailAddress - the email address of the user to remove
  *
  * @return {SpreadsheetApp.Spreadsheet} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> for chaining
  */
-SpreadsheetApp.Spreadsheet.prototype.removeViewer = function(user){};
+SpreadsheetApp.Spreadsheet.prototype.removeViewer = function(emailAddress){};
 
 /**
  * Renames the document.
@@ -10402,21 +10636,22 @@ SpreadsheetApp.Spreadsheet.prototype.renameActiveSheet = function(newName){};
 SpreadsheetApp.Spreadsheet.prototype.setActiveRange = function(range){};
 
 /**
- * Sets the active selection, as specified in A1 notation or R1C1 notation.
+ * Sets the active selection region for this sheet.
 
  <pre class="prettyprint">
  <code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
- sheet.setActiveSelection(&quot;A1:D4&quot;);
+ var range = sheet.getRange(&quot;A1:D4&quot;);
+ sheet.setActiveSelection(range);
  </code></pre>
  *
- * @param {String} a1Notation - the range to set as active, as specified in A1 notation or R1C1 notation
+ * @param {SpreadsheetApp.Range} range - the range to set as the active selection
  *
  * @return {SpreadsheetApp.Range} the newly active range
  */
-SpreadsheetApp.Spreadsheet.prototype.setActiveSelection = function(a1Notation){};
+SpreadsheetApp.Spreadsheet.prototype.setActiveSelection = function(range){};
 
 /**
  * Sets the given sheet to be the active sheet in the spreadsheet.
@@ -10648,42 +10883,54 @@ SpreadsheetApp.Spreadsheet.prototype.setSpreadsheetTimeZone = function(timezone)
 SpreadsheetApp.Spreadsheet.prototype.show = function(userInterface){};
 
 /**
- * Sorts a sheet by column. Takes a parameter to specify ascending or descending.
+ * Sorts a sheet by column, ascending.
 
  <pre class="prettyprint">
  <code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
- // Sorts the sheet by the first column, descending
- sheet.sort(1, false);
+ // Sorts the sheet by the first column, ascending
+ sheet.sort(1);
  </code></pre>
  *
  * @param {number} columnPosition - the column to sort by
- * @param {Boolean} ascending - <code>true</code> for ascending, <code>false</code> for descending
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
-SpreadsheetApp.Spreadsheet.prototype.sort = function(columnPosition, ascending){};
+SpreadsheetApp.Spreadsheet.prototype.sort = function(columnPosition){};
 
 /**
- * Shows a popup window in the lower right corner of the spreadsheet with the given title and
- message, that stays visible for a certain length of time.
+ * Shows a popup window in the lower right corner of the spreadsheet with the given message.
 
  <pre class="prettyprint">
  <code>
- // Show a 3-second popup with the title &quot;Status&quot; and the message &quot;Task started&quot;.
- SpreadsheetApp.getActiveSpreadsheet().toast(&#39;Task started&#39;, &#39;Status&#39;, 3);
+ // Show a popup with the message &quot;Task started&quot;.
+ SpreadsheetApp.getActiveSpreadsheet().toast(&#39;Task started&#39;);
  </code></pre>
  *
- * @param {String} msg - message to be shown in the toast
- * @param {String} title - the title of the toast, which is optional
- * @param {Number} timeoutSeconds - the timeout in seconds; if <code>null</code>, the toast defaults to 5 seconds;
-     if negative, the toast remains until dismissed
+ * @param {String} msg - the message to be shown in the toast
  *
  * @return void
  */
-SpreadsheetApp.Spreadsheet.prototype.toast = function(msg, title, timeoutSeconds){};
+SpreadsheetApp.Spreadsheet.prototype.toast = function(msg){};
+
+/**
+ * Shows a popup window in the lower right corner of the spreadsheet with the given message and
+ title.
+
+ <pre class="prettyprint">
+ <code>
+ // Show a popup with the title &quot;Status&quot; and the message &quot;Task started&quot;.
+ SpreadsheetApp.getActiveSpreadsheet().toast(&#39;Task started&#39;, &#39;Status&#39;);
+ </code></pre>
+ *
+ * @param {String} msg - the message to be shown in the toast
+ * @param {String} title - the title of the toast, which is optional
+ *
+ * @return void
+ */
+SpreadsheetApp.Spreadsheet.prototype.toast = function(msg, title){};
 
 /**
  * Unhides the column in the given range.

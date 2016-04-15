@@ -11,7 +11,7 @@ BigNumber.abs = function(){};
 /**
  * undefined
  *
- * @param {Number} augend - undefined
+ * @param {BigNumber} augend - undefined
  *
  * @return {BigNumber}
  */
@@ -20,7 +20,7 @@ BigNumber.add = function(augend){};
 /**
  * undefined
  *
- * @param {Number} value - undefined
+ * @param {BigNumber} value - undefined
  *
  * @return {number}
  */
@@ -29,7 +29,7 @@ BigNumber.compareTo = function(value){};
 /**
  * undefined
  *
- * @param {Number} divisor - undefined
+ * @param {BigNumber} divisor - undefined
  *
  * @return {BigNumber}
  */
@@ -38,7 +38,7 @@ BigNumber.divide = function(divisor){};
 /**
  * undefined
  *
- * @param {Number} divisor - undefined
+ * @param {BigNumber} divisor - undefined
  *
  * @return {BigNumber[]}
  */
@@ -47,7 +47,7 @@ BigNumber.divideAndRemainder = function(divisor){};
 /**
  * undefined
  *
- * @param {Number} divisor - undefined
+ * @param {BigNumber} divisor - undefined
  *
  * @return {BigNumber}
  */
@@ -56,7 +56,7 @@ BigNumber.divideToIntegralValue = function(divisor){};
 /**
  * undefined
  *
- * @param {Number} value - undefined
+ * @param {BigNumber} value - undefined
  *
  * @return {BigNumber}
  */
@@ -65,7 +65,7 @@ BigNumber.max = function(value){};
 /**
  * undefined
  *
- * @param {Number} value - undefined
+ * @param {BigNumber} value - undefined
  *
  * @return {BigNumber}
  */
@@ -92,7 +92,7 @@ BigNumber.movePointRight = function(shift){};
 /**
  * undefined
  *
- * @param {Number} multiplicand - undefined
+ * @param {BigNumber} multiplicand - undefined
  *
  * @return {BigNumber}
  */
@@ -116,11 +116,10 @@ BigNumber.newInstance = function(){};
  * undefined
  *
  * @param {String} value - undefined
- * @param {number} radix - undefined
  *
  * @return {BigNumber}
  */
-BigNumber.parse = function(value, radix){};
+BigNumber.parse = function(value){};
 
 /**
  * undefined
@@ -148,7 +147,7 @@ BigNumber.precision = function(){};
 /**
  * undefined
  *
- * @param {Number} divisor - undefined
+ * @param {BigNumber} divisor - undefined
  *
  * @return {BigNumber}
  */
@@ -164,7 +163,7 @@ BigNumber.sign = function(){};
 /**
  * undefined
  *
- * @param {Number} subtrahend - undefined
+ * @param {BigNumber} subtrahend - undefined
  *
  * @return {BigNumber}
  */
@@ -194,23 +193,7 @@ BigNumber.toPrecision = function(){};
 /**
  * undefined
  *
- * @return {String}
- */
-BigNumber.toString = function(){};
-
-/**
- * undefined
- *
  * @return {BigNumber}
  */
 BigNumber.unitInTheLastPlaces = function(){};
-
-/**
- * undefined
- *
- * @param {Number} value - undefined
- *
- * @return {BigNumber}
- */
-BigNumber.valueOf = function(value){};
 

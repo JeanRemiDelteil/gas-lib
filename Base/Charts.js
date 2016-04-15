@@ -441,15 +441,15 @@ Charts.AreaChartBuilder.prototype.setColors = function(cssValues){};
 Charts.AreaChartBuilder.prototype.setDataSourceUrl = function(url){};
 
 /**
- * Sets the data table which contains the lines for the chart, as well as the X-axis labels.
- The first column should be a string, and contain the horizontal axis labels. Any number of
- columns can follow, all must be numeric.  Each column is displayed as a separate line.
+ * Sets the data table to use for the chart using a DataTableBuilder.  This is a convenience
+ method for setting the data table without needing to call <code>build()</code>.
  *
- * @param {DataTableSource} table - the data table to use for the chart
+ * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part
+     of this call, so any further updates to the builder won't be reflected in the chart.
  *
  * @return {Charts.AreaChartBuilder} this builder, useful for chaining
  */
-Charts.AreaChartBuilder.prototype.setDataTable = function(table){};
+Charts.AreaChartBuilder.prototype.setDataTable = function(tableBuilder){};
 
 /**
  * Sets the data view definition to use for the chart.
@@ -801,15 +801,15 @@ Charts.BarChartBuilder.prototype.setColors = function(cssValues){};
 Charts.BarChartBuilder.prototype.setDataSourceUrl = function(url){};
 
 /**
- * Sets the data table which contains the lines for the chart, as well as the X-axis labels.
- The first column should be a string, and contain the horizontal axis labels. Any number of
- columns can follow, all must be numeric.  Each column is displayed as a separate line.
+ * Sets the data table to use for the chart using a DataTableBuilder.  This is a convenience
+ method for setting the data table without needing to call <code>build()</code>.
  *
- * @param {DataTableSource} table - the data table to use for the chart
+ * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part
+     of this call, so any further updates to the builder won't be reflected in the chart.
  *
  * @return {Charts.BarChartBuilder} this builder, useful for chaining
  */
-Charts.BarChartBuilder.prototype.setDataTable = function(table){};
+Charts.BarChartBuilder.prototype.setDataTable = function(tableBuilder){};
 
 /**
  * Sets the data view definition to use for the chart.
@@ -1136,13 +1136,17 @@ Charts.CategoryFilterBuilder.prototype.setAllowTyping = function(allowTyping){};
 Charts.CategoryFilterBuilder.prototype.setCaption = function(caption){};
 
 /**
- * Sets the control data table, which will be the control's underlying data model.
+ * Sets the data table to use for the control using a DataTableBuilder.
+
+ This is a convenience method for setting the data table without needing to call
+ <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/category-filter-builder.html#build()'>build()</a></code>.
  *
- * @param {DataTableSource} table - the data table to use for the control
+ * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part
+        of this call, so any further updates to the builder won't be reflected in the control.
  *
  * @return {Charts.CategoryFilterBuilder} this builder, useful for chaining
  */
-Charts.CategoryFilterBuilder.prototype.setDataTable = function(table){};
+Charts.CategoryFilterBuilder.prototype.setDataTable = function(tableBuilder){};
 
 /**
  * Sets the index of the data table column to filter on.
@@ -1398,15 +1402,15 @@ Charts.ColumnChartBuilder.prototype.setColors = function(cssValues){};
 Charts.ColumnChartBuilder.prototype.setDataSourceUrl = function(url){};
 
 /**
- * Sets the data table which contains the lines for the chart, as well as the X-axis labels.
- The first column should be a string, and contain the horizontal axis labels. Any number of
- columns can follow, all must be numeric.  Each column is displayed as a separate line.
+ * Sets the data table to use for the chart using a DataTableBuilder.  This is a convenience
+ method for setting the data table without needing to call <code>build()</code>.
  *
- * @param {DataTableSource} table - the data table to use for the chart
+ * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part
+     of this call, so any further updates to the builder won't be reflected in the chart.
  *
  * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
  */
-Charts.ColumnChartBuilder.prototype.setDataTable = function(table){};
+Charts.ColumnChartBuilder.prototype.setDataTable = function(tableBuilder){};
 
 /**
  * Sets the data view definition to use for the chart.
@@ -1734,74 +1738,6 @@ Charts.DashboardPanel.prototype.setId = function(id){};
 Charts.DashboardPanelBuilder = function(){};
 
 /**
- * Binds multiple controls to multiple charts, so that the charts are redrawn whenever the
- controls collect a user interaction that affects the data managed by the dashboard. When
- binding multiple controls to a chart (or multiple charts), the data that's displayed in
- the chart is that which passes the filters of all of the controls (of this specific binding).
- <p>
- For more information about object binding see the Gviz
- <a href="https://developers.google.com/chart/interactive/docs/gallery/controls">
- documentation</a>.
- <p>
- Here is an example that shows how multiple controls can be bound to a chart using a dashboard
- panel:
- <pre class="prettyprint">
- <code>
- function doGet() {
-   // Create a data table with some sample data.
-   var data = Charts.newDataTable()
-       .addColumn(Charts.ColumnType.STRING, &quot;Name&quot;)
-       .addColumn(Charts.ColumnType.NUMBER, &quot;Age&quot;)
-       .addRow([&quot;Michael&quot;, 18])
-       .addRow([&quot;Elisa&quot;, 12])
-       .addRow([&quot;John&quot;, 20])
-       .addRow([&quot;Jessica&quot;, 25])
-       .addRow([&quot;Aaron&quot;, 14])
-       .addRow([&quot;Margareth&quot;, 19])
-       .addRow([&quot;Miranda&quot;, 22])
-       .addRow([&quot;May&quot;, 20])
-       .build();
-
-   var chart = Charts.newBarChart()
-       .setTitle(&quot;Ages&quot;)
-       .build();
-
-   var stringFilter = Charts.newStringFilter()
-       .setFilterColumnLabel(&quot;Name&quot;)
-       .build();
-
-   var numberRangeFilter = Charts.newNumberRangeFilter()
-       .setFilterColumnLabel(&quot;Age&quot;)
-       .build();
-
-   // Create a dashboard panel binding both controls to the chart.
-   var dashboard = Charts.newDashboardPanel()
-       .setDataTable(data)
-       .bind([stringFilter, numberRangeFilter], [chart])
-       .build();
-
-   var uiApp = UiApp.createApplication().setTitle(&quot;My Dashboard&quot;);
-
-   var panel = uiApp.createVerticalPanel()
-       .setSpacing(50);
-
-   panel.add(stringFilter);
-   panel.add(numberRangeFilter);
-   panel.add(chart);
-   dashboard.add(panel);
-   uiApp.add(dashboard);
-   return uiApp;
- }
- </code></pre>
- *
- * @param {Charts.Control[]} controls - an array of controls to bind
- * @param {Charts.Chart[]} charts - an array charts to bind
- *
- * @return {Charts.DashboardPanelBuilder} this builder, useful for chaining
- */
-Charts.DashboardPanelBuilder.prototype.bind = function(controls, charts){};
-
-/**
  * Builds a dashboard.
  *
  * @return {Charts.DashboardPanel} a control object, that can be used as a UI element
@@ -1809,13 +1745,15 @@ Charts.DashboardPanelBuilder.prototype.bind = function(controls, charts){};
 Charts.DashboardPanelBuilder.prototype.build = function(){};
 
 /**
- * Sets the dashboard's data table, which will be the control's underlying data model.
+ * Sets the data table to use for the dashboard using a DataTableBuilder.  This is a convenience
+ method for setting the data table without needing to call <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/dashboard-panel-builder.html#build()'>build()</a></code>.
  *
- * @param {DataTableSource} source - the data source to use for the dashboard
+ * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part
+     of this call, so any further updates to the builder won't be reflected in the dashboard.
  *
  * @return {Charts.DashboardPanelBuilder} this builder, useful for chaining
  */
-Charts.DashboardPanelBuilder.prototype.setDataTable = function(source){};
+Charts.DashboardPanelBuilder.prototype.setDataTable = function(tableBuilder){};
 
 /** @constructor */
 Charts.DataViewDefinition = function(){};
@@ -1977,15 +1915,15 @@ Charts.LineChartBuilder.prototype.setCurveStyle = function(style){};
 Charts.LineChartBuilder.prototype.setDataSourceUrl = function(url){};
 
 /**
- * Sets the data table which contains the lines for the chart, as well as the X-axis labels.
- The first column should be a string, and contain the horizontal axis labels. Any number of
- columns can follow, all must be numeric.  Each column is displayed as a separate line.
+ * Sets the data table to use for the chart using a DataTableBuilder.  This is a convenience
+ method for setting the data table without needing to call <code>build()</code>.
  *
- * @param {DataTableSource} table - the data table to use for the chart
+ * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part
+     of this call, so any further updates to the builder won't be reflected in the chart.
  *
  * @return {Charts.LineChartBuilder} this builder, useful for chaining
  */
-Charts.LineChartBuilder.prototype.setDataTable = function(table){};
+Charts.LineChartBuilder.prototype.setDataTable = function(tableBuilder){};
 
 /**
  * Sets the data view definition to use for the chart.
@@ -2255,13 +2193,17 @@ Charts.NumberRangeFilterBuilder = function(){};
 Charts.NumberRangeFilterBuilder.prototype.build = function(){};
 
 /**
- * Sets the control data table, which will be the control's underlying data model.
+ * Sets the data table to use for the control using a DataTableBuilder.
+
+ This is a convenience method for setting the data table without needing to call
+ <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/number-range-filter-builder.html#build()'>build()</a></code>.
  *
- * @param {DataTableSource} table - the data table to use for the control
+ * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part
+        of this call, so any further updates to the builder won't be reflected in the control.
  *
  * @return {Charts.NumberRangeFilterBuilder} this builder, useful for chaining
  */
-Charts.NumberRangeFilterBuilder.prototype.setDataTable = function(table){};
+Charts.NumberRangeFilterBuilder.prototype.setDataTable = function(tableBuilder){};
 
 /**
  * Sets the index of the data table column to filter on.
@@ -2497,15 +2439,15 @@ Charts.PieChartBuilder.prototype.setColors = function(cssValues){};
 Charts.PieChartBuilder.prototype.setDataSourceUrl = function(url){};
 
 /**
- * Sets the data table which contains the lines for the chart, as well as the X-axis labels.
- The first column should be a string, and contain the horizontal axis labels. Any number of
- columns can follow, all must be numeric.  Each column is displayed as a separate line.
+ * Sets the data table to use for the chart using a DataTableBuilder.  This is a convenience
+ method for setting the data table without needing to call <code>build()</code>.
  *
- * @param {DataTableSource} table - the data table to use for the chart
+ * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part
+     of this call, so any further updates to the builder won't be reflected in the chart.
  *
  * @return {Charts.PieChartBuilder} this builder, useful for chaining
  */
-Charts.PieChartBuilder.prototype.setDataTable = function(table){};
+Charts.PieChartBuilder.prototype.setDataTable = function(tableBuilder){};
 
 /**
  * Sets the data view definition to use for the chart.
@@ -2679,15 +2621,15 @@ Charts.ScatterChartBuilder.prototype.setColors = function(cssValues){};
 Charts.ScatterChartBuilder.prototype.setDataSourceUrl = function(url){};
 
 /**
- * Sets the data table which contains the lines for the chart, as well as the X-axis labels.
- The first column should be a string, and contain the horizontal axis labels. Any number of
- columns can follow, all must be numeric.  Each column is displayed as a separate line.
+ * Sets the data table to use for the chart using a DataTableBuilder.  This is a convenience
+ method for setting the data table without needing to call <code>build()</code>.
  *
- * @param {DataTableSource} table - the data table to use for the chart
+ * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part
+     of this call, so any further updates to the builder won't be reflected in the chart.
  *
  * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
  */
-Charts.ScatterChartBuilder.prototype.setDataTable = function(table){};
+Charts.ScatterChartBuilder.prototype.setDataTable = function(tableBuilder){};
 
 /**
  * Sets the data view definition to use for the chart.
@@ -3005,13 +2947,17 @@ Charts.StringFilterBuilder.prototype.build = function(){};
 Charts.StringFilterBuilder.prototype.setCaseSensitive = function(caseSensitive){};
 
 /**
- * Sets the control data table, which will be the control's underlying data model.
+ * Sets the data table to use for the control using a DataTableBuilder.
+
+ This is a convenience method for setting the data table without needing to call
+ <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/string-filter-builder.html#build()'>build()</a></code>.
  *
- * @param {DataTableSource} table - the data table to use for the control
+ * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part
+        of this call, so any further updates to the builder won't be reflected in the control.
  *
  * @return {Charts.StringFilterBuilder} this builder, useful for chaining
  */
-Charts.StringFilterBuilder.prototype.setDataTable = function(table){};
+Charts.StringFilterBuilder.prototype.setDataTable = function(tableBuilder){};
 
 /**
  * Sets the index of the data table column to filter on.
@@ -3123,25 +3069,33 @@ Charts.TableChartBuilder = function(){};
 Charts.TableChartBuilder.prototype.build = function(){};
 
 /**
- * Enables paging, sets the number of rows in each page and the first table page to display
- (page numbers are zero based).
+ * Sets whether to enable paging through the data.
  <p>
- The default page size is 10, and the default start page is 0.
-
- <pre class="prettyprint">
- <code>
- // Creates a table chart builder and enables paging with page size of 5 and displays page 2
- // first.
- var builder = Charts.newTableChart();
- builder.enablePaging(5, 2);
- </code></pre>
+ The default behavior is paging disabled. If paging is enabled the default page size is 10.
  *
- * @param {number} pageSize - the number of rows in each page of the table
- * @param {number} startPage - the first table page to display (page numbers are zero based)
+ * @param {Boolean} enablePaging - true if paging should be enabled, false otherwise
  *
  * @return {Charts.TableChartBuilder} this builder, useful for chaining
  */
-Charts.TableChartBuilder.prototype.enablePaging = function(pageSize, startPage){};
+Charts.TableChartBuilder.prototype.enablePaging = function(enablePaging){};
+
+/**
+ * Enables paging and sets the number of rows in each page.
+ <p>
+ The default page size is 10.
+
+ <pre class="prettyprint">
+ <code>
+ // Creates a table chart builder and enables paging with page size of 5.
+ var builder = Charts.newTableChart();
+ builder.enablePaging(5);
+ </code></pre>
+ *
+ * @param {number} pageSize - the number of rows in each page of the table
+ *
+ * @return {Charts.TableChartBuilder} this builder, useful for chaining
+ */
+Charts.TableChartBuilder.prototype.enablePaging = function(pageSize){};
 
 /**
  * Adds basic support for right-to-left languages (such as Arabic or Hebrew) by reversing
@@ -3189,15 +3143,15 @@ Charts.TableChartBuilder.prototype.enableSorting = function(enableSorting){};
 Charts.TableChartBuilder.prototype.setDataSourceUrl = function(url){};
 
 /**
- * Sets the data table which contains the lines for the chart, as well as the X-axis labels.
- The first column should be a string, and contain the horizontal axis labels. Any number of
- columns can follow, all must be numeric.  Each column is displayed as a separate line.
+ * Sets the data table to use for the chart using a DataTableBuilder.  This is a convenience
+ method for setting the data table without needing to call <code>build()</code>.
  *
- * @param {DataTableSource} table - the data table to use for the chart
+ * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part
+     of this call, so any further updates to the builder won't be reflected in the chart.
  *
  * @return {Charts.TableChartBuilder} this builder, useful for chaining
  */
-Charts.TableChartBuilder.prototype.setDataTable = function(table){};
+Charts.TableChartBuilder.prototype.setDataTable = function(tableBuilder){};
 
 /**
  * Sets the data view definition to use for the chart.

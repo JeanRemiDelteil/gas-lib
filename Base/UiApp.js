@@ -500,12 +500,10 @@ UiApp.AbsolutePanel = function(){};
  * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code>.
  *
  * @param {UiApp.Widget} widget - the widget to add.
- * @param {number} left - the widget's left position in pixels.
- * @param {number} top - the widget's top position in pixels.
  *
  * @return {UiApp.AbsolutePanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code> itself, useful for chaining.
  */
-UiApp.AbsolutePanel.prototype.add = function(widget, left, top){};
+UiApp.AbsolutePanel.prototype.add = function(widget){};
 
 /**
  * Sets the dependent style name of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code>.
@@ -563,14 +561,15 @@ UiApp.AbsolutePanel.prototype.getTag = function(){};
 UiApp.AbsolutePanel.prototype.getType = function(){};
 
 /**
- * Remove the given widget from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code>. This will fail if the widget is not
- actually a child of the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code>.
+ * Remove the widget with the given index from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code>. Indexes begin from 0.
+ This will fail if the index is greater than or equal to the number of elements in the
+ <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code>.
  *
- * @param {UiApp.Widget} widget - the widget to remove.
+ * @param {number} index - the index of the widget to remove.
  *
  * @return {UiApp.AbsolutePanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code> itself, useful for chaining.
  */
-UiApp.AbsolutePanel.prototype.remove = function(widget){};
+UiApp.AbsolutePanel.prototype.remove = function(index){};
 
 /**
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code>.
@@ -3843,15 +3842,14 @@ UiApp.CheckBox.prototype.setText = function(text){};
 UiApp.CheckBox.prototype.setTitle = function(title){};
 
 /**
- * Sets whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code> should be checked and optionally fires an event if the
- value changes as a result of this call.
+ * Sets whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code> should be checked. Does not fire any events if the value
+ changes as a result of this call.
  *
  * @param {Boolean} value - the new checked/unchecked state.
- * @param {Boolean} fireEvents - whether to fire an event if this changed the state.
  *
  * @return {UiApp.CheckBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code> itself, useful for chaining.
  */
-UiApp.CheckBox.prototype.setValue = function(value, fireEvents){};
+UiApp.CheckBox.prototype.setValue = function(value){};
 
 /**
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code> is visible.
@@ -3949,23 +3947,29 @@ UiApp.ClientHandler.prototype.setHTML = function(html){};
 UiApp.ClientHandler.prototype.setId = function(id){};
 
 /**
- * A directive to set a style attribute on the widgets the handler is targeted to.
+ * A directive to set a style attribute on a grid element. This will fail if the widgets the
+ handler is targeted to are not grids.
  *
+ * @param {number} row - the row of the grid.
+ * @param {number} column - the column of the grid.
  * @param {String} attribute - the CSS attribute to set. Use camelCase (e.g. fontSize, not font-size).
  * @param {String} value - the CSS value to set.
  *
  * @return {UiApp.ClientHandler} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> itself, useful for chaining.
  */
-UiApp.ClientHandler.prototype.setStyleAttribute = function(attribute, value){};
+UiApp.ClientHandler.prototype.setStyleAttribute = function(row, column, attribute, value){};
 
 /**
- * A directive to set multiple style attributes on the widgets the handler is targeted to.
+ * A directive to set multiple style attributes on a grid element.
+ This will fail if the widgets the handler is targeted to are not grids.
  *
+ * @param {number} row - the row of the grid.
+ * @param {number} column - the column of the grid.
  * @param {Object} attributes - the CSS attributes and values to set.
  *
  * @return {UiApp.ClientHandler} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> itself, useful for chaining.
  */
-UiApp.ClientHandler.prototype.setStyleAttributes = function(attributes){};
+UiApp.ClientHandler.prototype.setStyleAttributes = function(row, column, attributes){};
 
 /**
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code>.
@@ -4049,11 +4053,10 @@ UiApp.ClientHandler.prototype.validateLength = function(widget, min, max){};
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String} pattern - the regex to test, as a string.
- * @param {String} flags - regex flags. The only valid characters in this string are 'g', 'm', and 'i'.
  *
  * @return {UiApp.ClientHandler} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> itself, useful for chaining.
  */
-UiApp.ClientHandler.prototype.validateMatches = function(widget, pattern, flags){};
+UiApp.ClientHandler.prototype.validateMatches = function(widget, pattern){};
 
 /**
  * Sets this handler to fire only if the given widget's value is not a valid email address.
@@ -4099,11 +4102,10 @@ UiApp.ClientHandler.prototype.validateNotLength = function(widget, min, max){};
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String} pattern - the regex to test, as a string.
- * @param {String} flags - regex flags. The only valid characters in this string are 'g', 'm', and 'i'.
  *
  * @return {UiApp.ClientHandler} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> itself, useful for chaining.
  */
-UiApp.ClientHandler.prototype.validateNotMatches = function(widget, pattern, flags){};
+UiApp.ClientHandler.prototype.validateNotMatches = function(widget, pattern){};
 
 /**
  * Sets this handler to fire only if the given widget's value cannot be interpreted as an number.
@@ -4856,15 +4858,23 @@ UiApp.DatePicker.prototype.setWidth = function(width){};
 UiApp.DecoratedStackPanel = function(){};
 
 /**
+ * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code>.
+ *
+ * @param {UiApp.Widget} widget - the widget to add.
+ *
+ * @return {UiApp.DecoratedStackPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code> itself, useful for chaining.
+ */
+UiApp.DecoratedStackPanel.prototype.add = function(widget){};
+
+/**
  * Adds a widget to the stack with the given header text.
  *
  * @param {UiApp.Widget} widget - the widget to add.
  * @param {String} text - the new header text.
- * @param {Boolean} asHtml - whether to treat the text as HTML.
  *
  * @return {UiApp.DecoratedStackPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code> itself, useful for chaining.
  */
-UiApp.DecoratedStackPanel.prototype.add = function(widget, text, asHtml){};
+UiApp.DecoratedStackPanel.prototype.add = function(widget, text){};
 
 /**
  * Sets the dependent style name of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code>.
@@ -4922,14 +4932,15 @@ UiApp.DecoratedStackPanel.prototype.getTag = function(){};
 UiApp.DecoratedStackPanel.prototype.getType = function(){};
 
 /**
- * Remove the given widget from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code>. This will fail if the widget is not
- actually a child of the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code>.
+ * Remove the widget with the given index from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code>. Indexes begin from 0.
+ This will fail if the index is greater than or equal to the number of elements in the
+ <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code>.
  *
- * @param {UiApp.Widget} widget - the widget to remove.
+ * @param {number} index - the index of the widget to remove.
  *
  * @return {UiApp.DecoratedStackPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code> itself, useful for chaining.
  */
-UiApp.DecoratedStackPanel.prototype.remove = function(widget){};
+UiApp.DecoratedStackPanel.prototype.remove = function(index){};
 
 /**
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code>.
@@ -4986,11 +4997,10 @@ UiApp.DecoratedStackPanel.prototype.setSize = function(width, height){};
  *
  * @param {number} index - the index of the stack element whose text we want to change.
  * @param {String} text - the new text.
- * @param {Boolean} asHtml - whether to treat the text as HTML.
  *
  * @return {UiApp.DecoratedStackPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code> itself, useful for chaining.
  */
-UiApp.DecoratedStackPanel.prototype.setStackText = function(index, text, asHtml){};
+UiApp.DecoratedStackPanel.prototype.setStackText = function(index, text){};
 
 /**
  * Sets one of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code>'s style attributes to a new value. Valid attributes are
@@ -5178,13 +5188,23 @@ UiApp.DecoratedTabBar.prototype.addStyleDependentName = function(styleName){};
 UiApp.DecoratedTabBar.prototype.addStyleName = function(styleName){};
 
 /**
- * Add a tab with the given widget as its title.
+ * Add a tab with the given title.
  *
- * @param {UiApp.Widget} widget - the new tab's title widget.
+ * @param {String} title - the new tab's title.
  *
  * @return {UiApp.DecoratedTabBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-bar.html'>DecoratedTabBar</a></s></code> itself, useful for chaining.
  */
-UiApp.DecoratedTabBar.prototype.addTab = function(widget){};
+UiApp.DecoratedTabBar.prototype.addTab = function(title){};
+
+/**
+ * Add a tab with the given title.
+ *
+ * @param {String} title - the new tab's title.
+ * @param {Boolean} asHtml - whether to treat the title as HTML.
+ *
+ * @return {UiApp.DecoratedTabBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-bar.html'>DecoratedTabBar</a></s></code> itself, useful for chaining.
+ */
+UiApp.DecoratedTabBar.prototype.addTab = function(title, asHtml){};
 
 /**
  * Returns the id that has been assigned to this object.
@@ -5394,14 +5414,34 @@ UiApp.DecoratedTabBar.prototype.setWidth = function(width){};
 UiApp.DecoratedTabPanel = function(){};
 
 /**
- * Add a widget to this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-panel.html'>DecoratedTabPanel</a></s></code> with the given widget as its tab header.
+ * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-panel.html'>DecoratedTabPanel</a></s></code>.
  *
  * @param {UiApp.Widget} widget - the widget to add.
- * @param {UiApp.Widget} tabWidget - the header widget.
  *
  * @return {UiApp.DecoratedTabPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-panel.html'>DecoratedTabPanel</a></s></code> itself, useful for chaining.
  */
-UiApp.DecoratedTabPanel.prototype.add = function(widget, tabWidget){};
+UiApp.DecoratedTabPanel.prototype.add = function(widget){};
+
+/**
+ * Adds a widget to the stack with the given header text.
+ *
+ * @param {UiApp.Widget} widget - the widget to add.
+ * @param {String} text - the new header text.
+ *
+ * @return {UiApp.DecoratedTabPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-panel.html'>DecoratedTabPanel</a></s></code> itself, useful for chaining.
+ */
+UiApp.DecoratedTabPanel.prototype.add = function(widget, text){};
+
+/**
+ * Adds a widget to the stack with the given header text.
+ *
+ * @param {UiApp.Widget} widget - the widget to add.
+ * @param {String} text - the new header text.
+ * @param {Boolean} asHtml - whether to treat the text as HTML.
+ *
+ * @return {UiApp.DecoratedTabPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-panel.html'>DecoratedTabPanel</a></s></code> itself, useful for chaining.
+ */
+UiApp.DecoratedTabPanel.prototype.add = function(widget, text, asHtml){};
 
 /**
  * Add a handler that fires before the selection occurs.
@@ -7070,43 +7110,27 @@ UiApp.FlexTable.prototype.setRowStyleAttributes = function(row, attributes){};
 UiApp.FlexTable.prototype.setSize = function(width, height){};
 
 /**
- * Sets one of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code>'s style attributes to a new value. Valid attributes are
- <a href="/apps-script/ui_supportedstyles">listed here</a>; the values for each attribute are
- the same as those available in CSS style sheets.
-
- <pre class="prettyprint">
- <code>
- // Change the widget&#39;s background to black and text color to green.
- widget.setStyleAttribute(&quot;background&quot;, &quot;black&quot;)
-     .setStyleAttribute(&quot;color&quot;, &quot;green&quot;);
- </code></pre>
+ * Sets a CSS style on a cell of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code>.
  *
- * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"),
-     <a href="/apps-script/ui_supportedstyles">as listed here</a>
+ * @param {number} row - the row of the cell.
+ * @param {number} column - the column of the cell.
+ * @param {String} attribute - the CSS attribute, in camelCase. ("fontSize", not "font-size").
  * @param {String} value - the CSS value
  *
  * @return {UiApp.FlexTable} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> itself, useful for chaining.
  */
-UiApp.FlexTable.prototype.setStyleAttribute = function(attribute, value){};
+UiApp.FlexTable.prototype.setStyleAttribute = function(row, column, attribute, value){};
 
 /**
- * Sets this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code>'s style attributes. This is a convenience method that is equivalent
- to calling setStyleAttribute with every key/value pair in the attributes object. Valid
- attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>; the values for each
- attribute are the same as those available in CSS style sheets.
-
- <pre class="prettyprint">
- <code>
- // Change the widget&#39;s background to black and text color to green.
- widget.setStyleAttributes({background: &quot;black&quot;, color: &quot;green&quot;});
- </code></pre>
+ * Sets a CSS style on a cell of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code>.
  *
- * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set;
-     valid attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
+ * @param {number} row - the row of the cell.
+ * @param {number} column - the column of the cell.
+ * @param {Object} attributes - the CSS attributes and values to set.
  *
  * @return {UiApp.FlexTable} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> itself, useful for chaining.
  */
-UiApp.FlexTable.prototype.setStyleAttributes = function(attributes){};
+UiApp.FlexTable.prototype.setStyleAttributes = function(row, column, attributes){};
 
 /**
  * Sets the style name of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code>.
@@ -7271,14 +7295,15 @@ UiApp.FlowPanel.prototype.getType = function(){};
 UiApp.FlowPanel.prototype.insert = function(widget, beforeIndex){};
 
 /**
- * Remove the given widget from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code>. This will fail if the widget is not
- actually a child of the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code>.
+ * Remove the widget with the given index from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code>. Indexes begin from 0.
+ This will fail if the index is greater than or equal to the number of elements in the
+ <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code>.
  *
- * @param {UiApp.Widget} widget - the widget to remove.
+ * @param {number} index - the index of the widget to remove.
  *
  * @return {UiApp.FlowPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code> itself, useful for chaining.
  */
-UiApp.FlowPanel.prototype.remove = function(widget){};
+UiApp.FlowPanel.prototype.remove = function(index){};
 
 /**
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code>.
@@ -8942,43 +8967,27 @@ UiApp.Grid.prototype.setRowStyleAttributes = function(row, attributes){};
 UiApp.Grid.prototype.setSize = function(width, height){};
 
 /**
- * Sets one of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code>'s style attributes to a new value. Valid attributes are
- <a href="/apps-script/ui_supportedstyles">listed here</a>; the values for each attribute are
- the same as those available in CSS style sheets.
-
- <pre class="prettyprint">
- <code>
- // Change the widget&#39;s background to black and text color to green.
- widget.setStyleAttribute(&quot;background&quot;, &quot;black&quot;)
-     .setStyleAttribute(&quot;color&quot;, &quot;green&quot;);
- </code></pre>
+ * Sets a CSS style on a cell of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code>.
  *
- * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"),
-     <a href="/apps-script/ui_supportedstyles">as listed here</a>
+ * @param {number} row - the row of the cell.
+ * @param {number} column - the column of the cell.
+ * @param {String} attribute - the CSS attribute, in camelCase. ("fontSize", not "font-size").
  * @param {String} value - the CSS value
  *
  * @return {UiApp.Grid} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code> itself, useful for chaining.
  */
-UiApp.Grid.prototype.setStyleAttribute = function(attribute, value){};
+UiApp.Grid.prototype.setStyleAttribute = function(row, column, attribute, value){};
 
 /**
- * Sets this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code>'s style attributes. This is a convenience method that is equivalent
- to calling setStyleAttribute with every key/value pair in the attributes object. Valid
- attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>; the values for each
- attribute are the same as those available in CSS style sheets.
-
- <pre class="prettyprint">
- <code>
- // Change the widget&#39;s background to black and text color to green.
- widget.setStyleAttributes({background: &quot;black&quot;, color: &quot;green&quot;});
- </code></pre>
+ * Sets a CSS style on a cell of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code>.
  *
- * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set;
-     valid attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
+ * @param {number} row - the row of the cell.
+ * @param {number} column - the column of the cell.
+ * @param {Object} attributes - the CSS attributes and values to set.
  *
  * @return {UiApp.Grid} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code> itself, useful for chaining.
  */
-UiApp.Grid.prototype.setStyleAttributes = function(attributes){};
+UiApp.Grid.prototype.setStyleAttributes = function(row, column, attributes){};
 
 /**
  * Sets the style name of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code>.
@@ -9807,11 +9816,10 @@ UiApp.Handler.prototype.validateLength = function(widget, min, max){};
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String} pattern - the regex to test, as a string.
- * @param {String} flags - regex flags. The only valid characters in this string are 'g', 'm', and 'i'.
  *
  * @return {UiApp.Handler} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/handler.html'>Handler</a></s></code> itself, useful for chaining.
  */
-UiApp.Handler.prototype.validateMatches = function(widget, pattern, flags){};
+UiApp.Handler.prototype.validateMatches = function(widget, pattern){};
 
 /**
  * Sets this handler to fire only if the given widget's value is not a valid email address.
@@ -9857,11 +9865,10 @@ UiApp.Handler.prototype.validateNotLength = function(widget, min, max){};
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String} pattern - the regex to test, as a string.
- * @param {String} flags - regex flags. The only valid characters in this string are 'g', 'm', and 'i'.
  *
  * @return {UiApp.Handler} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/handler.html'>Handler</a></s></code> itself, useful for chaining.
  */
-UiApp.Handler.prototype.validateNotMatches = function(widget, pattern, flags){};
+UiApp.Handler.prototype.validateNotMatches = function(widget, pattern){};
 
 /**
  * Sets this handler to fire only if the given widget's value cannot be interpreted as an number.
@@ -10250,14 +10257,15 @@ UiApp.HorizontalPanel.prototype.getTag = function(){};
 UiApp.HorizontalPanel.prototype.getType = function(){};
 
 /**
- * Remove the given widget from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code>. This will fail if the widget is not
- actually a child of the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code>.
+ * Remove the widget with the given index from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code>. Indexes begin from 0.
+ This will fail if the index is greater than or equal to the number of elements in the
+ <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code>.
  *
- * @param {UiApp.Widget} widget - the widget to remove.
+ * @param {number} index - the index of the widget to remove.
  *
  * @return {UiApp.HorizontalPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code> itself, useful for chaining.
  */
-UiApp.HorizontalPanel.prototype.remove = function(widget){};
+UiApp.HorizontalPanel.prototype.remove = function(index){};
 
 /**
  * Sets the width of the border to be applied to all cells in this panel.
@@ -12720,14 +12728,15 @@ UiApp.ListBox.prototype.addClickHandler = function(handler){};
 UiApp.ListBox.prototype.addFocusHandler = function(handler){};
 
 /**
- * Adds an item to the list box, specifying its value.
+ * Adds an item to the list box.
+ <p>
+ The item's value will be the same as its text.
  *
  * @param {String} text - the new item's text.
- * @param {String} value - the new item's value.
  *
  * @return {UiApp.ListBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code> itself, useful for chaining.
  */
-UiApp.ListBox.prototype.addItem = function(text, value){};
+UiApp.ListBox.prototype.addItem = function(text){};
 
 /**
  * Add a handler for key down events.
@@ -13616,28 +13625,55 @@ UiApp.MenuBar = function(){};
 UiApp.MenuBar.prototype.addCloseHandler = function(handler){};
 
 /**
+ * Add a new menu item to this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code>.
+ *
+ * @param {MenuItem} item - the item to add.
+ *
+ * @return {UiApp.MenuBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code> itself, useful for chaining.
+ */
+UiApp.MenuBar.prototype.addItem = function(item){};
+
+/**
+ * Creates a new menu item with the given text and submenu and adds it to this
+ <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code>.
+ *
+ * @param {String} text - the item text.
+ * @param {Boolean} asHtml - whether to treat the text as HTML.
+ * @param {MenuBar} subMenu - the menu to show when this item is clicked.
+ *
+ * @return {UiApp.MenuBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code> itself, useful for chaining.
+ */
+UiApp.MenuBar.prototype.addItem = function(text, asHtml, subMenu){};
+
+/**
  * Creates a new menu item with the given text and command and adds it to this
  <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code>.
  *
  * @param {String} text - the item text.
+ * @param {Boolean} asHtml - whether to treat the text as HTML.
  * @param {UiApp.Handler} command - the ClientHandler or ServerHandler to execute when the menu is clicked.
  *
  * @return {UiApp.MenuBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code> itself, useful for chaining.
  */
-UiApp.MenuBar.prototype.addItem = function(text, command){};
+UiApp.MenuBar.prototype.addItem = function(text, asHtml, command){};
 
 /**
- * Add a separator to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code>.
- <p>
- This takes a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item-separator.html'>MenuItemSeparator</a></s></code>
- that has its own controllable properties, such as setVisible(), and can therefore be
- manipulated in code.
+ * Creates a new menu item with the given text and submenu and adds it to this
+ <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code>.
  *
- * @param {MenuItemSeparator} separator - the separator to add.
+ * @param {String} text - the item text.
+ * @param {MenuBar} subMenu - the menu to show when this item is clicked.
  *
  * @return {UiApp.MenuBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code> itself, useful for chaining.
  */
-UiApp.MenuBar.prototype.addSeparator = function(separator){};
+UiApp.MenuBar.prototype.addItem = function(text, subMenu){};
+
+/**
+ * Add a separator to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code>.
+ *
+ * @return {UiApp.MenuBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code> itself, useful for chaining.
+ */
+UiApp.MenuBar.prototype.addSeparator = function(){};
 
 /**
  * Sets the dependent style name of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code>.
@@ -15318,14 +15354,13 @@ UiApp.PasswordTextBox.prototype.setTextAlignment = function(textAlign){};
 UiApp.PasswordTextBox.prototype.setTitle = function(title){};
 
 /**
- * Sets this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code>'s value and potentially fire events.
+ * Sets this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code>'s value without firing any events.
  *
  * @param {String} value - the new value.
- * @param {Boolean} fireEvents - whether to fire events.
  *
  * @return {UiApp.PasswordTextBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code> itself, useful for chaining.
  */
-UiApp.PasswordTextBox.prototype.setValue = function(value, fireEvents){};
+UiApp.PasswordTextBox.prototype.setValue = function(value){};
 
 /**
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code> is visible.
@@ -17621,15 +17656,14 @@ UiApp.RadioButton.prototype.setText = function(text){};
 UiApp.RadioButton.prototype.setTitle = function(title){};
 
 /**
- * Sets whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code> should be checked and optionally fires an event if the
- value changes as a result of this call.
+ * Sets whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code> should be checked. Does not fire any events if the value
+ changes as a result of this call.
  *
  * @param {Boolean} value - the new checked/unchecked state.
- * @param {Boolean} fireEvents - whether to fire an event if this changed the state.
  *
  * @return {UiApp.RadioButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code> itself, useful for chaining.
  */
-UiApp.RadioButton.prototype.setValue = function(value, fireEvents){};
+UiApp.RadioButton.prototype.setValue = function(value){};
 
 /**
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code> is visible.
@@ -19008,11 +19042,10 @@ UiApp.ServerHandler.prototype.validateLength = function(widget, min, max){};
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String} pattern - the regex to test, as a string.
- * @param {String} flags - regex flags. The only valid characters in this string are 'g', 'm', and 'i'.
  *
  * @return {UiApp.ServerHandler} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> itself, useful for chaining.
  */
-UiApp.ServerHandler.prototype.validateMatches = function(widget, pattern, flags){};
+UiApp.ServerHandler.prototype.validateMatches = function(widget, pattern){};
 
 /**
  * Sets this handler to fire only if the given widget's value is not a valid email address.
@@ -19058,11 +19091,10 @@ UiApp.ServerHandler.prototype.validateNotLength = function(widget, min, max){};
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String} pattern - the regex to test, as a string.
- * @param {String} flags - regex flags. The only valid characters in this string are 'g', 'm', and 'i'.
  *
  * @return {UiApp.ServerHandler} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> itself, useful for chaining.
  */
-UiApp.ServerHandler.prototype.validateNotMatches = function(widget, pattern, flags){};
+UiApp.ServerHandler.prototype.validateNotMatches = function(widget, pattern){};
 
 /**
  * Sets this handler to fire only if the given widget's value cannot be interpreted as an number.
@@ -21329,14 +21361,15 @@ UiApp.SplitLayoutPanel.prototype.getTag = function(){};
 UiApp.SplitLayoutPanel.prototype.getType = function(){};
 
 /**
- * Remove the given widget from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code>. This will fail if the widget is not
- actually a child of the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code>.
+ * Remove the widget with the given index from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code>. Indexes begin from 0.
+ This will fail if the index is greater than or equal to the number of elements in the
+ <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code>.
  *
- * @param {UiApp.Widget} widget - the widget to remove.
+ * @param {number} index - the index of the widget to remove.
  *
  * @return {UiApp.SplitLayoutPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code> itself, useful for chaining.
  */
-UiApp.SplitLayoutPanel.prototype.remove = function(widget){};
+UiApp.SplitLayoutPanel.prototype.remove = function(index){};
 
 /**
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code>.
@@ -21507,15 +21540,23 @@ UiApp.SplitLayoutPanel.prototype.setWidth = function(width){};
 UiApp.StackPanel = function(){};
 
 /**
+ * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code>.
+ *
+ * @param {UiApp.Widget} widget - the widget to add.
+ *
+ * @return {UiApp.StackPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code> itself, useful for chaining.
+ */
+UiApp.StackPanel.prototype.add = function(widget){};
+
+/**
  * Adds a widget to the stack with the given header text.
  *
  * @param {UiApp.Widget} widget - the widget to add.
  * @param {String} text - the new header text.
- * @param {Boolean} asHtml - whether to treat the text as HTML.
  *
  * @return {UiApp.StackPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code> itself, useful for chaining.
  */
-UiApp.StackPanel.prototype.add = function(widget, text, asHtml){};
+UiApp.StackPanel.prototype.add = function(widget, text){};
 
 /**
  * Sets the dependent style name of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code>.
@@ -21573,14 +21614,15 @@ UiApp.StackPanel.prototype.getTag = function(){};
 UiApp.StackPanel.prototype.getType = function(){};
 
 /**
- * Remove the given widget from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code>. This will fail if the widget is not
- actually a child of the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code>.
+ * Remove the widget with the given index from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code>. Indexes begin from 0.
+ This will fail if the index is greater than or equal to the number of elements in the
+ <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code>.
  *
- * @param {UiApp.Widget} widget - the widget to remove.
+ * @param {number} index - the index of the widget to remove.
  *
  * @return {UiApp.StackPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code> itself, useful for chaining.
  */
-UiApp.StackPanel.prototype.remove = function(widget){};
+UiApp.StackPanel.prototype.remove = function(index){};
 
 /**
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code>.
@@ -21637,11 +21679,10 @@ UiApp.StackPanel.prototype.setSize = function(width, height){};
  *
  * @param {number} index - the index of the stack element whose text we want to change.
  * @param {String} text - the new text.
- * @param {Boolean} asHtml - whether to treat the text as HTML.
  *
  * @return {UiApp.StackPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code> itself, useful for chaining.
  */
-UiApp.StackPanel.prototype.setStackText = function(index, text, asHtml){};
+UiApp.StackPanel.prototype.setStackText = function(index, text){};
 
 /**
  * Sets one of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code>'s style attributes to a new value. Valid attributes are
@@ -23168,14 +23209,13 @@ UiApp.SuggestBox.prototype.setText = function(text){};
 UiApp.SuggestBox.prototype.setTitle = function(title){};
 
 /**
- * Sets the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code>'s value.
+ * Sets the value of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code>.
  *
  * @param {String} value - the new value.
- * @param {Boolean} fireEvents - whether to fire change events.
  *
  * @return {UiApp.SuggestBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code> itself, useful for chaining.
  */
-UiApp.SuggestBox.prototype.setValue = function(value, fireEvents){};
+UiApp.SuggestBox.prototype.setValue = function(value){};
 
 /**
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code> is visible.
@@ -23280,13 +23320,23 @@ UiApp.TabBar.prototype.addStyleDependentName = function(styleName){};
 UiApp.TabBar.prototype.addStyleName = function(styleName){};
 
 /**
- * Add a tab with the given widget as its title.
+ * Add a tab with the given title.
  *
- * @param {UiApp.Widget} widget - the new tab's title widget.
+ * @param {String} title - the new tab's title.
  *
  * @return {UiApp.TabBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-bar.html'>TabBar</a></s></code> itself, useful for chaining.
  */
-UiApp.TabBar.prototype.addTab = function(widget){};
+UiApp.TabBar.prototype.addTab = function(title){};
+
+/**
+ * Add a tab with the given title.
+ *
+ * @param {String} title - the new tab's title.
+ * @param {Boolean} asHtml - whether to treat the title as HTML.
+ *
+ * @return {UiApp.TabBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-bar.html'>TabBar</a></s></code> itself, useful for chaining.
+ */
+UiApp.TabBar.prototype.addTab = function(title, asHtml){};
 
 /**
  * Returns the id that has been assigned to this object.
@@ -23496,14 +23546,34 @@ UiApp.TabBar.prototype.setWidth = function(width){};
 UiApp.TabPanel = function(){};
 
 /**
- * Add a widget to this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-panel.html'>TabPanel</a></s></code> with the given widget as its tab header.
+ * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-panel.html'>TabPanel</a></s></code>.
  *
  * @param {UiApp.Widget} widget - the widget to add.
- * @param {UiApp.Widget} tabWidget - the header widget.
  *
  * @return {UiApp.TabPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-panel.html'>TabPanel</a></s></code> itself, useful for chaining.
  */
-UiApp.TabPanel.prototype.add = function(widget, tabWidget){};
+UiApp.TabPanel.prototype.add = function(widget){};
+
+/**
+ * Adds a widget to the stack with the given header text.
+ *
+ * @param {UiApp.Widget} widget - the widget to add.
+ * @param {String} text - the new header text.
+ *
+ * @return {UiApp.TabPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-panel.html'>TabPanel</a></s></code> itself, useful for chaining.
+ */
+UiApp.TabPanel.prototype.add = function(widget, text){};
+
+/**
+ * Adds a widget to the stack with the given header text.
+ *
+ * @param {UiApp.Widget} widget - the widget to add.
+ * @param {String} text - the new header text.
+ * @param {Boolean} asHtml - whether to treat the text as HTML.
+ *
+ * @return {UiApp.TabPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-panel.html'>TabPanel</a></s></code> itself, useful for chaining.
+ */
+UiApp.TabPanel.prototype.add = function(widget, text, asHtml){};
 
 /**
  * Add a handler that fires before the selection occurs.
@@ -24825,14 +24895,13 @@ UiApp.TextArea.prototype.setTextAlignment = function(textAlign){};
 UiApp.TextArea.prototype.setTitle = function(title){};
 
 /**
- * Sets this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code>'s value and potentially fire events.
+ * Sets this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code>'s value without firing any events.
  *
  * @param {String} value - the new value.
- * @param {Boolean} fireEvents - whether to fire events.
  *
  * @return {UiApp.TextArea} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code> itself, useful for chaining.
  */
-UiApp.TextArea.prototype.setValue = function(value, fireEvents){};
+UiApp.TextArea.prototype.setValue = function(value){};
 
 /**
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code> is visible.
@@ -25905,14 +25974,13 @@ UiApp.TextBox.prototype.setTextAlignment = function(textAlign){};
 UiApp.TextBox.prototype.setTitle = function(title){};
 
 /**
- * Sets this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code>'s value and potentially fire events.
+ * Sets this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code>'s value without firing any events.
  *
  * @param {String} value - the new value.
- * @param {Boolean} fireEvents - whether to fire events.
  *
  * @return {UiApp.TextBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code> itself, useful for chaining.
  */
-UiApp.TextBox.prototype.setValue = function(value, fireEvents){};
+UiApp.TextBox.prototype.setValue = function(value){};
 
 /**
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code> is visible.
@@ -27007,13 +27075,22 @@ UiApp.Tree.prototype.addCloseHandler = function(handler){};
 UiApp.Tree.prototype.addFocusHandler = function(handler){};
 
 /**
- * Adds a new child tree item containing the specified widget.
+ * Adds a new child tree item containing the specified HTML.
  *
- * @param {UiApp.Widget} widget - the widget to put inside the new item.
+ * @param {String} text - the new item's text, treated as HTML.
  *
  * @return {UiApp.Tree} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code> itself, useful for chaining.
  */
-UiApp.Tree.prototype.addItem = function(widget){};
+UiApp.Tree.prototype.addItem = function(text){};
+
+/**
+ * Adds a TreeItem as a child to this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code>.
+ *
+ * @param {TreeItem} item - the child item.
+ *
+ * @return {UiApp.Tree} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code> itself, useful for chaining.
+ */
+UiApp.Tree.prototype.addItem = function(item){};
 
 /**
  * Add a handler for key down events.
@@ -27739,14 +27816,15 @@ UiApp.Tree.prototype.setLayoutData = function(layout){};
 UiApp.Tree.prototype.setPixelSize = function(width, height){};
 
 /**
- * Selects the given item and optionally fire events.
+ * Selects the given item.
+ <p>
+ This does not fire any events.
  *
  * @param {TreeItem} item - the item to select.
- * @param {Boolean} fireEvents - whether to fire events.
  *
  * @return {UiApp.Tree} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code> itself, useful for chaining.
  */
-UiApp.Tree.prototype.setSelectedItem = function(item, fireEvents){};
+UiApp.Tree.prototype.setSelectedItem = function(item){};
 
 /**
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code>.
@@ -27876,13 +27954,22 @@ UiApp.Tree.prototype.setWidth = function(width){};
 UiApp.TreeItem = function(){};
 
 /**
- * Adds a new child tree item containing the specified widget.
+ * Adds a new child tree item containing the specified HTML.
  *
- * @param {UiApp.Widget} widget - the widget to put inside the new item.
+ * @param {String} text - the new item's text, treated as HTML.
  *
  * @return {UiApp.TreeItem} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code> itself, useful for chaining.
  */
-UiApp.TreeItem.prototype.addItem = function(widget){};
+UiApp.TreeItem.prototype.addItem = function(text){};
+
+/**
+ * Adds a TreeItem as a child to this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code>.
+ *
+ * @param {TreeItem} item - the child item.
+ *
+ * @return {UiApp.TreeItem} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code> itself, useful for chaining.
+ */
+UiApp.TreeItem.prototype.addItem = function(item){};
 
 /**
  * Sets the dependent style name of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code>.
@@ -27997,16 +28084,15 @@ UiApp.TreeItem.prototype.setSelected = function(selected){};
 UiApp.TreeItem.prototype.setSize = function(width, height){};
 
 /**
- * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code> is open or closed and optionally fire events.
+ * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code> is open or closed.
  <p>
  This does not fire events if the state changes.
  *
  * @param {Boolean} open - whether it's open or closed.
- * @param {Boolean} fireEvents - whether to fire events if the state changes.
  *
  * @return {UiApp.TreeItem} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code> itself, useful for chaining.
  */
-UiApp.TreeItem.prototype.setState = function(open, fireEvents){};
+UiApp.TreeItem.prototype.setState = function(open){};
 
 /**
  * Sets one of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code>'s style attributes to a new value. Valid attributes are
@@ -28175,42 +28261,60 @@ UiApp.UiInstance.prototype.createAbsolutePanel = function(){};
  This widget is based on GWT's anchor class.
  *
  * @param {String} text - the text to display to the user as the anchor's text.
+ * @param {Boolean} asHtml - whether to render that text as HTML.
  * @param {String} href - the address to go to when the anchor is clicked.
  *
  * @return {UiApp.Anchor} the new Anchor.
  */
-UiApp.UiInstance.prototype.createAnchor = function(text, href){};
+UiApp.UiInstance.prototype.createAnchor = function(text, asHtml, href){};
+
+/**
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code>.
+ *
+ * @return {UiApp.Button} the new Button.
+ */
+UiApp.UiInstance.prototype.createButton = function(){};
 
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code>.
  *
  * @param {String} html - the new Button's text, rendered as HTML.
- * @param {UiApp.Handler} clickHandler - a click handler for the new button. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or
-     a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @return {UiApp.Button} the new Button.
  */
-UiApp.UiInstance.prototype.createButton = function(html, clickHandler){};
+UiApp.UiInstance.prototype.createButton = function(html){};
 
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code>.
  *
- * @param {String} caption - the CaptionPanel's caption text.
- * @param {Boolean} asHtml - whether to render the caption text as HTML.
+ * @return {UiApp.CaptionPanel} the new CaptionPanel.
+ */
+UiApp.UiInstance.prototype.createCaptionPanel = function(){};
+
+/**
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code>.
+ *
+ * @param {String} caption - the CaptionPanel's caption text, not rendered as HTML.
  *
  * @return {UiApp.CaptionPanel} the new CaptionPanel.
  */
-UiApp.UiInstance.prototype.createCaptionPanel = function(caption, asHtml){};
+UiApp.UiInstance.prototype.createCaptionPanel = function(caption){};
 
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code>.
  *
- * @param {String} label - the CheckBox's label text.
- * @param {Boolean} asHtml - whether to render the label text as HTML.
+ * @return {UiApp.CheckBox} the new CheckBox.
+ */
+UiApp.UiInstance.prototype.createCheckBox = function(){};
+
+/**
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code>.
+ *
+ * @param {String} label - the CheckBox's label text, not rendered as HTML.
  *
  * @return {UiApp.CheckBox} the new CheckBox.
  */
-UiApp.UiInstance.prototype.createCheckBox = function(label, asHtml){};
+UiApp.UiInstance.prototype.createCheckBox = function(label){};
 
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code>.
@@ -28267,14 +28371,23 @@ UiApp.UiInstance.prototype.createDecoratorPanel = function(){};
 
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code>.
- *
- * @param {Boolean} autoHide - whether the dialog should auto-hide when the user clicks outside of it.
- * @param {Boolean} modal - whether the dialog is modal, meaning that keyboard or mouse events that do not
-     target the DialogBox or its children will be ignored.
+ <p>
+ The dialog will not auto-hide and is not modal.
  *
  * @return {UiApp.DialogBox} the new DialogBox.
  */
-UiApp.UiInstance.prototype.createDialogBox = function(autoHide, modal){};
+UiApp.UiInstance.prototype.createDialogBox = function(){};
+
+/**
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code>.
+ <p>
+ The dialog is not modal.
+ *
+ * @param {Boolean} autoHide - whether the dialog should auto-hide when the user clicks outside of it.
+ *
+ * @return {UiApp.DialogBox} the new DialogBox.
+ */
+UiApp.UiInstance.prototype.createDialogBox = function(autoHide){};
 
 /**
  * Create a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/docs-list-dialog.html'>DocsListDialog</a></s></code>.
@@ -28305,13 +28418,11 @@ UiApp.UiInstance.prototype.createFlexTable = function(){};
 UiApp.UiInstance.prototype.createFlowPanel = function(){};
 
 /**
- * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code> with a specified child <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/widget.html'>Widget</a></s></code>.
- *
- * @param {UiApp.Widget} child - the child widget.
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code>.
  *
  * @return {UiApp.FocusPanel} the new FocusPanel.
  */
-UiApp.UiInstance.prototype.createFocusPanel = function(child){};
+UiApp.UiInstance.prototype.createFocusPanel = function(){};
 
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/form-panel.html'>FormPanel</a></s></code>.
@@ -28321,34 +28432,45 @@ UiApp.UiInstance.prototype.createFocusPanel = function(child){};
 UiApp.UiInstance.prototype.createFormPanel = function(){};
 
 /**
- * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code> with a specified size.
- *
- * @param {number} rows - the number of rows
- * @param {number} columns - the number of columns
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code>.
+ <p>
+ Until the Grid is explicitly resized, no widgets can't be added to it.
  *
  * @return {UiApp.Grid} the new Grid.
  */
-UiApp.UiInstance.prototype.createGrid = function(rows, columns){};
+UiApp.UiInstance.prototype.createGrid = function(){};
+
+/**
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/html.html'>HTML</a></s></code> with no text.
+ *
+ * @return {UiApp.HTML} the new HTML.
+ */
+UiApp.UiInstance.prototype.createHTML = function(){};
 
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/html.html'>HTML</a></s></code> with the specified text.
  *
  * @param {String} html - the HTML's text, rendered as HTML.
- * @param {Boolean} wordWrap - whether to allow the text to wrap.
  *
  * @return {UiApp.HTML} the new HTML.
  */
-UiApp.UiInstance.prototype.createHTML = function(html, wordWrap){};
+UiApp.UiInstance.prototype.createHTML = function(html){};
 
 /**
- * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code> with a specified name and value.
- *
- * @param {String} name - the hidden field's name.
- * @param {String} value - the hidden field's value.
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code>.
  *
  * @return {UiApp.Hidden} the new Hidden.
  */
-UiApp.UiInstance.prototype.createHidden = function(name, value){};
+UiApp.UiInstance.prototype.createHidden = function(){};
+
+/**
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code> with a specified name.
+ *
+ * @param {String} name - the hidden field's name.
+ *
+ * @return {UiApp.Hidden} the new Hidden.
+ */
+UiApp.UiInstance.prototype.createHidden = function(name){};
 
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code>.
@@ -28358,65 +28480,73 @@ UiApp.UiInstance.prototype.createHidden = function(name, value){};
 UiApp.UiInstance.prototype.createHorizontalPanel = function(){};
 
 /**
- * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/image.html'>Image</a></s></code> with the specified URL and clipping rectangle.
- *
- * @param {String} url - the URL of the image.
- * @param {number} left - the left of the clipping rectangle, in pixels.
- * @param {number} top - the top of the clipping rectangle, in pixels.
- * @param {number} width - the width of the clipping rectangle, in pixels.
- * @param {number} height - the height of the clipping rectangle, in pixels.
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/image.html'>Image</a></s></code>.
  *
  * @return {UiApp.Image} the new Image.
  */
-UiApp.UiInstance.prototype.createImage = function(url, left, top, width, height){};
+UiApp.UiInstance.prototype.createImage = function(){};
 
 /**
- * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/inline-label.html'>InlineLabel</a></s></code> with the specified text.
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/image.html'>Image</a></s></code> with the specified URL.
  *
- * @param {String} text - the label's text, not rendered as HTML.
+ * @param {String} url - the URL of the image.
+ *
+ * @return {UiApp.Image} the new Image.
+ */
+UiApp.UiInstance.prototype.createImage = function(url){};
+
+/**
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/inline-label.html'>InlineLabel</a></s></code> with no text.
  *
  * @return {UiApp.InlineLabel} the new InlineLabel.
  */
-UiApp.UiInstance.prototype.createInlineLabel = function(text){};
+UiApp.UiInstance.prototype.createInlineLabel = function(){};
+
+/**
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/label.html'>Label</a></s></code> with no text.
+ *
+ * @return {UiApp.Label} the new Label.
+ */
+UiApp.UiInstance.prototype.createLabel = function(){};
 
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/label.html'>Label</a></s></code> with the specified text.
  *
  * @param {String} text - the label's text, not rendered as HTML.
- * @param {Boolean} wordWrap - whether to allow the text to wrap.
  *
  * @return {UiApp.Label} the new Label.
  */
-UiApp.UiInstance.prototype.createLabel = function(text, wordWrap){};
+UiApp.UiInstance.prototype.createLabel = function(text){};
 
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code>.
- *
- * @param {Boolean} isMultipleSelect - whether the ListBox should allow multiple selections.
+ <p>
+ The ListBox will not allow multiple selections.
  *
  * @return {UiApp.ListBox} the new ListBox.
  */
-UiApp.UiInstance.prototype.createListBox = function(isMultipleSelect){};
+UiApp.UiInstance.prototype.createListBox = function(){};
 
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code>.
- *
- * @param {Boolean} vertical - whether the MenuBar should display itself vertically.
+ <p>
+ The MenuBar will display itself horizontally.
  *
  * @return {UiApp.MenuBar} the new MenuBar.
  */
-UiApp.UiInstance.prototype.createMenuBar = function(vertical){};
+UiApp.UiInstance.prototype.createMenuBar = function(){};
 
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item.html'>MenuItem</a></s></code>.
  *
  * @param {String} text - the text to display for this item.
+ * @param {Boolean} asHtml - whether to render that text as HTML.
  * @param {UiApp.Handler} command - the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> to invoke when this item is
      selected.
  *
  * @return {UiApp.MenuItem} the new MenuItem.
  */
-UiApp.UiInstance.prototype.createMenuItem = function(text, command){};
+UiApp.UiInstance.prototype.createMenuItem = function(text, asHtml, command){};
 
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item-separator.html'>MenuItemSeparator</a></s></code>.
@@ -28434,120 +28564,154 @@ UiApp.UiInstance.prototype.createPasswordTextBox = function(){};
 
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code>.
- *
- * @param {Boolean} autoHide - whether the panel should auto-hide when the user clicks outside of it.
- * @param {Boolean} modal - whether the panel is modal, meaning that keyboard or mouse events that do not
-     target the PopupPanel or its children will be ignored.
+ <p>
+ The panel will not auto-hide and is not modal.
  *
  * @return {UiApp.PopupPanel} the new PopupPanel.
  */
-UiApp.UiInstance.prototype.createPopupPanel = function(autoHide, modal){};
+UiApp.UiInstance.prototype.createPopupPanel = function(){};
+
+/**
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code>.
+ <p>
+ The panel is not modal.
+ *
+ * @param {Boolean} autoHide - whether the panel should auto-hide when the user clicks outside of it.
+ *
+ * @return {UiApp.PopupPanel} the new PopupPanel.
+ */
+UiApp.UiInstance.prototype.createPopupPanel = function(autoHide){};
+
+/**
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code>.
+ *
+ * @return {UiApp.PushButton} the new PushButton.
+ */
+UiApp.UiInstance.prototype.createPushButton = function(){};
 
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code>.
  *
  * @param {String} upText - the up text
+ *
+ * @return {UiApp.PushButton} the new PushButton.
+ */
+UiApp.UiInstance.prototype.createPushButton = function(upText){};
+
+/**
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code>.
+ *
+ * @param {String} upText - the up text
+ * @param {String} downText - the down text.
+ *
+ * @return {UiApp.PushButton} the new PushButton.
+ */
+UiApp.UiInstance.prototype.createPushButton = function(upText, downText){};
+
+/**
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code>.
+ *
+ * @param {String} upText - the up text
+ * @param {String} downText - the down text.
  * @param {UiApp.Handler} clickHandler - a click handler for the new button. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or
      a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @return {UiApp.PushButton} the new PushButton.
  */
-UiApp.UiInstance.prototype.createPushButton = function(upText, clickHandler){};
+UiApp.UiInstance.prototype.createPushButton = function(upText, downText, clickHandler){};
 
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code>.
  *
  * @param {String} name - the RadioButton's name. Names are used for grouping RadioButtons; see the
      documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code> for more details.
- * @param {String} label - the RadioButton's label text.
- * @param {Boolean} asHtml - whether to render that text as HTML.
  *
  * @return {UiApp.RadioButton} the new RadioButton.
  */
-UiApp.UiInstance.prototype.createRadioButton = function(name, label, asHtml){};
+UiApp.UiInstance.prototype.createRadioButton = function(name){};
+
+/**
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code>.
+ *
+ * @param {String} name - the RadioButton's name. Names are used for grouping RadioButtons; see the
+     documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code> for more details.
+ * @param {String} label - the RadioButton's label text, not rendered as HTML.
+ *
+ * @return {UiApp.RadioButton} the new RadioButton.
+ */
+UiApp.UiInstance.prototype.createRadioButton = function(name, label){};
+
+/**
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code>.
+ *
+ * @return {UiApp.ResetButton} the new ResetButton.
+ */
+UiApp.UiInstance.prototype.createResetButton = function(){};
 
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code>.
  *
  * @param {String} html - the text to show on the button, rendered as HTML.
- * @param {UiApp.Handler} clickHandler - a click handler for the new button. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or
-     a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @return {UiApp.ResetButton} the new ResetButton.
  */
-UiApp.UiInstance.prototype.createResetButton = function(html, clickHandler){};
+UiApp.UiInstance.prototype.createResetButton = function(html){};
 
 /**
- * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code> with a specified child <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/widget.html'>Widget</a></s></code>.
- *
- * @param {UiApp.Widget} child - the child widget.
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code>.
  *
  * @return {UiApp.ScrollPanel} the new ScrollPanel.
  */
-UiApp.UiInstance.prototype.createScrollPanel = function(child){};
+UiApp.UiInstance.prototype.createScrollPanel = function(){};
 
 /**
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
- * @param {String} functionName - a script function that will be executed when this handler is invoked.
- *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
-UiApp.UiInstance.prototype.createServerBlurHandler = function(functionName){};
+UiApp.UiInstance.prototype.createServerBlurHandler = function(){};
 
 /**
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
- * @param {String} functionName - a script function that will be executed when this handler is invoked.
- *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
-UiApp.UiInstance.prototype.createServerChangeHandler = function(functionName){};
+UiApp.UiInstance.prototype.createServerChangeHandler = function(){};
 
 /**
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
- * @param {String} functionName - a script function that will be executed when this handler is invoked.
- *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
-UiApp.UiInstance.prototype.createServerClickHandler = function(functionName){};
+UiApp.UiInstance.prototype.createServerClickHandler = function(){};
 
 /**
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
- * @param {String} functionName - a script function that will be executed when this handler is invoked.
- *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
-UiApp.UiInstance.prototype.createServerCloseHandler = function(functionName){};
+UiApp.UiInstance.prototype.createServerCloseHandler = function(){};
 
 /**
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
- * @param {String} functionName - a script function that will be executed when this handler is invoked.
- *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
-UiApp.UiInstance.prototype.createServerCommand = function(functionName){};
+UiApp.UiInstance.prototype.createServerCommand = function(){};
 
 /**
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
- * @param {String} functionName - a script function that will be executed when this handler is invoked.
- *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
-UiApp.UiInstance.prototype.createServerErrorHandler = function(functionName){};
+UiApp.UiInstance.prototype.createServerErrorHandler = function(){};
 
 /**
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
- * @param {String} functionName - a script function that will be executed when this handler is invoked.
- *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
-UiApp.UiInstance.prototype.createServerFocusHandler = function(functionName){};
+UiApp.UiInstance.prototype.createServerFocusHandler = function(){};
 
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
@@ -28556,83 +28720,65 @@ UiApp.UiInstance.prototype.createServerFocusHandler = function(functionName){};
  application. For example, a server handler can be added to a <code>Button</code> with the
  <code>addClickHandler</code> method so that the handler will be invoked when the button is clicked.
  *
- * @param {String} functionName - a script function that will be executed when this handler is invoked.
- *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
-UiApp.UiInstance.prototype.createServerHandler = function(functionName){};
+UiApp.UiInstance.prototype.createServerHandler = function(){};
 
 /**
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
- * @param {String} functionName - a script function that will be executed when this handler is invoked.
- *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
-UiApp.UiInstance.prototype.createServerInitializeHandler = function(functionName){};
+UiApp.UiInstance.prototype.createServerInitializeHandler = function(){};
 
 /**
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
- * @param {String} functionName - a script function that will be executed when this handler is invoked.
- *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
-UiApp.UiInstance.prototype.createServerKeyHandler = function(functionName){};
+UiApp.UiInstance.prototype.createServerKeyHandler = function(){};
 
 /**
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
- * @param {String} functionName - a script function that will be executed when this handler is invoked.
- *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
-UiApp.UiInstance.prototype.createServerLoadHandler = function(functionName){};
+UiApp.UiInstance.prototype.createServerLoadHandler = function(){};
 
 /**
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
- * @param {String} functionName - a script function that will be executed when this handler is invoked.
- *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
-UiApp.UiInstance.prototype.createServerMouseHandler = function(functionName){};
+UiApp.UiInstance.prototype.createServerMouseHandler = function(){};
 
 /**
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
- * @param {String} functionName - a script function that will be executed when this handler is invoked.
- *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
-UiApp.UiInstance.prototype.createServerScrollHandler = function(functionName){};
+UiApp.UiInstance.prototype.createServerScrollHandler = function(){};
 
 /**
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
- * @param {String} functionName - a script function that will be executed when this handler is invoked.
- *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
-UiApp.UiInstance.prototype.createServerSelectionHandler = function(functionName){};
+UiApp.UiInstance.prototype.createServerSelectionHandler = function(){};
 
 /**
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
- * @param {String} functionName - a script function that will be executed when this handler is invoked.
- *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
-UiApp.UiInstance.prototype.createServerSubmitHandler = function(functionName){};
+UiApp.UiInstance.prototype.createServerSubmitHandler = function(){};
 
 /**
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
- * @param {String} functionName - a script function that will be executed when this handler is invoked.
- *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
-UiApp.UiInstance.prototype.createServerValueChangeHandler = function(functionName){};
+UiApp.UiInstance.prototype.createServerValueChangeHandler = function(){};
 
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-check-box.html'>SimpleCheckBox</a></s></code>.
@@ -28675,11 +28821,9 @@ UiApp.UiInstance.prototype.createStackPanel = function(){};
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/submit-button.html'>SubmitButton</a></s></code>.
  *
- * @param {String} html - the text to show on the button, rendered as HTML.
- *
  * @return {UiApp.SubmitButton} the new SubmitButton.
  */
-UiApp.UiInstance.prototype.createSubmitButton = function(html){};
+UiApp.UiInstance.prototype.createSubmitButton = function(){};
 
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code>.
@@ -28719,13 +28863,28 @@ UiApp.UiInstance.prototype.createTextBox = function(){};
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code>.
  *
+ * @return {UiApp.ToggleButton} the new ToggleButton.
+ */
+UiApp.UiInstance.prototype.createToggleButton = function(){};
+
+/**
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code>.
+ *
  * @param {String} upText - the up text
- * @param {UiApp.Handler} clickHandler - a click handler for the new button. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or
-     a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @return {UiApp.ToggleButton} the new ToggleButton.
  */
-UiApp.UiInstance.prototype.createToggleButton = function(upText, clickHandler){};
+UiApp.UiInstance.prototype.createToggleButton = function(upText){};
+
+/**
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code>.
+ *
+ * @param {String} upText - the up text
+ * @param {String} downText - the down text.
+ *
+ * @return {UiApp.ToggleButton} the new ToggleButton.
+ */
+UiApp.UiInstance.prototype.createToggleButton = function(upText, downText){};
 
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code>.
@@ -28735,13 +28894,20 @@ UiApp.UiInstance.prototype.createToggleButton = function(upText, clickHandler){}
 UiApp.UiInstance.prototype.createTree = function(){};
 
 /**
- * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code> with the given widget.
- *
- * @param {UiApp.Widget} child - the widget to display on the item.
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code>.
  *
  * @return {UiApp.TreeItem} the new TreeItem.
  */
-UiApp.UiInstance.prototype.createTreeItem = function(child){};
+UiApp.UiInstance.prototype.createTreeItem = function(){};
+
+/**
+ * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code> with the given text.
+ *
+ * @param {String} text - the tree item's text, not rendered as HTML.
+ *
+ * @return {UiApp.TreeItem} the new TreeItem.
+ */
+UiApp.UiInstance.prototype.createTreeItem = function(text){};
 
 /**
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code>.
@@ -28809,23 +28975,20 @@ UiApp.UiInstance.prototype.isStandardsMode = function(){};
  * Load a GUI Builder component into UiApp, by name.
  *
  * @param {String} componentName - the name of the component to load
- * @param {Object} optAdvancedArgs - an object with advanced settings such as 'prefix', which gets added to
-     the id of any widget inside the component, and 'z-index', which specifies a base z-index
-     that gets added to the z-index of any widgets inside the component.
  *
  * @return {UiApp.Component} the component, which can be added to an app
  */
-UiApp.UiInstance.prototype.loadComponent = function(componentName, optAdvancedArgs){};
+UiApp.UiInstance.prototype.loadComponent = function(componentName){};
 
 /**
- * Remove the given widget from the application. This will fail if the widget is not actually a
- child of the application.
+ * Remove the widget with the given index from the application. Indexes begin from 0. This will
+ fail if the index is greater than or equal to the number of elements in the application.
  *
- * @param {UiApp.Widget} widget - the widget to remove.
+ * @param {number} index - the index of the widget to remove.
  *
  * @return {UiApp.UiInstance} the application itself, useful for chaining.
  */
-UiApp.UiInstance.prototype.remove = function(widget){};
+UiApp.UiInstance.prototype.remove = function(index){};
 
 /**
  * Sets the application's height.
@@ -28977,14 +29140,15 @@ UiApp.VerticalPanel.prototype.getTag = function(){};
 UiApp.VerticalPanel.prototype.getType = function(){};
 
 /**
- * Remove the given widget from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code>. This will fail if the widget is not
- actually a child of the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code>.
+ * Remove the widget with the given index from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code>. Indexes begin from 0.
+ This will fail if the index is greater than or equal to the number of elements in the
+ <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code>.
  *
- * @param {UiApp.Widget} widget - the widget to remove.
+ * @param {number} index - the index of the widget to remove.
  *
  * @return {UiApp.VerticalPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code> itself, useful for chaining.
  */
-UiApp.VerticalPanel.prototype.remove = function(widget){};
+UiApp.VerticalPanel.prototype.remove = function(index){};
 
 /**
  * Sets the width of the border to be applied to all cells in this panel.

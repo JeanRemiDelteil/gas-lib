@@ -845,11 +845,11 @@ FormApp.Form.prototype.addDurationItem = function(){};
  * Adds the given user to the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>. If the user was already
  on the list of viewers, this method promotes the user out of the list of viewers.
  *
- * @param {User} user - a representation of the user to add
+ * @param {String} emailAddress - the email address of the user to add
  *
  * @return {FormApp.Form} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>, for chaining
  */
-FormApp.Form.prototype.addEditor = function(user){};
+FormApp.Form.prototype.addEditor = function(emailAddress){};
 
 /**
  * Adds the given array of users to the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>. If any of the
@@ -988,14 +988,13 @@ FormApp.Form.prototype.createResponse = function(){};
 FormApp.Form.prototype.deleteAllResponses = function(){};
 
 /**
- * Deletes the item at a given index among all the items in the form. Throws a scripting exception
- if no item exists at the given index.
+ * Deletes the given item. Throws a scripting exception if the item has already been deleted.
  *
- * @param {number} index - the index of the item among all the items in the form
+ * @param {FormApp.Item} item - the item to be deleted
  *
  * @return void
  */
-FormApp.Form.prototype.deleteItem = function(index){};
+FormApp.Form.prototype.deleteItem = function(item){};
 
 /**
  * Gets the form's confirmation message.
@@ -1067,13 +1066,11 @@ FormApp.Form.prototype.getId = function(){};
 FormApp.Form.prototype.getItemById = function(id){};
 
 /**
- * Gets an array of all items of a given type.
+ * Gets an array of all items in the form.
  *
- * @param {FormApp.ItemType} itemType - the type of items to retrieve
- *
- * @return {FormApp.Item[]} an array of all items of that type
+ * @return {FormApp.Item[]} an array of all items in the form
  */
-FormApp.Form.prototype.getItems = function(itemType){};
+FormApp.Form.prototype.getItems = function(){};
 
 /**
  * Gets the URL that can be used to respond to the form.
@@ -1093,13 +1090,11 @@ FormApp.Form.prototype.getPublishedUrl = function(){};
 FormApp.Form.prototype.getResponse = function(responseId){};
 
 /**
- * Gets an array of all of the form's responses after a given date and time.
+ * Gets an array of all of the form's responses.
  *
- * @param {Date} timestamp - the earliest date and time for which form responses should be returned
- *
- * @return {FormApp.FormResponse[]} the list of form responses
+ * @return {FormApp.FormResponse[]} an array of all of the form's responses
  */
-FormApp.Form.prototype.getResponses = function(timestamp){};
+FormApp.Form.prototype.getResponses = function(){};
 
 /**
  * Determines whether the order of the questions on each page of the form is randomized.
@@ -1165,15 +1160,15 @@ FormApp.Form.prototype.isAcceptingResponses = function(){};
 FormApp.Form.prototype.isPublishingSummary = function(){};
 
 /**
- * Moves an item at a given index among all the items in the form to another given index. Throws a
- scripting exception if the <code>to</code> index is out of bounds.
+ * Moves a given item to an given index among all the items in the form. Throws a scripting
+ exception if the given index is out of bounds.
  *
- * @param {number} from - the current index of the item among all the items in the form
- * @param {number} to - the new index for the item among all the items in the form
+ * @param {FormApp.Item} item - the item to move
+ * @param {number} toIndex - the new index for the item among all the items in the form
  *
  * @return {FormApp.Item} the item that was moved
  */
-FormApp.Form.prototype.moveItem = function(from, to){};
+FormApp.Form.prototype.moveItem = function(item, toIndex){};
 
 /**
  * Unlinks the form from its current response destination. The unlinked former destination still
@@ -1192,11 +1187,11 @@ FormApp.Form.prototype.removeDestination = function(){};
  block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code> if they belong to a class of users who have
  general access ? for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code> is shared with the user's entire domain.
  *
- * @param {User} user - a representation of the user to remove
+ * @param {String} emailAddress - the email address of the user to remove
  *
  * @return {FormApp.Form} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>, for chaining
  */
-FormApp.Form.prototype.removeEditor = function(user){};
+FormApp.Form.prototype.removeEditor = function(emailAddress){};
 
 /**
  * Determines whether the form requires respondents to log in to an account in the same domain or
@@ -1961,8 +1956,20 @@ FormApp.ItemResponse.prototype.getResponse = function(){};
 FormApp.ListItem = function(){};
 
 /**
- * Creates a new choice with a page-navigation option. Choices that use page navigation cannot be
- combined in the same item with choices that do not use page navigation.
+ * Creates a new choice.
+ *
+ * @param {String} value - the choice's value, which respondents see as a label when viewing the form
+ *
+ * @return {FormApp.Choice} the new choice
+ */
+FormApp.ListItem.prototype.createChoice = function(value){};
+
+/**
+ * Creates a new choice with a page-navigation option that jumps to a given page-break item. This
+ is equivalent to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/list-item.html#createChoice(String,PageNavigationType)'>createChoice(value, navigationType)</a></code> with
+ <code>navigationType</code> set to <code>FormApp.PageNavigationType.GO_TO_PAGE</code>. Choices that use
+ page navigation cannot be combined in the same item with choices that do not use page
+ navigation.
  
  <p>The page navigation occurs after the respondent completes a page that contains the option,
  and only if the respondent chose that option. If the respondent chose multiple options with
@@ -1970,11 +1977,11 @@ FormApp.ListItem = function(){};
  Page navigation also has no effect on the last page of a form.</p>
  *
  * @param {String} value - the choice's value, which respondents see as a label when viewing the form
- * @param {FormApp.PageNavigationType} navigationType - the choice's navigation type
+ * @param {FormApp.PageBreakItem} navigationItem - the item to navigate to
  *
  * @return {FormApp.Choice} the new choice
  */
-FormApp.ListItem.prototype.createChoice = function(value, navigationType){};
+FormApp.ListItem.prototype.createChoice = function(value, navigationItem){};
 
 /**
  * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/item-response.html'>ItemResponse</a></code> for this list item. Throws an exception if the
@@ -2120,8 +2127,20 @@ FormApp.ListItem.prototype.setTitle = function(title){};
 FormApp.MultipleChoiceItem = function(){};
 
 /**
- * Creates a new choice with a page-navigation option. Choices that use page navigation cannot be
- combined in the same item with choices that do not use page navigation.
+ * Creates a new choice.
+ *
+ * @param {String} value - the choice's value, which respondents see as a label when viewing the form
+ *
+ * @return {FormApp.Choice} the new choice
+ */
+FormApp.MultipleChoiceItem.prototype.createChoice = function(value){};
+
+/**
+ * Creates a new choice with a page-navigation option that jumps to a given page-break item. This
+ is equivalent to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/multiple-choice-item.html#createChoice(String,PageNavigationType)'>createChoice(value, navigationType)</a></code> with
+ <code>navigationType</code> set to <code>FormApp.PageNavigationType.GO_TO_PAGE</code>. Choices that use
+ page navigation cannot be combined in the same item with choices that do not use page
+ navigation.
  
  <p>The page navigation occurs after the respondent completes a page that contains the option,
  and only if the respondent chose that option. If the respondent chose multiple options with
@@ -2129,11 +2148,11 @@ FormApp.MultipleChoiceItem = function(){};
  Page navigation also has no effect on the last page of a form.</p>
  *
  * @param {String} value - the choice's value, which respondents see as a label when viewing the form
- * @param {FormApp.PageNavigationType} navigationType - the choice's navigation type
+ * @param {FormApp.PageBreakItem} navigationItem - the item to navigate to
  *
  * @return {FormApp.Choice} the new choice
  */
-FormApp.MultipleChoiceItem.prototype.createChoice = function(value, navigationType){};
+FormApp.MultipleChoiceItem.prototype.createChoice = function(value, navigationItem){};
 
 /**
  * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/item-response.html'>ItemResponse</a></code> for this multiple-choice item. Throws an exception if the
@@ -2361,17 +2380,16 @@ FormApp.PageBreakItem.prototype.getTitle = function(){};
 FormApp.PageBreakItem.prototype.getType = function(){};
 
 /**
- * Sets the type of page navigation that occurs after completing the page before this page break
- (that is, upon reaching this page break by normal linear progression through the form). If the
+ * Sets the page to jump to after completing the page before this page break (that is, upon
+ reaching this page break by normal linear progression through the form). If the previous
  page contained a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/multiple-choice-item.html'>MultipleChoiceItem</a></code> or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/list-item.html'>ListItem</a></code> with a navigation option, that
  navigation overrules this navigation.
  *
- * @param {FormApp.PageNavigationType} navigationType - the navigation action to take after completing the page before this page
-     break
+ * @param {FormApp.PageBreakItem} goToPageItem - the page break to jump to after completing the page before this page break
  *
  * @return {FormApp.PageBreakItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/page-break-item.html'>PageBreakItem</a></code>, for chaining
  */
-FormApp.PageBreakItem.prototype.setGoToPage = function(navigationType){};
+FormApp.PageBreakItem.prototype.setGoToPage = function(goToPageItem){};
 
 /**
  * Sets the item's help text (sometimes called description text for layout

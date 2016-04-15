@@ -71,21 +71,20 @@ ContentService.MimeType.prototype.VCARD = {};
 ContentService.MimeType.prototype.XML = {};
 
 /**
- * Create a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/content/text-output.html'>TextOutput</a></code> object that can serve the given content.
+ * Create a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/content/text-output.html'>TextOutput</a></code> object.
 
  <pre class="prettyprint">
  <code>
  function doGet() {
-   var output = ContentService.createTextOutput(&quot;Hello world!&quot;);
+   var output = ContentService.createTextOutput();
+   output.append(&quot;Hello world!&quot;);
    return output;
  }
  </code></pre>
  *
- * @param {String} content - the content to serve.
- *
  * @return {ContentService.TextOutput} the new TextOutput object.
  */
-ContentService.createTextOutput = function(content){};
+ContentService.createTextOutput = function(){};
 
 /** @constructor */
 ContentService.TextOutput = function(){};

@@ -52,14 +52,29 @@ HtmlService.SandboxMode.prototype.NATIVE = {};
 
  <pre class="prettyprint">
  <code>
- var output = HtmlService.createHtmlOutput(&#39;&lt;b&gt;Hello world!&lt;/b&gt;&#39;);
+ var output = HtmlService.createHtmlOutput();
  </code></pre>
- *
- * @param {String} html - the content to serve
  *
  * @return {HtmlService.HtmlOutput} the new HtmlOutput object
  */
-HtmlService.createHtmlOutput = function(html){};
+HtmlService.createHtmlOutput = function(){};
+
+/**
+ * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-output.html'>HtmlOutput</a></code> object from a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/../base/blob-source.html'>BlobSource</a></code> resource.
+
+ <pre class="prettyprint">
+ <code>
+ function createFromBlob(blob) {
+   var output = HtmlService.createHtmlOutput(blob);
+   return output;
+ }
+ </code></pre>
+ *
+ * @param {BlobSource} blob - the object to get HTML out of
+ *
+ * @return {HtmlService.HtmlOutput} the new <code>HtmlOutput</code> object
+ */
+HtmlService.createHtmlOutput = function(blob){};
 
 /**
  * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-output.html'>HtmlOutput</a></code> object from a file in the code editor.
@@ -76,18 +91,21 @@ HtmlService.createHtmlOutput = function(html){};
 HtmlService.createHtmlOutputFromFile = function(filename){};
 
 /**
- * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-template.html'>HtmlTemplate</a></code> object that can be returned from the script.
+ * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-template.html'>HtmlTemplate</a></code> object from a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/../base/blob-source.html'>BlobSource</a></code> resource.
 
  <pre class="prettyprint">
  <code>
- var template = HtmlService.createTemplate(&#39;&lt;b&gt;The time is &amp;lt;?= new Date() ?&amp;gt;&lt;/b&gt;&#39;);
+ function createFromBlob(blob) {
+   var template = HtmlService.createTemplate(blob);
+   return output;
+ }
  </code></pre>
  *
- * @param {String} html - the content of the template
+ * @param {BlobSource} blob - the object to get HTML out of
  *
  * @return {HtmlService.HtmlTemplate} the new <code>HtmlTemplate</code> object
  */
-HtmlService.createTemplate = function(html){};
+HtmlService.createTemplate = function(blob){};
 
 /**
  * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-template.html'>HtmlTemplate</a></code> object from a file in the code editor.

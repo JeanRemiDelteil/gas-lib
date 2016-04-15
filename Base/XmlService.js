@@ -27,35 +27,42 @@ XmlService.createComment = function(text){};
 
 /**
  * Creates an unattached <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/doc-type.html'>DocumentType</a></code> node for the root <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html'>Element</a></code> node
- with the given name, and the given public ID and system ID for the external subset data.
+ with the given name.
  *
  * @param {String} elementName - the name of the root <code>Element</code> node to specify in the <code>DocType</code>
      declaration
- * @param {String} publicId - the public ID of the external subset data to set
+ *
+ * @return {XmlService.DocType} the newly created <code>DocumentType</code> node
+ */
+XmlService.createDocType = function(elementName){};
+
+/**
+ * Creates an unattached <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/doc-type.html'>DocumentType</a></code> node for the root <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html'>Element</a></code> node
+ with the given name, and the given system ID for the external subset data.
+ *
+ * @param {String} elementName - the name of the root <code>Element</code> node to specify in the <code>DocType</code>
+     declaration
  * @param {String} systemId - the system ID of the external subset data to set
  *
  * @return {XmlService.DocType} the newly created <code>DocumentType</code> node
  */
-XmlService.createDocType = function(elementName, publicId, systemId){};
+XmlService.createDocType = function(elementName, systemId){};
 
 /**
- * Creates an XML document with the given root <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html'>Element</a></code> node.
- *
- * @param {XmlService.Element} rootElement - the root <code>Element</code> node to set
+ * Creates an empty XML document.
  *
  * @return {XmlService.Document} the newly created document
  */
-XmlService.createDocument = function(rootElement){};
+XmlService.createDocument = function(){};
 
 /**
- * Creates an unattached <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html'>Element</a></code> node with the given local name and namespace.
+ * Creates an unattached <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html'>Element</a></code> node with the given local name and no namespace.
  *
  * @param {String} name - the local name to set
- * @param {XmlService.Namespace} namespace - the namespace to set
  *
  * @return {XmlService.Element} the newly created <code>Element</code> node
  */
-XmlService.createElement = function(name, namespace){};
+XmlService.createElement = function(name){};
 
 /**
  * Creates an unattached <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/text.html'>Text</a></code> node with the given value.
@@ -86,14 +93,13 @@ XmlService.createText = function(text){};
 XmlService.getCompactFormat = function(){};
 
 /**
- * Creates a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/namespace.html'>Namespace</a></code> with the given prefix and URI.
+ * Creates a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/namespace.html'>Namespace</a></code> with the given URI.
  *
- * @param {String} prefix - the prefix for the namespace
  * @param {String} uri - the URI for the namespace
  *
  * @return {XmlService.Namespace} the newly created namespace
  */
-XmlService.getNamespace = function(prefix, uri){};
+XmlService.getNamespace = function(uri){};
 
 /**
  * Creates a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/namespace.html'>Namespace</a></code> that represents the absence of a real namespace.
@@ -505,16 +511,19 @@ XmlService.DocType.prototype.setSystemId = function(id){};
 XmlService.Document = function(){};
 
 /**
- * Appends the given node to the end of the document. The <code>content</code> argument can be a
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/content.html'>Content</a></code> object or any node object that corresponds to a type listed in 
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/content-type.html'>ContentType</a></code>. Note, however, that a document can only have one child
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html'>Element</a></code> node, which is implicitly the root <code>Element</code> node.
+ * Inserts the given node at the given index among all nodes that are immediate children of the
+ document. The <code>content</code> argument can be a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/content.html'>Content</a></code> object or any node object
+ that corresponds to a type listed in <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/content-type.html'>ContentType</a></code>. Note, however, that a document
+ can only have one child <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html'>Element</a></code> node, which is implicitly the root <code>Element</code>
+ node.
  *
- * @param {XmlService.Content} content - the node to append
+ * @param {number} index - the index at which to insert the node among all nodes that are immediate children
+   of the document
+ * @param {XmlService.Content} content - the node to insert
  *
  * @return {XmlService.Document} the document, for chaining
  */
-XmlService.Document.prototype.addContent = function(content){};
+XmlService.Document.prototype.addContent = function(index, content){};
 
 /**
  * Creates unattached copies of all nodes that are immediate children of the document.
@@ -592,15 +601,23 @@ XmlService.Document.prototype.getRootElement = function(){};
 XmlService.Document.prototype.hasRootElement = function(){};
 
 /**
- * Removes the given node, if the node is an immediate child of the document. The
- <code>content</code> argument can be a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/content.html'>Content</a></code> object or any node object that corresponds
- to a type listed in <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/content-type.html'>ContentType</a></code>.
+ * Removes all nodes that are immediate children of the document.
  *
- * @param {XmlService.Content} content - the node to remove
- *
- * @return {Boolean} <code>true</code> if the node was an immediate child and was removed; <code>false</code> if not
+ * @return {XmlService.Content[]} an array of all nodes that were immediate children of the document before they
+     were removed
  */
-XmlService.Document.prototype.removeContent = function(content){};
+XmlService.Document.prototype.removeContent = function(){};
+
+/**
+ * Removes the node at the given index among all nodes that are immediate children of the
+ document. If there is no node at the given index, this method returns <code>null</code>.
+ *
+ * @param {number} index - the index for the node among all nodes that are immediate children of the
+     document
+ *
+ * @return {XmlService.Content} the node that was removed, or <code>null</code> if there is no node at the given index
+ */
+XmlService.Document.prototype.removeContent = function(index){};
 
 /**
  * Sets the document's <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/doc-type.html'>DocType</a></code> declaration. If the document already has a different
@@ -627,15 +644,17 @@ XmlService.Document.prototype.setRootElement = function(element){};
 XmlService.Element = function(){};
 
 /**
- * Appends the given node as the last child of the <code>Element</code> node. The <code>content</code>
- argument can be a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html'>Element</a></code> object or any node object that corresponds to a type
- listed in <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/content-type.html'>ContentType</a></code>.
+ * Inserts the given node at the given index among all nodes that are immediate children of the
+ <code>Element</code> node. The <code>content</code> argument can be a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html'>Element</a></code> object or any
+ node object that corresponds to a type listed in <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/content-type.html'>ContentType</a></code>.
  *
- * @param {XmlService.Content} content - the node to append
+ * @param {number} index - the index at which to insert the node among all nodes that are immediate children
+   of the <code>Element</code> node
+ * @param {XmlService.Content} content - the node to insert
  *
  * @return {XmlService.Element} the <code>Element</code> node, for chaining
  */
-XmlService.Element.prototype.addContent = function(content){};
+XmlService.Element.prototype.addContent = function(index, content){};
 
 /**
  * Creates unattached copies of all nodes that are immediate children of the {@code Element} node.
@@ -661,16 +680,15 @@ XmlService.Element.prototype.detach = function(){};
 XmlService.Element.prototype.getAllContent = function(){};
 
 /**
- * Gets the attribute for this <code>Element</code> node with the given name and namespace. If there is
- no such node, this method returns <code>null</code>.
+ * Gets the attribute for this <code>Element</code> node with the given name and no namespace. If there
+ is no such attribute, this method returns <code>null</code>.
  *
  * @param {String} name - the name of the attribute
- * @param {XmlService.Namespace} namespace - the namespace of the attribute
  *
- * @return {XmlService.Attribute} the attribute, or <code>null</code> if there is no attribute with the given name and
-    namespace
+ * @return {XmlService.Attribute} the attribute, or <code>null</code> if there is no attribute with the given name and no
+     namespace
  */
-XmlService.Element.prototype.getAttribute = function(name, namespace){};
+XmlService.Element.prototype.getAttribute = function(name){};
 
 /**
  * Gets all attributes for this <code>Element</code> node, in the order they appear in the document.
@@ -680,40 +698,47 @@ XmlService.Element.prototype.getAttribute = function(name, namespace){};
 XmlService.Element.prototype.getAttributes = function(){};
 
 /**
- * Gets the first <code>Element</code> node with the given name and namespace that is an immediate
+ * Gets the first <code>Element</code> node with the given name and no namespace that is an immediate
  child of this <code>Element</code> node. If there is no such node, this method returns <code>null</code>.
  *
  * @param {String} name - the name of the child <code>Element</code> node
- * @param {XmlService.Namespace} namespace - the namespace of the child <code>Element</code> node
  *
  * @return {XmlService.Element} the <code>Element</code> node, or <code>null</code> if there is no immediate child
-     <code>Element</code> node with the given name and namespace
+     <code>Element</code> node with the given name and no namespace
  */
-XmlService.Element.prototype.getChild = function(name, namespace){};
+XmlService.Element.prototype.getChild = function(name){};
 
 /**
- * Gets the text value of the node with the given name and namespace, if the node is an immediate
- child of the <code>Element</code> node. If there is no such node, this method returns <code>null</code>.
+ * Gets the text value of the node with the given name and no namespace, if the node is an
+ immediate child of the <code>Element</code> node. If there is no such node, this method returns
+ <code>null</code>.
  *
  * @param {String} name - the name of the child node
- * @param {XmlService.Namespace} namespace - the namespace of the child node
  *
  * @return {String} the text value of the child node, or <code>null</code> if there is no immediate child node
-     with the given name and namespace
+     with the given name and no namespace
  */
-XmlService.Element.prototype.getChildText = function(name, namespace){};
+XmlService.Element.prototype.getChildText = function(name){};
 
 /**
- * Gets all <code>Element</code> nodes with the given name and namespace that are immediate children of
- this <code>Element</code> node, in the order they appear in the document.
+ * Gets all <code>Element</code> nodes that are immediate children of this <code>Element</code> node, in the
+ order they appear in the document.
+ *
+ * @return {XmlService.Element[]} an array of all <code>Element</code> nodes that are immediate children of this
+     <code>Element</code> node
+ */
+XmlService.Element.prototype.getChildren = function(){};
+
+/**
+ * Gets all <code>Element</code> nodes with the given name and no namespace that are immediate children
+ of this <code>Element</code> node, in the order they appear in the document.
  *
  * @param {String} name - the name of the child <code>Element</code> nodes
- * @param {XmlService.Namespace} namespace - the namespace of the child <code>Element</code> nodes
  *
- * @return {XmlService.Element[]} an array of all <code>Element</code> nodes with the given name and namespace that are
+ * @return {XmlService.Element[]} an array of all <code>Element</code> nodes with the given name and no namespace that are
      immediate children of this <code>Element</code> node
  */
-XmlService.Element.prototype.getChildren = function(name, namespace){};
+XmlService.Element.prototype.getChildren = function(name){};
 
 /**
  * Gets the node at the given index among all nodes that are immediate children of the
@@ -758,13 +783,11 @@ XmlService.Element.prototype.getDocument = function(){};
 XmlService.Element.prototype.getName = function(){};
 
 /**
- * Gets the namespace with the given prefix for the <code>Element</code> node.
+ * Gets the namespace for the <code>Element</code> node.
  *
- * @param {String} prefix - the prefix for the namespace
- *
- * @return {XmlService.Namespace} the namespace with the given prefix for the <code>Element</code> node
+ * @return {XmlService.Namespace} the namespace for the <code>Element</code> node
  */
-XmlService.Element.prototype.getNamespace = function(prefix){};
+XmlService.Element.prototype.getNamespace = function(){};
 
 /**
  * Gets the node's parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html'>Element</a></code> node. If the node does not have a parent, this method
@@ -819,33 +842,65 @@ XmlService.Element.prototype.isAncestorOf = function(other){};
 XmlService.Element.prototype.isRootElement = function(){};
 
 /**
- * Removes the given attribute for this <code>Element</code> node, if such an attribute exists.
+ * Removes the attribute for this <code>Element</code> node with the given name and no namespace, if
+ such an attribute exists.
  *
- * @param {XmlService.Attribute} attribute - the attribute
+ * @param {String} attributeName - the name of the attribute
  *
  * @return {Boolean} <code>true</code> if the attribute existed and was removed; <code>false</code> if not
  */
-XmlService.Element.prototype.removeAttribute = function(attribute){};
+XmlService.Element.prototype.removeAttribute = function(attributeName){};
 
 /**
- * Removes the given node, if the node is an immediate child of the {@code Element} node. The
- <code>content</code> argument can be a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html'>Element</a></code> object or any node object that corresponds
- to a type listed in <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/content-type.html'>ContentType</a></code>.
+ * Removes the attribute for this <code>Element</code> node with the given name and namespace, if such
+ an attribute exists.
  *
- * @param {XmlService.Content} content - the node to remove
+ * @param {String} attributeName - the name of the attribute
+ * @param {XmlService.Namespace} namespace - the namespace of the attribute
  *
- * @return {Boolean} <code>true</code> if the node was an immediate child and was removed; <code>false</code> if not
+ * @return {Boolean} <code>true</code> if the attribute existed and was removed; <code>false</code> if not
  */
-XmlService.Element.prototype.removeContent = function(content){};
+XmlService.Element.prototype.removeAttribute = function(attributeName, namespace){};
 
 /**
- * Sets the given attribute for this <code>Element</code> node.
+ * Removes all nodes that are immediate children of the {@code Element} node.
  *
- * @param {XmlService.Attribute} attribute - the attribute to set
+ * @return {XmlService.Content[]} an array of all nodes that were immediate children of the {@code Element} node before they
+     were removed
+ */
+XmlService.Element.prototype.removeContent = function(){};
+
+/**
+ * Removes the node at the given index among all nodes that are immediate children of the
+ {@code Element} node. If there is no node at the given index, this method returns <code>null</code>.
+ *
+ * @param {number} index - the index for the node among all nodes that are immediate children of the
+     {@code Element} node
+ *
+ * @return {XmlService.Content} the node that was removed, or <code>null</code> if there is no node at the given index
+ */
+XmlService.Element.prototype.removeContent = function(index){};
+
+/**
+ * Sets the attribute for this <code>Element</code> node with the given name, value, and no namespace.
+ *
+ * @param {String} name - the name of the attribute to set
+ * @param {String} value - the value of the attribute to set
  *
  * @return {XmlService.Element} the <code>Element</code> node, for chaining
  */
-XmlService.Element.prototype.setAttribute = function(attribute){};
+XmlService.Element.prototype.setAttribute = function(name, value){};
+
+/**
+ * Sets the attribute for this <code>Element</code> node with the given name, value, and namespace.
+ *
+ * @param {String} name - the name of the attribute to set
+ * @param {String} value - the value of the attribute to set
+ * @param {XmlService.Namespace} namespace - the namespace of the attribute to set
+ *
+ * @return {XmlService.Element} the <code>Element</code> node, for chaining
+ */
+XmlService.Element.prototype.setAttribute = function(name, value, namespace){};
 
 /**
  * Sets the local name of the <code>Element</code> node. To set a namespace prefix for the node, use
@@ -959,13 +1014,13 @@ XmlService.EntityRef.prototype.setSystemId = function(id){};
 XmlService.Format = function(){};
 
 /**
- * Outputs the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html'>Element</a></code> node as a formatted string.
+ * Outputs the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/document.html'>Document</a></code> as a formatted string.
  *
- * @param {XmlService.Element} element - the element to format
+ * @param {XmlService.Document} document - the document to format
  *
- * @return {String} the formatted element
+ * @return {String} the formatted document
  */
-XmlService.Format.prototype.format = function(element){};
+XmlService.Format.prototype.format = function(document){};
 
 /**
  * Sets the character encoding that the formatter should use. The <code>encoding</code> argument must

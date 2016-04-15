@@ -18,17 +18,36 @@ Button = function(){};
 ButtonSet = function(){};
 
 /**
- * Opens a dialog box in the user's editor with the given title, message, and set of buttons. This
- method suspends the server-side script while the dialog is open. The script will resume after
- the user dismisses the dialog, but <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../jdbc/jdbc.html'>Jdbc</a></code>
+ * Opens a dialog box in the user's editor with the given message and an "OK" button. This method
+ suspends the server-side script while the dialog is open. The script will resume after the user
+ dismisses the dialog, but <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../jdbc/jdbc.html'>Jdbc</a></code>
  connections will not persist across the suspension. For more information, see the
  <a href="/apps-script/guides/dialogs">guide to dialogs and sidebars</a>.
 
  <pre class="prettyprint">
- // Display a dialog box with a title, message, and "Yes" and "No" buttons. The user can also
- // close the dialog by clicking the close button in its title bar.
+ // Display "Hello, world!" in a dialog box with an "OK" button. The user can also close the
+ // dialog by clicking the close button in its title bar.
+ SpreadsheetApp.getUi().alert('Hello, world!');
+ </pre>
+ *
+ * @param {String} prompt - the message to display in the dialog box
+ *
+ * @return {Button} the button the user clicked
+ */
+Ui.alert = function(prompt){};
+
+/**
+ * Opens a dialog box in the user's editor with the given message and set of buttons. This method
+ suspends the server-side script while the dialog is open. The script will resume after the user
+ dismisses the dialog, but <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../jdbc/jdbc.html'>Jdbc</a></code>
+ connections will not persist across the suspension. For more information, see the
+ <a href="/apps-script/guides/dialogs">guide to dialogs and sidebars</a>.
+
+ <pre class="prettyprint">
+ // Display a dialog box with a message and "Yes" and "No" buttons. The user can also close the
+ // dialog by clicking the close button in its title bar.
  var ui = SpreadsheetApp.getUi();
- var response = ui.alert('Confirm', 'Are you sure you want to continue?', ui.ButtonSet.YES_NO);
+ var response = ui.alert('Are you sure you want to continue?', ui.ButtonSet.YES_NO);
 
  // Process the user's response.
  if (response == ui.Button.YES) {
@@ -38,13 +57,12 @@ ButtonSet = function(){};
  }
  </pre>
  *
- * @param {String} title - the title to display above the dialog box
  * @param {String} prompt - the message to display in the dialog box
  * @param {ButtonSet} buttons - the button set to display in the dialog box
  *
  * @return {Button} the button the user clicked
  */
-Ui.alert = function(title, prompt, buttons){};
+Ui.alert = function(prompt, buttons){};
 
 /**
  * Creates a builder that can be used to insert a sub-menu into the editor's Add-on menu. The
@@ -98,18 +116,44 @@ Ui.createAddonMenu = function(){};
 Ui.createMenu = function(caption){};
 
 /**
- * Opens an input dialog box in the user's editor with the given title, message, and set of
- buttons. This method suspends the server-side script while the dialog is open. The script will
- resume after the user dismisses the dialog, but
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../jdbc/jdbc.html'>Jdbc</a></code> connections will not persist across
- the suspension. For more information, see the
+ * Opens an input dialog box in the user's editor with the given message and an "OK" button. This
+ method suspends the server-side script while the dialog is open. The script will resume after
+ the user dismisses the dialog, but <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../jdbc/jdbc.html'>Jdbc</a></code>
+ connections will not persist across the suspension. For more information, see the
  <a href="/apps-script/guides/dialogs">guide to dialogs and sidebars</a>.
 
  <pre class="prettyprint">
- // Display a dialog box with a title, message, input field, and "Yes" and "No" buttons. The
- // user can also close the dialog by clicking the close button in its title bar.
+ // Display a dialog box with a message, input field, and an "OK" button. The user can also
+ // close the dialog by clicking the close button in its title bar.
  var ui = SpreadsheetApp.getUi();
- var response = ui.prompt('Getting to know you', 'May I know your name?', ui.ButtonSet.YES_NO);
+ var response = ui.prompt('Enter your name:');
+
+ // Process the user's response.
+ if (response.getSelectedButton() == ui.Button.OK) {
+   Logger.log('The user\'s name is %s.', response.getResponseText());
+ } else {
+   Logger.log('The user clicked the close button in the dialog\'s title bar.');
+ }
+ </pre>
+ *
+ * @param {String} prompt - the message to display in the dialog box
+ *
+ * @return {PromptResponse} a representation of the user's response
+ */
+Ui.prompt = function(prompt){};
+
+/**
+ * Opens an input dialog box in the user's editor with the given message and set of buttons. This
+ method suspends the server-side script while the dialog is open. The script will resume after
+ the user dismisses the dialog, but <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../jdbc/jdbc.html'>Jdbc</a></code>
+ connections will not persist across the suspension. For more information, see the
+ <a href="/apps-script/guides/dialogs">guide to dialogs and sidebars</a>.
+
+ <pre class="prettyprint">
+ // Display a dialog box with a message, input field, and "Yes" and "No" buttons. The user can
+ // also close the dialog by clicking the close button in its title bar.
+ var ui = SpreadsheetApp.getUi();
+ var response = ui.prompt('May I know your name?', ui.ButtonSet.YES_NO);
 
  // Process the user's response.
  if (response.getSelectedButton() == ui.Button.YES) {
@@ -121,13 +165,12 @@ Ui.createMenu = function(caption){};
  }
  </pre>
  *
- * @param {String} title - the title to display above the dialog box
  * @param {String} prompt - the message to display in the dialog box
  * @param {ButtonSet} buttons - the button set to display in the dialog box
  *
  * @return {PromptResponse} a representation of the user's response
  */
-Ui.prompt = function(title, prompt, buttons){};
+Ui.prompt = function(prompt, buttons){};
 
 /**
  * Opens a dialog box in the user's editor with custom client-side content. This method does
