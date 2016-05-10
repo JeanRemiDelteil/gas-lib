@@ -6,7 +6,7 @@ var ScriptApp = {};
  execute through a triggered function.
 
  */
-ScriptApp.AuthMode = function(){};
+ScriptApp.AuthMode = {};
 
 /**
  * A mode that allows access to a limited subset of services for use in custom spreadsheet
@@ -16,18 +16,18 @@ ScriptApp.AuthMode = function(){};
  never returned; it is documented only to demonstrate that custom functions run in their own
  authorization mode.
  *
- * @type {{}}
+ * @type {ScriptApp.AuthMode}
  */
-ScriptApp.AuthMode.prototype.CUSTOM_FUNCTION = {};
+ScriptApp.AuthMode.CUSTOM_FUNCTION = {};
 
 /**
  * A mode that allows access to all services that require authorization. This mode occurs when an
  add-on or a script executes as the result of any trigger other than the cases described for
  <code>LIMITED</code> or <code>NONE</code>.
  *
- * @type {{}}
+ * @type {ScriptApp.AuthMode}
  */
-ScriptApp.AuthMode.prototype.FULL = {};
+ScriptApp.AuthMode.FULL = {};
 
 /**
  * A mode that allows access to a limited subset of services. This mode occurs when an add-on or a
@@ -35,18 +35,18 @@ ScriptApp.AuthMode.prototype.FULL = {};
  <code>onOpen(e)</code> or <code>onEdit(e)</code> simple trigger, except in the case described for
  <code>NONE</code>.
  *
- * @type {{}}
+ * @type {ScriptApp.AuthMode}
  */
-ScriptApp.AuthMode.prototype.LIMITED = {};
+ScriptApp.AuthMode.LIMITED = {};
 
 /**
  * A mode that does not allow access to any services that require authorization. This mode occurs
  when an add-on executes an <code>onOpen(e)</code> simple trigger, and the user has installed an
  add-on in a different document but the add-on has not been used in the current document.
  *
- * @type {{}}
+ * @type {ScriptApp.AuthMode}
  */
-ScriptApp.AuthMode.prototype.NONE = {};
+ScriptApp.AuthMode.NONE = {};
 
 /**
  * An enumeration denoting the authorization status of a script.
@@ -80,46 +80,46 @@ ScriptApp.AuthorizationStatus.prototype.REQUIRED = {};
  * An enumeration denoting the type of triggered event.
 
  */
-ScriptApp.EventType = function(){};
+ScriptApp.EventType = {};
 
 /**
  * The trigger fires once the time-driven event reaches a specific time.
  *
- * @type {{}}
+ * @type {ScriptApp.EventType}
  */
-ScriptApp.EventType.prototype.CLOCK = {};
+ScriptApp.EventType.CLOCK = {};
 
 /**
  * The trigger fires once the user changes the Google Sheets file (for example,
  by adding a row, which counts as a change instead of an edit).
  *
- * @type {{}}
+ * @type {ScriptApp.EventType}
  */
-ScriptApp.EventType.prototype.ON_CHANGE = {};
+ScriptApp.EventType.ON_CHANGE = {};
 
 /**
  * The trigger fires once the user edits the Google Sheets file (for example, by
  entering a new value into a cell, which counts as an edit instead of a change).
  *
- * @type {{}}
+ * @type {ScriptApp.EventType}
  */
-ScriptApp.EventType.prototype.ON_EDIT = {};
+ScriptApp.EventType.ON_EDIT = {};
 
 /**
  * The trigger fires once the user responds to a Google Form. This trigger is
  available either in the Google Form itself or in the Google Sheets file that
  the form sends its responses to.
  *
- * @type {{}}
+ * @type {ScriptApp.EventType}
  */
-ScriptApp.EventType.prototype.ON_FORM_SUBMIT = {};
+ScriptApp.EventType.ON_FORM_SUBMIT = {};
 
 /**
  * The trigger fires once the user opens the Google Docs, Sheets, or Forms file.
  *
- * @type {{}}
+ * @type {ScriptApp.EventType}
  */
-ScriptApp.EventType.prototype.ON_OPEN = {};
+ScriptApp.EventType.ON_OPEN = {};
 
 /**
  * An enumeration denoting how the script was installed to the user as an add-on.
@@ -152,42 +152,42 @@ ScriptApp.InstallationSource.prototype.WEB_STORE_ADD_ON = {};
  * An enumeration denoting the source of the event that causes the trigger to fire.
 
  */
-ScriptApp.TriggerSource = function(){};
+ScriptApp.TriggerSource = {};
 
 /**
  * A time-driven event causes the trigger to fire.
  *
- * @type {{}}
+ * @type {ScriptApp.TriggerSource}
  */
-ScriptApp.TriggerSource.prototype.CLOCK = {};
+ScriptApp.TriggerSource.CLOCK = {};
 
 /**
  * Google Docs causes the trigger to fire.
  *
- * @type {{}}
+ * @type {ScriptApp.TriggerSource}
  */
-ScriptApp.TriggerSource.prototype.DOCUMENTS = {};
+ScriptApp.TriggerSource.DOCUMENTS = {};
 
 /**
  * Google Forms causes the trigger to fire.
  *
- * @type {{}}
+ * @type {ScriptApp.TriggerSource}
  */
-ScriptApp.TriggerSource.prototype.FORMS = {};
+ScriptApp.TriggerSource.FORMS = {};
 
 /**
  * Realtime API causes the trigger to fire.
  *
- * @type {{}}
+ * @type {ScriptApp.TriggerSource}
  */
-ScriptApp.TriggerSource.prototype.REALTIME = {};
+ScriptApp.TriggerSource.REALTIME = {};
 
 /**
  * Google Sheets causes the trigger to fire.
  *
- * @type {{}}
+ * @type {ScriptApp.TriggerSource}
  */
-ScriptApp.TriggerSource.prototype.SPREADSHEETS = {};
+ScriptApp.TriggerSource.SPREADSHEETS = {};
 
 /**
  * An enumeration representing the days of the week.
@@ -229,9 +229,9 @@ ScriptApp.deleteTrigger = function(trigger){};
  </code></pre>
  *
  * @param {ScriptApp.AuthMode} authMode - the authorization mode for which authorization information is requested;
-     in almost all cases, the value for <code>authMode</code> should be
-     <code>ScriptApp.getAuthorizationInfo(ScriptApp.AuthMode.FULL)</code>, since no other
-     authorization mode requires that users grant authorization
+ in almost all cases, the value for <code>authMode</code> should be
+ <code>ScriptApp.getAuthorizationInfo(ScriptApp.AuthMode.FULL)</code>, since no other
+ authorization mode requires that users grant authorization
  *
  * @return {ScriptApp.AuthorizationInfo} an object that can provide information about the user's authorization status
  */
@@ -400,9 +400,9 @@ ScriptApp.newStateToken = function(){};
  <pre class="prettyprint"><code>
  // Creates an edit trigger for a spreadsheet identified by ID.
  ScriptApp.newTrigger(&#39;myFunction&#39;)
-     .forSpreadsheet(&#39;1234567890abcdefghijklmnopqrstuvwxyz_a1b2c3&#39;)
-     .onEdit()
-     .create();
+ .forSpreadsheet(&#39;1234567890abcdefghijklmnopqrstuvwxyz_a1b2c3&#39;)
+ .onEdit()
+ .create();
  </code></pre>
  *
  * @param {String} functionName - the function to call when the trigger fires
@@ -456,13 +456,13 @@ ScriptApp.ClockTriggerBuilder = function(){};
  <code>
  // Creates a trigger that will run 10 minutes later
  ScriptApp.newTrigger(&quot;myFunction&quot;)
-   .timeBased()
-   .after(10 * 60 * 1000)
-   .create();
+ .timeBased()
+ .after(10 * 60 * 1000)
+ .create();
  </code></pre>
  *
  * @param {number} durationMilliseconds - the duration (in milliseconds) after the current time when the
-   trigger should run
+ trigger should run
  *
  * @return {ScriptApp.ClockTriggerBuilder} the builder for chaining
  */
@@ -476,9 +476,9 @@ ScriptApp.ClockTriggerBuilder.prototype.after = function(durationMilliseconds){}
  // Creates a trigger for December 1, 2012
  var triggerDay = new Date(2012, 11, 1);
  ScriptApp.newTrigger(&quot;myFunction&quot;)
-   .timeBased()
-   .at(triggerDay)
-   .create();
+ .timeBased()
+ .at(triggerDay)
+ .create();
  </code></pre>
  *
  * @param {Date} date - a Date object representing when the trigger should run
@@ -494,16 +494,16 @@ ScriptApp.ClockTriggerBuilder.prototype.at = function(date){};
  <code>
  // Schedules for January 1st, 2013
  ScriptApp.newTrigger(&quot;myFunction&quot;)
-   .timeBased()
-   .atDate(2013, 1, 1)
-   .create();
+ .timeBased()
+ .atDate(2013, 1, 1)
+ .create();
  </code></pre>
  *
  * @param {number} year - the calendar year to schedule the trigger
  * @param {number} month - the calendar month to schedule the trigger (should be a number between 1 and 12,
-   inclusive)
+ inclusive)
  * @param {number} day - the calendar day to schedule the trigger (should be a number between 1 and 31,
-   inclusive)
+ inclusive)
  *
  * @return {ScriptApp.ClockTriggerBuilder} the builder for chaining
  */
@@ -516,10 +516,10 @@ ScriptApp.ClockTriggerBuilder.prototype.atDate = function(year, month, day){};
  <code>
  // Runs at 5am in the timezone of the script
  ScriptApp.newTrigger(&quot;myFunction&quot;)
-   .timeBased()
-   .atHour(5)
-   .everyDays(1) // Frequency is required if you are using atHour() or nearMinute()
-   .create();
+ .timeBased()
+ .atHour(5)
+ .everyDays(1) // Frequency is required if you are using atHour() or nearMinute()
+ .create();
  </code></pre>
  *
  * @param {number} hour - the hour at which to fire
@@ -541,9 +541,9 @@ ScriptApp.ClockTriggerBuilder.prototype.create = function(){};
  <pre class="prettyprint">
  <code>
  ScriptApp.newTrigger(&quot;myFunction&quot;)
-   .timeBased()
-   .everyDays(3)
-   .create();
+ .timeBased()
+ .everyDays(3)
+ .create();
  </code></pre>
  *
  * @param {number} n - the number of days between executions
@@ -558,9 +558,9 @@ ScriptApp.ClockTriggerBuilder.prototype.everyDays = function(n){};
  <pre class="prettyprint">
  <code>
  ScriptApp.newTrigger(&quot;myFunction&quot;)
-   .timeBased()
-   .everyHours(12)
-   .create();
+ .timeBased()
+ .everyHours(12)
+ .create();
  </code></pre>
  *
  * @param {number} n - the number of hours between executions
@@ -575,9 +575,9 @@ ScriptApp.ClockTriggerBuilder.prototype.everyHours = function(n){};
  <pre class="prettyprint">
  <code>
  ScriptApp.newTrigger(&quot;myFunction&quot;)
-   .timeBased()
-   .everyMinutes(10)
-   .create();
+ .timeBased()
+ .everyMinutes(10)
+ .create();
  </code></pre>
  *
  * @param {number} n - the number of minutes between executions
@@ -592,9 +592,9 @@ ScriptApp.ClockTriggerBuilder.prototype.everyMinutes = function(n){};
  <pre class="prettyprint">
  <code>
  ScriptApp.newTrigger(&quot;myFunction&quot;)
-   .timeBased()
-   .everyWeeks(2)
-   .create();
+ .timeBased()
+ .everyWeeks(2)
+ .create();
  </code></pre>
  *
  * @param {number} n - the number of weeks between executions
@@ -615,11 +615,11 @@ ScriptApp.ClockTriggerBuilder.prototype.everyWeeks = function(n){};
  <code>
  // Schedule the trigger to execute at noon every day in the US/Pacific time zone
  ScriptApp.newTrigger(&quot;myFunction&quot;)
-   .timeBased()
-   .atHour(12)
-   .everyDays(1)
-   .inTimezone(&quot;America/Los_Angeles&quot;)
-   .create();
+ .timeBased()
+ .atHour(12)
+ .everyDays(1)
+ .inTimezone(&quot;America/Los_Angeles&quot;)
+ .create();
  </code></pre>
  *
  * @param {String} timezone - the timezone with which to treat time information in the event
@@ -635,11 +635,11 @@ ScriptApp.ClockTriggerBuilder.prototype.inTimezone = function(timezone){};
  <code>
  // Runs at approximately 5:30am in the timezone of the script
  ScriptApp.newTrigger(&quot;myFunction&quot;)
-   .timeBased()
-   .atHour(5)
-   .nearMinute(30)
-   .everyDays(1) // Frequency is required if you are using atHour() or nearMinute()
-   .create();
+ .timeBased()
+ .atHour(5)
+ .nearMinute(30)
+ .everyDays(1) // Frequency is required if you are using atHour() or nearMinute()
+ .create();
  </code></pre>
  *
  * @param {number} minute - the minute at which to fire
@@ -655,9 +655,9 @@ ScriptApp.ClockTriggerBuilder.prototype.nearMinute = function(minute){};
  <code>
  // Schedules for the first of every month
  ScriptApp.newTrigger(&quot;myFunction&quot;)
-   .timeBased()
-   .onMonthDay(1)
-   .create();
+ .timeBased()
+ .onMonthDay(1)
+ .create();
  </code></pre>
  *
  * @param {number} day - the day of the month the trigger should be scheduled for
@@ -672,9 +672,9 @@ ScriptApp.ClockTriggerBuilder.prototype.onMonthDay = function(day){};
  <pre class="prettyprint">
  <code>
  ScriptApp.newTrigger(&quot;myFunction&quot;)
-   .timeBased()
-   .onWeekDay(ScriptApp.WeekDay.FRIDAY)
-   .create();
+ .timeBased()
+ .onWeekDay(ScriptApp.WeekDay.FRIDAY)
+ .create();
  </code></pre>
  *
  * @param {Weekday} day - the day of the week to fire
@@ -700,9 +700,9 @@ ScriptApp.DocumentTriggerBuilder.prototype.create = function(){};
  <code>
  var document = DocumentApp.getActiveDocument();
  ScriptApp.newTrigger(&#39;myFunction&#39;)
-   .forDocument(document)
-   .onOpen()
-   .create();
+ .forDocument(document)
+ .onOpen()
+ .create();
  </code></pre>
  *
  * @return {ScriptApp.DocumentTriggerBuilder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/document-trigger-builder.html'>DocumentTriggerBuilder</a></code>, for chaining
@@ -726,9 +726,9 @@ ScriptApp.FormTriggerBuilder.prototype.create = function(){};
  <code>
  var form = FormApp.openById(&#39;1234567890abcdefghijklmnopqrstuvwxyz&#39;);
  ScriptApp.newTrigger(&#39;myFunction&#39;)
-     .forForm(form)
-     .onFormSubmit()
-     .create();
+ .forForm(form)
+ .onFormSubmit()
+ .create();
  </code></pre>
  *
  * @return {ScriptApp.FormTriggerBuilder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/form-trigger-builder.html'>FormTriggerBuilder</a></code>, for chaining
@@ -742,9 +742,9 @@ ScriptApp.FormTriggerBuilder.prototype.onFormSubmit = function(){};
  <code>
  var form = FormApp.getActiveForm();
  ScriptApp.newTrigger(&#39;myFunction&#39;)
-     .forForm(form)
-     .onOpen()
-     .create();
+ .forForm(form)
+ .onOpen()
+ .create();
  </code></pre>
  *
  * @return {ScriptApp.FormTriggerBuilder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/form-trigger-builder.html'>FormTriggerBuilder</a></code>, for chaining
@@ -767,9 +767,9 @@ ScriptApp.RealtimeTriggerBuilder.prototype.create = function(){};
  <pre class="prettyprint">
  <code>
  ScriptApp.newTrigger(&#39;myFunction&#39;)
-     .forRealtimeDocument(&#39;1234567890abcdefghijklmnopqrstuvwxyz&#39;)
-     .onEdit()
-     .create();
+ .forRealtimeDocument(&#39;1234567890abcdefghijklmnopqrstuvwxyz&#39;)
+ .onEdit()
+ .create();
  </code></pre>
  *
  * @return {ScriptApp.RealtimeTriggerBuilder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/realtime-trigger-builder.html'>RealtimeTriggerBuilder</a></code>, for chaining
@@ -812,7 +812,7 @@ ScriptApp.Service.prototype.disable = function(){};
  // Other options are:
  //    Restriction.DOMAIN
  //    Restriction.MYSELF
-</code></pre>
+ </code></pre>
  *
  * @param {ScriptApp.Service.Restriction} restriction - who is allowed to access the web app
  *
@@ -827,7 +827,7 @@ ScriptApp.Service.prototype.enable = function(restriction){};
  <code>
  // Mail the URL of the published web app.
  MailApp.sendMail(&quot;myself@example.com&quot;, &quot;My Snazzy App&quot;,
-   &quot;My new app is now available at &quot; + ScriptApp.getService().getUrl());
+ &quot;My new app is now available at &quot; + ScriptApp.getService().getUrl());
  </code></pre>
  *
  * @return {String} the URL of the web app
@@ -867,9 +867,9 @@ ScriptApp.SpreadsheetTriggerBuilder.prototype.create = function(){};
  <code>
  var sheet = SpreadsheetApp.getActive();
  ScriptApp.newTrigger(&quot;myFunction&quot;)
-   .forSpreadsheet(sheet)
-   .onChange()
-   .create();
+ .forSpreadsheet(sheet)
+ .onChange()
+ .create();
  </code></pre>
  *
  * @return {ScriptApp.SpreadsheetTriggerBuilder} a builder for chaining
@@ -883,9 +883,9 @@ ScriptApp.SpreadsheetTriggerBuilder.prototype.onChange = function(){};
  <code>
  var sheet = SpreadsheetApp.getActive();
  ScriptApp.newTrigger(&quot;myFunction&quot;)
-   .forSpreadsheet(sheet)
-   .onEdit()
-   .create();
+ .forSpreadsheet(sheet)
+ .onEdit()
+ .create();
  </code></pre>
  *
  * @return {ScriptApp.SpreadsheetTriggerBuilder} a builder for chaining
@@ -899,9 +899,9 @@ ScriptApp.SpreadsheetTriggerBuilder.prototype.onEdit = function(){};
  <code>
  var sheet = SpreadsheetApp.getActive();
  ScriptApp.newTrigger(&quot;myFunction&quot;)
-   .forSpreadsheet(sheet)
-   .onFormSubmit()
-   .create();
+ .forSpreadsheet(sheet)
+ .onFormSubmit()
+ .create();
  </code></pre>
  *
  * @return {ScriptApp.SpreadsheetTriggerBuilder} a builder for chaining
@@ -915,9 +915,9 @@ ScriptApp.SpreadsheetTriggerBuilder.prototype.onFormSubmit = function(){};
  <code>
  var sheet = SpreadsheetApp.getActive();
  ScriptApp.newTrigger(&quot;myFunction&quot;)
-   .forSpreadsheet(sheet)
-   .onOpen()
-   .create();
+ .forSpreadsheet(sheet)
+ .onOpen()
+ .create();
  </code></pre>
  *
  * @return {ScriptApp.SpreadsheetTriggerBuilder} a builder for chaining
@@ -963,7 +963,7 @@ ScriptApp.StateTokenBuilder.prototype.withArgument = function(name, value){};
  </code></pre>
  *
  * @param {String} method - the name of the callback function, represented as a string without
-     parentheses or arguments
+ parentheses or arguments
  *
  * @return {ScriptApp.StateTokenBuilder} the state token builder, for chaining
  */
@@ -1069,9 +1069,9 @@ ScriptApp.TriggerBuilder = function(){};
  <pre class="prettyprint">
  <code>
  ScriptApp.newTrigger(&#39;myFunction&#39;)
-   .forDocument(DocumentApp.getActiveDocument())
-   .onOpen()
-   .create();
+ .forDocument(DocumentApp.getActiveDocument())
+ .onOpen()
+ .create();
  </code></pre>
  *
  * @param {DocumentApp.Document} document - the document
@@ -1086,9 +1086,9 @@ ScriptApp.TriggerBuilder.prototype.forDocument = function(document){};
  <pre class="prettyprint">
  <code>
  ScriptApp.newTrigger(&#39;myFunction&#39;)
-   .forForm(FormApp.getActiveForm())
-   .onFormSubmit()
-   .create();
+ .forForm(FormApp.getActiveForm())
+ .onFormSubmit()
+ .create();
  </code></pre>
  *
  * @param {FormApp.Form} form - the form
@@ -1103,9 +1103,9 @@ ScriptApp.TriggerBuilder.prototype.forForm = function(form){};
  <pre class="prettyprint">
  <code>
  ScriptApp.newTrigger(&#39;myFunction&#39;)
-   .forSpreadsheet(SpreadsheetApp.getActive())
-   .onEdit()
-   .create();
+ .forSpreadsheet(SpreadsheetApp.getActive())
+ .onEdit()
+ .create();
  </code></pre>
  *
  * @param {SpreadsheetApp.Spreadsheet} sheet - the spreadsheet
@@ -1120,9 +1120,9 @@ ScriptApp.TriggerBuilder.prototype.forSpreadsheet = function(sheet){};
  <pre class="prettyprint">
  <code>
  ScriptApp.newTrigger(&#39;myFunction&#39;)
-   .timeBased()
-   .atDate(2013, 10, 31)
-   .create();
+ .timeBased()
+ .atDate(2013, 10, 31)
+ .create();
  </code></pre>
  *
  * @return {ScriptApp.ClockTriggerBuilder} the new ClockTriggerBuilder
