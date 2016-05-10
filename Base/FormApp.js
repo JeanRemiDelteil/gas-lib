@@ -32,122 +32,122 @@ FormApp.Alignment.prototype.RIGHT = {};
  * An enumeration of types of destinations that can store form responses.
 
  */
-FormApp.DestinationType = function(){};
+FormApp.DestinationType = {};
 
 /**
  * A Google Sheets spreadsheet as a destination for form responses.
  *
- * @type {{}}
+ * @type {FormApp.DestinationType}
  */
-FormApp.DestinationType.prototype.SPREADSHEET = {};
+FormApp.DestinationType.SPREADSHEET = {};
 
 /**
  * An enumeration of types of form <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/item.html'>Items</a></code>.
 
  */
-FormApp.ItemType = function(){};
+FormApp.ItemType = {};
 
 /**
  * A question item that allows the respondent to select one or more checkboxes, as well as an
  optional "other" field.
  *
- * @type {{}}
+ * @type {FormApp.ItemType}
  */
-FormApp.ItemType.prototype.CHECKBOX = {};
+FormApp.ItemType.CHECKBOX = {};
 
 /**
  * A question item that allows the respondent to indicate a date.
  *
- * @type {{}}
+ * @type {FormApp.ItemType}
  */
-FormApp.ItemType.prototype.DATE = {};
+FormApp.ItemType.DATE = {};
 
 /**
  * A question item that allows the respondent to indicate a date and time.
  *
- * @type {{}}
+ * @type {FormApp.ItemType}
  */
-FormApp.ItemType.prototype.DATETIME = {};
+FormApp.ItemType.DATETIME = {};
 
 /**
  * A question item that allows the respondent to indicate a length of time.
  *
- * @type {{}}
+ * @type {FormApp.ItemType}
  */
-FormApp.ItemType.prototype.DURATION = {};
+FormApp.ItemType.DURATION = {};
 
 /**
  * A question item, presented as a grid of columns and rows, that allows the respondent to select
  one choice per row from a sequence of radio buttons.
  *
- * @type {{}}
+ * @type {FormApp.ItemType}
  */
-FormApp.ItemType.prototype.GRID = {};
+FormApp.ItemType.GRID = {};
 
 /**
  * A layout item that displays an image.
  *
- * @type {{}}
+ * @type {FormApp.ItemType}
  */
-FormApp.ItemType.prototype.IMAGE = {};
+FormApp.ItemType.IMAGE = {};
 
 /**
  * A question item that allows the respondent to select one choice from a drop-down list.
  *
- * @type {{}}
+ * @type {FormApp.ItemType}
  */
-FormApp.ItemType.prototype.LIST = {};
+FormApp.ItemType.LIST = {};
 
 /**
  * A question item that allows the respondent to select one choice from a list of radio buttons or
  an optional "other" field.
  *
- * @type {{}}
+ * @type {FormApp.ItemType}
  */
-FormApp.ItemType.prototype.MULTIPLE_CHOICE = {};
+FormApp.ItemType.MULTIPLE_CHOICE = {};
 
 /**
  * A layout item that marks the start of a page.
  *
- * @type {{}}
+ * @type {FormApp.ItemType}
  */
-FormApp.ItemType.prototype.PAGE_BREAK = {};
+FormApp.ItemType.PAGE_BREAK = {};
 
 /**
  * A question item that allows the respondent to enter a block of text.
  *
- * @type {{}}
+ * @type {FormApp.ItemType}
  */
-FormApp.ItemType.prototype.PARAGRAPH_TEXT = {};
+FormApp.ItemType.PARAGRAPH_TEXT = {};
 
 /**
  * A question item that allows the respondent to choose one option from a numbered sequence of
  radio buttons.
  *
- * @type {{}}
+ * @type {FormApp.ItemType}
  */
-FormApp.ItemType.prototype.SCALE = {};
+FormApp.ItemType.SCALE = {};
 
 /**
  * A layout item that visually indicates the start of a section.
  *
- * @type {{}}
+ * @type {FormApp.ItemType}
  */
-FormApp.ItemType.prototype.SECTION_HEADER = {};
+FormApp.ItemType.SECTION_HEADER = {};
 
 /**
  * A question item that allows the respondent to enter a single line of text.
  *
- * @type {{}}
+ * @type {FormApp.ItemType}
  */
-FormApp.ItemType.prototype.TEXT = {};
+FormApp.ItemType.TEXT = {};
 
 /**
  * A question item that allows the respondent to indicate a time of day.
  *
- * @type {{}}
+ * @type {FormApp.ItemType}
  */
-FormApp.ItemType.prototype.TIME = {};
+FormApp.ItemType.TIME = {};
 
 /**
  * An enumeration of possible behaviors for navigating pages.
@@ -200,7 +200,7 @@ FormApp.PageNavigationType.prototype.SUBMIT = {};
 FormApp.create = function(title){};
 
 /**
- * Returns the form to which the script is 
+ * Returns the form to which the script is
  <a href="/apps-script/scripts_containers">container-bound</a>. To interact with forms to which
  the script is not container-bound, use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form-app.html#openById(String)'>openById(id)</a></code> or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form-app.html#openByUrl(String)'>openByUrl(url)</a></code>
  instead.
@@ -211,7 +211,7 @@ FormApp.create = function(title){};
  </pre>
  *
  * @return {FormApp.Form} the form to which the script is bound, or <code>null</code> if the script is not bound to a
-     form
+ form
  */
 FormApp.getActiveForm = function(){};
 
@@ -263,8 +263,8 @@ FormApp.openById = function(id){};
  <pre class="prettyprint">
  // Open a form by URL.
  var form = FormApp.openByUrl(
-     'https://docs.google.com/forms/d/1234567890abcdefghijklmnopqrstuvwxyz_a1b2c3/edit'
-     );
+ 'https://docs.google.com/forms/d/1234567890abcdefghijklmnopqrstuvwxyz_a1b2c3/edit'
+ );
  </pre>
  *
  * @param {String} url - the URL of the form to open
@@ -392,8 +392,8 @@ FormApp.CheckboxItem.prototype.setChoiceValues = function(values){};
  var item = form.addListItem();
  item.setTitle('Do you prefer cats or dogs?')
  item.setChoices([
-     item.createChoice('Cats'),
-     item.createChoice('Dogs')
+ item.createChoice('Cats'),
+ item.createChoice('Dogs')
  ]);
  </pre>
  *
@@ -454,7 +454,7 @@ FormApp.Choice = function(){};
  it returns <code>null</code>.
  *
  * @return {FormApp.PageBreakItem} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/page-navigation-type.html'>GO_TO_PAGE</a></code> destination for this choice, or
-     <code>null</code> if there is none
+ <code>null</code> if there is none
  */
 FormApp.Choice.prototype.getGotoPage = function(){};
 
@@ -600,7 +600,7 @@ FormApp.DateTimeItem = function(){};
  the year is ignored as well.
  *
  * @param {Date} response - a <code>Date</code> object that represents a month, day, hour, minute, and possibly
-     year
+ year
  *
  * @return {FormApp.ItemResponse} the item response
  */
@@ -1100,7 +1100,7 @@ FormApp.Form.prototype.getResponses = function(){};
  * Determines whether the order of the questions on each page of the form is randomized.
  *
  * @return {Boolean} <code>true</code> if the order of the questions on each page of the form is randomized;
-     <code>false</code> if not
+ <code>false</code> if not
  */
 FormApp.Form.prototype.getShuffleQuestions = function(){};
 
@@ -1140,7 +1140,7 @@ FormApp.Form.prototype.hasProgressBar = function(){};
  completes the form.
  *
  * @return {Boolean} <code>true</code> if the form displays a "Submit another response" link; <code>false</code> if
-     not
+ not
  */
 FormApp.Form.prototype.hasRespondAgainLink = function(){};
 
@@ -1220,7 +1220,7 @@ FormApp.Form.prototype.setAcceptingResponses = function(enabled){};
  response.</p>
  *
  * @param {Boolean} enabled - <code>true</code> if the form should display an "Edit your response" link;
-     <code>false</code> if not
+ <code>false</code> if not
  *
  * @return {FormApp.Form} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>, for chaining
  */
@@ -1289,7 +1289,7 @@ FormApp.Form.prototype.setDestination = function(type, id){};
  at all.
  *
  * @param {Boolean} enabled - <code>true</code> if the form should allow only one response per respondent;
-     <code>false</code> if not
+ <code>false</code> if not
  *
  * @return {FormApp.Form} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>, for chaining
  */
@@ -1299,7 +1299,7 @@ FormApp.Form.prototype.setLimitOneResponsePerUser = function(enabled){};
  * Sets whether the form has a progress bar. The default for new forms is <code>false</code>.
  *
  * @param {Boolean} enabled - <code>true</code> if the form should display a progress bar; <code>false</code>
-     if not
+ if not
  *
  * @return {FormApp.Form} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>, for chaining
  */
@@ -1310,7 +1310,7 @@ FormApp.Form.prototype.setProgressBar = function(enabled){};
  the form. The default for new forms is <code>false</code>.
  *
  * @param {Boolean} enabled - <code>true</code> if the form should display a "See previous responses" link;
-     <code>false</code> if not
+ <code>false</code> if not
  *
  * @return {FormApp.Form} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>, for chaining
  */
@@ -1338,7 +1338,7 @@ FormApp.Form.prototype.setRequireLogin = function(requireLogin){};
  the form. The default for new forms is <code>true</code>.
  *
  * @param {Boolean} enabled - <code>true</code> if the form should display a "Submit another response" link;
-     <code>false</code> if not
+ <code>false</code> if not
  *
  * @return {FormApp.Form} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>, for chaining
  */
@@ -1348,7 +1348,7 @@ FormApp.Form.prototype.setShowLinkToRespondAgain = function(enabled){};
  * Sets whether the order of the questions on each page of the form is randomized.
  *
  * @param {Boolean} shuffle - <code>true</code> if the order of the questions on each page of the form should be
-     randomized; <code>false</code> if not
+ randomized; <code>false</code> if not
  *
  * @return {FormApp.Form} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>, for chaining
  */
@@ -1367,7 +1367,7 @@ FormApp.Form.prototype.setTitle = function(title){};
  * Converts a long URL for a form to a short URL. Throws an exception if the long URL does not
  belong to Google Forms.
  *
- * @param {String} url - 
+ * @param {String} url -
  *
  * @return {String} a URL in the form <code>http://goo.gl/forms/1234</code>
  */
@@ -1396,7 +1396,7 @@ FormApp.FormResponse.prototype.getEditResponseUrl = function(){};
  been submitted.
  *
  * @return {String} the ID of the form response, or <code>null</code> if the form response has not been
-     submitted
+ submitted
  */
 FormApp.FormResponse.prototype.getId = function(){};
 
@@ -1406,7 +1406,7 @@ FormApp.FormResponse.prototype.getId = function(){};
  excluded from the array.
  *
  * @return {FormApp.ItemResponse[]} an array of responses to every question item within the form for which the respondent
-     provided an answer
+ provided an answer
  */
 FormApp.FormResponse.prototype.getItemResponses = function(){};
 
@@ -1418,14 +1418,14 @@ FormApp.FormResponse.prototype.getItemResponses = function(){};
  <code>null</code>.</p>
  *
  * @return {String} the email address of the person who submitted this response, if available, or
-     <code>null</code> if the script created this response but has not yet submitted it
+ <code>null</code> if the script created this response but has not yet submitted it
  */
 FormApp.FormResponse.prototype.getRespondentEmail = function(){};
 
 /**
  * Gets the item response contained in this form response for a given item.
  *
- * @param {FormApp.Item} item - 
+ * @param {FormApp.Item} item -
  *
  * @return {FormApp.ItemResponse} the response for a given item, or <code>null</code> if none exists
  */
@@ -1433,12 +1433,12 @@ FormApp.FormResponse.prototype.getResponseForItem = function(item){};
 
 /**
  * Gets the timestamp at which this response was submitted.
- 
+
  <p>For a form response that the script has created but not yet submitted, this method returns
  <code>null</code>.</p>
  *
  * @return {Date} the timestamp at which this response was submitted, or <code>null</code>
-     if the script created this response but has not yet submitted it
+ if the script created this response but has not yet submitted it
  */
 FormApp.FormResponse.prototype.getTimestamp = function(){};
 
@@ -1462,7 +1462,7 @@ FormApp.FormResponse.prototype.toPrefilledUrl = function(){};
  the script has created but not yet submitted; it cannot affect stored responses. If this method
  is called multiple times for the same item, only the last item response is retained.
  *
- * @param {FormApp.ItemResponse} response - 
+ * @param {FormApp.ItemResponse} response -
  *
  * @return {FormApp.FormResponse} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form-response.html'>FormResponse</a></code>, for chaining
  */
@@ -1939,7 +1939,7 @@ FormApp.ItemResponse.prototype.getItem = function(){};
 
 /**
  * Gets the answer that the respondent submitted. For most types of question items, this returns a
- <code>String</code>. 
+ <code>String</code>.
 
  <p>For <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/checkbox-item.html'>CheckboxItem</a></code> questions, this returns a <code>String[]</code> array containing the
  responder's choices. The order of the strings in the array may vary.</p>
@@ -1970,7 +1970,7 @@ FormApp.ListItem.prototype.createChoice = function(value){};
  <code>navigationType</code> set to <code>FormApp.PageNavigationType.GO_TO_PAGE</code>. Choices that use
  page navigation cannot be combined in the same item with choices that do not use page
  navigation.
- 
+
  <p>The page navigation occurs after the respondent completes a page that contains the option,
  and only if the respondent chose that option. If the respondent chose multiple options with
  page-navigation instructions on the same page, only the last navigation option has any effect.
@@ -2081,8 +2081,8 @@ FormApp.ListItem.prototype.setChoiceValues = function(values){};
  var item = form.addListItem();
  item.setTitle('Do you prefer cats or dogs?')
  item.setChoices([
-     item.createChoice('Cats'),
-     item.createChoice('Dogs')
+ item.createChoice('Cats'),
+ item.createChoice('Dogs')
  ]);
  </pre>
  *
@@ -2141,7 +2141,7 @@ FormApp.MultipleChoiceItem.prototype.createChoice = function(value){};
  <code>navigationType</code> set to <code>FormApp.PageNavigationType.GO_TO_PAGE</code>. Choices that use
  page navigation cannot be combined in the same item with choices that do not use page
  navigation.
- 
+
  <p>The page navigation occurs after the respondent completes a page that contains the option,
  and only if the respondent chose that option. If the respondent chose multiple options with
  page-navigation instructions on the same page, only the last navigation option has any effect.
@@ -2260,8 +2260,8 @@ FormApp.MultipleChoiceItem.prototype.setChoiceValues = function(values){};
  var item = form.addListItem();
  item.setTitle('Do you prefer cats or dogs?')
  item.setChoices([
-     item.createChoice('Cats'),
-     item.createChoice('Dogs')
+ item.createChoice('Cats'),
+ item.createChoice('Dogs')
  ]);
  </pre>
  *
@@ -2328,7 +2328,7 @@ FormApp.PageBreakItem.prototype.duplicate = function(){};
  form).
  *
  * @return {FormApp.PageBreakItem} the page break to jump to after completing the page before this page break, or
-     <code>null</code> if none is set
+ <code>null</code> if none is set
  */
 FormApp.PageBreakItem.prototype.getGoToPage = function(){};
 

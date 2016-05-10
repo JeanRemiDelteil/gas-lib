@@ -6,6 +6,7 @@ Drive.File = function(){};
 
 Drive.File.prototype.id = String();
 Drive.File.prototype.copyable = Boolean();
+Drive.File.prototype.editable = Boolean();
 
 
 /**

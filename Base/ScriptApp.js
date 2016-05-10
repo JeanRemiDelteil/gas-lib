@@ -4,7 +4,7 @@ var ScriptApp = {};
 /**
  * An enumeration that identifies which categories of authorized services Apps Script is able to
  execute through a triggered function.
-
+ 
  */
 ScriptApp.AuthMode = {};
 
@@ -50,17 +50,17 @@ ScriptApp.AuthMode.NONE = {};
 
 /**
  * An enumeration denoting the authorization status of a script.
-
+ 
  */
-ScriptApp.AuthorizationStatus = function(){};
+ScriptApp.AuthorizationStatus = {};
 
 /**
  * The user has granted this script all the authorization it currently
  requires.
  *
- * @type {{}}
+ * @type {ScriptApp.AuthorizationStatus}
  */
-ScriptApp.AuthorizationStatus.prototype.NOT_REQUIRED = {};
+ScriptApp.AuthorizationStatus.NOT_REQUIRED = {};
 
 /**
  * The user needs to authorize this script to use one or more services. In
@@ -72,13 +72,13 @@ ScriptApp.AuthorizationStatus.prototype.NOT_REQUIRED = {};
  will throw an exception if the script attempts to call the unauthorized
  service.
  *
- * @type {{}}
+ * @type {ScriptApp.AuthorizationStatus}
  */
-ScriptApp.AuthorizationStatus.prototype.REQUIRED = {};
+ScriptApp.AuthorizationStatus.REQUIRED = {};
 
 /**
  * An enumeration denoting the type of triggered event.
-
+ 
  */
 ScriptApp.EventType = {};
 
@@ -123,7 +123,7 @@ ScriptApp.EventType.ON_OPEN = {};
 
 /**
  * An enumeration denoting how the script was installed to the user as an add-on.
-
+ 
  */
 ScriptApp.InstallationSource = function(){};
 
@@ -150,7 +150,7 @@ ScriptApp.InstallationSource.prototype.WEB_STORE_ADD_ON = {};
 
 /**
  * An enumeration denoting the source of the event that causes the trigger to fire.
-
+ 
  */
 ScriptApp.TriggerSource = {};
 
@@ -191,13 +191,13 @@ ScriptApp.TriggerSource.SPREADSHEETS = {};
 
 /**
  * An enumeration representing the days of the week.
-
+ 
  */
 Weekday = function(){};
 
 /**
  * Removes the given trigger so it will no longer run.
-
+ 
  <pre class="prettyprint"><code>
  // Deletes all triggers in the current project.
  var triggers = ScriptApp.getProjectTriggers();
@@ -220,7 +220,7 @@ ScriptApp.deleteTrigger = function(trigger){};
  can be used to control access to sections of code for which the user lacks the necessary
  authorization. Alternately, the add-on can ask the user to open the URL for the
  authorization dialog to resolve the problem.
-
+ 
  <pre class="prettyprint">
  <code>
  var authInfo = ScriptApp.getAuthorizationInfo(ScriptApp.AuthMode.FULL);
@@ -263,7 +263,7 @@ ScriptApp.getOAuthToken = function(){};
 /**
  * Gets the project key of the current script. The project key is a unique identifier for scripts
  and used to compose the callback URL used in conjunction with <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/script-app.html#newStateToken()'>newStateToken()</a></code>.
-
+ 
  <p>When called in a <a href="/apps-script/guide_libraries">library</a>, this will return the
  project key of the outer-most script being executed.
  *
@@ -273,7 +273,7 @@ ScriptApp.getProjectKey = function(){};
 
 /**
  * Gets all installable triggers associated with the current project.
-
+ 
  <pre class="prettyprint"><code>
  Logger.log(&#39;Current project has &#39; + ScriptApp.getProjectTriggers().length + &#39; triggers.&#39;);
  </code></pre>
@@ -284,7 +284,7 @@ ScriptApp.getProjectTriggers = function(){};
 
 /**
  * Gets all installable triggers associated with the current script.
-
+ 
  <pre class="prettyprint"><code>
  Logger.log(&#39;Current script has &#39; + ScriptApp.getScriptTriggers().length + &#39; triggers.&#39;);
  </code></pre>
@@ -295,7 +295,7 @@ ScriptApp.getScriptTriggers = function(){};
 
 /**
  * Gets an object used to control publishing the script as a web app.
-
+ 
  <pre class="prettyprint"><code>
  // Get the URL of the published web app.
  var url = ScriptApp.getService().getUrl();
@@ -308,7 +308,7 @@ ScriptApp.getService = function(){};
 /**
  * Gets all installable triggers owned by this user in the given document, for this script or
  add-on only. This method cannot be used to see the triggers attached to other scripts.
-
+ 
  <pre class="prettyprint"><code>
  var doc = DocumentApp.getActiveDocument();
  var triggers = ScriptApp.getUserTriggers(doc);
@@ -325,7 +325,7 @@ ScriptApp.getUserTriggers = function(document){};
 /**
  * Gets all installable triggers owned by this user in the given form, for this script or
  add-on only. This method cannot be used to see the triggers attached to other scripts.
-
+ 
  <pre class="prettyprint"><code>
  var form = FormApp.getActiveForm();
  var triggers = ScriptApp.getUserTriggers(form);
@@ -346,7 +346,7 @@ ScriptApp.getUserTriggers = function(form){};
  after the script has acquired authorization, if you wish to perform an action afterwards, you
  will have to revoke any authorization the script had, so the user can see the authorization
  dialog again.
-
+ 
  <pre class="prettyprint"><code>
  ScriptApp.invalidateAuth();
  </code></pre>
@@ -357,7 +357,7 @@ ScriptApp.invalidateAuth = function(){};
 
 /**
  * Creates a builder for a state token that can be used in a callback API (like an OAuth flow).
-
+ 
  <pre class="prettyprint"><code>
  // Generate a callback URL, given the name of a callback function. The script does not need to
  // be published as a web app; the /usercallback URL suffix replaces /edit in any script&#39;s URL.
@@ -396,7 +396,7 @@ ScriptApp.newStateToken = function(){};
 /**
  * Begins the process of creating an installable trigger that, when fired, will call a
  given function.
-
+ 
  <pre class="prettyprint"><code>
  // Creates an edit trigger for a spreadsheet identified by ID.
  ScriptApp.newTrigger(&#39;myFunction&#39;)
@@ -417,7 +417,7 @@ ScriptApp.AuthorizationInfo = function(){};
 /**
  * Gets a value that indicates whether the user needs to authorize this script to use one or
  more services (for example, <code>ScriptApp.AuthorizationStatus.REQUIRED</code>).
-
+ 
  <pre class="prettyprint">
  <code>
  // Log the authorization status (REQUIRED or NOT_REQUIRED).
@@ -433,7 +433,7 @@ ScriptApp.AuthorizationInfo.prototype.getAuthorizationStatus = function(){};
  * Gets the authorization URL that can be used to grant access to the script. This method returns
  <code>null</code> if no authorization is required. The page at the URL will close automatically
  if it is accessed and the script does not require any authorization.
-
+ 
  <pre class="prettyprint">
  <code>
  // Log the URL used to grant access to the script.
@@ -451,7 +451,7 @@ ScriptApp.ClockTriggerBuilder = function(){};
 /**
  * Specifies the duration (in milliseconds) after the current time that the trigger will run.
  (plus or minus 15 minutes).
-
+ 
  <pre class="prettyprint">
  <code>
  // Creates a trigger that will run 10 minutes later
@@ -470,7 +470,7 @@ ScriptApp.ClockTriggerBuilder.prototype.after = function(durationMilliseconds){}
 
 /**
  * Specifies when the trigger will run (plus or minus 15 minutes).
-
+ 
  <pre class="prettyprint">
  <code>
  // Creates a trigger for December 1, 2012
@@ -489,7 +489,7 @@ ScriptApp.ClockTriggerBuilder.prototype.at = function(date){};
 
 /**
  * Specifies trigger will fire on the given date, by default near midnight (+/- 15 minutes).
-
+ 
  <pre class="prettyprint">
  <code>
  // Schedules for January 1st, 2013
@@ -511,7 +511,7 @@ ScriptApp.ClockTriggerBuilder.prototype.atDate = function(year, month, day){};
 
 /**
  * Specifies the hour the trigger will run (plus or minus 15 minutes).
-
+ 
  <pre class="prettyprint">
  <code>
  // Runs at 5am in the timezone of the script
@@ -537,7 +537,7 @@ ScriptApp.ClockTriggerBuilder.prototype.create = function(){};
 
 /**
  * Specifies to run the trigger every <code>n</code> days.
-
+ 
  <pre class="prettyprint">
  <code>
  ScriptApp.newTrigger(&quot;myFunction&quot;)
@@ -554,7 +554,7 @@ ScriptApp.ClockTriggerBuilder.prototype.everyDays = function(n){};
 
 /**
  * Specifies to run the trigger every <code>n</code> hours.
-
+ 
  <pre class="prettyprint">
  <code>
  ScriptApp.newTrigger(&quot;myFunction&quot;)
@@ -571,7 +571,7 @@ ScriptApp.ClockTriggerBuilder.prototype.everyHours = function(n){};
 
 /**
  * Specifies to run the trigger every <code>n</code> minutes. <code>n</code> must be 1, 5, 10, 15 or 30.
-
+ 
  <pre class="prettyprint">
  <code>
  ScriptApp.newTrigger(&quot;myFunction&quot;)
@@ -588,7 +588,7 @@ ScriptApp.ClockTriggerBuilder.prototype.everyMinutes = function(n){};
 
 /**
  * Specifies to run the trigger every <code>n</code> weeks.
-
+ 
  <pre class="prettyprint">
  <code>
  ScriptApp.newTrigger(&quot;myFunction&quot;)
@@ -606,11 +606,11 @@ ScriptApp.ClockTriggerBuilder.prototype.everyWeeks = function(n){};
 /**
  * Specifies the timezone that the specified dates/time that the trigger will run in.  By
  default, the timezone will be that of the script.
-
+ 
  The list of valid timezone strings corresponds with the valid timezone strings
  for <code>TimeZone</code>. An invalid timezone string will cause the script
  to throw an error.
-
+ 
  <pre class="prettyprint">
  <code>
  // Schedule the trigger to execute at noon every day in the US/Pacific time zone
@@ -630,7 +630,7 @@ ScriptApp.ClockTriggerBuilder.prototype.inTimezone = function(timezone){};
 
 /**
  * Specifies the minute the trigger will run (plus or minus 15 minutes).
-
+ 
  <pre class="prettyprint">
  <code>
  // Runs at approximately 5:30am in the timezone of the script
@@ -650,7 +650,7 @@ ScriptApp.ClockTriggerBuilder.prototype.nearMinute = function(minute){};
 
 /**
  * Specifies on what date in the month that the trigger will run.
-
+ 
  <pre class="prettyprint">
  <code>
  // Schedules for the first of every month
@@ -668,7 +668,7 @@ ScriptApp.ClockTriggerBuilder.prototype.onMonthDay = function(day){};
 
 /**
  * Specifies on what day of the week that the trigger will run.
-
+ 
  <pre class="prettyprint">
  <code>
  ScriptApp.newTrigger(&quot;myFunction&quot;)
@@ -695,7 +695,7 @@ ScriptApp.DocumentTriggerBuilder.prototype.create = function(){};
 
 /**
  * Specifies a trigger that will fire when the document is opened.
-
+ 
  <pre class="prettyprint">
  <code>
  var document = DocumentApp.getActiveDocument();
@@ -721,7 +721,7 @@ ScriptApp.FormTriggerBuilder.prototype.create = function(){};
 
 /**
  * Specifies a trigger that will fire when a response is submitted to the form.
-
+ 
  <pre class="prettyprint">
  <code>
  var form = FormApp.openById(&#39;1234567890abcdefghijklmnopqrstuvwxyz&#39;);
@@ -737,7 +737,7 @@ ScriptApp.FormTriggerBuilder.prototype.onFormSubmit = function(){};
 
 /**
  * Specifies a trigger that will fire when the form's edit view is opened.
-
+ 
  <pre class="prettyprint">
  <code>
  var form = FormApp.getActiveForm();
@@ -763,7 +763,7 @@ ScriptApp.RealtimeTriggerBuilder.prototype.create = function(){};
 
 /**
  * Specifies a trigger that will fire when a Realtime (Brix) document is edited.
-
+ 
  <pre class="prettyprint">
  <code>
  ScriptApp.newTrigger(&#39;myFunction&#39;)
@@ -782,7 +782,7 @@ ScriptApp.Service = function(){};
 /**
  * Disables the script from being accessed as a web app. This method is equivalent to opening the
  "Publish > Deploy as web app" dialog and clicking "disable web app".
-
+ 
  <pre class="prettyprint">
  <code>
  ScriptApp.getService().disable();
@@ -804,7 +804,7 @@ ScriptApp.Service.prototype.disable = function(){};
  <code>ScriptApp.invalidateAuth()</code>, then have the user re-run the script and re-authorize. Also
  note that at least one <a href="/apps-script/guide_versions">version</a> of the script must be
  saved before this method will work.
-
+ 
  <pre class="prettyprint">
  <code>
  var service = ScriptApp.getService();
@@ -822,7 +822,7 @@ ScriptApp.Service.prototype.enable = function(restriction){};
 
 /**
  * Returns the URL of the web app, if it has been deployed; otherwise returns <code>null</code>.
-
+ 
  <pre class="prettyprint">
  <code>
  // Mail the URL of the published web app.
@@ -836,7 +836,7 @@ ScriptApp.Service.prototype.getUrl = function(){};
 
 /**
  * Returns <code>true</code> if the script is accessible as a web app.
-
+ 
  <pre class="prettyprint">
  <code>
  var svc = ScriptApp.getService();
@@ -862,7 +862,7 @@ ScriptApp.SpreadsheetTriggerBuilder.prototype.create = function(){};
 
 /**
  * Specifies a trigger that will fire when the spreadsheet's content or structure is changed.
-
+ 
  <pre class="prettyprint">
  <code>
  var sheet = SpreadsheetApp.getActive();
@@ -878,7 +878,7 @@ ScriptApp.SpreadsheetTriggerBuilder.prototype.onChange = function(){};
 
 /**
  * Specifies a trigger that will fire when the spreadsheet is edited.
-
+ 
  <pre class="prettyprint">
  <code>
  var sheet = SpreadsheetApp.getActive();
@@ -894,7 +894,7 @@ ScriptApp.SpreadsheetTriggerBuilder.prototype.onEdit = function(){};
 
 /**
  * Specifies a trigger that will fire when the spreadsheet has a form submitted to it.
-
+ 
  <pre class="prettyprint">
  <code>
  var sheet = SpreadsheetApp.getActive();
@@ -910,7 +910,7 @@ ScriptApp.SpreadsheetTriggerBuilder.prototype.onFormSubmit = function(){};
 
 /**
  * Specifies a trigger that will fire when the spreadsheet is opened.
-
+ 
  <pre class="prettyprint">
  <code>
  var sheet = SpreadsheetApp.getActive();
@@ -929,7 +929,7 @@ ScriptApp.StateTokenBuilder = function(){};
 
 /**
  * Constructs an encrypted string representation of the state token.
-
+ 
  <pre class="prettyprint">
  <code>
  var stateToken = ScriptApp.newStateToken().createToken();
@@ -941,7 +941,7 @@ ScriptApp.StateTokenBuilder.prototype.createToken = function(){};
 
 /**
  * Adds an argument to the token. This method can be called multiple times.
-
+ 
  <pre class="prettyprint">
  <code>
  var stateToken = ScriptApp.newStateToken().withArgument(&#39;myField&#39;, &#39;myValue&#39;).createToken();
@@ -956,7 +956,7 @@ ScriptApp.StateTokenBuilder.prototype.withArgument = function(name, value){};
 
 /**
  * Sets a callback function. The default is a function named <code>callback()</code>.
-
+ 
  <pre class="prettyprint">
  <code>
  var stateToken = ScriptApp.newStateToken().withMethod(&#39;myCallback&#39;).createToken();
@@ -972,7 +972,7 @@ ScriptApp.StateTokenBuilder.prototype.withMethod = function(method){};
 /**
  * Sets the duration (in seconds) for which the token is valid. The defaults is 60 seconds; the
  maximum duration is 3600 seconds (1 hour).
-
+ 
  <pre class="prettyprint">
  <code>
  var stateToken = ScriptApp.newStateToken().withTimeout(60).createToken();
@@ -989,7 +989,7 @@ ScriptApp.Trigger = function(){};
 
 /**
  * Returns the event type that the trigger fires on.
-
+ 
  <pre class="prettyprint">
  <code>
  var triggers = ScriptApp.getProjectTriggers();
@@ -1009,7 +1009,7 @@ ScriptApp.Trigger.prototype.getEventType = function(){};
 
 /**
  * Returns the function that will be called when the trigger fires.
-
+ 
  <pre class="prettyprint">
  <code>
  // Create a trigger for the script.
@@ -1023,10 +1023,10 @@ ScriptApp.Trigger.prototype.getHandlerFunction = function(){};
 
 /**
  * Returns the source of events that will cause the trigger to fire.
-
+ 
  For example, a spreadsheet onEdit trigger would return SPREADSHEETS, or a time based trigger
  would return CLOCK.
-
+ 
  <pre class="prettyprint">
  <code>
  var triggers = ScriptApp.getProjectTriggers();
@@ -1045,7 +1045,7 @@ ScriptApp.Trigger.prototype.getTriggerSource = function(){};
 
 /**
  * Returns the id specific to the source.
-
+ 
  For example, if the trigger source is a spreadsheet, this would be the id of the spreadsheet.
  For clock events this returns null.
  *
@@ -1065,7 +1065,7 @@ ScriptApp.TriggerBuilder = function(){};
 
 /**
  * Creates and returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/document-trigger-builder.html'>DocumentTriggerBuilder</a></code> tied to the given document.
-
+ 
  <pre class="prettyprint">
  <code>
  ScriptApp.newTrigger(&#39;myFunction&#39;)
@@ -1082,7 +1082,7 @@ ScriptApp.TriggerBuilder.prototype.forDocument = function(document){};
 
 /**
  * Creates and returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/form-trigger-builder.html'>FormTriggerBuilder</a></code> tied to the given form.
-
+ 
  <pre class="prettyprint">
  <code>
  ScriptApp.newTrigger(&#39;myFunction&#39;)
@@ -1099,7 +1099,7 @@ ScriptApp.TriggerBuilder.prototype.forForm = function(form){};
 
 /**
  * Creates and returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/spreadsheet-trigger-builder.html'>SpreadsheetTriggerBuilder</a></code> tied to the given spreadsheet.
-
+ 
  <pre class="prettyprint">
  <code>
  ScriptApp.newTrigger(&#39;myFunction&#39;)
@@ -1116,7 +1116,7 @@ ScriptApp.TriggerBuilder.prototype.forSpreadsheet = function(sheet){};
 
 /**
  * Creates and returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/clock-trigger-builder.html'>ClockTriggerBuilder</a></code> for building time-based triggers.
-
+ 
  <pre class="prettyprint">
  <code>
  ScriptApp.newTrigger(&#39;myFunction&#39;)
