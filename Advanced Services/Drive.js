@@ -22,7 +22,7 @@ Drive.Files = function () {};
  * @param {string} field
  * @param {Object} [optionalArgs]
  */
-Drive.Files.prototype.patch = function (resource, field, optionalArgs) {};
+Drive.Files.patch = function (resource, field, optionalArgs) {};
 
 
 Drive.FilesCollection = function () {};
