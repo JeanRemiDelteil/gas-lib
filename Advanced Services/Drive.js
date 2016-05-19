@@ -17,6 +17,13 @@ Drive.File.prototype.editable = Boolean();
  */
 Drive.Files = function () {};
 
+/**
+ * @param {Drive.File} resource
+ * @param {string} field
+ * @param {Object} [optionalArgs]
+ */
+Drive.Files.prototype.patch = function (resource, field, optionalArgs) {};
+
 
 Drive.FilesCollection = function () {};
 

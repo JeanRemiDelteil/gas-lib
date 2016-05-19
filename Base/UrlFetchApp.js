@@ -14,10 +14,11 @@ var UrlFetchApp = {};
  </code></pre>
  *
  * @param {String} url - the URL to fetch
+ * @param {Object} [params] - optional JavaScript object specifying advanced parameters as defined below
  *
  * @return {UrlFetchApp.HTTPResponse} the HTTP response data
  */
-UrlFetchApp.fetch = function(url){};
+UrlFetchApp.fetch = function(url, params){};
 
 /**
  * Returns the request that would be made if the operation was invoked.
