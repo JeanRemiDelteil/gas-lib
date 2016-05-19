@@ -1091,10 +1091,11 @@ FormApp.Form.prototype.getResponse = function(responseId){};
 
 /**
  * Gets an array of all of the form's responses.
- *
+ * 
+ * @param {Date} [timestamp] - the earliest date and time for which form responses should be returned
  * @return {FormApp.FormResponse[]} an array of all of the form's responses
  */
-FormApp.Form.prototype.getResponses = function(){};
+FormApp.Form.prototype.getResponses = function(timestamp){};
 
 /**
  * Determines whether the order of the questions on each page of the form is randomized.
