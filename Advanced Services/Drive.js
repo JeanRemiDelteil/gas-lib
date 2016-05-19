@@ -70,7 +70,7 @@ Drive.Permission = {};
 Drive.Permissions = function(){};
 
 /**
- * @param {Drive.Permission} resource
+ * @param {(Drive.Permission | Drive.PermissionId)} resource
  * @param {string} fileId
  * @param {Object} [optionalArgs]
  *
