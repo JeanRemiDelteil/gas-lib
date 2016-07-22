@@ -6725,7 +6725,7 @@ SpreadsheetApp.Range.prototype.getSheet = function(){};
  <code>Boolean</code>, <code>Date</code>, or <code>String</code> depending on the value of the cell. Empty
  cells will return an empty string.
  *
- * @return {Object} the value in this cell
+ * @return {Object | string} the value in this cell
  */
 SpreadsheetApp.Range.prototype.getValue = function(){};
 
