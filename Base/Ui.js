@@ -1,4 +1,4 @@
-var Ui = {};
+var Ui = function(){};
 
 
 /**
