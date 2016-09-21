@@ -1,72 +1,39 @@
 var Utilities = {};
 
 
-/**
- * 
-
- */
-Utilities.Charset = function(){};
+Utilities.Charset = {};
 
 /**
- * 
- *
- * @type {{}}
+ * @type {Utilities.Charset}
  */
-Utilities.Charset.prototype.US_ASCII = {};
+Utilities.Charset.US_ASCII = {};
+Utilities.Charset.UTF_8 = {};
+
+
+DigestAlgorithm = {};
 
 /**
- * 
- *
- * @type {{}}
+ * @type: {DigestAlgorithm}
  */
-Utilities.Charset.prototype.UTF_8 = {};
+DigestAlgorithm.MD2 = {};
+DigestAlgorithm.MD5 = {};
+DigestAlgorithm.SHA_1 = {};
+DigestAlgorithm.SHA_256 = {};
+DigestAlgorithm.SHA_384 = {};
+DigestAlgorithm.SHA_512 = {};
+
+
+Utilities.MacAlgorithm = {};
 
 /**
- * 
-
+ * @type {Utilities.MacAlgorithm}
  */
-DigestAlgorithm = function(){};
+Utilities.MacAlgorithm.HMAC_MD5 = {};
+Utilities.MacAlgorithm.HMAC_SHA_1 = {};
+Utilities.MacAlgorithm.HMAC_SHA_256 = {};
+Utilities.MacAlgorithm.HMAC_SHA_384 = {};
+Utilities.MacAlgorithm.HMAC_SHA_512 = {};
 
-/**
- * 
-
- */
-Utilities.MacAlgorithm = function(){};
-
-/**
- * 
- *
- * @type {{}}
- */
-Utilities.MacAlgorithm.prototype.HMAC_MD5 = {};
-
-/**
- * 
- *
- * @type {{}}
- */
-Utilities.MacAlgorithm.prototype.HMAC_SHA_1 = {};
-
-/**
- * 
- *
- * @type {{}}
- */
-Utilities.MacAlgorithm.prototype.HMAC_SHA_256 = {};
-
-/**
- * 
- *
- * @type {{}}
- */
-Utilities.MacAlgorithm.prototype.HMAC_SHA_384 = {};
-
-/**
- * 
- *
- * @type {{}}
- */
-Utilities.MacAlgorithm.prototype.HMAC_SHA_512 = {};
 
 /**
  * Decodes a base-64 encoded string into a UTF-8 byte array.
