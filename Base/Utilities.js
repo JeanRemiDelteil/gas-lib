@@ -9,18 +9,17 @@ Utilities.Charset = {};
 Utilities.Charset.US_ASCII = {};
 Utilities.Charset.UTF_8 = {};
 
-
-DigestAlgorithm = {};
+Utilities.DigestAlgorithm = {};
 
 /**
- * @type: {DigestAlgorithm}
+ * @type: {Utilities.DigestAlgorithm}
  */
-DigestAlgorithm.MD2 = {};
-DigestAlgorithm.MD5 = {};
-DigestAlgorithm.SHA_1 = {};
-DigestAlgorithm.SHA_256 = {};
-DigestAlgorithm.SHA_384 = {};
-DigestAlgorithm.SHA_512 = {};
+Utilities.DigestAlgorithm.MD2 = {};
+Utilities.DigestAlgorithm.MD5 = {};
+Utilities.DigestAlgorithm.SHA_1 = {};
+Utilities.DigestAlgorithm.SHA_256 = {};
+Utilities.DigestAlgorithm.SHA_384 = {};
+Utilities.DigestAlgorithm.SHA_512 = {};
 
 
 Utilities.MacAlgorithm = {};
@@ -177,7 +176,7 @@ Utilities.base64EncodeWebSafe = function(data){};
  Logger.log(digest);
  </code></pre>
  *
- * @param {DigestAlgorithm} algorithm - a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/utilities/digest-algorithm.html'>DigestAlgorithm</a></code> to use
+ * @param {Utilities.DigestAlgorithm} algorithm - a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/utilities/digest-algorithm.html'>DigestAlgorithm</a></code> to use
  * @param {String} value - an input string value to compute a digest for
  *
  * @return {Byte[]} a byte[] representing the output digest
