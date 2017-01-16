@@ -4,34 +4,34 @@ var HtmlService = {};
 /**
  * An enum representing the sandbox modes that can be used for client-side <code>HtmlService</code>
  scripts.
- 
+ *
+ * @class HtmlService.SandboxMode
  */
-HtmlService.SandboxMode = {};
 
 /**
+ * @typedef {HtmlService.SandboxMode} HtmlService.SandboxMode.EMULATED
+ * 
  * A legacy sandbox mode that emulates ECMAScript 5 strict mode using only the features available
  in ECMAScript 3. This mode was the default prior to February 2014.
  
  <p><code>EMULATED</code> was <a href="/apps-script/sunset">sunset as of December 10, 2015</a>.
  All scripts attempting use <code>EMULATED</code> will now use <code>IFRAME</code> instead.</p>
- *
- * @type {HtmlService.SandboxMode}
  */
-HtmlService.SandboxMode.EMULATED = {};
 
 /**
- * A sandbox mode that uses iframe sandboxing instead of the Caja sandbox technology used by the
+ * @typedef {HtmlService.SandboxMode} HtmlService.SandboxMode.IFRAME
+ * 
+ *A sandbox mode that uses iframe sandboxing instead of the Caja sandbox technology used by the
  <code>EMULATED</code> and <code>NATIVE</code> modes. This mode is the default for new scripts as of
  November 12, 2015.
  
  <p>This mode imposes many fewer restrictions than the other sandbox modes and runs fastest, but
  does not work at all in certain older browsers, including Internet Explorer 9.</p>
- *
- * @type {HtmlService.SandboxMode}
  */
-HtmlService.SandboxMode.IFRAME = {};
 
 /**
+ * @typedef {HtmlService.SandboxMode} HtmlService.SandboxMode.NATIVE
+ * 
  * A sandbox mode that is built on top of ECMAScript 5 strict mode. This mode has been the default
  from February 2014 until November 2015. <code>NATIVE</code> will be
  <a href="/apps-script/sunset">sunset on June 30, 2016</a>, after
@@ -42,10 +42,9 @@ HtmlService.SandboxMode.IFRAME = {};
  browsers ? most notably Internet Explorer 9 ? fall back to <code>IFRAME</code> mode on an
  individual basis. (Very old browsers, including Internet Explorer 8 and below, are usually
  incompatible with HTML service.)</p>
- *
- * @type {HtmlService.SandboxMode}
+ * 
  */
-HtmlService.SandboxMode.NATIVE = {};
+
 
 /**
  * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-output.html'>HtmlOutput</a></code> object that can be returned from the script.
