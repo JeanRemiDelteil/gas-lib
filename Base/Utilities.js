@@ -19,11 +19,49 @@ var Utilities = {};
  * 
  */
 
+
 /**
  * 
  * 
- * @class DigestAlgorithm
+ * @class Utilities.DigestAlgorithm
  */
+
+/**
+ * @typedef {Utilities.DigestAlgorithm} Utilities.DigestAlgorithm.MD2
+ *
+ *
+ */
+
+/**
+ * @typedef {Utilities.DigestAlgorithm} Utilities.DigestAlgorithm.MD5
+ *
+ *
+ */
+
+/**
+ * @typedef {Utilities.DigestAlgorithm} Utilities.DigestAlgorithm.SHA_1
+ *
+ *
+ */
+
+/**
+ * @typedef {Utilities.DigestAlgorithm} Utilities.DigestAlgorithm.SHA_256
+ *
+ *
+ */
+
+/**
+ * @typedef {Utilities.DigestAlgorithm} Utilities.DigestAlgorithm.SHA_384
+ *
+ *
+ */
+
+/**
+ * @typedef {Utilities.DigestAlgorithm} Utilities.DigestAlgorithm.SHA_512
+ *
+ *
+ */
+
 
 /**
  * 

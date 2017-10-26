@@ -810,10 +810,11 @@ GmailApp.search = function(query){};
  * @param {String} recipient - comma separated list of email addresses
  * @param {String} subject - subject of the email
  * @param {String} body - body of the email
+ * @param {Object} [options] - a JavaScript object that specifies advanced parameters, as listed below, https://developers.google.com/apps-script/reference/gmail/gmail-app#sendEmail(String,String,String,Object)
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.sendEmail = function(recipient, subject, body){};
+GmailApp.sendEmail = function(recipient, subject, body, options){};
 
 /**
  * Adds a star to this message and forces the message to refresh.
