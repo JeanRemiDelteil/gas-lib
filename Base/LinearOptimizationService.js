@@ -3,84 +3,74 @@ var LinearOptimizationService = {};
 
 /**
  * Status of the solver.
-
+ * 
+ * @class LinearOptimizationService.Status
  */
-LinearOptimizationService.Status = function(){};
 
 /**
+ * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.ABNORMAL
+ * 
  * Status when it failed to find a solution for unexpected reasons.
- *
- * @type {{}}
  */
-LinearOptimizationService.Status.prototype.ABNORMAL = {};
 
 /**
+ * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.FEASIBLE
+ * 
  * Status when a feasible (not necessarily optimal) solution has been found.
- *
- * @type {{}}
  */
-LinearOptimizationService.Status.prototype.FEASIBLE = {};
 
 /**
+ * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.INFEASIBLE
+ * 
  * Status when the current model is unfeasible (has no solution).
- *
- * @type {{}}
  */
-LinearOptimizationService.Status.prototype.INFEASIBLE = {};
 
 /**
+ * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.MODEL_INVALID
+ * 
  * Status when the model is invalid.
- *
- * @type {{}}
  */
-LinearOptimizationService.Status.prototype.MODEL_INVALID = {};
 
 /**
+ * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.NOT_SOLVED
+ * 
  * Status when <code><a target='_blank' href='https://developers.google.com/apps-script/reference/optimization/linear-optimization-engine.html#solve()'>LinearOptimizationEngine.solve()</a></code> has not been called yet.
- *
- * @type {{}}
  */
-LinearOptimizationService.Status.prototype.NOT_SOLVED = {};
 
 /**
+ * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.OPTIMAL
+ * 
  * Status when an optimal solution has been found.
- *
- * @type {{}}
  */
-LinearOptimizationService.Status.prototype.OPTIMAL = {};
 
 /**
+ * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.UNBOUNDED
+ * 
  * Status when the current model is unbound.
- *
- * @type {{}}
  */
-LinearOptimizationService.Status.prototype.UNBOUNDED = {};
 
 /**
  * Type of variables created by the solver.
-
+ * 
+ * @class LinearOptimizationService.VariableType
  */
-LinearOptimizationService.VariableType = function(){};
 
 /**
+ * @typedef {LinearOptimizationService.VariableType} LinearOptimizationService.VariableType.CONTINUOUS
+ * 
  * Type of variable that can take any real value.
- *
- * @type {{}}
  */
-LinearOptimizationService.VariableType.prototype.CONTINUOUS = {};
 
 /**
+ * @typedef {LinearOptimizationService.VariableType} LinearOptimizationService.VariableType.INTEGER
+ * 
  * Type of variable that can only take integer values.
- *
- * @type {{}}
  */
-LinearOptimizationService.VariableType.prototype.INTEGER = {};
 
 /**
  * Creates an engine to to solve linear programs (potentially mixed-integer programs).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a linear optimization engine.
  var engine = LinearOptimizationService.createEngine();
  engine.addVariable(&#39;x&#39;, 0, 10);
@@ -99,17 +89,16 @@ LinearOptimizationService.LinearOptimizationConstraint = function(){};
  * Sets the coefficient of a variable in the constraint. By default, variables have a coefficient
  of 0.
 
- <pre class="prettyprint">
- <code>
-  var engine = LinearOptimizationService.createEngine();
-  // Create a linear constraint with the bounds 0 and 10
-  var constraint = engine.addConstraint(0, 10);
-  // Create a variable so we can add it to the constraint
-  engine.addVariable(&#39;x&#39;, 0, 5);
-  // Set the coefficient of the variable in the constraint. The constraint is now:
-  // 0 &lt;= 2 * x &lt;= 5
-  constraint.setCoefficient(&#39;x&#39;, 2);
- </code> </pre>
+ <pre class="prettyprint"><code>
+ var engine = LinearOptimizationService.createEngine();
+ // Create a linear constraint with the bounds 0 and 10
+ var constraint = engine.addConstraint(0, 10);
+ // Create a variable so we can add it to the constraint
+ engine.addVariable(&#39;x&#39;, 0, 5);
+ // Set the coefficient of the variable in the constraint. The constraint is now:
+ // 0 &lt;= 2 * x &lt;= 5
+ constraint.setCoefficient(&#39;x&#39;, 2);
+ </code></pre>
  *
  * @param {String} variableName - the name of variable for which the coefficient is being set
  * @param {Number} coefficient - coefficient being set
@@ -122,12 +111,10 @@ LinearOptimizationService.LinearOptimizationConstraint.prototype.setCoefficient 
 LinearOptimizationService.LinearOptimizationEngine = function(){};
 
 /**
- * Adds a new linear constraint in the model. The upper and lower bound of the constraint
- are defined at creation time. Coefficients for the variables are defined via calls to
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/optimization/linear-optimization-constraint.html#setCoefficient(String,Number)'>LinearOptimizationConstraint.setCoefficient(variableName, coefficient)</a></code>.
+ * Adds a new linear constraint in the model. The upper and lower bound of the constraint are
+ defined at creation time. Coefficients for the variables are defined via calls to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/optimization/linear-optimization-constraint.html#setCoefficient(String,Number)'>LinearOptimizationConstraint.setCoefficient(variableName, coefficient)</a></code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var engine = LinearOptimizationService.createEngine();
 
  // Create a linear constraint with the bounds 0 and 10
@@ -149,11 +136,10 @@ LinearOptimizationService.LinearOptimizationEngine = function(){};
 LinearOptimizationService.LinearOptimizationEngine.prototype.addConstraint = function(lowerBound, upperBound){};
 
 /**
- * Adds a new continuous variable to the model. The variable is referenced by its name. The
- type is set to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/optimization/variable-type.html#CONTINUOUS'>VariableType.CONTINUOUS</a></code>.
+ * Adds a new continuous variable to the model. The variable is referenced by its name. The type
+ is set to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/optimization/variable-type.html#CONTINUOUS'>VariableType.CONTINUOUS</a></code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var engine = LinearOptimizationService.createEngine();
  var constraint = engine.addConstraint(0, 10);
 
@@ -175,8 +161,7 @@ LinearOptimizationService.LinearOptimizationEngine.prototype.addVariable = funct
 /**
  * Adds a new variable to the model. The variable is referenced by its name.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var engine = LinearOptimizationService.createEngine();
  var constraint = engine.addConstraint(0, 10);
 
@@ -199,8 +184,7 @@ LinearOptimizationService.LinearOptimizationEngine.prototype.addVariable = funct
 /**
  * Sets the optimization direction to maximizing the linear objective function.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var engine = LinearOptimizationService.createEngine();
 
  // Add a real (continuous) variable. Notice the lack of type specification.
@@ -221,8 +205,7 @@ LinearOptimizationService.LinearOptimizationEngine.prototype.setMaximization = f
 /**
  * Sets the optimization direction to minimizing the linear objective function.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var engine = LinearOptimizationService.createEngine();
 
  // Add a real (continuous) variable. Notice the lack of type specification.
@@ -243,8 +226,7 @@ LinearOptimizationService.LinearOptimizationEngine.prototype.setMinimization = f
 /**
  * Sets the coefficient of a variable in the linear objective function.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var engine = LinearOptimizationService.createEngine();
 
  // Add a real (continuous) variable. Notice the lack of type specification.
@@ -263,12 +245,9 @@ LinearOptimizationService.LinearOptimizationEngine.prototype.setMinimization = f
 LinearOptimizationService.LinearOptimizationEngine.prototype.setObjectiveCoefficient = function(variableName, coefficient){};
 
 /**
- * Solves the current linear program with the default deadline of
- 30 seconds. Returns the
- solution found.
+ * Solves the current linear program with the default deadline of 30 seconds. Returns the solution found.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var engine = LinearOptimizationService.createEngine();
 
  // Add variables, constraints and define the objective with addVariable(), addConstraint(), etc
@@ -294,8 +273,7 @@ LinearOptimizationService.LinearOptimizationSolution = function(){};
 /**
  * Gets the value of the objective function in the current solution.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var engine = LinearOptimizationService.createEngine();
 
  // Add variables, constraints and define the objective with addVariable(), addConstraint(), etc
@@ -313,11 +291,9 @@ LinearOptimizationService.LinearOptimizationSolution = function(){};
 LinearOptimizationService.LinearOptimizationSolution.prototype.getObjectiveValue = function(){};
 
 /**
- * Gets the status of the solution. Before solving a problem, the status will be
- <code>NOT_SOLVED</code>.
+ * Gets the status of the solution. Before solving a problem, the status will be <code>NOT_SOLVED</code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var engine = LinearOptimizationService.createEngine();
 
  // Add variables, constraints and define the objective with addVariable(), addConstraint(), etc
@@ -339,11 +315,9 @@ LinearOptimizationService.LinearOptimizationSolution.prototype.getObjectiveValue
 LinearOptimizationService.LinearOptimizationSolution.prototype.getStatus = function(){};
 
 /**
- * Gets the value of a variable in the solution created by the last call to
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/optimization/linear-optimization-engine.html#solve()'>LinearOptimizationEngine.solve()</a></code>.
+ * Gets the value of a variable in the solution created by the last call to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/optimization/linear-optimization-engine.html#solve()'>LinearOptimizationEngine.solve()</a></code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var engine = LinearOptimizationService.createEngine();
 
  // Add variables, constraints and define the objective with addVariable(), addConstraint(), etc
@@ -365,8 +339,7 @@ LinearOptimizationService.LinearOptimizationSolution.prototype.getVariableValue 
 /**
  * Determines whether the solution is either feasible or optimal.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var engine = LinearOptimizationService.createEngine();
 
  // Add variables, constraints and define the objective with addVariable(), addConstraint(), etc

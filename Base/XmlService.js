@@ -3,9 +3,9 @@ var XmlService = {};
 
 /**
  * An enumeration representing the types of XML content nodes.
-
+ * 
+ * @class XmlService.ContentType
  */
-XmlService.ContentType = function(){};
 
 /**
  * Creates an unattached <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/cdata.html'>CDATASection</a></code> node with the given value.
@@ -78,8 +78,7 @@ XmlService.createText = function(text){};
  defaults to <code>UTF-8</code> encoding, no indentation, and no additional line breaks, but includes
  the XML declaration and its encoding.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Log an XML document in compact form.
  var xml = &#39;&lt;root&gt;&lt;a&gt;&lt;b&gt;Text!&lt;/b&gt;&lt;b&gt;More text!&lt;/b&gt;&lt;/a&gt;&lt;/root&gt;&#39;;
  var document = XmlService.parse(xml);
@@ -113,8 +112,7 @@ XmlService.getNoNamespace = function(){};
  defaults to <code>UTF-8</code> encoding, two-space indentation, <code>\r\n</code> line separators after
  every node, and includes the XML declaration and its encoding.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Log an XML document in human-readable form.
  var xml = &#39;&lt;root&gt;&lt;a&gt;&lt;b&gt;Text!&lt;/b&gt;&lt;b&gt;More text!&lt;/b&gt;&lt;/a&gt;&lt;/root&gt;&#39;;
  var document = XmlService.parse(xml);
@@ -132,8 +130,7 @@ XmlService.getPrettyFormat = function(){};
  <code>UTF-8</code> encoding, no indentation and no line breaks other than those provided in the XML
  document itself, and includes the XML declaration and its encoding.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Log an XML document in raw form.
  var xml = &#39;&lt;root&gt;&lt;a&gt;&lt;b&gt;Text!&lt;/b&gt;&lt;b&gt;More text!&lt;/b&gt;&lt;/a&gt;&lt;/root&gt;&#39;;
  var document = XmlService.parse(xml);
@@ -155,9 +152,8 @@ XmlService.getXmlNamespace = function(){};
 
 /**
  * Creates an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/document.html'>Document</a></code> from the given XML, without validating the XML.
- 
- <pre class="prettyprint">
- <code>
+
+ <pre class="prettyprint"><code>
  var xml = &#39;&lt;root&gt;&lt;a&gt;&lt;b&gt;Text!&lt;/b&gt;&lt;b&gt;More text!&lt;/b&gt;&lt;/a&gt;&lt;/root&gt;&#39;;
  var doc = XmlService.parse(xml);
  </code></pre>
@@ -172,8 +168,7 @@ XmlService.parse = function(xml){};
 XmlService.Attribute = function(){};
 
 /**
- * Gets the local name of the attribute. If the attribute has a namespace prefix, use
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/attribute.html#getNamespace()'>getNamespace()</a></code>.<code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/namespace.html#getPrefix()'>getPrefix()</a></code> to get the prefix.
+ * Gets the local name of the attribute. If the attribute has a namespace prefix, use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/attribute.html#getNamespace()'>getNamespace()</a></code>.<code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/namespace.html#getPrefix()'>getPrefix()</a></code> to get the prefix.
  *
  * @return {String} the local name of the attribute
  */
@@ -194,9 +189,7 @@ XmlService.Attribute.prototype.getNamespace = function(){};
 XmlService.Attribute.prototype.getValue = function(){};
 
 /**
- * Sets the local name of the attribute. To set a namespace prefix for the attribute, use
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/attribute.html#setNamespace(Namespace)'>setNamespace(namespace)</a></code> in conjunction with
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/xml-service.html#getNamespace(String,String)'>XmlService.getNamespace(prefix, uri)</a></code>.
+ * Sets the local name of the attribute. To set a namespace prefix for the attribute, use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/attribute.html#setNamespace(Namespace)'>setNamespace(namespace)</a></code> in conjunction with <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/xml-service.html#getNamespace(String,String)'>XmlService.getNamespace(prefix, uri)</a></code>.
  *
  * @param {String} name - the local name to set
  *
@@ -332,15 +325,13 @@ XmlService.Content.prototype.asCdata = function(){};
  * Casts the node as a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/comment.html'>Comment</a></code> node for the purposes of autocomplete. If the node's
  <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/content-type.html'>ContentType</a></code> is not already <code>COMMENT</code>, this method returns <code>null</code>.
  *
- * @return {XmlService.Comment} the <code>Comment</code> node, or <code>null</code> if the node's content type is not
-     <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/content-type.html'>COMMENT</a></code>
+ * @return {XmlService.Comment} the <code>Comment</code> node, or <code>null</code> if the node's content type is not <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/content-type.html'>COMMENT</a></code>
  */
 XmlService.Content.prototype.asComment = function(){};
 
 /**
  * Casts the node as a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/doc-type.html'>DocumentType</a></code> node for the purposes of autocomplete. If
- the node's <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/content-type.html'>ContentType</a></code> is not already <code>DOCTYPE</code>, this method returns
- <code>null</code>.
+ the node's <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/content-type.html'>ContentType</a></code> is not already <code>DOCTYPE</code>, this method returns <code>null</code>.
  *
  * @return {XmlService.DocType} the <code>DocumentType</code> node
  */
@@ -373,8 +364,7 @@ XmlService.Content.prototype.asEntityRef = function(){};
 XmlService.Content.prototype.asProcessingInstruction = function(){};
 
 /**
- * Casts the node as a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/text.html'>Text</a></code> node for the purposes of autocomplete. If the node's
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/content-type.html'>ContentType</a></code> is not already <code>TEXT</code>, this method returns <code>null</code>.
+ * Casts the node as a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/text.html'>Text</a></code> node for the purposes of autocomplete. If the node's <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/content-type.html'>ContentType</a></code> is not already <code>TEXT</code>, this method returns <code>null</code>.
  *
  * @return {XmlService.Text} the <code>Text</code> node
  */
@@ -518,7 +508,7 @@ XmlService.Document = function(){};
  node.
  *
  * @param {number} index - the index at which to insert the node among all nodes that are immediate children
-   of the document
+     of the document
  * @param {XmlService.Content} content - the node to insert
  *
  * @return {XmlService.Document} the document, for chaining
@@ -576,17 +566,14 @@ XmlService.Document.prototype.getContentSize = function(){};
 XmlService.Document.prototype.getDescendants = function(){};
 
 /**
- * Gets the document's <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/doc-type.html'>DocType</a></code> declaration. If the document does not have a
- <code>DocumentType</code> node, this method returns <code>null</code>.
+ * Gets the document's <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/doc-type.html'>DocType</a></code> declaration. If the document does not have a <code>DocumentType</code> node, this method returns <code>null</code>.
  *
- * @return {XmlService.DocType} the <code>DocumentType</code> node, or <code>null</code> if the document does not have a
-     <code>DocumentType</code> node
+ * @return {XmlService.DocType} the <code>DocumentType</code> node, or <code>null</code> if the document does not have a <code>DocumentType</code> node
  */
 XmlService.Document.prototype.getDocType = function(){};
 
 /**
- * Gets the document's root <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html'>Element</a></code> node. If the document does not have a root
- <code>Element</code> node, this method returns <code>null</code>.
+ * Gets the document's root <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html'>Element</a></code> node. If the document does not have a root <code>Element</code> node, this method returns <code>null</code>.
  *
  * @return {XmlService.Element} the root <code>Element</code> node, or <code>null</code> if the document does not have a root
      <code>Element</code> node
@@ -631,8 +618,7 @@ XmlService.Document.prototype.removeContent = function(index){};
 XmlService.Document.prototype.setDocType = function(docType){};
 
 /**
- * Sets the document's root <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html'>Element</a></code> node. If the document already has a root
- <code>Element</code> node, this method overwrites the old node.
+ * Sets the document's root <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html'>Element</a></code> node. If the document already has a root <code>Element</code> node, this method overwrites the old node.
  *
  * @param {XmlService.Element} element - the root <code>Element</code> node to set
  *
@@ -649,7 +635,7 @@ XmlService.Element = function(){};
  node object that corresponds to a type listed in <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/content-type.html'>ContentType</a></code>.
  *
  * @param {number} index - the index at which to insert the node among all nodes that are immediate children
-   of the <code>Element</code> node
+     of the <code>Element</code> node
  * @param {XmlService.Content} content - the node to insert
  *
  * @return {XmlService.Element} the <code>Element</code> node, for chaining
@@ -703,8 +689,7 @@ XmlService.Element.prototype.getAttributes = function(){};
  *
  * @param {String} name - the name of the child <code>Element</code> node
  *
- * @return {XmlService.Element} the <code>Element</code> node, or <code>null</code> if there is no immediate child
-     <code>Element</code> node with the given name and no namespace
+ * @return {XmlService.Element} the <code>Element</code> node, or <code>null</code> if there is no immediate child <code>Element</code> node with the given name and no namespace
  */
 XmlService.Element.prototype.getChild = function(name){};
 
@@ -724,8 +709,7 @@ XmlService.Element.prototype.getChildText = function(name){};
  * Gets all <code>Element</code> nodes that are immediate children of this <code>Element</code> node, in the
  order they appear in the document.
  *
- * @return {XmlService.Element[]} an array of all <code>Element</code> nodes that are immediate children of this
-     <code>Element</code> node
+ * @return {XmlService.Element[]} an array of all <code>Element</code> nodes that are immediate children of this <code>Element</code> node
  */
 XmlService.Element.prototype.getChildren = function(){};
 
@@ -774,9 +758,8 @@ XmlService.Element.prototype.getDescendants = function(){};
 XmlService.Element.prototype.getDocument = function(){};
 
 /**
- * Gets the local name of the <code>Element</code> node. If the node has a namespace prefix, use
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html#getQualifiedName()'>getQualifiedName()</a></code> or
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html#getNamespace()'>getNamespace()</a></code>.<code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/namespace.html#getPrefix()'>getPrefix()</a></code> to get the prefix.
+ * Gets the local name of the <code>Element</code> node. If the node has a namespace prefix, use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html#getQualifiedName()'>getQualifiedName()</a></code> or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html#getNamespace()'>getNamespace()</a></code>.<code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/namespace.html#getPrefix()'>getPrefix()</a></code> to
+ get the prefix.
  *
  * @return {String} the local name of the <code>Element</code> node
  */
@@ -798,12 +781,9 @@ XmlService.Element.prototype.getNamespace = function(){};
 XmlService.Element.prototype.getParentElement = function(){};
 
 /**
- * Gets the local name and namespace prefix of the <code>Element</code> node, in the form
- <code>[namespacePrefix]:[localName]</code>. If the node does not have a namespace prefix, use
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html#getName()'>getName()</a></code>.
+ * Gets the local name and namespace prefix of the <code>Element</code> node, in the form <code>[namespacePrefix]:[localName]</code>. If the node does not have a namespace prefix, use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html#getName()'>getName()</a></code>.
  *
- * @return {String} the local name and namespace prefix of the <code>Element</code> node, in the form
-     <code>[namespacePrefix]:[localName]</code>
+ * @return {String} the local name and namespace prefix of the <code>Element</code> node, in the form <code>[namespacePrefix]:[localName]</code>
  */
 XmlService.Element.prototype.getQualifiedName = function(){};
 
@@ -823,8 +803,7 @@ XmlService.Element.prototype.getText = function(){};
 XmlService.Element.prototype.getValue = function(){};
 
 /**
- * Determines whether this <code>Element</code> node is a direct or indirect parent of a given
- <code>Element</code> node.
+ * Determines whether this <code>Element</code> node is a direct or indirect parent of a given <code>Element</code> node.
  *
  * @param {XmlService.Element} other - the other <code>Element</code> node
  *
@@ -904,8 +883,7 @@ XmlService.Element.prototype.setAttribute = function(name, value, namespace){};
 
 /**
  * Sets the local name of the <code>Element</code> node. To set a namespace prefix for the node, use
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html#setNamespace(Namespace)'>setNamespace(namespace)</a></code> in conjunction with
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/xml-service.html#getNamespace(String,String)'>XmlService.getNamespace(prefix, uri)</a></code>.
+ <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html#setNamespace(Namespace)'>setNamespace(namespace)</a></code> in conjunction with <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/xml-service.html#getNamespace(String,String)'>XmlService.getNamespace(prefix, uri)</a></code>.
  *
  * @param {String} name - the local name to set
  *
@@ -1024,13 +1002,11 @@ XmlService.Format.prototype.format = function(document){};
 
 /**
  * Sets the character encoding that the formatter should use. The <code>encoding</code> argument must
- be an accepted XML encoding like <code>ISO-8859-1</code>, <code>US-ASCII</code>, <code>UTF-8</code>, or
- <code>UTF-16</code>.
+ be an accepted XML encoding like <code>ISO-8859-1</code>, <code>US-ASCII</code>, <code>UTF-8</code>, or <code>UTF-16</code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Log an XML document with encoding that does not support certain special characters.
- var xml = &#39;&lt;root&gt;&lt;a&gt;&lt;b&gt;???&lt;/b&gt;&lt;b&gt;???&lt;/b&gt;&lt;/a&gt;&lt;/root&gt;&#39;;
+ var xml = &#39;&lt;root&gt;&lt;a&gt;&lt;b&gt;ಠ‿ಠ&lt;/b&gt;&lt;b&gt;ಠ‿ಠ&lt;/b&gt;&lt;/a&gt;&lt;/root&gt;&#39;;
  var document = XmlService.parse(xml);
  var output = XmlService.getRawFormat()
      .setEncoding(&#39;ISO-8859-1&#39;)
@@ -1048,8 +1024,7 @@ XmlService.Format.prototype.setEncoding = function(encoding){};
  * Sets the string used to indent child nodes relative to their parents. Setting an indent other
  than <code>null</code> will cause the formatter to insert a line break after every node.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Log an XML document with each child node indented four spaces.
  var xml = &#39;&lt;root&gt;&lt;a&gt;&lt;b&gt;Text!&lt;/b&gt;&lt;b&gt;More text!&lt;/b&gt;&lt;/a&gt;&lt;/root&gt;&#39;;
  var document = XmlService.parse(xml);
@@ -1070,8 +1045,7 @@ XmlService.Format.prototype.setIndent = function(indent){};
  pre-defined formatters have different conditions under which they insert a line break. The
  default line separator is <code>\r\n</code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Log an XML document with several spaces and a pipe character in place of line breaks.
  var xml = &#39;&lt;root&gt;&lt;a&gt;&lt;b&gt;Text!&lt;/b&gt;&lt;b&gt;More text!&lt;/b&gt;&lt;/a&gt;&lt;/root&gt;&#39;;
  var document = XmlService.parse(xml);
@@ -1088,8 +1062,8 @@ XmlService.Format.prototype.setIndent = function(indent){};
 XmlService.Format.prototype.setLineSeparator = function(separator){};
 
 /**
- * Sets whether the formatter should omit the XML declaration, such as
- <code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</code>.
+ * Sets whether the formatter should omit the XML declaration, such as <code>&lt;?xml version=&quot;1.0&quot;
+ encoding=&quot;UTF-8&quot;?&gt;</code>.
  *
  * @param {Boolean} omitDeclaration - <code>true</code> to omit the XML declaration; <code>false</code> to include it
  *
@@ -1098,8 +1072,8 @@ XmlService.Format.prototype.setLineSeparator = function(separator){};
 XmlService.Format.prototype.setOmitDeclaration = function(omitDeclaration){};
 
 /**
- * Sets whether the formatter should omit the encoding in the XML declaration,
- such as the encoding field in <code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</code>.
+ * Sets whether the formatter should omit the encoding in the XML declaration, such as the
+ encoding field in <code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</code>.
  *
  * @param {Boolean} omitEncoding - <code>true</code> to omit the encoding in the XML declaration; <code>false</code> to
      include it

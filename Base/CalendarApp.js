@@ -3,270 +3,322 @@ var CalendarApp = {};
 
 /**
  * An enum representing the named colors available in the Calendar service.
-
+ * 
+ * @class CalendarApp.Color
  */
-CalendarApp.Color = function(){};
 
 /**
+ * @typedef {String} String.BLUE
+ * 
  * <div style="background-color: #2952A3; display: inline-block; height: 10px; width: 10px;">
  </div> Blue (<code>#2952A3</code>).
- *
- * @type {{}}
  */
-String.prototype.BLUE = {};
 
 /**
+ * @typedef {String} String.BROWN
+ * 
  * <div style="background-color: #8D6F47; display: inline-block; height: 10px; width: 10px;">
  </div> Brown (<code>#8D6F47</code>).
- *
- * @type {{}}
  */
-String.prototype.BROWN = {};
 
 /**
+ * @typedef {String} String.CHARCOAL
+ * 
  * <div style="background-color: #4E5D6C; display: inline-block; height: 10px; width: 10px;">
  </div> Charcoal (<code>#4E5D6C</code>).
- *
- * @type {{}}
  */
-String.prototype.CHARCOAL = {};
 
 /**
+ * @typedef {String} String.CHESTNUT
+ * 
  * <div style="background-color: #865A5A; display: inline-block; height: 10px; width: 10px;">
  </div> Chestnut (<code>#865A5A</code>).
- *
- * @type {{}}
  */
-String.prototype.CHESTNUT = {};
 
 /**
+ * @typedef {String} String.GRAY
+ * 
  * <div style="background-color: #5A6986; display: inline-block; height: 10px; width: 10px;">
  </div> Gray (<code>#5A6986</code>).
- *
- * @type {{}}
  */
-String.prototype.GRAY = {};
 
 /**
+ * @typedef {String} String.GREEN
+ * 
  * <div style="background-color: #0D7813; display: inline-block; height: 10px; width: 10px;">
  </div> Green (<code>#0D7813</code>).
- *
- * @type {{}}
  */
-String.prototype.GREEN = {};
 
 /**
+ * @typedef {String} String.INDIGO
+ * 
  * <div style="background-color: #5229A3; display: inline-block; height: 10px; width: 10px;">
  </div> Indigo (<code>#5229A3</code>).
- *
- * @type {{}}
  */
-String.prototype.INDIGO = {};
 
 /**
+ * @typedef {String} String.LIME
+ * 
  * <div style="background-color: #528800; display: inline-block; height: 10px; width: 10px;">
  </div> Lime (<code>#528800</code>).
- *
- * @type {{}}
  */
-String.prototype.LIME = {};
 
 /**
+ * @typedef {String} String.MUSTARD
+ * 
  * <div style="background-color: #88880E; display: inline-block; height: 10px; width: 10px;">
  </div> Mustard (<code>#88880E</code>).
- *
- * @type {{}}
  */
-String.prototype.MUSTARD = {};
 
 /**
+ * @typedef {String} String.OLIVE
+ * 
  * <div style="background-color: #6E6E41; display: inline-block; height: 10px; width: 10px;">
  </div> Olive (<code>#6E6E41</code>).
- *
- * @type {{}}
  */
-String.prototype.OLIVE = {};
 
 /**
+ * @typedef {String} String.ORANGE
+ * 
  * <div style="background-color: #BE6D00; display: inline-block; height: 10px; width: 10px;">
  </div> Orange (<code>#BE6D00</code>).
- *
- * @type {{}}
  */
-String.prototype.ORANGE = {};
 
 /**
+ * @typedef {String} String.PINK
+ * 
  * <div style="background-color: #B1365F; display: inline-block; height: 10px; width: 10px;">
  </div> Pink (<code>#B1365F</code>).
- *
- * @type {{}}
  */
-String.prototype.PINK = {};
 
 /**
+ * @typedef {String} String.PLUM
+ * 
  * <div style="background-color: #705770; display: inline-block; height: 10px; width: 10px;">
  </div> Plum (<code>#705770</code>).
- *
- * @type {{}}
  */
-String.prototype.PLUM = {};
 
 /**
+ * @typedef {String} String.PURPLE
+ * 
  * <div style="background-color: #7A367A; display: inline-block; height: 10px; width: 10px;">
  </div> Purple (<code>#7A367A</code>).
- *
- * @type {{}}
  */
-String.prototype.PURPLE = {};
 
 /**
+ * @typedef {String} String.RED
+ * 
  * <div style="background-color: #A32929; display: inline-block; height: 10px; width: 10px;">
  </div> Red (<code>#A32929</code>).
- *
- * @type {{}}
  */
-String.prototype.RED = {};
 
 /**
+ * @typedef {String} String.RED_ORANGE
+ * 
  * <div style="background-color: #B1440E; display: inline-block; height: 10px; width: 10px;">
  </div> Red-Orange (<code>#B1440E</code>).
- *
- * @type {{}}
  */
-String.prototype.RED_ORANGE = {};
 
 /**
+ * @typedef {String} String.SEA_BLUE
+ * 
  * <div style="background-color: #29527A; display: inline-block; height: 10px; width: 10px;">
  </div> Sea Blue (<code>#29527A</code>).
- *
- * @type {{}}
  */
-String.prototype.SEA_BLUE = {};
 
 /**
+ * @typedef {String} String.SLATE
+ * 
  * <div style="background-color: #4A716C; display: inline-block; height: 10px; width: 10px;">
  </div> Slate (<code>#4A716C</code>).
- *
- * @type {{}}
  */
-String.prototype.SLATE = {};
 
 /**
+ * @typedef {String} String.TEAL
+ * 
  * <div style="background-color: #28754E; display: inline-block; height: 10px; width: 10px;">
  </div> Teal (<code>#28754E</code>).
- *
- * @type {{}}
  */
-String.prototype.TEAL = {};
 
 /**
+ * @typedef {String} String.TURQOISE
+ * 
  * <div style="background-color: #1B887A; display: inline-block; height: 10px; width: 10px;">
  </div> Turquoise (<code>#1B887A</code>).
- *
- * @type {{}}
  */
-String.prototype.TURQOISE = {};
 
 /**
+ * @typedef {String} String.YELLOW
+ * 
  * <div style="background-color: #AB8B00; display: inline-block; height: 10px; width: 10px;">
  </div> Yellow (<code>#AB8B00</code>).
- *
- * @type {{}}
  */
-String.prototype.YELLOW = {};
+
+/**
+ * An enum representing the named event colors available in the Calendar service.
+ * 
+ * @class CalendarApp.EventColor
+ */
+
+/**
+ * @typedef {String} String.BLUE
+ * 
+ * <div style="background-color: #5484ED; display: inline-block; height: 10px; width: 10px;">
+ </div> Blue (<code>&quot;9&quot;</code>).
+ */
+
+/**
+ * @typedef {String} String.CYAN
+ * 
+ * <div style="background-color: #46D6DB; display: inline-block; height: 10px; width: 10px;">
+ </div> Cyan (<code>&quot;7&quot;</code>).
+ */
+
+/**
+ * @typedef {String} String.GRAY
+ * 
+ * <div style="background-color: #E1E1E1; display: inline-block; height: 10px; width: 10px;">
+ </div> Gray (<code>&quot;8&quot;</code>).
+ */
+
+/**
+ * @typedef {String} String.GREEN
+ * 
+ * <div style="background-color: #51B749; display: inline-block; height: 10px; width: 10px;">
+ </div> Green (<code>&quot;10&quot;</code>).
+ */
+
+/**
+ * @typedef {String} String.MAUVE
+ * 
+ * <div style="background-color: #BDADFF; display: inline-block; height: 10px; width: 10px;">
+ </div> Mauve (<code>&quot;3&quot;</code>).
+ */
+
+/**
+ * @typedef {String} String.ORANGE
+ * 
+ * <div style="background-color: #FFB878; display: inline-block; height: 10px; width: 10px;">
+ </div> Orange (<code>&quot;6&quot;</code>).
+ */
+
+/**
+ * @typedef {String} String.PALE_BLUE
+ * 
+ * <div style="background-color: #a4bdfc; display: inline-block; height: 10px; width: 10px;">
+ </div> Pale Blue (<code>&quot;1&quot;</code>).
+ */
+
+/**
+ * @typedef {String} String.PALE_GREEN
+ * 
+ * <div style="background-color: #7AE7BF; display: inline-block; height: 10px; width: 10px;">
+ </div> Pale Green (<code>&quot;2&quot;</code>).
+ */
+
+/**
+ * @typedef {String} String.PALE_RED
+ * 
+ * <div style="background-color: #FF887C; display: inline-block; height: 10px; width: 10px;">
+ </div> Pale Red (<code>&quot;4&quot;</code>).
+ */
+
+/**
+ * @typedef {String} String.RED
+ * 
+ * <div style="background-color: #DC2127; display: inline-block; height: 10px; width: 10px;">
+ </div> Red (<code>&quot;11&quot;</code>).
+ */
+
+/**
+ * @typedef {String} String.YELLOW
+ * 
+ * <div style="background-color: #FBD75B; display: inline-block; height: 10px; width: 10px;">
+ </div> Yellow (<code>&quot;5&quot;</code>).
+ */
 
 /**
  * An enum representing the statuses a guest can have for an event.
-
+ * 
+ * @class CalendarApp.GuestStatus
  */
-CalendarApp.GuestStatus = function(){};
 
 /**
- * The guest has been invited, but has not indicated whether he or she will attend.
- *
- * @type {{}}
+ * @typedef {CalendarApp.GuestStatus} CalendarApp.GuestStatus.INVITED
+ * 
+ * The guest has been invited, but has not indicated whether he or she is attending.
  */
-CalendarApp.GuestStatus.prototype.INVITED = {};
 
 /**
+ * @typedef {CalendarApp.GuestStatus} CalendarApp.GuestStatus.MAYBE
+ * 
  * The guest has indicated he or she might attend.
- *
- * @type {{}}
  */
-CalendarApp.GuestStatus.prototype.MAYBE = {};
 
 /**
- * The guest has indicated he or she will not attend.
- *
- * @type {{}}
+ * @typedef {CalendarApp.GuestStatus} CalendarApp.GuestStatus.NO
+ * 
+ * The guest has indicated he or she is not attending.
  */
-CalendarApp.GuestStatus.prototype.NO = {};
 
 /**
+ * @typedef {CalendarApp.GuestStatus} CalendarApp.GuestStatus.OWNER
+ * 
  * The guest is the owner of the event.
- *
- * @type {{}}
  */
-CalendarApp.GuestStatus.prototype.OWNER = {};
 
 /**
- * The guest has indicated he or she will attend.
- *
- * @type {{}}
+ * @typedef {CalendarApp.GuestStatus} CalendarApp.GuestStatus.YES
+ * 
+ * The guest has indicated he or she is attending.
  */
-CalendarApp.GuestStatus.prototype.YES = {};
 
 /**
  * An enum representing the months of the year.
-
+ * 
+ * @class Month
  */
-Month = function(){};
 
 /**
  * An enum representing the visibility of an event.
-
+ * 
+ * @class CalendarApp.Visibility
  */
-CalendarApp.Visibility = function(){};
 
 /**
+ * @typedef {CalendarApp.Visibility} CalendarApp.Visibility.CONFIDENTIAL
+ * 
  * The event is private. This value is provided for compatibility reasons.
- *
- * @type {{}}
  */
-CalendarApp.Visibility.prototype.CONFIDENTIAL = {};
 
 /**
+ * @typedef {CalendarApp.Visibility} CalendarApp.Visibility.DEFAULT
+ * 
  * Uses the default visibility for events on the calendar.
- *
- * @type {{}}
  */
-CalendarApp.Visibility.prototype.DEFAULT = {};
 
 /**
+ * @typedef {CalendarApp.Visibility} CalendarApp.Visibility.PRIVATE
+ * 
  * The event is private and only event attendees may view event details.
- *
- * @type {{}}
  */
-CalendarApp.Visibility.prototype.PRIVATE = {};
 
 /**
+ * @typedef {CalendarApp.Visibility} CalendarApp.Visibility.PUBLIC
+ * 
  * The event is public and event details are visible to all readers of the calendar.
- *
- * @type {{}}
  */
-CalendarApp.Visibility.prototype.PUBLIC = {};
 
 /**
  * An enum representing the days of the week.
-
+ * 
+ * @class Weekday
  */
-Weekday = function(){};
 
 /**
  * Creates a new all-day event.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates an all-day event for the moon landing and logs the ID.
  var event = CalendarApp.getDefaultCalendar().createAllDayEvent(&#39;Apollo 11 Landing&#39;,
      new Date(&#39;July 20, 1969&#39;));
@@ -281,10 +333,49 @@ Weekday = function(){};
 CalendarApp.createAllDayEvent = function(title, date){};
 
 /**
+ * Creates a new all-day event.
+
+ <pre class="prettyprint"><code>
+ // Creates an all-day event for the Woodstock festival (August 15th to 17th) and logs the ID.
+ var event = CalendarApp.getDefaultCalendar().createAllDayEvent(&#39;Woodstock Festival&#39;,
+     new Date(&#39;August 15, 1969&#39;),
+     new Date(&#39;August 18, 1969&#39;));
+ Logger.log(&#39;Event ID: &#39; + event.getId());
+ </code></pre>
+ *
+ * @param {String} title - the title of the event
+ * @param {Date} startDate - the date when the event starts (only the day is used; the time is ignored)
+ * @param {Date} endDate - the date when the event ends (only the day is used; the time is ignored)
+ *
+ * @return {CalendarApp.CalendarEvent} the created event
+ */
+CalendarApp.createAllDayEvent = function(title, startDate, endDate){};
+
+/**
+ * Creates a new all-day event.
+
+ <pre class="prettyprint"><code>
+ // Creates an all-day event for the Woodstock festival (August 15th to 17th) and logs the ID.
+ var event = CalendarApp.getDefaultCalendar().createAllDayEvent(&#39;Woodstock Festival&#39;,
+     new Date(&#39;August 15, 1969&#39;),
+     new Date(&#39;August 18, 1969&#39;),
+     {location: &#39;Bethel, White Lake, New York, U.S.&#39;, sendInvites: true});
+ Logger.log(&#39;Event ID: &#39; + event.getId());
+ </code></pre>
+ *
+ * @param {String} title - the title of the event
+ * @param {Date} startDate - the date when the event starts (only the day is used; the time is ignored)
+ * @param {Date} endDate - the date when the event ends (only the day is used; the time is ignored)
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {CalendarApp.CalendarEvent} the created event
+ */
+CalendarApp.createAllDayEvent = function(title, startDate, endDate, options){};
+
+/**
  * Creates a new all-day event series.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates an event series for a no-meetings day, taking place every Wednesday in 2013.
  var eventSeries = CalendarApp.getDefaultCalendar().createAllDayEventSeries(&#39;No Meetings&#39;,
      new Date(&#39;January 2, 2013 03:00:00 PM EST&#39;),
@@ -306,8 +397,7 @@ CalendarApp.createAllDayEventSeries = function(title, startDate, recurrence){};
 /**
  * Creates a new calendar, owned by the user.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a new calendar named &quot;Travel Plans&quot;.
  var calendar = CalendarApp.createCalendar(&#39;Travel Plans&#39;);
  Logger.log(&#39;Created the calendar &quot;%s&quot;, with the ID &quot;%s&quot;.&#39;,
@@ -323,11 +413,10 @@ CalendarApp.createCalendar = function(name){};
 /**
  * Creates a new event.
 
- <p>If no time zone is specified, the time values are interpreted in the context of the
- script's time zone, which may be different than the calendar's time zone.
+ <p>If no time zone is specified, the time values are interpreted in the context of the script's
+ time zone, which may be different than the calendar's time zone.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates an event for the moon landing and logs the ID.
  var event = CalendarApp.getDefaultCalendar().createEvent(&#39;Apollo 11 Landing&#39;,
      new Date(&#39;July 20, 1969 20:00:00 UTC&#39;),
@@ -346,12 +435,10 @@ CalendarApp.createEvent = function(title, startTime, endTime){};
 /**
  * Creates an event from a free-form description.
 
- <p>The description should use the same format as the UI's
- <a href="http://support.google.com/calendar/answer/36604?hl=en">"Quick Add"</a>
- feature.
+ <p>The description should use the same format as the UI's <a
+ href="http://support.google.com/calendar/answer/36604?hl=en">"Quick Add"</a> feature.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a new event and logs its ID.
  var event = CalendarApp.getDefaultCalendar()
      .createEventFromDescription(&#39;Lunch with Mary, Friday at 1PM&#39;);
@@ -367,8 +454,7 @@ CalendarApp.createEventFromDescription = function(description){};
 /**
  * Creates a new event series.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates an event series for a team meeting, taking place every Tuesday and Thursday in 2013.
  var eventSeries = CalendarApp.getDefaultCalendar().createEventSeries(&#39;Team Meeting&#39;,
      new Date(&#39;January 1, 2013 03:00:00 PM EST&#39;),
@@ -391,8 +477,7 @@ CalendarApp.createEventSeries = function(title, startTime, endTime, recurrence){
 /**
  * Gets all calendars that the user owns or is subscribed to.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Determines how many calendars the user can access.
  var calendars = CalendarApp.getAllCalendars();
  Logger.log(&#39;This user owns or is subscribed to %s calendars.&#39;,
@@ -406,8 +491,7 @@ CalendarApp.getAllCalendars = function(){};
 /**
  * Gets all calendars that the user owns.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Determines how many calendars the user owns.
  var calendars = CalendarApp.getAllOwnedCalendars();
  Logger.log(&#39;This user owns %s calendars.&#39;, calendars.length);
@@ -420,8 +504,7 @@ CalendarApp.getAllOwnedCalendars = function(){};
 /**
  * Gets the calendar with the given ID.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Gets the public calendar &quot;US Holidays&quot; by ID.
  var calendar = CalendarApp.getCalendarById(
      &#39;en.usa#holiday@group.v.calendar.google.com&#39;);
@@ -439,8 +522,7 @@ CalendarApp.getCalendarById = function(id){};
  * Gets all calendars with a given name that the user owns or is subscribed to. Names are not
  case-sensitive.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Gets the public calendar named &quot;US Holidays&quot;.
  var calendars = CalendarApp.getCalendarsByName(&#39;US Holidays&#39;);
  Logger.log(&#39;Found %s matching calendars.&#39;, calendars.length);
@@ -462,8 +544,7 @@ CalendarApp.getColor = function(){};
 /**
  * Gets the user's default calendar.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Determines the time zone of the user&#39;s default calendar.
  var calendar = CalendarApp.getDefaultCalendar();
  Logger.log(&#39;My default calendar is set to the time zone &quot;%s&quot;.&#39;,
@@ -482,11 +563,26 @@ CalendarApp.getDefaultCalendar = function(){};
 CalendarApp.getDescription = function(){};
 
 /**
+ * Gets the event with the given ID. If the series belongs to a calendar other than the default
+ calendar, this method must be called from that <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-app.html'>CalendarApp</a></code>. Calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-app.html#getEventById(String)'>getEventById(iCalId)</a></code> only
+ returns an event in the default calendar.
+
+ <p>Multiple events may have the same ID if they are part of an event series. In this case this
+ method returns only the first event from that series.
+ *
+ * @param {String} iCalId - ID of the event
+ *
+ * @return {CalendarApp.CalendarEvent} the event with the given ID, or <code>null</code> if the event doesn't exist or the user
+     cannot access it.
+ */
+CalendarApp.getEventById = function(iCalId){};
+
+/**
  * Gets the event series with the given ID. If the ID given is for a single <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-event.html'>CalendarEvent</a></code>,
- then a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-event-series.html'>CalendarEventSeries</a></code> will be returned with a single event in the series. Note
- that if the event series belongs to a calendar other than the default calendar, this method
- must be called from that <code>Calendar</code>; calling <code>CalendarApp.getEventSeriesById(id)</code>
- directly will only return an event series that exists in the default calendar.
+ then a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-event-series.html'>CalendarEventSeries</a></code> is returned with a single event in the series. Note that if
+ the event series belongs to a calendar other than the default calendar, this method must be
+ called from that <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-app.html'>CalendarApp</a></code>; calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-app.html#getEventSeriesById(String)'>getEventSeriesById(iCalId)</a></code>
+ directly only returns an event series that exists in the default calendar.
  *
  * @param {String} iCalId - ID of the event series
  *
@@ -498,12 +594,12 @@ CalendarApp.getEventSeriesById = function(iCalId){};
 /**
  * Gets all events that occur within a given time range.
 
- <p>An event will be returned if it starts during the time range, ends during the time range, or
- encompasses the time range. If no time zone is specified, the time values are interpreted in
- the context of the script's time zone, which may be different from the calendar's time zone.
+ <p>This method returns events that start during the given time range, end during the time
+ range, or encompass the time range. If no time zone is specified, the time values are
+ interpreted in the context of the script's time zone, which may be different from the
+ calendar's time zone.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Determines how many events are happening in the next two hours.
  var now = new Date();
  var twoHoursFromNow = new Date(now.getTime() + (2 * 60 * 60 * 1000));
@@ -521,15 +617,14 @@ CalendarApp.getEvents = function(startTime, endTime){};
 /**
  * Gets all events that occur on a given day.
 
- <p>An event will be returned if it starts during the day, ends during the day, or encompasses
- the day.
+ <p>This method returns events if they start during the given day, end during the day, or
+ encompass the day.
 
  <p>Note that only the date portion of the Date object is used, and the time portion is ignored.
- The date is interpreted as midnight that day to midnight the next day in the calendar's
- time zone.
+ The date is interpreted as midnight that day to midnight the next day in the calendar's time
+ zone.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Determines how many events are happening today.
  var today = new Date();
  var events = CalendarApp.getDefaultCalendar().getEventsForDay(today);
@@ -563,8 +658,7 @@ CalendarApp.getName = function(){};
  select <strong>Calendar settings</strong>. The ID is shown near the bottom of the settings
  page.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Gets a (non-existent) private calendar by ID.
  var calendar = CalendarApp.getOwnedCalendarById(
      &#39;123456789@group.calendar.google.com&#39;);
@@ -581,8 +675,7 @@ CalendarApp.getOwnedCalendarById = function(id){};
 /**
  * Gets all calendars with a given name that the user owns. Names are not case-sensitive.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Gets a private calendar named &quot;Travel Plans&quot;.
  var calendars = CalendarApp.getOwnedCalendarsByName(&#39;Travel Plans&#39;);
  Logger.log(&#39;Found %s matching calendars.&#39;, calendars.length);
@@ -597,8 +690,8 @@ CalendarApp.getOwnedCalendarsByName = function(name){};
 /**
  * Gets the time zone of the calendar.
  *
- * @return {String} the time zone, specified in "long" format (e.g., "America/New_York", as listed by
-     <a href="http://joda-time.sourceforge.net/timezones.html">Joda.org</a>)
+ * @return {String} the time zone, specified in "long" format (e.g., "America/New_York", as listed by <a
+     href="http://joda-time.sourceforge.net/timezones.html">Joda.org</a>)
  */
 CalendarApp.getTimeZone = function(){};
 
@@ -612,8 +705,7 @@ CalendarApp.isHidden = function(){};
 /**
  * Determines whether the calendar is the default calendar for the effective user.
  *
- * @return {Boolean} <code>true</code> if the calendar is the default calendar for the effective user;
-     <code>false</code> if not
+ * @return {Boolean} <code>true</code> if the calendar is the default calendar for the effective user; <code>false</code> if not
  */
 CalendarApp.isMyPrimaryCalendar = function(){};
 
@@ -627,16 +719,14 @@ CalendarApp.isOwnedByMe = function(){};
 /**
  * Determines whether the calendar's events are displayed in the user interface.
  *
- * @return {Boolean} <code>true</code> if the calendar's events are displayed in the user interface;
-     <code>false</code> if not
+ * @return {Boolean} <code>true</code> if the calendar's events are displayed in the user interface; <code>false</code> if not
  */
 CalendarApp.isSelected = function(){};
 
 /**
  * Creates a new recurrence object, which can be used to create rules for event recurrence.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates an event series for a no-meetings day, taking place every Wednesday in 2013.
  var recurrence = CalendarApp.newRecurrence().addWeeklyRule()
      .onlyOnWeekday(CalendarApp.Weekday.WEDNESDAY)
@@ -654,8 +744,7 @@ CalendarApp.newRecurrence = function(){};
 /**
  * Sets the color of the calendar.
  *
- * @param {String} color - a hexadecimal color string ("#rrggbb") or a value from
-     <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/color.html'>CalendarApp.Colors</a></code>
+ * @param {String} color - a hexadecimal color string ("#rrggbb") or a value from <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/color.html'>CalendarApp.Colors</a></code>
  *
  * @return {CalendarApp.Calendar} this calendar for chaining
  */
@@ -673,8 +762,7 @@ CalendarApp.setDescription = function(description){};
 /**
  * Sets whether the calendar is visible in the user interface.
  *
- * @param {Boolean} hidden - <code>true</code> to hide the calendar in the user interface; <code>false</code> to show
-     it
+ * @param {Boolean} hidden - <code>true</code> to hide the calendar in the user interface; <code>false</code> to show it
  *
  * @return {CalendarApp.Calendar} this calendar for chaining
  */
@@ -692,8 +780,8 @@ CalendarApp.setName = function(name){};
 /**
  * Sets whether the calendar's events are displayed in the user interface.
  *
- * @param {Boolean} selected - <code>true</code> to show the calendar's events in the user interface;
-     <code>false</code> to hide them
+ * @param {Boolean} selected - <code>true</code> to show the calendar's events in the user interface; <code>false</code>
+     to hide them
  *
  * @return {CalendarApp.Calendar} this calendar for chaining
  */
@@ -712,8 +800,7 @@ CalendarApp.setTimeZone = function(timeZone){};
 /**
  * Subscribes the user to the calendar with the given ID, if the user is allowed to subscribe.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Subscribe to the calendar &quot;US Holidays&quot;.
  var calendar = CalendarApp.subscribeToCalendar(
      &#39;en.usa#holiday@group.v.calendar.google.com&#39;);
@@ -732,8 +819,7 @@ CalendarApp.Calendar = function(){};
 /**
  * Creates a new all-day event.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates an all-day event for the moon landing and logs the ID.
  var event = CalendarApp.getDefaultCalendar().createAllDayEvent(&#39;Apollo 11 Landing&#39;,
      new Date(&#39;July 20, 1969&#39;));
@@ -748,10 +834,49 @@ CalendarApp.Calendar = function(){};
 CalendarApp.Calendar.prototype.createAllDayEvent = function(title, date){};
 
 /**
+ * Creates a new all-day event.
+
+ <pre class="prettyprint"><code>
+ // Creates an all-day event for the Woodstock festival (August 15th to 17th) and logs the ID.
+ var event = CalendarApp.getDefaultCalendar().createAllDayEvent(&#39;Woodstock Festival&#39;,
+     new Date(&#39;August 15, 1969&#39;),
+     new Date(&#39;August 18, 1969&#39;));
+ Logger.log(&#39;Event ID: &#39; + event.getId());
+ </code></pre>
+ *
+ * @param {String} title - the title of the event
+ * @param {Date} startDate - the date when the event starts (only the day is used; the time is ignored)
+ * @param {Date} endDate - the date when the event ends (only the day is used; the time is ignored)
+ *
+ * @return {CalendarApp.CalendarEvent} the created event
+ */
+CalendarApp.Calendar.prototype.createAllDayEvent = function(title, startDate, endDate){};
+
+/**
+ * Creates a new all-day event.
+
+ <pre class="prettyprint"><code>
+ // Creates an all-day event for the Woodstock festival (August 15th to 17th) and logs the ID.
+ var event = CalendarApp.getDefaultCalendar().createAllDayEvent(&#39;Woodstock Festival&#39;,
+     new Date(&#39;August 15, 1969&#39;),
+     new Date(&#39;August 18, 1969&#39;),
+     {location: &#39;Bethel, White Lake, New York, U.S.&#39;, sendInvites: true});
+ Logger.log(&#39;Event ID: &#39; + event.getId());
+ </code></pre>
+ *
+ * @param {String} title - the title of the event
+ * @param {Date} startDate - the date when the event starts (only the day is used; the time is ignored)
+ * @param {Date} endDate - the date when the event ends (only the day is used; the time is ignored)
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {CalendarApp.CalendarEvent} the created event
+ */
+CalendarApp.Calendar.prototype.createAllDayEvent = function(title, startDate, endDate, options){};
+
+/**
  * Creates a new all-day event series.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates an event series for a no-meetings day, taking place every Wednesday in 2013.
  var eventSeries = CalendarApp.getDefaultCalendar().createAllDayEventSeries(&#39;No Meetings&#39;,
      new Date(&#39;January 2, 2013 03:00:00 PM EST&#39;),
@@ -773,11 +898,10 @@ CalendarApp.Calendar.prototype.createAllDayEventSeries = function(title, startDa
 /**
  * Creates a new event.
 
- <p>If no time zone is specified, the time values are interpreted in the context of the
- script's time zone, which may be different than the calendar's time zone.
+ <p>If no time zone is specified, the time values are interpreted in the context of the script's
+ time zone, which may be different than the calendar's time zone.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates an event for the moon landing and logs the ID.
  var event = CalendarApp.getDefaultCalendar().createEvent(&#39;Apollo 11 Landing&#39;,
      new Date(&#39;July 20, 1969 20:00:00 UTC&#39;),
@@ -796,12 +920,10 @@ CalendarApp.Calendar.prototype.createEvent = function(title, startTime, endTime)
 /**
  * Creates an event from a free-form description.
 
- <p>The description should use the same format as the UI's
- <a href="http://support.google.com/calendar/answer/36604?hl=en">"Quick Add"</a>
- feature.
+ <p>The description should use the same format as the UI's <a
+ href="http://support.google.com/calendar/answer/36604?hl=en">"Quick Add"</a> feature.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a new event and logs its ID.
  var event = CalendarApp.getDefaultCalendar()
      .createEventFromDescription(&#39;Lunch with Mary, Friday at 1PM&#39;);
@@ -817,8 +939,7 @@ CalendarApp.Calendar.prototype.createEventFromDescription = function(description
 /**
  * Creates a new event series.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates an event series for a team meeting, taking place every Tuesday and Thursday in 2013.
  var eventSeries = CalendarApp.getDefaultCalendar().createEventSeries(&#39;Team Meeting&#39;,
      new Date(&#39;January 1, 2013 03:00:00 PM EST&#39;),
@@ -860,11 +981,26 @@ CalendarApp.Calendar.prototype.getColor = function(){};
 CalendarApp.Calendar.prototype.getDescription = function(){};
 
 /**
+ * Gets the event with the given ID. If the series belongs to a calendar other than the default
+ calendar, this method must be called from that <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar.html'>Calendar</a></code>. Calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-app.html#getEventById(String)'>CalendarApp.getEventById(iCalId)</a></code> only
+ returns an event in the default calendar.
+
+ <p>Multiple events may have the same ID if they are part of an event series. In this case this
+ method returns only the first event from that series.
+ *
+ * @param {String} iCalId - ID of the event
+ *
+ * @return {CalendarApp.CalendarEvent} the event with the given ID, or <code>null</code> if the event doesn't exist or the user
+     cannot access it.
+ */
+CalendarApp.Calendar.prototype.getEventById = function(iCalId){};
+
+/**
  * Gets the event series with the given ID. If the ID given is for a single <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-event.html'>CalendarEvent</a></code>,
- then a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-event-series.html'>CalendarEventSeries</a></code> will be returned with a single event in the series. Note
- that if the event series belongs to a calendar other than the default calendar, this method
- must be called from that <code>Calendar</code>; calling <code>CalendarApp.getEventSeriesById(id)</code>
- directly will only return an event series that exists in the default calendar.
+ then a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-event-series.html'>CalendarEventSeries</a></code> is returned with a single event in the series. Note that if
+ the event series belongs to a calendar other than the default calendar, this method must be
+ called from that <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar.html'>Calendar</a></code>; calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-app.html#getEventSeriesById(String)'>CalendarApp.getEventSeriesById(iCalId)</a></code>
+ directly only returns an event series that exists in the default calendar.
  *
  * @param {String} iCalId - ID of the event series
  *
@@ -876,12 +1012,12 @@ CalendarApp.Calendar.prototype.getEventSeriesById = function(iCalId){};
 /**
  * Gets all events that occur within a given time range.
 
- <p>An event will be returned if it starts during the time range, ends during the time range, or
- encompasses the time range. If no time zone is specified, the time values are interpreted in
- the context of the script's time zone, which may be different from the calendar's time zone.
+ <p>This method returns events that start during the given time range, end during the time
+ range, or encompass the time range. If no time zone is specified, the time values are
+ interpreted in the context of the script's time zone, which may be different from the
+ calendar's time zone.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Determines how many events are happening in the next two hours.
  var now = new Date();
  var twoHoursFromNow = new Date(now.getTime() + (2 * 60 * 60 * 1000));
@@ -899,15 +1035,14 @@ CalendarApp.Calendar.prototype.getEvents = function(startTime, endTime){};
 /**
  * Gets all events that occur on a given day.
 
- <p>An event will be returned if it starts during the day, ends during the day, or encompasses
- the day.
+ <p>This method returns events if they start during the given day, end during the day, or
+ encompass the day.
 
  <p>Note that only the date portion of the Date object is used, and the time portion is ignored.
- The date is interpreted as midnight that day to midnight the next day in the calendar's
- time zone.
+ The date is interpreted as midnight that day to midnight the next day in the calendar's time
+ zone.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Determines how many events are happening today.
  var today = new Date();
  var events = CalendarApp.getDefaultCalendar().getEventsForDay(today);
@@ -937,8 +1072,8 @@ CalendarApp.Calendar.prototype.getName = function(){};
 /**
  * Gets the time zone of the calendar.
  *
- * @return {String} the time zone, specified in "long" format (e.g., "America/New_York", as listed by
-     <a href="http://joda-time.sourceforge.net/timezones.html">Joda.org</a>)
+ * @return {String} the time zone, specified in "long" format (e.g., "America/New_York", as listed by <a
+     href="http://joda-time.sourceforge.net/timezones.html">Joda.org</a>)
  */
 CalendarApp.Calendar.prototype.getTimeZone = function(){};
 
@@ -952,8 +1087,7 @@ CalendarApp.Calendar.prototype.isHidden = function(){};
 /**
  * Determines whether the calendar is the default calendar for the effective user.
  *
- * @return {Boolean} <code>true</code> if the calendar is the default calendar for the effective user;
-     <code>false</code> if not
+ * @return {Boolean} <code>true</code> if the calendar is the default calendar for the effective user; <code>false</code> if not
  */
 CalendarApp.Calendar.prototype.isMyPrimaryCalendar = function(){};
 
@@ -967,16 +1101,14 @@ CalendarApp.Calendar.prototype.isOwnedByMe = function(){};
 /**
  * Determines whether the calendar's events are displayed in the user interface.
  *
- * @return {Boolean} <code>true</code> if the calendar's events are displayed in the user interface;
-     <code>false</code> if not
+ * @return {Boolean} <code>true</code> if the calendar's events are displayed in the user interface; <code>false</code> if not
  */
 CalendarApp.Calendar.prototype.isSelected = function(){};
 
 /**
  * Sets the color of the calendar.
  *
- * @param {String} color - a hexadecimal color string ("#rrggbb") or a value from
-     <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/color.html'>CalendarApp.Colors</a></code>
+ * @param {String} color - a hexadecimal color string ("#rrggbb") or a value from <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/color.html'>CalendarApp.Colors</a></code>
  *
  * @return {CalendarApp.Calendar} this calendar for chaining
  */
@@ -994,8 +1126,7 @@ CalendarApp.Calendar.prototype.setDescription = function(description){};
 /**
  * Sets whether the calendar is visible in the user interface.
  *
- * @param {Boolean} hidden - <code>true</code> to hide the calendar in the user interface; <code>false</code> to show
-     it
+ * @param {Boolean} hidden - <code>true</code> to hide the calendar in the user interface; <code>false</code> to show it
  *
  * @return {CalendarApp.Calendar} this calendar for chaining
  */
@@ -1013,8 +1144,8 @@ CalendarApp.Calendar.prototype.setName = function(name){};
 /**
  * Sets whether the calendar's events are displayed in the user interface.
  *
- * @param {Boolean} selected - <code>true</code> to show the calendar's events in the user interface;
-     <code>false</code> to hide them
+ * @param {Boolean} selected - <code>true</code> to show the calendar's events in the user interface; <code>false</code>
+     to hide them
  *
  * @return {CalendarApp.Calendar} this calendar for chaining
  */
@@ -1041,8 +1172,8 @@ CalendarApp.Calendar.prototype.unsubscribeFromCalendar = function(){};
 CalendarApp.CalendarEvent = function(){};
 
 /**
- * Adds a new email reminder to the event. The reminder must be at least 5 minutes, and at most
- 4 weeks (40320 minutes), before the event.
+ * Adds a new email reminder to the event. The reminder must be at least 5 minutes, and at most 4
+ weeks (40320 minutes), before the event.
  *
  * @param {number} minutesBefore - the number of minutes before the event
  *
@@ -1060,8 +1191,8 @@ CalendarApp.CalendarEvent.prototype.addEmailReminder = function(minutesBefore){}
 CalendarApp.CalendarEvent.prototype.addGuest = function(email){};
 
 /**
- * Adds a new popup reminder to the event. The reminder must be at least 5 minutes, and at most
- 4 weeks (40320 minutes), before the event.
+ * Adds a new popup reminder to the event. The reminder must be at least 5 minutes, and at most 4
+ weeks (40320 minutes), before the event.
  *
  * @param {number} minutesBefore - the number of minutes before the event
  *
@@ -1070,8 +1201,8 @@ CalendarApp.CalendarEvent.prototype.addGuest = function(email){};
 CalendarApp.CalendarEvent.prototype.addPopupReminder = function(minutesBefore){};
 
 /**
- * Adds a new SMS reminder to the event. The reminder must be at least 5 minutes, and at most
- 4 weeks (40320 minutes), before the event.
+ * Adds a new SMS reminder to the event. The reminder must be at least 5 minutes, and at most 4
+ weeks (40320 minutes), before the event.
  *
  * @param {number} minutesBefore - the number of minutes before the event
  *
@@ -1104,7 +1235,7 @@ CalendarApp.CalendarEvent.prototype.deleteTag = function(key){};
 
 /**
  * Gets the date on which this all-day calendar event ends. (If this is not an all-day event, then
- this method will throw an exception.) The returned <code>Date</code> will represent midnight at the
+ this method throws an exception.) The returned <code>Date</code> represents midnight at the
  beginning of the day after the event ends <em>in the script's time zone</em>. To use the
  calendar's time zone instead, call <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-event.html#getEndTime()'>getEndTime()</a></code>.
  *
@@ -1114,9 +1245,9 @@ CalendarApp.CalendarEvent.prototype.getAllDayEndDate = function(){};
 
 /**
  * Gets the date on which this all-day calendar event begins. (If this is not an all-day event,
- then this method will throw an exception.) The returned <code>Date</code> will represent midnight at
- the beginning of the day on which the event starts <em>in the script's time zone</em>. To use
- the calendar's time zone instead, call <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-event.html#getStartTime()'>getStartTime()</a></code>.
+ then this method throws an exception.) The returned <code>Date</code> represents midnight at the
+ beginning of the day on which the event starts <em>in the script's time zone</em>. To use the
+ calendar's time zone instead, call <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-event.html#getStartTime()'>getStartTime()</a></code>.
  *
  * @return {Date} this all-day calendar event's start date
  */
@@ -1128,6 +1259,13 @@ CalendarApp.CalendarEvent.prototype.getAllDayStartDate = function(){};
  * @return {String[]} an array of string keys
  */
 CalendarApp.CalendarEvent.prototype.getAllTagKeys = function(){};
+
+/**
+ * Returns the color of the calendar event.
+ *
+ * @return {String} the string representation of the event color, as an index (1-11) of values from <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/event-color.html'>CalendarApp.EventColors</a></code>
+ */
+CalendarApp.CalendarEvent.prototype.getColor = function(){};
 
 /**
  * Gets the creators of the event.
@@ -1154,17 +1292,17 @@ CalendarApp.CalendarEvent.prototype.getDescription = function(){};
  * Gets the minute values for all email reminders for the event.
  *
  * @return {Integer[]} an array in which each value corresponds to the number of minutes before the event that
-     a reminder will trigger
+     a reminder triggers
  */
 CalendarApp.CalendarEvent.prototype.getEmailReminders = function(){};
 
 /**
- * Gets the date and time at which this calendar event ends. For non&ndash;all-day events, this
- will be the instant in time at which the event was defined to end. For all-day events, which
- only store an end date (not a date and time), this will be midnight at the beginning of the day
- after the event ends <em>in the calendar's time zone</em>. This allows meaningful comparison
- of end times for all types of events; however, it will not necessarily preserve the original
- day-of-year unmodified.
+ * Gets the date and time at which this calendar event ends. For non&ndash;all-day events, this is
+ the instant in time at which the event was defined to end. For all-day events, which only store
+ an end date (not a date and time), this is midnight at the beginning of the day after the event
+ ends <em>in the calendar's time zone</em>. This allows meaningful comparison of end times for
+ all types of events; however, it does not necessarily preserve the original day-of-year
+ unmodified.
 
  <p>For <a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-event.html#isAllDayEvent()'>all-day events</a>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-event.html#getAllDayEndDate()'>getAllDayEndDate()</a></code> should almost
  always be called in preference to this method.
@@ -1175,11 +1313,11 @@ CalendarApp.CalendarEvent.prototype.getEndTime = function(){};
 
 /**
  * Gets the series of recurring events that this event belongs to. A <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-event-series.html'>CalendarEventSeries</a></code>
- object will be returned even if this event doesn't belong to a series, so that you can add new
+ object is returned even if this event doesn't belong to a series, so that you can add new
  recurrence settings.
  *
- * @return {CalendarApp.CalendarEventSeries} the event series this event belongs to, or a new event series if it does not yet
-     belong to a series
+ * @return {CalendarApp.CalendarEventSeries} the event series this event belongs to, or a new event series if it does not yet belong
+     to a series
  */
 CalendarApp.CalendarEvent.prototype.getEventSeries = function(){};
 
@@ -1221,8 +1359,7 @@ CalendarApp.CalendarEvent.prototype.getLastUpdated = function(){};
 CalendarApp.CalendarEvent.prototype.getLocation = function(){};
 
 /**
- * Gets the event status (attending, etc.) of the effective user. Always returns
- <code>GuestStatus.OWNER</code> if the effective user is the owner of the event.
+ * Gets the event status (attending, etc.) of the effective user. Always returns <code>GuestStatus.OWNER</code> if the effective user is the owner of the event.
  *
  * @return {CalendarApp.GuestStatus} the status
  */
@@ -1239,7 +1376,7 @@ CalendarApp.CalendarEvent.prototype.getOriginalCalendarId = function(){};
  * Gets the minute values for all popup reminders for the event.
  *
  * @return {Integer[]} an array in which each value corresponds to the number of minutes before the event that
-     a reminder will trigger
+     a reminder triggers
  */
 CalendarApp.CalendarEvent.prototype.getPopupReminders = function(){};
 
@@ -1247,17 +1384,17 @@ CalendarApp.CalendarEvent.prototype.getPopupReminders = function(){};
  * Gets the minute values for all SMS reminders for the event.
  *
  * @return {Integer[]} an array in which each value corresponds to the number of minutes before the event that
-     a reminder will trigger
+     a reminder triggers
  */
 CalendarApp.CalendarEvent.prototype.getSmsReminders = function(){};
 
 /**
  * Gets the date and time at which this calendar event begins. For non&ndash;all-day events, this
- will be the instant in time at which the event was defined to start. For all-day events, which
- only store a start date (not a date and time), this will be midnight at the beginning of the
- day on which the event starts <em>in the calendar's time zone</em>. This allows meaningful
- comparison of start times for all types of events; however, it will not necessarily preserve
- the original day-of-year unmodified.
+ is the instant in time at which the event was defined to start. For all-day events, which only
+ store a start date (not a date and time), this is midnight at the beginning of the day on which
+ the event starts <em>in the calendar's time zone</em>. This allows meaningful comparison of
+ start times for all types of events; however, it is not necessarily preserve the original
+ day-of-year unmodified.
 
  <p>For <a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-event.html#isAllDayEvent()'>all-day events</a>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-event.html#getAllDayStartDate()'>getAllDayStartDate()</a></code> should
  almost always be called in preference to this method.
@@ -1355,14 +1492,24 @@ CalendarApp.CalendarEvent.prototype.removeGuest = function(email){};
 CalendarApp.CalendarEvent.prototype.resetRemindersToDefault = function(){};
 
 /**
- * Sets the date of the event. Applying this method will change a regular event into an all-day
- event.
+ * Sets the date of the event. Applying this method changes a regular event into an all-day event.
  *
  * @param {Date} date - the date for the event (the time is ignored)
  *
  * @return {CalendarApp.CalendarEvent} this CalendarEvent for chaining
  */
 CalendarApp.CalendarEvent.prototype.setAllDayDate = function(date){};
+
+/**
+ * Sets the dates of the event. Applying this method changes a regular event into an all-day
+ event.
+ *
+ * @param {Date} startDate - the date when the event starts (the time is ignored)
+ * @param {Date} endDate - the date when the event ends (the time is ignored)
+ *
+ * @return {CalendarApp.CalendarEvent} this CalendarEvent for chaining
+ */
+CalendarApp.CalendarEvent.prototype.setAllDayDates = function(startDate, endDate){};
 
 /**
  * Sets whether non-guests can add themselves to the event.
@@ -1372,6 +1519,15 @@ CalendarApp.CalendarEvent.prototype.setAllDayDate = function(date){};
  * @return {CalendarApp.CalendarEvent} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-event.html'>CalendarEvent</a></code> for chaining
  */
 CalendarApp.CalendarEvent.prototype.setAnyoneCanAddSelf = function(anyoneCanAddSelf){};
+
+/**
+ * Sets the color of the calendar event.
+ *
+ * @param {String} color - an integer color index as a string, or a value from <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/event-color.html'>CalendarApp.EventColors</a></code>
+ *
+ * @return {CalendarApp.CalendarEvent} this calendar event, for chaining
+ */
+CalendarApp.CalendarEvent.prototype.setColor = function(color){};
 
 /**
  * Sets the description of the event.
@@ -1438,8 +1594,8 @@ CalendarApp.CalendarEvent.prototype.setMyStatus = function(status){};
 CalendarApp.CalendarEvent.prototype.setTag = function(key, value){};
 
 /**
- * Sets the dates and times for the start and end of the event. Applying this method will change
- an all-day event into a regular event.
+ * Sets the dates and times for the start and end of the event. Applying this method changes an
+ all-day event into a regular event.
  *
  * @param {Date} startTime - the new start of the event
  * @param {Date} endTime - the new end of the event
@@ -1470,8 +1626,8 @@ CalendarApp.CalendarEvent.prototype.setVisibility = function(visibility){};
 CalendarApp.CalendarEventSeries = function(){};
 
 /**
- * Adds a new email reminder to the event. The reminder must be at least 5 minutes, and at most
- 4 weeks (40320 minutes), before the event.
+ * Adds a new email reminder to the event. The reminder must be at least 5 minutes, and at most 4
+ weeks (40320 minutes), before the event.
  *
  * @param {number} minutesBefore - the number of minutes before the event
  *
@@ -1489,8 +1645,8 @@ CalendarApp.CalendarEventSeries.prototype.addEmailReminder = function(minutesBef
 CalendarApp.CalendarEventSeries.prototype.addGuest = function(email){};
 
 /**
- * Adds a new popup reminder to the event. The reminder must be at least 5 minutes, and at most
- 4 weeks (40320 minutes), before the event.
+ * Adds a new popup reminder to the event. The reminder must be at least 5 minutes, and at most 4
+ weeks (40320 minutes), before the event.
  *
  * @param {number} minutesBefore - the number of minutes before the event
  *
@@ -1499,8 +1655,8 @@ CalendarApp.CalendarEventSeries.prototype.addGuest = function(email){};
 CalendarApp.CalendarEventSeries.prototype.addPopupReminder = function(minutesBefore){};
 
 /**
- * Adds a new SMS reminder to the event. The reminder must be at least 5 minutes, and at most
- 4 weeks (40320 minutes), before the event.
+ * Adds a new SMS reminder to the event. The reminder must be at least 5 minutes, and at most 4
+ weeks (40320 minutes), before the event.
  *
  * @param {number} minutesBefore - the number of minutes before the event
  *
@@ -1539,6 +1695,13 @@ CalendarApp.CalendarEventSeries.prototype.deleteTag = function(key){};
 CalendarApp.CalendarEventSeries.prototype.getAllTagKeys = function(){};
 
 /**
+ * Returns the color of the calendar event.
+ *
+ * @return {String} the string representation of the event color, as an index (1-11) of values from <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/event-color.html'>CalendarApp.EventColors</a></code>
+ */
+CalendarApp.CalendarEventSeries.prototype.getColor = function(){};
+
+/**
  * Gets the creators of the event.
  *
  * @return {String[]} the email addresses of the event's creators
@@ -1563,7 +1726,7 @@ CalendarApp.CalendarEventSeries.prototype.getDescription = function(){};
  * Gets the minute values for all email reminders for the event.
  *
  * @return {Integer[]} an array in which each value corresponds to the number of minutes before the event that
-     a reminder will trigger
+     a reminder triggers
  */
 CalendarApp.CalendarEventSeries.prototype.getEmailReminders = function(){};
 
@@ -1605,8 +1768,7 @@ CalendarApp.CalendarEventSeries.prototype.getLastUpdated = function(){};
 CalendarApp.CalendarEventSeries.prototype.getLocation = function(){};
 
 /**
- * Gets the event status (attending, etc.) of the effective user. Always returns
- <code>GuestStatus.OWNER</code> if the effective user is the owner of the event.
+ * Gets the event status (attending, etc.) of the effective user. Always returns <code>GuestStatus.OWNER</code> if the effective user is the owner of the event.
  *
  * @return {CalendarApp.GuestStatus} the status
  */
@@ -1623,7 +1785,7 @@ CalendarApp.CalendarEventSeries.prototype.getOriginalCalendarId = function(){};
  * Gets the minute values for all popup reminders for the event.
  *
  * @return {Integer[]} an array in which each value corresponds to the number of minutes before the event that
-     a reminder will trigger
+     a reminder triggers
  */
 CalendarApp.CalendarEventSeries.prototype.getPopupReminders = function(){};
 
@@ -1631,7 +1793,7 @@ CalendarApp.CalendarEventSeries.prototype.getPopupReminders = function(){};
  * Gets the minute values for all SMS reminders for the event.
  *
  * @return {Integer[]} an array in which each value corresponds to the number of minutes before the event that
-     a reminder will trigger
+     a reminder triggers
  */
 CalendarApp.CalendarEventSeries.prototype.getSmsReminders = function(){};
 
@@ -1719,6 +1881,15 @@ CalendarApp.CalendarEventSeries.prototype.resetRemindersToDefault = function(){}
 CalendarApp.CalendarEventSeries.prototype.setAnyoneCanAddSelf = function(anyoneCanAddSelf){};
 
 /**
+ * Sets the color of the calendar event.
+ *
+ * @param {String} color - an integer color index as a string, or a value from <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/event-color.html'>CalendarApp.EventColors</a></code>
+ *
+ * @return {CalendarApp.CalendarEventSeries} this calendar event, for chaining
+ */
+CalendarApp.CalendarEventSeries.prototype.setColor = function(color){};
+
+/**
  * Sets the description of the event.
  *
  * @param {String} description - the new description
@@ -1773,11 +1944,10 @@ CalendarApp.CalendarEventSeries.prototype.setLocation = function(location){};
 CalendarApp.CalendarEventSeries.prototype.setMyStatus = function(status){};
 
 /**
- * Sets the recurrence rules for an all-day event series. Applying this method will change a
- regular event series into an all-day event series.
+ * Sets the recurrence rules for an all-day event series. Applying this method changes a regular
+ event series into an all-day event series.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Sets the events in a series to take place every Wednesday in 2013.
  var eventSeries = CalendarApp.getDefaultCalendar().getEventSeriesById(&#39;123456789@google.com&#39;);
  var startDate = new Date(&#39;January 2, 2013 03:00:00 PM EST&#39;);
@@ -1827,9 +1997,9 @@ CalendarApp.CalendarEventSeries.prototype.setVisibility = function(visibility){}
 CalendarApp.EventGuest = function(){};
 
 /**
- * Gets the number of additional people that this guest has said will attend.
+ * Gets the number of additional people that this guest has said are attending.
  *
- * @return {number} the number of additional people this guest has said will attend
+ * @return {number} the number of additional people this guest has said are attending
  */
 CalendarApp.EventGuest.prototype.getAdditionalGuests = function(){};
 
@@ -1868,8 +2038,7 @@ CalendarApp.EventRecurrence = function(){};
 /**
  * Adds a rule that excludes occurrences on a daily basis.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a rule that recurs every week after the first 30 days.
  var recurrence = CalendarApp.newRecurrence().addWeeklyRule().addDailyExclusion().times(30);
  </code></pre>
@@ -1881,8 +2050,7 @@ CalendarApp.EventRecurrence.prototype.addDailyExclusion = function(){};
 /**
  * Adds a rule that causes the event to recur on a daily basis.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a rule that recurs every day for ten days.
  var recurrence = CalendarApp.newRecurrence().addDailyRule().times(10);
  </code></pre>
@@ -1912,9 +2080,8 @@ CalendarApp.EventRecurrence.prototype.addDateExclusion = function(date){};
 /**
  * Adds a rule that excludes occurrences on a monthly basis.
 
- <p>By default the exclusion will be applied on the same day of the month as the first event in
- the series, but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnMonthDay(Integer)'>RecurrenceRule.onlyOnMonthDay(day)</a></code> or
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnMonthDays(Integer)'>RecurrenceRule.onlyOnMonthDays(days)</a></code>.
+ <p>By default the exclusion is applied on the same day of the month as the first event in the
+ series, but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnMonthDay(Integer)'>RecurrenceRule.onlyOnMonthDay(day)</a></code> or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnMonthDays(Integer)'>RecurrenceRule.onlyOnMonthDays(days)</a></code>.
  *
  * @return {CalendarApp.RecurrenceRule} the new RecurrenceRule
  */
@@ -1923,12 +2090,10 @@ CalendarApp.EventRecurrence.prototype.addMonthlyExclusion = function(){};
 /**
  * Adds a rule that causes the event to recur on a monthly basis.
 
- <p>By default the event will recur on the same day of the month as the first event in the
- series, but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnMonthDay(Integer)'>RecurrenceRule.onlyOnMonthDay(day)</a></code> or
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnMonthDays(Integer)'>RecurrenceRule.onlyOnMonthDays(days)</a></code>.
+ <p>By default the event recurs on the same day of the month as the first event in the series,
+ but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnMonthDay(Integer)'>RecurrenceRule.onlyOnMonthDay(day)</a></code> or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnMonthDays(Integer)'>RecurrenceRule.onlyOnMonthDays(days)</a></code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a rule that recurs every month for three months.
  var recurrence = CalendarApp.newRecurrence().addMonthlyRule().times(4);
  </code></pre>
@@ -1940,12 +2105,10 @@ CalendarApp.EventRecurrence.prototype.addMonthlyRule = function(){};
 /**
  * Adds a rule that excludes occurrences on a weekly basis.
 
- <p>By default the exclusion will be applied on the same day of the week as the first event in
- the series, but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnWeekday(Weekday)'>RecurrenceRule.onlyOnWeekday(day)</a></code> or
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnWeekdays(Weekday)'>RecurrenceRule.onlyOnWeekdays(days)</a></code>.
+ <p>By default the exclusion is applied on the same day of the week as the first event in the
+ series, but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnWeekday(Weekday)'>RecurrenceRule.onlyOnWeekday(day)</a></code> or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnWeekdays(Weekday)'>RecurrenceRule.onlyOnWeekdays(days)</a></code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a rule that recurs every day except the first four Wednesdays.
  var recurrence = CalendarApp.newRecurrence().addDailyRule()
      .addWeeklyExclusion().onlyOnWeekday(CalendarApp.Weekday.WEDNESDAY).times(4);
@@ -1958,12 +2121,10 @@ CalendarApp.EventRecurrence.prototype.addWeeklyExclusion = function(){};
 /**
  * Adds a rule that causes the event to recur on a weekly basis.
 
- <p>By default the event will recur on the same day of the week as the first event in the
- series, but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnWeekday(Weekday)'>RecurrenceRule.onlyOnWeekday(day)</a></code> or
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnWeekdays(Weekday)'>RecurrenceRule.onlyOnWeekdays(days)</a></code>.
+ <p>By default the event recurs on the same day of the week as the first event in the series,
+ but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnWeekday(Weekday)'>RecurrenceRule.onlyOnWeekday(day)</a></code> or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnWeekdays(Weekday)'>RecurrenceRule.onlyOnWeekdays(days)</a></code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a rule that recurs every week for ten weeks.
  var recurrence = CalendarApp.newRecurrence().addWeeklyRule().times(10);
  </code></pre>
@@ -1975,9 +2136,8 @@ CalendarApp.EventRecurrence.prototype.addWeeklyRule = function(){};
 /**
  * Adds a rule that excludes occurrences on a yearly basis.
 
- <p>By default the exclusion will be applied on the same day of the year as the first event in
- the series, but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnYearDay(Integer)'>RecurrenceRule.onlyOnYearDay(day)</a></code> or
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnYearDays(Integer)'>RecurrenceRule.onlyOnYearDays(days)</a></code>.
+ <p>By default the exclusion is applied on the same day of the year as the first event in the
+ series, but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnYearDay(Integer)'>RecurrenceRule.onlyOnYearDay(day)</a></code> or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnYearDays(Integer)'>RecurrenceRule.onlyOnYearDays(days)</a></code>.
  *
  * @return {CalendarApp.RecurrenceRule} the new RecurrenceRule
  */
@@ -1986,9 +2146,8 @@ CalendarApp.EventRecurrence.prototype.addYearlyExclusion = function(){};
 /**
  * Adds a rule that causes the event to recur on a yearly basis.
 
- <p>By default the event will recur on the same day of the year as the first event in the
- series, but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnYearDay(Integer)'>RecurrenceRule.onlyOnYearDay(day)</a></code> or
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnYearDays(Integer)'>RecurrenceRule.onlyOnYearDays(days)</a></code>.
+ <p>By default the event recurs on the same day of the year as the first event in the series,
+ but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnYearDay(Integer)'>RecurrenceRule.onlyOnYearDay(day)</a></code> or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnYearDays(Integer)'>RecurrenceRule.onlyOnYearDays(days)</a></code>.
  *
  * @return {CalendarApp.RecurrenceRule} the new RecurrenceRule
  */
@@ -2011,8 +2170,7 @@ CalendarApp.RecurrenceRule = function(){};
 /**
  * Adds a rule that excludes occurrences on a daily basis.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a rule that recurs every week after the first 30 days.
  var recurrence = CalendarApp.newRecurrence().addWeeklyRule().addDailyExclusion().times(30);
  </code></pre>
@@ -2024,8 +2182,7 @@ CalendarApp.RecurrenceRule.prototype.addDailyExclusion = function(){};
 /**
  * Adds a rule that causes the event to recur on a daily basis.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a rule that recurs every day for ten days.
  var recurrence = CalendarApp.newRecurrence().addDailyRule().times(10);
  </code></pre>
@@ -2055,9 +2212,8 @@ CalendarApp.RecurrenceRule.prototype.addDateExclusion = function(date){};
 /**
  * Adds a rule that excludes occurrences on a monthly basis.
 
- <p>By default the exclusion will be applied on the same day of the month as the first event in
- the series, but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnMonthDay(Integer)'>onlyOnMonthDay(day)</a></code> or
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnMonthDays(Integer)'>onlyOnMonthDays(days)</a></code>.
+ <p>By default the exclusion is applied on the same day of the month as the first event in the
+ series, but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnMonthDay(Integer)'>onlyOnMonthDay(day)</a></code> or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnMonthDays(Integer)'>onlyOnMonthDays(days)</a></code>.
  *
  * @return {CalendarApp.RecurrenceRule} the new RecurrenceRule
  */
@@ -2066,12 +2222,10 @@ CalendarApp.RecurrenceRule.prototype.addMonthlyExclusion = function(){};
 /**
  * Adds a rule that causes the event to recur on a monthly basis.
 
- <p>By default the event will recur on the same day of the month as the first event in the
- series, but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnMonthDay(Integer)'>onlyOnMonthDay(day)</a></code> or
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnMonthDays(Integer)'>onlyOnMonthDays(days)</a></code>.
+ <p>By default the event recurs on the same day of the month as the first event in the series,
+ but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnMonthDay(Integer)'>onlyOnMonthDay(day)</a></code> or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnMonthDays(Integer)'>onlyOnMonthDays(days)</a></code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a rule that recurs every month for three months.
  var recurrence = CalendarApp.newRecurrence().addMonthlyRule().times(4);
  </code></pre>
@@ -2083,12 +2237,10 @@ CalendarApp.RecurrenceRule.prototype.addMonthlyRule = function(){};
 /**
  * Adds a rule that excludes occurrences on a weekly basis.
 
- <p>By default the exclusion will be applied on the same day of the week as the first event in
- the series, but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnWeekday(Weekday)'>onlyOnWeekday(day)</a></code> or
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnWeekdays(Weekday)'>onlyOnWeekdays(days)</a></code>.
+ <p>By default the exclusion is applied on the same day of the week as the first event in the
+ series, but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnWeekday(Weekday)'>onlyOnWeekday(day)</a></code> or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnWeekdays(Weekday)'>onlyOnWeekdays(days)</a></code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a rule that recurs every day except the first four Wednesdays.
  var recurrence = CalendarApp.newRecurrence().addDailyRule()
      .addWeeklyExclusion().onlyOnWeekday(CalendarApp.Weekday.WEDNESDAY).times(4);
@@ -2101,12 +2253,10 @@ CalendarApp.RecurrenceRule.prototype.addWeeklyExclusion = function(){};
 /**
  * Adds a rule that causes the event to recur on a weekly basis.
 
- <p>By default the event will recur on the same day of the week as the first event in the
- series, but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnWeekday(Weekday)'>onlyOnWeekday(day)</a></code> or
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnWeekdays(Weekday)'>onlyOnWeekdays(days)</a></code>.
+ <p>By default the event recurs on the same day of the week as the first event in the series,
+ but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnWeekday(Weekday)'>onlyOnWeekday(day)</a></code> or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnWeekdays(Weekday)'>onlyOnWeekdays(days)</a></code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a rule that recurs every week for ten weeks.
  var recurrence = CalendarApp.newRecurrence().addWeeklyRule().times(10);
  </code></pre>
@@ -2118,9 +2268,8 @@ CalendarApp.RecurrenceRule.prototype.addWeeklyRule = function(){};
 /**
  * Adds a rule that excludes occurrences on a yearly basis.
 
- <p>By default the exclusion will be applied on the same day of the year as the first event in
- the series, but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnYearDay(Integer)'>onlyOnYearDay(day)</a></code> or
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnYearDays(Integer)'>onlyOnYearDays(days)</a></code>.
+ <p>By default the exclusion is applied on the same day of the year as the first event in the
+ series, but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnYearDay(Integer)'>onlyOnYearDay(day)</a></code> or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnYearDays(Integer)'>onlyOnYearDays(days)</a></code>.
  *
  * @return {CalendarApp.RecurrenceRule} the new RecurrenceRule
  */
@@ -2129,9 +2278,8 @@ CalendarApp.RecurrenceRule.prototype.addYearlyExclusion = function(){};
 /**
  * Adds a rule that causes the event to recur on a yearly basis.
 
- <p>By default the event will recur on the same day of the year as the first event in the
- series, but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnYearDay(Integer)'>onlyOnYearDay(day)</a></code> or
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnYearDays(Integer)'>onlyOnYearDays(days)</a></code>.
+ <p>By default the event recurs on the same day of the year as the first event in the series,
+ but this can be altered by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnYearDay(Integer)'>onlyOnYearDay(day)</a></code> or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/recurrence-rule.html#onlyOnYearDays(Integer)'>onlyOnYearDays(days)</a></code>.
  *
  * @return {CalendarApp.RecurrenceRule} the new RecurrenceRule
  */
@@ -2140,8 +2288,7 @@ CalendarApp.RecurrenceRule.prototype.addYearlyRule = function(){};
 /**
  * Configures the rule to only apply at this interval of the rule's time unit.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a rule that recurs every fourth week.
  var recurrence = CalendarApp.newRecurrence().addWeeklyRule().interval(4);
  </code></pre>
@@ -2155,8 +2302,7 @@ CalendarApp.RecurrenceRule.prototype.interval = function(interval){};
 /**
  * Configures the rule to only apply to a specific month.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a rule that recurs every week in February.
  var recurrence = CalendarApp.newRecurrence()
      .addWeeklyRule().onlyInMonth(CalendarApp.Month.FEBRUARY);
@@ -2171,8 +2317,7 @@ CalendarApp.RecurrenceRule.prototype.onlyInMonth = function(month){};
 /**
  * Configures the rule to only apply to specific months.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a rule that recurs every week in February and March.
  var recurrence = CalendarApp.newRecurrence()
      .addWeeklyRule().onlyInMonths([CalendarApp.Month.FEBRUARY, CalendarApp.Month.MARCH]);
@@ -2187,8 +2332,7 @@ CalendarApp.RecurrenceRule.prototype.onlyInMonths = function(months){};
 /**
  * Configures the rule to only apply to a specific day of the month.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a rule that recurs every month on the fifth day of the month.
  var recurrence = CalendarApp.newRecurrence().addMonthlyRule().onlyOnMonthDay(5);
  </code></pre>
@@ -2202,8 +2346,7 @@ CalendarApp.RecurrenceRule.prototype.onlyOnMonthDay = function(day){};
 /**
  * Configures the rule to only apply to specific days of the month.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a rule that recurs every month on the first and fifteenth day of the month.
  var recurrence = CalendarApp.newRecurrence().addMonthlyRule().onlyOnMonthDays([1, 15]);
  </code></pre>
@@ -2217,8 +2360,7 @@ CalendarApp.RecurrenceRule.prototype.onlyOnMonthDays = function(days){};
 /**
  * Configures the rule to only apply to a specific week of the year.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a rule that recurs on the fifth week of every year.
  var recurrence = CalendarApp.newRecurrence().addWeeklyRule().onlyOnWeek(5);
  </code></pre>
@@ -2232,8 +2374,7 @@ CalendarApp.RecurrenceRule.prototype.onlyOnWeek = function(week){};
 /**
  * Configures the rule to only apply to a specific day of the week.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a rule that recurs every week on Wednesdays.
  var recurrence = CalendarApp.newRecurrence()
      .addWeeklyRule().onlyOnWeekday(CalendarApp.Weekday.WEDNESDAY);
@@ -2248,8 +2389,7 @@ CalendarApp.RecurrenceRule.prototype.onlyOnWeekday = function(day){};
 /**
  * Configures the rule to only apply to specific days of the week.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a rule that recurs every week on Tuesdays and Thursdays.
  var recurrence = CalendarApp.newRecurrence()
      .addWeeklyRule().onlyOnWeekdays(
@@ -2265,8 +2405,7 @@ CalendarApp.RecurrenceRule.prototype.onlyOnWeekdays = function(days){};
 /**
  * Configures the rule to only apply to specific weeks of the year.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a rule that recurs on the fifth and tenth weeks of every year.
  var recurrence = CalendarApp.newRecurrence().addWeeklyRule().onlyOnWeeks([5, 10]);
  </code></pre>
@@ -2280,8 +2419,7 @@ CalendarApp.RecurrenceRule.prototype.onlyOnWeeks = function(weeks){};
 /**
  * Configures the rule to only apply to a specific day of the year.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a rule that recurs every year on February 15 (the 46th day).
  var recurrence = CalendarApp.newRecurrence().addYearlyRule().onlyOnYearDay(46);
  </code></pre>
@@ -2295,8 +2433,7 @@ CalendarApp.RecurrenceRule.prototype.onlyOnYearDay = function(day){};
 /**
  * Configures the rule to only apply to specific days of the year.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a rule that recurs every year on January 20 and February 15.
  var recurrence = CalendarApp.newRecurrence().addYearlyRule().onlyOnYearDay([20, 46]);
  </code></pre>
@@ -2321,8 +2458,7 @@ CalendarApp.RecurrenceRule.prototype.setTimeZone = function(timeZone){};
 /**
  * Configures the rule to end after a given number of occurrences.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a rule that recurs every day for ten days.
  var recurrence = CalendarApp.newRecurrence().addDailyRule().times(10);
  </code></pre>
@@ -2336,8 +2472,7 @@ CalendarApp.RecurrenceRule.prototype.times = function(times){};
 /**
  * Configures the rule to end on a given date (inclusive).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a rule that recurs every day through the end of 2013.
  var recurrence = CalendarApp.newRecurrence()
      .addDailyRule().until(new Date(&#39;December 31, 2013&#39;));
@@ -2352,14 +2487,13 @@ CalendarApp.RecurrenceRule.prototype.until = function(endDate){};
 /**
  * Configures which day a week starts on, for the purposes of applying the rule.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a weekly rule where weeks start on Monday.
  var recurrence = CalendarApp.newRecurrence()
      .addWeeklyRule().weekStartsOn(CalendarApp.Weekday.MONDAY);
  </code></pre>
  *
- * @param {Weekday} day - the day on which the week will start
+ * @param {Weekday} day - the day on which the week starts
  *
  * @return {CalendarApp.RecurrenceRule} this RecurrenceRule for chaining
  */

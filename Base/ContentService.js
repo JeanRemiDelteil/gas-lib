@@ -3,78 +3,68 @@ var ContentService = {};
 
 /**
  * 
-
+ * 
+ * @class ContentService.MimeType
  */
-ContentService.MimeType = function(){};
 
 /**
+ * @typedef {ContentService.MimeType} ContentService.MimeType.ATOM
  * 
- *
- * @type {{}}
+ * 
  */
-ContentService.MimeType.prototype.ATOM = {};
 
 /**
+ * @typedef {ContentService.MimeType} ContentService.MimeType.CSV
  * 
- *
- * @type {{}}
+ * 
  */
-ContentService.MimeType.prototype.CSV = {};
 
 /**
+ * @typedef {ContentService.MimeType} ContentService.MimeType.ICAL
  * 
- *
- * @type {{}}
+ * 
  */
-ContentService.MimeType.prototype.ICAL = {};
 
 /**
+ * @typedef {ContentService.MimeType} ContentService.MimeType.JAVASCRIPT
  * 
- *
- * @type {{}}
+ * 
  */
-ContentService.MimeType.prototype.JAVASCRIPT = {};
 
 /**
+ * @typedef {ContentService.MimeType} ContentService.MimeType.JSON
  * 
- *
- * @type {{}}
+ * 
  */
-ContentService.MimeType.prototype.JSON = {};
 
 /**
+ * @typedef {ContentService.MimeType} ContentService.MimeType.RSS
  * 
- *
- * @type {{}}
+ * 
  */
-ContentService.MimeType.prototype.RSS = {};
 
 /**
+ * @typedef {ContentService.MimeType} ContentService.MimeType.TEXT
  * 
- *
- * @type {{}}
+ * 
  */
-ContentService.MimeType.prototype.TEXT = {};
 
 /**
+ * @typedef {ContentService.MimeType} ContentService.MimeType.VCARD
  * 
- *
- * @type {{}}
+ * 
  */
-ContentService.MimeType.prototype.VCARD = {};
 
 /**
+ * @typedef {ContentService.MimeType} ContentService.MimeType.XML
  * 
- *
- * @type {{}}
+ * 
  */
-ContentService.MimeType.prototype.XML = {};
 
 /**
  * Create a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/content/text-output.html'>TextOutput</a></code> object.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  function doGet() {
    var output = ContentService.createTextOutput();
    output.append(&quot;Hello world!&quot;);
@@ -108,8 +98,8 @@ ContentService.TextOutput.prototype.clear = function(){};
 /**
  * Tells browsers to download rather than display this content.
 
- Some browsers will ignore this setting. Setting this to null will clear it back to the default
- behavior of displaying rather than downloading.
+ <p>Some browsers will ignore this setting. Setting this to null will clear it back to the
+ default behavior of displaying rather than downloading.
  *
  * @param {String} filename - the filename to tell the browser to use
  *
@@ -125,8 +115,8 @@ ContentService.TextOutput.prototype.downloadAsFile = function(filename){};
 ContentService.TextOutput.prototype.getContent = function(){};
 
 /**
- * Returns the file name to download this file as, or null if it should be displayed rather
- than downloaded.
+ * Returns the file name to download this file as, or null if it should be displayed rather than
+ downloaded.
  *
  * @return {String} the file name
  */
