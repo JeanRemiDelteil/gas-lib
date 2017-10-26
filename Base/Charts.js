@@ -3,240 +3,225 @@ var Charts = {};
 
 /**
  * An enumeration of chart types supported by the Charts service.
-
+ * 
+ * @class Charts.ChartType
  */
-Charts.ChartType = function(){};
 
 /**
+ * @typedef {Charts.ChartType} Charts.ChartType.AREA
+ * 
  * Area chart
- *
- * @type {{}}
  */
-Charts.ChartType.prototype.AREA = {};
 
 /**
+ * @typedef {Charts.ChartType} Charts.ChartType.BAR
+ * 
  * Bar chart
- *
- * @type {{}}
  */
-Charts.ChartType.prototype.BAR = {};
 
 /**
+ * @typedef {Charts.ChartType} Charts.ChartType.COLUMN
+ * 
  * Column chart
- *
- * @type {{}}
  */
-Charts.ChartType.prototype.COLUMN = {};
 
 /**
+ * @typedef {Charts.ChartType} Charts.ChartType.COMBO
+ * 
+ * Combo chart
+ */
+
+/**
+ * @typedef {Charts.ChartType} Charts.ChartType.HISTOGRAM
+ * 
+ * Histogram
+ */
+
+/**
+ * @typedef {Charts.ChartType} Charts.ChartType.LINE
+ * 
  * Line chart
- *
- * @type {{}}
  */
-Charts.ChartType.prototype.LINE = {};
 
 /**
+ * @typedef {Charts.ChartType} Charts.ChartType.PIE
+ * 
  * Pie chart
- *
- * @type {{}}
  */
-Charts.ChartType.prototype.PIE = {};
 
 /**
+ * @typedef {Charts.ChartType} Charts.ChartType.SCATTER
+ * 
  * Scatter chart
- *
- * @type {{}}
  */
-Charts.ChartType.prototype.SCATTER = {};
 
 /**
+ * @typedef {Charts.ChartType} Charts.ChartType.TABLE
+ * 
  * Table chart
- *
- * @type {{}}
  */
-Charts.ChartType.prototype.TABLE = {};
 
 /**
  * An enumeration of the valid data types for columns in a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/data-table.html'>DataTable</a></code>.
-
+ * 
+ * @class ColumnType
  */
-ColumnType = function(){};
 
 /**
  * An enumeration of the styles for curves in a chart.
-
+ * 
+ * @class Charts.CurveStyle
  */
-Charts.CurveStyle = function(){};
 
 /**
+ * @typedef {Charts.CurveStyle} Charts.CurveStyle.NORMAL
+ * 
  * Straight lines without curve
- *
- * @type {{}}
  */
-Charts.CurveStyle.prototype.NORMAL = {};
 
 /**
+ * @typedef {Charts.CurveStyle} Charts.CurveStyle.SMOOTH
+ * 
  * The angles of the line will be smoothed
- *
- * @type {{}}
  */
-Charts.CurveStyle.prototype.SMOOTH = {};
 
 /**
  * An enumeration of how a string value should be matched.
-
+ * 
+ * @class Charts.MatchType
  */
-Charts.MatchType = function(){};
 
 /**
+ * @typedef {Charts.MatchType} Charts.MatchType.ANY
+ * 
  * Match any substring
- *
- * @type {{}}
  */
-Charts.MatchType.prototype.ANY = {};
 
 /**
+ * @typedef {Charts.MatchType} Charts.MatchType.EXACT
+ * 
  * Match exact values only
- *
- * @type {{}}
  */
-Charts.MatchType.prototype.EXACT = {};
 
 /**
+ * @typedef {Charts.MatchType} Charts.MatchType.PREFIX
+ * 
  * Match prefixes starting from the beginning of the value
- *
- * @type {{}}
  */
-Charts.MatchType.prototype.PREFIX = {};
 
 /**
  * An enumeration of the orientation of an object.
-
+ * 
+ * @class Charts.Orientation
  */
-Charts.Orientation = function(){};
 
 /**
+ * @typedef {Charts.Orientation} Charts.Orientation.HORIZONTAL
+ * 
  * Horizontal orientation
- *
- * @type {{}}
  */
-Charts.Orientation.prototype.HORIZONTAL = {};
 
 /**
- * Vertical  orientation
- *
- * @type {{}}
+ * @typedef {Charts.Orientation} Charts.Orientation.VERTICAL
+ * 
+ * Vertical orientation
  */
-Charts.Orientation.prototype.VERTICAL = {};
 
 /**
  * An enumeration of how to display selected values in a picker widget.
-
+ * 
+ * @class Charts.PickerValuesLayout
  */
-Charts.PickerValuesLayout = function(){};
 
 /**
+ * @typedef {Charts.PickerValuesLayout} Charts.PickerValuesLayout.ASIDE
+ * 
  * Selected values will display in a single text line next to the value picker widget
- *
- * @type {{}}
  */
-Charts.PickerValuesLayout.prototype.ASIDE = {};
 
 /**
+ * @typedef {Charts.PickerValuesLayout} Charts.PickerValuesLayout.BELOW
+ * 
  * Selected values will display in a single text line below the widget
- *
- * @type {{}}
  */
-Charts.PickerValuesLayout.prototype.BELOW = {};
 
 /**
+ * @typedef {Charts.PickerValuesLayout} Charts.PickerValuesLayout.BELOW_STACKED
+ * 
  * Selected values will be displayed in a column below the widget
- *
- * @type {{}}
  */
-Charts.PickerValuesLayout.prototype.BELOW_STACKED = {};
 
 /**
+ * @typedef {Charts.PickerValuesLayout} Charts.PickerValuesLayout.BELOW_WRAPPING
+ * 
  * Similar to below, but entries that cannot fit in the picker will wrap to a new line
- *
- * @type {{}}
  */
-Charts.PickerValuesLayout.prototype.BELOW_WRAPPING = {};
 
 /**
  * An enumeration of the styles of points in a line.
-
+ * 
+ * @class Charts.PointStyle
  */
-Charts.PointStyle = function(){};
-
-/**
- * Use largest sized line points
- *
- * @type {{}}
- */
-Charts.PointStyle.prototype.HUGE = {};
 
 /**
- * Use large sized line points
- *
- * @type {{}}
+ * @typedef {Charts.PointStyle} Charts.PointStyle.HUGE
+ * 
+ * Use largest sized line points *
  */
-Charts.PointStyle.prototype.LARGE = {};
 
 /**
- * Use medium sized line points
- *
- * @type {{}}
+ * @typedef {Charts.PointStyle} Charts.PointStyle.LARGE
+ * 
+ * Use large sized line points *
  */
-Charts.PointStyle.prototype.MEDIUM = {};
 
 /**
- * Do not display line points
- *
- * @type {{}}
+ * @typedef {Charts.PointStyle} Charts.PointStyle.MEDIUM
+ * 
+ * Use medium sized line points *
  */
-Charts.PointStyle.prototype.NONE = {};
 
 /**
- * Use tiny line points
- *
- * @type {{}}
+ * @typedef {Charts.PointStyle} Charts.PointStyle.NONE
+ * 
+ * Do not display line points *
  */
-Charts.PointStyle.prototype.TINY = {};
+
+/**
+ * @typedef {Charts.PointStyle} Charts.PointStyle.TINY
+ * 
+ * Use tiny line points *
+ */
 
 /**
  * An enumeration of legend positions within a chart.
-
+ * 
+ * @class Charts.Position
  */
-Charts.Position = function(){};
 
 /**
+ * @typedef {Charts.Position} Charts.Position.BOTTOM
+ * 
  * Below the chart.
- *
- * @type {{}}
  */
-Charts.Position.prototype.BOTTOM = {};
 
 /**
+ * @typedef {Charts.Position} Charts.Position.NONE
+ * 
  * No legend is displayed.
- *
- * @type {{}}
  */
-Charts.Position.prototype.NONE = {};
 
 /**
+ * @typedef {Charts.Position} Charts.Position.RIGHT
+ * 
  * To the right of the chart.
- *
- * @type {{}}
  */
-Charts.Position.prototype.RIGHT = {};
 
 /**
+ * @typedef {Charts.Position} Charts.Position.TOP
+ * 
  * Above the chart.
- *
- * @type {{}}
  */
-Charts.Position.prototype.TOP = {};
 
 /**
  * Starts building an area chart, as described in the <a
@@ -285,8 +270,8 @@ Charts.newDashboardPanel = function(){};
 
 /**
  * Creates an empty data table, which can have its values set manually.
- <p>
- Data tables hold the data for all chart types.
+
+ <p>Data tables hold the data for all chart types.
  *
  * @return {DataTableBuilder} a DataTableBuilder, which can hold data for charts
  */
@@ -294,8 +279,8 @@ Charts.newDataTable = function(){};
 
 /**
  * Creates a new data view definition.
- <p>
- Use setters to define the different properties of the data view.
+
+ <p>Use setters to define the different properties of the data view.
  *
  * @return {Charts.DataViewDefinitionBuilder} a DataViewDefinitionBuilder, which can be used to build a data view definition
  */
@@ -357,8 +342,8 @@ Charts.newTableChart = function(){};
 
 /**
  * Creates a new text style builder.
- <p>
- To change the default values, use the setter functions.
+
+ <p>To change the default values, use the setter functions.
  *
  * @return {Charts.TextStyleBuilder} a TextStyleBuilder, which can be used to build a text style configuration object
  */
@@ -370,19 +355,18 @@ Charts.AreaChartBuilder = function(){};
 /**
  * Builds the chart.
  *
- * @return {Charts.Chart} a Chart object, which can be embedded into documents, UI elements, or used as a
- static image
+ * @return {Charts.Chart} a Chart object, which can be embedded into documents, UI elements, or used as a static
+     image
  */
 Charts.AreaChartBuilder.prototype.build = function(){};
 
 /**
- * Reverses the drawing of series in the domain axis.  For vertical-range charts (such as line,
- area or column charts), this means the horizontal axis is drawn from right to left.  For
- horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top
- to bottom.  For pie charts, this means the slices are drawn counterclockwise.
+ * Reverses the drawing of series in the domain axis. For vertical-range charts (such as line,
+ area or column charts), this means the horizontal axis is drawn from right to left. For
+ horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top to
+ bottom. For pie charts, this means the slices are drawn counterclockwise.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a pie chart builder and sets drawing of the slices in a counter-clockwise manner.
  var builder = Charts.newPieChart();
  builder.reverseCategories();
@@ -395,8 +379,7 @@ Charts.AreaChartBuilder.prototype.reverseCategories = function(){};
 /**
  * Sets the background color for the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the background color to gray
  var builder = Charts.newLineChart();
  builder.setBackgroundColor(&quot;gray&quot;);
@@ -411,28 +394,27 @@ Charts.AreaChartBuilder.prototype.setBackgroundColor = function(cssValue){};
 /**
  * Sets the colors for the lines in the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the first two lines to be drawn in green and red,
  // respectively.
  var builder = Charts.newLineChart();
  builder.setColors([&quot;green&quot;, &quot;red&quot;]);
  </code></pre>
  *
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>.  The nth
-     element in the array represents the color of the nth line in the chart.
+ * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+     in the array represents the color of the nth line in the chart.
  *
  * @return {Charts.AreaChartBuilder} this builder, useful for chaining
  */
 Charts.AreaChartBuilder.prototype.setColors = function(cssValues){};
 
 /**
- * Sets the data source URL that will be used to pull data in from an
- external source, such as Google Sheets.
- If a data source URL and a DataTable are provided, the data source URL is ignored.
+ * Sets the data source URL that will be used to pull data in from an external source, such as
+ Google Sheets. If a data source URL and a DataTable are provided, the data source URL is
+ ignored.
 
- For more information about querying data sources, check out the 
- <a href="/chart/interactive/docs/queries">Google Charts documentation</a>.
+ <p>For more information about querying data sources, check out the <a
+ href="/chart/interactive/docs/queries">Google Charts documentation</a>.
  *
  * @param {String} url - the data source URL, including any query parameters
  *
@@ -441,11 +423,11 @@ Charts.AreaChartBuilder.prototype.setColors = function(cssValues){};
 Charts.AreaChartBuilder.prototype.setDataSourceUrl = function(url){};
 
 /**
- * Sets the data table to use for the chart using a DataTableBuilder.  This is a convenience
- method for setting the data table without needing to call <code>build()</code>.
+ * Sets the data table to use for the chart using a DataTableBuilder. This is a convenience method
+ for setting the data table without needing to call <code>build()</code>.
  *
- * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part
-     of this call, so any further updates to the builder won't be reflected in the chart.
+ * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part of
+     this call, so any further updates to the builder won't be reflected in the chart.
  *
  * @return {Charts.AreaChartBuilder} this builder, useful for chaining
  */
@@ -472,11 +454,9 @@ Charts.AreaChartBuilder.prototype.setDataViewDefinition = function(dataViewDefin
 Charts.AreaChartBuilder.prototype.setDimensions = function(width, height){};
 
 /**
- * Sets the position of the legend with respect to the chart.  By default, there will be no
- legend.
+ * Sets the position of the legend with respect to the chart. By default, there will be no legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the legend position to right.
  var builder = Charts.newLineChart();
  builder.setLegendPosition(Charts.Position.RIGHT);
@@ -491,8 +471,7 @@ Charts.AreaChartBuilder.prototype.setLegendPosition = function(position){};
 /**
  * Sets the text style of the chart legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point legend.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -507,17 +486,13 @@ Charts.AreaChartBuilder.prototype.setLegendPosition = function(position){};
 Charts.AreaChartBuilder.prototype.setLegendTextStyle = function(textStyle){};
 
 /**
- * <p>Sets advanced options for this chart. See
- <a href="/chart/interactive/docs/gallery/areachart">the available options for this chart</a>.
- This method has no effect if the given option is invalid.
+ * Sets advanced options for this chart. See <a href="/chart/interactive/docs/gallery/areachart">the available options for
+ this chart</a>. This method has no effect if the given option is invalid.
 
- 
-
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Build an area chart with a 1-second animation duration.
  var builder = Charts.newAreaChart();
- builder.setOption(&#39;animation.duration&#39;, 1000); 
+ builder.setOption(&#39;animation.duration&#39;, 1000);
  var chart = builder.build();
  </code></pre>
  *
@@ -529,11 +504,10 @@ Charts.AreaChartBuilder.prototype.setLegendTextStyle = function(textStyle){};
 Charts.AreaChartBuilder.prototype.setOption = function(option, value){};
 
 /**
- * Sets the style for points in the line.  By default, points will have no particular styles,
- and only the line will be visible.
+ * Sets the style for points in the line. By default, points will have no particular styles, and
+ only the line will be visible.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets large point style.
  var builder = Charts.newLineChart();
  builder.setPointStyle(Charts.PointStyle.LARGE);
@@ -547,8 +521,8 @@ Charts.AreaChartBuilder.prototype.setPointStyle = function(style){};
 
 /**
  * Sets the range for the chart.
- <p>
- If any data points fall outside the range, the range will be expanded to include those data
+
+ <p>If any data points fall outside the range, the range will be expanded to include those data
  points.
  *
  * @param {Number} start - value for the lowest grid line of the range axis
@@ -559,7 +533,7 @@ Charts.AreaChartBuilder.prototype.setPointStyle = function(style){};
 Charts.AreaChartBuilder.prototype.setRange = function(start, end){};
 
 /**
- * Uses stacked lines, meaning that line and bar values are stacked (accumulated).  By default,
+ * Uses stacked lines, meaning that line and bar values are stacked (accumulated). By default,
  there is no stacking.
  *
  * @return {Charts.AreaChartBuilder} this builder, useful for chaining
@@ -567,10 +541,9 @@ Charts.AreaChartBuilder.prototype.setRange = function(start, end){};
 Charts.AreaChartBuilder.prototype.setStacked = function(){};
 
 /**
- * Sets the title of the chart.  The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title will be displayed centered above the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and title to &#39;My Line Chart&#39;.
  var builder = Charts.newLineChart();
  builder.setTitle(&#39;My Line Chart&#39;)
@@ -585,8 +558,7 @@ Charts.AreaChartBuilder.prototype.setTitle = function(chartTitle){};
 /**
  * Sets the text style of the chart title.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point title.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -594,8 +566,8 @@ Charts.AreaChartBuilder.prototype.setTitle = function(chartTitle){};
  builder.setTitleTextStyle(style);
  </code></pre>
  *
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object
-     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
+     created by calling Charts.newTextStyle().
  *
  * @return {Charts.AreaChartBuilder} this builder, useful for chaining
  */
@@ -604,8 +576,7 @@ Charts.AreaChartBuilder.prototype.setTitleTextStyle = function(textStyle){};
 /**
  * Sets the horizontal axis text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -620,11 +591,10 @@ Charts.AreaChartBuilder.prototype.setTitleTextStyle = function(textStyle){};
 Charts.AreaChartBuilder.prototype.setXAxisTextStyle = function(textStyle){};
 
 /**
- * Adds a title to the horizontal axis.  The title will be centered and will appear below
- the axis value labels.
+ * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
+ value labels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis title.
  var builder = Charts.newLineChart();
  builder.setTitle(&#39;X-axis Title&#39;)
@@ -639,8 +609,7 @@ Charts.AreaChartBuilder.prototype.setXAxisTitle = function(title){};
 /**
  * Sets the horizontal axis title text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis title text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -657,8 +626,7 @@ Charts.AreaChartBuilder.prototype.setXAxisTitleTextStyle = function(textStyle){}
 /**
  * Sets the vertical axis text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -673,11 +641,10 @@ Charts.AreaChartBuilder.prototype.setXAxisTitleTextStyle = function(textStyle){}
 Charts.AreaChartBuilder.prototype.setYAxisTextStyle = function(textStyle){};
 
 /**
- * Adds a title to the vertical axis.  The title will be centered and will appear to the
- left of the value labels.
+ * Adds a title to the vertical axis. The title will be centered and will appear to the left of
+ the value labels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis title.
  var builder = Charts.newLineChart();
  builder.setYAxisTitle(&#39;Y-axis Title&#39;)
@@ -692,8 +659,7 @@ Charts.AreaChartBuilder.prototype.setYAxisTitle = function(title){};
 /**
  * Sets the vertical axis title text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis title text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -708,7 +674,7 @@ Charts.AreaChartBuilder.prototype.setYAxisTitle = function(title){};
 Charts.AreaChartBuilder.prototype.setYAxisTitleTextStyle = function(textStyle){};
 
 /**
- * Makes the range axis into a logarithmic scale (requires all values to be positive).  The range
+ * Makes the range axis into a logarithmic scale (requires all values to be positive). The range
  axis will be the vertical axis for vertical charts (line, area, column, etc.) and the
  horizontal axis for horizontal charts (bar, etc.)
  *
@@ -722,19 +688,18 @@ Charts.BarChartBuilder = function(){};
 /**
  * Builds the chart.
  *
- * @return {Charts.Chart} a Chart object, which can be embedded into documents, UI elements, or used as a
- static image
+ * @return {Charts.Chart} a Chart object, which can be embedded into documents, UI elements, or used as a static
+     image
  */
 Charts.BarChartBuilder.prototype.build = function(){};
 
 /**
- * Reverses the drawing of series in the domain axis.  For vertical-range charts (such as line,
- area or column charts), this means the horizontal axis is drawn from right to left.  For
- horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top
- to bottom.  For pie charts, this means the slices are drawn counterclockwise.
+ * Reverses the drawing of series in the domain axis. For vertical-range charts (such as line,
+ area or column charts), this means the horizontal axis is drawn from right to left. For
+ horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top to
+ bottom. For pie charts, this means the slices are drawn counterclockwise.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a pie chart builder and sets drawing of the slices in a counter-clockwise manner.
  var builder = Charts.newPieChart();
  builder.reverseCategories();
@@ -745,8 +710,8 @@ Charts.BarChartBuilder.prototype.build = function(){};
 Charts.BarChartBuilder.prototype.reverseCategories = function(){};
 
 /**
- * Reverses the direction in which the bars grow along the horizontal axis.  By default, values
- grow from left to right.  Calling this method will cause them to grow from right to left.
+ * Reverses the direction in which the bars grow along the horizontal axis. By default, values
+ grow from left to right. Calling this method will cause them to grow from right to left.
  *
  * @return {Charts.BarChartBuilder} this builder, useful for chaining
  */
@@ -755,8 +720,7 @@ Charts.BarChartBuilder.prototype.reverseDirection = function(){};
 /**
  * Sets the background color for the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the background color to gray
  var builder = Charts.newLineChart();
  builder.setBackgroundColor(&quot;gray&quot;);
@@ -771,28 +735,27 @@ Charts.BarChartBuilder.prototype.setBackgroundColor = function(cssValue){};
 /**
  * Sets the colors for the lines in the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the first two lines to be drawn in green and red,
  // respectively.
  var builder = Charts.newLineChart();
  builder.setColors([&quot;green&quot;, &quot;red&quot;]);
  </code></pre>
  *
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>.  The nth
-     element in the array represents the color of the nth line in the chart.
+ * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+     in the array represents the color of the nth line in the chart.
  *
  * @return {Charts.BarChartBuilder} this builder, useful for chaining
  */
 Charts.BarChartBuilder.prototype.setColors = function(cssValues){};
 
 /**
- * Sets the data source URL that will be used to pull data in from an
- external source, such as Google Sheets.
- If a data source URL and a DataTable are provided, the data source URL is ignored.
+ * Sets the data source URL that will be used to pull data in from an external source, such as
+ Google Sheets. If a data source URL and a DataTable are provided, the data source URL is
+ ignored.
 
- For more information about querying data sources, check out the 
- <a href="/chart/interactive/docs/queries">Google Charts documentation</a>.
+ <p>For more information about querying data sources, check out the <a
+ href="/chart/interactive/docs/queries">Google Charts documentation</a>.
  *
  * @param {String} url - the data source URL, including any query parameters
  *
@@ -801,11 +764,11 @@ Charts.BarChartBuilder.prototype.setColors = function(cssValues){};
 Charts.BarChartBuilder.prototype.setDataSourceUrl = function(url){};
 
 /**
- * Sets the data table to use for the chart using a DataTableBuilder.  This is a convenience
- method for setting the data table without needing to call <code>build()</code>.
+ * Sets the data table to use for the chart using a DataTableBuilder. This is a convenience method
+ for setting the data table without needing to call <code>build()</code>.
  *
- * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part
-     of this call, so any further updates to the builder won't be reflected in the chart.
+ * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part of
+     this call, so any further updates to the builder won't be reflected in the chart.
  *
  * @return {Charts.BarChartBuilder} this builder, useful for chaining
  */
@@ -832,11 +795,9 @@ Charts.BarChartBuilder.prototype.setDataViewDefinition = function(dataViewDefini
 Charts.BarChartBuilder.prototype.setDimensions = function(width, height){};
 
 /**
- * Sets the position of the legend with respect to the chart.  By default, there will be no
- legend.
+ * Sets the position of the legend with respect to the chart. By default, there will be no legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the legend position to right.
  var builder = Charts.newLineChart();
  builder.setLegendPosition(Charts.Position.RIGHT);
@@ -851,8 +812,7 @@ Charts.BarChartBuilder.prototype.setLegendPosition = function(position){};
 /**
  * Sets the text style of the chart legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point legend.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -867,17 +827,13 @@ Charts.BarChartBuilder.prototype.setLegendPosition = function(position){};
 Charts.BarChartBuilder.prototype.setLegendTextStyle = function(textStyle){};
 
 /**
- * <p>Sets advanced options for this chart. See
- <a href="/chart/interactive/docs/gallery/barchart">the available options for this chart</a>.
- This method has no effect if the given option is invalid.
+ * Sets advanced options for this chart. See <a href="/chart/interactive/docs/gallery/barchart">the available options for
+ this chart</a>. This method has no effect if the given option is invalid.
 
- 
-
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Build a bar chart with a 1-second animation duration.
  var builder = Charts.newBarChart();
- builder.setOption(&#39;animation.duration&#39;, 1000); 
+ builder.setOption(&#39;animation.duration&#39;, 1000);
  var chart = builder.build();
  </code></pre>
  *
@@ -890,8 +846,8 @@ Charts.BarChartBuilder.prototype.setOption = function(option, value){};
 
 /**
  * Sets the range for the chart.
- <p>
- If any data points fall outside the range, the range will be expanded to include those data
+
+ <p>If any data points fall outside the range, the range will be expanded to include those data
  points.
  *
  * @param {Number} start - value for the lowest grid line of the range axis
@@ -902,7 +858,7 @@ Charts.BarChartBuilder.prototype.setOption = function(option, value){};
 Charts.BarChartBuilder.prototype.setRange = function(start, end){};
 
 /**
- * Uses stacked lines, meaning that line and bar values are stacked (accumulated).  By default,
+ * Uses stacked lines, meaning that line and bar values are stacked (accumulated). By default,
  there is no stacking.
  *
  * @return {Charts.BarChartBuilder} this builder, useful for chaining
@@ -910,10 +866,9 @@ Charts.BarChartBuilder.prototype.setRange = function(start, end){};
 Charts.BarChartBuilder.prototype.setStacked = function(){};
 
 /**
- * Sets the title of the chart.  The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title will be displayed centered above the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and title to &#39;My Line Chart&#39;.
  var builder = Charts.newLineChart();
  builder.setTitle(&#39;My Line Chart&#39;)
@@ -928,8 +883,7 @@ Charts.BarChartBuilder.prototype.setTitle = function(chartTitle){};
 /**
  * Sets the text style of the chart title.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point title.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -937,8 +891,8 @@ Charts.BarChartBuilder.prototype.setTitle = function(chartTitle){};
  builder.setTitleTextStyle(style);
  </code></pre>
  *
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object
-     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
+     created by calling Charts.newTextStyle().
  *
  * @return {Charts.BarChartBuilder} this builder, useful for chaining
  */
@@ -947,8 +901,7 @@ Charts.BarChartBuilder.prototype.setTitleTextStyle = function(textStyle){};
 /**
  * Sets the horizontal axis text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -963,11 +916,10 @@ Charts.BarChartBuilder.prototype.setTitleTextStyle = function(textStyle){};
 Charts.BarChartBuilder.prototype.setXAxisTextStyle = function(textStyle){};
 
 /**
- * Adds a title to the horizontal axis.  The title will be centered and will appear below
- the axis value labels.
+ * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
+ value labels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis title.
  var builder = Charts.newLineChart();
  builder.setTitle(&#39;X-axis Title&#39;)
@@ -982,8 +934,7 @@ Charts.BarChartBuilder.prototype.setXAxisTitle = function(title){};
 /**
  * Sets the horizontal axis title text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis title text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -1000,8 +951,7 @@ Charts.BarChartBuilder.prototype.setXAxisTitleTextStyle = function(textStyle){};
 /**
  * Sets the vertical axis text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -1016,11 +966,10 @@ Charts.BarChartBuilder.prototype.setXAxisTitleTextStyle = function(textStyle){};
 Charts.BarChartBuilder.prototype.setYAxisTextStyle = function(textStyle){};
 
 /**
- * Adds a title to the vertical axis.  The title will be centered and will appear to the
- left of the value labels.
+ * Adds a title to the vertical axis. The title will be centered and will appear to the left of
+ the value labels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis title.
  var builder = Charts.newLineChart();
  builder.setYAxisTitle(&#39;Y-axis Title&#39;)
@@ -1035,8 +984,7 @@ Charts.BarChartBuilder.prototype.setYAxisTitle = function(title){};
 /**
  * Sets the vertical axis title text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis title text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -1051,7 +999,7 @@ Charts.BarChartBuilder.prototype.setYAxisTitle = function(title){};
 Charts.BarChartBuilder.prototype.setYAxisTitleTextStyle = function(textStyle){};
 
 /**
- * Makes the range axis into a logarithmic scale (requires all values to be positive).  The range
+ * Makes the range axis into a logarithmic scale (requires all values to be positive). The range
  axis will be the vertical axis for vertical charts (line, area, column, etc.) and the
  horizontal axis for horizontal charts (bar, etc.)
  *
@@ -1070,11 +1018,10 @@ Charts.CategoryFilterBuilder = function(){};
 Charts.CategoryFilterBuilder.prototype.build = function(){};
 
 /**
- * Sets whether multiple values can be selected, rather than just one. The default value of
- this option is true (allowing multiple selection).
+ * Sets whether multiple values can be selected, rather than just one. The default value of this
+ option is true (allowing multiple selection).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a category filter and disallows multiple value selection.
  var builder = Charts.newCategoryFilter().setAllowMultiple(false);
  </code></pre>
@@ -1089,8 +1036,7 @@ Charts.CategoryFilterBuilder.prototype.setAllowMultiple = function(allowMultiple
  * Sets whether the user is allowed not to choose any value. If false the user must choose at
  least one value from the available ones. The default value of this option is true.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a category filter and force the user to choose at least one value.
  var builder = Charts.newCategoryFilter().setAllowNone(false);
  </code></pre>
@@ -1106,8 +1052,7 @@ Charts.CategoryFilterBuilder.prototype.setAllowNone = function(allowNone){};
  choices (via an autocompleter), or not. The default value of this option is true (allowing the
  user to type in values in the picker).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a category filter and disallows the user from typing in text to filter the values,
  // so the user must use the drop down to pick values.
  var builder = Charts.newCategoryFilter().setAllowTyping(false);
@@ -1123,8 +1068,7 @@ Charts.CategoryFilterBuilder.prototype.setAllowTyping = function(allowTyping){};
 /**
  * Sets the caption to display inside the value picker widget when no item is selected.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a category filter with a caption.
  var builder = Charts.newCategoryFilter().setCaption(&#39;select a value&#39;);
  </code></pre>
@@ -1138,11 +1082,10 @@ Charts.CategoryFilterBuilder.prototype.setCaption = function(caption){};
 /**
  * Sets the data table to use for the control using a DataTableBuilder.
 
- This is a convenience method for setting the data table without needing to call
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/category-filter-builder.html#build()'>build()</a></code>.
+ <p>This is a convenience method for setting the data table without needing to call <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/category-filter-builder.html#build()'>build()</a></code>.
  *
- * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part
-        of this call, so any further updates to the builder won't be reflected in the control.
+ * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part of
+     this call, so any further updates to the builder won't be reflected in the control.
  *
  * @return {Charts.CategoryFilterBuilder} this builder, useful for chaining
  */
@@ -1151,9 +1094,8 @@ Charts.CategoryFilterBuilder.prototype.setDataTable = function(tableBuilder){};
 /**
  * Sets the index of the data table column to filter on.
 
- The values of that column will determine whether or not each row should be filtered.
- It is mandatory to set either this or the column label using
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/category-filter-builder.html#setFilterColumnLabel(String)'>setFilterColumnLabel(columnLabel)</a></code>.
+ <p>The values of that column will determine whether or not each row should be filtered. It is
+ mandatory to set either this or the column label using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/category-filter-builder.html#setFilterColumnLabel(String)'>setFilterColumnLabel(columnLabel)</a></code>.
  *
  * @param {number} columnIndex - the index of the data table column the filter should operate upon
  *
@@ -1164,8 +1106,8 @@ Charts.CategoryFilterBuilder.prototype.setFilterColumnIndex = function(columnInd
 /**
  * Sets the label of the data table column to filter on.
 
- The values of that column will determine whether or not each row should be filtered.
- It is mandatory to set either this or a column index using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/category-filter-builder.html#setFilterColumnIndex(Integer)'>setFilterColumnIndex(columnIndex)</a></code>.
+ <p>The values of that column will determine whether or not each row should be filtered. It is
+ mandatory to set either this or a column index using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/category-filter-builder.html#setFilterColumnIndex(Integer)'>setFilterColumnIndex(columnIndex)</a></code>.
  *
  * @param {String} columnLabel - the label of the column to filter on
  *
@@ -1176,7 +1118,7 @@ Charts.CategoryFilterBuilder.prototype.setFilterColumnLabel = function(columnLab
 /**
  * Sets the label to display next to the slider.
 
- If unspecified, the label of the column the control operates on will be used.
+ <p>If unspecified, the label of the column the control operates on will be used.
  *
  * @param {String} label - the label to display next to the slider
  *
@@ -1185,11 +1127,10 @@ Charts.CategoryFilterBuilder.prototype.setFilterColumnLabel = function(columnLab
 Charts.CategoryFilterBuilder.prototype.setLabel = function(label){};
 
 /**
- * Sets a separator string appended to the label, to visually separate the
- label from the category picker.
+ * Sets a separator string appended to the label, to visually separate the label from the category
+ picker.
  *
- * @param {String} labelSeparator - the string to use to separate the label from the
-     category picker
+ * @param {String} labelSeparator - the string to use to separate the label from the category picker
  *
  * @return {Charts.CategoryFilterBuilder} this builder, useful for chaining
  */
@@ -1208,8 +1149,7 @@ Charts.CategoryFilterBuilder.prototype.setLabelStacking = function(orientation){
 /**
  * Sets how to display selected values, when multiple selection is allowed.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a category filter and sets it to display selected values below the picker.
  var builder = Charts.newCategoryFilter()
      .setSelectedValuesLayout(Charts.PickerValuesLayout.BELOW);
@@ -1224,8 +1164,7 @@ Charts.CategoryFilterBuilder.prototype.setSelectedValuesLayout = function(layout
 /**
  * Sets whether the values to choose from should be sorted.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a category filter that sorts the values.
  var builder = Charts.newCategoryFilter().setSortValues(true);
  </code></pre>
@@ -1239,8 +1178,7 @@ Charts.CategoryFilterBuilder.prototype.setSortValues = function(sortValues){};
 /**
  * Sets the list of values (categories) the user can choose from.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a category filter with two choices.
  var builder = Charts.newCategoryFilter().setValues([&#39;choice 1&#39;,&#39;choice 2&#39;]);
  </code></pre>
@@ -1256,15 +1194,14 @@ Charts.Chart = function(){};
 
 /**
  * Return the data inside this object as a blob converted to the specified content type. This
- method adds the appropriate extension to the filename ? for example, "myfile.pdf". However, it
+ method adds the appropriate extension to the filename — for example, "myfile.pdf". However, it
  assumes that the part of the filename that follows the last period (if any) is an existing
  extension that should be replaced. Consequently, "ChristmasList.12.25.2014" will become
  "ChristmasList.12.25.pdf".
  *
- * @param {String} contentType - the MIME type to convert to. For most blobs,
-     <code>&#39;application/pdf&#39;</code> is the only valid option. For images in BMP, GIF, JPEG,
-     or PNG format, any of <code>&#39;image/bmp&#39;</code>, <code>&#39;image/gif&#39;</code>,
-     <code>&#39;image/jpeg&#39;</code>, or <code>&#39;image/png&#39;</code> are also valid.
+ * @param {String} contentType - the MIME type to convert to. For most blobs, <code>&#39;application/pdf&#39;</code> is
+     the only valid option. For images in BMP, GIF, JPEG, or PNG format, any of <code>&#39;image/bmp&#39;</code>, <code>&#39;image/gif&#39;</code>, <code>&#39;image/jpeg&#39;</code>, or <code>&#39;image/png&#39;</code> are also
+     valid.
  *
  * @return {Blob} the data as a blob
  */
@@ -1279,8 +1216,8 @@ Charts.Chart.prototype.getBlob = function(){};
 
 /**
  * Returns the id that has been assigned to this object.
- <p>
- This can be used in conjunction with app.getElementById() to retrieve a reference to this
+
+ <p>This can be used in conjunction with app.getElementById() to retrieve a reference to this
  object.
  *
  * @return {String} the id that has been assigned to this object
@@ -1289,8 +1226,8 @@ Charts.Chart.prototype.getId = function(){};
 
 /**
  * Returns the options for this chart, such as height, colors, axes, etc.
- <p>
- The returned options are immutable.
+
+ <p>The returned options are immutable.
  *
  * @return {Charts.ChartOptions} the options for this chart, such as height, colors, axes, etc.
  */
@@ -1331,19 +1268,18 @@ Charts.ColumnChartBuilder = function(){};
 /**
  * Builds the chart.
  *
- * @return {Charts.Chart} a Chart object, which can be embedded into documents, UI elements, or used as a
- static image
+ * @return {Charts.Chart} a Chart object, which can be embedded into documents, UI elements, or used as a static
+     image
  */
 Charts.ColumnChartBuilder.prototype.build = function(){};
 
 /**
- * Reverses the drawing of series in the domain axis.  For vertical-range charts (such as line,
- area or column charts), this means the horizontal axis is drawn from right to left.  For
- horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top
- to bottom.  For pie charts, this means the slices are drawn counterclockwise.
+ * Reverses the drawing of series in the domain axis. For vertical-range charts (such as line,
+ area or column charts), this means the horizontal axis is drawn from right to left. For
+ horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top to
+ bottom. For pie charts, this means the slices are drawn counterclockwise.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a pie chart builder and sets drawing of the slices in a counter-clockwise manner.
  var builder = Charts.newPieChart();
  builder.reverseCategories();
@@ -1356,8 +1292,7 @@ Charts.ColumnChartBuilder.prototype.reverseCategories = function(){};
 /**
  * Sets the background color for the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the background color to gray
  var builder = Charts.newLineChart();
  builder.setBackgroundColor(&quot;gray&quot;);
@@ -1372,28 +1307,27 @@ Charts.ColumnChartBuilder.prototype.setBackgroundColor = function(cssValue){};
 /**
  * Sets the colors for the lines in the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the first two lines to be drawn in green and red,
  // respectively.
  var builder = Charts.newLineChart();
  builder.setColors([&quot;green&quot;, &quot;red&quot;]);
  </code></pre>
  *
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>.  The nth
-     element in the array represents the color of the nth line in the chart.
+ * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+     in the array represents the color of the nth line in the chart.
  *
  * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
  */
 Charts.ColumnChartBuilder.prototype.setColors = function(cssValues){};
 
 /**
- * Sets the data source URL that will be used to pull data in from an
- external source, such as Google Sheets.
- If a data source URL and a DataTable are provided, the data source URL is ignored.
+ * Sets the data source URL that will be used to pull data in from an external source, such as
+ Google Sheets. If a data source URL and a DataTable are provided, the data source URL is
+ ignored.
 
- For more information about querying data sources, check out the 
- <a href="/chart/interactive/docs/queries">Google Charts documentation</a>.
+ <p>For more information about querying data sources, check out the <a
+ href="/chart/interactive/docs/queries">Google Charts documentation</a>.
  *
  * @param {String} url - the data source URL, including any query parameters
  *
@@ -1402,11 +1336,11 @@ Charts.ColumnChartBuilder.prototype.setColors = function(cssValues){};
 Charts.ColumnChartBuilder.prototype.setDataSourceUrl = function(url){};
 
 /**
- * Sets the data table to use for the chart using a DataTableBuilder.  This is a convenience
- method for setting the data table without needing to call <code>build()</code>.
+ * Sets the data table to use for the chart using a DataTableBuilder. This is a convenience method
+ for setting the data table without needing to call <code>build()</code>.
  *
- * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part
-     of this call, so any further updates to the builder won't be reflected in the chart.
+ * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part of
+     this call, so any further updates to the builder won't be reflected in the chart.
  *
  * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
  */
@@ -1433,11 +1367,9 @@ Charts.ColumnChartBuilder.prototype.setDataViewDefinition = function(dataViewDef
 Charts.ColumnChartBuilder.prototype.setDimensions = function(width, height){};
 
 /**
- * Sets the position of the legend with respect to the chart.  By default, there will be no
- legend.
+ * Sets the position of the legend with respect to the chart. By default, there will be no legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the legend position to right.
  var builder = Charts.newLineChart();
  builder.setLegendPosition(Charts.Position.RIGHT);
@@ -1452,8 +1384,7 @@ Charts.ColumnChartBuilder.prototype.setLegendPosition = function(position){};
 /**
  * Sets the text style of the chart legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point legend.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -1468,17 +1399,13 @@ Charts.ColumnChartBuilder.prototype.setLegendPosition = function(position){};
 Charts.ColumnChartBuilder.prototype.setLegendTextStyle = function(textStyle){};
 
 /**
- * <p>Sets advanced options for this chart. See
- <a href="/chart/interactive/docs/gallery/columnchart">the available options for this chart</a>.
- This method has no effect if the given option is invalid.
+ * Sets advanced options for this chart. See <a href="/chart/interactive/docs/gallery/columnchart">the available options for
+ this chart</a>. This method has no effect if the given option is invalid.
 
- 
-
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Build a column chart with a 1-second animation duration.
  var builder = Charts.newColumnChart();
- builder.setOption(&#39;animation.duration&#39;, 1000); 
+ builder.setOption(&#39;animation.duration&#39;, 1000);
  var chart = builder.build();
  </code></pre>
  *
@@ -1491,8 +1418,8 @@ Charts.ColumnChartBuilder.prototype.setOption = function(option, value){};
 
 /**
  * Sets the range for the chart.
- <p>
- If any data points fall outside the range, the range will be expanded to include those data
+
+ <p>If any data points fall outside the range, the range will be expanded to include those data
  points.
  *
  * @param {Number} start - value for the lowest grid line of the range axis
@@ -1503,7 +1430,7 @@ Charts.ColumnChartBuilder.prototype.setOption = function(option, value){};
 Charts.ColumnChartBuilder.prototype.setRange = function(start, end){};
 
 /**
- * Uses stacked lines, meaning that line and bar values are stacked (accumulated).  By default,
+ * Uses stacked lines, meaning that line and bar values are stacked (accumulated). By default,
  there is no stacking.
  *
  * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
@@ -1511,10 +1438,9 @@ Charts.ColumnChartBuilder.prototype.setRange = function(start, end){};
 Charts.ColumnChartBuilder.prototype.setStacked = function(){};
 
 /**
- * Sets the title of the chart.  The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title will be displayed centered above the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and title to &#39;My Line Chart&#39;.
  var builder = Charts.newLineChart();
  builder.setTitle(&#39;My Line Chart&#39;)
@@ -1529,8 +1455,7 @@ Charts.ColumnChartBuilder.prototype.setTitle = function(chartTitle){};
 /**
  * Sets the text style of the chart title.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point title.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -1538,8 +1463,8 @@ Charts.ColumnChartBuilder.prototype.setTitle = function(chartTitle){};
  builder.setTitleTextStyle(style);
  </code></pre>
  *
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object
-     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
+     created by calling Charts.newTextStyle().
  *
  * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
  */
@@ -1548,8 +1473,7 @@ Charts.ColumnChartBuilder.prototype.setTitleTextStyle = function(textStyle){};
 /**
  * Sets the horizontal axis text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -1564,11 +1488,10 @@ Charts.ColumnChartBuilder.prototype.setTitleTextStyle = function(textStyle){};
 Charts.ColumnChartBuilder.prototype.setXAxisTextStyle = function(textStyle){};
 
 /**
- * Adds a title to the horizontal axis.  The title will be centered and will appear below
- the axis value labels.
+ * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
+ value labels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis title.
  var builder = Charts.newLineChart();
  builder.setTitle(&#39;X-axis Title&#39;)
@@ -1583,8 +1506,7 @@ Charts.ColumnChartBuilder.prototype.setXAxisTitle = function(title){};
 /**
  * Sets the horizontal axis title text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis title text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -1601,8 +1523,7 @@ Charts.ColumnChartBuilder.prototype.setXAxisTitleTextStyle = function(textStyle)
 /**
  * Sets the vertical axis text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -1617,11 +1538,10 @@ Charts.ColumnChartBuilder.prototype.setXAxisTitleTextStyle = function(textStyle)
 Charts.ColumnChartBuilder.prototype.setYAxisTextStyle = function(textStyle){};
 
 /**
- * Adds a title to the vertical axis.  The title will be centered and will appear to the
- left of the value labels.
+ * Adds a title to the vertical axis. The title will be centered and will appear to the left of
+ the value labels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis title.
  var builder = Charts.newLineChart();
  builder.setYAxisTitle(&#39;Y-axis Title&#39;)
@@ -1636,8 +1556,7 @@ Charts.ColumnChartBuilder.prototype.setYAxisTitle = function(title){};
 /**
  * Sets the vertical axis title text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis title text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -1652,7 +1571,7 @@ Charts.ColumnChartBuilder.prototype.setYAxisTitle = function(title){};
 Charts.ColumnChartBuilder.prototype.setYAxisTitleTextStyle = function(textStyle){};
 
 /**
- * Makes the range axis into a logarithmic scale (requires all values to be positive).  The range
+ * Makes the range axis into a logarithmic scale (requires all values to be positive). The range
  axis will be the vertical axis for vertical charts (line, area, column, etc.) and the
  horizontal axis for horizontal charts (bar, etc.)
  *
@@ -1665,8 +1584,8 @@ Charts.Control = function(){};
 
 /**
  * Returns the id that has been assigned to this object.
- <p>
- This can be used in conjunction with app.getElementById() to retrieve a reference to this
+
+ <p>This can be used in conjunction with app.getElementById() to retrieve a reference to this
  object.
  *
  * @return {String} the id that has been assigned to this object
@@ -1695,11 +1614,11 @@ Charts.DashboardPanel = function(){};
 
 /**
  * Add a widget to the DashboardPanel.
- <p>
- The DashboardPanel is a simple panel which contains a single widget in it. A good practice
- for building a dashboard to place all of its components (the charts and controls that are
- bound in it) in a complex panel (vertical or horizontal panel for example), and to add
- that panel to it.
+
+ <p>The DashboardPanel is a simple panel which contains a single widget in it. A good practice
+ for building a dashboard to place all of its components (the charts and controls that are bound
+ in it) in a complex panel (vertical or horizontal panel for example), and to add that panel to
+ it.
  *
  * @param {UiApp.Widget} widget - the widget to add
  *
@@ -1709,8 +1628,8 @@ Charts.DashboardPanel.prototype.add = function(widget){};
 
 /**
  * Returns the id that has been assigned to this object.
- <p>
- This can be used in conjunction with app.getElementById() to retrieve a reference to this
+
+ <p>This can be used in conjunction with app.getElementById() to retrieve a reference to this
  object.
  *
  * @return {String} the id that has been assigned to this object
@@ -1745,11 +1664,11 @@ Charts.DashboardPanelBuilder = function(){};
 Charts.DashboardPanelBuilder.prototype.build = function(){};
 
 /**
- * Sets the data table to use for the dashboard using a DataTableBuilder.  This is a convenience
+ * Sets the data table to use for the dashboard using a DataTableBuilder. This is a convenience
  method for setting the data table without needing to call <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/dashboard-panel-builder.html#build()'>build()</a></code>.
  *
- * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part
-     of this call, so any further updates to the builder won't be reflected in the dashboard.
+ * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part of
+     this call, so any further updates to the builder won't be reflected in the dashboard.
  *
  * @return {Charts.DashboardPanelBuilder} this builder, useful for chaining
  */
@@ -1769,24 +1688,25 @@ Charts.DataViewDefinitionBuilder = function(){};
 Charts.DataViewDefinitionBuilder.prototype.build = function(){};
 
 /**
- * Sets the indexes of the columns to include in the data view as well as specifying
- role-column information. This subset of column indexes refer to the columns of the
- data source that the data view will be derived from.
- <p>
- A column role describes the purpose of the data in that column: for example,
- a column might hold data describing tooltip text, data point annotations, or
- uncertainty indicators. For more details, see 
- <a href="/chart/interactive/docs/roles">DataTable Roles</a> in the Google Charts
+ * Sets the indexes of the columns to include in the data view as well as specifying role-column
+ information. This subset of column indexes refer to the columns of the data source that the
+ data view will be derived from.
+
+ <p>A column role describes the purpose of the data in that column: for example, a column might
+ hold data describing tooltip text, data point annotations, or uncertainty indicators. For more
+ details, see <a href="/chart/interactive/docs/roles">DataTable Roles</a> in the Google Charts
  documentation.
- <p>
- Assuming a spreadsheet with the following data in A1:C3:
+
+ <p>Assuming a spreadsheet with the following data in A1:C3:
+
  <pre class="prettyprint">
    "abc", 20, "blue"
    "def", 30, "red"
    "ghi", 40, "orange"
  </pre>
- The following code creates a bar chart where each bar is a different color.
- The colors are assigned via a style "role column".
+
+ The following code creates a bar chart where each bar is a different color. The colors are
+ assigned via a style "role column".
 
  <pre class="prettyprint"><code>
  var COLUMN_SPEC = [
@@ -1813,9 +1733,9 @@ Charts.DataViewDefinitionBuilder.prototype.build = function(){};
  };
  </code></pre>
  *
- * @param {Object[]} columns - an array of column indexes, or column descriptions (an object),
-      to include in the data view. The column descriptions define a column role.
-      The data table and the enumeration for data view columns are zero-based.
+ * @param {Object[]} columns - an array of column indexes, or column descriptions (an object), to include in
+     the data view. The column descriptions define a column role. The data table and the
+     enumeration for data view columns are zero-based.
  *
  * @return {Charts.DataViewDefinitionBuilder} this builder, useful for chaining
  */
@@ -1827,19 +1747,18 @@ Charts.LineChartBuilder = function(){};
 /**
  * Builds the chart.
  *
- * @return {Charts.Chart} a Chart object, which can be embedded into documents, UI elements, or used as a
- static image
+ * @return {Charts.Chart} a Chart object, which can be embedded into documents, UI elements, or used as a static
+     image
  */
 Charts.LineChartBuilder.prototype.build = function(){};
 
 /**
- * Reverses the drawing of series in the domain axis.  For vertical-range charts (such as line,
- area or column charts), this means the horizontal axis is drawn from right to left.  For
- horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top
- to bottom.  For pie charts, this means the slices are drawn counterclockwise.
+ * Reverses the drawing of series in the domain axis. For vertical-range charts (such as line,
+ area or column charts), this means the horizontal axis is drawn from right to left. For
+ horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top to
+ bottom. For pie charts, this means the slices are drawn counterclockwise.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a pie chart builder and sets drawing of the slices in a counter-clockwise manner.
  var builder = Charts.newPieChart();
  builder.reverseCategories();
@@ -1852,8 +1771,7 @@ Charts.LineChartBuilder.prototype.reverseCategories = function(){};
 /**
  * Sets the background color for the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the background color to gray
  var builder = Charts.newLineChart();
  builder.setBackgroundColor(&quot;gray&quot;);
@@ -1868,27 +1786,25 @@ Charts.LineChartBuilder.prototype.setBackgroundColor = function(cssValue){};
 /**
  * Sets the colors for the lines in the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the first two lines to be drawn in green and red,
  // respectively.
  var builder = Charts.newLineChart();
  builder.setColors([&quot;green&quot;, &quot;red&quot;]);
  </code></pre>
  *
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>.  The nth
-     element in the array represents the color of the nth line in the chart.
+ * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+     in the array represents the color of the nth line in the chart.
  *
  * @return {Charts.LineChartBuilder} this builder, useful for chaining
  */
 Charts.LineChartBuilder.prototype.setColors = function(cssValues){};
 
 /**
- * Sets the style to use for curves in the chart.  See <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/curve-style.html'>CurveStyle</a></code> for allowed curve
+ * Sets the style to use for curves in the chart. See <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/curve-style.html'>CurveStyle</a></code> for allowed curve
  styles.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and curves the lines in the chart.
  var builder = Charts.newLineChart();
  builder.setCurveStyle(Charts.CurveStyle.SMOOTH)
@@ -1901,12 +1817,12 @@ Charts.LineChartBuilder.prototype.setColors = function(cssValues){};
 Charts.LineChartBuilder.prototype.setCurveStyle = function(style){};
 
 /**
- * Sets the data source URL that will be used to pull data in from an
- external source, such as Google Sheets.
- If a data source URL and a DataTable are provided, the data source URL is ignored.
+ * Sets the data source URL that will be used to pull data in from an external source, such as
+ Google Sheets. If a data source URL and a DataTable are provided, the data source URL is
+ ignored.
 
- For more information about querying data sources, check out the 
- <a href="/chart/interactive/docs/queries">Google Charts documentation</a>.
+ <p>For more information about querying data sources, check out the <a
+ href="/chart/interactive/docs/queries">Google Charts documentation</a>.
  *
  * @param {String} url - the data source URL, including any query parameters
  *
@@ -1915,11 +1831,11 @@ Charts.LineChartBuilder.prototype.setCurveStyle = function(style){};
 Charts.LineChartBuilder.prototype.setDataSourceUrl = function(url){};
 
 /**
- * Sets the data table to use for the chart using a DataTableBuilder.  This is a convenience
- method for setting the data table without needing to call <code>build()</code>.
+ * Sets the data table to use for the chart using a DataTableBuilder. This is a convenience method
+ for setting the data table without needing to call <code>build()</code>.
  *
- * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part
-     of this call, so any further updates to the builder won't be reflected in the chart.
+ * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part of
+     this call, so any further updates to the builder won't be reflected in the chart.
  *
  * @return {Charts.LineChartBuilder} this builder, useful for chaining
  */
@@ -1946,11 +1862,9 @@ Charts.LineChartBuilder.prototype.setDataViewDefinition = function(dataViewDefin
 Charts.LineChartBuilder.prototype.setDimensions = function(width, height){};
 
 /**
- * Sets the position of the legend with respect to the chart.  By default, there will be no
- legend.
+ * Sets the position of the legend with respect to the chart. By default, there will be no legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the legend position to right.
  var builder = Charts.newLineChart();
  builder.setLegendPosition(Charts.Position.RIGHT);
@@ -1965,8 +1879,7 @@ Charts.LineChartBuilder.prototype.setLegendPosition = function(position){};
 /**
  * Sets the text style of the chart legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point legend.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -1981,17 +1894,13 @@ Charts.LineChartBuilder.prototype.setLegendPosition = function(position){};
 Charts.LineChartBuilder.prototype.setLegendTextStyle = function(textStyle){};
 
 /**
- * <p>Sets advanced options for this chart. See
- <a href="/chart/interactive/docs/gallery/linechart">the available options for this chart</a>.
- This method has no effect if the given option is invalid.
+ * Sets advanced options for this chart. See <a href="/chart/interactive/docs/gallery/linechart">the available options for
+ this chart</a>. This method has no effect if the given option is invalid.
 
- 
-
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Build a line chart with a 1-second animation duration.
  var builder = Charts.newLineChart();
- builder.setOption(&#39;animation.duration&#39;, 1000); 
+ builder.setOption(&#39;animation.duration&#39;, 1000);
  var chart = builder.build();
  </code></pre>
  *
@@ -2003,11 +1912,10 @@ Charts.LineChartBuilder.prototype.setLegendTextStyle = function(textStyle){};
 Charts.LineChartBuilder.prototype.setOption = function(option, value){};
 
 /**
- * Sets the style for points in the line.  By default, points will have no particular styles,
- and only the line will be visible.
+ * Sets the style for points in the line. By default, points will have no particular styles, and
+ only the line will be visible.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets large point style.
  var builder = Charts.newLineChart();
  builder.setPointStyle(Charts.PointStyle.LARGE);
@@ -2021,8 +1929,8 @@ Charts.LineChartBuilder.prototype.setPointStyle = function(style){};
 
 /**
  * Sets the range for the chart.
- <p>
- If any data points fall outside the range, the range will be expanded to include those data
+
+ <p>If any data points fall outside the range, the range will be expanded to include those data
  points.
  *
  * @param {Number} start - value for the lowest grid line of the range axis
@@ -2033,10 +1941,9 @@ Charts.LineChartBuilder.prototype.setPointStyle = function(style){};
 Charts.LineChartBuilder.prototype.setRange = function(start, end){};
 
 /**
- * Sets the title of the chart.  The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title will be displayed centered above the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and title to &#39;My Line Chart&#39;.
  var builder = Charts.newLineChart();
  builder.setTitle(&#39;My Line Chart&#39;)
@@ -2051,8 +1958,7 @@ Charts.LineChartBuilder.prototype.setTitle = function(chartTitle){};
 /**
  * Sets the text style of the chart title.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point title.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -2060,8 +1966,8 @@ Charts.LineChartBuilder.prototype.setTitle = function(chartTitle){};
  builder.setTitleTextStyle(style);
  </code></pre>
  *
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object
-     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
+     created by calling Charts.newTextStyle().
  *
  * @return {Charts.LineChartBuilder} this builder, useful for chaining
  */
@@ -2070,8 +1976,7 @@ Charts.LineChartBuilder.prototype.setTitleTextStyle = function(textStyle){};
 /**
  * Sets the horizontal axis text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -2086,11 +1991,10 @@ Charts.LineChartBuilder.prototype.setTitleTextStyle = function(textStyle){};
 Charts.LineChartBuilder.prototype.setXAxisTextStyle = function(textStyle){};
 
 /**
- * Adds a title to the horizontal axis.  The title will be centered and will appear below
- the axis value labels.
+ * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
+ value labels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis title.
  var builder = Charts.newLineChart();
  builder.setTitle(&#39;X-axis Title&#39;)
@@ -2105,8 +2009,7 @@ Charts.LineChartBuilder.prototype.setXAxisTitle = function(title){};
 /**
  * Sets the horizontal axis title text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis title text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -2123,8 +2026,7 @@ Charts.LineChartBuilder.prototype.setXAxisTitleTextStyle = function(textStyle){}
 /**
  * Sets the vertical axis text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -2139,11 +2041,10 @@ Charts.LineChartBuilder.prototype.setXAxisTitleTextStyle = function(textStyle){}
 Charts.LineChartBuilder.prototype.setYAxisTextStyle = function(textStyle){};
 
 /**
- * Adds a title to the vertical axis.  The title will be centered and will appear to the
- left of the value labels.
+ * Adds a title to the vertical axis. The title will be centered and will appear to the left of
+ the value labels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis title.
  var builder = Charts.newLineChart();
  builder.setYAxisTitle(&#39;Y-axis Title&#39;)
@@ -2158,8 +2059,7 @@ Charts.LineChartBuilder.prototype.setYAxisTitle = function(title){};
 /**
  * Sets the vertical axis title text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis title text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -2174,7 +2074,7 @@ Charts.LineChartBuilder.prototype.setYAxisTitle = function(title){};
 Charts.LineChartBuilder.prototype.setYAxisTitleTextStyle = function(textStyle){};
 
 /**
- * Makes the range axis into a logarithmic scale (requires all values to be positive).  The range
+ * Makes the range axis into a logarithmic scale (requires all values to be positive). The range
  axis will be the vertical axis for vertical charts (line, area, column, etc.) and the
  horizontal axis for horizontal charts (bar, etc.)
  *
@@ -2195,11 +2095,10 @@ Charts.NumberRangeFilterBuilder.prototype.build = function(){};
 /**
  * Sets the data table to use for the control using a DataTableBuilder.
 
- This is a convenience method for setting the data table without needing to call
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/number-range-filter-builder.html#build()'>build()</a></code>.
+ <p>This is a convenience method for setting the data table without needing to call <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/number-range-filter-builder.html#build()'>build()</a></code>.
  *
- * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part
-        of this call, so any further updates to the builder won't be reflected in the control.
+ * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part of
+     this call, so any further updates to the builder won't be reflected in the control.
  *
  * @return {Charts.NumberRangeFilterBuilder} this builder, useful for chaining
  */
@@ -2208,9 +2107,8 @@ Charts.NumberRangeFilterBuilder.prototype.setDataTable = function(tableBuilder){
 /**
  * Sets the index of the data table column to filter on.
 
- The values of that column will determine whether or not each row should be filtered.
- It is mandatory to set either this or the column label using
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/number-range-filter-builder.html#setFilterColumnLabel(String)'>setFilterColumnLabel(columnLabel)</a></code>.
+ <p>The values of that column will determine whether or not each row should be filtered. It is
+ mandatory to set either this or the column label using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/number-range-filter-builder.html#setFilterColumnLabel(String)'>setFilterColumnLabel(columnLabel)</a></code>.
  *
  * @param {number} columnIndex - the index of the data table column the filter should operate upon
  *
@@ -2221,8 +2119,8 @@ Charts.NumberRangeFilterBuilder.prototype.setFilterColumnIndex = function(column
 /**
  * Sets the label of the data table column to filter on.
 
- The values of that column will determine whether or not each row should be filtered.
- It is mandatory to set either this or a column index using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/number-range-filter-builder.html#setFilterColumnIndex(Integer)'>setFilterColumnIndex(columnIndex)</a></code>.
+ <p>The values of that column will determine whether or not each row should be filtered. It is
+ mandatory to set either this or a column index using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/number-range-filter-builder.html#setFilterColumnIndex(Integer)'>setFilterColumnIndex(columnIndex)</a></code>.
  *
  * @param {String} columnLabel - the label of the column to filter on
  *
@@ -2233,7 +2131,7 @@ Charts.NumberRangeFilterBuilder.prototype.setFilterColumnLabel = function(column
 /**
  * Sets the label to display next to the slider.
 
- If unspecified, the label of the column the control operates on will be used.
+ <p>If unspecified, the label of the column the control operates on will be used.
  *
  * @param {String} label - the label to display next to the slider
  *
@@ -2242,11 +2140,10 @@ Charts.NumberRangeFilterBuilder.prototype.setFilterColumnLabel = function(column
 Charts.NumberRangeFilterBuilder.prototype.setLabel = function(label){};
 
 /**
- * Sets a separator string appended to the label, to visually separate the
- label from the category picker.
+ * Sets a separator string appended to the label, to visually separate the label from the category
+ picker.
  *
- * @param {String} labelSeparator - the string to use to separate the label from the
-     category picker
+ * @param {String} labelSeparator - the string to use to separate the label from the category picker
  *
  * @return {Charts.NumberRangeFilterBuilder} this builder, useful for chaining
  */
@@ -2263,11 +2160,10 @@ Charts.NumberRangeFilterBuilder.prototype.setLabelSeparator = function(labelSepa
 Charts.NumberRangeFilterBuilder.prototype.setLabelStacking = function(orientation){};
 
 /**
- * Sets the maximum allowed value for the range lower extent. If undefined, the value
- will be inferred from the contents of the DataTable managed by the control.
+ * Sets the maximum allowed value for the range lower extent. If undefined, the value will be
+ inferred from the contents of the DataTable managed by the control.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Builds a number range filter and sets the maximum value to 100.
  var numberRangeFilter = Charts.newNumberRangeFilter()
    .setFilterColumnLabel(&quot;Col2&quot;)
@@ -2282,11 +2178,10 @@ Charts.NumberRangeFilterBuilder.prototype.setLabelStacking = function(orientatio
 Charts.NumberRangeFilterBuilder.prototype.setMaxValue = function(maxValue){};
 
 /**
- * Sets the minimum allowed value for the range lower extent. If undefined, the value
- will be inferred from the contents of the DataTable managed by the control.
+ * Sets the minimum allowed value for the range lower extent. If undefined, the value will be
+ inferred from the contents of the DataTable managed by the control.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Builds a number range filter and sets the minimum value to 10.
  var numberRangeFilter = Charts.newNumberRangeFilter()
    .setFilterColumnLabel(&quot;Col2&quot;)
@@ -2303,8 +2198,7 @@ Charts.NumberRangeFilterBuilder.prototype.setMinValue = function(minValue){};
 /**
  * Sets the slider orientation.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Builds a number range filter and sets it to have a horizontal orientation.
  var numberRangeFilter = Charts.newNumberRangeFilter()
    .setFilterColumnLabel(&quot;Col2&quot;)
@@ -2321,8 +2215,7 @@ Charts.NumberRangeFilterBuilder.prototype.setOrientation = function(orientation)
 /**
  * Sets whether to have labels next to the slider displaying extents of the selected range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Builds a number range filter and enables showing of the number range values.
  var numberRangeFilter = Charts.newNumberRangeFilter()
    .setFilterColumnLabel(&quot;Col2&quot;)
@@ -2340,8 +2233,7 @@ Charts.NumberRangeFilterBuilder.prototype.setShowRangeValues = function(showRang
  * Sets the number of ticks (fixed positions in a range bar) a number range filter slider thumbs
  can fall in.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Builds a number range filter and sets the number of ticks for the range to 10.
  var numberRangeFilter = Charts.newNumberRangeFilter()
    .setFilterColumnLabel(&quot;Col2&quot;)
@@ -2361,19 +2253,18 @@ Charts.PieChartBuilder = function(){};
 /**
  * Builds the chart.
  *
- * @return {Charts.Chart} a Chart object, which can be embedded into documents, UI elements, or used as a
- static image
+ * @return {Charts.Chart} a Chart object, which can be embedded into documents, UI elements, or used as a static
+     image
  */
 Charts.PieChartBuilder.prototype.build = function(){};
 
 /**
- * Reverses the drawing of series in the domain axis.  For vertical-range charts (such as line,
- area or column charts), this means the horizontal axis is drawn from right to left.  For
- horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top
- to bottom.  For pie charts, this means the slices are drawn counterclockwise.
+ * Reverses the drawing of series in the domain axis. For vertical-range charts (such as line,
+ area or column charts), this means the horizontal axis is drawn from right to left. For
+ horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top to
+ bottom. For pie charts, this means the slices are drawn counterclockwise.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a pie chart builder and sets drawing of the slices in a counter-clockwise manner.
  var builder = Charts.newPieChart();
  builder.reverseCategories();
@@ -2393,8 +2284,7 @@ Charts.PieChartBuilder.prototype.set3D = function(){};
 /**
  * Sets the background color for the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the background color to gray
  var builder = Charts.newLineChart();
  builder.setBackgroundColor(&quot;gray&quot;);
@@ -2409,28 +2299,27 @@ Charts.PieChartBuilder.prototype.setBackgroundColor = function(cssValue){};
 /**
  * Sets the colors for the lines in the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the first two lines to be drawn in green and red,
  // respectively.
  var builder = Charts.newLineChart();
  builder.setColors([&quot;green&quot;, &quot;red&quot;]);
  </code></pre>
  *
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>.  The nth
-     element in the array represents the color of the nth line in the chart.
+ * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+     in the array represents the color of the nth line in the chart.
  *
  * @return {Charts.PieChartBuilder} this builder, useful for chaining
  */
 Charts.PieChartBuilder.prototype.setColors = function(cssValues){};
 
 /**
- * Sets the data source URL that will be used to pull data in from an
- external source, such as Google Sheets.
- If a data source URL and a DataTable are provided, the data source URL is ignored.
+ * Sets the data source URL that will be used to pull data in from an external source, such as
+ Google Sheets. If a data source URL and a DataTable are provided, the data source URL is
+ ignored.
 
- For more information about querying data sources, check out the 
- <a href="/chart/interactive/docs/queries">Google Charts documentation</a>.
+ <p>For more information about querying data sources, check out the <a
+ href="/chart/interactive/docs/queries">Google Charts documentation</a>.
  *
  * @param {String} url - the data source URL, including any query parameters
  *
@@ -2439,11 +2328,11 @@ Charts.PieChartBuilder.prototype.setColors = function(cssValues){};
 Charts.PieChartBuilder.prototype.setDataSourceUrl = function(url){};
 
 /**
- * Sets the data table to use for the chart using a DataTableBuilder.  This is a convenience
- method for setting the data table without needing to call <code>build()</code>.
+ * Sets the data table to use for the chart using a DataTableBuilder. This is a convenience method
+ for setting the data table without needing to call <code>build()</code>.
  *
- * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part
-     of this call, so any further updates to the builder won't be reflected in the chart.
+ * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part of
+     this call, so any further updates to the builder won't be reflected in the chart.
  *
  * @return {Charts.PieChartBuilder} this builder, useful for chaining
  */
@@ -2470,11 +2359,9 @@ Charts.PieChartBuilder.prototype.setDataViewDefinition = function(dataViewDefini
 Charts.PieChartBuilder.prototype.setDimensions = function(width, height){};
 
 /**
- * Sets the position of the legend with respect to the chart.  By default, there will be no
- legend.
+ * Sets the position of the legend with respect to the chart. By default, there will be no legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the legend position to right.
  var builder = Charts.newLineChart();
  builder.setLegendPosition(Charts.Position.RIGHT);
@@ -2489,8 +2376,7 @@ Charts.PieChartBuilder.prototype.setLegendPosition = function(position){};
 /**
  * Sets the text style of the chart legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point legend.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -2505,17 +2391,13 @@ Charts.PieChartBuilder.prototype.setLegendPosition = function(position){};
 Charts.PieChartBuilder.prototype.setLegendTextStyle = function(textStyle){};
 
 /**
- * <p>Sets advanced options for this chart. See
- <a href="/chart/interactive/docs/gallery/piechart">the available options for this chart</a>.
- This method has no effect if the given option is invalid.
+ * Sets advanced options for this chart. See <a href="/chart/interactive/docs/gallery/piechart">the available options for
+ this chart</a>. This method has no effect if the given option is invalid.
 
- 
-
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Build a pie chart with a pretty legend.
  var builder = Charts.newPieChart();
- builder.setOption(&#39;legend&#39;, {textStyle: {color: &#39;blue&#39;, fontSize: 16}}); 
+ builder.setOption(&#39;legend&#39;, {textStyle: {color: &#39;blue&#39;, fontSize: 16}});
  var chart = builder.build();
  </code></pre>
  *
@@ -2527,10 +2409,9 @@ Charts.PieChartBuilder.prototype.setLegendTextStyle = function(textStyle){};
 Charts.PieChartBuilder.prototype.setOption = function(option, value){};
 
 /**
- * Sets the title of the chart.  The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title will be displayed centered above the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and title to &#39;My Line Chart&#39;.
  var builder = Charts.newLineChart();
  builder.setTitle(&#39;My Line Chart&#39;)
@@ -2545,8 +2426,7 @@ Charts.PieChartBuilder.prototype.setTitle = function(chartTitle){};
 /**
  * Sets the text style of the chart title.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point title.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -2554,8 +2434,8 @@ Charts.PieChartBuilder.prototype.setTitle = function(chartTitle){};
  builder.setTitleTextStyle(style);
  </code></pre>
  *
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object
-     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
+     created by calling Charts.newTextStyle().
  *
  * @return {Charts.PieChartBuilder} this builder, useful for chaining
  */
@@ -2567,16 +2447,15 @@ Charts.ScatterChartBuilder = function(){};
 /**
  * Builds the chart.
  *
- * @return {Charts.Chart} a Chart object, which can be embedded into documents, UI elements, or used as a
- static image
+ * @return {Charts.Chart} a Chart object, which can be embedded into documents, UI elements, or used as a static
+     image
  */
 Charts.ScatterChartBuilder.prototype.build = function(){};
 
 /**
  * Sets the background color for the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the background color to gray
  var builder = Charts.newLineChart();
  builder.setBackgroundColor(&quot;gray&quot;);
@@ -2591,28 +2470,27 @@ Charts.ScatterChartBuilder.prototype.setBackgroundColor = function(cssValue){};
 /**
  * Sets the colors for the lines in the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the first two lines to be drawn in green and red,
  // respectively.
  var builder = Charts.newLineChart();
  builder.setColors([&quot;green&quot;, &quot;red&quot;]);
  </code></pre>
  *
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>.  The nth
-     element in the array represents the color of the nth line in the chart.
+ * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+     in the array represents the color of the nth line in the chart.
  *
  * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
  */
 Charts.ScatterChartBuilder.prototype.setColors = function(cssValues){};
 
 /**
- * Sets the data source URL that will be used to pull data in from an
- external source, such as Google Sheets.
- If a data source URL and a DataTable are provided, the data source URL is ignored.
+ * Sets the data source URL that will be used to pull data in from an external source, such as
+ Google Sheets. If a data source URL and a DataTable are provided, the data source URL is
+ ignored.
 
- For more information about querying data sources, check out the 
- <a href="/chart/interactive/docs/queries">Google Charts documentation</a>.
+ <p>For more information about querying data sources, check out the <a
+ href="/chart/interactive/docs/queries">Google Charts documentation</a>.
  *
  * @param {String} url - the data source URL, including any query parameters
  *
@@ -2621,11 +2499,11 @@ Charts.ScatterChartBuilder.prototype.setColors = function(cssValues){};
 Charts.ScatterChartBuilder.prototype.setDataSourceUrl = function(url){};
 
 /**
- * Sets the data table to use for the chart using a DataTableBuilder.  This is a convenience
- method for setting the data table without needing to call <code>build()</code>.
+ * Sets the data table to use for the chart using a DataTableBuilder. This is a convenience method
+ for setting the data table without needing to call <code>build()</code>.
  *
- * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part
-     of this call, so any further updates to the builder won't be reflected in the chart.
+ * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part of
+     this call, so any further updates to the builder won't be reflected in the chart.
  *
  * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
  */
@@ -2652,11 +2530,9 @@ Charts.ScatterChartBuilder.prototype.setDataViewDefinition = function(dataViewDe
 Charts.ScatterChartBuilder.prototype.setDimensions = function(width, height){};
 
 /**
- * Sets the position of the legend with respect to the chart.  By default, there will be no
- legend.
+ * Sets the position of the legend with respect to the chart. By default, there will be no legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the legend position to right.
  var builder = Charts.newLineChart();
  builder.setLegendPosition(Charts.Position.RIGHT);
@@ -2671,8 +2547,7 @@ Charts.ScatterChartBuilder.prototype.setLegendPosition = function(position){};
 /**
  * Sets the text style of the chart legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point legend.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -2687,17 +2562,13 @@ Charts.ScatterChartBuilder.prototype.setLegendPosition = function(position){};
 Charts.ScatterChartBuilder.prototype.setLegendTextStyle = function(textStyle){};
 
 /**
- * <p>Sets advanced options for this chart. See
- <a href="/chart/interactive/docs/gallery/scatterchart">the available options for this chart</a>.
- This method has no effect if the given option is invalid.
+ * Sets advanced options for this chart. See <a href="/chart/interactive/docs/gallery/scatterchart">the available options for
+ this chart</a>. This method has no effect if the given option is invalid.
 
- 
-
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Build a scatter chart with a 1-second animation duration.
  var builder = Charts.newScatterChart();
- builder.setOption(&#39;animation.duration&#39;, 1000); 
+ builder.setOption(&#39;animation.duration&#39;, 1000);
  var chart = builder.build();
  </code></pre>
  *
@@ -2709,11 +2580,10 @@ Charts.ScatterChartBuilder.prototype.setLegendTextStyle = function(textStyle){};
 Charts.ScatterChartBuilder.prototype.setOption = function(option, value){};
 
 /**
- * Sets the style for points in the line.  By default, points will have no particular styles,
- and only the line will be visible.
+ * Sets the style for points in the line. By default, points will have no particular styles, and
+ only the line will be visible.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets large point style.
  var builder = Charts.newLineChart();
  builder.setPointStyle(Charts.PointStyle.LARGE);
@@ -2726,10 +2596,9 @@ Charts.ScatterChartBuilder.prototype.setOption = function(option, value){};
 Charts.ScatterChartBuilder.prototype.setPointStyle = function(style){};
 
 /**
- * Sets the title of the chart.  The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title will be displayed centered above the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and title to &#39;My Line Chart&#39;.
  var builder = Charts.newLineChart();
  builder.setTitle(&#39;My Line Chart&#39;)
@@ -2744,8 +2613,7 @@ Charts.ScatterChartBuilder.prototype.setTitle = function(chartTitle){};
 /**
  * Sets the text style of the chart title.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point title.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -2753,8 +2621,8 @@ Charts.ScatterChartBuilder.prototype.setTitle = function(chartTitle){};
  builder.setTitleTextStyle(style);
  </code></pre>
  *
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object
-     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
+     created by calling Charts.newTextStyle().
  *
  * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
  */
@@ -2769,12 +2637,11 @@ Charts.ScatterChartBuilder.prototype.setXAxisLogScale = function(){};
 
 /**
  * Sets the range for the horizontal axis of the chart.
- <p>
- If any data points fall outside the range, the range will be expanded to include those data
+
+ <p>If any data points fall outside the range, the range will be expanded to include those data
  points.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a scatter chart builder and sets the X-axis range to be 0 to 100.
  var builder = Charts.newTableChart();
  builder.setXAxisRange(0, 100);
@@ -2790,8 +2657,7 @@ Charts.ScatterChartBuilder.prototype.setXAxisRange = function(start, end){};
 /**
  * Sets the horizontal axis text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -2806,11 +2672,10 @@ Charts.ScatterChartBuilder.prototype.setXAxisRange = function(start, end){};
 Charts.ScatterChartBuilder.prototype.setXAxisTextStyle = function(textStyle){};
 
 /**
- * Adds a title to the horizontal axis.  The title will be centered and will appear below
- the axis value labels.
+ * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
+ value labels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis title.
  var builder = Charts.newLineChart();
  builder.setTitle(&#39;X-axis Title&#39;)
@@ -2825,8 +2690,7 @@ Charts.ScatterChartBuilder.prototype.setXAxisTitle = function(title){};
 /**
  * Sets the horizontal axis title text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis title text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -2851,8 +2715,7 @@ Charts.ScatterChartBuilder.prototype.setYAxisLogScale = function(){};
  * Sets the range for the vertical axis of the chart. If any data points fall outside the range,
  the range will be expanded to include those data points.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a scatter chart builder and sets the Y-axis range to be 0 to 100.
  var builder = Charts.newTableChart();
  builder.setYAxisRange(0, 100);
@@ -2868,8 +2731,7 @@ Charts.ScatterChartBuilder.prototype.setYAxisRange = function(start, end){};
 /**
  * Sets the vertical axis text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -2884,11 +2746,10 @@ Charts.ScatterChartBuilder.prototype.setYAxisRange = function(start, end){};
 Charts.ScatterChartBuilder.prototype.setYAxisTextStyle = function(textStyle){};
 
 /**
- * Adds a title to the vertical axis.  The title will be centered and will appear to the
- left of the value labels.
+ * Adds a title to the vertical axis. The title will be centered and will appear to the left of
+ the value labels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis title.
  var builder = Charts.newLineChart();
  builder.setYAxisTitle(&#39;Y-axis Title&#39;)
@@ -2903,8 +2764,7 @@ Charts.ScatterChartBuilder.prototype.setYAxisTitle = function(title){};
 /**
  * Sets the vertical axis title text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis title text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -2931,8 +2791,7 @@ Charts.StringFilterBuilder.prototype.build = function(){};
 /**
  * Sets whether matching should be case sensitive or not.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Builds a case insensitive string filter to filter column &quot;Col1&quot;.
  var stringFilter = Charts.newStringFilter()
    .setFilterColumnLabel(&quot;Col1&quot;)
@@ -2949,11 +2808,10 @@ Charts.StringFilterBuilder.prototype.setCaseSensitive = function(caseSensitive){
 /**
  * Sets the data table to use for the control using a DataTableBuilder.
 
- This is a convenience method for setting the data table without needing to call
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/string-filter-builder.html#build()'>build()</a></code>.
+ <p>This is a convenience method for setting the data table without needing to call <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/string-filter-builder.html#build()'>build()</a></code>.
  *
- * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part
-        of this call, so any further updates to the builder won't be reflected in the control.
+ * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part of
+     this call, so any further updates to the builder won't be reflected in the control.
  *
  * @return {Charts.StringFilterBuilder} this builder, useful for chaining
  */
@@ -2962,9 +2820,8 @@ Charts.StringFilterBuilder.prototype.setDataTable = function(tableBuilder){};
 /**
  * Sets the index of the data table column to filter on.
 
- The values of that column will determine whether or not each row should be filtered.
- It is mandatory to set either this or the column label using
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/string-filter-builder.html#setFilterColumnLabel(String)'>setFilterColumnLabel(columnLabel)</a></code>.
+ <p>The values of that column will determine whether or not each row should be filtered. It is
+ mandatory to set either this or the column label using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/string-filter-builder.html#setFilterColumnLabel(String)'>setFilterColumnLabel(columnLabel)</a></code>.
  *
  * @param {number} columnIndex - the index of the data table column the filter should operate upon
  *
@@ -2975,8 +2832,8 @@ Charts.StringFilterBuilder.prototype.setFilterColumnIndex = function(columnIndex
 /**
  * Sets the label of the data table column to filter on.
 
- The values of that column will determine whether or not each row should be filtered.
- It is mandatory to set either this or a column index using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/string-filter-builder.html#setFilterColumnIndex(Integer)'>setFilterColumnIndex(columnIndex)</a></code>.
+ <p>The values of that column will determine whether or not each row should be filtered. It is
+ mandatory to set either this or a column index using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/string-filter-builder.html#setFilterColumnIndex(Integer)'>setFilterColumnIndex(columnIndex)</a></code>.
  *
  * @param {String} columnLabel - the label of the column to filter on
  *
@@ -2987,7 +2844,7 @@ Charts.StringFilterBuilder.prototype.setFilterColumnLabel = function(columnLabel
 /**
  * Sets the label to display next to the slider.
 
- If unspecified, the label of the column the control operates on will be used.
+ <p>If unspecified, the label of the column the control operates on will be used.
  *
  * @param {String} label - the label to display next to the slider
  *
@@ -2996,11 +2853,10 @@ Charts.StringFilterBuilder.prototype.setFilterColumnLabel = function(columnLabel
 Charts.StringFilterBuilder.prototype.setLabel = function(label){};
 
 /**
- * Sets a separator string appended to the label, to visually separate the
- label from the category picker.
+ * Sets a separator string appended to the label, to visually separate the label from the category
+ picker.
  *
- * @param {String} labelSeparator - the string to use to separate the label from the
-     category picker
+ * @param {String} labelSeparator - the string to use to separate the label from the category picker
  *
  * @return {Charts.StringFilterBuilder} this builder, useful for chaining
  */
@@ -3021,8 +2877,7 @@ Charts.StringFilterBuilder.prototype.setLabelStacking = function(orientation){};
  starting from the beginning of the value (<code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/match-type.html#PREFIX'>MatchType.PREFIX</a></code>), or any substring
  (<code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/match-type.html#ANY'>MatchType.ANY</a></code>).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Builds a string filter to filter column &quot;Col1&quot; matching the prefix.
  var stringFilter = Charts.newStringFilter()
    .setFilterColumnLabel(&quot;Col1&quot;)
@@ -3040,8 +2895,7 @@ Charts.StringFilterBuilder.prototype.setMatchType = function(matchType){};
  * Sets whether the control should match any time a key is pressed or only when the input field
  'changes' (loss of focus or pressing the Enter key).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Builds a string filter to filter column &quot;Col1&quot; that checks the match any time a key is
  // pressed.
  var stringFilter = Charts.newStringFilter()
@@ -3050,8 +2904,8 @@ Charts.StringFilterBuilder.prototype.setMatchType = function(matchType){};
    .build();
  </code></pre>
  *
- * @param {Boolean} realtimeTrigger - if true, sets events to be triggered at real time
-     (when a key is pressed)
+ * @param {Boolean} realtimeTrigger - if true, sets events to be triggered at real time (when a key is
+     pressed)
  *
  * @return {Charts.StringFilterBuilder} this builder, useful for chaining
  */
@@ -3063,15 +2917,15 @@ Charts.TableChartBuilder = function(){};
 /**
  * Builds the chart.
  *
- * @return {Charts.Chart} a Chart object, which can be embedded into documents, UI elements, or used as a
- static image
+ * @return {Charts.Chart} a Chart object, which can be embedded into documents, UI elements, or used as a static
+     image
  */
 Charts.TableChartBuilder.prototype.build = function(){};
 
 /**
  * Sets whether to enable paging through the data.
- <p>
- The default behavior is paging disabled. If paging is enabled the default page size is 10.
+
+ <p>The default behavior is paging disabled. If paging is enabled the default page size is 10.
  *
  * @param {Boolean} enablePaging - true if paging should be enabled, false otherwise
  *
@@ -3081,11 +2935,10 @@ Charts.TableChartBuilder.prototype.enablePaging = function(enablePaging){};
 
 /**
  * Enables paging and sets the number of rows in each page.
- <p>
- The default page size is 10.
 
- <pre class="prettyprint">
- <code>
+ <p>The default page size is 10.
+
+ <pre class="prettyprint"><code>
  // Creates a table chart builder and enables paging with page size of 5.
  var builder = Charts.newTableChart();
  builder.enablePaging(5);
@@ -3098,16 +2951,15 @@ Charts.TableChartBuilder.prototype.enablePaging = function(enablePaging){};
 Charts.TableChartBuilder.prototype.enablePaging = function(pageSize){};
 
 /**
- * Adds basic support for right-to-left languages (such as Arabic or Hebrew) by reversing
- the column order of the table, so that column zero is the right-most column, and the last
- column is the left-most column.
- <p>
- This does not affect the column index in the underlying data, only the order of display.
- Full bi-directional (BiDi) language display is not supported by
- the table visualization even with this option. This option will be ignored if you enable
- paging (using the page option), or if the table has scroll bars because you have specified
- height and width options smaller than the required table size.
- The default behavior is RTL support disabled.
+ * Adds basic support for right-to-left languages (such as Arabic or Hebrew) by reversing the
+ column order of the table, so that column zero is the right-most column, and the last column is
+ the left-most column.
+
+ <p>This does not affect the column index in the underlying data, only the order of display.
+ Full bi-directional (BiDi) language display is not supported by the table visualization even
+ with this option. This option will be ignored if you enable paging (using the page option), or
+ if the table has scroll bars because you have specified height and width options smaller than
+ the required table size. The default behavior is RTL support disabled.
  *
  * @param {Boolean} rtlEnabled - true if right-to-left support should be enabled, false otherwise
  *
@@ -3117,24 +2969,23 @@ Charts.TableChartBuilder.prototype.enableRtlTable = function(rtlEnabled){};
 
 /**
  * Sets whether to sort columns when the user clicks a column heading.
- <p>
- If sorting is enabled, when users click on the column header the rows will be automatically
+
+ <p>If sorting is enabled, when users click on the column header the rows will be automatically
  sorted. The default behavior is sorting enabled.
  *
- * @param {Boolean} enableSorting - true if to enable sorting by clicking on column headers,
-     false otherwise
+ * @param {Boolean} enableSorting - true if to enable sorting by clicking on column headers, false otherwise
  *
  * @return {Charts.TableChartBuilder} this builder, useful for chaining
  */
 Charts.TableChartBuilder.prototype.enableSorting = function(enableSorting){};
 
 /**
- * Sets the data source URL that will be used to pull data in from an
- external source, such as Google Sheets.
- If a data source URL and a DataTable are provided, the data source URL is ignored.
+ * Sets the data source URL that will be used to pull data in from an external source, such as
+ Google Sheets. If a data source URL and a DataTable are provided, the data source URL is
+ ignored.
 
- For more information about querying data sources, check out the 
- <a href="/chart/interactive/docs/queries">Google Charts documentation</a>.
+ <p>For more information about querying data sources, check out the <a
+ href="/chart/interactive/docs/queries">Google Charts documentation</a>.
  *
  * @param {String} url - the data source URL, including any query parameters
  *
@@ -3143,11 +2994,11 @@ Charts.TableChartBuilder.prototype.enableSorting = function(enableSorting){};
 Charts.TableChartBuilder.prototype.setDataSourceUrl = function(url){};
 
 /**
- * Sets the data table to use for the chart using a DataTableBuilder.  This is a convenience
- method for setting the data table without needing to call <code>build()</code>.
+ * Sets the data table to use for the chart using a DataTableBuilder. This is a convenience method
+ for setting the data table without needing to call <code>build()</code>.
  *
- * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part
-     of this call, so any further updates to the builder won't be reflected in the chart.
+ * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part of
+     this call, so any further updates to the builder won't be reflected in the chart.
  *
  * @return {Charts.TableChartBuilder} this builder, useful for chaining
  */
@@ -3175,11 +3026,10 @@ Charts.TableChartBuilder.prototype.setDimensions = function(width, height){};
 
 /**
  * Sets the row number for the first row in the data table.
- <p>
- The default row number of the first row is 1.
 
- <pre class="prettyprint">
- <code>
+ <p>The default row number of the first row is 1.
+
+ <pre class="prettyprint"><code>
  // Creates a table chart builder and sets the first row to be 2.
  var builder = Charts.newTableChart();
  builder.setFirstRowNumber(2);
@@ -3194,19 +3044,17 @@ Charts.TableChartBuilder.prototype.setFirstRowNumber = function(number){};
 /**
  * Sets the index of the column according to which the table should be initially sorted
  (ascending).
- <p>
- The column will be sorted in ascending order and will be marked with a small arrow
+
+ <p>The column will be sorted in ascending order and will be marked with a small arrow
  indicating that.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a table chart builder and sorts it by the second column (ascending).
  var builder = Charts.newTableChart();
  builder.setInitialSortingAscending(2);
  </code></pre>
  *
- * @param {number} column - the number of the column according to which the table should be
-     initially sorted
+ * @param {number} column - the number of the column according to which the table should be initially sorted
  *
  * @return {Charts.TableChartBuilder} this builder, useful for chaining
  */
@@ -3215,36 +3063,30 @@ Charts.TableChartBuilder.prototype.setInitialSortingAscending = function(column)
 /**
  * Sets the index of the column according to which the table should be initially sorted
  (descending).
- <p>
- The column will be sorted in descending order and be marked with a a small arrow
- indicating that.
 
- <pre class="prettyprint">
- <code>
+ <p>The column will be sorted in descending order and be marked with a a small arrow indicating
+ that.
+
+ <pre class="prettyprint"><code>
  // Creates a table chart builder and sorts it by the second column (descending).
  var builder = Charts.newTableChart();
  builder.setInitialSortingDescending(2);
  </code></pre>
  *
- * @param {number} column - the number of the column according to which the table should be
-     initially sorted
+ * @param {number} column - the number of the column according to which the table should be initially sorted
  *
  * @return {Charts.TableChartBuilder} this builder, useful for chaining
  */
 Charts.TableChartBuilder.prototype.setInitialSortingDescending = function(column){};
 
 /**
- * <p>Sets advanced options for this chart. See
- <a href="/chart/interactive/docs/gallery/table">the available options for this chart</a>.
- This method has no effect if the given option is invalid.
+ * Sets advanced options for this chart. See <a href="/chart/interactive/docs/gallery/table">the available options for
+ this chart</a>. This method has no effect if the given option is invalid.
 
- 
-
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Build a table chart which renders HTML.
  var builder = Charts.newTableChart();
- builder.setOption(&#39;allowHtml&#39;, true); 
+ builder.setOption(&#39;allowHtml&#39;, true);
  var chart = builder.build();
  </code></pre>
  *
@@ -3257,21 +3099,20 @@ Charts.TableChartBuilder.prototype.setOption = function(option, value){};
 
 /**
  * Sets whether to show the row number as the first column of the table.
- <p>
- The default behavior is not showing row numbers.
+
+ <p>The default behavior is not showing row numbers.
  *
- * @param {Boolean} showRowNumber - true if the first column of the table should show the row number,
-     false otherwise
+ * @param {Boolean} showRowNumber - true if the first column of the table should show the row number, false
+     otherwise
  *
  * @return {Charts.TableChartBuilder} this builder, useful for chaining
  */
 Charts.TableChartBuilder.prototype.showRowNumberColumn = function(showRowNumber){};
 
 /**
- * Sets whether alternating color style will be assigned to odd and even rows of a table
- chart.
- <p>
- The default behavior is the rows having alternating color style.
+ * Sets whether alternating color style will be assigned to odd and even rows of a table chart.
+
+ <p>The default behavior is the rows having alternating color style.
  *
  * @param {Boolean} alternate - true if color styles should be alternating, false otherwise
  *
@@ -3285,8 +3126,7 @@ Charts.TextStyle = function(){};
 /**
  * Gets the color of the text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a new text style that uses blue text and logs the color.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).build();
  Logger.log(textStyle.getColor());
@@ -3299,8 +3139,7 @@ Charts.TextStyle.prototype.getColor = function(){};
 /**
  * Gets the font name of the text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a new text style that uses Ariel font and logs the font name.
  var textStyle = Charts.newTextStyle().setFontName(&#39;Ariel&#39;).build();
  Logger.log(textStyle.getFontName());
@@ -3313,8 +3152,7 @@ Charts.TextStyle.prototype.getFontName = function(){};
 /**
  * Gets the font size of the text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a new text style that uses 18 pixel font size and logs the font size.
  var textStyle = Charts.newTextStyle().setFontSize(18).build();
  Logger.log(textStyle.getFontSize());
@@ -3330,8 +3168,7 @@ Charts.TextStyleBuilder = function(){};
 /**
  * Builds and returns a text style configuration object that was built using this builder.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a new text style that uses 26-point blue font.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -3344,8 +3181,7 @@ Charts.TextStyleBuilder.prototype.build = function(){};
 /**
  * Sets the color of the text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a new text style that uses blue font.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;);
  var style = textStyleBuilder.build();
@@ -3360,8 +3196,7 @@ Charts.TextStyleBuilder.prototype.setColor = function(cssValue){};
 /**
  * Sets the font name of the text style
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a new text style that uses Ariel font.
  var textStyleBuilder = Charts.newTextStyle().setFontName(&#39;Ariel&#39;);
  var style = textStyleBuilder.build();
@@ -3376,8 +3211,7 @@ Charts.TextStyleBuilder.prototype.setFontName = function(fontName){};
 /**
  * Sets the font size of the text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a new text style that uses 26-point font.
  var textStyleBuilder = Charts.newTextStyle().setFontSize(26);
  var style = textStyleBuilder.build();

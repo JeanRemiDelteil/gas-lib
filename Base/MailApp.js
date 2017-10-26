@@ -2,15 +2,13 @@ var MailApp = {};
 
 
 /**
- * Returns the number of remaining emails a user can send for the rest of
- the day.
+ * Returns the number of remaining emails a user can send for the rest of the day.
 
- Quotas are based on the number of email recipients. Specific quota information is available on
- the quota tab of the <a href="https://script.google.com/dashboard">Apps Script
+ <p>Quotas are based on the number of email recipients. Specific quota information is available
+ on the quota tab of the <a href="https://script.google.com/dashboard">Apps Script
  dashboard</a>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var emailQuotaRemaining = MailApp.getRemainingDailyQuota();
  Logger.log(&quot;Remaining email quota: &quot; + emailQuotaRemaining);
  </code></pre>
@@ -20,11 +18,10 @@ var MailApp = {};
 MailApp.getRemainingDailyQuota = function(){};
 
 /**
- * Sends an email message. This variation of the method is much more flexible,
- allowing for many more options.
+ * Sends an email message. This variation of the method is much more flexible, allowing for many
+ more options.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This code fetches the Google and YouTube logos, inlines them in an email
  // and sends the email
  function inlineImage() {
@@ -62,8 +59,7 @@ MailApp.sendEmail = function(message){};
 /**
  * Sends an email message.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  MailApp.sendEmail(&quot;recipient@example.com&quot;,
                    &quot;TPS reports&quot;,
                    &quot;Where are the TPS reports?&quot;);
@@ -80,8 +76,7 @@ MailApp.sendEmail = function(recipient, subject, body){};
 /**
  * Sends an email message with optional arguments.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Send an email with two attachments: a file from Google Drive (as a PDF) and an HTML file.
  var file = DriveApp.getFileById(&#39;1234567890abcdefghijklmnopqrstuvwxyz&#39;);
  var blob = Utilities.newBlob(&#39;Insert any HTML content here&#39;, &#39;text/html&#39;, &#39;my_document.html&#39;);

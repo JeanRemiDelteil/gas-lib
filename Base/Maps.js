@@ -3,21 +3,20 @@ var Maps = {};
 
 /**
  * 
-
+ * 
+ * @class Maps.DirectionFinderEnums
  */
-Maps.DirectionFinderEnums = function(){};
 
 /**
  * 
-
+ * 
+ * @class Maps.StaticMapEnums
  */
-Maps.StaticMapEnums = function(){};
 
 /**
  * Decodes an encoded polyline string back into an array of points.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Decodes a string representation of the latitudes and longitudes of Minneapolis and Milwaukee
  // respectively.
  var polyline = &#39;qvkpG`qhxPbgyI_zq_@&#39;;
@@ -36,8 +35,7 @@ Maps.decodePolyline = function(polyline){};
 /**
  * Encodes an array of points into a string.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // The latitudes and longitudes of New York and Boston respectively.
  var points = [40.77, -73.97, 42.34, -71.04];
  var polyline = Maps.encodePolyline(points);
@@ -79,12 +77,11 @@ Maps.newStaticMap = function(){};
 
 /**
  * Enables the use of an externally established Maps API for Business account, to leverage
- additional quota allowances. Your client ID and signing key can be obtained from the
- Google Enterprise Support Portal. Set these values to null to go back to using the default
- quota allowances.
+ additional quota allowances. Your client ID and signing key can be obtained from the Google
+ Enterprise Support Portal. Set these values to null to go back to using the default quota
+ allowances.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  Maps.setAuthentication(&#39;gme-123456789&#39;, &#39;VhSEZvOXVSdnlxTnpJcUE&#39;);
  </code></pre>
  *
@@ -110,8 +107,7 @@ Maps.ElevationSampler = function(){};
 /**
  * Returns elevation data for a single point (lat/lng).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Gets the elevation of Times Square using a point.
  var data = Maps.newElevationSampler().sampleLocation(40.759011, -73.984472);
  Logger.log(data.results[0].elevation);
@@ -120,16 +116,15 @@ Maps.ElevationSampler = function(){};
  * @param {Number} latitude - the latitude of the point to sample
  * @param {Number} longitude - the longitude of the point to sample
  *
- * @return {Object} a JSON Object containing the elevation data, as described
-     <a href="/maps/documentation/elevation/#ElevationResponses">here</a>
+ * @return {Object} a JSON Object containing the elevation data, as described <a
+     href="/maps/documentation/elevation/#ElevationResponses">here</a>
  */
 Maps.ElevationSampler.prototype.sampleLocation = function(latitude, longitude){};
 
 /**
  * Returns elevation data for a series of points (lat/lng).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Gets the elevation of Times Square and Central Park using points.
  var data = Maps.newElevationSampler().sampleLocations([
      // Times Square
@@ -143,16 +138,15 @@ Maps.ElevationSampler.prototype.sampleLocation = function(latitude, longitude){}
  *
  * @param {Number[]} points - an array of latitude/longitude pairs
  *
- * @return {Object} a JSON Object containing the elevation data, as described
-     <a href="/maps/documentation/elevation/#ElevationResponses">here</a>
+ * @return {Object} a JSON Object containing the elevation data, as described <a
+     href="/maps/documentation/elevation/#ElevationResponses">here</a>
  */
 Maps.ElevationSampler.prototype.sampleLocations = function(points){};
 
 /**
  * Returns elevation data for a number of samples along a line, defined using a series of points.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Gets the elevation of five points between Times Square and Central Park.
  var data = Maps.newElevationSampler().samplePath([
      // Times Square
@@ -168,8 +162,8 @@ Maps.ElevationSampler.prototype.sampleLocations = function(points){};
  * @param {Number[]} points - an array of latitude/longitude pairs defining a path to sample over
  * @param {number} numSamples - the number of points to sample along the path of points
  *
- * @return {Object} a JSON Object containing the elevation data, as described
-     <a href="/maps/documentation/elevation/#ElevationResponses">here</a>
+ * @return {Object} a JSON Object containing the elevation data, as described <a
+     href="/maps/documentation/elevation/#ElevationResponses">here</a>
  */
 Maps.ElevationSampler.prototype.samplePath = function(points, numSamples){};
 
@@ -182,8 +176,7 @@ Maps.Geocoder = function(){};
 /**
  * Gets the approximate geographic points for a given address.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Gets the geographic coordinates for Times Square.
  var response = Maps.newGeocoder().geocode(&#39;Times Square, New York, NY&#39;);
  for (var i = 0; i &lt; response.results.length; i++) {
@@ -195,16 +188,15 @@ Maps.Geocoder = function(){};
  *
  * @param {String} address - an address
  *
- * @return {Object} a JSON Object containing the geocoding data, as described
-     <a href="/maps/documentation/geocoding/#JSON">here</a>
+ * @return {Object} a JSON Object containing the geocoding data, as described <a
+     href="/maps/documentation/geocoding/#JSON">here</a>
  */
 Maps.Geocoder.prototype.geocode = function(address){};
 
 /**
  * Gets the approximate addresses for a given geographic point.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Gets the address of a point in Times Square.
  var response = Maps.newGeocoder().reverseGeocode(40.758577, -73.984464);
  for (var i = 0; i &lt; response.results.length; i++) {
@@ -217,16 +209,15 @@ Maps.Geocoder.prototype.geocode = function(address){};
  * @param {Number} latitude - the latitude of the point
  * @param {Number} longitude - the longitude of the point
  *
- * @return {Object} a JSON Object containing the reverse geocoding data, as described
-     <a href="/maps/documentation/geocoding/#ReverseGeocoding">here</a>
+ * @return {Object} a JSON Object containing the reverse geocoding data, as described <a
+     href="/maps/documentation/geocoding/#ReverseGeocoding">here</a>
  */
 Maps.Geocoder.prototype.reverseGeocode = function(latitude, longitude){};
 
 /**
  * Sets the bounds of an area that should be given extra preference in the results.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a Geocoder that prefers points in the area of Manhattan.
  var geocoder = Maps.newGeocoder()
      .setBounds(40.699642, -74.021072, 40.877569, -73.908548);
@@ -244,8 +235,7 @@ Maps.Geocoder.prototype.setBounds = function(swLatitude, swLongitude, neLatitude
 /**
  * Sets the language to be used in the results.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a Geocoder with the language set to French.
  var geocoder = Maps.newGeocoder().setLanguage(&#39;fr&#39;);
  </code></pre>
@@ -257,12 +247,11 @@ Maps.Geocoder.prototype.setBounds = function(swLatitude, swLongitude, neLatitude
 Maps.Geocoder.prototype.setLanguage = function(language){};
 
 /**
- * Sets a region to use when interpreting location names. The supported region codes correspond
- to the ccTLDs supported by Google Maps. For example, the region code "uk" corresponds to
+ * Sets a region to use when interpreting location names. The supported region codes correspond to
+ the ccTLDs supported by Google Maps. For example, the region code "uk" corresponds to
  "maps.google.co.uk".
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a Geocoder with the region set to France.
  var geocoder = Maps.newGeocoder().setRegion(&#39;fr&#39;);
  </code></pre>

@@ -29,8 +29,8 @@ Logger.clear = function(){};
 Logger.getLog = function(){};
 
 /**
- * Writes the string to the logging console. To view the logged output, select
- <strong>View > Show logs</strong>. This can be very useful for debugging scripts.
+ * Writes the string to the logging console. To view the logged output, select <strong>View > Show
+ logs</strong>. This can be very useful for debugging scripts.
  *
  * @param {Object} data - the message to log
  *

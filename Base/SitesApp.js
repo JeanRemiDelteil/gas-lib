@@ -3,78 +3,68 @@ var SitesApp = {};
 
 /**
  * 
-
+ * 
+ * @class SitesApp.AttachmentType
  */
-SitesApp.AttachmentType = function(){};
+
+/**
+ * @typedef {SitesApp.AttachmentType} SitesApp.AttachmentType.HOSTED
+ * 
+ * 
+ */
+
+/**
+ * @typedef {SitesApp.AttachmentType} SitesApp.AttachmentType.WEB
+ * 
+ * 
+ */
 
 /**
  * 
- *
- * @type {{}}
+ * 
+ * @class SitesApp.PageType
  */
-SitesApp.AttachmentType.prototype.HOSTED = {};
 
 /**
+ * @typedef {SitesApp.PageType} SitesApp.PageType.ANNOUNCEMENT
  * 
- *
- * @type {{}}
+ * 
  */
-SitesApp.AttachmentType.prototype.WEB = {};
 
 /**
+ * @typedef {SitesApp.PageType} SitesApp.PageType.ANNOUNCEMENTS_PAGE
  * 
-
- */
-SitesApp.PageType = function(){};
-
-/**
  * 
- *
- * @type {{}}
  */
-SitesApp.PageType.prototype.ANNOUNCEMENT = {};
 
 /**
+ * @typedef {SitesApp.PageType} SitesApp.PageType.FILE_CABINET_PAGE
  * 
- *
- * @type {{}}
+ * 
  */
-SitesApp.PageType.prototype.ANNOUNCEMENTS_PAGE = {};
 
 /**
+ * @typedef {SitesApp.PageType} SitesApp.PageType.LIST_PAGE
  * 
- *
- * @type {{}}
+ * 
  */
-SitesApp.PageType.prototype.FILE_CABINET_PAGE = {};
 
 /**
+ * @typedef {SitesApp.PageType} SitesApp.PageType.WEB_PAGE
  * 
- *
- * @type {{}}
- */
-SitesApp.PageType.prototype.LIST_PAGE = {};
-
-/**
  * 
- *
- * @type {{}}
  */
-SitesApp.PageType.prototype.WEB_PAGE = {};
 
 /**
  * Creates a new Site by copying an existing Site.
 
- Warning: Copying a site takes time, from seconds to possibly many minutes,
- depending on the size of the site. Although the method returns right away,
- the copy is still going on in the background, and not all pages in the
- copied site will be immediately available. This method can also be used to
- instantiate a new site based on a given template.
+ <p>Warning: Copying a site takes time, from seconds to possibly many minutes, depending on the
+ size of the site. Although the method returns right away, the copy is still going on in the
+ background, and not all pages in the copied site will be immediately available. This method can
+ also be used to instantiate a new site based on a given template.
 
-
- <pre class="prettyprint">
- <code>
- // This creates a site. Note that this only works for Google Apps domains.
+ <pre class="prettyprint"><code>
+ // This creates a site. Note that this only works for G Suite domains.
  // There is no version of this API for consumer accounts.
  var site = SitesApp.createSite(&quot;example.com&quot;,
                                 &quot;homepage&quot;,
@@ -88,27 +78,24 @@ SitesApp.PageType.prototype.WEB_PAGE = {};
                                   site);
  </code></pre>
  *
- * @param {String} domain - The Google Apps hosted domain (e.g. example.com)
+ * @param {String} domain - The G Suite hosted domain (e.g. example.com)
  * @param {String} name - The webspace name found in the URL (e.g. mySite)
  * @param {String} title - The title of the site
  * @param {String} summary - The description of the site
- * @param {SitesApp.Site} site - The Site to copy from. This can either be a site or a template.
-             If the parameter is an existing site then the entire contents
-             of the site will be copied. If the given Site is a template,
-             then a new Site is created based on that template.
+ * @param {SitesApp.Site} site - The Site to copy from. This can either be a site or a template. If the parameter is
+     an existing site then the entire contents of the site will be copied. If the given Site is
+     a template, then a new Site is created based on that template.
  *
- * @return {SitesApp.Site} The site that was copied. Note that the copy is asynchronous, and
-         the copy operation may still be ongoing even though a reference to
-         the site has been returned.
+ * @return {SitesApp.Site} The site that was copied. Note that the copy is asynchronous, and the copy operation
+     may still be ongoing even though a reference to the site has been returned.
  */
 SitesApp.copySite = function(domain, name, title, summary, site){};
 
 /**
  * Creates a new Site.
 
- <pre class="prettyprint">
- <code>
- // This creates a site. Note that this only works for Google Apps domains.
+ <pre class="prettyprint"><code>
+ // This creates a site. Note that this only works for G Suite domains.
  // There is no version of this API for consumer accounts.
  var site = SitesApp.createSite(&quot;example.com&quot;,
                                 &quot;homepage&quot;,
@@ -116,7 +103,7 @@ SitesApp.copySite = function(domain, name, title, summary, site){};
                                 &quot;This is a new site I created!&quot;);
  </code></pre>
  *
- * @param {String} domain - The Google Apps hosted domain (e.g. example.com)
+ * @param {String} domain - The G Suite hosted domain (e.g. example.com)
  * @param {String} name - the path name found in the URL (e.g. mySite)
  * @param {String} title - The title of the site
  * @param {String} summary - The description of the site
@@ -128,8 +115,7 @@ SitesApp.createSite = function(domain, name, title, summary){};
 /**
  * Returns the active page, if the script is hosted in a container, or null otherwise.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getActivePage();
  </code></pre>
  *
@@ -140,8 +126,7 @@ SitesApp.getActivePage = function(){};
 /**
  * Returns the active container, if the script is hosted in a container, or null otherwise.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getActiveSite();
  </code></pre>
  *
@@ -152,9 +137,8 @@ SitesApp.getActiveSite = function(){};
 /**
  * Retrieves first page of Sites belonging to this domain.
 
- <pre class="prettyprint">
- <code>
- // This writes the first page of sites belonging to a Google Apps
+ <pre class="prettyprint"><code>
+ // This writes the first page of sites belonging to a G Suite
  // domain to the log.
  var sites = SitesApp.getAllSites(&quot;example.com&quot;);
  for(var i in sites) {
@@ -162,7 +146,7 @@ SitesApp.getActiveSite = function(){};
  }
  </code></pre>
  *
- * @param {String} domain - The Google Apps hosted domain (e.g. example.com)
+ * @param {String} domain - The G Suite hosted domain (e.g. example.com)
  *
  * @return {SitesApp.Site[]} an array of sites belonging to the domain
  */
@@ -171,8 +155,7 @@ SitesApp.getAllSites = function(domain){};
 /**
  * Retrieves a Page by url.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This snippet retrieves the page at the given URL.
  // Throws an Invalid argument exception if the page does not exist or if
  // the URL given is invalid
@@ -188,11 +171,10 @@ SitesApp.getAllSites = function(domain){};
 SitesApp.getPageByUrl = function(url){};
 
 /**
- * Retrieves a Site for the given Google Site, if the user is a consumer
- who does not have a hosted domain.
+ * Retrieves a Site for the given Google Site, if the user is a consumer who does not have a
+ hosted domain.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Returns a Site instance
  var site = SitesApp.getSite(&#39;mysite&#39;);
  </code></pre>
@@ -206,8 +188,7 @@ SitesApp.getSite = function(name){};
 /**
  * Retrieves a Site by url.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This snippet retrieves the site at the given URL
  // Throws an Invalid argument exception if the site does not exist or if
  // the URL given is invalid
@@ -222,11 +203,10 @@ SitesApp.getSite = function(name){};
 SitesApp.getSiteByUrl = function(url){};
 
 /**
- * Retrieves first page of Sites for a user, if the user is a consumer
- who does not have a hosted domain.
+ * Retrieves first page of Sites for a user, if the user is a consumer who does not have a hosted
+ domain.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This writes the first page of sites owned by the user running
  // the script to the log.
  var sites = SitesApp.getSites();
@@ -240,11 +220,10 @@ SitesApp.getSiteByUrl = function(url){};
 SitesApp.getSites = function(){};
 
 /**
- * Retrieves Sites for a user between the given bounds if the user is a
- consumer who does not have a hosted domain.
+ * Retrieves Sites for a user between the given bounds if the user is a consumer who does not have
+ a hosted domain.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var sites = SitesApp.getSites(25, 50);
  for(var i in sites) {
    Logger.log(sites[i].getUrl());
@@ -261,8 +240,7 @@ SitesApp.getSites = function(start, max){};
 /**
  * Retrieves first page of Sites belonging to this user in this domain.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This writes the first page of sites owned by the user running
  // the script to the log.
  var sites = SitesApp.getSites(&quot;example.com&quot;);
@@ -271,7 +249,7 @@ SitesApp.getSites = function(start, max){};
  }
  </code></pre>
  *
- * @param {String} domain - The Google Apps hosted domain (e.g. example.com)
+ * @param {String} domain - The G Suite hosted domain (e.g. example.com)
  *
  * @return {SitesApp.Site[]} An array of sites beloning to the user running the script
  */
@@ -283,8 +261,7 @@ SitesApp.Attachment = function(){};
 /**
  * Deletes this attachment.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var pages = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildren();
  var attachments = pages[0].getAttachments();
  attachments[0].deleteAttachment();
@@ -296,15 +273,14 @@ SitesApp.Attachment.prototype.deleteAttachment = function(){};
 
 /**
  * Return the data inside this object as a blob converted to the specified content type. This
- method adds the appropriate extension to the filename ? for example, "myfile.pdf". However, it
+ method adds the appropriate extension to the filename — for example, "myfile.pdf". However, it
  assumes that the part of the filename that follows the last period (if any) is an existing
  extension that should be replaced. Consequently, "ChristmasList.12.25.2014" will become
  "ChristmasList.12.25.pdf".
  *
- * @param {String} contentType - the MIME type to convert to. For most blobs,
-     <code>&#39;application/pdf&#39;</code> is the only valid option. For images in BMP, GIF, JPEG,
-     or PNG format, any of <code>&#39;image/bmp&#39;</code>, <code>&#39;image/gif&#39;</code>,
-     <code>&#39;image/jpeg&#39;</code>, or <code>&#39;image/png&#39;</code> are also valid.
+ * @param {String} contentType - the MIME type to convert to. For most blobs, <code>&#39;application/pdf&#39;</code> is
+     the only valid option. For images in BMP, GIF, JPEG, or PNG format, any of <code>&#39;image/bmp&#39;</code>, <code>&#39;image/gif&#39;</code>, <code>&#39;image/jpeg&#39;</code>, or <code>&#39;image/png&#39;</code> are also
+     valid.
  *
  * @return {Blob} the data as a blob
  */
@@ -313,22 +289,21 @@ SitesApp.Attachment.prototype.getAs = function(contentType){};
 /**
  * Return the type of this attachment (HOSTED or WEB).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var pages = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildren();
  var attachments = pages[0].getAttachments();
  var attType = attachments[0].getAttachmentType();
-    
+
  // This will log &quot;Hosted&quot;
  Logger.log(attType);
- 
- // Since this returns an AttachmentType and not a String, for the 
+
+ // Since this returns an AttachmentType and not a String, for the
  // purposes of equivalence we want to either do this or cast the
  // type to a String
  if(attType ==  SitesService.AttachmentType.HOSTED) {
    Logger.log(&quot;This is a match&quot;);
  }
- 
+
  // The above is the same as
  if(String(attType) == &quot;Hosted&quot;) {
     Logger.log(&quot;This is also a match&quot;);
@@ -349,8 +324,7 @@ SitesApp.Attachment.prototype.getBlob = function(){};
 /**
  * Return the mime type of this attachment. Fails for web attachments.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var pages = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildren();
  var attachments = pages[0].getAttachments();
  var contentType = attachments[0].getContentType();
@@ -362,9 +336,8 @@ SitesApp.Attachment.prototype.getContentType = function(){};
 
 /**
  * Return the date this attachment was first published.
- 
- <pre class="prettyprint">
- <code>
+
+ <pre class="prettyprint"><code>
  var pages = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildren();
  var attachments = pages[0].getAttachments();
  var date = attachments[0].getDatePublished();
@@ -377,8 +350,7 @@ SitesApp.Attachment.prototype.getDatePublished = function(){};
 /**
  * Return the description of this attachment.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var pages = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildren();
  var attachments = pages[0].getAttachments();
  var description = attachments[0].getDescription();
@@ -391,8 +363,7 @@ SitesApp.Attachment.prototype.getDescription = function(){};
 /**
  * Return the date this attachment was last updated.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var pages = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildren();
  var attachments = pages[0].getAttachments();
  var date = attachments[0].getLastUpdated();
@@ -405,8 +376,7 @@ SitesApp.Attachment.prototype.getLastUpdated = function(){};
 /**
  * Get the parent page of this attachment.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var pages = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildren();
  var attachments = pages[0].getAttachments();
 
@@ -420,9 +390,8 @@ SitesApp.Attachment.prototype.getParent = function(){};
 
 /**
  * Return the title of this attachment.
- 
- <pre class="prettyprint">
- <code>
+
+ <pre class="prettyprint"><code>
  var pages = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildren();
  var attachments = pages[0].getAttachments();
  var title = attachments[0].getTitle();
@@ -435,8 +404,7 @@ SitesApp.Attachment.prototype.getTitle = function(){};
 /**
  * Return the download url for this attachment.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var pages = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildren();
  var attachments = pages[0].getAttachments();
  var url = attachments[0].getUrl();
@@ -449,8 +417,7 @@ SitesApp.Attachment.prototype.getUrl = function(){};
 /**
  * Set the mime type of this attachment. Fails for web attachments.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var pages = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildren();
  var attachments = pages[0].getAttachments();
  attachments[0].setContentType(&quot;text/plain&quot;);
@@ -464,9 +431,8 @@ SitesApp.Attachment.prototype.setContentType = function(contentType){};
 
 /**
  * Set the descripton of this attachment.
- 
- <pre class="prettyprint">
- <code>
+
+ <pre class="prettyprint"><code>
  var pages = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildren();
  var attachments = pages[0].getAttachments();
 
@@ -484,16 +450,15 @@ SitesApp.Attachment.prototype.setDescription = function(description){};
 /**
  * Set the actual data of this attachment. Fails for web attachments.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var pages = SitesApp.getSite(&#39;demositeappsscript&#39;).getChildren();
  var attachments = pages[0].getAttachments();
-   
+
  // This snippet demonstrates how to create a new text blob and attach it
  // to the page
  var blob = Utilities.newBlob(&quot;This data is now the attachment content&quot;);
-   
- // We must set a filename since we created the blob from String data 
+
+ // We must set a filename since we created the blob from String data
  // instead of something like a URL source
  blob.setName(&quot;attachment.txt&quot;);
  attachments[0].setTitle(&quot;New Title&quot;)
@@ -511,11 +476,10 @@ SitesApp.Attachment.prototype.setFrom = function(blob){};
 /**
  * Set the parent page of this attachment.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var pages = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildren();
  var attachments = pages[0].getAttachments();
- // Sets the parent page to be the next sibling 
+ // Sets the parent page to be the next sibling
  attachments[0].setParent(pages[1]);
  </code></pre>
  *
@@ -528,8 +492,7 @@ SitesApp.Attachment.prototype.setParent = function(parent){};
 /**
  * Set the title of this attachment.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var pages = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildren();
  var attachments = pages[0].getAttachments();
 
@@ -546,12 +509,11 @@ SitesApp.Attachment.prototype.setTitle = function(title){};
 
 /**
  * Sets the download url for this attachment. Only valid for web attachments.
- 
- <pre class="prettyprint">
- <code>
+
+ <pre class="prettyprint"><code>
  var pages = SitesApp.getSite(&#39;demositeappsscript&#39;).getChildren();
  var attachments = pages[0].getAttachments();
-   
+
  attachments[0].setTitle(&quot;New Web Attachment&quot;)
                .setDescription(&quot;New Description&quot;)
                .setUrl(&quot;http://example.com/files/your_file.txt&quot;);
@@ -569,8 +531,7 @@ SitesApp.Column = function(){};
 /**
  * Deletes this column.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var page = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildByName(&#39;mylistpage&#39;);
  var columns = page.getColumns();
  columns[0].deleteColumn();
@@ -583,8 +544,7 @@ SitesApp.Column.prototype.deleteColumn = function(){};
 /**
  * Gets the name of this column.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var page = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildByName(&#39;mylistpage&#39;);
  var columns = page.getColumns();
  var name = columns[0].getName();
@@ -597,8 +557,7 @@ SitesApp.Column.prototype.getName = function(){};
 /**
  * Returns the List Page this column belongs to.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var page = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildByName(&#39;mylistpage&#39;);
  var columns = page.getColumns();
 
@@ -612,9 +571,8 @@ SitesApp.Column.prototype.getParent = function(){};
 
 /**
  * Sets the name of this column.
- 
- <pre class="prettyprint">
- <code>
+
+ <pre class="prettyprint"><code>
  var page = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildByName(&#39;mylistpage&#39;);
  var columns = page.getColumns();
  columns[0].setName(&quot;New Name&quot;);
@@ -632,8 +590,7 @@ SitesApp.Comment = function(){};
 /**
  * Deletes this comment.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var pages = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildren();
  var comments = pages[0].getComments();
 
@@ -659,8 +616,7 @@ SitesApp.Comment.prototype.getAuthorEmail = function(){};
 /**
  * Gets the name of the author of this comment.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var pages = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildren();
  var comments = pages[0].getComments();
  var comment = comments[0];
@@ -674,8 +630,7 @@ SitesApp.Comment.prototype.getAuthorName = function(){};
 /**
  * Return the content of this comment as a String.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var pages = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildren();
  var comments = pages[0].getComments();
  var content = comments[0].getContent()
@@ -688,8 +643,7 @@ SitesApp.Comment.prototype.getContent = function(){};
 /**
  * Return the date this comment was originally published.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var pages = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildren();
  var comments = pages[0].getComments();
  var date = comments[0].getDatePublished();
@@ -702,8 +656,7 @@ SitesApp.Comment.prototype.getDatePublished = function(){};
 /**
  * Return the date this comment was last updated.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var pages = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildren();
  var comments = pages[0].getComments();
  var date = comments[0].getLastUpdated();
@@ -716,8 +669,7 @@ SitesApp.Comment.prototype.getLastUpdated = function(){};
 /**
  * Get the parent page of this comment.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var pages = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildren();
  var comments = pages[0].getComments();
  var comment = comments[0];
@@ -733,8 +685,7 @@ SitesApp.Comment.prototype.getParent = function(){};
 /**
  * Set the content of this comment.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var pages = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildren();
  var comments = pages[0].getComments();
  var comment = comments[0];
@@ -754,8 +705,7 @@ SitesApp.Comment.prototype.setContent = function(content){};
 /**
  * Set the parent page of this comment.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var pages = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildren();
  var comments = pages[0].getComments();
  var comment = comments[0];
@@ -776,9 +726,8 @@ SitesApp.ListItem = function(){};
 
 /**
  * Deletes this list item.
- 
- <pre class="prettyprint">
- <code>
+
+ <pre class="prettyprint"><code>
  // This code sample deletes all list items from a List page
  // Running this code sample against a Page that is a standard web page will
  // cause getListItems() to throw an exception
@@ -795,10 +744,9 @@ SitesApp.ListItem.prototype.deleteListItem = function(){};
 
 /**
  * Return the date this list item was first published.
- 
- <pre class="prettyprint">
- <code>
- var page = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildByName(&#39;mylistpage&#39;);  
+
+ <pre class="prettyprint"><code>
+ var page = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildByName(&#39;mylistpage&#39;);
  var items = page.getListItems();
  var date = items[0].getDatePublished();
  </code></pre>
@@ -810,9 +758,8 @@ SitesApp.ListItem.prototype.getDatePublished = function(){};
 /**
  * Return the date this comment was last updated.
 
- <pre class="prettyprint">
- <code>
- var page = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildByName(&#39;mylistpage&#39;);  
+ <pre class="prettyprint"><code>
+ var page = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildByName(&#39;mylistpage&#39;);
  var items = page.getListItems();
  var date = items[0].getLastUpdated();
  </code></pre>
@@ -823,10 +770,9 @@ SitesApp.ListItem.prototype.getLastUpdated = function(){};
 
 /**
  * Get the parent page of this list item.
- 
- <pre class="prettyprint">
- <code>
- var page = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildByName(&#39;mylistpage&#39;);  
+
+ <pre class="prettyprint"><code>
+ var page = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildByName(&#39;mylistpage&#39;);
  var items = page.getListItems();
  // parentPage will equal page
  var parentPage = items[0].getParent();
@@ -838,12 +784,11 @@ SitesApp.ListItem.prototype.getParent = function(){};
 
 /**
  * Get the value of this ListItem for a numbered column.
- 
- <pre class="prettyprint">
- <code>
+
+ <pre class="prettyprint"><code>
  var page = SitesApp.getSite(&quot;demositeappsscript&quot;).getChildByName(&quot;mylistpage&quot;);
  var listItem = page.getListItems()[0];
- 
+
  // Remember that rows are 0 indexed. This returns the item in the first column
  // of the list. If an index that is greater than the number of columns is used,
  // the script will throw an &quot;InvalidArgument: index&quot; exception.
@@ -859,11 +804,10 @@ SitesApp.ListItem.prototype.getValueByIndex = function(index){};
 /**
  * Get the value of this ListItem for a named column.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var page = SitesApp.getSite(&quot;demositeappsscript&quot;).getChildByName(&quot;mylistpage&quot;);
  var listItem = page.getListItems()[0];
-  
+
  // Suppose we have a column named &quot;Owner&quot; - this will let us fetch the value
  // for the list item
  var value = listItem.getValueByName(&quot;Owner&quot;);
@@ -878,12 +822,11 @@ SitesApp.ListItem.prototype.getValueByName = function(name){};
 
 /**
  * Set the parent page of this list item.
- 
- <pre class="prettyprint">
- <code>
- var page = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildByName(&#39;mylistpage&#39;);  
+
+ <pre class="prettyprint"><code>
+ var page = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getChildByName(&#39;mylistpage&#39;);
  var secondListPage = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;)
-                              .getChildByName(&#39;secondlistpage&#39;);  
+                              .getChildByName(&#39;secondlistpage&#39;);
  var items = page.getListItems();
 
  // Returns secondListPage
@@ -897,13 +840,14 @@ SitesApp.ListItem.prototype.getValueByName = function(name){};
 SitesApp.ListItem.prototype.setParent = function(parent){};
 
 /**
- * Set the value of this ListItem for a numbered column.
- 
- <pre class="prettyprint">
- <code>
+ * Set the value of this ListItem for a numbered column. For URL columns the value must be an
+ XHTML anchor tag, with XML entities escaped.
+
+ <pre class="prettyprint"><code>
  var page = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;).getChildByName(&quot;mylistpage&quot;);
  var listItem = page.getListItems()[0];
- listItem.setValueByIndex(&quot;1&quot;, &quot;This is the new value&quot;);
+ listItem.setValueByIndex(1, &#39;This is the new value&#39;);
+ listItem.setValueByIndex(2, &#39;&lt;a href=&quot;http://www.example.com?a=1&amp;amp;b=2&quot;&gt;Example&lt;/a&gt;&#39;);
  </code></pre>
  *
  * @param {number} index - the column to set the value of
@@ -914,13 +858,14 @@ SitesApp.ListItem.prototype.setParent = function(parent){};
 SitesApp.ListItem.prototype.setValueByIndex = function(index, value){};
 
 /**
- * Set the value of this ListItem for a numbered column.
+ * Set the value of this ListItem for a numbered column. For URL columns the value must be an
+ XHTML anchor tag, with XML entities escaped.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var page = SitesApp.getSite(&quot;demositeappsscript&quot;).getChildByName(&quot;mylistpage&quot;);
  var listItem = page.getListItems()[0];
- listItem.setValueByName(&quot;Owner&quot;, &quot;Eric&quot;);
+ listItem.setValueByName(&#39;Owner&#39;, &#39;Eric&#39;);
+ listItem.setValueByName(&#39;Page&#39;, &#39;&lt;a href=&quot;http://www.example.com?a=1&amp;amp;b=2&quot;&gt;Example&lt;/a&gt;&#39;);
  </code></pre>
  *
  * @param {String} name - the column to set the value of
@@ -936,8 +881,7 @@ SitesApp.Page = function(){};
 /**
  * Add a new column to the list. Only valid for list pages.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
 
  var page = site.getChildByName(&quot;listpage&quot;);
@@ -953,10 +897,9 @@ SitesApp.Page = function(){};
 SitesApp.Page.prototype.addColumn = function(name){};
 
 /**
- * Add a comment to the page.
+ * Deprecated. Add a comment to the page.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
 
@@ -973,8 +916,7 @@ SitesApp.Page.prototype.addComment = function(content){};
 /**
  * Add an attachment to the page.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
 
@@ -995,8 +937,7 @@ SitesApp.Page.prototype.addHostedAttachment = function(blob){};
 /**
  * Add a list item to the list. Only valid for list pages.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
 
  var page = site.getChildByName(&quot;listpage&quot;);
@@ -1015,10 +956,9 @@ SitesApp.Page.prototype.addListItem = function(values){};
 /**
  * Add a web attachment to the page. Only valid for file cabinet pages.
 
- Web attachments are links - they are not actually hosted by Google Sites.
+ <p>Web attachments are links - they are not actually hosted by Google Sites.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  // fetch the child - this must be a File Cabinet page
  // to programmatically check this, do a comparison:
@@ -1040,8 +980,7 @@ SitesApp.Page.prototype.addWebAttachment = function(title, description, url){};
 /**
  * Create an announcements for this page. Only valid for announcement pages.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
 
  // This snippet will only work with announcement pages - this is different
@@ -1063,20 +1002,19 @@ SitesApp.Page.prototype.createAnnouncement = function(title, html){};
  * Create a new announcements page. Note that a parent site or page cannot have more than 500
  child pages.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This method can be called from both a Site instance
  // as well as a Page instance
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
 
- site.createAnnouncementsPage(&quot;New Announcement&quot;, 
-                              &quot;new-announcement&quot;, 
+ site.createAnnouncementsPage(&quot;New Announcement&quot;,
+                              &quot;new-announcement&quot;,
                               &quot;&lt;h1&gt;Your announcement goes here&lt;/h1&gt;&quot;);
 
- page.createAnnouncementsPage(&quot;New Announcement&quot;, 
-                              &quot;new-announcement-child&quot;, 
-                              &quot;&lt;h1&gt;Your announcement goes here&lt;/h1&gt;&quot;);  
+ page.createAnnouncementsPage(&quot;New Announcement&quot;,
+                              &quot;new-announcement-child&quot;,
+                              &quot;&lt;h1&gt;Your announcement goes here&lt;/h1&gt;&quot;);
  </code></pre>
  *
  * @param {String} title - the page title
@@ -1088,22 +1026,21 @@ SitesApp.Page.prototype.createAnnouncement = function(title, html){};
 SitesApp.Page.prototype.createAnnouncementsPage = function(title, name, html){};
 
 /**
- * Create a new file-cabinet page. Note that a parent site or page cannot have more than 500
- child pages.
+ * Create a new file-cabinet page. Note that a parent site or page cannot have more than 500 child
+ pages.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This method can be called from either a site or a page.
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
 
- site.createFileCabinetPage(&quot;New File Cabinet&quot;, 
-                            &quot;new-file-cabinet&quot;, 
+ site.createFileCabinetPage(&quot;New File Cabinet&quot;,
+                            &quot;new-file-cabinet&quot;,
                             &quot;&lt;h1&gt;Your HTML here&lt;/h1&gt;&quot;);
 
- page.createFileCabinetPage(&quot;New File Cabinet&quot;, 
-                              &quot;new-file-cabinet-child&quot;, 
-                              &quot;&lt;h1&gt;Your HTML here&lt;/h1&gt;&quot;);  
+ page.createFileCabinetPage(&quot;New File Cabinet&quot;,
+                              &quot;new-file-cabinet-child&quot;,
+                              &quot;&lt;h1&gt;Your HTML here&lt;/h1&gt;&quot;);
  </code></pre>
  *
  * @param {String} title - the page title
@@ -1117,21 +1054,20 @@ SitesApp.Page.prototype.createFileCabinetPage = function(title, name, html){};
 /**
  * Create a new list page. Note that a parent site or page cannot have more than 500 child pages.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This method can be called from either a site or a page.
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
 
- site.createListPage(&quot;New List Page&quot;, 
-                     &quot;new-list-page&quot;, 
+ site.createListPage(&quot;New List Page&quot;,
+                     &quot;new-list-page&quot;,
                      &quot;&lt;h1&gt;Your List Page HTML here&lt;/h1&gt;&quot;,
                      [ &quot;col1&quot;, &quot;col2&quot; ]);
 
- page.createListPage(&quot;New List Page&quot;, 
-                     &quot;new-list-page-child&quot;, 
-                     &quot;&lt;h1&gt;Your List Page HTML here&lt;/h1&gt;&quot;,  
-                     [ &quot;col1&quot;, &quot;col2&quot; ]);   
+ page.createListPage(&quot;New List Page&quot;,
+                     &quot;new-list-page-child&quot;,
+                     &quot;&lt;h1&gt;Your List Page HTML here&lt;/h1&gt;&quot;,
+                     [ &quot;col1&quot;, &quot;col2&quot; ]);
  </code></pre>
  *
  * @param {String} title - the page title
@@ -1147,8 +1083,7 @@ SitesApp.Page.prototype.createListPage = function(title, name, html, columnNames
  * Create a new page from a template. Note that a parent site or page cannot have more than 500
  child pages.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This method can be called from either a site or a page.
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var template = site.getTemplates()[0];
@@ -1167,20 +1102,19 @@ SitesApp.Page.prototype.createPageFromTemplate = function(title, name, template)
 
 /**
  * Create a new web page. Note that a parent site or page cannot have more than 500 child pages.
- 
- <pre class="prettyprint">
- <code>
+
+ <pre class="prettyprint"><code>
  // This method can be called from either a site or a page.
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
 
- site.createAnnouncementsPage(&quot;New Announcement&quot;, 
-                              &quot;new-announcement&quot;, 
+ site.createAnnouncementsPage(&quot;New Announcement&quot;,
+                              &quot;new-announcement&quot;,
                               &quot;&lt;h1&gt;Your announcement goes here&lt;/h1&gt;&quot;);
 
- page.createAnnouncementsPage(&quot;New Announcement&quot;, 
-                              &quot;new-announcement-child&quot;, 
-                              &quot;&lt;h1&gt;Your announcement goes here&lt;/h1&gt;&quot;);  
+ page.createAnnouncementsPage(&quot;New Announcement&quot;,
+                              &quot;new-announcement-child&quot;,
+                              &quot;&lt;h1&gt;Your announcement goes here&lt;/h1&gt;&quot;);
  </code></pre>
  *
  * @param {String} title - the page title
@@ -1194,8 +1128,7 @@ SitesApp.Page.prototype.createWebPage = function(title, name, html){};
 /**
  * Deletes this page.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
 
  // Delete ALL the pages!
@@ -1212,8 +1145,7 @@ SitesApp.Page.prototype.deletePage = function(){};
 /**
  * Gets an array of descendant pages (direct and indirect), up to a limit of 200 pages.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var pages = site.getAllDescendants();
  </code></pre>
@@ -1225,8 +1157,7 @@ SitesApp.Page.prototype.getAllDescendants = function(){};
 /**
  * Get the announcements for this page. Only valid for announcement pages.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
 
  // This snippet will only work with announcement pages - this is different
@@ -1248,8 +1179,7 @@ SitesApp.Page.prototype.getAnnouncements = function(){};
 /**
  * Get the attachments for this page.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
 
@@ -1266,8 +1196,7 @@ SitesApp.Page.prototype.getAttachments = function(){};
 /**
  * Get the emails of the authors of the page
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
  var authors = page.getAuthors();
@@ -1284,8 +1213,7 @@ SitesApp.Page.prototype.getAuthors = function(){};
 /**
  * Gets a particular child page.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var pages = site.getChildByName(&quot;childPage&quot;);
  </code></pre>
@@ -1299,8 +1227,7 @@ SitesApp.Page.prototype.getChildByName = function(name){};
 /**
  * Gets an array of child pages, up to a limit of 200 pages.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var pages = site.getChildren();
  </code></pre>
@@ -1312,8 +1239,7 @@ SitesApp.Page.prototype.getChildren = function(){};
 /**
  * Get the columns for the list. Only valid for list pages.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
 
  var page = site.getChildByName(&quot;listpage&quot;);
@@ -1331,10 +1257,9 @@ SitesApp.Page.prototype.getChildren = function(){};
 SitesApp.Page.prototype.getColumns = function(){};
 
 /**
- * Get the comments for this page.
+ * Deprecated. Get the comments for this page.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
 
@@ -1351,8 +1276,7 @@ SitesApp.Page.prototype.getComments = function(){};
 /**
  * Return the date this page was first published.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
  Logger.log(page.getName() + &quot; was published &quot; + page.getDatePublished());
@@ -1365,8 +1289,7 @@ SitesApp.Page.prototype.getDatePublished = function(){};
 /**
  * Get the HTML content of the page.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
  Logger.log(page.getHtmlContent());
@@ -1378,8 +1301,8 @@ SitesApp.Page.prototype.getHtmlContent = function(){};
 
 /**
  * Returns whether the page is in draft mode. Only valid for announcements.
- <pre class="prettyprint">
- <code>
+
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
 
@@ -1393,8 +1316,7 @@ SitesApp.Page.prototype.getIsDraft = function(){};
 /**
  * Return the last edit date, which includes only content edits.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
  Logger.log(page.getName() + &quot; was last updated &quot; + page.getLastEdited());
@@ -1407,8 +1329,7 @@ SitesApp.Page.prototype.getLastEdited = function(){};
 /**
  * Return the last updated date, which includes non-content changes like moving.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
  Logger.log(page.getName() + &quot; was last updated &quot; + page.getLastUpdated());
@@ -1421,8 +1342,7 @@ SitesApp.Page.prototype.getLastUpdated = function(){};
 /**
  * Get the list items for the list. Only valid for list pages.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
 
  var page = site.getChildByName(&quot;listpage&quot;);
@@ -1442,8 +1362,7 @@ SitesApp.Page.prototype.getListItems = function(){};
 /**
  * Return the page's name.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
  Logger.log(page.getName());
@@ -1456,8 +1375,7 @@ SitesApp.Page.prototype.getName = function(){};
 /**
  * Deprecated. Replaced with getName for consistency.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
  Logger.log(page.getPageName());
@@ -1470,8 +1388,7 @@ SitesApp.Page.prototype.getPageName = function(){};
 /**
  * Return the type of this page as a SitesApp.PageType enum.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
  var pageType = page.getPageType();
@@ -1487,8 +1404,7 @@ SitesApp.Page.prototype.getPageType = function(){};
 /**
  * Return the parent of this page.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
  Logger.log(page.getName() + &quot; parent: &quot; + page.getParent().getName());
@@ -1501,8 +1417,7 @@ SitesApp.Page.prototype.getParent = function(){};
 /**
  * Deprecated. Returns the gData feed link of this page.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
  Logger.log(page.getSelfLink());
@@ -1515,8 +1430,7 @@ SitesApp.Page.prototype.getSelfLink = function(){};
 /**
  * Returns the plain-text page content.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
  Logger.log(page.getName() + &quot; content: &quot; + page.getTextContent());
@@ -1529,8 +1443,7 @@ SitesApp.Page.prototype.getTextContent = function(){};
 /**
  * Return the page's title.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
  Logger.log(page.getTitle());
@@ -1543,8 +1456,7 @@ SitesApp.Page.prototype.getTitle = function(){};
 /**
  * Get the url of the page.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
  Logger.log(page.getUrl());
@@ -1564,8 +1476,7 @@ SitesApp.Page.prototype.isDeleted = function(){};
 /**
  * Returns whether this page is a copyable template.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var firstTemplate = site.getTemplates()[0];
  if(firstTemplate.isTemplate()) {
@@ -1580,8 +1491,7 @@ SitesApp.Page.prototype.isTemplate = function(){};
 /**
  * Publish this page as a copyable template.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
 
@@ -1598,8 +1508,7 @@ SitesApp.Page.prototype.publishAsTemplate = function(name){};
 /**
  * Gets an array of descendant pages that match a search query, up to a limit of 200 pages.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var matches = site.search(&quot;targetText&quot;);
 
@@ -1617,8 +1526,7 @@ SitesApp.Page.prototype.search = function(query){};
 /**
  * Set the HTML content of the page.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
  page.setHtmlContent(&quot;&lt;h1&gt;New Page Content&lt;/h1&gt;&quot;);
@@ -1633,8 +1541,7 @@ SitesApp.Page.prototype.setHtmlContent = function(html){};
 /**
  * Sets whether the page is in draft mode. Only valid for announcements.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
 
@@ -1651,8 +1558,7 @@ SitesApp.Page.prototype.setIsDraft = function(draft){};
 /**
  * Set this page's name.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
  page.setName(&quot;new-name&quot;);
@@ -1667,8 +1573,7 @@ SitesApp.Page.prototype.setName = function(name){};
 /**
  * Set the parent of this page.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var child = site.getChildByName(&quot;childToBeMoved&quot;);
  var parent = site.getChildByName(&quot;newParent&quot;);
@@ -1684,8 +1589,7 @@ SitesApp.Page.prototype.setParent = function(parent){};
 /**
  * Set the page's title.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
  page.setTitle(&quot;New Title&quot;);
@@ -1703,8 +1607,7 @@ SitesApp.Site = function(){};
 /**
  * Add a new collaborator to the site
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  site.addCollaborator(&quot;eric@example.com&quot;);
  </code></pre>
@@ -1739,8 +1642,7 @@ SitesApp.Site.prototype.addEditors = function(emailAddresses){};
 /**
  * Add a new owner to the website
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  site.addOwner(&quot;eric@example.com&quot;);
  </code></pre>
@@ -1786,20 +1688,19 @@ SitesApp.Site.prototype.createAnnouncement = function(title, html, parent){};
  * Create a new announcements page. Note that a parent site or page cannot have more than 500
  child pages.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This method can be called from both a Site instance
  // as well as a Page instance
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
 
- site.createAnnouncementsPage(&quot;New Announcement&quot;, 
-                              &quot;new-announcement&quot;, 
+ site.createAnnouncementsPage(&quot;New Announcement&quot;,
+                              &quot;new-announcement&quot;,
                               &quot;&lt;h1&gt;Your announcement goes here&lt;/h1&gt;&quot;);
 
- page.createAnnouncementsPage(&quot;New Announcement&quot;, 
-                              &quot;new-announcement-child&quot;, 
-                              &quot;&lt;h1&gt;Your announcement goes here&lt;/h1&gt;&quot;);  
+ page.createAnnouncementsPage(&quot;New Announcement&quot;,
+                              &quot;new-announcement-child&quot;,
+                              &quot;&lt;h1&gt;Your announcement goes here&lt;/h1&gt;&quot;);
  </code></pre>
  *
  * @param {String} title - the page title
@@ -1813,7 +1714,7 @@ SitesApp.Site.prototype.createAnnouncementsPage = function(title, name, html){};
 /**
  * Deprecated. Replaced with createComment on <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code>.
 
- Create a new Comment.
+ <p>Create a new Comment.
  *
  * @param {String} inReplyTo - a GData feed url - meaningless and broken
  * @param {String} html - the comment content
@@ -1824,22 +1725,21 @@ SitesApp.Site.prototype.createAnnouncementsPage = function(title, name, html){};
 SitesApp.Site.prototype.createComment = function(inReplyTo, html, parent){};
 
 /**
- * Create a new file-cabinet page. Note that a parent site or page cannot have more than 500
- child pages.
+ * Create a new file-cabinet page. Note that a parent site or page cannot have more than 500 child
+ pages.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This method can be called from either a site or a page.
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
 
- site.createFileCabinetPage(&quot;New File Cabinet&quot;, 
-                            &quot;new-file-cabinet&quot;, 
+ site.createFileCabinetPage(&quot;New File Cabinet&quot;,
+                            &quot;new-file-cabinet&quot;,
                             &quot;&lt;h1&gt;Your HTML here&lt;/h1&gt;&quot;);
 
- page.createFileCabinetPage(&quot;New File Cabinet&quot;, 
-                              &quot;new-file-cabinet-child&quot;, 
-                              &quot;&lt;h1&gt;Your HTML here&lt;/h1&gt;&quot;);  
+ page.createFileCabinetPage(&quot;New File Cabinet&quot;,
+                              &quot;new-file-cabinet-child&quot;,
+                              &quot;&lt;h1&gt;Your HTML here&lt;/h1&gt;&quot;);
  </code></pre>
  *
  * @param {String} title - the page title
@@ -1853,7 +1753,7 @@ SitesApp.Site.prototype.createFileCabinetPage = function(title, name, html){};
 /**
  * Deprecated. Replaced by createListItem on <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code>.
 
- Create a new ListItem.
+ <p>Create a new ListItem.
  *
  * @param {String} html - the item content - meaningless and broken.
  * @param {String[]} columnNames - the names of the columns, which are unnecessary
@@ -1867,21 +1767,20 @@ SitesApp.Site.prototype.createListItem = function(html, columnNames, values, par
 /**
  * Create a new list page. Note that a parent site or page cannot have more than 500 child pages.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This method can be called from either a site or a page.
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
 
- site.createListPage(&quot;New List Page&quot;, 
-                     &quot;new-list-page&quot;, 
+ site.createListPage(&quot;New List Page&quot;,
+                     &quot;new-list-page&quot;,
                      &quot;&lt;h1&gt;Your List Page HTML here&lt;/h1&gt;&quot;,
                      [ &quot;col1&quot;, &quot;col2&quot; ]);
 
- page.createListPage(&quot;New List Page&quot;, 
-                     &quot;new-list-page-child&quot;, 
-                     &quot;&lt;h1&gt;Your List Page HTML here&lt;/h1&gt;&quot;,  
-                     [ &quot;col1&quot;, &quot;col2&quot; ]);   
+ page.createListPage(&quot;New List Page&quot;,
+                     &quot;new-list-page-child&quot;,
+                     &quot;&lt;h1&gt;Your List Page HTML here&lt;/h1&gt;&quot;,
+                     [ &quot;col1&quot;, &quot;col2&quot; ]);
  </code></pre>
  *
  * @param {String} title - the page title
@@ -1897,8 +1796,7 @@ SitesApp.Site.prototype.createListPage = function(title, name, html, columnNames
  * Create a new page from a template. Note that a parent site or page cannot have more than 500
  child pages.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This method can be called from either a site or a page.
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var template = site.getTemplates()[0];
@@ -1918,7 +1816,7 @@ SitesApp.Site.prototype.createPageFromTemplate = function(title, name, template)
 /**
  * Deprecated. Replaced by createWebAttachment on <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code>.
 
- Create a new Web Attachment.
+ <p>Create a new Web Attachment.
  *
  * @param {String} title - the attachment title
  * @param {String} url - the url of the attachment
@@ -1930,20 +1828,19 @@ SitesApp.Site.prototype.createWebAttachment = function(title, url, parent){};
 
 /**
  * Create a new web page. Note that a parent site or page cannot have more than 500 child pages.
- 
- <pre class="prettyprint">
- <code>
+
+ <pre class="prettyprint"><code>
  // This method can be called from either a site or a page.
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var page = site.getChildren()[0];
 
- site.createAnnouncementsPage(&quot;New Announcement&quot;, 
-                              &quot;new-announcement&quot;, 
+ site.createAnnouncementsPage(&quot;New Announcement&quot;,
+                              &quot;new-announcement&quot;,
                               &quot;&lt;h1&gt;Your announcement goes here&lt;/h1&gt;&quot;);
 
- page.createAnnouncementsPage(&quot;New Announcement&quot;, 
-                              &quot;new-announcement-child&quot;, 
-                              &quot;&lt;h1&gt;Your announcement goes here&lt;/h1&gt;&quot;);  
+ page.createAnnouncementsPage(&quot;New Announcement&quot;,
+                              &quot;new-announcement-child&quot;,
+                              &quot;&lt;h1&gt;Your announcement goes here&lt;/h1&gt;&quot;);
  </code></pre>
  *
  * @param {String} title - the page title
@@ -1957,8 +1854,7 @@ SitesApp.Site.prototype.createWebPage = function(title, name, html){};
 /**
  * Deletes this site.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;);
  site.deleteSite();
  </code></pre>
@@ -1970,8 +1866,7 @@ SitesApp.Site.prototype.deleteSite = function(){};
 /**
  * Gets an array of descendant pages (direct and indirect), up to a limit of 200 pages.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var pages = site.getAllDescendants();
  </code></pre>
@@ -1983,8 +1878,7 @@ SitesApp.Site.prototype.getAllDescendants = function(){};
 /**
  * Retrieves a list of announcements for the given Google Site.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
 
  var pages = site.getAnnouncements();
@@ -2000,8 +1894,7 @@ SitesApp.Site.prototype.getAnnouncements = function(){};
 /**
  * Retrieves a list of announcements pages for the given Google Site.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
 
  var pages = site.getAnnouncementsPages();
@@ -2017,8 +1910,7 @@ SitesApp.Site.prototype.getAnnouncementsPages = function(){};
 /**
  * Retrieves a list of attachments for the given Google Site.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
 
  var attachments = site.getAttachments();
@@ -2035,8 +1927,7 @@ SitesApp.Site.prototype.getAttachments = function(){};
 /**
  * Gets a particular child page.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var pages = site.getChildByName(&quot;childPage&quot;);
  </code></pre>
@@ -2050,8 +1941,7 @@ SitesApp.Site.prototype.getChildByName = function(name){};
 /**
  * Gets an array of child pages, up to a limit of 200 pages.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var pages = site.getChildren();
  </code></pre>
@@ -2063,8 +1953,7 @@ SitesApp.Site.prototype.getChildren = function(){};
 /**
  * Retrieves list of collaborators for the site
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var collaborators = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getCollaborators();
  for(var i in collaborators) {
    Logger.log(collaborators[i].getEmail())
@@ -2078,8 +1967,7 @@ SitesApp.Site.prototype.getCollaborators = function(){};
 /**
  * Retrieves a list of comments for the given Google Site.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
 
  var comments = site.getComments();
@@ -2103,8 +1991,7 @@ SitesApp.Site.prototype.getEditors = function(){};
 /**
  * Retrieves a list of File Cabinet pages for the given Google Site.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
 
  var pages = site.getFileCabinetPages();
@@ -2120,8 +2007,7 @@ SitesApp.Site.prototype.getFileCabinetPages = function(){};
 /**
  * Retrieves a list of site List items for the given Google Site.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
 
  var listItems = site.getListItems();
@@ -2137,8 +2023,7 @@ SitesApp.Site.prototype.getListItems = function(){};
 /**
  * Retrieves a list of site List pages for the given Google Site.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
 
  var pages = site.getListPages();
@@ -2154,8 +2039,7 @@ SitesApp.Site.prototype.getListPages = function(){};
 /**
  * Return the name of the site
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var name = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getName();
  </code></pre>
  *
@@ -2166,8 +2050,7 @@ SitesApp.Site.prototype.getName = function(){};
 /**
  * Retrieves list of owners for the site
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var owners = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getOwners();
  for(var i in owners) {
    Logger.log(owners[i].getEmail())
@@ -2181,8 +2064,7 @@ SitesApp.Site.prototype.getOwners = function(){};
 /**
  * Retrieves the feed url of this Site.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;);
  var url = site.getSelfLink();
  </code></pre>
@@ -2194,8 +2076,7 @@ SitesApp.Site.prototype.getSelfLink = function(){};
 /**
  * Return the siteName of the site
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;);
  var url = site.getSelfLink();
  </code></pre>
@@ -2207,8 +2088,7 @@ SitesApp.Site.prototype.getSiteName = function(){};
 /**
  * Return the summary of the web site
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var summary = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getSummary();
  </code></pre>
  *
@@ -2219,8 +2099,7 @@ SitesApp.Site.prototype.getSummary = function(){};
 /**
  * Returns all template pages.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var templates = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getTemplates();
  for(var i in templates) {
    Logger.log(templates[i].getName())
@@ -2234,8 +2113,7 @@ SitesApp.Site.prototype.getTemplates = function(){};
 /**
  * Gets the theme of the site
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var theme = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getTheme();
  </code></pre>
  *
@@ -2246,8 +2124,7 @@ SitesApp.Site.prototype.getTheme = function(){};
 /**
  * Return the title of the site
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var title = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getTitle();
  </code></pre>
  *
@@ -2258,8 +2135,7 @@ SitesApp.Site.prototype.getTitle = function(){};
 /**
  * Retrieves the url of this Site.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var url = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getUrl();
  </code></pre>
  *
@@ -2268,7 +2144,7 @@ SitesApp.Site.prototype.getTitle = function(){};
 SitesApp.Site.prototype.getUrl = function(){};
 
 /**
- * Gets the list of viewers and commenters for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>.  If the user who executes
+ * Gets the list of viewers and commenters for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. If the user who executes
  the script does not have edit access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>, this method throws an exception.
  *
  * @return {User[]} an array of users with view or comment permission
@@ -2278,8 +2154,7 @@ SitesApp.Site.prototype.getViewers = function(){};
 /**
  * Retrieves a list of web attachments for the given Google Site.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
 
  var attachments = site.getWebAttachments();
@@ -2296,8 +2171,7 @@ SitesApp.Site.prototype.getWebAttachments = function(){};
 /**
  * Retrieves a list of web pages for the given Google Site.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
 
  var pages = site.getWebPages();
@@ -2313,8 +2187,7 @@ SitesApp.Site.prototype.getWebPages = function(){};
 /**
  * Removes a collaborator from the site by user email
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This snippet removes the user with the given email from the collaborators list
  var site = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;);
  site.removeCollaborator(&quot;eric@example.com&quot;);
@@ -2329,7 +2202,7 @@ SitesApp.Site.prototype.removeCollaborator = function(email){};
 /**
  * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. This method does not
  block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> if they belong to a class of users who have
- general access ? for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> is shared with the user's entire domain.
+ general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> is shared with the user's entire domain.
  *
  * @param {String} emailAddress - the email address of the user to remove
  *
@@ -2340,8 +2213,7 @@ SitesApp.Site.prototype.removeEditor = function(emailAddress){};
 /**
  * Removes owner from the site by user email
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This snippet removes the user with the given email from the owners list
  var site = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;);
  site.removeOwner(&quot;eric@example.com&quot;);
@@ -2354,10 +2226,10 @@ SitesApp.Site.prototype.removeEditor = function(emailAddress){};
 SitesApp.Site.prototype.removeOwner = function(email){};
 
 /**
- * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>.  This
+ * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. This
  method has no effect if the user is an editor, not a viewer or commenter. This method also does
  not block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> if they belong to a class of users who
- have general access ? for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> is shared with the user's entire
+ have general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> is shared with the user's entire
  domain.
  *
  * @param {String} emailAddress - the email address of the user to remove
@@ -2369,8 +2241,7 @@ SitesApp.Site.prototype.removeViewer = function(emailAddress){};
 /**
  * Gets an array of descendant pages that match a search query, up to a limit of 200 pages.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  var matches = site.search(&quot;targetText&quot;);
 
@@ -2388,8 +2259,7 @@ SitesApp.Site.prototype.search = function(query){};
 /**
  * Set the summary of the web site
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  // All of the setter methods return the site instance so setters
  // can be chained
@@ -2407,15 +2277,14 @@ SitesApp.Site.prototype.setSummary = function(summary){};
 /**
  * Sets the theme of the site
 
- Theme must be a valid theme string. For an exhaustive list, write a
- test method and pass an invalid value to setTheme(). The script will
- throw a Service error and return an exhaustive list of available themes.
- The list of available themes is also available under Manage Site->Themes.
- Theme name strings are generally the same as the theme name on the Themes
- page in lower cases with spaces and special characters removed. For
- example, the string for "Terra: Water" would be "terrawater".
- <pre class="prettyprint">
- <code>
+ <p>Theme must be a valid theme string. For an exhaustive list, write a test method and pass an
+ invalid value to setTheme(). The script will throw a Service error and return an exhaustive
+ list of available themes. The list of available themes is also available under Manage
+ Site->Themes. Theme name strings are generally the same as the theme name on the Themes page in
+ lower cases with spaces and special characters removed. For example, the string for "Terra:
+ Water" would be "terrawater".
+
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  // All of the setter methods return the site instance so setters
  // can be chained
@@ -2433,8 +2302,7 @@ SitesApp.Site.prototype.setTheme = function(theme){};
 /**
  * Set the title of the site
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var site = SitesApp.getSite(&quot;example.com&quot;, &quot;mysite&quot;);
  // All of the setter methods return the site instance so setters
  // can be chained

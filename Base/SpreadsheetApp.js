@@ -2,231 +2,237 @@ var SpreadsheetApp = {};
 
 
 /**
+ * An enumeration of the types of series used to calculate auto-filled values.
+ * 
+ * @class SpreadsheetApp.AutoFillSeries
+ */
+
+/**
+ * @typedef {SpreadsheetApp.AutoFillSeries} SpreadsheetApp.AutoFillSeries.ALTERNATE_SERIES
+ * 
+ * 
+ */
+
+/**
+ * @typedef {SpreadsheetApp.AutoFillSeries} SpreadsheetApp.AutoFillSeries.DEFAULT_SERIES
+ * 
+ * 
+ */
+
+/**
  * An enumeration of the valid styles for setting borders on a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/range.html'>Range</a></code>.
-
+ * 
+ * @class SpreadsheetApp.BorderStyle
  */
-SpreadsheetApp.BorderStyle = function(){};
 
 /**
+ * @typedef {SpreadsheetApp.BorderStyle} SpreadsheetApp.BorderStyle.DASHED
+ * 
  * Dashed line borders.
- *
- * @type {{}}
  */
-SpreadsheetApp.BorderStyle.prototype.DASHED = {};
 
 /**
+ * @typedef {SpreadsheetApp.BorderStyle} SpreadsheetApp.BorderStyle.DOTTED
+ * 
  * Dotted line borders.
- *
- * @type {{}}
  */
-SpreadsheetApp.BorderStyle.prototype.DOTTED = {};
 
 /**
- * Solid line borders.
- *
- * @type {{}}
+ * @typedef {SpreadsheetApp.BorderStyle} SpreadsheetApp.BorderStyle.DOUBLE
+ * 
+ * Two solid line borders.
  */
-SpreadsheetApp.BorderStyle.prototype.SOLID = {};
+
+/**
+ * @typedef {SpreadsheetApp.BorderStyle} SpreadsheetApp.BorderStyle.SOLID
+ * 
+ * Thin solid line borders.
+ */
+
+/**
+ * @typedef {SpreadsheetApp.BorderStyle} SpreadsheetApp.BorderStyle.SOLID_MEDIUM
+ * 
+ * Medium solid line borders.
+ */
+
+/**
+ * @typedef {SpreadsheetApp.BorderStyle} SpreadsheetApp.BorderStyle.SOLID_THICK
+ * 
+ * Thick solid line borders.
+ */
 
 /**
  * An enumeration representing the data-validation criteria that can be set on a range.
-
+ * 
+ * @class SpreadsheetApp.DataValidationCriteria
  */
-SpreadsheetApp.DataValidationCriteria = function(){};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.CUSTOM_FORMULA
+ * 
  * Requires that the input makes the given formula evaluate to <code>true</code>.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.CUSTOM_FORMULA = {};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_AFTER
+ * 
  * Requires a date that is after the given value.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.DATE_AFTER = {};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_BEFORE
+ * 
  * Requires a date that is before the given value.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.DATE_BEFORE = {};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_BETWEEN
+ * 
  * Requires a date that is between the given values.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.DATE_BETWEEN = {};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_EQUAL_TO
+ * 
  * Requires a date that is equal to the given value.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.DATE_EQUAL_TO = {};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_IS_VALID_DATE
+ * 
  * Requires a date.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.DATE_IS_VALID_DATE = {};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_NOT_BETWEEN
+ * 
  * Requires a date that is not between the given values.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.DATE_NOT_BETWEEN = {};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_ON_OR_AFTER
+ * 
  * Require a date that is on or after the given value.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.DATE_ON_OR_AFTER = {};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_ON_OR_BEFORE
+ * 
  * Requires a date that is on or before the given value.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.DATE_ON_OR_BEFORE = {};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_BETWEEN
+ * 
  * Requires a number that is between the given values.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.NUMBER_BETWEEN = {};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_EQUAL_TO
+ * 
  * Requires a number that is equal to the given value.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.NUMBER_EQUAL_TO = {};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_GREATER_THAN
+ * 
  * Require a number that is greater than the given value.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.NUMBER_GREATER_THAN = {};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_GREATER_THAN_OR_EQUAL_TO
+ * 
  * Requires a number that is greater than or equal to the given value.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.NUMBER_GREATER_THAN_OR_EQUAL_TO = {};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_LESS_THAN
+ * 
  * Requires a number that is less than the given value.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.NUMBER_LESS_THAN = {};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_LESS_THAN_OR_EQUAL_TO
+ * 
  * Requires a number that is less than or equal to the given value.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.NUMBER_LESS_THAN_OR_EQUAL_TO = {};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_NOT_BETWEEN
+ * 
  * Requires a number that is not between the given values.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.NUMBER_NOT_BETWEEN = {};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_NOT_EQUAL_TO
+ * 
  * Requires a number that is not equal to the given value.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.NUMBER_NOT_EQUAL_TO = {};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.TEXT_CONTAINS
+ * 
  * Requires that the input contains the given value.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.TEXT_CONTAINS = {};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.TEXT_DOES_NOT_CONTAIN
+ * 
  * Requires that the input does not contain the given value.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.TEXT_DOES_NOT_CONTAIN = {};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.TEXT_EQUAL_TO
+ * 
  * Requires that the input is equal to the given value.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.TEXT_EQUAL_TO = {};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.TEXT_IS_VALID_EMAIL
+ * 
  * Requires that the input is in the form of an email address.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.TEXT_IS_VALID_EMAIL = {};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.TEXT_IS_VALID_URL
+ * 
  * Requires that the input is in the form of a URL.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.TEXT_IS_VALID_URL = {};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.VALUE_IN_LIST
+ * 
  * Requires that the input is equal to one of the given values.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.VALUE_IN_LIST = {};
 
 /**
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.VALUE_IN_RANGE
+ * 
  * Requires that the input is equal to a value in the given range.
- *
- * @type {{}}
  */
-SpreadsheetApp.DataValidationCriteria.prototype.VALUE_IN_RANGE = {};
 
 /**
  * An enumeration representing the parts of a spreadsheet that can be protected from edits.
-
+ * 
+ * @class SpreadsheetApp.ProtectionType
  */
-SpreadsheetApp.ProtectionType = function(){};
 
 /**
+ * @typedef {SpreadsheetApp.ProtectionType} SpreadsheetApp.ProtectionType.RANGE
+ * 
  * Protection for a range.
- *
- * @type {{}}
  */
-SpreadsheetApp.ProtectionType.prototype.RANGE = {};
 
 /**
+ * @typedef {SpreadsheetApp.ProtectionType} SpreadsheetApp.ProtectionType.SHEET
+ * 
  * Protection for a sheet.
- *
- * @type {{}}
  */
-SpreadsheetApp.ProtectionType.prototype.SHEET = {};
 
 /**
  * Creates a new spreadsheet with the given name.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // The code below creates a new spreadsheet &quot;Finances&quot; and logs the URL for it
  var ssNew = SpreadsheetApp.create(&quot;Finances&quot;);
  Logger.log(ssNew.getUrl());
@@ -241,12 +247,11 @@ SpreadsheetApp.create = function(name){};
 /**
  * Applies all pending Spreadsheet changes.
 
- Spreadsheet operations are sometimes bundled together to improve performance, such as when
+ <p>Spreadsheet operations are sometimes bundled together to improve performance, such as when
  doing multiple calls to Range.getValue(). However, sometimes you may want to make sure that all
  pending changes are made right away, for instance to show users data as a script is executing.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // The code below changes the background color of cells A1 and B1 twenty times. You should be
  // able to see the updates live in the spreadsheet. If flush() is not called, the updates may
  // be applied live or may all be applied at once when the script completes.
@@ -272,11 +277,10 @@ SpreadsheetApp.flush = function(){};
 /**
  * Returns the currently active spreadsheet, or null if there is none.
 
- Functions that are run in the context of a spreadsheet can get a reference to the corresponding
- Spreadsheet object by calling this function.
+ <p>Functions that are run in the context of a spreadsheet can get a reference to the
+ corresponding Spreadsheet object by calling this function.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // The code below logs the URL for the active spreadsheet.
  Logger.log(SpreadsheetApp.getActive().getUrl());
  </code></pre>
@@ -288,12 +292,11 @@ SpreadsheetApp.getActive = function(){};
 /**
  * Returns the range of cells that is currently considered active.
 
- This generally means the range that a user has selected in the active sheet, but in a custom
+ <p>This generally means the range that a user has selected in the active sheet, but in a custom
  function it refers to the cell being actively recalculated.
 
- <pre class="prettyprint">
- <code>
- // The code below will log the background color for the active range
+ <pre class="prettyprint"><code>
+ // The code below logs the background color for the active range
  var color = SpreadsheetApp.getActiveRange().getBackgroundColor();
  Logger.log(color);
  </code></pre>
@@ -305,11 +308,11 @@ SpreadsheetApp.getActiveRange = function(){};
 /**
  * Gets the active sheet in a spreadsheet.
 
- The active sheet in a spreadsheet is the sheet that is being displayed in the spreadsheet UI.
+ <p>The active sheet in a spreadsheet is the sheet that is being displayed in the spreadsheet
+ UI.
 
- <pre class="prettyprint">
- <code>
- // The code below will log the name of the active sheet.
+ <pre class="prettyprint"><code>
+ // The code below logs the name of the active sheet.
  Logger.log(SpreadsheetApp.getActiveSheet().getName());
  </code></pre>
  *
@@ -320,11 +323,10 @@ SpreadsheetApp.getActiveSheet = function(){};
 /**
  * Returns the currently active spreadsheet, or null if there is none.
 
- Functions that are run in the context of a spreadsheet can get a reference to the corresponding
- Spreadsheet object by calling this function.
+ <p>Functions that are run in the context of a spreadsheet can get a reference to the
+ corresponding Spreadsheet object by calling this function.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // The code below logs the URL for the active spreadsheet.
  Logger.log(SpreadsheetApp.getActiveSpreadsheet().getUrl());
  </code></pre>
@@ -336,14 +338,14 @@ SpreadsheetApp.getActiveSpreadsheet = function(){};
 /**
  * Returns an instance of the spreadsheet's user-interface environment that allows the script to
  add features like menus, dialogs, and sidebars. A script can only interact with the UI for the
- current instance of an open spreadsheet, and only if the script is
- <a href="/apps-script/scripts_containers">bound</a> to the spreadsheet. For more information,
- see the guides to <a href="/apps-script/guides/menus">menus</a> and
- <a href="/apps-script/guides/dialogs">dialogs and sidebars</a>.
+ current instance of an open spreadsheet, and only if the script is <a
+ href="/apps-script/scripts_containers">bound</a> to the spreadsheet. For more information, see
+ the guides to <a href="/apps-script/guides/menus">menus</a> and <a
+ href="/apps-script/guides/dialogs">dialogs and sidebars</a>.
 
- <p>This method only works in the
- <a href="https://support.google.com/drive/answer/3541068">new version of Google Sheets</a>.
- The older version of Sheets continues to use an alternate syntax shown in the guides above.</p>
+ <p>This method only works in the <a href="https://support.google.com/drive/answer/3541068">new
+ version of Google Sheets</a>. The older version of Sheets continues to use an alternate syntax
+ shown in the guides above.
 
  <pre class="prettyprint">
  // Add a custom menu to the active spreadsheet, including a separator and a sub-menu.
@@ -383,8 +385,7 @@ SpreadsheetApp.newDataValidation = function(){};
 /**
  * Opens the spreadsheet that corresponds to the given File object.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Get any starred spreadsheets from Google Drive, then open the spreadsheets and log the name
  // of the first sheet within each spreadsheet.
  var files = DriveApp.searchFiles(
@@ -407,8 +408,7 @@ SpreadsheetApp.open = function(file){};
  example, the spreadsheet ID in the URL
  https://docs.google.com/spreadsheets/d/abc1234567/edit#gid=0 is "abc1234567".
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // The code below opens a spreadsheet using its ID and logs the name for it.
  // Note that the spreadsheet is NOT physically opened on the client side.
  // It is opened on the server only (for modification by the script).
@@ -425,8 +425,7 @@ SpreadsheetApp.openById = function(id){};
 /**
  * Opens the spreadsheet with the given url.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // The code below opens a spreadsheet using its id and logs the name for it.
  // Note that the spreadsheet is NOT physically opened on the client side.
  // It is opened on the server only (for modification by the script).
@@ -444,12 +443,11 @@ SpreadsheetApp.openByUrl = function(url){};
 /**
  * Sets the active range for the application.
 
- The spreadsheet UI will display the sheet that contains the chosen range and will select the
- cells defined in the chosen range.
+ <p>The spreadsheet UI displays the sheet that contains the chosen range and selects the cells
+ defined in the chosen range.
 
- <pre class="prettyprint">
- <code>
- // The code below will set range C1:D4 in the first sheet as the active range
+ <pre class="prettyprint"><code>
+ // The code below sets range C1:D4 in the first sheet as the active range
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var range = ss.getSheets()[0].getRange(&quot;C1:D4&quot;);
  SpreadsheetApp.setActiveRange(range);
@@ -464,12 +462,11 @@ SpreadsheetApp.setActiveRange = function(range){};
 /**
  * Sets the active sheet in a spreadsheet.
 
- The spreadsheet UI will display the chosen sheet unless the sheet belongs to a different
+ <p>The spreadsheet UI displays the chosen sheet unless the sheet belongs to a different
  spreadsheet.
 
- <pre class="prettyprint">
- <code>
- // The code below will make the 2nd sheet active in the active spreadsheet
+ <pre class="prettyprint"><code>
+ // The code below makes the 2nd sheet active in the active spreadsheet
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  SpreadsheetApp.setActiveSheet(ss.getSheets()[1]);
  </code></pre>
@@ -483,9 +480,8 @@ SpreadsheetApp.setActiveSheet = function(sheet){};
 /**
  * Sets the active spreadsheet.
 
- <pre class="prettyprint">
- <code>
- // The code below will make the spreadsheet with key &quot;1234567890&quot; the active spreadsheet
+ <pre class="prettyprint"><code>
+ // The code below makes the spreadsheet with key &quot;1234567890&quot; the active spreadsheet
  var ss = SpreadsheetApp.openById(&quot;1234567890&quot;);
  SpreadsheetApp.setActiveSpreadsheet(ss);
  </code></pre>
@@ -531,7 +527,7 @@ SpreadsheetApp.ContainerInfo.prototype.getOffsetY = function(){};
 SpreadsheetApp.DataValidation = function(){};
 
 /**
- * Creates a builder for a data-validation rule based on this rule's settings. 
+ * Creates a builder for a data-validation rule based on this rule's settings.
 
  <pre class="prettyprint"><code>
  // Change existing data-validation rules that require a date in 2013 to require a date in 2014.
@@ -548,7 +544,7 @@ SpreadsheetApp.DataValidation = function(){};
      if (rule != null) {
        var criteria = rule.getCriteriaType();
        var args = rule.getCriteriaValues();
- 
+
        if (criteria == SpreadsheetApp.DataValidationCriteria.DATE_BETWEEN
            &amp;&amp; args[0].getTime() == oldDates[0].getTime()
            &amp;&amp; args[1].getTime() == oldDates[1].getTime()) {
@@ -566,9 +562,7 @@ SpreadsheetApp.DataValidation = function(){};
 SpreadsheetApp.DataValidation.prototype.copy = function(){};
 
 /**
- * Returns <code>true</code> if the rule shows a warning when input fails data validation, or
- <code>false</code> if it rejects the input entirely. The default for new data-validation rules is
- <code>true</code>.
+ * Returns <code>true</code> if the rule shows a warning when input fails data validation, or <code>false</code> if it rejects the input entirely. The default for new data-validation rules is <code>true</code>.
  *
  * @return {Boolean} <code>true</code> if the rule allows input that fails data validation; <code>false</code> if not
  */
@@ -577,8 +571,7 @@ SpreadsheetApp.DataValidation.prototype.getAllowInvalid = function(){};
 /**
  * Gets the rule's criteria type as defined in the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation-criteria.html'>DataValidationCriteria</a></code> enum. To get the
  arguments for the criteria, use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation.html#getCriteriaValues()'>getCriteriaValues()</a></code>. To use these values to create or
- modify a data-validation rule, see
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder.html#withCriteria(DataValidationCriteria,Object)'>DataValidationBuilder.withCriteria(criteria, args)</a></code>.
+ modify a data-validation rule, see <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder.html#withCriteria(DataValidationCriteria,Object)'>DataValidationBuilder.withCriteria(criteria, args)</a></code>.
 
  <pre class="prettyprint">
  // Log information about the data-validation rule for cell A1.
@@ -598,9 +591,7 @@ SpreadsheetApp.DataValidation.prototype.getAllowInvalid = function(){};
 SpreadsheetApp.DataValidation.prototype.getCriteriaType = function(){};
 
 /**
- * Gets an array of arguments for the rule's criteria. To get the criteria type, use
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation.html#getCriteriaType()'>getCriteriaType()</a></code>. To use these values to create or modify a data-validation rule, see
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder.html#withCriteria(DataValidationCriteria,Object)'>DataValidationBuilder.withCriteria(criteria, args)</a></code>.
+ * Gets an array of arguments for the rule's criteria. To get the criteria type, use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation.html#getCriteriaType()'>getCriteriaType()</a></code>. To use these values to create or modify a data-validation rule, see <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder.html#withCriteria(DataValidationCriteria,Object)'>DataValidationBuilder.withCriteria(criteria, args)</a></code>.
 
  <pre class="prettyprint">
  // Log information about the data-validation rule for cell A1.
@@ -616,8 +607,7 @@ SpreadsheetApp.DataValidation.prototype.getCriteriaType = function(){};
  </pre>
  *
  * @return {Object[]} an array of arguments appropriate to the rule's criteria type; the number of arguments
-     and their type match the corresponding <code>require...()</code> method of the
-     <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation.html'>DataValidation</a></code> class
+     and their type match the corresponding <code>require...()</code> method of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation.html'>DataValidation</a></code> class
  */
 SpreadsheetApp.DataValidation.prototype.getCriteriaValues = function(){};
 
@@ -639,7 +629,7 @@ SpreadsheetApp.DataValidationBuilder = function(){};
 SpreadsheetApp.DataValidationBuilder.prototype.build = function(){};
 
 /**
- * Creates a builder for a data-validation rule based on this rule's settings. 
+ * Creates a builder for a data-validation rule based on this rule's settings.
 
  <pre class="prettyprint"><code>
  // Change existing data-validation rules that require a date in 2013 to require a date in 2014.
@@ -656,7 +646,7 @@ SpreadsheetApp.DataValidationBuilder.prototype.build = function(){};
      if (rule != null) {
        var criteria = rule.getCriteriaType();
        var args = rule.getCriteriaValues();
- 
+
        if (criteria == SpreadsheetApp.DataValidationCriteria.DATE_BETWEEN
            &amp;&amp; args[0].getTime() == oldDates[0].getTime()
            &amp;&amp; args[1].getTime() == oldDates[1].getTime()) {
@@ -674,9 +664,7 @@ SpreadsheetApp.DataValidationBuilder.prototype.build = function(){};
 SpreadsheetApp.DataValidationBuilder.prototype.copy = function(){};
 
 /**
- * Returns <code>true</code> if the rule shows a warning when input fails data validation, or
- <code>false</code> if it rejects the input entirely. The default for new data-validation rules is
- <code>true</code>.
+ * Returns <code>true</code> if the rule shows a warning when input fails data validation, or <code>false</code> if it rejects the input entirely. The default for new data-validation rules is <code>true</code>.
  *
  * @return {Boolean} <code>true</code> if the rule allows input that fails data validation; <code>false</code> if not
  */
@@ -685,8 +673,7 @@ SpreadsheetApp.DataValidationBuilder.prototype.getAllowInvalid = function(){};
 /**
  * Gets the rule's criteria type as defined in the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation-criteria.html'>DataValidationCriteria</a></code> enum. To get the
  arguments for the criteria, use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder.html#getCriteriaValues()'>getCriteriaValues()</a></code>. To use these values to create or
- modify a data-validation rule, see
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder.html#withCriteria(DataValidationCriteria,Object)'>withCriteria(criteria, args)</a></code>.
+ modify a data-validation rule, see <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder.html#withCriteria(DataValidationCriteria,Object)'>withCriteria(criteria, args)</a></code>.
 
  <pre class="prettyprint">
  // Log information about the data-validation rule for cell A1.
@@ -706,9 +693,7 @@ SpreadsheetApp.DataValidationBuilder.prototype.getAllowInvalid = function(){};
 SpreadsheetApp.DataValidationBuilder.prototype.getCriteriaType = function(){};
 
 /**
- * Gets an array of arguments for the rule's criteria. To get the criteria type, use
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder.html#getCriteriaType()'>getCriteriaType()</a></code>. To use these values to create or modify a data-validation rule, see
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder.html#withCriteria(DataValidationCriteria,Object)'>withCriteria(criteria, args)</a></code>.
+ * Gets an array of arguments for the rule's criteria. To get the criteria type, use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder.html#getCriteriaType()'>getCriteriaType()</a></code>. To use these values to create or modify a data-validation rule, see <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder.html#withCriteria(DataValidationCriteria,Object)'>withCriteria(criteria, args)</a></code>.
 
  <pre class="prettyprint">
  // Log information about the data-validation rule for cell A1.
@@ -724,8 +709,7 @@ SpreadsheetApp.DataValidationBuilder.prototype.getCriteriaType = function(){};
  </pre>
  *
  * @return {Object[]} an array of arguments appropriate to the rule's criteria type; the number of arguments
-     and their type match the corresponding <code>require...()</code> method of the
-     <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder.html'>DataValidationBuilder</a></code> class
+     and their type match the corresponding <code>require...()</code> method of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder.html'>DataValidationBuilder</a></code> class
  */
 SpreadsheetApp.DataValidationBuilder.prototype.getCriteriaValues = function(){};
 
@@ -880,8 +864,8 @@ SpreadsheetApp.DataValidationBuilder.prototype.requireDateOnOrBefore = function(
 
 /**
  * Sets the data-validation rule to require that the given formula evaluates to <code>true</code>. This
- method is only available in the
- <a href="https://support.google.com/drive/answer/3541068">new version of Google Sheets</a>.
+ method is only available in the <a href="https://support.google.com/drive/answer/3541068">new
+ version of Google Sheets</a>.
 
  <pre class="prettyprint">
  // Set the data validation for cell A1 to equal B1 with a custom formula.
@@ -1160,9 +1144,8 @@ SpreadsheetApp.DataValidationBuilder.prototype.setHelpText = function(helpText){
 /**
  * Sets the data-validation rule to require criteria defined in the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation-criteria.html'>DataValidationCriteria</a></code>
  enum. This is an advanced method used primarily to create a new data-validation rule based on
- the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder.html#getCriteriaType()'>criteria</a></code> and
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder.html#getCriteriaValues()'>arguments</a></code> of an existing rule; in most other
- cases, the <code>require...()</code> methods are easier to use.
+ the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder.html#getCriteriaType()'>criteria</a></code> and <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-validation-builder.html#getCriteriaValues()'>arguments</a></code> of an existing rule; in most other cases, the
+ <code>require...()</code> methods are easier to use.
 
  <pre class="prettyprint"><code>
  // Change existing data-validation rules that require a date in 2013 to require a date in 2014.
@@ -1179,7 +1162,7 @@ SpreadsheetApp.DataValidationBuilder.prototype.setHelpText = function(helpText){
      if (rule != null) {
        var criteria = rule.getCriteriaType();
        var args = rule.getCriteriaValues();
- 
+
        if (criteria == SpreadsheetApp.DataValidationCriteria.DATE_BETWEEN
            &amp;&amp; args[0].getTime() == oldDates[0].getTime()
            &amp;&amp; args[1].getTime() == oldDates[1].getTime()) {
@@ -1204,11 +1187,10 @@ SpreadsheetApp.DataValidationBuilder.prototype.withCriteria = function(criteria,
 SpreadsheetApp.EmbeddedAreaChartBuilder = function(){};
 
 /**
- * Adds a Range to the chart represented by this builder. Will not add the Range
- if it has already been added to the chart.
+ * Adds a Range to the chart represented by this builder. Will not add the Range if it has already
+ been added to the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -1249,6 +1231,20 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.asBarChart = function(){};
 SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.asColumnChart = function(){};
 
 /**
+ * Sets the chart type to ComboChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-combo-chart-builder.html'>EmbeddedComboChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} a builder for a combo chart
+ */
+SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.asComboChart = function(){};
+
+/**
+ * Sets the chart type to HistogramChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-histogram-chart-builder.html'>EmbeddedHistogramChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} a builder for a histogram chart
+ */
+SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.asHistogramChart = function(){};
+
+/**
  * Sets the chart type to LineChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-line-chart-builder.html'>EmbeddedLineChartBuilder</a></code>.
  *
  * @return {SpreadsheetApp.EmbeddedLineChartBuilder} a builder for a line chart
@@ -1279,12 +1275,11 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.asTableChart = function(){};
 /**
  * Builds the chart to reflect all changes made to it.
 
- This method will not automatically draw the chart on top of the spreadsheet. A new chart
+ <p>This method will not automatically draw the chart on top of the spreadsheet. A new chart
  must be inserted via sheet.insertChart(chart), and an existing chart should be updated via
- sheet.update(chart);
+ sheet.updateChart(chart);
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -1312,8 +1307,7 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.getChartType = function(){};
 /**
  * Return the ContainerInfo, which encapsulates where the chart appears on the sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -1341,8 +1335,7 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.getContainer = function(){};
  * Returns a copy of the list of ranges currently providing data for this chart. Use addRange and
  removeRange to modify this list.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -1369,12 +1362,11 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.getRanges = function(){};
  * Removes the specified Range from the chart represented by this builder. Will not throw an error
  if the Range is not in this chart.
 
- The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-area-chart-builder.html#addRange(Range)'>addRange(range)</a></code>, or it will
- not be removed, and it will not throw an exception. This method cannot be used to partially
- remove values from a range.
+ <p>The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-area-chart-builder.html#addRange(Range)'>addRange(range)</a></code>, or it
+ will not be removed, and it will not throw an exception. This method cannot be used to
+ partially remove values from a range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -1397,7 +1389,7 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.getRanges = function(){};
  var chart = chartBuilder.build();
 
  sheet.insertChart(chart);
- </code> </pre>
+ </code></pre>
  *
  * @param {SpreadsheetApp.Range} range - the range to remove
  *
@@ -1406,13 +1398,12 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.getRanges = function(){};
 SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.removeRange = function(range){};
 
 /**
- * Reverses the drawing of series in the domain axis.  For vertical-range charts (such as line,
- area or column charts), this means the horizontal axis is drawn from right to left.  For
- horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top
- to bottom.  For pie charts, this means the slices are drawn counterclockwise.
+ * Reverses the drawing of series in the domain axis. For vertical-range charts (such as line,
+ area or column charts), this means the horizontal axis is drawn from right to left. For
+ horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top to
+ bottom. For pie charts, this means the slices are drawn counterclockwise.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a pie chart builder and sets drawing of the slices in a counter-clockwise manner.
  var builder = Charts.newPieChart();
  builder.reverseCategories();
@@ -1425,8 +1416,7 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.reverseCategories = function()
 /**
  * Sets the background color for the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the background color to gray
  var builder = Charts.newLineChart();
  builder.setBackgroundColor(&quot;gray&quot;);
@@ -1439,11 +1429,9 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.reverseCategories = function()
 SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setBackgroundColor = function(cssValue){};
 
 /**
- * Changes the type of chart. Not all embedded chart types are currently supported. See
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/chart-type.html'>ChartType</a></code>.
+ * Changes the type of chart. Not all embedded chart types are currently supported. See <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/chart-type.html'>ChartType</a></code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -1466,27 +1454,24 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setChartType = function(type){
 /**
  * Sets the colors for the lines in the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the first two lines to be drawn in green and red,
  // respectively.
  var builder = Charts.newLineChart();
  builder.setColors([&quot;green&quot;, &quot;red&quot;]);
  </code></pre>
  *
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>.  The nth
-     element in the array represents the color of the nth line in the chart.
+ * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+     in the array represents the color of the nth line in the chart.
  *
  * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} this builder, useful for chaining
  */
 SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setColors = function(cssValues){};
 
 /**
- * Sets the position of the legend with respect to the chart.  By default, there will be no
- legend.
+ * Sets the position of the legend with respect to the chart. By default, there will be no legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the legend position to right.
  var builder = Charts.newLineChart();
  builder.setLegendPosition(Charts.Position.RIGHT);
@@ -1501,8 +1486,7 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setLegendPosition = function(p
 /**
  * Sets the text style of the chart legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point legend.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -1517,19 +1501,19 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setLegendPosition = function(p
 SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setLegendTextStyle = function(textStyle){};
 
 /**
- * <p>Sets advanced options for this chart. See
- <a href="https://developers.google.com/chart/interactive/docs/reference">
- https://developers.google.com/chart/interactive/docs/reference</a> for what
- options are available.
+ * Sets advanced options for this chart. Lookup the chart type in the <a
+ href="https://developers.google.com/chart/interactive/docs/gallery">Charts API Chart
+ Gallery</a> for a listing of the available options. For example, the options for an area chart
+ are listed <a
+ href="https://developers.google.com/chart/interactive/docs/gallery/areachart#configuration-options">
+ here</a>.
 
- <p>This method will NOT validate the option you specify is valid for this
- chart type nor if the value is of the correct format/structure.
+ <p>This method will NOT validate the option you specify is valid for this chart type nor if the
+ value is of the correct format/structure.
 
- <p>This example shows how to change the animation duration to 1 second and
- set a legend.
+ <p>This example shows how to change the animation duration to 1 second and set a legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  builder.setOption(&#39;title&#39;, &#39;Earnings projections&#39;);
  builder.setOption(&#39;animation.duration&#39;, 1000);
  builder.setOption(&#39;legend&#39;, {position: &#39;top&#39;, textStyle: {color: &#39;blue&#39;, fontSize: 16}});
@@ -1543,11 +1527,10 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setLegendTextStyle = function(
 SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setOption = function(option, value){};
 
 /**
- * Sets the style for points in the line.  By default, points will have no particular styles,
- and only the line will be visible.
+ * Sets the style for points in the line. By default, points will have no particular styles, and
+ only the line will be visible.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets large point style.
  var builder = Charts.newLineChart();
  builder.setPointStyle(Charts.PointStyle.LARGE);
@@ -1563,8 +1546,7 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setPointStyle = function(style
  * Sets the position, changing where the chart appears on the sheet. AnchorRowPos and AnchorColPos
  are 1-indexed.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -1589,8 +1571,8 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setPosition = function(anchorR
 
 /**
  * Sets the range for the chart.
- <p>
- If any data points fall outside the range, the range will be expanded to include those data
+
+ <p>If any data points fall outside the range, the range will be expanded to include those data
  points.
  *
  * @param {Number} start - value for the lowest grid line of the range axis
@@ -1601,7 +1583,7 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setPosition = function(anchorR
 SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setRange = function(start, end){};
 
 /**
- * Uses stacked lines, meaning that line and bar values are stacked (accumulated).  By default,
+ * Uses stacked lines, meaning that line and bar values are stacked (accumulated). By default,
  there is no stacking.
  *
  * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} this builder, useful for chaining
@@ -1609,10 +1591,9 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setRange = function(start, end
 SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setStacked = function(){};
 
 /**
- * Sets the title of the chart.  The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title will be displayed centered above the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and title to &#39;My Line Chart&#39;.
  var builder = Charts.newLineChart();
  builder.setTitle(&#39;My Line Chart&#39;)
@@ -1627,8 +1608,7 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setTitle = function(chartTitle
 /**
  * Sets the text style of the chart title.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point title.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -1636,8 +1616,8 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setTitle = function(chartTitle
  builder.setTitleTextStyle(style);
  </code></pre>
  *
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object
-     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
+     created by calling Charts.newTextStyle().
  *
  * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} this builder, useful for chaining
  */
@@ -1646,8 +1626,7 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setTitleTextStyle = function(t
 /**
  * Sets the horizontal axis text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -1662,11 +1641,10 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setTitleTextStyle = function(t
 SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setXAxisTextStyle = function(textStyle){};
 
 /**
- * Adds a title to the horizontal axis.  The title will be centered and will appear below
- the axis value labels.
+ * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
+ value labels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis title.
  var builder = Charts.newLineChart();
  builder.setTitle(&#39;X-axis Title&#39;)
@@ -1681,8 +1659,7 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setXAxisTitle = function(title
 /**
  * Sets the horizontal axis title text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis title text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -1699,8 +1676,7 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setXAxisTitleTextStyle = funct
 /**
  * Sets the vertical axis text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -1715,11 +1691,10 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setXAxisTitleTextStyle = funct
 SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setYAxisTextStyle = function(textStyle){};
 
 /**
- * Adds a title to the vertical axis.  The title will be centered and will appear to the
- left of the value labels.
+ * Adds a title to the vertical axis. The title will be centered and will appear to the left of
+ the value labels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis title.
  var builder = Charts.newLineChart();
  builder.setYAxisTitle(&#39;Y-axis Title&#39;)
@@ -1734,8 +1709,7 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setYAxisTitle = function(title
 /**
  * Sets the vertical axis title text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis title text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -1750,7 +1724,7 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setYAxisTitle = function(title
 SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.setYAxisTitleTextStyle = function(textStyle){};
 
 /**
- * Makes the range axis into a logarithmic scale (requires all values to be positive).  The range
+ * Makes the range axis into a logarithmic scale (requires all values to be positive). The range
  axis will be the vertical axis for vertical charts (line, area, column, etc.) and the
  horizontal axis for horizontal charts (bar, etc.)
  *
@@ -1762,11 +1736,10 @@ SpreadsheetApp.EmbeddedAreaChartBuilder.prototype.useLogScale = function(){};
 SpreadsheetApp.EmbeddedBarChartBuilder = function(){};
 
 /**
- * Adds a Range to the chart represented by this builder. Will not add the Range
- if it has already been added to the chart.
+ * Adds a Range to the chart represented by this builder. Will not add the Range if it has already
+ been added to the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -1807,6 +1780,20 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.asBarChart = function(){};
 SpreadsheetApp.EmbeddedBarChartBuilder.prototype.asColumnChart = function(){};
 
 /**
+ * Sets the chart type to ComboChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-combo-chart-builder.html'>EmbeddedComboChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} a builder for a combo chart
+ */
+SpreadsheetApp.EmbeddedBarChartBuilder.prototype.asComboChart = function(){};
+
+/**
+ * Sets the chart type to HistogramChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-histogram-chart-builder.html'>EmbeddedHistogramChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} a builder for a histogram chart
+ */
+SpreadsheetApp.EmbeddedBarChartBuilder.prototype.asHistogramChart = function(){};
+
+/**
  * Sets the chart type to LineChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-line-chart-builder.html'>EmbeddedLineChartBuilder</a></code>.
  *
  * @return {SpreadsheetApp.EmbeddedLineChartBuilder} a builder for a line chart
@@ -1837,12 +1824,11 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.asTableChart = function(){};
 /**
  * Builds the chart to reflect all changes made to it.
 
- This method will not automatically draw the chart on top of the spreadsheet. A new chart
+ <p>This method will not automatically draw the chart on top of the spreadsheet. A new chart
  must be inserted via sheet.insertChart(chart), and an existing chart should be updated via
- sheet.update(chart);
+ sheet.updateChart(chart);
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -1870,8 +1856,7 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.getChartType = function(){};
 /**
  * Return the ContainerInfo, which encapsulates where the chart appears on the sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -1899,8 +1884,7 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.getContainer = function(){};
  * Returns a copy of the list of ranges currently providing data for this chart. Use addRange and
  removeRange to modify this list.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -1927,12 +1911,11 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.getRanges = function(){};
  * Removes the specified Range from the chart represented by this builder. Will not throw an error
  if the Range is not in this chart.
 
- The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-bar-chart-builder.html#addRange(Range)'>addRange(range)</a></code>, or it will
- not be removed, and it will not throw an exception. This method cannot be used to partially
- remove values from a range.
+ <p>The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-bar-chart-builder.html#addRange(Range)'>addRange(range)</a></code>, or it
+ will not be removed, and it will not throw an exception. This method cannot be used to
+ partially remove values from a range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -1955,7 +1938,7 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.getRanges = function(){};
  var chart = chartBuilder.build();
 
  sheet.insertChart(chart);
- </code> </pre>
+ </code></pre>
  *
  * @param {SpreadsheetApp.Range} range - the range to remove
  *
@@ -1964,13 +1947,12 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.getRanges = function(){};
 SpreadsheetApp.EmbeddedBarChartBuilder.prototype.removeRange = function(range){};
 
 /**
- * Reverses the drawing of series in the domain axis.  For vertical-range charts (such as line,
- area or column charts), this means the horizontal axis is drawn from right to left.  For
- horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top
- to bottom.  For pie charts, this means the slices are drawn counterclockwise.
+ * Reverses the drawing of series in the domain axis. For vertical-range charts (such as line,
+ area or column charts), this means the horizontal axis is drawn from right to left. For
+ horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top to
+ bottom. For pie charts, this means the slices are drawn counterclockwise.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a pie chart builder and sets drawing of the slices in a counter-clockwise manner.
  var builder = Charts.newPieChart();
  builder.reverseCategories();
@@ -1981,8 +1963,8 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.removeRange = function(range){}
 SpreadsheetApp.EmbeddedBarChartBuilder.prototype.reverseCategories = function(){};
 
 /**
- * Reverses the direction in which the bars grow along the horizontal axis.  By default, values
- grow from left to right.  Calling this method will cause them to grow from right to left.
+ * Reverses the direction in which the bars grow along the horizontal axis. By default, values
+ grow from left to right. Calling this method will cause them to grow from right to left.
  *
  * @return {SpreadsheetApp.EmbeddedBarChartBuilder} this builder, useful for chaining
  */
@@ -1991,8 +1973,7 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.reverseDirection = function(){}
 /**
  * Sets the background color for the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the background color to gray
  var builder = Charts.newLineChart();
  builder.setBackgroundColor(&quot;gray&quot;);
@@ -2005,11 +1986,9 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.reverseDirection = function(){}
 SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setBackgroundColor = function(cssValue){};
 
 /**
- * Changes the type of chart. Not all embedded chart types are currently supported. See
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/chart-type.html'>ChartType</a></code>.
+ * Changes the type of chart. Not all embedded chart types are currently supported. See <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/chart-type.html'>ChartType</a></code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -2032,27 +2011,24 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setChartType = function(type){}
 /**
  * Sets the colors for the lines in the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the first two lines to be drawn in green and red,
  // respectively.
  var builder = Charts.newLineChart();
  builder.setColors([&quot;green&quot;, &quot;red&quot;]);
  </code></pre>
  *
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>.  The nth
-     element in the array represents the color of the nth line in the chart.
+ * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+     in the array represents the color of the nth line in the chart.
  *
  * @return {SpreadsheetApp.EmbeddedBarChartBuilder} this builder, useful for chaining
  */
 SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setColors = function(cssValues){};
 
 /**
- * Sets the position of the legend with respect to the chart.  By default, there will be no
- legend.
+ * Sets the position of the legend with respect to the chart. By default, there will be no legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the legend position to right.
  var builder = Charts.newLineChart();
  builder.setLegendPosition(Charts.Position.RIGHT);
@@ -2067,8 +2043,7 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setLegendPosition = function(po
 /**
  * Sets the text style of the chart legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point legend.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -2083,19 +2058,19 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setLegendPosition = function(po
 SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setLegendTextStyle = function(textStyle){};
 
 /**
- * <p>Sets advanced options for this chart. See
- <a href="https://developers.google.com/chart/interactive/docs/reference">
- https://developers.google.com/chart/interactive/docs/reference</a> for what
- options are available.
+ * Sets advanced options for this chart. Lookup the chart type in the <a
+ href="https://developers.google.com/chart/interactive/docs/gallery">Charts API Chart
+ Gallery</a> for a listing of the available options. For example, the options for an area chart
+ are listed <a
+ href="https://developers.google.com/chart/interactive/docs/gallery/areachart#configuration-options">
+ here</a>.
 
- <p>This method will NOT validate the option you specify is valid for this
- chart type nor if the value is of the correct format/structure.
+ <p>This method will NOT validate the option you specify is valid for this chart type nor if the
+ value is of the correct format/structure.
 
- <p>This example shows how to change the animation duration to 1 second and
- set a legend.
+ <p>This example shows how to change the animation duration to 1 second and set a legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  builder.setOption(&#39;title&#39;, &#39;Earnings projections&#39;);
  builder.setOption(&#39;animation.duration&#39;, 1000);
  builder.setOption(&#39;legend&#39;, {position: &#39;top&#39;, textStyle: {color: &#39;blue&#39;, fontSize: 16}});
@@ -2112,8 +2087,7 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setOption = function(option, va
  * Sets the position, changing where the chart appears on the sheet. AnchorRowPos and AnchorColPos
  are 1-indexed.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -2138,8 +2112,8 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setPosition = function(anchorRo
 
 /**
  * Sets the range for the chart.
- <p>
- If any data points fall outside the range, the range will be expanded to include those data
+
+ <p>If any data points fall outside the range, the range will be expanded to include those data
  points.
  *
  * @param {Number} start - value for the lowest grid line of the range axis
@@ -2150,7 +2124,7 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setPosition = function(anchorRo
 SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setRange = function(start, end){};
 
 /**
- * Uses stacked lines, meaning that line and bar values are stacked (accumulated).  By default,
+ * Uses stacked lines, meaning that line and bar values are stacked (accumulated). By default,
  there is no stacking.
  *
  * @return {SpreadsheetApp.EmbeddedBarChartBuilder} this builder, useful for chaining
@@ -2158,10 +2132,9 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setRange = function(start, end)
 SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setStacked = function(){};
 
 /**
- * Sets the title of the chart.  The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title will be displayed centered above the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and title to &#39;My Line Chart&#39;.
  var builder = Charts.newLineChart();
  builder.setTitle(&#39;My Line Chart&#39;)
@@ -2176,8 +2149,7 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setTitle = function(chartTitle)
 /**
  * Sets the text style of the chart title.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point title.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -2185,8 +2157,8 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setTitle = function(chartTitle)
  builder.setTitleTextStyle(style);
  </code></pre>
  *
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object
-     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
+     created by calling Charts.newTextStyle().
  *
  * @return {SpreadsheetApp.EmbeddedBarChartBuilder} this builder, useful for chaining
  */
@@ -2195,8 +2167,7 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setTitleTextStyle = function(te
 /**
  * Sets the horizontal axis text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -2211,11 +2182,10 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setTitleTextStyle = function(te
 SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setXAxisTextStyle = function(textStyle){};
 
 /**
- * Adds a title to the horizontal axis.  The title will be centered and will appear below
- the axis value labels.
+ * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
+ value labels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis title.
  var builder = Charts.newLineChart();
  builder.setTitle(&#39;X-axis Title&#39;)
@@ -2230,8 +2200,7 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setXAxisTitle = function(title)
 /**
  * Sets the horizontal axis title text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis title text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -2248,8 +2217,7 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setXAxisTitleTextStyle = functi
 /**
  * Sets the vertical axis text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -2264,11 +2232,10 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setXAxisTitleTextStyle = functi
 SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setYAxisTextStyle = function(textStyle){};
 
 /**
- * Adds a title to the vertical axis.  The title will be centered and will appear to the
- left of the value labels.
+ * Adds a title to the vertical axis. The title will be centered and will appear to the left of
+ the value labels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis title.
  var builder = Charts.newLineChart();
  builder.setYAxisTitle(&#39;Y-axis Title&#39;)
@@ -2283,8 +2250,7 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setYAxisTitle = function(title)
 /**
  * Sets the vertical axis title text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis title text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -2299,7 +2265,7 @@ SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setYAxisTitle = function(title)
 SpreadsheetApp.EmbeddedBarChartBuilder.prototype.setYAxisTitleTextStyle = function(textStyle){};
 
 /**
- * Makes the range axis into a logarithmic scale (requires all values to be positive).  The range
+ * Makes the range axis into a logarithmic scale (requires all values to be positive). The range
  axis will be the vertical axis for vertical charts (line, area, column, etc.) and the
  horizontal axis for horizontal charts (bar, etc.)
  *
@@ -2312,15 +2278,14 @@ SpreadsheetApp.EmbeddedChart = function(){};
 
 /**
  * Return the data inside this object as a blob converted to the specified content type. This
- method adds the appropriate extension to the filename ? for example, "myfile.pdf". However, it
+ method adds the appropriate extension to the filename — for example, "myfile.pdf". However, it
  assumes that the part of the filename that follows the last period (if any) is an existing
  extension that should be replaced. Consequently, "ChristmasList.12.25.2014" will become
  "ChristmasList.12.25.pdf".
  *
- * @param {String} contentType - the MIME type to convert to. For most blobs,
-     <code>&#39;application/pdf&#39;</code> is the only valid option. For images in BMP, GIF, JPEG,
-     or PNG format, any of <code>&#39;image/bmp&#39;</code>, <code>&#39;image/gif&#39;</code>,
-     <code>&#39;image/jpeg&#39;</code>, or <code>&#39;image/png&#39;</code> are also valid.
+ * @param {String} contentType - the MIME type to convert to. For most blobs, <code>&#39;application/pdf&#39;</code> is
+     the only valid option. For images in BMP, GIF, JPEG, or PNG format, any of <code>&#39;image/bmp&#39;</code>, <code>&#39;image/gif&#39;</code>, <code>&#39;image/jpeg&#39;</code>, or <code>&#39;image/png&#39;</code> are also
+     valid.
  *
  * @return {Blob} the data as a blob
  */
@@ -2336,8 +2301,7 @@ SpreadsheetApp.EmbeddedChart.prototype.getBlob = function(){};
 /**
  * Returns information about where the chart is positioned within a sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -2363,8 +2327,8 @@ SpreadsheetApp.EmbeddedChart.prototype.getContainerInfo = function(){};
 
 /**
  * Returns the id that has been assigned to this object.
- <p>
- This can be used in conjunction with app.getElementById() to retrieve a reference to this
+
+ <p>This can be used in conjunction with app.getElementById() to retrieve a reference to this
  object.
  *
  * @return {String} the id that has been assigned to this object
@@ -2373,8 +2337,8 @@ SpreadsheetApp.EmbeddedChart.prototype.getId = function(){};
 
 /**
  * Returns the options for this chart, such as height, colors, axes, etc.
- <p>
- The returned options are immutable.
+
+ <p>The returned options are immutable.
  *
  * @return {Charts.ChartOptions} the options for this chart, such as height, colors, axes, etc.
  */
@@ -2383,8 +2347,7 @@ SpreadsheetApp.EmbeddedChart.prototype.getOptions = function(){};
 /**
  * Returns the Ranges that this chart uses as a data source.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -2419,8 +2382,7 @@ SpreadsheetApp.EmbeddedChart.prototype.getType = function(){};
  * Returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-chart-builder.html'>EmbeddedChartBuilder</a></code> that can be used to modify this chart. Remember to
  invoke sheet.updateChart(chart) to save your changes.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var sheet = SpreadsheetApp.getActiveSheet();
  var chart = sheet.getCharts()[0];
  chart = chart.modify()
@@ -2449,11 +2411,10 @@ SpreadsheetApp.EmbeddedChart.prototype.setId = function(id){};
 SpreadsheetApp.EmbeddedChartBuilder = function(){};
 
 /**
- * Adds a Range to the chart represented by this builder. Will not add the Range
- if it has already been added to the chart.
+ * Adds a Range to the chart represented by this builder. Will not add the Range if it has already
+ been added to the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -2494,6 +2455,20 @@ SpreadsheetApp.EmbeddedChartBuilder.prototype.asBarChart = function(){};
 SpreadsheetApp.EmbeddedChartBuilder.prototype.asColumnChart = function(){};
 
 /**
+ * Sets the chart type to ComboChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-combo-chart-builder.html'>EmbeddedComboChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} a builder for a combo chart
+ */
+SpreadsheetApp.EmbeddedChartBuilder.prototype.asComboChart = function(){};
+
+/**
+ * Sets the chart type to HistogramChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-histogram-chart-builder.html'>EmbeddedHistogramChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} a builder for a histogram chart
+ */
+SpreadsheetApp.EmbeddedChartBuilder.prototype.asHistogramChart = function(){};
+
+/**
  * Sets the chart type to LineChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-line-chart-builder.html'>EmbeddedLineChartBuilder</a></code>.
  *
  * @return {SpreadsheetApp.EmbeddedLineChartBuilder} a builder for a line chart
@@ -2524,12 +2499,11 @@ SpreadsheetApp.EmbeddedChartBuilder.prototype.asTableChart = function(){};
 /**
  * Builds the chart to reflect all changes made to it.
 
- This method will not automatically draw the chart on top of the spreadsheet. A new chart
+ <p>This method will not automatically draw the chart on top of the spreadsheet. A new chart
  must be inserted via sheet.insertChart(chart), and an existing chart should be updated via
- sheet.update(chart);
+ sheet.updateChart(chart);
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -2557,8 +2531,7 @@ SpreadsheetApp.EmbeddedChartBuilder.prototype.getChartType = function(){};
 /**
  * Return the ContainerInfo, which encapsulates where the chart appears on the sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -2586,8 +2559,7 @@ SpreadsheetApp.EmbeddedChartBuilder.prototype.getContainer = function(){};
  * Returns a copy of the list of ranges currently providing data for this chart. Use addRange and
  removeRange to modify this list.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -2614,12 +2586,11 @@ SpreadsheetApp.EmbeddedChartBuilder.prototype.getRanges = function(){};
  * Removes the specified Range from the chart represented by this builder. Will not throw an error
  if the Range is not in this chart.
 
- The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-chart-builder.html#addRange(Range)'>addRange(range)</a></code>, or it will
- not be removed, and it will not throw an exception. This method cannot be used to partially
- remove values from a range.
+ <p>The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-chart-builder.html#addRange(Range)'>addRange(range)</a></code>, or it
+ will not be removed, and it will not throw an exception. This method cannot be used to
+ partially remove values from a range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -2642,7 +2613,7 @@ SpreadsheetApp.EmbeddedChartBuilder.prototype.getRanges = function(){};
  var chart = chartBuilder.build();
 
  sheet.insertChart(chart);
- </code> </pre>
+ </code></pre>
  *
  * @param {SpreadsheetApp.Range} range - the range to remove
  *
@@ -2651,11 +2622,9 @@ SpreadsheetApp.EmbeddedChartBuilder.prototype.getRanges = function(){};
 SpreadsheetApp.EmbeddedChartBuilder.prototype.removeRange = function(range){};
 
 /**
- * Changes the type of chart. Not all embedded chart types are currently supported. See
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/chart-type.html'>ChartType</a></code>.
+ * Changes the type of chart. Not all embedded chart types are currently supported. See <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/chart-type.html'>ChartType</a></code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -2676,19 +2645,19 @@ SpreadsheetApp.EmbeddedChartBuilder.prototype.removeRange = function(range){};
 SpreadsheetApp.EmbeddedChartBuilder.prototype.setChartType = function(type){};
 
 /**
- * <p>Sets advanced options for this chart. See
- <a href="https://developers.google.com/chart/interactive/docs/reference">
- https://developers.google.com/chart/interactive/docs/reference</a> for what
- options are available.
+ * Sets advanced options for this chart. Lookup the chart type in the <a
+ href="https://developers.google.com/chart/interactive/docs/gallery">Charts API Chart
+ Gallery</a> for a listing of the available options. For example, the options for an area chart
+ are listed <a
+ href="https://developers.google.com/chart/interactive/docs/gallery/areachart#configuration-options">
+ here</a>.
 
- <p>This method will NOT validate the option you specify is valid for this
- chart type nor if the value is of the correct format/structure.
+ <p>This method will NOT validate the option you specify is valid for this chart type nor if the
+ value is of the correct format/structure.
 
- <p>This example shows how to change the animation duration to 1 second and
- set a legend.
+ <p>This example shows how to change the animation duration to 1 second and set a legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  builder.setOption(&#39;title&#39;, &#39;Earnings projections&#39;);
  builder.setOption(&#39;animation.duration&#39;, 1000);
  builder.setOption(&#39;legend&#39;, {position: &#39;top&#39;, textStyle: {color: &#39;blue&#39;, fontSize: 16}});
@@ -2705,8 +2674,7 @@ SpreadsheetApp.EmbeddedChartBuilder.prototype.setOption = function(option, value
  * Sets the position, changing where the chart appears on the sheet. AnchorRowPos and AnchorColPos
  are 1-indexed.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -2733,11 +2701,10 @@ SpreadsheetApp.EmbeddedChartBuilder.prototype.setPosition = function(anchorRowPo
 SpreadsheetApp.EmbeddedColumnChartBuilder = function(){};
 
 /**
- * Adds a Range to the chart represented by this builder. Will not add the Range
- if it has already been added to the chart.
+ * Adds a Range to the chart represented by this builder. Will not add the Range if it has already
+ been added to the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -2778,6 +2745,20 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.asBarChart = function(){};
 SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.asColumnChart = function(){};
 
 /**
+ * Sets the chart type to ComboChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-combo-chart-builder.html'>EmbeddedComboChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} a builder for a combo chart
+ */
+SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.asComboChart = function(){};
+
+/**
+ * Sets the chart type to HistogramChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-histogram-chart-builder.html'>EmbeddedHistogramChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} a builder for a histogram chart
+ */
+SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.asHistogramChart = function(){};
+
+/**
  * Sets the chart type to LineChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-line-chart-builder.html'>EmbeddedLineChartBuilder</a></code>.
  *
  * @return {SpreadsheetApp.EmbeddedLineChartBuilder} a builder for a line chart
@@ -2808,12 +2789,11 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.asTableChart = function(){};
 /**
  * Builds the chart to reflect all changes made to it.
 
- This method will not automatically draw the chart on top of the spreadsheet. A new chart
+ <p>This method will not automatically draw the chart on top of the spreadsheet. A new chart
  must be inserted via sheet.insertChart(chart), and an existing chart should be updated via
- sheet.update(chart);
+ sheet.updateChart(chart);
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -2841,8 +2821,7 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.getChartType = function(){};
 /**
  * Return the ContainerInfo, which encapsulates where the chart appears on the sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -2870,8 +2849,7 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.getContainer = function(){};
  * Returns a copy of the list of ranges currently providing data for this chart. Use addRange and
  removeRange to modify this list.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -2898,12 +2876,11 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.getRanges = function(){};
  * Removes the specified Range from the chart represented by this builder. Will not throw an error
  if the Range is not in this chart.
 
- The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-column-chart-builder.html#addRange(Range)'>addRange(range)</a></code>, or it will
- not be removed, and it will not throw an exception. This method cannot be used to partially
- remove values from a range.
+ <p>The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-column-chart-builder.html#addRange(Range)'>addRange(range)</a></code>, or it
+ will not be removed, and it will not throw an exception. This method cannot be used to
+ partially remove values from a range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -2926,7 +2903,7 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.getRanges = function(){};
  var chart = chartBuilder.build();
 
  sheet.insertChart(chart);
- </code> </pre>
+ </code></pre>
  *
  * @param {SpreadsheetApp.Range} range - the range to remove
  *
@@ -2935,13 +2912,12 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.getRanges = function(){};
 SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.removeRange = function(range){};
 
 /**
- * Reverses the drawing of series in the domain axis.  For vertical-range charts (such as line,
- area or column charts), this means the horizontal axis is drawn from right to left.  For
- horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top
- to bottom.  For pie charts, this means the slices are drawn counterclockwise.
+ * Reverses the drawing of series in the domain axis. For vertical-range charts (such as line,
+ area or column charts), this means the horizontal axis is drawn from right to left. For
+ horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top to
+ bottom. For pie charts, this means the slices are drawn counterclockwise.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a pie chart builder and sets drawing of the slices in a counter-clockwise manner.
  var builder = Charts.newPieChart();
  builder.reverseCategories();
@@ -2954,8 +2930,7 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.reverseCategories = function
 /**
  * Sets the background color for the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the background color to gray
  var builder = Charts.newLineChart();
  builder.setBackgroundColor(&quot;gray&quot;);
@@ -2968,11 +2943,9 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.reverseCategories = function
 SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setBackgroundColor = function(cssValue){};
 
 /**
- * Changes the type of chart. Not all embedded chart types are currently supported. See
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/chart-type.html'>ChartType</a></code>.
+ * Changes the type of chart. Not all embedded chart types are currently supported. See <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/chart-type.html'>ChartType</a></code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -2995,27 +2968,24 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setChartType = function(type
 /**
  * Sets the colors for the lines in the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the first two lines to be drawn in green and red,
  // respectively.
  var builder = Charts.newLineChart();
  builder.setColors([&quot;green&quot;, &quot;red&quot;]);
  </code></pre>
  *
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>.  The nth
-     element in the array represents the color of the nth line in the chart.
+ * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+     in the array represents the color of the nth line in the chart.
  *
  * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} this builder, useful for chaining
  */
 SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setColors = function(cssValues){};
 
 /**
- * Sets the position of the legend with respect to the chart.  By default, there will be no
- legend.
+ * Sets the position of the legend with respect to the chart. By default, there will be no legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the legend position to right.
  var builder = Charts.newLineChart();
  builder.setLegendPosition(Charts.Position.RIGHT);
@@ -3030,8 +3000,7 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setLegendPosition = function
 /**
  * Sets the text style of the chart legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point legend.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -3046,19 +3015,19 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setLegendPosition = function
 SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setLegendTextStyle = function(textStyle){};
 
 /**
- * <p>Sets advanced options for this chart. See
- <a href="https://developers.google.com/chart/interactive/docs/reference">
- https://developers.google.com/chart/interactive/docs/reference</a> for what
- options are available.
+ * Sets advanced options for this chart. Lookup the chart type in the <a
+ href="https://developers.google.com/chart/interactive/docs/gallery">Charts API Chart
+ Gallery</a> for a listing of the available options. For example, the options for an area chart
+ are listed <a
+ href="https://developers.google.com/chart/interactive/docs/gallery/areachart#configuration-options">
+ here</a>.
 
- <p>This method will NOT validate the option you specify is valid for this
- chart type nor if the value is of the correct format/structure.
+ <p>This method will NOT validate the option you specify is valid for this chart type nor if the
+ value is of the correct format/structure.
 
- <p>This example shows how to change the animation duration to 1 second and
- set a legend.
+ <p>This example shows how to change the animation duration to 1 second and set a legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  builder.setOption(&#39;title&#39;, &#39;Earnings projections&#39;);
  builder.setOption(&#39;animation.duration&#39;, 1000);
  builder.setOption(&#39;legend&#39;, {position: &#39;top&#39;, textStyle: {color: &#39;blue&#39;, fontSize: 16}});
@@ -3075,8 +3044,7 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setOption = function(option,
  * Sets the position, changing where the chart appears on the sheet. AnchorRowPos and AnchorColPos
  are 1-indexed.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -3101,8 +3069,8 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setPosition = function(ancho
 
 /**
  * Sets the range for the chart.
- <p>
- If any data points fall outside the range, the range will be expanded to include those data
+
+ <p>If any data points fall outside the range, the range will be expanded to include those data
  points.
  *
  * @param {Number} start - value for the lowest grid line of the range axis
@@ -3113,7 +3081,7 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setPosition = function(ancho
 SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setRange = function(start, end){};
 
 /**
- * Uses stacked lines, meaning that line and bar values are stacked (accumulated).  By default,
+ * Uses stacked lines, meaning that line and bar values are stacked (accumulated). By default,
  there is no stacking.
  *
  * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} this builder, useful for chaining
@@ -3121,10 +3089,9 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setRange = function(start, e
 SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setStacked = function(){};
 
 /**
- * Sets the title of the chart.  The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title will be displayed centered above the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and title to &#39;My Line Chart&#39;.
  var builder = Charts.newLineChart();
  builder.setTitle(&#39;My Line Chart&#39;)
@@ -3139,8 +3106,7 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setTitle = function(chartTit
 /**
  * Sets the text style of the chart title.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point title.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -3148,8 +3114,8 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setTitle = function(chartTit
  builder.setTitleTextStyle(style);
  </code></pre>
  *
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object
-     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
+     created by calling Charts.newTextStyle().
  *
  * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} this builder, useful for chaining
  */
@@ -3158,8 +3124,7 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setTitleTextStyle = function
 /**
  * Sets the horizontal axis text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -3174,11 +3139,10 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setTitleTextStyle = function
 SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setXAxisTextStyle = function(textStyle){};
 
 /**
- * Adds a title to the horizontal axis.  The title will be centered and will appear below
- the axis value labels.
+ * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
+ value labels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis title.
  var builder = Charts.newLineChart();
  builder.setTitle(&#39;X-axis Title&#39;)
@@ -3193,8 +3157,7 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setXAxisTitle = function(tit
 /**
  * Sets the horizontal axis title text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis title text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -3211,8 +3174,7 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setXAxisTitleTextStyle = fun
 /**
  * Sets the vertical axis text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -3227,11 +3189,10 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setXAxisTitleTextStyle = fun
 SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setYAxisTextStyle = function(textStyle){};
 
 /**
- * Adds a title to the vertical axis.  The title will be centered and will appear to the
- left of the value labels.
+ * Adds a title to the vertical axis. The title will be centered and will appear to the left of
+ the value labels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis title.
  var builder = Charts.newLineChart();
  builder.setYAxisTitle(&#39;Y-axis Title&#39;)
@@ -3246,8 +3207,7 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setYAxisTitle = function(tit
 /**
  * Sets the vertical axis title text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis title text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -3262,7 +3222,7 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setYAxisTitle = function(tit
 SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setYAxisTitleTextStyle = function(textStyle){};
 
 /**
- * Makes the range axis into a logarithmic scale (requires all values to be positive).  The range
+ * Makes the range axis into a logarithmic scale (requires all values to be positive). The range
  axis will be the vertical axis for vertical charts (line, area, column, etc.) and the
  horizontal axis for horizontal charts (bar, etc.)
  *
@@ -3271,14 +3231,1079 @@ SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.setYAxisTitleTextStyle = fun
 SpreadsheetApp.EmbeddedColumnChartBuilder.prototype.useLogScale = function(){};
 
 /** @constructor */
+SpreadsheetApp.EmbeddedComboChartBuilder = function(){};
+
+/**
+ * Adds a Range to the chart represented by this builder. Will not add the Range if it has already
+ been added to the chart.
+
+ <pre class="prettyprint"><code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+
+ var chart = sheet.newChart()
+     .setChartType(Charts.ChartType.BAR)
+     .addRange(sheet.getRange(&quot;A1:B8&quot;))
+     .setPosition(5, 5, 0, 0)
+     .build();
+
+ sheet.insertChart(chart);
+ </code></pre>
+ *
+ * @param {SpreadsheetApp.Range} range - the range to add
+ *
+ * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.addRange = function(range){};
+
+/**
+ * Sets the chart type to AreaChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-area-chart-builder.html'>EmbeddedAreaChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} a builder for an area chart
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.asAreaChart = function(){};
+
+/**
+ * Sets the chart type to BarChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-bar-chart-builder.html'>EmbeddedBarChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedBarChartBuilder} a builder for a bar chart
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.asBarChart = function(){};
+
+/**
+ * Sets the chart type to ColumnChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-column-chart-builder.html'>EmbeddedColumnChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} a builder for a column chart
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.asColumnChart = function(){};
+
+/**
+ * Sets the chart type to ComboChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-combo-chart-builder.html'>EmbeddedComboChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} a builder for a combo chart
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.asComboChart = function(){};
+
+/**
+ * Sets the chart type to HistogramChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-histogram-chart-builder.html'>EmbeddedHistogramChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} a builder for a histogram chart
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.asHistogramChart = function(){};
+
+/**
+ * Sets the chart type to LineChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-line-chart-builder.html'>EmbeddedLineChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedLineChartBuilder} a builder for a line chart
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.asLineChart = function(){};
+
+/**
+ * Sets the chart type to PieChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-pie-chart-builder.html'>EmbeddedPieChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedPieChartBuilder} a builder for a pie chart
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.asPieChart = function(){};
+
+/**
+ * Sets the chart type to ScatterChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-scatter-chart-builder.html'>EmbeddedScatterChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} a builder for a scatter chart
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.asScatterChart = function(){};
+
+/**
+ * Sets the chart type to TableChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-table-chart-builder.html'>EmbeddedTableChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedTableChartBuilder} a builder for a table chart
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.asTableChart = function(){};
+
+/**
+ * Builds the chart to reflect all changes made to it.
+
+ <p>This method will not automatically draw the chart on top of the spreadsheet. A new chart
+ must be inserted via sheet.insertChart(chart), and an existing chart should be updated via
+ sheet.updateChart(chart);
+
+ <pre class="prettyprint"><code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+
+ var range = sheet.getRange(&quot;A1:B5&quot;);
+ var chart = sheet.newChart()
+     .setChartType(Charts.ChartType.BAR)
+     .addRange(range)
+     .setPosition(5, 5, 0, 0)
+     .build()
+
+ sheet.insertChart(chart);
+ </code></pre>
+ *
+ * @return {SpreadsheetApp.EmbeddedChart} the created chart, which must still be added to the spreadsheet
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.build = function(){};
+
+/**
+ * Returns the current chart type.
+ *
+ * @return {Charts.ChartType} the chart type
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.getChartType = function(){};
+
+/**
+ * Return the ContainerInfo, which encapsulates where the chart appears on the sheet.
+
+ <pre class="prettyprint"><code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+
+ var chartBuilder = sheet.newChart()
+     .setChartType(Charts.ChartType.BAR)
+     .addRange(sheet.getRange(&quot;A1:B8&quot;))
+     .setPosition(5, 5, 0, 0);
+
+ // This method returns the exact same data as Chart#getContainerInfo()
+ var containerInfo = chartBuilder.getContainer();
+
+ // Logs the values we used in setPosition()
+ Logger.log(&quot;Anchor Column: %s\r\nAnchor Row %s\r\nOffset X %s\r\nOffset Y %s&quot;,
+           containerInfo.getAnchorColumn(),
+           containerInfo.getAnchorRow(),
+           containerInfo.getOffsetX(),
+           containerInfo.getOffsetY());
+ </code></pre>
+ *
+ * @return {SpreadsheetApp.ContainerInfo} an object containing the chart container's position
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.getContainer = function(){};
+
+/**
+ * Returns a copy of the list of ranges currently providing data for this chart. Use addRange and
+ removeRange to modify this list.
+
+ <pre class="prettyprint"><code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+
+ var chartBuilder = sheet.newChart()
+     .setChartType(Charts.ChartType.BAR)
+     .addRange(sheet.getRange(&quot;A1:B8&quot;))
+     .setPosition(5, 5, 0, 0)
+
+ var ranges = chartBuilder.getRanges();
+
+ // There&#39;s only one range as a data source for this chart,
+ // so this logs &quot;A1:B8&quot;
+ for (var i in ranges) {
+   var range = ranges[i];
+   Logger.log(range.getA1Notation());
+ }
+ </code></pre>
+ *
+ * @return {SpreadsheetApp.Range[]} an array of ranges that serve as the chart to be built's data source
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.getRanges = function(){};
+
+/**
+ * Removes the specified Range from the chart represented by this builder. Will not throw an error
+ if the Range is not in this chart.
+
+ <p>The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-combo-chart-builder.html#addRange(Range)'>addRange(range)</a></code>, or it
+ will not be removed, and it will not throw an exception. This method cannot be used to
+ partially remove values from a range.
+
+ <pre class="prettyprint"><code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+
+ var firstRange = sheet.getRange(&quot;A1:B5&quot;);
+ var secondRange = sheet.getRange(&quot;A6:B8&quot;);
+
+ var chartBuilder = sheet.newChart()
+     .setChartType(Charts.ChartType.BAR)
+     .addRange(firstRange)
+     // This range will render in a different color
+     .addRange(secondRange)
+     .setPosition(5, 5, 0, 0);
+
+ // Note that you can use either of these two formats, but the range
+ // MUST match up with a range that was added via addRange(), or it
+ // will not be removed, and will not throw an exception
+ chartBuilder.removeRange(firstRange);
+ chartBuilder.removeRange(sheet.getRange(&quot;A6:B8&quot;));
+
+ var chart = chartBuilder.build();
+
+ sheet.insertChart(chart);
+ </code></pre>
+ *
+ * @param {SpreadsheetApp.Range} range - the range to remove
+ *
+ * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.removeRange = function(range){};
+
+/**
+ * Reverses the drawing of series in the domain axis. For vertical-range charts (such as line,
+ area or column charts), this means the horizontal axis is drawn from right to left. For
+ horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top to
+ bottom. For pie charts, this means the slices are drawn counterclockwise.
+
+ <pre class="prettyprint"><code>
+ // Creates a pie chart builder and sets drawing of the slices in a counter-clockwise manner.
+ var builder = Charts.newPieChart();
+ builder.reverseCategories();
+ </code></pre>
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.reverseCategories = function(){};
+
+/**
+ * Sets the background color for the chart.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and sets the background color to gray
+ var builder = Charts.newLineChart();
+ builder.setBackgroundColor(&quot;gray&quot;);
+ </code></pre>
+ *
+ * @param {String} cssValue - the CSS value for the color (such as "blue" or "#00f")
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.setBackgroundColor = function(cssValue){};
+
+/**
+ * Changes the type of chart. Not all embedded chart types are currently supported. See <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/chart-type.html'>ChartType</a></code>.
+
+ <pre class="prettyprint"><code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+
+ var range = sheet.getRange(&quot;A1:B5&quot;);
+ var chart = sheet.newChart()
+     .setChartType(Charts.ChartType.BAR)
+     .addRange(range)
+     .setPosition(5, 5, 0, 0)
+     .build()
+
+ sheet.insertChart(chart);
+ </code></pre>
+ *
+ * @param {Charts.ChartType} type - a chart type
+ *
+ * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.setChartType = function(type){};
+
+/**
+ * Sets the colors for the lines in the chart.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and sets the first two lines to be drawn in green and red,
+ // respectively.
+ var builder = Charts.newLineChart();
+ builder.setColors([&quot;green&quot;, &quot;red&quot;]);
+ </code></pre>
+ *
+ * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+     in the array represents the color of the nth line in the chart.
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.setColors = function(cssValues){};
+
+/**
+ * Sets the position of the legend with respect to the chart. By default, there will be no legend.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and sets the legend position to right.
+ var builder = Charts.newLineChart();
+ builder.setLegendPosition(Charts.Position.RIGHT);
+ </code></pre>
+ *
+ * @param {Charts.Position} position - the position of the legend
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.setLegendPosition = function(position){};
+
+/**
+ * Sets the text style of the chart legend.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and sets it up for a  blue, 26-point legend.
+ var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
+ var style = textStyleBuilder.build();
+ var builder = Charts.newLineChart();
+ builder.setLegendTextStyle(style);
+ </code></pre>
+ *
+ * @param {Charts.TextStyle} textStyle - the text style to use for the chart legend.
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.setLegendTextStyle = function(textStyle){};
+
+/**
+ * Sets advanced options for this chart. Lookup the chart type in the <a
+ href="https://developers.google.com/chart/interactive/docs/gallery">Charts API Chart
+ Gallery</a> for a listing of the available options. For example, the options for an area chart
+ are listed <a
+ href="https://developers.google.com/chart/interactive/docs/gallery/areachart#configuration-options">
+ here</a>.
+
+ <p>This method will NOT validate the option you specify is valid for this chart type nor if the
+ value is of the correct format/structure.
+
+ <p>This example shows how to change the animation duration to 1 second and set a legend.
+
+ <pre class="prettyprint"><code>
+ builder.setOption(&#39;title&#39;, &#39;Earnings projections&#39;);
+ builder.setOption(&#39;animation.duration&#39;, 1000);
+ builder.setOption(&#39;legend&#39;, {position: &#39;top&#39;, textStyle: {color: &#39;blue&#39;, fontSize: 16}});
+ </code></pre>
+ *
+ * @param {String} option - the name of the option
+ * @param {Object} value - the value of the option
+ *
+ * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.setOption = function(option, value){};
+
+/**
+ * Sets the position, changing where the chart appears on the sheet. AnchorRowPos and AnchorColPos
+ are 1-indexed.
+
+ <pre class="prettyprint"><code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+
+ var range = sheet.getRange(&quot;A1:B5&quot;);
+ var chart = sheet.newChart()
+     .setChartType(Charts.ChartType.BAR)
+     .addRange(range)
+     .setPosition(5, 5, 0, 0)
+     .build()
+
+ sheet.insertChart(chart);
+ </code></pre>
+ *
+ * @param {number} anchorRowPos - the chart's top side will be anchored in this row
+ * @param {number} anchorColPos - the chart's left side will be anchored in this column
+ * @param {number} offsetX - the chart's upper right-hand corner will be offset by this many pixels
+ * @param {number} offsetY - the chart's lower left-hand corner will be offset by this many pixels
+ *
+ * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.setPosition = function(anchorRowPos, anchorColPos, offsetX, offsetY){};
+
+/**
+ * Sets the range for the chart.
+
+ <p>If any data points fall outside the range, the range will be expanded to include those data
+ points.
+ *
+ * @param {Number} start - value for the lowest grid line of the range axis
+ * @param {Number} end - value for the highest grid line of the range axis
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.setRange = function(start, end){};
+
+/**
+ * Uses stacked lines, meaning that line and bar values are stacked (accumulated). By default,
+ there is no stacking.
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.setStacked = function(){};
+
+/**
+ * Sets the title of the chart. The title will be displayed centered above the chart.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and title to &#39;My Line Chart&#39;.
+ var builder = Charts.newLineChart();
+ builder.setTitle(&#39;My Line Chart&#39;)
+ </code></pre>
+ *
+ * @param {String} chartTitle - the chart title.
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.setTitle = function(chartTitle){};
+
+/**
+ * Sets the text style of the chart title.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and sets it up for a  blue, 26-point title.
+ var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
+ var style = textStyleBuilder.build();
+ var builder = Charts.newLineChart();
+ builder.setTitleTextStyle(style);
+ </code></pre>
+ *
+ * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
+     created by calling Charts.newTextStyle().
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.setTitleTextStyle = function(textStyle){};
+
+/**
+ * Sets the horizontal axis text style.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and sets the X-axis text style to blue, 18-point font.
+ var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
+ var builder = Charts.newLineChart();
+ builder.setXAxisTextStyle(textStyle);
+ </code></pre>
+ *
+ * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
+     can be created by calling Charts.newTextStyle().
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.setXAxisTextStyle = function(textStyle){};
+
+/**
+ * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
+ value labels.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and sets the X-axis title.
+ var builder = Charts.newLineChart();
+ builder.setTitle(&#39;X-axis Title&#39;)
+ </code></pre>
+ *
+ * @param {String} title - the title for the X-axis
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.setXAxisTitle = function(title){};
+
+/**
+ * Sets the horizontal axis title text style.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and sets the X-axis title text style to blue, 18-point font.
+ var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
+ var builder = Charts.newLineChart();
+ builder.setXAxisTitleTextStyle(textStyle);
+ </code></pre>
+ *
+ * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
+     can be created by calling Charts.newTextStyle().
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.setXAxisTitleTextStyle = function(textStyle){};
+
+/**
+ * Sets the vertical axis text style.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and sets the Y-axis text style to blue, 18-point font.
+ var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
+ var builder = Charts.newLineChart();
+ builder.setYAxisTextStyle(textStyle);
+ </code></pre>
+ *
+ * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
+     can be created by calling Charts.newTextStyle().
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.setYAxisTextStyle = function(textStyle){};
+
+/**
+ * Adds a title to the vertical axis. The title will be centered and will appear to the left of
+ the value labels.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and sets the Y-axis title.
+ var builder = Charts.newLineChart();
+ builder.setYAxisTitle(&#39;Y-axis Title&#39;)
+ </code></pre>
+ *
+ * @param {String} title - the title for the Y-axis
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.setYAxisTitle = function(title){};
+
+/**
+ * Sets the vertical axis title text style.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and sets the Y-axis title text style to blue, 18-point font.
+ var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
+ var builder = Charts.newLineChart();
+ builder.setYAxisTitleTextStyle(textStyle);
+ </code></pre>
+ *
+ * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
+     can be created by calling Charts.newTextStyle().
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.setYAxisTitleTextStyle = function(textStyle){};
+
+/**
+ * Makes the range axis into a logarithmic scale (requires all values to be positive). The range
+ axis will be the vertical axis for vertical charts (line, area, column, etc.) and the
+ horizontal axis for horizontal charts (bar, etc.)
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedComboChartBuilder.prototype.useLogScale = function(){};
+
+/** @constructor */
+SpreadsheetApp.EmbeddedHistogramChartBuilder = function(){};
+
+/**
+ * Adds a Range to the chart represented by this builder. Will not add the Range if it has already
+ been added to the chart.
+
+ <pre class="prettyprint"><code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+
+ var chart = sheet.newChart()
+     .setChartType(Charts.ChartType.BAR)
+     .addRange(sheet.getRange(&quot;A1:B8&quot;))
+     .setPosition(5, 5, 0, 0)
+     .build();
+
+ sheet.insertChart(chart);
+ </code></pre>
+ *
+ * @param {SpreadsheetApp.Range} range - the range to add
+ *
+ * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.addRange = function(range){};
+
+/**
+ * Sets the chart type to AreaChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-area-chart-builder.html'>EmbeddedAreaChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} a builder for an area chart
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.asAreaChart = function(){};
+
+/**
+ * Sets the chart type to BarChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-bar-chart-builder.html'>EmbeddedBarChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedBarChartBuilder} a builder for a bar chart
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.asBarChart = function(){};
+
+/**
+ * Sets the chart type to ColumnChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-column-chart-builder.html'>EmbeddedColumnChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} a builder for a column chart
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.asColumnChart = function(){};
+
+/**
+ * Sets the chart type to ComboChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-combo-chart-builder.html'>EmbeddedComboChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} a builder for a combo chart
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.asComboChart = function(){};
+
+/**
+ * Sets the chart type to HistogramChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-histogram-chart-builder.html'>EmbeddedHistogramChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} a builder for a histogram chart
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.asHistogramChart = function(){};
+
+/**
+ * Sets the chart type to LineChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-line-chart-builder.html'>EmbeddedLineChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedLineChartBuilder} a builder for a line chart
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.asLineChart = function(){};
+
+/**
+ * Sets the chart type to PieChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-pie-chart-builder.html'>EmbeddedPieChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedPieChartBuilder} a builder for a pie chart
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.asPieChart = function(){};
+
+/**
+ * Sets the chart type to ScatterChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-scatter-chart-builder.html'>EmbeddedScatterChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} a builder for a scatter chart
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.asScatterChart = function(){};
+
+/**
+ * Sets the chart type to TableChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-table-chart-builder.html'>EmbeddedTableChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedTableChartBuilder} a builder for a table chart
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.asTableChart = function(){};
+
+/**
+ * Builds the chart to reflect all changes made to it.
+
+ <p>This method will not automatically draw the chart on top of the spreadsheet. A new chart
+ must be inserted via sheet.insertChart(chart), and an existing chart should be updated via
+ sheet.updateChart(chart);
+
+ <pre class="prettyprint"><code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+
+ var range = sheet.getRange(&quot;A1:B5&quot;);
+ var chart = sheet.newChart()
+     .setChartType(Charts.ChartType.BAR)
+     .addRange(range)
+     .setPosition(5, 5, 0, 0)
+     .build()
+
+ sheet.insertChart(chart);
+ </code></pre>
+ *
+ * @return {SpreadsheetApp.EmbeddedChart} the created chart, which must still be added to the spreadsheet
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.build = function(){};
+
+/**
+ * Returns the current chart type.
+ *
+ * @return {Charts.ChartType} the chart type
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.getChartType = function(){};
+
+/**
+ * Return the ContainerInfo, which encapsulates where the chart appears on the sheet.
+
+ <pre class="prettyprint"><code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+
+ var chartBuilder = sheet.newChart()
+     .setChartType(Charts.ChartType.BAR)
+     .addRange(sheet.getRange(&quot;A1:B8&quot;))
+     .setPosition(5, 5, 0, 0);
+
+ // This method returns the exact same data as Chart#getContainerInfo()
+ var containerInfo = chartBuilder.getContainer();
+
+ // Logs the values we used in setPosition()
+ Logger.log(&quot;Anchor Column: %s\r\nAnchor Row %s\r\nOffset X %s\r\nOffset Y %s&quot;,
+           containerInfo.getAnchorColumn(),
+           containerInfo.getAnchorRow(),
+           containerInfo.getOffsetX(),
+           containerInfo.getOffsetY());
+ </code></pre>
+ *
+ * @return {SpreadsheetApp.ContainerInfo} an object containing the chart container's position
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.getContainer = function(){};
+
+/**
+ * Returns a copy of the list of ranges currently providing data for this chart. Use addRange and
+ removeRange to modify this list.
+
+ <pre class="prettyprint"><code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+
+ var chartBuilder = sheet.newChart()
+     .setChartType(Charts.ChartType.BAR)
+     .addRange(sheet.getRange(&quot;A1:B8&quot;))
+     .setPosition(5, 5, 0, 0)
+
+ var ranges = chartBuilder.getRanges();
+
+ // There&#39;s only one range as a data source for this chart,
+ // so this logs &quot;A1:B8&quot;
+ for (var i in ranges) {
+   var range = ranges[i];
+   Logger.log(range.getA1Notation());
+ }
+ </code></pre>
+ *
+ * @return {SpreadsheetApp.Range[]} an array of ranges that serve as the chart to be built's data source
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.getRanges = function(){};
+
+/**
+ * Removes the specified Range from the chart represented by this builder. Will not throw an error
+ if the Range is not in this chart.
+
+ <p>The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-histogram-chart-builder.html#addRange(Range)'>addRange(range)</a></code>, or it
+ will not be removed, and it will not throw an exception. This method cannot be used to
+ partially remove values from a range.
+
+ <pre class="prettyprint"><code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+
+ var firstRange = sheet.getRange(&quot;A1:B5&quot;);
+ var secondRange = sheet.getRange(&quot;A6:B8&quot;);
+
+ var chartBuilder = sheet.newChart()
+     .setChartType(Charts.ChartType.BAR)
+     .addRange(firstRange)
+     // This range will render in a different color
+     .addRange(secondRange)
+     .setPosition(5, 5, 0, 0);
+
+ // Note that you can use either of these two formats, but the range
+ // MUST match up with a range that was added via addRange(), or it
+ // will not be removed, and will not throw an exception
+ chartBuilder.removeRange(firstRange);
+ chartBuilder.removeRange(sheet.getRange(&quot;A6:B8&quot;));
+
+ var chart = chartBuilder.build();
+
+ sheet.insertChart(chart);
+ </code></pre>
+ *
+ * @param {SpreadsheetApp.Range} range - the range to remove
+ *
+ * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.removeRange = function(range){};
+
+/**
+ * Reverses the drawing of series in the domain axis. For vertical-range charts (such as line,
+ area or column charts), this means the horizontal axis is drawn from right to left. For
+ horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top to
+ bottom. For pie charts, this means the slices are drawn counterclockwise.
+
+ <pre class="prettyprint"><code>
+ // Creates a pie chart builder and sets drawing of the slices in a counter-clockwise manner.
+ var builder = Charts.newPieChart();
+ builder.reverseCategories();
+ </code></pre>
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.reverseCategories = function(){};
+
+/**
+ * Sets the background color for the chart.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and sets the background color to gray
+ var builder = Charts.newLineChart();
+ builder.setBackgroundColor(&quot;gray&quot;);
+ </code></pre>
+ *
+ * @param {String} cssValue - the CSS value for the color (such as "blue" or "#00f")
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.setBackgroundColor = function(cssValue){};
+
+/**
+ * Changes the type of chart. Not all embedded chart types are currently supported. See <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/chart-type.html'>ChartType</a></code>.
+
+ <pre class="prettyprint"><code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+
+ var range = sheet.getRange(&quot;A1:B5&quot;);
+ var chart = sheet.newChart()
+     .setChartType(Charts.ChartType.BAR)
+     .addRange(range)
+     .setPosition(5, 5, 0, 0)
+     .build()
+
+ sheet.insertChart(chart);
+ </code></pre>
+ *
+ * @param {Charts.ChartType} type - a chart type
+ *
+ * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.setChartType = function(type){};
+
+/**
+ * Sets the colors for the lines in the chart.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and sets the first two lines to be drawn in green and red,
+ // respectively.
+ var builder = Charts.newLineChart();
+ builder.setColors([&quot;green&quot;, &quot;red&quot;]);
+ </code></pre>
+ *
+ * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+     in the array represents the color of the nth line in the chart.
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.setColors = function(cssValues){};
+
+/**
+ * Sets the position of the legend with respect to the chart. By default, there will be no legend.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and sets the legend position to right.
+ var builder = Charts.newLineChart();
+ builder.setLegendPosition(Charts.Position.RIGHT);
+ </code></pre>
+ *
+ * @param {Charts.Position} position - the position of the legend
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.setLegendPosition = function(position){};
+
+/**
+ * Sets the text style of the chart legend.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and sets it up for a  blue, 26-point legend.
+ var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
+ var style = textStyleBuilder.build();
+ var builder = Charts.newLineChart();
+ builder.setLegendTextStyle(style);
+ </code></pre>
+ *
+ * @param {Charts.TextStyle} textStyle - the text style to use for the chart legend.
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.setLegendTextStyle = function(textStyle){};
+
+/**
+ * Sets advanced options for this chart. Lookup the chart type in the <a
+ href="https://developers.google.com/chart/interactive/docs/gallery">Charts API Chart
+ Gallery</a> for a listing of the available options. For example, the options for an area chart
+ are listed <a
+ href="https://developers.google.com/chart/interactive/docs/gallery/areachart#configuration-options">
+ here</a>.
+
+ <p>This method will NOT validate the option you specify is valid for this chart type nor if the
+ value is of the correct format/structure.
+
+ <p>This example shows how to change the animation duration to 1 second and set a legend.
+
+ <pre class="prettyprint"><code>
+ builder.setOption(&#39;title&#39;, &#39;Earnings projections&#39;);
+ builder.setOption(&#39;animation.duration&#39;, 1000);
+ builder.setOption(&#39;legend&#39;, {position: &#39;top&#39;, textStyle: {color: &#39;blue&#39;, fontSize: 16}});
+ </code></pre>
+ *
+ * @param {String} option - the name of the option
+ * @param {Object} value - the value of the option
+ *
+ * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.setOption = function(option, value){};
+
+/**
+ * Sets the position, changing where the chart appears on the sheet. AnchorRowPos and AnchorColPos
+ are 1-indexed.
+
+ <pre class="prettyprint"><code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+
+ var range = sheet.getRange(&quot;A1:B5&quot;);
+ var chart = sheet.newChart()
+     .setChartType(Charts.ChartType.BAR)
+     .addRange(range)
+     .setPosition(5, 5, 0, 0)
+     .build()
+
+ sheet.insertChart(chart);
+ </code></pre>
+ *
+ * @param {number} anchorRowPos - the chart's top side will be anchored in this row
+ * @param {number} anchorColPos - the chart's left side will be anchored in this column
+ * @param {number} offsetX - the chart's upper right-hand corner will be offset by this many pixels
+ * @param {number} offsetY - the chart's lower left-hand corner will be offset by this many pixels
+ *
+ * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.setPosition = function(anchorRowPos, anchorColPos, offsetX, offsetY){};
+
+/**
+ * Sets the range for the chart.
+
+ <p>If any data points fall outside the range, the range will be expanded to include those data
+ points.
+ *
+ * @param {Number} start - value for the lowest grid line of the range axis
+ * @param {Number} end - value for the highest grid line of the range axis
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.setRange = function(start, end){};
+
+/**
+ * Uses stacked lines, meaning that line and bar values are stacked (accumulated). By default,
+ there is no stacking.
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.setStacked = function(){};
+
+/**
+ * Sets the title of the chart. The title will be displayed centered above the chart.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and title to &#39;My Line Chart&#39;.
+ var builder = Charts.newLineChart();
+ builder.setTitle(&#39;My Line Chart&#39;)
+ </code></pre>
+ *
+ * @param {String} chartTitle - the chart title.
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.setTitle = function(chartTitle){};
+
+/**
+ * Sets the text style of the chart title.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and sets it up for a  blue, 26-point title.
+ var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
+ var style = textStyleBuilder.build();
+ var builder = Charts.newLineChart();
+ builder.setTitleTextStyle(style);
+ </code></pre>
+ *
+ * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
+     created by calling Charts.newTextStyle().
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.setTitleTextStyle = function(textStyle){};
+
+/**
+ * Sets the horizontal axis text style.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and sets the X-axis text style to blue, 18-point font.
+ var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
+ var builder = Charts.newLineChart();
+ builder.setXAxisTextStyle(textStyle);
+ </code></pre>
+ *
+ * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
+     can be created by calling Charts.newTextStyle().
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.setXAxisTextStyle = function(textStyle){};
+
+/**
+ * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
+ value labels.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and sets the X-axis title.
+ var builder = Charts.newLineChart();
+ builder.setTitle(&#39;X-axis Title&#39;)
+ </code></pre>
+ *
+ * @param {String} title - the title for the X-axis
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.setXAxisTitle = function(title){};
+
+/**
+ * Sets the horizontal axis title text style.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and sets the X-axis title text style to blue, 18-point font.
+ var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
+ var builder = Charts.newLineChart();
+ builder.setXAxisTitleTextStyle(textStyle);
+ </code></pre>
+ *
+ * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
+     can be created by calling Charts.newTextStyle().
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.setXAxisTitleTextStyle = function(textStyle){};
+
+/**
+ * Sets the vertical axis text style.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and sets the Y-axis text style to blue, 18-point font.
+ var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
+ var builder = Charts.newLineChart();
+ builder.setYAxisTextStyle(textStyle);
+ </code></pre>
+ *
+ * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
+     can be created by calling Charts.newTextStyle().
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.setYAxisTextStyle = function(textStyle){};
+
+/**
+ * Adds a title to the vertical axis. The title will be centered and will appear to the left of
+ the value labels.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and sets the Y-axis title.
+ var builder = Charts.newLineChart();
+ builder.setYAxisTitle(&#39;Y-axis Title&#39;)
+ </code></pre>
+ *
+ * @param {String} title - the title for the Y-axis
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.setYAxisTitle = function(title){};
+
+/**
+ * Sets the vertical axis title text style.
+
+ <pre class="prettyprint"><code>
+ // Creates a line chart builder and sets the Y-axis title text style to blue, 18-point font.
+ var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
+ var builder = Charts.newLineChart();
+ builder.setYAxisTitleTextStyle(textStyle);
+ </code></pre>
+ *
+ * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
+     can be created by calling Charts.newTextStyle().
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.setYAxisTitleTextStyle = function(textStyle){};
+
+/**
+ * Makes the range axis into a logarithmic scale (requires all values to be positive). The range
+ axis will be the vertical axis for vertical charts (line, area, column, etc.) and the
+ horizontal axis for horizontal charts (bar, etc.)
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ */
+SpreadsheetApp.EmbeddedHistogramChartBuilder.prototype.useLogScale = function(){};
+
+/** @constructor */
 SpreadsheetApp.EmbeddedLineChartBuilder = function(){};
 
 /**
- * Adds a Range to the chart represented by this builder. Will not add the Range
- if it has already been added to the chart.
+ * Adds a Range to the chart represented by this builder. Will not add the Range if it has already
+ been added to the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -3319,6 +4344,20 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.asBarChart = function(){};
 SpreadsheetApp.EmbeddedLineChartBuilder.prototype.asColumnChart = function(){};
 
 /**
+ * Sets the chart type to ComboChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-combo-chart-builder.html'>EmbeddedComboChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} a builder for a combo chart
+ */
+SpreadsheetApp.EmbeddedLineChartBuilder.prototype.asComboChart = function(){};
+
+/**
+ * Sets the chart type to HistogramChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-histogram-chart-builder.html'>EmbeddedHistogramChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} a builder for a histogram chart
+ */
+SpreadsheetApp.EmbeddedLineChartBuilder.prototype.asHistogramChart = function(){};
+
+/**
  * Sets the chart type to LineChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-line-chart-builder.html'>EmbeddedLineChartBuilder</a></code>.
  *
  * @return {SpreadsheetApp.EmbeddedLineChartBuilder} a builder for a line chart
@@ -3349,12 +4388,11 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.asTableChart = function(){};
 /**
  * Builds the chart to reflect all changes made to it.
 
- This method will not automatically draw the chart on top of the spreadsheet. A new chart
+ <p>This method will not automatically draw the chart on top of the spreadsheet. A new chart
  must be inserted via sheet.insertChart(chart), and an existing chart should be updated via
- sheet.update(chart);
+ sheet.updateChart(chart);
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -3382,8 +4420,7 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.getChartType = function(){};
 /**
  * Return the ContainerInfo, which encapsulates where the chart appears on the sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -3411,8 +4448,7 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.getContainer = function(){};
  * Returns a copy of the list of ranges currently providing data for this chart. Use addRange and
  removeRange to modify this list.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -3439,12 +4475,11 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.getRanges = function(){};
  * Removes the specified Range from the chart represented by this builder. Will not throw an error
  if the Range is not in this chart.
 
- The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-line-chart-builder.html#addRange(Range)'>addRange(range)</a></code>, or it will
- not be removed, and it will not throw an exception. This method cannot be used to partially
- remove values from a range.
+ <p>The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-line-chart-builder.html#addRange(Range)'>addRange(range)</a></code>, or it
+ will not be removed, and it will not throw an exception. This method cannot be used to
+ partially remove values from a range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -3467,7 +4502,7 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.getRanges = function(){};
  var chart = chartBuilder.build();
 
  sheet.insertChart(chart);
- </code> </pre>
+ </code></pre>
  *
  * @param {SpreadsheetApp.Range} range - the range to remove
  *
@@ -3476,13 +4511,12 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.getRanges = function(){};
 SpreadsheetApp.EmbeddedLineChartBuilder.prototype.removeRange = function(range){};
 
 /**
- * Reverses the drawing of series in the domain axis.  For vertical-range charts (such as line,
- area or column charts), this means the horizontal axis is drawn from right to left.  For
- horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top
- to bottom.  For pie charts, this means the slices are drawn counterclockwise.
+ * Reverses the drawing of series in the domain axis. For vertical-range charts (such as line,
+ area or column charts), this means the horizontal axis is drawn from right to left. For
+ horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top to
+ bottom. For pie charts, this means the slices are drawn counterclockwise.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a pie chart builder and sets drawing of the slices in a counter-clockwise manner.
  var builder = Charts.newPieChart();
  builder.reverseCategories();
@@ -3495,8 +4529,7 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.reverseCategories = function()
 /**
  * Sets the background color for the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the background color to gray
  var builder = Charts.newLineChart();
  builder.setBackgroundColor(&quot;gray&quot;);
@@ -3509,11 +4542,9 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.reverseCategories = function()
 SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setBackgroundColor = function(cssValue){};
 
 /**
- * Changes the type of chart. Not all embedded chart types are currently supported. See
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/chart-type.html'>ChartType</a></code>.
+ * Changes the type of chart. Not all embedded chart types are currently supported. See <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/chart-type.html'>ChartType</a></code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -3536,27 +4567,25 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setChartType = function(type){
 /**
  * Sets the colors for the lines in the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the first two lines to be drawn in green and red,
  // respectively.
  var builder = Charts.newLineChart();
  builder.setColors([&quot;green&quot;, &quot;red&quot;]);
  </code></pre>
  *
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>.  The nth
-     element in the array represents the color of the nth line in the chart.
+ * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+     in the array represents the color of the nth line in the chart.
  *
  * @return {SpreadsheetApp.EmbeddedLineChartBuilder} this builder, useful for chaining
  */
 SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setColors = function(cssValues){};
 
 /**
- * Sets the style to use for curves in the chart.  See <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/curve-style.html'>CurveStyle</a></code> for allowed curve
+ * Sets the style to use for curves in the chart. See <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/curve-style.html'>CurveStyle</a></code> for allowed curve
  styles.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and curves the lines in the chart.
  var builder = Charts.newLineChart();
  builder.setCurveStyle(Charts.CurveStyle.SMOOTH)
@@ -3569,11 +4598,9 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setColors = function(cssValues
 SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setCurveStyle = function(style){};
 
 /**
- * Sets the position of the legend with respect to the chart.  By default, there will be no
- legend.
+ * Sets the position of the legend with respect to the chart. By default, there will be no legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the legend position to right.
  var builder = Charts.newLineChart();
  builder.setLegendPosition(Charts.Position.RIGHT);
@@ -3588,8 +4615,7 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setLegendPosition = function(p
 /**
  * Sets the text style of the chart legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point legend.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -3604,19 +4630,19 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setLegendPosition = function(p
 SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setLegendTextStyle = function(textStyle){};
 
 /**
- * <p>Sets advanced options for this chart. See
- <a href="https://developers.google.com/chart/interactive/docs/reference">
- https://developers.google.com/chart/interactive/docs/reference</a> for what
- options are available.
+ * Sets advanced options for this chart. Lookup the chart type in the <a
+ href="https://developers.google.com/chart/interactive/docs/gallery">Charts API Chart
+ Gallery</a> for a listing of the available options. For example, the options for an area chart
+ are listed <a
+ href="https://developers.google.com/chart/interactive/docs/gallery/areachart#configuration-options">
+ here</a>.
 
- <p>This method will NOT validate the option you specify is valid for this
- chart type nor if the value is of the correct format/structure.
+ <p>This method will NOT validate the option you specify is valid for this chart type nor if the
+ value is of the correct format/structure.
 
- <p>This example shows how to change the animation duration to 1 second and
- set a legend.
+ <p>This example shows how to change the animation duration to 1 second and set a legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  builder.setOption(&#39;title&#39;, &#39;Earnings projections&#39;);
  builder.setOption(&#39;animation.duration&#39;, 1000);
  builder.setOption(&#39;legend&#39;, {position: &#39;top&#39;, textStyle: {color: &#39;blue&#39;, fontSize: 16}});
@@ -3630,11 +4656,10 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setLegendTextStyle = function(
 SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setOption = function(option, value){};
 
 /**
- * Sets the style for points in the line.  By default, points will have no particular styles,
- and only the line will be visible.
+ * Sets the style for points in the line. By default, points will have no particular styles, and
+ only the line will be visible.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets large point style.
  var builder = Charts.newLineChart();
  builder.setPointStyle(Charts.PointStyle.LARGE);
@@ -3650,8 +4675,7 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setPointStyle = function(style
  * Sets the position, changing where the chart appears on the sheet. AnchorRowPos and AnchorColPos
  are 1-indexed.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -3676,8 +4700,8 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setPosition = function(anchorR
 
 /**
  * Sets the range for the chart.
- <p>
- If any data points fall outside the range, the range will be expanded to include those data
+
+ <p>If any data points fall outside the range, the range will be expanded to include those data
  points.
  *
  * @param {Number} start - value for the lowest grid line of the range axis
@@ -3688,10 +4712,9 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setPosition = function(anchorR
 SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setRange = function(start, end){};
 
 /**
- * Sets the title of the chart.  The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title will be displayed centered above the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and title to &#39;My Line Chart&#39;.
  var builder = Charts.newLineChart();
  builder.setTitle(&#39;My Line Chart&#39;)
@@ -3706,8 +4729,7 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setTitle = function(chartTitle
 /**
  * Sets the text style of the chart title.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point title.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -3715,8 +4737,8 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setTitle = function(chartTitle
  builder.setTitleTextStyle(style);
  </code></pre>
  *
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object
-     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
+     created by calling Charts.newTextStyle().
  *
  * @return {SpreadsheetApp.EmbeddedLineChartBuilder} this builder, useful for chaining
  */
@@ -3725,8 +4747,7 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setTitleTextStyle = function(t
 /**
  * Sets the horizontal axis text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -3741,11 +4762,10 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setTitleTextStyle = function(t
 SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setXAxisTextStyle = function(textStyle){};
 
 /**
- * Adds a title to the horizontal axis.  The title will be centered and will appear below
- the axis value labels.
+ * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
+ value labels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis title.
  var builder = Charts.newLineChart();
  builder.setTitle(&#39;X-axis Title&#39;)
@@ -3760,8 +4780,7 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setXAxisTitle = function(title
 /**
  * Sets the horizontal axis title text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis title text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -3778,8 +4797,7 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setXAxisTitleTextStyle = funct
 /**
  * Sets the vertical axis text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -3794,11 +4812,10 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setXAxisTitleTextStyle = funct
 SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setYAxisTextStyle = function(textStyle){};
 
 /**
- * Adds a title to the vertical axis.  The title will be centered and will appear to the
- left of the value labels.
+ * Adds a title to the vertical axis. The title will be centered and will appear to the left of
+ the value labels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis title.
  var builder = Charts.newLineChart();
  builder.setYAxisTitle(&#39;Y-axis Title&#39;)
@@ -3813,8 +4830,7 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setYAxisTitle = function(title
 /**
  * Sets the vertical axis title text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis title text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -3829,7 +4845,7 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setYAxisTitle = function(title
 SpreadsheetApp.EmbeddedLineChartBuilder.prototype.setYAxisTitleTextStyle = function(textStyle){};
 
 /**
- * Makes the range axis into a logarithmic scale (requires all values to be positive).  The range
+ * Makes the range axis into a logarithmic scale (requires all values to be positive). The range
  axis will be the vertical axis for vertical charts (line, area, column, etc.) and the
  horizontal axis for horizontal charts (bar, etc.)
  *
@@ -3841,11 +4857,10 @@ SpreadsheetApp.EmbeddedLineChartBuilder.prototype.useLogScale = function(){};
 SpreadsheetApp.EmbeddedPieChartBuilder = function(){};
 
 /**
- * Adds a Range to the chart represented by this builder. Will not add the Range
- if it has already been added to the chart.
+ * Adds a Range to the chart represented by this builder. Will not add the Range if it has already
+ been added to the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -3886,6 +4901,20 @@ SpreadsheetApp.EmbeddedPieChartBuilder.prototype.asBarChart = function(){};
 SpreadsheetApp.EmbeddedPieChartBuilder.prototype.asColumnChart = function(){};
 
 /**
+ * Sets the chart type to ComboChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-combo-chart-builder.html'>EmbeddedComboChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} a builder for a combo chart
+ */
+SpreadsheetApp.EmbeddedPieChartBuilder.prototype.asComboChart = function(){};
+
+/**
+ * Sets the chart type to HistogramChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-histogram-chart-builder.html'>EmbeddedHistogramChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} a builder for a histogram chart
+ */
+SpreadsheetApp.EmbeddedPieChartBuilder.prototype.asHistogramChart = function(){};
+
+/**
  * Sets the chart type to LineChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-line-chart-builder.html'>EmbeddedLineChartBuilder</a></code>.
  *
  * @return {SpreadsheetApp.EmbeddedLineChartBuilder} a builder for a line chart
@@ -3916,12 +4945,11 @@ SpreadsheetApp.EmbeddedPieChartBuilder.prototype.asTableChart = function(){};
 /**
  * Builds the chart to reflect all changes made to it.
 
- This method will not automatically draw the chart on top of the spreadsheet. A new chart
+ <p>This method will not automatically draw the chart on top of the spreadsheet. A new chart
  must be inserted via sheet.insertChart(chart), and an existing chart should be updated via
- sheet.update(chart);
+ sheet.updateChart(chart);
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -3949,8 +4977,7 @@ SpreadsheetApp.EmbeddedPieChartBuilder.prototype.getChartType = function(){};
 /**
  * Return the ContainerInfo, which encapsulates where the chart appears on the sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -3978,8 +5005,7 @@ SpreadsheetApp.EmbeddedPieChartBuilder.prototype.getContainer = function(){};
  * Returns a copy of the list of ranges currently providing data for this chart. Use addRange and
  removeRange to modify this list.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -4006,12 +5032,11 @@ SpreadsheetApp.EmbeddedPieChartBuilder.prototype.getRanges = function(){};
  * Removes the specified Range from the chart represented by this builder. Will not throw an error
  if the Range is not in this chart.
 
- The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-pie-chart-builder.html#addRange(Range)'>addRange(range)</a></code>, or it will
- not be removed, and it will not throw an exception. This method cannot be used to partially
- remove values from a range.
+ <p>The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-pie-chart-builder.html#addRange(Range)'>addRange(range)</a></code>, or it
+ will not be removed, and it will not throw an exception. This method cannot be used to
+ partially remove values from a range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -4034,7 +5059,7 @@ SpreadsheetApp.EmbeddedPieChartBuilder.prototype.getRanges = function(){};
  var chart = chartBuilder.build();
 
  sheet.insertChart(chart);
- </code> </pre>
+ </code></pre>
  *
  * @param {SpreadsheetApp.Range} range - the range to remove
  *
@@ -4043,13 +5068,12 @@ SpreadsheetApp.EmbeddedPieChartBuilder.prototype.getRanges = function(){};
 SpreadsheetApp.EmbeddedPieChartBuilder.prototype.removeRange = function(range){};
 
 /**
- * Reverses the drawing of series in the domain axis.  For vertical-range charts (such as line,
- area or column charts), this means the horizontal axis is drawn from right to left.  For
- horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top
- to bottom.  For pie charts, this means the slices are drawn counterclockwise.
+ * Reverses the drawing of series in the domain axis. For vertical-range charts (such as line,
+ area or column charts), this means the horizontal axis is drawn from right to left. For
+ horizontal-range charts (such as bar charts), this means the vertical axis is drawn from top to
+ bottom. For pie charts, this means the slices are drawn counterclockwise.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a pie chart builder and sets drawing of the slices in a counter-clockwise manner.
  var builder = Charts.newPieChart();
  builder.reverseCategories();
@@ -4069,8 +5093,7 @@ SpreadsheetApp.EmbeddedPieChartBuilder.prototype.set3D = function(){};
 /**
  * Sets the background color for the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the background color to gray
  var builder = Charts.newLineChart();
  builder.setBackgroundColor(&quot;gray&quot;);
@@ -4083,11 +5106,9 @@ SpreadsheetApp.EmbeddedPieChartBuilder.prototype.set3D = function(){};
 SpreadsheetApp.EmbeddedPieChartBuilder.prototype.setBackgroundColor = function(cssValue){};
 
 /**
- * Changes the type of chart. Not all embedded chart types are currently supported. See
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/chart-type.html'>ChartType</a></code>.
+ * Changes the type of chart. Not all embedded chart types are currently supported. See <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/chart-type.html'>ChartType</a></code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -4110,27 +5131,24 @@ SpreadsheetApp.EmbeddedPieChartBuilder.prototype.setChartType = function(type){}
 /**
  * Sets the colors for the lines in the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the first two lines to be drawn in green and red,
  // respectively.
  var builder = Charts.newLineChart();
  builder.setColors([&quot;green&quot;, &quot;red&quot;]);
  </code></pre>
  *
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>.  The nth
-     element in the array represents the color of the nth line in the chart.
+ * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+     in the array represents the color of the nth line in the chart.
  *
  * @return {SpreadsheetApp.EmbeddedPieChartBuilder} this builder, useful for chaining
  */
 SpreadsheetApp.EmbeddedPieChartBuilder.prototype.setColors = function(cssValues){};
 
 /**
- * Sets the position of the legend with respect to the chart.  By default, there will be no
- legend.
+ * Sets the position of the legend with respect to the chart. By default, there will be no legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the legend position to right.
  var builder = Charts.newLineChart();
  builder.setLegendPosition(Charts.Position.RIGHT);
@@ -4145,8 +5163,7 @@ SpreadsheetApp.EmbeddedPieChartBuilder.prototype.setLegendPosition = function(po
 /**
  * Sets the text style of the chart legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point legend.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -4161,19 +5178,19 @@ SpreadsheetApp.EmbeddedPieChartBuilder.prototype.setLegendPosition = function(po
 SpreadsheetApp.EmbeddedPieChartBuilder.prototype.setLegendTextStyle = function(textStyle){};
 
 /**
- * <p>Sets advanced options for this chart. See
- <a href="https://developers.google.com/chart/interactive/docs/reference">
- https://developers.google.com/chart/interactive/docs/reference</a> for what
- options are available.
+ * Sets advanced options for this chart. Lookup the chart type in the <a
+ href="https://developers.google.com/chart/interactive/docs/gallery">Charts API Chart
+ Gallery</a> for a listing of the available options. For example, the options for an area chart
+ are listed <a
+ href="https://developers.google.com/chart/interactive/docs/gallery/areachart#configuration-options">
+ here</a>.
 
- <p>This method will NOT validate the option you specify is valid for this
- chart type nor if the value is of the correct format/structure.
+ <p>This method will NOT validate the option you specify is valid for this chart type nor if the
+ value is of the correct format/structure.
 
- <p>This example shows how to change the animation duration to 1 second and
- set a legend.
+ <p>This example shows how to change the animation duration to 1 second and set a legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  builder.setOption(&#39;title&#39;, &#39;Earnings projections&#39;);
  builder.setOption(&#39;animation.duration&#39;, 1000);
  builder.setOption(&#39;legend&#39;, {position: &#39;top&#39;, textStyle: {color: &#39;blue&#39;, fontSize: 16}});
@@ -4190,8 +5207,7 @@ SpreadsheetApp.EmbeddedPieChartBuilder.prototype.setOption = function(option, va
  * Sets the position, changing where the chart appears on the sheet. AnchorRowPos and AnchorColPos
  are 1-indexed.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -4215,10 +5231,9 @@ SpreadsheetApp.EmbeddedPieChartBuilder.prototype.setOption = function(option, va
 SpreadsheetApp.EmbeddedPieChartBuilder.prototype.setPosition = function(anchorRowPos, anchorColPos, offsetX, offsetY){};
 
 /**
- * Sets the title of the chart.  The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title will be displayed centered above the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and title to &#39;My Line Chart&#39;.
  var builder = Charts.newLineChart();
  builder.setTitle(&#39;My Line Chart&#39;)
@@ -4233,8 +5248,7 @@ SpreadsheetApp.EmbeddedPieChartBuilder.prototype.setTitle = function(chartTitle)
 /**
  * Sets the text style of the chart title.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point title.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -4242,8 +5256,8 @@ SpreadsheetApp.EmbeddedPieChartBuilder.prototype.setTitle = function(chartTitle)
  builder.setTitleTextStyle(style);
  </code></pre>
  *
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object
-     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
+     created by calling Charts.newTextStyle().
  *
  * @return {SpreadsheetApp.EmbeddedPieChartBuilder} this builder, useful for chaining
  */
@@ -4253,11 +5267,10 @@ SpreadsheetApp.EmbeddedPieChartBuilder.prototype.setTitleTextStyle = function(te
 SpreadsheetApp.EmbeddedScatterChartBuilder = function(){};
 
 /**
- * Adds a Range to the chart represented by this builder. Will not add the Range
- if it has already been added to the chart.
+ * Adds a Range to the chart represented by this builder. Will not add the Range if it has already
+ been added to the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -4298,6 +5311,20 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.asBarChart = function(){};
 SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.asColumnChart = function(){};
 
 /**
+ * Sets the chart type to ComboChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-combo-chart-builder.html'>EmbeddedComboChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} a builder for a combo chart
+ */
+SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.asComboChart = function(){};
+
+/**
+ * Sets the chart type to HistogramChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-histogram-chart-builder.html'>EmbeddedHistogramChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} a builder for a histogram chart
+ */
+SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.asHistogramChart = function(){};
+
+/**
  * Sets the chart type to LineChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-line-chart-builder.html'>EmbeddedLineChartBuilder</a></code>.
  *
  * @return {SpreadsheetApp.EmbeddedLineChartBuilder} a builder for a line chart
@@ -4328,12 +5355,11 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.asTableChart = function(){}
 /**
  * Builds the chart to reflect all changes made to it.
 
- This method will not automatically draw the chart on top of the spreadsheet. A new chart
+ <p>This method will not automatically draw the chart on top of the spreadsheet. A new chart
  must be inserted via sheet.insertChart(chart), and an existing chart should be updated via
- sheet.update(chart);
+ sheet.updateChart(chart);
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -4361,8 +5387,7 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.getChartType = function(){}
 /**
  * Return the ContainerInfo, which encapsulates where the chart appears on the sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -4390,8 +5415,7 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.getContainer = function(){}
  * Returns a copy of the list of ranges currently providing data for this chart. Use addRange and
  removeRange to modify this list.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -4418,12 +5442,11 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.getRanges = function(){};
  * Removes the specified Range from the chart represented by this builder. Will not throw an error
  if the Range is not in this chart.
 
- The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-scatter-chart-builder.html#addRange(Range)'>addRange(range)</a></code>, or it will
- not be removed, and it will not throw an exception. This method cannot be used to partially
- remove values from a range.
+ <p>The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-scatter-chart-builder.html#addRange(Range)'>addRange(range)</a></code>, or it
+ will not be removed, and it will not throw an exception. This method cannot be used to
+ partially remove values from a range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -4446,7 +5469,7 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.getRanges = function(){};
  var chart = chartBuilder.build();
 
  sheet.insertChart(chart);
- </code> </pre>
+ </code></pre>
  *
  * @param {SpreadsheetApp.Range} range - the range to remove
  *
@@ -4457,8 +5480,7 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.removeRange = function(rang
 /**
  * Sets the background color for the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the background color to gray
  var builder = Charts.newLineChart();
  builder.setBackgroundColor(&quot;gray&quot;);
@@ -4471,11 +5493,9 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.removeRange = function(rang
 SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setBackgroundColor = function(cssValue){};
 
 /**
- * Changes the type of chart. Not all embedded chart types are currently supported. See
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/chart-type.html'>ChartType</a></code>.
+ * Changes the type of chart. Not all embedded chart types are currently supported. See <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/chart-type.html'>ChartType</a></code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -4498,27 +5518,24 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setChartType = function(typ
 /**
  * Sets the colors for the lines in the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the first two lines to be drawn in green and red,
  // respectively.
  var builder = Charts.newLineChart();
  builder.setColors([&quot;green&quot;, &quot;red&quot;]);
  </code></pre>
  *
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>.  The nth
-     element in the array represents the color of the nth line in the chart.
+ * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+     in the array represents the color of the nth line in the chart.
  *
  * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} this builder, useful for chaining
  */
 SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setColors = function(cssValues){};
 
 /**
- * Sets the position of the legend with respect to the chart.  By default, there will be no
- legend.
+ * Sets the position of the legend with respect to the chart. By default, there will be no legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the legend position to right.
  var builder = Charts.newLineChart();
  builder.setLegendPosition(Charts.Position.RIGHT);
@@ -4533,8 +5550,7 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setLegendPosition = functio
 /**
  * Sets the text style of the chart legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point legend.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -4549,19 +5565,19 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setLegendPosition = functio
 SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setLegendTextStyle = function(textStyle){};
 
 /**
- * <p>Sets advanced options for this chart. See
- <a href="https://developers.google.com/chart/interactive/docs/reference">
- https://developers.google.com/chart/interactive/docs/reference</a> for what
- options are available.
+ * Sets advanced options for this chart. Lookup the chart type in the <a
+ href="https://developers.google.com/chart/interactive/docs/gallery">Charts API Chart
+ Gallery</a> for a listing of the available options. For example, the options for an area chart
+ are listed <a
+ href="https://developers.google.com/chart/interactive/docs/gallery/areachart#configuration-options">
+ here</a>.
 
- <p>This method will NOT validate the option you specify is valid for this
- chart type nor if the value is of the correct format/structure.
+ <p>This method will NOT validate the option you specify is valid for this chart type nor if the
+ value is of the correct format/structure.
 
- <p>This example shows how to change the animation duration to 1 second and
- set a legend.
+ <p>This example shows how to change the animation duration to 1 second and set a legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  builder.setOption(&#39;title&#39;, &#39;Earnings projections&#39;);
  builder.setOption(&#39;animation.duration&#39;, 1000);
  builder.setOption(&#39;legend&#39;, {position: &#39;top&#39;, textStyle: {color: &#39;blue&#39;, fontSize: 16}});
@@ -4575,11 +5591,10 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setLegendTextStyle = functi
 SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setOption = function(option, value){};
 
 /**
- * Sets the style for points in the line.  By default, points will have no particular styles,
- and only the line will be visible.
+ * Sets the style for points in the line. By default, points will have no particular styles, and
+ only the line will be visible.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets large point style.
  var builder = Charts.newLineChart();
  builder.setPointStyle(Charts.PointStyle.LARGE);
@@ -4595,8 +5610,7 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setPointStyle = function(st
  * Sets the position, changing where the chart appears on the sheet. AnchorRowPos and AnchorColPos
  are 1-indexed.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -4620,10 +5634,9 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setPointStyle = function(st
 SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setPosition = function(anchorRowPos, anchorColPos, offsetX, offsetY){};
 
 /**
- * Sets the title of the chart.  The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title will be displayed centered above the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and title to &#39;My Line Chart&#39;.
  var builder = Charts.newLineChart();
  builder.setTitle(&#39;My Line Chart&#39;)
@@ -4638,8 +5651,7 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setTitle = function(chartTi
 /**
  * Sets the text style of the chart title.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets it up for a  blue, 26-point title.
  var textStyleBuilder = Charts.newTextStyle().setColor(&#39;#0000FF&#39;).setFontSize(26);
  var style = textStyleBuilder.build();
@@ -4647,8 +5659,8 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setTitle = function(chartTi
  builder.setTitleTextStyle(style);
  </code></pre>
  *
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object
-     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
+     created by calling Charts.newTextStyle().
  *
  * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} this builder, useful for chaining
  */
@@ -4663,12 +5675,11 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setXAxisLogScale = function
 
 /**
  * Sets the range for the horizontal axis of the chart.
- <p>
- If any data points fall outside the range, the range will be expanded to include those data
+
+ <p>If any data points fall outside the range, the range will be expanded to include those data
  points.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a scatter chart builder and sets the X-axis range to be 0 to 100.
  var builder = Charts.newTableChart();
  builder.setXAxisRange(0, 100);
@@ -4684,8 +5695,7 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setXAxisRange = function(st
 /**
  * Sets the horizontal axis text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -4700,11 +5710,10 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setXAxisRange = function(st
 SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setXAxisTextStyle = function(textStyle){};
 
 /**
- * Adds a title to the horizontal axis.  The title will be centered and will appear below
- the axis value labels.
+ * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
+ value labels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis title.
  var builder = Charts.newLineChart();
  builder.setTitle(&#39;X-axis Title&#39;)
@@ -4719,8 +5728,7 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setXAxisTitle = function(ti
 /**
  * Sets the horizontal axis title text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the X-axis title text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -4745,8 +5753,7 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setYAxisLogScale = function
  * Sets the range for the vertical axis of the chart. If any data points fall outside the range,
  the range will be expanded to include those data points.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a scatter chart builder and sets the Y-axis range to be 0 to 100.
  var builder = Charts.newTableChart();
  builder.setYAxisRange(0, 100);
@@ -4762,8 +5769,7 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setYAxisRange = function(st
 /**
  * Sets the vertical axis text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -4778,11 +5784,10 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setYAxisRange = function(st
 SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setYAxisTextStyle = function(textStyle){};
 
 /**
- * Adds a title to the vertical axis.  The title will be centered and will appear to the
- left of the value labels.
+ * Adds a title to the vertical axis. The title will be centered and will appear to the left of
+ the value labels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis title.
  var builder = Charts.newLineChart();
  builder.setYAxisTitle(&#39;Y-axis Title&#39;)
@@ -4797,8 +5802,7 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setYAxisTitle = function(ti
 /**
  * Sets the vertical axis title text style.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a line chart builder and sets the Y-axis title text style to blue, 18-point font.
  var textStyle = Charts.newTextStyle().setColor(&#39;blue&#39;).setFontSize(18).build();
  var builder = Charts.newLineChart();
@@ -4816,11 +5820,10 @@ SpreadsheetApp.EmbeddedScatterChartBuilder.prototype.setYAxisTitleTextStyle = fu
 SpreadsheetApp.EmbeddedTableChartBuilder = function(){};
 
 /**
- * Adds a Range to the chart represented by this builder. Will not add the Range
- if it has already been added to the chart.
+ * Adds a Range to the chart represented by this builder. Will not add the Range if it has already
+ been added to the chart.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -4861,6 +5864,20 @@ SpreadsheetApp.EmbeddedTableChartBuilder.prototype.asBarChart = function(){};
 SpreadsheetApp.EmbeddedTableChartBuilder.prototype.asColumnChart = function(){};
 
 /**
+ * Sets the chart type to ComboChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-combo-chart-builder.html'>EmbeddedComboChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} a builder for a combo chart
+ */
+SpreadsheetApp.EmbeddedTableChartBuilder.prototype.asComboChart = function(){};
+
+/**
+ * Sets the chart type to HistogramChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-histogram-chart-builder.html'>EmbeddedHistogramChartBuilder</a></code>.
+ *
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} a builder for a histogram chart
+ */
+SpreadsheetApp.EmbeddedTableChartBuilder.prototype.asHistogramChart = function(){};
+
+/**
  * Sets the chart type to LineChart and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-line-chart-builder.html'>EmbeddedLineChartBuilder</a></code>.
  *
  * @return {SpreadsheetApp.EmbeddedLineChartBuilder} a builder for a line chart
@@ -4891,12 +5908,11 @@ SpreadsheetApp.EmbeddedTableChartBuilder.prototype.asTableChart = function(){};
 /**
  * Builds the chart to reflect all changes made to it.
 
- This method will not automatically draw the chart on top of the spreadsheet. A new chart
+ <p>This method will not automatically draw the chart on top of the spreadsheet. A new chart
  must be inserted via sheet.insertChart(chart), and an existing chart should be updated via
- sheet.update(chart);
+ sheet.updateChart(chart);
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -4916,8 +5932,8 @@ SpreadsheetApp.EmbeddedTableChartBuilder.prototype.build = function(){};
 
 /**
  * Sets whether to enable paging through the data.
- <p>
- The default behavior is paging disabled. If paging is enabled the default page size is 10.
+
+ <p>The default behavior is paging disabled. If paging is enabled the default page size is 10.
  *
  * @param {Boolean} enablePaging - true if paging should be enabled, false otherwise
  *
@@ -4927,11 +5943,10 @@ SpreadsheetApp.EmbeddedTableChartBuilder.prototype.enablePaging = function(enabl
 
 /**
  * Enables paging and sets the number of rows in each page.
- <p>
- The default page size is 10.
 
- <pre class="prettyprint">
- <code>
+ <p>The default page size is 10.
+
+ <pre class="prettyprint"><code>
  // Creates a table chart builder and enables paging with page size of 5.
  var builder = Charts.newTableChart();
  builder.enablePaging(5);
@@ -4944,16 +5959,15 @@ SpreadsheetApp.EmbeddedTableChartBuilder.prototype.enablePaging = function(enabl
 SpreadsheetApp.EmbeddedTableChartBuilder.prototype.enablePaging = function(pageSize){};
 
 /**
- * Adds basic support for right-to-left languages (such as Arabic or Hebrew) by reversing
- the column order of the table, so that column zero is the right-most column, and the last
- column is the left-most column.
- <p>
- This does not affect the column index in the underlying data, only the order of display.
- Full bi-directional (BiDi) language display is not supported by
- the table visualization even with this option. This option will be ignored if you enable
- paging (using the page option), or if the table has scroll bars because you have specified
- height and width options smaller than the required table size.
- The default behavior is RTL support disabled.
+ * Adds basic support for right-to-left languages (such as Arabic or Hebrew) by reversing the
+ column order of the table, so that column zero is the right-most column, and the last column is
+ the left-most column.
+
+ <p>This does not affect the column index in the underlying data, only the order of display.
+ Full bi-directional (BiDi) language display is not supported by the table visualization even
+ with this option. This option will be ignored if you enable paging (using the page option), or
+ if the table has scroll bars because you have specified height and width options smaller than
+ the required table size. The default behavior is RTL support disabled.
  *
  * @param {Boolean} rtlEnabled - true if right-to-left support should be enabled, false otherwise
  *
@@ -4963,12 +5977,11 @@ SpreadsheetApp.EmbeddedTableChartBuilder.prototype.enableRtlTable = function(rtl
 
 /**
  * Sets whether to sort columns when the user clicks a column heading.
- <p>
- If sorting is enabled, when users click on the column header the rows will be automatically
+
+ <p>If sorting is enabled, when users click on the column header the rows will be automatically
  sorted. The default behavior is sorting enabled.
  *
- * @param {Boolean} enableSorting - true if to enable sorting by clicking on column headers,
-     false otherwise
+ * @param {Boolean} enableSorting - true if to enable sorting by clicking on column headers, false otherwise
  *
  * @return {SpreadsheetApp.EmbeddedTableChartBuilder} this builder, useful for chaining
  */
@@ -4984,8 +5997,7 @@ SpreadsheetApp.EmbeddedTableChartBuilder.prototype.getChartType = function(){};
 /**
  * Return the ContainerInfo, which encapsulates where the chart appears on the sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -5013,8 +6025,7 @@ SpreadsheetApp.EmbeddedTableChartBuilder.prototype.getContainer = function(){};
  * Returns a copy of the list of ranges currently providing data for this chart. Use addRange and
  removeRange to modify this list.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -5041,12 +6052,11 @@ SpreadsheetApp.EmbeddedTableChartBuilder.prototype.getRanges = function(){};
  * Removes the specified Range from the chart represented by this builder. Will not throw an error
  if the Range is not in this chart.
 
- The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-table-chart-builder.html#addRange(Range)'>addRange(range)</a></code>, or it will
- not be removed, and it will not throw an exception. This method cannot be used to partially
- remove values from a range.
+ <p>The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-table-chart-builder.html#addRange(Range)'>addRange(range)</a></code>, or it
+ will not be removed, and it will not throw an exception. This method cannot be used to
+ partially remove values from a range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -5069,7 +6079,7 @@ SpreadsheetApp.EmbeddedTableChartBuilder.prototype.getRanges = function(){};
  var chart = chartBuilder.build();
 
  sheet.insertChart(chart);
- </code> </pre>
+ </code></pre>
  *
  * @param {SpreadsheetApp.Range} range - the range to remove
  *
@@ -5078,11 +6088,9 @@ SpreadsheetApp.EmbeddedTableChartBuilder.prototype.getRanges = function(){};
 SpreadsheetApp.EmbeddedTableChartBuilder.prototype.removeRange = function(range){};
 
 /**
- * Changes the type of chart. Not all embedded chart types are currently supported. See
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/chart-type.html'>ChartType</a></code>.
+ * Changes the type of chart. Not all embedded chart types are currently supported. See <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/chart-type.html'>ChartType</a></code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -5104,11 +6112,10 @@ SpreadsheetApp.EmbeddedTableChartBuilder.prototype.setChartType = function(type)
 
 /**
  * Sets the row number for the first row in the data table.
- <p>
- The default row number of the first row is 1.
 
- <pre class="prettyprint">
- <code>
+ <p>The default row number of the first row is 1.
+
+ <pre class="prettyprint"><code>
  // Creates a table chart builder and sets the first row to be 2.
  var builder = Charts.newTableChart();
  builder.setFirstRowNumber(2);
@@ -5123,19 +6130,17 @@ SpreadsheetApp.EmbeddedTableChartBuilder.prototype.setFirstRowNumber = function(
 /**
  * Sets the index of the column according to which the table should be initially sorted
  (ascending).
- <p>
- The column will be sorted in ascending order and will be marked with a small arrow
+
+ <p>The column will be sorted in ascending order and will be marked with a small arrow
  indicating that.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Creates a table chart builder and sorts it by the second column (ascending).
  var builder = Charts.newTableChart();
  builder.setInitialSortingAscending(2);
  </code></pre>
  *
- * @param {number} column - the number of the column according to which the table should be
-     initially sorted
+ * @param {number} column - the number of the column according to which the table should be initially sorted
  *
  * @return {SpreadsheetApp.EmbeddedTableChartBuilder} this builder, useful for chaining
  */
@@ -5144,38 +6149,36 @@ SpreadsheetApp.EmbeddedTableChartBuilder.prototype.setInitialSortingAscending = 
 /**
  * Sets the index of the column according to which the table should be initially sorted
  (descending).
- <p>
- The column will be sorted in descending order and be marked with a a small arrow
- indicating that.
 
- <pre class="prettyprint">
- <code>
+ <p>The column will be sorted in descending order and be marked with a a small arrow indicating
+ that.
+
+ <pre class="prettyprint"><code>
  // Creates a table chart builder and sorts it by the second column (descending).
  var builder = Charts.newTableChart();
  builder.setInitialSortingDescending(2);
  </code></pre>
  *
- * @param {number} column - the number of the column according to which the table should be
-     initially sorted
+ * @param {number} column - the number of the column according to which the table should be initially sorted
  *
  * @return {SpreadsheetApp.EmbeddedTableChartBuilder} this builder, useful for chaining
  */
 SpreadsheetApp.EmbeddedTableChartBuilder.prototype.setInitialSortingDescending = function(column){};
 
 /**
- * <p>Sets advanced options for this chart. See
- <a href="https://developers.google.com/chart/interactive/docs/reference">
- https://developers.google.com/chart/interactive/docs/reference</a> for what
- options are available.
+ * Sets advanced options for this chart. Lookup the chart type in the <a
+ href="https://developers.google.com/chart/interactive/docs/gallery">Charts API Chart
+ Gallery</a> for a listing of the available options. For example, the options for an area chart
+ are listed <a
+ href="https://developers.google.com/chart/interactive/docs/gallery/areachart#configuration-options">
+ here</a>.
 
- <p>This method will NOT validate the option you specify is valid for this
- chart type nor if the value is of the correct format/structure.
+ <p>This method will NOT validate the option you specify is valid for this chart type nor if the
+ value is of the correct format/structure.
 
- <p>This example shows how to change the animation duration to 1 second and
- set a legend.
+ <p>This example shows how to change the animation duration to 1 second and set a legend.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  builder.setOption(&#39;title&#39;, &#39;Earnings projections&#39;);
  builder.setOption(&#39;animation.duration&#39;, 1000);
  builder.setOption(&#39;legend&#39;, {position: &#39;top&#39;, textStyle: {color: &#39;blue&#39;, fontSize: 16}});
@@ -5192,8 +6195,7 @@ SpreadsheetApp.EmbeddedTableChartBuilder.prototype.setOption = function(option, 
  * Sets the position, changing where the chart appears on the sheet. AnchorRowPos and AnchorColPos
  are 1-indexed.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -5218,21 +6220,20 @@ SpreadsheetApp.EmbeddedTableChartBuilder.prototype.setPosition = function(anchor
 
 /**
  * Sets whether to show the row number as the first column of the table.
- <p>
- The default behavior is not showing row numbers.
+
+ <p>The default behavior is not showing row numbers.
  *
- * @param {Boolean} showRowNumber - true if the first column of the table should show the row number,
-     false otherwise
+ * @param {Boolean} showRowNumber - true if the first column of the table should show the row number, false
+     otherwise
  *
  * @return {SpreadsheetApp.EmbeddedTableChartBuilder} this builder, useful for chaining
  */
 SpreadsheetApp.EmbeddedTableChartBuilder.prototype.showRowNumberColumn = function(showRowNumber){};
 
 /**
- * Sets whether alternating color style will be assigned to odd and even rows of a table
- chart.
- <p>
- The default behavior is the rows having alternating color style.
+ * Sets whether alternating color style will be assigned to odd and even rows of a table chart.
+
+ <p>The default behavior is the rows having alternating color style.
  *
  * @param {Boolean} alternate - true if color styles should be alternating, false otherwise
  *
@@ -5260,8 +6261,7 @@ SpreadsheetApp.NamedRange.prototype.getRange = function(){};
 /**
  * Deletes this named range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // The code below will delete all the named ranges in the spreadsheet.
  var namedRanges = SpreadsheetApp.getActive().getNamedRanges();
  for (var i = 0; i &lt; namedRanges.length; i++) {
@@ -5276,8 +6276,7 @@ SpreadsheetApp.NamedRange.prototype.remove = function(){};
 /**
  * Sets/updates the name of the named range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // The code below will update the name for the first named range.
  var namedRanges = SpreadsheetApp.getActiveSpreadsheet().getNamedRanges();
  if (namedRanges.length &gt; 1) {
@@ -5306,8 +6305,7 @@ SpreadsheetApp.PageProtection = function(){};
 /**
  * Adds a user to the list of users who can edit the sheet, if it is protected.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Add the &quot;user@example.com&quot; user to the list of users who can edit this sheet
  var sheet = SpreadsheetApp.getActiveSheet();
  var permissions = sheet.getSheetProtection();
@@ -5325,7 +6323,7 @@ SpreadsheetApp.PageProtection.prototype.addUser = function(email){};
 /**
  * Returns a list of the email addresses of the users who can edit this sheet.
 
- If sheet protection is disabled, the value returned by this call is meaningless.
+ <p>If sheet protection is disabled, the value returned by this call is meaningless.
  *
  * @return {String[]} an array of email addresses of users who can edit this sheet
  */
@@ -5334,8 +6332,7 @@ SpreadsheetApp.PageProtection.prototype.getUsers = function(){};
 /**
  * Indicates whether the sheet has sheet protection enabled or not.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Determine whether or not sheet protection is enabled
  var sheet = SpreadsheetApp.getActiveSheet();
  var permissions = sheet.getSheetProtection();
@@ -5349,8 +6346,7 @@ SpreadsheetApp.PageProtection.prototype.isProtected = function(){};
 /**
  * Removes a user from the list of users who can edit the sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Remove the &quot;user@example.com&quot; user to the list of users who can edit this sheet
  var sheet = SpreadsheetApp.getActiveSheet();
  var permissions = sheet.getSheetProtection();
@@ -5368,8 +6364,7 @@ SpreadsheetApp.PageProtection.prototype.removeUser = function(user){};
 /**
  * Sets the protection status for the sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Enables sheet protection for  this sheet
  var sheet = SpreadsheetApp.getActiveSheet();
  var permissions = sheet.getSheetProtection();
@@ -5422,8 +6417,7 @@ SpreadsheetApp.Protection.prototype.canDomainEdit = function(){};
  * Determines whether the user has permission to edit the protected range or sheet. The
  spreadsheet owner is always able to edit protected ranges and sheets.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Remove all range protections in the spreadsheet that the user has permission to edit.
  var ss = SpreadsheetApp.getActive();
  var protections = ss.getProtections(SpreadsheetApp.ProtectionType.RANGE);
@@ -5435,8 +6429,7 @@ SpreadsheetApp.Protection.prototype.canDomainEdit = function(){};
  }
  </code></pre>
  *
- * @return {Boolean} <code>true</code> if the user has permission to edit the protected range or sheet;
-     <code>false</code> if not
+ * @return {Boolean} <code>true</code> if the user has permission to edit the protected range or sheet; <code>false</code> if not
  */
 SpreadsheetApp.Protection.prototype.canEdit = function(){};
 
@@ -5453,8 +6446,7 @@ SpreadsheetApp.Protection.prototype.getDescription = function(){};
  * Gets the list of editors for the protected range or sheet. Throws an exception if the user does
  not have permission to edit the protected range or sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Protect the active sheet, then remove all other users from the list of editors.
  var sheet = SpreadsheetApp.getActiveSheet();
  var protection = sheet.protect().setDescription(&#39;Sample protected sheet&#39;);
@@ -5491,16 +6483,14 @@ SpreadsheetApp.Protection.prototype.getProtectionType = function(){};
 SpreadsheetApp.Protection.prototype.getRange = function(){};
 
 /**
- * Gets the name of the protected range if it is associated with a named range. Returns
- <code>null</code> if the protection is not associated with a named range. Note that scripts must
- explicitly call <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#setRangeName(String)'>setRangeName(rangeName)</a></code> to associate a protected range with a named
- range; calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/range.html#protect()'>Range.protect()</a></code> to create a protection from a <code>Range</code> that
- happens to be a named range, without calling <code>setRangeName(rangeName)</code>, is not sufficient
- to associate them. However, creating a protected range from a named range in the Google Sheets
- UI will associate them automatically.
+ * Gets the name of the protected range if it is associated with a named range. Returns <code>null</code> if the protection is not associated with a named range. Note that scripts must explicitly
+ call <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#setRangeName(String)'>setRangeName(rangeName)</a></code> to associate a protected range with a named range; calling
+ <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/range.html#protect()'>Range.protect()</a></code> to create a protection from a <code>Range</code> that happens to be a
+ named range, without calling <code>setRangeName(rangeName)</code>, is not sufficient to associate
+ them. However, creating a protected range from a named range in the Google Sheets UI will
+ associate them automatically.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Protect a named range in a spreadsheet and log the name of the protected range.
  var ss = SpreadsheetApp.getActive();
  var range = ss.getRange(&#39;A1:B10&#39;);
@@ -5518,11 +6508,10 @@ SpreadsheetApp.Protection.prototype.getRangeName = function(){};
 /**
  * Gets an array of unprotected ranges within a protected sheet. If the <code>Protection</code> object
  corresponds to a protected range instead of a protected sheet, this method returns an empty
- array.  To change the unprotected ranges, use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#setUnprotectedRanges(Range)'>setUnprotectedRanges(ranges)</a></code> to set
- a new array of ranges; to re-protect the entire sheet, set an empty array.
+ array. To change the unprotected ranges, use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#setUnprotectedRanges(Range)'>setUnprotectedRanges(ranges)</a></code> to set a
+ new array of ranges; to re-protect the entire sheet, set an empty array.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Unprotect cells E2:F5 in addition to any other unprotected ranges in the protected sheet.
  var sheet = SpreadsheetApp.getActiveSheet();
  var protection = sheet.protect();
@@ -5538,8 +6527,8 @@ SpreadsheetApp.Protection.prototype.getUnprotectedRanges = function(){};
 /**
  * Determines if the protected area is using "warning based" protection. Warning-based protection
  means that every user can edit data in the area, except editing will prompt a warning asking
- the user to confirm the edit. By default, protected ranges or sheets are not warning-based.
- To change to the warning state, use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#setWarningOnly(Boolean)'>setWarningOnly(warningOnly)</a></code>.
+ the user to confirm the edit. By default, protected ranges or sheets are not warning-based. To
+ change to the warning state, use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#setWarningOnly(Boolean)'>setWarningOnly(warningOnly)</a></code>.
  *
  * @return {Boolean} <code>true</code> if the protected range or sheet is only using warning-based protection
  */
@@ -5548,8 +6537,7 @@ SpreadsheetApp.Protection.prototype.isWarningOnly = function(){};
 /**
  * Unprotects the range or sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Remove all range protections in the spreadsheet that the user has permission to edit.
  var ss = SpreadsheetApp.getActive();
  var protections = ss.getProtections(SpreadsheetApp.ProtectionType.RANGE);
@@ -5561,8 +6549,7 @@ SpreadsheetApp.Protection.prototype.isWarningOnly = function(){};
  }
  </code></pre>
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Remove sheet protection from the active sheet, if the user has permission to edit it.
  var sheet = SpreadsheetApp.getActiveSheet();
  var protection = sheet.getProtections(SpreadsheetApp.ProtectionType.SHEET)[0];
@@ -5578,8 +6565,8 @@ SpreadsheetApp.Protection.prototype.remove = function(){};
 /**
  * Removes the given user from the list of editors for the protected sheet or range. Note that if
  the user is a member of a Google Group that has edit permission, or if all users in the domain
- have edit permission, the user will still be able to edit the protected area. Neither the
- owner of the spreadsheet nor the current user can be removed.
+ have edit permission, the user will still be able to edit the protected area. Neither the owner
+ of the spreadsheet nor the current user can be removed.
  *
  * @param {String} emailAddress - the email address of the user to remove
  *
@@ -5593,8 +6580,7 @@ SpreadsheetApp.Protection.prototype.removeEditor = function(emailAddress){};
  users in the domain have edit permission, those users will still be able to edit the protected
  area. Neither the owner of the spreadsheet nor the current user can be removed.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Protect the active sheet, then remove all other users from the list of editors.
  var sheet = SpreadsheetApp.getActiveSheet();
  var protection = sheet.protect().setDescription(&#39;Sample protected sheet&#39;);
@@ -5628,7 +6614,7 @@ SpreadsheetApp.Protection.prototype.setDescription = function(description){};
  * Sets whether all users in the domain that owns the spreadsheet have permission to edit the
  protected range or sheet. Note that any users who have explicit edit permission will be able to
  edit the protected area regardless of this setting. Throws an exception if the spreadsheet does
- not belong to a Google Apps domain (that is, if it is owned by a gmail.com account).
+ not belong to a G Suite domain (that is, if it is owned by a gmail.com account).
  *
  * @param {Boolean} editable - <code>true</code> if all users in the domain that owns the spreadsheet should have
      permission to edit the protected range or sheet; <code>false</code> if not
@@ -5673,8 +6659,7 @@ SpreadsheetApp.Protection.prototype.setRange = function(range){};
  sufficient to associate them. However, creating a protected range from a named range in the
  Google Sheets UI will associate them automatically.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Protect a named range in a spreadsheet and log the name of the protected range.
  var ss = SpreadsheetApp.getActive();
  var range = ss.getRange(&#39;A1:B10&#39;);
@@ -5696,8 +6681,7 @@ SpreadsheetApp.Protection.prototype.setRangeName = function(rangeName){};
  any of the ranges are not on the protected sheet. To change the unprotected ranges, set a new
  array of ranges; to re-protect the entire sheet, set an empty array.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Protect the active sheet except B2:C5, then remove all other users from the list of editors.
  var sheet = SpreadsheetApp.getActiveSheet();
  var protection = sheet.protect().setDescription(&#39;Sample protected sheet&#39;);
@@ -5721,10 +6705,10 @@ SpreadsheetApp.Protection.prototype.setRangeName = function(rangeName){};
 SpreadsheetApp.Protection.prototype.setUnprotectedRanges = function(ranges){};
 
 /**
- * Sets whether or not this protected range is using "warning based" protection.
- Warning-based protection means that every user can edit data in the area, except editing
- will prompt a warning asking the user to confirm the edit. By default, protected ranges
- or sheets are not warning-based. To check warning state, use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#isWarningOnly()'>isWarningOnly()</a></code>.
+ * Sets whether or not this protected range is using "warning based" protection. Warning-based
+ protection means that every user can edit data in the area, except editing will prompt a
+ warning asking the user to confirm the edit. By default, protected ranges or sheets are not
+ warning-based. To check warning state, use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#isWarningOnly()'>isWarningOnly()</a></code>.
  *
  * @param {Boolean} warningOnly - 
  *
@@ -5738,8 +6722,7 @@ SpreadsheetApp.Range = function(){};
 /**
  * Make this range the active range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -5752,10 +6735,71 @@ SpreadsheetApp.Range = function(){};
 SpreadsheetApp.Range.prototype.activate = function(){};
 
 /**
+ * Fills the <code>destinationRange</code> with data based on the data in this range. The new values
+ are also determined by the specified <code>series</code> type. The destination range must contain
+ this range and extend it in only one direction. For example, the following fills <code>A1:A20</code>
+ with a series of increasing numbers based on the current values in <code>A1:A4</code>:
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSheet();
+
+ // Has values [1, 2, 3, 4].
+ var sourceRange = sheet.getRange(&quot;A1:A4&quot;);
+ // The range to fill with values.
+ var destination = sheet.getRange(&quot;A1:A20&quot;);
+
+ // Inserts new values in A5:A20, continuing the pattern expressed in A1:A4
+ sourceRange.autoFill(destination, SpreadsheetApp.AutoFillSeries.DEFAULT_SERIES);
+
+ </code></pre>
+ *
+ * @param {SpreadsheetApp.Range} destination - The range to be auto-filled with values. The destination range should
+     contain this range and extend it in only one direction (upwards, downwards, left, or
+     right).
+ * @param {SpreadsheetApp.AutoFillSeries} series - The type of autoFill series that should be used to calculate new values. The
+     effect of this series differs based on the type and amount of source data.
+ *
+ * @return void
+ */
+SpreadsheetApp.Range.prototype.autoFill = function(destination, series){};
+
+/**
+ * Calculates a range to fill with new data based on neighboring cells and automatically fills
+ that range with new values based on the data contained in this range. These new values are also
+ determined by the specified <code>series</code> type.
+
+ <p>The calculated destination range considers the surrounding data to determine where the new
+ values should be inserted: if there is data to the immediate left or right of a column that is
+ being auto-filled, new values only extend as far as this adjacent data.
+
+ <p>For example, if <code>A1:A20</code> is filled with a series of increasing numbers and this method
+ is called on the range <code>B1:B4</code> which contains a series of dates, new values are only
+ inserted into <code>B5:B20</code>. In this way, these new values "stick" to the cells that contain
+ values in column A.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSheet();
+
+ // A1:A20 has values [1, 2, 3, ... 20].
+ // B1:B4 has values [1/1/2017, 1/2/2017, ...]
+ var sourceRange = sheet.getRange(&quot;B1:B4&quot;);
+
+ // Results in B5:B20 having values [1/5/2017, ... 1/20/2017]
+ sourceRange.autoFillToNeighbor(SpreadsheetApp.AutoFillSeries.DEFAULT_SERIES);
+ </code></pre>
+ *
+ * @param {SpreadsheetApp.AutoFillSeries} series - The type of autoFill series that should be used to calculate new values. The
+     effect of this series differs based on the type and amount of source data.
+ *
+ * @return void
+ */
+SpreadsheetApp.Range.prototype.autoFillToNeighbor = function(series){};
+
+/**
  * Break any multi-column cells in the range into individual cells again.
 
- Calling this function on a range is equivalent to selecting a range and clicking
- Format -> Merge -> Unmerge.
+ <p>Calling this function on a range is equivalent to selecting a range and clicking Format ->
+ Merge -> Unmerge.
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
@@ -5773,8 +6817,7 @@ SpreadsheetApp.Range.prototype.canEdit = function(){};
 /**
  * Clears the range of contents, formats, and data-validation rules.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -5789,8 +6832,7 @@ SpreadsheetApp.Range.prototype.clear = function(){};
 /**
  * Clears the content of the range, leaving the formatting intact.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -5818,11 +6860,10 @@ SpreadsheetApp.Range.prototype.clearDataValidations = function(){};
 /**
  * Clears formatting for this range.
 
- This clears text formatting for the cell or cells in the range, but does not reset
- any number formatting rules.
+ <p>This clears text formatting for the cell or cells in the range, but does not reset any
+ number formatting rules.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -5837,8 +6878,7 @@ SpreadsheetApp.Range.prototype.clearFormat = function(){};
 /**
  * Clears the note in the given cell or cells.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -5851,14 +6891,13 @@ SpreadsheetApp.Range.prototype.clearFormat = function(){};
 SpreadsheetApp.Range.prototype.clearNote = function(){};
 
 /**
- * Copy the formatting of the range to the given location. If the destination is larger or
- smaller than the source range then the source will be repeated or truncated accordingly. Note
- that this method copies the formatting only.
+ * Copy the formatting of the range to the given location. If the destination is larger or smaller
+ than the source range then the source is repeated or truncated accordingly. Note that this
+ method copies the formatting only.
 
- For a detailed description of the gridId parameter, see <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/range.html#getGridId()'>getGridId()</a></code>.
+ <p>For a detailed description of the gridId parameter, see <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/range.html#getGridId()'>getGridId()</a></code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var source = ss.getSheets()[0];
 
@@ -5885,7 +6924,7 @@ SpreadsheetApp.Range.prototype.copyFormatToRange = function(gridId, column, colu
  are copied.
 
  <pre class="prettyprint">
- // The code below will copy the first 5 columns over to the 6th column.
+ // The code below copies the first 5 columns over to the 6th column.
  var sheet = SpreadsheetApp.getActiveSheet();
  var rangeToCopy = sheet.getRange(1, 1, sheet.getMaxRows(), 5);
  rangeToCopy.copyTo(sheet.getRange(1, 6));
@@ -5898,13 +6937,12 @@ SpreadsheetApp.Range.prototype.copyFormatToRange = function(gridId, column, colu
 SpreadsheetApp.Range.prototype.copyTo = function(destination){};
 
 /**
- * Copy the content of the range to the given location. If the destination is larger or
- smaller than the source range then the source will be repeated or truncated accordingly.
+ * Copy the content of the range to the given location. If the destination is larger or smaller
+ than the source range then the source is repeated or truncated accordingly.
 
- For a detailed description of the gridId parameter, see <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/range.html#getGridId()'>getGridId()</a></code>.
+ <p>For a detailed description of the gridId parameter, see <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/range.html#getGridId()'>getGridId()</a></code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var source = ss.getSheets()[0];
 
@@ -5928,8 +6966,7 @@ SpreadsheetApp.Range.prototype.copyValuesToRange = function(gridId, column, colu
 /**
  * Returns a string description of the range, in A1 notation.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(1, 1, 2, 5);
@@ -5945,8 +6982,7 @@ SpreadsheetApp.Range.prototype.getA1Notation = function(){};
 /**
  * Returns the background color of the top-left cell in the range (i.e., <code>&#39;#ffffff&#39;</code>).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -5961,8 +6997,7 @@ SpreadsheetApp.Range.prototype.getBackground = function(){};
 /**
  * Returns the background colors of the cells in the range (i.e., <code>&#39;#ffffff&#39;</code>).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -5982,8 +7017,7 @@ SpreadsheetApp.Range.prototype.getBackgrounds = function(){};
 /**
  * Returns a given cell within a range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -6005,8 +7039,7 @@ SpreadsheetApp.Range.prototype.getCell = function(row, column){};
 /**
  * Returns the starting column position for this range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -6020,11 +7053,9 @@ SpreadsheetApp.Range.prototype.getCell = function(row, column){};
 SpreadsheetApp.Range.prototype.getColumn = function(){};
 
 /**
- * Returns a URL for the data in this range, which can be used to create
- charts and queries.
+ * Returns a URL for the data in this range, which can be used to create charts and queries.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(&quot;A1:B7&quot;);
@@ -6113,10 +7144,10 @@ SpreadsheetApp.Range.prototype.getDataValidation = function(){};
 SpreadsheetApp.Range.prototype.getDataValidations = function(){};
 
 /**
- * Returns the displayed value of the top-left cell in the range. The value will be of type
- <code>String</code>. The displayed value takes into account date, time and currency formatting
- formatting, including formats applied automatically by the spreadsheet's locale setting.
- Empty cells will return an empty string.
+ * Returns the displayed value of the top-left cell in the range. The value is a <code>String</code>.
+ The displayed value takes into account date, time and currency formatting formatting, including
+ formats applied automatically by the spreadsheet's locale setting. Empty cells return an empty
+ string.
  *
  * @return {String} the displayed value in this cell
  */
@@ -6125,16 +7156,15 @@ SpreadsheetApp.Range.prototype.getDisplayValue = function(){};
 /**
  * Returns the rectangular grid of values for this range.
 
- Returns a two-dimensional array of displayed values, indexed by row, then by column.
- The values will be of type  <code>String</code>. The displayed value takes into account date, time
- and currency formatting, including formats applied automatically by the spreadsheet's locale
- setting. Empty cells will be represented by an empty string in the array. Remember that while a
- range index starts at <code>1, 1</code>, the JavaScript array will be indexed from <code>[0][0]</code>.
+ <p>Returns a two-dimensional array of displayed values, indexed by row, then by column. The
+ values are <code>String</code> objects. The displayed value takes into account date, time and
+ currency formatting, including formats applied automatically by the spreadsheet's locale
+ setting. Empty cells are represented by an empty string in the array. Remember that while a
+ range index starts at <code>1, 1</code>, the JavaScript array is indexed from <code>[0][0]</code>.
 
- <pre class="prettyprint">
- <code>
- // The code below will get the displayed values for the range C2:G8
- // in the active spreadsheet.  Note that this will be a javascript array.
+ <pre class="prettyprint"><code>
+ // The code below gets the displayed values for the range C2:G8
+ // in the active spreadsheet.  Note that this is a JavaScript array.
  var values = SpreadsheetApp.getActiveSheet().getRange(2, 3, 6, 4).getDisplayValues();
  Logger.log(values[0][0]);
  </code></pre>
@@ -6144,11 +7174,10 @@ SpreadsheetApp.Range.prototype.getDisplayValue = function(){};
 SpreadsheetApp.Range.prototype.getDisplayValues = function(){};
 
 /**
- * Returns the font color of the cell in the top-left corner of the range, in CSS notation
- (like <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>).
+ * Returns the font color of the cell in the top-left corner of the range, in CSS notation (like
+ <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(&quot;B2:D4&quot;);
@@ -6164,8 +7193,7 @@ SpreadsheetApp.Range.prototype.getFontColor = function(){};
  * Returns the font colors of the cells in the range in CSS notation (like <code>&#39;#ffffff&#39;</code> or
  <code>&#39;white&#39;</code>).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(&quot;B2:D4&quot;);
@@ -6186,8 +7214,7 @@ SpreadsheetApp.Range.prototype.getFontColors = function(){};
 /**
  * Returns the font families of the cells in the range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(&quot;B2:D4&quot;);
@@ -6208,8 +7235,7 @@ SpreadsheetApp.Range.prototype.getFontFamilies = function(){};
 /**
  * Returns the font family of the cell in the top-left corner of the range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(&quot;B2:D4&quot;);
@@ -6225,8 +7251,7 @@ SpreadsheetApp.Range.prototype.getFontFamily = function(){};
  * Gets the line style of the cell in the top-left corner of the range (<code>&#39;underline&#39;</code>,
  <code>&#39;line-through&#39;</code>, or <code>&#39;none&#39;</code>).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(&quot;B2:D4&quot;);
@@ -6242,8 +7267,7 @@ SpreadsheetApp.Range.prototype.getFontLine = function(){};
  * Gets the line style of the cells in the range (<code>&#39;underline&#39;</code>, <code>&#39;line-through&#39;</code>, or
  <code>&#39;none&#39;</code>).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(&quot;B2:D4&quot;);
@@ -6264,8 +7288,7 @@ SpreadsheetApp.Range.prototype.getFontLines = function(){};
 /**
  * Returns the font size in point size of the cell in the top-left corner of the range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(&quot;B2:D4&quot;);
@@ -6280,8 +7303,7 @@ SpreadsheetApp.Range.prototype.getFontSize = function(){};
 /**
  * Returns the font sizes of the cells in the range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(&quot;B2:D4&quot;);
@@ -6300,11 +7322,10 @@ SpreadsheetApp.Range.prototype.getFontSize = function(){};
 SpreadsheetApp.Range.prototype.getFontSizes = function(){};
 
 /**
- * Returns the font style (<code>&#39;italic&#39;</code> or <code>&#39;normal&#39;</code> of the cell in the top-left corner
- of the range.
+ * Returns the font style (<code>&#39;italic&#39;</code> or <code>&#39;normal&#39;</code>) of the cell in the top-left
+ corner of the range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(&quot;B2:D4&quot;);
@@ -6319,8 +7340,7 @@ SpreadsheetApp.Range.prototype.getFontStyle = function(){};
 /**
  * Returns the font styles of the cells in the range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(&quot;B2:D4&quot;);
@@ -6341,8 +7361,7 @@ SpreadsheetApp.Range.prototype.getFontStyles = function(){};
 /**
  * Returns the font weight (normal/bold) of the cell in the top-left corner of the range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(&quot;B2:D4&quot;);
@@ -6357,8 +7376,7 @@ SpreadsheetApp.Range.prototype.getFontWeight = function(){};
 /**
  * Returns the font weights of the cells in the range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(&quot;B2:D4&quot;);
@@ -6377,11 +7395,10 @@ SpreadsheetApp.Range.prototype.getFontWeight = function(){};
 SpreadsheetApp.Range.prototype.getFontWeights = function(){};
 
 /**
- * Returns the formula (A1 notation) for the top-left cell of the range,
- or an empty string if the cell is empty or doesn't contain a formula.
+ * Returns the formula (A1 notation) for the top-left cell of the range, or an empty string if the
+ cell is empty or doesn't contain a formula.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -6402,8 +7419,7 @@ SpreadsheetApp.Range.prototype.getFormula = function(){};
 /**
  * Returns the formula (R1C1 notation) for a given cell, or <code>null</code> if none.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -6417,11 +7433,10 @@ SpreadsheetApp.Range.prototype.getFormula = function(){};
 SpreadsheetApp.Range.prototype.getFormulaR1C1 = function(){};
 
 /**
- * Returns the formulas (A1 notation) for the cells in the range.
- Entries in the 2D array will be an empty string for cells with no formula.
+ * Returns the formulas (A1 notation) for the cells in the range. Entries in the 2D array are
+ empty strings for cells with no formula.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -6439,11 +7454,10 @@ SpreadsheetApp.Range.prototype.getFormulaR1C1 = function(){};
 SpreadsheetApp.Range.prototype.getFormulas = function(){};
 
 /**
- * Returns the formulas (R1C1 notation) for the cells in the range. Entries in the 2D array will
- be <code>null</code> for cells with no formula.
+ * Returns the formulas (R1C1 notation) for the cells in the range. Entries in the 2D array are
+ <code>null</code> for cells with no formula.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -6467,8 +7481,7 @@ SpreadsheetApp.Range.prototype.getFormulasR1C1 = function(){};
  deleted. If a sheet is deleted, the grid ID for subsequent sheets continues to increment, and
  the grid ID of the deleted sheet is not reused.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Log the grid ID of the first sheet (by tab position) in the spreadsheet.
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
@@ -6484,8 +7497,7 @@ SpreadsheetApp.Range.prototype.getGridId = function(){};
 /**
  * Returns the height of the range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -6502,8 +7514,7 @@ SpreadsheetApp.Range.prototype.getHeight = function(){};
  * Returns the horizontal alignment of the text (left/center/right) of the cell in the top-left
  corner of the range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(&quot;B2:D4&quot;);
@@ -6518,8 +7529,7 @@ SpreadsheetApp.Range.prototype.getHorizontalAlignment = function(){};
 /**
  * Returns the horizontal alignments of the cells in the range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(&quot;B2:D4&quot;);
@@ -6533,16 +7543,15 @@ SpreadsheetApp.Range.prototype.getHorizontalAlignment = function(){};
  }
  </code></pre>
  *
- * @return {String[][]} a two-dimensional array of horizontal alignments of text associated with cells
-         in the range
+ * @return {String[][]} a two-dimensional array of horizontal alignments of text associated with cells in the
+     range
  */
 SpreadsheetApp.Range.prototype.getHorizontalAlignments = function(){};
 
 /**
  * Returns the end column position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -6558,8 +7567,7 @@ SpreadsheetApp.Range.prototype.getLastColumn = function(){};
 /**
  * Returns the end row position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -6573,10 +7581,30 @@ SpreadsheetApp.Range.prototype.getLastColumn = function(){};
 SpreadsheetApp.Range.prototype.getLastRow = function(){};
 
 /**
+ * Returns an array of Range objects representing merged cells that either are fully within the
+ current range, or contain at least one cell in the current range."
+
+ <pre class="prettyprint"><code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+
+ var range = sheet.getRange(&quot;A1:B3&quot;);
+
+ var mergedRanges = range.getMergedRanges();
+ for (var i = 0; i &lt; mergedRanges.length; i++) {
+   Logger.log(mergedRanges[i].getA1Notation());
+   Logger.log(mergedRanges[i].getDisplayValue());
+ }
+ </code></pre>
+ *
+ * @return {SpreadsheetApp.Range[]} An array of Range objects, representing merged cells overlapping the range
+ */
+SpreadsheetApp.Range.prototype.getMergedRanges = function(){};
+
+/**
  * Returns the note associated with the given range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(&quot;B2:D4&quot;);
@@ -6591,8 +7619,7 @@ SpreadsheetApp.Range.prototype.getNote = function(){};
 /**
  * Returns the notes associated with the cells in the range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(&quot;B2:D4&quot;);
@@ -6613,8 +7640,7 @@ SpreadsheetApp.Range.prototype.getNotes = function(){};
 /**
  * Returns the number of columns in this range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -6629,8 +7655,7 @@ SpreadsheetApp.Range.prototype.getNumColumns = function(){};
 /**
  * Returns the number of rows in this range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -6643,12 +7668,11 @@ SpreadsheetApp.Range.prototype.getNumColumns = function(){};
 SpreadsheetApp.Range.prototype.getNumRows = function(){};
 
 /**
- * Get the number formatting of the top-left cell of the given range.
+ * Get the number or date formatting of the top-left cell of the given range. The returned format
+ patterns are described in the <a href="/sheets/api/guides/formats">Sheets API
+ documentation</a>.
 
- The number format corresponds to a formatting created when a user clicks Format -> Number.
-
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -6661,10 +7685,10 @@ SpreadsheetApp.Range.prototype.getNumRows = function(){};
 SpreadsheetApp.Range.prototype.getNumberFormat = function(){};
 
 /**
- * Returns the number formats for the cells in the range.
+ * Returns the number or date formats for the cells in the range. The returned format patterns are
+ described in the <a href="/sheets/api/guides/formats">Sheets API documentation</a>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -6682,10 +7706,10 @@ SpreadsheetApp.Range.prototype.getNumberFormat = function(){};
 SpreadsheetApp.Range.prototype.getNumberFormats = function(){};
 
 /**
- * Returns the row position for this range.
+ * Returns the row position for this range. Identical to <a
+ href="/apps-script/reference/spreadsheet/range#getrowindex">getRowIndex()</a>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -6698,10 +7722,10 @@ SpreadsheetApp.Range.prototype.getNumberFormats = function(){};
 SpreadsheetApp.Range.prototype.getRow = function(){};
 
 /**
- * Returns the row position for this range.
+ * Returns the row position for this range. Identical to <a
+ href="/apps-script/reference/spreadsheet/range#getrow">getRow()</a>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -6723,24 +7747,23 @@ SpreadsheetApp.Range.prototype.getSheet = function(){};
 /**
  * Returns the value of the top-left cell in the range. The value may be of type <code>Number</code>,
  <code>Boolean</code>, <code>Date</code>, or <code>String</code> depending on the value of the cell. Empty
- cells will return an empty string.
+ cells return an empty string.
  *
- * @return {Object | string} the value in this cell
+ * @return {Object} the value in this cell
  */
 SpreadsheetApp.Range.prototype.getValue = function(){};
 
 /**
  * Returns the rectangular grid of values for this range.
 
- Returns a two-dimensional array of values, indexed by row, then by column. The values may be of
- type <code>Number</code>, <code>Boolean</code>, <code>Date</code>, or <code>String</code>, depending on the value of
- the cell. Empty cells will be represented by an empty string in the array. Remember that while a
- range index starts at <code>1, 1</code>, the JavaScript array will be indexed from <code>[0][0]</code>.
+ <p>Returns a two-dimensional array of values, indexed by row, then by column. The values may be
+ of type <code>Number</code>, <code>Boolean</code>, <code>Date</code>, or <code>String</code>, depending on the
+ value of the cell. Empty cells are represented by an empty string in the array. Remember that
+ while a range index starts at <code>1, 1</code>, the JavaScript array is indexed from <code>[0][0]</code>.
 
- <pre class="prettyprint">
- <code>
- // The code below will get the values for the range C2:G8
- // in the active spreadsheet.  Note that this will be a javascript array.
+ <pre class="prettyprint"><code>
+ // The code below gets the values for the range C2:G8
+ // in the active spreadsheet.  Note that this is a JavaScript array.
  var values = SpreadsheetApp.getActiveSheet().getRange(2, 3, 6, 4).getValues();
  Logger.log(values[0][0]);
  </code></pre>
@@ -6750,11 +7773,10 @@ SpreadsheetApp.Range.prototype.getValue = function(){};
 SpreadsheetApp.Range.prototype.getValues = function(){};
 
 /**
- * Returns the vertical alignment (top/middle/bottom) of the cell in the top-left corner
- of the range.
+ * Returns the vertical alignment (top/middle/bottom) of the cell in the top-left corner of the
+ range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(&quot;B2:D4&quot;);
@@ -6769,8 +7791,7 @@ SpreadsheetApp.Range.prototype.getVerticalAlignment = function(){};
 /**
  * Returns the vertical alignments of the cells in the range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(&quot;B2:D4&quot;);
@@ -6784,8 +7805,8 @@ SpreadsheetApp.Range.prototype.getVerticalAlignment = function(){};
  }
  </code></pre>
  *
- * @return {String[][]} a two-dimensional array of vertical alignments of text associated with cells
-         in the range
+ * @return {String[][]} a two-dimensional array of vertical alignments of text associated with cells in the
+     range
  */
 SpreadsheetApp.Range.prototype.getVerticalAlignments = function(){};
 
@@ -6800,8 +7821,7 @@ SpreadsheetApp.Range.prototype.getWidth = function(){};
  * Returns the wrapping policy of the cell in the top-left corner of the range. <code>true</code> if
  the text wraps, <code>false</code> if the text does not.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(&quot;B2:D4&quot;);
@@ -6816,8 +7836,7 @@ SpreadsheetApp.Range.prototype.getWrap = function(){};
 /**
  * Returns the wrapping policy of the cells in the range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(&quot;B2:D4&quot;);
@@ -6834,16 +7853,15 @@ SpreadsheetApp.Range.prototype.getWrap = function(){};
  }
  </code></pre>
  *
- * @return {Boolean[][]} a two-dimensional array of vertical alignments of text associated with cells
-         in the range
+ * @return {Boolean[][]} a two-dimensional array of vertical alignments of text associated with cells in the
+     range
  */
 SpreadsheetApp.Range.prototype.getWraps = function(){};
 
 /**
  * Returns <code>true</code> if the range is totally blank.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(&quot;B2:D4&quot;);
@@ -6877,10 +7895,27 @@ SpreadsheetApp.Range.prototype.isEndColumnBounded = function(){};
 SpreadsheetApp.Range.prototype.isEndRowBounded = function(){};
 
 /**
+ * Returns true if the cells in the current range overlap any merged cells.
+
+ <pre class="prettyprint"><code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+
+ var range = sheet.getRange(&quot;A1:B3&quot;);
+
+ // True if any of the cells in A1:B3 is included in a merge.
+ var isPartOfMerge = range.isPartOfMerge();
+ </code></pre>
+ *
+ * @return {Boolean} <code>true</code> if the range overlaps any merged cells
+ */
+SpreadsheetApp.Range.prototype.isPartOfMerge = function(){};
+
+/**
  * Determines whether the start of the range is bound to a particular column. For example, for the
  ranges <code>A1:B10</code> or <code>B:B</code>, which are bound to columns at the start of the range,
- this method returns <code>true</code>; for the range <code>3:7</code>, which is bound only to a
- row at the start of the range, this method returns <code>false</code>.
+ this method returns <code>true</code>; for the range <code>3:7</code>, which is bound only to a row at
+ the start of the range, this method returns <code>false</code>.
  *
  * @return {Boolean} <code>true</code> if the start of the range is bound to a particular column; <code>false</code>
      if not
@@ -6890,8 +7925,8 @@ SpreadsheetApp.Range.prototype.isStartColumnBounded = function(){};
 /**
  * Determines whether the start of the range is bound to a particular row. For example, for the
  ranges <code>A1:B10</code> or <code>3:7</code>, which are bound to rows at the start of the range, this
- method returns <code>true</code>; for the range <code>B:B</code>, which is bound only to a
- particular column at the start of the range, this method returns <code>false</code>.
+ method returns <code>true</code>; for the range <code>B:B</code>, which is bound only to a particular
+ column at the start of the range, this method returns <code>false</code>.
  *
  * @return {Boolean} <code>true</code> if the start of the range is bound to a particular row; <code>false</code> if
      not
@@ -6901,12 +7936,11 @@ SpreadsheetApp.Range.prototype.isStartRowBounded = function(){};
 /**
  * Merges the cells in the range together into a single block.
 
- <pre class="prettyprint">
- <code>
-  var sheet = SpreadsheetApp.getActiveSheet();
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSheet();
 
-  // The code below will 2-dimensionally merge the cells in A1 to B3
-  sheet.getRange(&#39;A1:B3&#39;).merge();
+ // The code below 2-dimensionally merges the cells in A1 to B3
+ sheet.getRange(&#39;A1:B3&#39;).merge();
  </code></pre>
  *
  * @return {SpreadsheetApp.Range} the range for chaining
@@ -6916,16 +7950,15 @@ SpreadsheetApp.Range.prototype.merge = function(){};
 /**
  * Merge the cells in the range across the columns of the range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
- // The code below will merge cells C5:E5 into one cell
+ // The code below merges cells C5:E5 into one cell
  var range1 = sheet.getRange(&quot;C5:E5&quot;);
  range1.mergeAcross();
 
- // The code below will create 2 horizontal cells, F5:H5 and F6:H6
+ // The code below creates 2 horizontal cells, F5:H5 and F6:H6
  var range2 = sheet.getRange(&quot;F5:H6&quot;);
  range2.mergeAcross();
  </code></pre>
@@ -6937,15 +7970,14 @@ SpreadsheetApp.Range.prototype.mergeAcross = function(){};
 /**
  * Merges the cells in the range together.
 
- <pre class="prettyprint">
- <code>
-  var sheet = SpreadsheetApp.getActiveSheet();
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSheet();
 
-  // The code below will vertically merge the cells in A1 to A10
-  sheet.getRange(&#39;A1:A10&#39;).mergeVertically();
+ // The code below vertically merges the cells in A1 to A10
+ sheet.getRange(&#39;A1:A10&#39;).mergeVertically();
 
-  // The code below will create 3 merged columns: B1 to B10, C1 to C10, and D1 to D10
-  sheet.getRange(&#39;B1:D10&#39;).mergeVertically();
+ // The code below creates 3 merged columns: B1 to B10, C1 to C10, and D1 to D10
+ sheet.getRange(&#39;B1:D10&#39;).mergeVertically();
  </code></pre>
  *
  * @return {SpreadsheetApp.Range} the range for chaining
@@ -6955,9 +7987,8 @@ SpreadsheetApp.Range.prototype.mergeVertically = function(){};
 /**
  * Cut and paste (both format and values) from this range to the target range.
 
- <pre class="prettyprint">
- <code>
- // The code below will move the first 5 columns over to the 6th column
+ <pre class="prettyprint"><code>
+ // The code below moves the first 5 columns over to the 6th column
  var sheet = SpreadsheetApp.getActiveSheet()
  sheet.getRange(&quot;A1:E&quot;).moveTo(sheet.getRange(&quot;F1&quot;));
  </code></pre>
@@ -6970,10 +8001,9 @@ SpreadsheetApp.Range.prototype.moveTo = function(target){};
 
 /**
  * Returns a new range that is offset from this range by the given number of rows and columns
- (which can be negative). The new range will be the same size as the original range.
+ (which can be negative). The new range is the same size as the original range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -6993,11 +8023,10 @@ SpreadsheetApp.Range.prototype.moveTo = function(target){};
 SpreadsheetApp.Range.prototype.offset = function(rowOffset, columnOffset){};
 
 /**
- * Returns a new range that is relative to the current range, whose  upper left point is offset
+ * Returns a new range that is relative to the current range, whose upper left point is offset
  from the current range by the given rows and columns, and with the given height in cells.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7020,25 +8049,21 @@ SpreadsheetApp.Range.prototype.offset = function(rowOffset, columnOffset, numRow
 /**
  * Creates an object that can protect the range from being edited except by users who have
  permission. Until the script actually changes the list of editors for the range (by calling
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#removeEditor(String)'>Protection.removeEditor(emailAddress)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#removeEditor(User)'>Protection.removeEditor(user)</a></code>,
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#removeEditors(String)'>Protection.removeEditors(emailAddresses)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#addEditor(String)'>Protection.addEditor(emailAddress)</a></code>,
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#addEditor(User)'>Protection.addEditor(user)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#addEditors(String)'>Protection.addEditors(emailAddresses)</a></code>, or
- setting a new value for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#setDomainEdit(Boolean)'>Protection.setDomainEdit(editable)</a></code>), the permissions will
- mirror those of the spreadsheet itself, which effectively means that the range remains
- unprotected. If the range is already protected, this method creates a new protected range that
- overlaps the existing one. If a cell is covered by two protected ranges and one of the
- protected ranges allows a particular user to edit the cell and the other does not, the user
- will not be able to edit.
+ <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#removeEditor(String)'>Protection.removeEditor(emailAddress)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#removeEditor(User)'>Protection.removeEditor(user)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#removeEditors(String)'>Protection.removeEditors(emailAddresses)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#addEditor(String)'>Protection.addEditor(emailAddress)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#addEditor(User)'>Protection.addEditor(user)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#addEditors(String)'>Protection.addEditors(emailAddresses)</a></code>, or setting a new
+ value for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#setDomainEdit(Boolean)'>Protection.setDomainEdit(editable)</a></code>), the permissions mirror those of the
+ spreadsheet itself, which effectively means that the range remains unprotected. If the range is
+ already protected, this method creates a new protected range that overlaps the existing one. If
+ a cell is protected by multiple protected ranges and any of them prevent a particular user from
+ editing the cell, then that user is not permitted to edit the cell.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Protect range A1:B10, then remove all other users from the list of editors.
  var ss = SpreadsheetApp.getActive();
  var range = ss.getRange(&#39;A1:B10&#39;);
  var protection = range.protect().setDescription(&#39;Sample protected range&#39;);
 
  // Ensure the current user is an editor before removing others. Otherwise, if the user&#39;s edit
- // permission comes from a group, the script will throw an exception upon removing the group.
+ // permission comes from a group, the script throws an exception upon removing the group.
  var me = Session.getEffectiveUser();
  protection.addEditor(me);
  protection.removeEditors(protection.getEditors());
@@ -7052,11 +8077,26 @@ SpreadsheetApp.Range.prototype.offset = function(rowOffset, columnOffset, numRow
 SpreadsheetApp.Range.prototype.protect = function(){};
 
 /**
+ * Randomizes the order of the rows in the given range.
+
+ <pre class="prettyprint"><code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet = ss.getSheets()[0];
+ var range = sheet.getRange(&quot;A1:C7&quot;);
+
+ // Randomizes the range
+ range.randomize();
+ </code></pre>
+ *
+ * @return {SpreadsheetApp.Range} the range, for chaining
+ */
+SpreadsheetApp.Range.prototype.randomize = function(){};
+
+/**
  * Sets the background color of all cells in the range in CSS notation (like <code>&#39;#ffffff&#39;</code> or
  <code>&#39;white&#39;</code>).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7064,18 +8104,17 @@ SpreadsheetApp.Range.prototype.protect = function(){};
  range.setBackground(&quot;red&quot;);
  </code></pre>
  *
- * @param {String} color - color code in CSS notation (like <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>)
+ * @param {String} color - color code in CSS notation (like <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>); a <code>null</code> value resets the color
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
 SpreadsheetApp.Range.prototype.setBackground = function(color){};
 
 /**
- * Sets the background to the given RGB color.  This is a convenience
- wrapper for the setBackground call that takes a string color.
+ * Sets the background to the given RGB color. This is a convenience wrapper for the setBackground
+ call that takes a string color.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7100,8 +8139,7 @@ SpreadsheetApp.Range.prototype.setBackgroundRGB = function(red, green, blue){};
  * Sets a rectangular grid of background colors (must match dimensions of this range). The colors
  are in CSS notation (like <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7115,18 +8153,16 @@ SpreadsheetApp.Range.prototype.setBackgroundRGB = function(red, green, blue){};
  </code></pre>
  *
  * @param {String[][]} color - a two-dimensional array of colors in CSS notation (like <code>&#39;#ffffff&#39;</code> or
-     <code>&#39;white&#39;</code>)
+     <code>&#39;white&#39;</code>); <code>null</code> values reset the color
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
 SpreadsheetApp.Range.prototype.setBackgrounds = function(color){};
 
 /**
- * Sets the border property. Valid values are <code>true</code> (on), <code>false</code> (off) and
- <code>null</code> (no change).
+ * Sets the border property. Valid values are <code>true</code> (on), <code>false</code> (off) and <code>null</code> (no change).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7139,10 +8175,8 @@ SpreadsheetApp.Range.prototype.setBackgrounds = function(color){};
  * @param {Boolean} left - <code>true</code> for border, <code>false</code> for none, <code>null</code> for no change
  * @param {Boolean} bottom - <code>true</code> for border, <code>false</code> for none, <code>null</code> for no change
  * @param {Boolean} right - <code>true</code> for border, <code>false</code> for none, <code>null</code> for no change
- * @param {Boolean} vertical - <code>true</code> for internal vertical borders, <code>false</code> for none,
-     <code>null</code> for no change
- * @param {Boolean} horizontal - <code>true</code> for internal horizontal borders, <code>false</code> for none,
-     <code>null</code> for no change
+ * @param {Boolean} vertical - <code>true</code> for internal vertical borders, <code>false</code> for none, <code>null</code> for no change
+ * @param {Boolean} horizontal - <code>true</code> for internal horizontal borders, <code>false</code> for none, <code>null</code> for no change
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
@@ -7159,7 +8193,7 @@ SpreadsheetApp.Range.prototype.setBorder = function(top, left, bottom, right, ve
  cell.setDataValidation(rule);
  </pre>
  *
- * @param {SpreadsheetApp.DataValidation} rule - the data-validation rule to set
+ * @param {SpreadsheetApp.DataValidation} rule - the data-validation rule to set, or <code>null</code> to remove data-validation
  *
  * @return {SpreadsheetApp.Range} the range, for chaining
  */
@@ -7184,7 +8218,8 @@ SpreadsheetApp.Range.prototype.setDataValidation = function(rule){};
  destinationRange.setDataValidations(rules);
  </code></pre>
  *
- * @param {SpreadsheetApp.DataValidation[][]} rules - a two-dimensional array of data-validation rules to set
+ * @param {SpreadsheetApp.DataValidation[][]} rules - a two-dimensional array of data-validation rules to set; <code>null</code> values
+     remove data-validation
  *
  * @return {SpreadsheetApp.Range} the range, for chaining
  */
@@ -7193,8 +8228,7 @@ SpreadsheetApp.Range.prototype.setDataValidations = function(rules){};
 /**
  * Sets the font color in CSS notation (like <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7202,7 +8236,8 @@ SpreadsheetApp.Range.prototype.setDataValidations = function(rules){};
  cell.setFontColor(&quot;red&quot;);
  </code></pre>
  *
- * @param {String} color - the font color in CSS notation (like <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>)
+ * @param {String} color - the font color in CSS notation (like <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>); a
+     <code>null</code> value resets the color
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
@@ -7212,8 +8247,7 @@ SpreadsheetApp.Range.prototype.setFontColor = function(color){};
  * Sets a rectangular grid of font colors (must match dimensions of this range). The colors are in
  CSS notation (like <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7226,31 +8260,32 @@ SpreadsheetApp.Range.prototype.setFontColor = function(color){};
  cell.setFontColors(colors);
  </code></pre>
  *
- * @param {Object[][]} colors - a two-dimensional string array of background colors
+ * @param {Object[][]} colors - a two-dimensional array of colors in CSS notation (like <code>&#39;#ffffff&#39;</code> or
+     <code>&#39;white&#39;</code>); <code>null</code> values reset the color
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
 SpreadsheetApp.Range.prototype.setFontColors = function(colors){};
 
 /**
- * Sets a rectangular grid of font families (must match dimensions of this range).
- Examples of font families are "Arial" or "Helvetica".
+ * Sets a rectangular grid of font families (must match dimensions of this range). Examples of
+ font families are "Arial" or "Helvetica".
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
  var fonts = [
    [&quot;Arial&quot;, &quot;Helvetica&quot;, &quot;Verdana&quot;],
-   [&quot;Courier New&quot;, &quot;Arial&quot;, &quot;Helvetica] // These are the hex equivalents
+   [&quot;Courier New&quot;, &quot;Arial&quot;, &quot;Helvetica]
  ];
 
  var cell = sheet.getRange(&quot;B2:D3&quot;);
  cell.setFontFamilies(fonts);
  </code></pre>
  *
- * @param {Object[][]} fontFamilies - a two-dimensional string array of font families
+ * @param {Object[][]} fontFamilies - a two-dimensional array of font families; <code>null</code> values reset the
+     font family
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
@@ -7259,8 +8294,7 @@ SpreadsheetApp.Range.prototype.setFontFamilies = function(fontFamilies){};
 /**
  * Sets the font family, such as "Arial" or "Helvetica".
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7268,18 +8302,17 @@ SpreadsheetApp.Range.prototype.setFontFamilies = function(fontFamilies){};
  cell.setFontFamily(&quot;Helvetica&quot;);
  </code></pre>
  *
- * @param {String} fontFamily - the font family
+ * @param {String} fontFamily - the font family; a <code>null</code> value resets the font family
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
 SpreadsheetApp.Range.prototype.setFontFamily = function(fontFamily){};
 
 /**
- * Sets the line style of the given range (<code>&#39;underline&#39;</code>, <code>&#39;line-through&#39;</code>, or
+ * Sets the font line style of the given range (<code>&#39;underline&#39;</code>, <code>&#39;line-through&#39;</code>, or
  <code>&#39;none&#39;</code>).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7287,7 +8320,8 @@ SpreadsheetApp.Range.prototype.setFontFamily = function(fontFamily){};
  cell.setFontLine(&quot;line-through&quot;);
  </code></pre>
  *
- * @param {String} fontLine - <code>&#39;underline&#39;</code>, <code>&#39;line-through&#39;</code>, or <code>&#39;none&#39;</code>
+ * @param {String} fontLine - the font line style, either <code>&#39;underline&#39;</code>, <code>&#39;line-through&#39;</code>, or
+     <code>&#39;none&#39;</code>; a <code>null</code> value resets the font line style
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
@@ -7296,8 +8330,7 @@ SpreadsheetApp.Range.prototype.setFontLine = function(fontLine){};
 /**
  * Sets a rectangular grid of line styles (must match dimensions of this range).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7310,8 +8343,7 @@ SpreadsheetApp.Range.prototype.setFontLine = function(fontLine){};
  range.setFontLines(fontLines);
  </code></pre>
  *
- * @param {Object[][]} fontLines - a two-dimensional array of font line styles (<code>&#39;underline&#39;</code>,
-     <code>&#39;line-through&#39;</code>, or <code>&#39;none&#39;</code>)
+ * @param {Object[][]} fontLines - a two-dimensional array of font line styles (<code>&#39;underline&#39;</code>, <code>&#39;line-through&#39;</code>, or <code>&#39;none&#39;</code>); <code>null</code> values reset the font line style
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
@@ -7320,8 +8352,7 @@ SpreadsheetApp.Range.prototype.setFontLines = function(fontLines){};
 /**
  * Sets the font size, with the size being the point size to use.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7336,11 +8367,10 @@ SpreadsheetApp.Range.prototype.setFontLines = function(fontLines){};
 SpreadsheetApp.Range.prototype.setFontSize = function(size){};
 
 /**
- * Sets a rectangular grid of font sizes (must match dimensions of this range).
- The sizes are in points.
+ * Sets a rectangular grid of font sizes (must match dimensions of this range). The sizes are in
+ points.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7362,8 +8392,7 @@ SpreadsheetApp.Range.prototype.setFontSizes = function(sizes){};
 /**
  * Set the font style for the given range (<code>&#39;italic&#39;</code> or <code>&#39;normal&#39;</code>).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7371,7 +8400,8 @@ SpreadsheetApp.Range.prototype.setFontSizes = function(sizes){};
  cell.setFontStyle(&quot;italic&quot;);
  </code></pre>
  *
- * @param {String} fontStyle - either <code>&#39;italic&#39;</code> or <code>&#39;normal&#39;</code>
+ * @param {String} fontStyle - the font style, either <code>&#39;italic&#39;</code> or <code>&#39;normal&#39;</code>; a <code>null</code>
+     value resets the font style
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
@@ -7380,8 +8410,7 @@ SpreadsheetApp.Range.prototype.setFontStyle = function(fontStyle){};
 /**
  * Sets a rectangular grid of font styles (must match dimensions of this range).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7394,8 +8423,7 @@ SpreadsheetApp.Range.prototype.setFontStyle = function(fontStyle){};
  range.setFontStyles(fontStyles);
  </code></pre>
  *
- * @param {Object[][]} fontStyles - a two-dimensional array of font styles, either <code>&#39;italic&#39;</code> or
-     <code>&#39;normal&#39;</code>
+ * @param {Object[][]} fontStyles - a two-dimensional array of font styles, either <code>&#39;italic&#39;</code> or <code>&#39;normal&#39;</code>; <code>null</code> values reset the font style
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
@@ -7404,8 +8432,7 @@ SpreadsheetApp.Range.prototype.setFontStyles = function(fontStyles){};
 /**
  * Set the font weight for the given range (normal/bold).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7413,18 +8440,18 @@ SpreadsheetApp.Range.prototype.setFontStyles = function(fontStyles){};
  cell.setFontWeight(&quot;bold&quot;);
  </code></pre>
  *
- * @param {String} fontWeight - the font weight - normal or bold
+ * @param {String} fontWeight - the font weight, either <code>&#39;bold&#39;</code> or <code>&#39;normal&#39;</code>; a <code>null</code>
+     value resets the font weight
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
 SpreadsheetApp.Range.prototype.setFontWeight = function(fontWeight){};
 
 /**
- * Sets a rectangular grid of font weights (must match dimensions of this range).
- An example of a font weight is "bold".
+ * Sets a rectangular grid of font weights (must match dimensions of this range). An example of a
+ font weight is "bold".
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7437,7 +8464,7 @@ SpreadsheetApp.Range.prototype.setFontWeight = function(fontWeight){};
  range.setFontWeights(fontStyles);
  </code></pre>
  *
- * @param {Object[][]} fontWeights - a two-dimensional array of font weights
+ * @param {Object[][]} fontWeights - a two-dimensional array of font weights, either <code>&#39;bold&#39;</code> or <code>&#39;normal&#39;</code>; <code>null</code> values reset the font weight
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
@@ -7446,8 +8473,7 @@ SpreadsheetApp.Range.prototype.setFontWeights = function(fontWeights){};
 /**
  * Updates the formula for this range. The given formula must be in A1 notation.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7464,8 +8490,7 @@ SpreadsheetApp.Range.prototype.setFormula = function(formula){};
 /**
  * Updates the formula for this range. The given formula must be in R1C1 notation.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7485,8 +8510,7 @@ SpreadsheetApp.Range.prototype.setFormulaR1C1 = function(formula){};
  must be in A1 notation. This method takes a two-dimensional array of formulas, indexed by row,
  then by column. The array dimensions must correspond to the range dimensions.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7511,8 +8535,7 @@ SpreadsheetApp.Range.prototype.setFormulas = function(formulas){};
  * Sets a rectangular grid of formulas (must match dimensions of this range). The given formulas
  must be in R1C1 notation.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7540,8 +8563,7 @@ SpreadsheetApp.Range.prototype.setFormulasR1C1 = function(formulas){};
 /**
  * Set the horizontal (left to right) alignment for the given range (left/center/right).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7549,18 +8571,17 @@ SpreadsheetApp.Range.prototype.setFormulasR1C1 = function(formulas){};
  cell.setHorizontalAlignment(&quot;center&quot;);
  </code></pre>
  *
- * @param {String} alignment - the alignment - left, center or right
+ * @param {String} alignment - the alignment, either <code>&#39;left&#39;</code>, <code>&#39;center&#39;</code> or <code>&#39;normal&#39;</code>; a
+     <code>null</code> value resets the alignment
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
 SpreadsheetApp.Range.prototype.setHorizontalAlignment = function(alignment){};
 
 /**
- * Sets a rectangular grid of horizontal alignments.
- see <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/range.html#setHorizontalAlignment(String)'>setHorizontalAlignment(alignment)</a></code>
+ * Sets a rectangular grid of horizontal alignments. see <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/range.html#setHorizontalAlignment(String)'>setHorizontalAlignment(alignment)</a></code>
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7573,7 +8594,7 @@ SpreadsheetApp.Range.prototype.setHorizontalAlignment = function(alignment){};
  range.setHorizontalAlignments(horizontalAlignments);
  </code></pre>
  *
- * @param {Object[][]} alignments - a two-dimensional array of alignments
+ * @param {Object[][]} alignments - a two-dimensional array of alignments, either <code>&#39;left&#39;</code>, <code>&#39;center&#39;</code> or <code>&#39;normal&#39;</code>; a <code>null</code> value resets the alignment
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
@@ -7582,8 +8603,7 @@ SpreadsheetApp.Range.prototype.setHorizontalAlignments = function(alignments){};
 /**
  * Sets the note to the given value.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7591,7 +8611,7 @@ SpreadsheetApp.Range.prototype.setHorizontalAlignments = function(alignments){};
  cell.setNote(&quot;This is a note&quot;);
  </code></pre>
  *
- * @param {String} note - the note value to set for the range
+ * @param {String} note - the note value to set for the range; a <code>null</code> value removes the note
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
@@ -7600,8 +8620,7 @@ SpreadsheetApp.Range.prototype.setNote = function(note){};
 /**
  * Sets a rectangular grid of notes (must match dimensions of this range).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7615,18 +8634,17 @@ SpreadsheetApp.Range.prototype.setNote = function(note){};
  cell.setNotes(notes)
  </code></pre>
  *
- * @param {Object[][]} notes - a two-dimensional array of notes
+ * @param {Object[][]} notes - a two-dimensional array of notes; <code>null</code> values remove the note
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
 SpreadsheetApp.Range.prototype.setNotes = function(notes){};
 
 /**
- * Sets the number or date format to the given formatting string. Date formats follow the
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html">java.text.SimpleDateFormat</a></code> specification.
+ * Sets the number or date format to the given formatting string. The accepted format patterns are
+ described in the <a href="/sheets/api/guides/formats">Sheets API documentation</a>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7643,11 +8661,10 @@ SpreadsheetApp.Range.prototype.setNumberFormat = function(numberFormat){};
 
 /**
  * Sets a rectangular grid of number or date formats (must match dimensions of this range). The
- values are formatting strings, see <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/range.html#setNumberFormat(String)'>setNumberFormat(numberFormat)</a></code>. Date formats follow the
- <code><a href="http://docs.oracle.com/javase/6/docs/api/java/text/SimpleDateFormat.html">java.text.SimpleDateFormat</a></code> specification.
+ values are format pattern strings as described in the <a href="/sheets/api/guides/formats">
+ Sheets API documentation</a>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7667,12 +8684,10 @@ SpreadsheetApp.Range.prototype.setNumberFormat = function(numberFormat){};
 SpreadsheetApp.Range.prototype.setNumberFormats = function(numberFormats){};
 
 /**
- * Sets the value of the range. The value can be numeric, string,
- boolean or date.  If it begins with '=' it is interpreted
- as a formula.
+ * Sets the value of the range. The value can be numeric, string, boolean or date. If it begins
+ with '=' it is interpreted as a formula.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7689,8 +8704,7 @@ SpreadsheetApp.Range.prototype.setValue = function(value){};
 /**
  * Sets a rectangular grid of values (must match dimensions of this range).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7712,8 +8726,7 @@ SpreadsheetApp.Range.prototype.setValues = function(values){};
 /**
  * Set the vertical (top to bottom) alignment for the given range (top/middle/bottom).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7721,7 +8734,8 @@ SpreadsheetApp.Range.prototype.setValues = function(values){};
  cell.setVerticalAlignment(&quot;middle&quot;);
  </code></pre>
  *
- * @param {String} alignment - the alignment - top, middle or bottom
+ * @param {String} alignment - the alignment, either <code>&#39;top&#39;</code>, <code>&#39;middle&#39;</code> or <code>&#39;bottom&#39;</code>; a
+     <code>null</code> value resets the alignment
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
@@ -7730,8 +8744,7 @@ SpreadsheetApp.Range.prototype.setVerticalAlignment = function(alignment){};
 /**
  * Sets a rectangular grid of vertical alignments (must match dimensions of this range).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7744,7 +8757,8 @@ SpreadsheetApp.Range.prototype.setVerticalAlignment = function(alignment){};
  range.setVerticalAlignments(alignments);
  </code></pre>
  *
- * @param {Object[][]} alignments - a two-dimensional array of alignments
+ * @param {Object[][]} alignments - a two-dimensional array of alignments, either <code>&#39;top&#39;</code>, <code>&#39;middle&#39;</code>
+     or <code>&#39;bottom&#39;</code>; a <code>null</code> value resets the alignment
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
@@ -7753,12 +8767,10 @@ SpreadsheetApp.Range.prototype.setVerticalAlignments = function(alignments){};
 /**
  * Set the cell wrap of the given range.
 
- Cells with wrap enabled (the default) will resize to display their full content. Cells with
- wrap disabled will display as much as possible in the cell without resizing or running to
- multiple lines.
+ <p>Cells with wrap enabled (the default) resize to display their full content. Cells with wrap
+ disabled display as much as possible in the cell without resizing or running to multiple lines.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7774,11 +8786,10 @@ SpreadsheetApp.Range.prototype.setWrap = function(isWrapEnabled){};
 
 /**
  * Sets a rectangular grid of word wrap policies (must match dimensions of this range). Cells with
- wrap enabled (the default) will resize to display their full content. Cells with wrap disabled
- will display as much as possible in the cell without resizing or running to multiple lines.
+ wrap enabled (the default) resize to display their full content. Cells with wrap disabled
+ display as much as possible in the cell without resizing or running to multiple lines.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7800,10 +8811,9 @@ SpreadsheetApp.Range.prototype.setWraps = function(isWrapEnabled){};
 /**
  * Sorts the cells in the given range.
 
- Sorts the cells in a given range, by column and order specified.
+ <p>Sorts the cells in a given range, by column and order specified.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(&quot;A1:C7&quot;);
@@ -7844,11 +8854,10 @@ SpreadsheetApp.Range.prototype.sort = function(sortSpecObj){};
 SpreadsheetApp.Sheet = function(){};
 
 /**
- * Activates this sheet. Does not alter the sheet itself, only
- the parent's notion of the active sheet.
+ * Activates this sheet. Does not alter the sheet itself, only the parent's notion of the active
+ sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This example assumes there is a sheet named &quot;first&quot;
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var first = ss.getSheetByName(&quot;first&quot;);
@@ -7860,12 +8869,11 @@ SpreadsheetApp.Sheet = function(){};
 SpreadsheetApp.Sheet.prototype.activate = function(){};
 
 /**
- * Appends a row to the spreadsheet.  This operation is atomic; it prevents issues where
- a user asks for the last row, and then writes to that row, and an intervening mutation
- occurs between getting the last row and writing to it.
+ * Appends a row to the spreadsheet. This operation is atomic; it prevents issues where a user
+ asks for the last row, and then writes to that row, and an intervening mutation occurs between
+ getting the last row and writing to it.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7883,8 +8891,7 @@ SpreadsheetApp.Sheet.prototype.appendRow = function(rowContents){};
 /**
  * Sets the width of the given column to fit its contents
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -7903,8 +8910,7 @@ SpreadsheetApp.Sheet.prototype.autoResizeColumn = function(columnPosition){};
 /**
  * Clears the sheet of content and formatting information.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This example assumes there is a sheet named &quot;first&quot;
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var first = ss.getSheetByName(&quot;first&quot;);
@@ -7918,8 +8924,7 @@ SpreadsheetApp.Sheet.prototype.clear = function(){};
 /**
  * Clears the sheet of contents, while preserving formatting information.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This example assumes there is a sheet named &quot;first&quot;
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var first = ss.getSheetByName(&quot;first&quot;);
@@ -7933,11 +8938,10 @@ SpreadsheetApp.Sheet.prototype.clearContents = function(){};
 /**
  * Clears the sheet of formatting, while preserving contents.
 
- Formatting refers to how data is formatted as allowed by choices under the "Format" menu
+ <p>Formatting refers to how data is formatted as allowed by choices under the "Format" menu
  (ex: bold, italics, conditional formatting) and not width or height of cells.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This example assumes there is a sheet named &quot;first&quot;
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var first = ss.getSheetByName(&quot;first&quot;);
@@ -7951,8 +8955,7 @@ SpreadsheetApp.Sheet.prototype.clearFormats = function(){};
 /**
  * Clears the sheet of all notes.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This example assumes there is a sheet named &quot;first&quot;
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var first = ss.getSheetByName(&quot;first&quot;);
@@ -7964,11 +8967,10 @@ SpreadsheetApp.Sheet.prototype.clearFormats = function(){};
 SpreadsheetApp.Sheet.prototype.clearNotes = function(){};
 
 /**
- * Copies the sheet to a given spreadsheet, which can be the same spreadsheet
- as the source. The copied sheet will be named "Copy of [original name]".
+ * Copies the sheet to a given spreadsheet, which can be the same spreadsheet as the source. The
+ copied sheet is named "Copy of [original name]".
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var source = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = source.getSheets()[0];
 
@@ -7976,8 +8978,8 @@ SpreadsheetApp.Sheet.prototype.clearNotes = function(){};
  sheet.copyTo(destination);
  </code></pre>
  *
- * @param {SpreadsheetApp.Spreadsheet} spreadsheet - the spreadsheet to copy this sheet to, which can be the
-     same spreadsheet as the source
+ * @param {SpreadsheetApp.Spreadsheet} spreadsheet - the spreadsheet to copy this sheet to, which can be the same spreadsheet as
+     the source
  *
  * @return {SpreadsheetApp.Sheet} the new sheet for chaining
  */
@@ -7986,11 +8988,10 @@ SpreadsheetApp.Sheet.prototype.copyTo = function(spreadsheet){};
 /**
  * Deletes the column at the given column position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
- // Columns start at &quot;1&quot; - this will delete the first column
+ // Columns start at &quot;1&quot; - this deletes the first column
  sheet.deleteColumn(1);
  </code></pre>
  *
@@ -8003,11 +9004,10 @@ SpreadsheetApp.Sheet.prototype.deleteColumn = function(columnPosition){};
 /**
  * Deletes a number of columns starting at the given column position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
- // Columns start at &quot;1&quot; - this will delete the first two columns
+ // Columns start at &quot;1&quot; - this deletes the first two columns
  sheet.deleteColumns(1, 2);
  </code></pre>
  *
@@ -8021,11 +9021,10 @@ SpreadsheetApp.Sheet.prototype.deleteColumns = function(columnPosition, howMany)
 /**
  * Deletes the row at the given row position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
- // Rows start at &quot;1&quot; - this will delete the first row
+ // Rows start at &quot;1&quot; - this deletes the first row
  sheet.deleteRow(1);
  </code></pre>
  *
@@ -8038,11 +9037,10 @@ SpreadsheetApp.Sheet.prototype.deleteRow = function(rowPosition){};
 /**
  * Deletes a number of rows starting at the given row position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
- // Rows start at &quot;1&quot; - this will delete the first two rows
+ // Rows start at &quot;1&quot; - this deletes the first two rows
  sheet.deleteRows(1, 2);
  </code></pre>
  *
@@ -8056,8 +9054,7 @@ SpreadsheetApp.Sheet.prototype.deleteRows = function(rowPosition, howMany){};
 /**
  * Returns the active cell in this sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  // Returns the active cell
@@ -8071,15 +9068,14 @@ SpreadsheetApp.Sheet.prototype.getActiveCell = function(){};
 /**
  * Returns the active range for the active sheet.
 
- Returns the range of cells that is currently considered active. This generally means the
- range that a user has selected in the active sheet, but in a custom function it refers to
- the cell being actively recalculated.
+ <p>Returns the range of cells that is currently considered active. This generally means the
+ range that a user has selected in the active sheet, but in a custom function it refers to the
+ cell being actively recalculated.
 
- Note that when called on a SpreadsheetApp it effectively calls getActiveSpreadsheet and
- then getActiveSheet to act on the active Sheet.
+ <p>Note that when called on a SpreadsheetApp it effectively calls getActiveSpreadsheet and then
+ getActiveSheet to act on the active Sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  // Returns the active range
@@ -8093,8 +9089,7 @@ SpreadsheetApp.Sheet.prototype.getActiveRange = function(){};
 /**
  * Returns an array of charts on this sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var charts = sheet.getCharts();
@@ -8112,8 +9107,7 @@ SpreadsheetApp.Sheet.prototype.getCharts = function(){};
 /**
  * Gets the width in pixels of the given column.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8130,11 +9124,10 @@ SpreadsheetApp.Sheet.prototype.getColumnWidth = function(columnPosition){};
 /**
  * Returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/range.html'>Range</a></code> corresponding to the dimensions in which data is present.
 
- This is functionally equivalent to creating a Range bounded by A1 and
+ <p>This is functionally equivalent to creating a Range bounded by A1 and
  (Range.getLastColumn(), Range.getLastRow()).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8160,10 +9153,23 @@ SpreadsheetApp.Sheet.prototype.getColumnWidth = function(columnPosition){};
 SpreadsheetApp.Sheet.prototype.getDataRange = function(){};
 
 /**
+ * Returns the URL for the form that sends its responses to this sheet, or null if this sheet has
+ no associated form.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSheet();
+ var url = sheet.getFormUrl();
+ </code></pre>
+ *
+ * @return {String} the URL for the form that places its responses in this sheet, or null if this sheet
+     doesn't have an associated form.
+ */
+SpreadsheetApp.Sheet.prototype.getFormUrl = function(){};
+
+/**
  * Returns the number of frozen columns.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8177,8 +9183,7 @@ SpreadsheetApp.Sheet.prototype.getFrozenColumns = function(){};
 /**
  * Returns the number of frozen rows.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8192,10 +9197,9 @@ SpreadsheetApp.Sheet.prototype.getFrozenRows = function(){};
 /**
  * Gets the position of the sheet in its parent spreadsheet. Starts at 1.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
- // Note that the JavaScript index is 0, but this will log 1
+ // Note that the JavaScript index is 0, but this logs 1
  var sheet = ss.getSheets()[0];
  // ... because spreadsheets are 1-indexed
  Logger.log(sheet.getIndex());
@@ -8208,8 +9212,7 @@ SpreadsheetApp.Sheet.prototype.getIndex = function(){};
 /**
  * Returns the position of the last column that has content.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8227,8 +9230,7 @@ SpreadsheetApp.Sheet.prototype.getLastColumn = function(){};
 /**
  * Returns the position of the last row that has content.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8244,10 +9246,9 @@ SpreadsheetApp.Sheet.prototype.getLastColumn = function(){};
 SpreadsheetApp.Sheet.prototype.getLastRow = function(){};
 
 /**
- * The maximum width of the sheet, regardless of content.
+ * Returns the current number of columns in the sheet, regardless of content.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This example assumes there is a sheet named &quot;first&quot;
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var first = ss.getSheetByName(&quot;first&quot;);
@@ -8259,10 +9260,9 @@ SpreadsheetApp.Sheet.prototype.getLastRow = function(){};
 SpreadsheetApp.Sheet.prototype.getMaxColumns = function(){};
 
 /**
- * The maximum height of the sheet, regardless of content.
+ * Returns the current number of rows in the sheet, regardless of content.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This example assumes there is a sheet named &quot;first&quot;
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var first = ss.getSheetByName(&quot;first&quot;);
@@ -8276,8 +9276,7 @@ SpreadsheetApp.Sheet.prototype.getMaxRows = function(){};
 /**
  * Returns the name of the sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  Logger.log(sheet.getName());
@@ -8290,9 +9289,8 @@ SpreadsheetApp.Sheet.prototype.getName = function(){};
 /**
  * Gets all the named ranges in this sheet.
 
- <pre class="prettyprint">
- <code>
- // The code below will log the name of the first named range.
+ <pre class="prettyprint"><code>
+ // The code below logs the name of the first named range.
  var namedRanges = SpreadsheetApp.getActiveSheet().getNamedRanges();
  if (namedRanges.length &gt; 1) {
    Logger.log(namedRanges[0].getName());
@@ -8306,8 +9304,7 @@ SpreadsheetApp.Sheet.prototype.getNamedRanges = function(){};
 /**
  * Returns the Spreadsheet that contains this sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  // parent is identical to ss
@@ -8322,8 +9319,7 @@ SpreadsheetApp.Sheet.prototype.getParent = function(){};
  * Gets an array of objects representing all protected ranges in the sheet, or a single-element
  array representing the protection on the sheet itself.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Remove all range protections in the spreadsheet that the user has permission to edit.
  var sheet = SpreadsheetApp.getActiveSheet();
  var protections = sheet.getProtections(SpreadsheetApp.ProtectionType.RANGE);
@@ -8335,8 +9331,7 @@ SpreadsheetApp.Sheet.prototype.getParent = function(){};
  }
  </code></pre>
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Remove sheet protection from the active sheet, if the user has permission to edit it.
  var sheet = SpreadsheetApp.getActiveSheet();
  var protection = sheet.getProtections(SpreadsheetApp.ProtectionType.SHEET)[0];
@@ -8356,8 +9351,7 @@ SpreadsheetApp.Sheet.prototype.getProtections = function(type){};
 /**
  * Returns the range with the top left cell at the given coordinates.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  // Passing only two arguments returns a &quot;range&quot; with a single cell.
@@ -8374,11 +9368,10 @@ SpreadsheetApp.Sheet.prototype.getProtections = function(type){};
 SpreadsheetApp.Sheet.prototype.getRange = function(row, column){};
 
 /**
- * Returns the range with the top left cell at the given coordinates, and with the given
- number of rows.
+ * Returns the range with the top left cell at the given coordinates, and with the given number of
+ rows.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  // When the &quot;numRows&quot; argument is used, only a single column of data is returned.
@@ -8402,11 +9395,10 @@ SpreadsheetApp.Sheet.prototype.getRange = function(row, column){};
 SpreadsheetApp.Sheet.prototype.getRange = function(row, column, numRows){};
 
 /**
- * Returns the range with the top left cell at the given coordinates with the given
- number of rows and columns.
+ * Returns the range with the top left cell at the given coordinates with the given number of rows
+ and columns.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  var range = sheet.getRange(1, 1, 3, 3);
@@ -8432,8 +9424,7 @@ SpreadsheetApp.Sheet.prototype.getRange = function(row, column, numRows, numColu
 /**
  * Gets the height in pixels of the given row.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8450,14 +9441,11 @@ SpreadsheetApp.Sheet.prototype.getRowHeight = function(rowPosition){};
 /**
  * Returns the ID of the sheet represented by this object.
 
- This is an ID for the sheet that is unique to the spreadsheet. The ID is a monotonically
- increasing integer assigned at sheet creation time that is independent of sheet position.
- This is useful in conjunction with methods such as
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/range.html#copyFormatToRange(Integer,Integer,Integer,Integer,Integer)'>Range.copyFormatToRange(gridId, column, columnEnd, row, rowEnd)</a></code> that take a <code>gridId</code>
- parameter rather than a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/sheet.html'>Sheet</a></code> instance.
+ <p>This is an ID for the sheet that is unique to the spreadsheet. The ID is a monotonically
+ increasing integer assigned at sheet creation time that is independent of sheet position. This
+ is useful in conjunction with methods such as <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/range.html#copyFormatToRange(Integer,Integer,Integer,Integer,Integer)'>Range.copyFormatToRange(gridId, column, columnEnd, row, rowEnd)</a></code> that take a <code>gridId</code> parameter rather than a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/sheet.html'>Sheet</a></code> instance.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8471,8 +9459,7 @@ SpreadsheetApp.Sheet.prototype.getSheetId = function(){};
 /**
  * Returns the sheet name.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8486,8 +9473,7 @@ SpreadsheetApp.Sheet.prototype.getSheetName = function(){};
 /**
  * Returns a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/page-protection.html'>PageProtection</a></s></code> instance describing the permissions for the current sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8497,8 +9483,8 @@ SpreadsheetApp.Sheet.prototype.getSheetName = function(){};
  permissions.addUser(&quot;user@example.com&quot;);
 
  // Logs the users that have access to edit this sheet. Note that this
- // is different from access to the entire spreadsheet - getUsers() will
- // only return users if permissions.isProtected() is set to true.
+ // is different from access to the entire spreadsheet - getUsers()
+ // only returns users if permissions.isProtected() is set to true.
  var users = permissions.getUsers();
  Logger.log(users);
  </code></pre>
@@ -8508,12 +9494,11 @@ SpreadsheetApp.Sheet.prototype.getSheetName = function(){};
 SpreadsheetApp.Sheet.prototype.getSheetProtection = function(){};
 
 /**
- * Returns the rectangular grid of values for this range starting at the given
- coordinates. A -1 value given as the row or column position is equivalent to getting the
- very last row or column that has data in the sheet.
+ * Returns the rectangular grid of values for this range starting at the given coordinates. A -1
+ value given as the row or column position is equivalent to getting the very last row or column
+ that has data in the sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8538,8 +9523,7 @@ SpreadsheetApp.Sheet.prototype.getSheetValues = function(startRow, startColumn, 
 /**
  * Gets the sheet tab color, or null if the sheet tab has no color.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This example assumes there is a sheet named &quot;first&quot;
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var first = ss.getSheetByName(&quot;first&quot;);
@@ -8553,8 +9537,7 @@ SpreadsheetApp.Sheet.prototype.getTabColor = function(){};
 /**
  * Hides the columns in the given range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8572,8 +9555,7 @@ SpreadsheetApp.Sheet.prototype.hideColumn = function(column){};
 /**
  * Hides the column at the given index.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  // Hides the first column
@@ -8589,8 +9571,7 @@ SpreadsheetApp.Sheet.prototype.hideColumns = function(columnIndex){};
 /**
  * Hides the rows in the given range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8608,8 +9589,7 @@ SpreadsheetApp.Sheet.prototype.hideRow = function(row){};
 /**
  * Hides the row at the given index.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  // Hides the first row
@@ -8623,11 +9603,10 @@ SpreadsheetApp.Sheet.prototype.hideRow = function(row){};
 SpreadsheetApp.Sheet.prototype.hideRows = function(rowIndex){};
 
 /**
- * Hides this sheet.  Has no effect if the sheet is already hidden.  If this method is called
- on the only visible sheet, it will throw an exception.
+ * Hides this sheet. Has no effect if the sheet is already hidden. If this method is called on the
+ only visible sheet, it throws an exception.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var sheet = SpreadsheetApp.getActiveSheet();
  sheet.hideSheet();
  </code></pre>
@@ -8639,8 +9618,7 @@ SpreadsheetApp.Sheet.prototype.hideSheet = function(){};
 /**
  * Adds a new chart to this sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8664,8 +9642,7 @@ SpreadsheetApp.Sheet.prototype.insertChart = function(chart){};
 /**
  * Inserts a column after the given column position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8682,8 +9659,7 @@ SpreadsheetApp.Sheet.prototype.insertColumnAfter = function(afterPosition){};
 /**
  * Inserts a column before the given column position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8700,8 +9676,7 @@ SpreadsheetApp.Sheet.prototype.insertColumnBefore = function(beforePosition){};
 /**
  * Inserts a blank column in a sheet at the specified location.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  // Shifts all columns by one
@@ -8717,8 +9692,7 @@ SpreadsheetApp.Sheet.prototype.insertColumns = function(columnIndex){};
 /**
  * Inserts a number of columns after the given column position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8736,8 +9710,7 @@ SpreadsheetApp.Sheet.prototype.insertColumnsAfter = function(afterPosition, howM
 /**
  * Inserts a number of columns before the given column position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8756,8 +9729,7 @@ SpreadsheetApp.Sheet.prototype.insertColumnsBefore = function(beforePosition, ho
  * Inserts a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../base/blob.html'>Blob</a></code> as an image in the document at a given row and column. The image size
  is retrieved from the blob contents.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8777,8 +9749,7 @@ SpreadsheetApp.Sheet.prototype.insertImage = function(blob, column, row){};
  * Inserts a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../base/blob.html'>Blob</a></code> as an image in the document at a given row and column, with a pixel
  offset. The image size is retrieved from the blob contents.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8799,8 +9770,7 @@ SpreadsheetApp.Sheet.prototype.insertImage = function(blob, column, row, offsetX
 /**
  * Inserts an image in the document at a given row and column.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8818,8 +9788,7 @@ SpreadsheetApp.Sheet.prototype.insertImage = function(url, column, row){};
 /**
  * Inserts a row after the given row position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8836,8 +9805,7 @@ SpreadsheetApp.Sheet.prototype.insertRowAfter = function(afterPosition){};
 /**
  * Inserts a row before the given row position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8854,8 +9822,7 @@ SpreadsheetApp.Sheet.prototype.insertRowBefore = function(beforePosition){};
 /**
  * Inserts a blank row in a sheet at the specified location.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  // Shifts all rows down by one
@@ -8871,8 +9838,7 @@ SpreadsheetApp.Sheet.prototype.insertRows = function(rowIndex){};
 /**
  * Inserts a number of rows after the given row position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8890,8 +9856,7 @@ SpreadsheetApp.Sheet.prototype.insertRowsAfter = function(afterPosition, howMany
 /**
  * Inserts a number of rows before the given row position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8909,8 +9874,7 @@ SpreadsheetApp.Sheet.prototype.insertRowsBefore = function(beforePosition, howMa
 /**
  * Returns true if the sheet is currently hidden.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var sheet = SpreadsheetApp.getActiveSheet();
  if (sheet.isSheetHidden()) {
    // do something...
@@ -8922,11 +9886,57 @@ SpreadsheetApp.Sheet.prototype.insertRowsBefore = function(beforePosition, howMa
 SpreadsheetApp.Sheet.prototype.isSheetHidden = function(){};
 
 /**
+ * Moves the columns selected by the given range to the position indicated by the <code>destinationIndex</code>. The <code>columnSpec</code> itself does not have to exactly represent an entire
+ column or group of columns to move&mdash;it selects all columns that the range spans.
+
+ <pre class="prettyprint"><code>
+ // The code below moves rows A-B to destination index 5.
+ // This results in those columns becoming columns C-D.
+ var sheet = SpreadsheetApp.getActiveSheet();
+ // Selects column A and column B to be moved.
+ var columnSpec = sheet.getRange(&quot;A1:B1&quot;);
+ sheet.moveColumns(columnSpec, 5);
+ </code></pre>
+ *
+ * @param {SpreadsheetApp.Range} columnSpec - A range spanning the columns that should be moved.
+ * @param {number} destinationIndex - The index that the columns should be moved to. Note that this index is
+     based on the coordinates before the columns are moved. Existing data is shifted right to
+     make room for the moved columns while the source columns are removed from the grid.
+     Therefore, the data may end up at a different index than originally specified.
+ *
+ * @return void
+ */
+SpreadsheetApp.Sheet.prototype.moveColumns = function(columnSpec, destinationIndex){};
+
+/**
+ * Moves the rows selected by the given range to the position indicated by the <code>destinationIndex</code>. The <code>rowSpec</code> itself does not have to exactly represent an entire row
+ or group of rows to move&mdash;it selects all rows that the range spans.
+
+ <pre class="prettyprint"><code>
+ // The code below moves rows 1-2 to destination index 5.
+ // This results in those rows becoming rows 3-4.
+ var sheet = SpreadsheetApp.getActiveSheet();
+ // Selects row 1 and row 2 to be moved.
+ var rowSpec = sheet.getRange(&quot;A1:A2&quot;);
+ sheet.moveRows(rowSpec, 5);
+ </code></pre>
+ *
+ * @param {SpreadsheetApp.Range} rowSpec - A range spanning the rows that should be moved.
+ * @param {number} destinationIndex - The index that the rows should be moved to. Note that this index is
+     based on the coordinates before the rows are moved. Existing data is shifted down to make
+     room for the moved rows while the source rows are removed from the grid. Therefore, the
+     data may end up at a different index than originally specified.
+ *
+ * @return void
+ */
+SpreadsheetApp.Sheet.prototype.moveRows = function(rowSpec, destinationIndex){};
+
+/**
  * Returns a builder to create a new chart for this sheet.
 
  <p>This example shows how to create a new chart:
- <pre class="prettyprint">
- <code>
+
+ <pre class="prettyprint"><code>
  var sheet = SpreadsheetApp.getActiveSheet();
  var range = sheet.getRange(&quot;A1:B8&quot;);
  var chartBuilder = sheet.newChart();
@@ -8935,7 +9945,7 @@ SpreadsheetApp.Sheet.prototype.isSheetHidden = function(){};
      .setPosition(2, 2, 0, 0)
      .setOption(&#39;title&#39;, &#39;My Line Chart!&#39;);
  sheet.insertChart(chartBuilder.build());
- </code></pre></p>
+ </code></pre>
  *
  * @return {SpreadsheetApp.EmbeddedChartBuilder} a builder for create a new chart
  */
@@ -8944,22 +9954,19 @@ SpreadsheetApp.Sheet.prototype.newChart = function(){};
 /**
  * Creates an object that can protect the sheet from being edited except by users who have
  permission. Until the script actually changes the list of editors for the sheet (by calling
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#removeEditor(String)'>Protection.removeEditor(emailAddress)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#removeEditor(User)'>Protection.removeEditor(user)</a></code>,
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#removeEditors(String)'>Protection.removeEditors(emailAddresses)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#addEditor(String)'>Protection.addEditor(emailAddress)</a></code>,
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#addEditor(User)'>Protection.addEditor(user)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#addEditors(String)'>Protection.addEditors(emailAddresses)</a></code>, or
- setting a new value for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#setDomainEdit(Boolean)'>Protection.setDomainEdit(editable)</a></code>), the permissions will
- mirror those of the spreadsheet itself, which effectively means that the sheet remains
- unprotected. If the sheet is already protected, this method returns an object representing its
- existing protection settings. A protected sheet may include unprotected regions.
+ <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#removeEditor(String)'>Protection.removeEditor(emailAddress)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#removeEditor(User)'>Protection.removeEditor(user)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#removeEditors(String)'>Protection.removeEditors(emailAddresses)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#addEditor(String)'>Protection.addEditor(emailAddress)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#addEditor(User)'>Protection.addEditor(user)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#addEditors(String)'>Protection.addEditors(emailAddresses)</a></code>, or setting a new
+ value for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/protection.html#setDomainEdit(Boolean)'>Protection.setDomainEdit(editable)</a></code>), the permissions mirror those of the
+ spreadsheet itself, which effectively means that the sheet remains unprotected. If the sheet is
+ already protected, this method returns an object representing its existing protection settings.
+ A protected sheet may include unprotected regions.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Protect the active sheet, then remove all other users from the list of editors.
  var sheet = SpreadsheetApp.getActiveSheet();
  var protection = sheet.protect().setDescription(&#39;Sample protected sheet&#39;);
 
  // Ensure the current user is an editor before removing others. Otherwise, if the user&#39;s edit
- // permission comes from a group, the script will throw an exception upon removing the group.
+ // permission comes from a group, the script throws an exception upon removing the group.
  var me = Session.getEffectiveUser();
  protection.addEditor(me);
  protection.removeEditors(protection.getEditors());
@@ -8975,8 +9982,7 @@ SpreadsheetApp.Sheet.prototype.protect = function(){};
 /**
  * Removes a chart from the parent sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -8996,8 +10002,7 @@ SpreadsheetApp.Sheet.prototype.removeChart = function(chart){};
 /**
  * Sets the active range for the active sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -9014,8 +10019,7 @@ SpreadsheetApp.Sheet.prototype.setActiveRange = function(range){};
 /**
  * Sets the active selection region for this sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -9032,8 +10036,7 @@ SpreadsheetApp.Sheet.prototype.setActiveSelection = function(range){};
 /**
  * Sets the width of the given column in pixels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -9051,8 +10054,7 @@ SpreadsheetApp.Sheet.prototype.setColumnWidth = function(columnPosition, width){
 /**
  * Freezes the given number of columns. If zero, no columns are frozen.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -9069,8 +10071,7 @@ SpreadsheetApp.Sheet.prototype.setFrozenColumns = function(columns){};
 /**
  * Freezes the given number of rows. If zero, no rows are frozen.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -9087,8 +10088,7 @@ SpreadsheetApp.Sheet.prototype.setFrozenRows = function(rows){};
 /**
  * Sets the sheet name.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This example assumes there is a sheet named &quot;first&quot;
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var first = ss.getSheetByName(&quot;first&quot;);
@@ -9104,8 +10104,7 @@ SpreadsheetApp.Sheet.prototype.setName = function(name){};
 /**
  * Sets the row height of the given row in pixels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -9123,8 +10122,7 @@ SpreadsheetApp.Sheet.prototype.setRowHeight = function(rowPosition, height){};
 /**
  * Sets the permissions for the current sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -9144,8 +10142,7 @@ SpreadsheetApp.Sheet.prototype.setSheetProtection = function(permissions){};
 /**
  * Sets the sheet tab color.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This example assumes there is a sheet named &quot;first&quot;
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var first = ss.getSheetByName(&quot;first&quot;);
@@ -9153,7 +10150,7 @@ SpreadsheetApp.Sheet.prototype.setSheetProtection = function(permissions){};
  first.setTabColor(null); // Unset the color.
  </code></pre>
  *
- * @param {String} color - color code in CSS notation (like <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>)
+ * @param {String} color - color code in CSS notation (like <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or <code>null</code> to reset the tab color
  *
  * @return {SpreadsheetApp.Sheet} the sheet for chaining
  */
@@ -9162,8 +10159,7 @@ SpreadsheetApp.Sheet.prototype.setTabColor = function(color){};
 /**
  * Unhides the column at the given index.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  // Unhides the first column
@@ -9179,8 +10175,7 @@ SpreadsheetApp.Sheet.prototype.showColumns = function(columnIndex){};
 /**
  * Unhides the row at the given index.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  // Unhides the first row
@@ -9194,10 +10189,9 @@ SpreadsheetApp.Sheet.prototype.showColumns = function(columnIndex){};
 SpreadsheetApp.Sheet.prototype.showRows = function(rowIndex){};
 
 /**
- * Makes the sheet visible.  Has no effect if the sheet is already visible.
+ * Makes the sheet visible. Has no effect if the sheet is already visible.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var sheet = SpreadsheetApp.getActiveSheet();
  sheet.showSheet();
  </code></pre>
@@ -9209,8 +10203,7 @@ SpreadsheetApp.Sheet.prototype.showSheet = function(){};
 /**
  * Sorts a sheet by column, ascending.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -9227,8 +10220,7 @@ SpreadsheetApp.Sheet.prototype.sort = function(columnPosition){};
 /**
  * Unhides the column in the given range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -9246,8 +10238,7 @@ SpreadsheetApp.Sheet.prototype.unhideColumn = function(column){};
 /**
  * Unhides the row in the given range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -9265,8 +10256,7 @@ SpreadsheetApp.Sheet.prototype.unhideRow = function(row){};
 /**
  * Updates the chart on this sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -9316,11 +10306,9 @@ SpreadsheetApp.Spreadsheet.prototype.addEditors = function(emailAddresses){};
 /**
  * Creates a new menu in the Spreadsheet UI.
 
- Each menu entry runs a user-defined function. Usually, you will want to call it from
- the onOpen function so that the menu is automatically created when the Spreadsheet is loaded.
+ <p>Each menu entry runs a user-defined function. Usually, you want to call it from the <code>onOpen()</code> function so that the menu is automatically created when the Spreadsheet is loaded.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // The onOpen function is executed automatically every time a Spreadsheet is loaded
  function onOpen() {
    var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -9336,8 +10324,8 @@ SpreadsheetApp.Spreadsheet.prototype.addEditors = function(emailAddresses){};
  </code></pre>
  *
  * @param {String} name - the name of the menu to be created
- * @param {Object[]} subMenus - an array of JavaScript maps with <code>name</code> and
-        <code>functionName</code> parameters
+ * @param {Object[]} subMenus - an array of JavaScript maps with <code>name</code> and <code>functionName
+     </code> parameters
  *
  * @return void
  */
@@ -9364,12 +10352,11 @@ SpreadsheetApp.Spreadsheet.prototype.addViewer = function(emailAddress){};
 SpreadsheetApp.Spreadsheet.prototype.addViewers = function(emailAddresses){};
 
 /**
- * Appends a row to the spreadsheet.  This operation is atomic; it prevents issues where
- a user asks for the last row, and then writes to that row, and an intervening mutation
- occurs between getting the last row and writing to it.
+ * Appends a row to the spreadsheet. This operation is atomic; it prevents issues where a user
+ asks for the last row, and then writes to that row, and an intervening mutation occurs between
+ getting the last row and writing to it.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -9387,8 +10374,7 @@ SpreadsheetApp.Spreadsheet.prototype.appendRow = function(rowContents){};
 /**
  * Sets the width of the given column to fit its contents
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -9407,8 +10393,7 @@ SpreadsheetApp.Spreadsheet.prototype.autoResizeColumn = function(columnPosition)
 /**
  * Copies the spreadsheet and returns the new one.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This code makes a copy of the current spreadsheet and names it appropriately
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  ss.copy(&quot;Copy of &quot; + ss.getName());
@@ -9423,8 +10408,7 @@ SpreadsheetApp.Spreadsheet.prototype.copy = function(name){};
 /**
  * Deletes the currently active sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // The code below deletes the currently active sheet and stores the new active sheet in a
  // variable
  var newSheet = SpreadsheetApp.getActiveSpreadsheet().deleteActiveSheet();
@@ -9437,11 +10421,10 @@ SpreadsheetApp.Spreadsheet.prototype.deleteActiveSheet = function(){};
 /**
  * Deletes the column at the given column position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
- // Columns start at &quot;1&quot; - this will delete the first column
+ // Columns start at &quot;1&quot; - this deletes the first column
  sheet.deleteColumn(1);
  </code></pre>
  *
@@ -9454,11 +10437,10 @@ SpreadsheetApp.Spreadsheet.prototype.deleteColumn = function(columnPosition){};
 /**
  * Deletes a number of columns starting at the given column position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
- // Columns start at &quot;1&quot; - this will delete the first two columns
+ // Columns start at &quot;1&quot; - this deletes the first two columns
  sheet.deleteColumns(1, 2);
  </code></pre>
  *
@@ -9472,11 +10454,10 @@ SpreadsheetApp.Spreadsheet.prototype.deleteColumns = function(columnPosition, ho
 /**
  * Deletes the row at the given row position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
- // Rows start at &quot;1&quot; - this will delete the first row
+ // Rows start at &quot;1&quot; - this deletes the first row
  sheet.deleteRow(1);
  </code></pre>
  *
@@ -9489,11 +10470,10 @@ SpreadsheetApp.Spreadsheet.prototype.deleteRow = function(rowPosition){};
 /**
  * Deletes a number of rows starting at the given row position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
- // Rows start at &quot;1&quot; - this will delete the first two rows
+ // Rows start at &quot;1&quot; - this deletes the first two rows
  sheet.deleteRows(1, 2);
  </code></pre>
  *
@@ -9507,8 +10487,7 @@ SpreadsheetApp.Spreadsheet.prototype.deleteRows = function(rowPosition, howMany)
 /**
  * Deletes the specified sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // The code below deletes the specified sheet.
  var ss = SpreadsheetApp.getActive();
  var sheet = ss.getSheetByName(&#39;My Sheet&#39;);
@@ -9524,8 +10503,7 @@ SpreadsheetApp.Spreadsheet.prototype.deleteSheet = function(sheet){};
 /**
  * Duplicates the active sheet and makes it the active sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // The code below makes a duplicate of the active sheet
  SpreadsheetApp.getActiveSpreadsheet().duplicateActiveSheet();
  </code></pre>
@@ -9537,8 +10515,7 @@ SpreadsheetApp.Spreadsheet.prototype.duplicateActiveSheet = function(){};
 /**
  * Returns the active cell in this sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  // Returns the active cell
@@ -9552,15 +10529,14 @@ SpreadsheetApp.Spreadsheet.prototype.getActiveCell = function(){};
 /**
  * Returns the active range for the active sheet.
 
- Returns the range of cells that is currently considered active. This generally means the
- range that a user has selected in the active sheet, but in a custom function it refers to
- the cell being actively recalculated.
+ <p>Returns the range of cells that is currently considered active. This generally means the
+ range that a user has selected in the active sheet, but in a custom function it refers to the
+ cell being actively recalculated.
 
- Note that when called on a SpreadsheetApp it effectively calls getActiveSpreadsheet and
- then getActiveSheet to act on the active Sheet.
+ <p>Note that when called on a SpreadsheetApp it effectively calls getActiveSpreadsheet and then
+ getActiveSheet to act on the active Sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
  // Returns the active range
@@ -9574,10 +10550,10 @@ SpreadsheetApp.Spreadsheet.prototype.getActiveRange = function(){};
 /**
  * Gets the active sheet in a spreadsheet.
 
- The active sheet in a spreadsheet is the sheet that is being displayed in the spreadsheet UI.
+ <p>The active sheet in a spreadsheet is the sheet that is being displayed in the spreadsheet
+ UI.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
  </code></pre>
  *
@@ -9587,15 +10563,14 @@ SpreadsheetApp.Spreadsheet.prototype.getActiveSheet = function(){};
 
 /**
  * Return the data inside this object as a blob converted to the specified content type. This
- method adds the appropriate extension to the filename ? for example, "myfile.pdf". However, it
+ method adds the appropriate extension to the filename — for example, "myfile.pdf". However, it
  assumes that the part of the filename that follows the last period (if any) is an existing
  extension that should be replaced. Consequently, "ChristmasList.12.25.2014" will become
  "ChristmasList.12.25.pdf".
  *
- * @param {String} contentType - the MIME type to convert to. For most blobs,
-     <code>&#39;application/pdf&#39;</code> is the only valid option. For images in BMP, GIF, JPEG,
-     or PNG format, any of <code>&#39;image/bmp&#39;</code>, <code>&#39;image/gif&#39;</code>,
-     <code>&#39;image/jpeg&#39;</code>, or <code>&#39;image/png&#39;</code> are also valid.
+ * @param {String} contentType - the MIME type to convert to. For most blobs, <code>&#39;application/pdf&#39;</code> is
+     the only valid option. For images in BMP, GIF, JPEG, or PNG format, any of <code>&#39;image/bmp&#39;</code>, <code>&#39;image/gif&#39;</code>, <code>&#39;image/jpeg&#39;</code>, or <code>&#39;image/png&#39;</code> are also
+     valid.
  *
  * @return {Blob} the data as a blob
  */
@@ -9611,8 +10586,7 @@ SpreadsheetApp.Spreadsheet.prototype.getBlob = function(){};
 /**
  * Gets the width in pixels of the given column.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -9629,11 +10603,10 @@ SpreadsheetApp.Spreadsheet.prototype.getColumnWidth = function(columnPosition){}
 /**
  * Returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/range.html'>Range</a></code> corresponding to the dimensions in which data is present.
 
- This is functionally equivalent to creating a Range bounded by A1 and
+ <p>This is functionally equivalent to creating a Range bounded by A1 and
  (Range.getLastColumn(), Range.getLastRow()).
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -9667,17 +10640,20 @@ SpreadsheetApp.Spreadsheet.prototype.getDataRange = function(){};
 SpreadsheetApp.Spreadsheet.prototype.getEditors = function(){};
 
 /**
- * Returns the url for the form attached to the spreadsheet, null if there is no form.
+ * Returns the URL for the form that sends its responses to this spreadsheet, or null if this
+ spreadsheet has no associated form. If multiple forms send responses to this spreadsheet, the
+ form URL returned is indeterminate. As an alternative, per sheet form URL associations can be
+ retrieved through the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/sheet.html#getFormUrl()'>Sheet.getFormUrl()</a></code> method.
  *
- * @return {String} the url for the spreadsheet form or null
+ * @return {String} the URL for the form that places its responses in this spreadsheet, or null if this
+     spreadsheet doesn't have an associated form.
  */
 SpreadsheetApp.Spreadsheet.prototype.getFormUrl = function(){};
 
 /**
  * Returns the number of frozen columns.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -9691,8 +10667,7 @@ SpreadsheetApp.Spreadsheet.prototype.getFrozenColumns = function(){};
 /**
  * Returns the number of frozen rows.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -9708,8 +10683,7 @@ SpreadsheetApp.Spreadsheet.prototype.getFrozenRows = function(){};
  For example, the spreadsheet ID in the URL
  https://docs.google.com/spreadsheets/d/abc1234567/edit#gid=0 is "abc1234567".
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // The code below logs the ID for the active spreadsheet.
  Logger.log(SpreadsheetApp.getActiveSpreadsheet().getId());
  </code></pre>
@@ -9721,8 +10695,7 @@ SpreadsheetApp.Spreadsheet.prototype.getId = function(){};
 /**
  * Returns the position of the last column that has content.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -9740,8 +10713,7 @@ SpreadsheetApp.Spreadsheet.prototype.getLastColumn = function(){};
 /**
  * Returns the position of the last row that has content.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -9759,8 +10731,7 @@ SpreadsheetApp.Spreadsheet.prototype.getLastRow = function(){};
 /**
  * Gets the name of the document.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  Logger.log(ss.getName());
  </code></pre>
@@ -9772,9 +10743,8 @@ SpreadsheetApp.Spreadsheet.prototype.getName = function(){};
 /**
  * Gets all the named ranges in this spreadsheet.
 
- <pre class="prettyprint">
- <code>
- // The code below will log the name of the first named range.
+ <pre class="prettyprint"><code>
+ // The code below logs the name of the first named range.
  var namedRanges = SpreadsheetApp.getActiveSpreadsheet().getNamedRanges();
  if (namedRanges.length &gt; 1) {
    Logger.log(namedRanges[0].getName());
@@ -9788,8 +10758,7 @@ SpreadsheetApp.Spreadsheet.prototype.getNamedRanges = function(){};
 /**
  * Returns the number of sheets in this spreadsheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // The code below logs the number of sheets in the active spreadsheet.
  Logger.log(SpreadsheetApp.getActiveSpreadsheet().getNumSheets());
  </code></pre>
@@ -9801,8 +10770,7 @@ SpreadsheetApp.Spreadsheet.prototype.getNumSheets = function(){};
 /**
  * Returns the owner of the document.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var owner = ss.getOwner();
  Logger.log(owner.getEmail());
@@ -9815,8 +10783,7 @@ SpreadsheetApp.Spreadsheet.prototype.getOwner = function(){};
 /**
  * Gets an array of objects representing all protected ranges or sheets in the spreadsheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Remove all range protections in the spreadsheet that the user has permission to edit.
  var ss = SpreadsheetApp.getActive();
  var protections = ss.getProtections(SpreadsheetApp.ProtectionType.RANGE);
@@ -9828,8 +10795,7 @@ SpreadsheetApp.Spreadsheet.prototype.getOwner = function(){};
  }
  </code></pre>
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Remove all sheet protections in the spreadsheet that the user has permission to edit.
  var ss = SpreadsheetApp.getActive();
  var protections = ss.getProtections(SpreadsheetApp.ProtectionType.SHEET);
@@ -9851,11 +10817,13 @@ SpreadsheetApp.Spreadsheet.prototype.getProtections = function(type){};
 /**
  * Returns the range as specified in A1 notation or R1C1 notation.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
+ // Get a range A1:D4 on sheet titled &quot;Invoices&quot;
  var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var range = ss.getRange(&quot;Invoices!A1:D4&quot;);
+
+ // Get cell A1 on the first sheet
  var sheet = ss.getSheets()[0];
- // Returns the first cell
  var cell = sheet.getRange(&quot;A1&quot;);
  </code></pre>
  *
@@ -9868,12 +10836,10 @@ SpreadsheetApp.Spreadsheet.prototype.getRange = function(a1Notation){};
 /**
  * Returns a named range, or <code>null</code> if no range with the given name is found. If multiple
  sheets of the spreadsheet use the same range name, specify the sheet name without additional
- quotation marks ? for example, <code>getRangeByName(&#39;TaxRates&#39;)</code> or
- <code>getRangeByName(&#39;Sheet Name!TaxRates&#39;)</code>, but not
- <code>getRangeByName(&#39;&quot;Sheet Name&quot;!TaxRates&#39;)</code>.
+ quotation marks — for example, <code>getRangeByName(&#39;TaxRates&#39;)</code> or <code>getRangeByName(&#39;Sheet Name!TaxRates&#39;)</code>, but not <code>getRangeByName(&#39;&quot;Sheet
+ Name&quot;!TaxRates&#39;)</code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Log the number of columns for the range named &#39;TaxRates&#39; in the active spreadsheet.
  var range = SpreadsheetApp.getActiveSpreadsheet().getRangeByName(&#39;TaxRates&#39;);
  if (range != null) {
@@ -9890,8 +10856,7 @@ SpreadsheetApp.Spreadsheet.prototype.getRangeByName = function(name){};
 /**
  * Gets the height in pixels of the given row.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -9908,12 +10873,11 @@ SpreadsheetApp.Spreadsheet.prototype.getRowHeight = function(rowPosition){};
 /**
  * Returns a sheet with the given name.
 
- If multiple sheets have the same name, the leftmost one is returned. Returns null if there is
- no sheet with the given name.
+ <p>If multiple sheets have the same name, the leftmost one is returned. Returns null if there
+ is no sheet with the given name.
 
- <pre class="prettyprint">
- <code>
- // The code below will log the index of a sheet named &quot;Expenses&quot;
+ <pre class="prettyprint"><code>
+ // The code below logs the index of a sheet named &quot;Expenses&quot;
  var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(&quot;Expenses&quot;);
  if (sheet != null) {
    Logger.log(sheet.getIndex());
@@ -9929,14 +10893,11 @@ SpreadsheetApp.Spreadsheet.prototype.getSheetByName = function(name){};
 /**
  * Returns the ID of the sheet represented by this object.
 
- This is an ID for the sheet that is unique to the spreadsheet. The ID is a monotonically
- increasing integer assigned at sheet creation time that is independent of sheet position.
- This is useful in conjunction with methods such as
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/range.html#copyFormatToRange(Integer,Integer,Integer,Integer,Integer)'>Range.copyFormatToRange(gridId, column, columnEnd, row, rowEnd)</a></code> that take a <code>gridId</code>
- parameter rather than a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/sheet.html'>Sheet</a></code> instance.
+ <p>This is an ID for the sheet that is unique to the spreadsheet. The ID is a monotonically
+ increasing integer assigned at sheet creation time that is independent of sheet position. This
+ is useful in conjunction with methods such as <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/range.html#copyFormatToRange(Integer,Integer,Integer,Integer,Integer)'>Range.copyFormatToRange(gridId, column, columnEnd, row, rowEnd)</a></code> that take a <code>gridId</code> parameter rather than a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/sheet.html'>Sheet</a></code> instance.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -9950,8 +10911,7 @@ SpreadsheetApp.Spreadsheet.prototype.getSheetId = function(){};
 /**
  * Returns the sheet name.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -9965,8 +10925,7 @@ SpreadsheetApp.Spreadsheet.prototype.getSheetName = function(){};
 /**
  * Returns a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/page-protection.html'>PageProtection</a></s></code> instance describing the permissions for the current sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -9976,8 +10935,8 @@ SpreadsheetApp.Spreadsheet.prototype.getSheetName = function(){};
  permissions.addUser(&quot;user@example.com&quot;);
 
  // Logs the users that have access to edit this sheet. Note that this
- // is different from access to the entire spreadsheet - getUsers() will
- // only return users if permissions.isProtected() is set to true.
+ // is different from access to the entire spreadsheet - getUsers()
+ // only returns users if permissions.isProtected() is set to true.
  var users = permissions.getUsers();
  Logger.log(users);
  </code></pre>
@@ -9987,12 +10946,11 @@ SpreadsheetApp.Spreadsheet.prototype.getSheetName = function(){};
 SpreadsheetApp.Spreadsheet.prototype.getSheetProtection = function(){};
 
 /**
- * Returns the rectangular grid of values for this range starting at the given
- coordinates. A -1 value given as the row or column position is equivalent to getting the
- very last row or column that has data in the sheet.
+ * Returns the rectangular grid of values for this range starting at the given coordinates. A -1
+ value given as the row or column position is equivalent to getting the very last row or column
+ that has data in the sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10017,9 +10975,8 @@ SpreadsheetApp.Spreadsheet.prototype.getSheetValues = function(startRow, startCo
 /**
  * Gets all the sheets in this spreadsheet.
 
- <pre class="prettyprint">
- <code>
- // The code below will log the name of the second sheet
+ <pre class="prettyprint"><code>
+ // The code below logs the name of the second sheet
  var sheets = SpreadsheetApp.getActiveSpreadsheet().getSheets();
  if (sheets.length &gt; 1) {
    Logger.log(sheets[1].getName());
@@ -10040,16 +10997,15 @@ SpreadsheetApp.Spreadsheet.prototype.getSpreadsheetLocale = function(){};
 /**
  * Gets the time zone for the spreadsheet.
  *
- * @return {String} the time zone, specified in "long" format (e.g., "America/New_York", as listed by
-     <a href="http://joda-time.sourceforge.net/timezones.html">Joda.org</a>)
+ * @return {String} the time zone, specified in "long" format (e.g., "America/New_York", as listed by <a
+     href="http://joda-time.sourceforge.net/timezones.html">Joda.org</a>)
  */
 SpreadsheetApp.Spreadsheet.prototype.getSpreadsheetTimeZone = function(){};
 
 /**
  * Returns the url for the given spreadsheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  Logger.log(ss.getUrl());
  </code></pre>
@@ -10059,7 +11015,7 @@ SpreadsheetApp.Spreadsheet.prototype.getSpreadsheetTimeZone = function(){};
 SpreadsheetApp.Spreadsheet.prototype.getUrl = function(){};
 
 /**
- * Gets the list of viewers and commenters for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>.  If the user who executes
+ * Gets the list of viewers and commenters for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>. If the user who executes
  the script does not have edit access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>, this method throws an exception.
  *
  * @return {User[]} an array of users with view or comment permission
@@ -10069,8 +11025,7 @@ SpreadsheetApp.Spreadsheet.prototype.getViewers = function(){};
 /**
  * Hides the columns in the given range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10088,8 +11043,7 @@ SpreadsheetApp.Spreadsheet.prototype.hideColumn = function(column){};
 /**
  * Hides the rows in the given range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10107,8 +11061,7 @@ SpreadsheetApp.Spreadsheet.prototype.hideRow = function(row){};
 /**
  * Inserts a column after the given column position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10125,8 +11078,7 @@ SpreadsheetApp.Spreadsheet.prototype.insertColumnAfter = function(afterPosition)
 /**
  * Inserts a column before the given column position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10143,8 +11095,7 @@ SpreadsheetApp.Spreadsheet.prototype.insertColumnBefore = function(beforePositio
 /**
  * Inserts a number of columns after the given column position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10162,8 +11113,7 @@ SpreadsheetApp.Spreadsheet.prototype.insertColumnsAfter = function(afterPosition
 /**
  * Inserts a number of columns before the given column position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10182,8 +11132,7 @@ SpreadsheetApp.Spreadsheet.prototype.insertColumnsBefore = function(beforePositi
  * Inserts a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../base/blob.html'>Blob</a></code> as an image in the document at a given row and column. The image size
  is retrieved from the blob contents.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10203,8 +11152,7 @@ SpreadsheetApp.Spreadsheet.prototype.insertImage = function(blob, column, row){}
  * Inserts a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../base/blob.html'>Blob</a></code> as an image in the document at a given row and column, with a pixel
  offset. The image size is retrieved from the blob contents.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10225,8 +11173,7 @@ SpreadsheetApp.Spreadsheet.prototype.insertImage = function(blob, column, row, o
 /**
  * Inserts an image in the document at a given row and column.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10244,8 +11191,7 @@ SpreadsheetApp.Spreadsheet.prototype.insertImage = function(url, column, row){};
 /**
  * Inserts a row after the given row position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10262,8 +11208,7 @@ SpreadsheetApp.Spreadsheet.prototype.insertRowAfter = function(afterPosition){};
 /**
  * Inserts a row before the given row position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10280,8 +11225,7 @@ SpreadsheetApp.Spreadsheet.prototype.insertRowBefore = function(beforePosition){
 /**
  * Inserts a number of rows after the given row position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10299,8 +11243,7 @@ SpreadsheetApp.Spreadsheet.prototype.insertRowsAfter = function(afterPosition, h
 /**
  * Inserts a number of rows before the given row position.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10318,10 +11261,9 @@ SpreadsheetApp.Spreadsheet.prototype.insertRowsBefore = function(beforePosition,
 /**
  * Inserts a new sheet in the spreadsheet, with a default name.
 
- As a side effect, it makes it the active sheet.
+ <p>As a side effect, it makes it the active sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  ss.insertSheet();
  </code></pre>
@@ -10333,16 +11275,15 @@ SpreadsheetApp.Spreadsheet.prototype.insertSheet = function(){};
 /**
  * Inserts a new sheet in the spreadsheet at the given index.
 
- As a side effect, it makes it the active sheet.
+ <p>As a side effect, it makes it the active sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  ss.insertSheet(1);
  </code></pre>
  *
  * @param {number} sheetIndex - the index of the newly created sheet. To insert a sheet as the first one in
-    the spreadsheet, set it to 0.
+     the spreadsheet, set it to 0.
  *
  * @return {SpreadsheetApp.Sheet} the new sheet
  */
@@ -10351,17 +11292,16 @@ SpreadsheetApp.Spreadsheet.prototype.insertSheet = function(sheetIndex){};
 /**
  * Inserts a new sheet in the spreadsheet at the given index and uses optional advanced arguments.
 
- As a side effect, it makes it the active sheet.
+ <p>As a side effect, it makes it the active sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var templateSheet = ss.getSheetByName(&#39;Sales&#39;);
  ss.insertSheet(1, {template: templateSheet});
  </code></pre>
  *
  * @param {number} sheetIndex - index of the newly created sheet. To insert a sheet as the first one in the
-    spreadsheet, set it to 0.
+     spreadsheet, set it to 0.
  * @param {Object} options - optional JavaScript advanced arguments
  *
  * @return {SpreadsheetApp.Sheet} the new sheet
@@ -10372,10 +11312,9 @@ SpreadsheetApp.Spreadsheet.prototype.insertSheet = function(sheetIndex, options)
  * Inserts a new sheet in the spreadsheet, with a default name and uses optional advanced
  arguments.
 
- As a side effect, it makes it the active sheet.
+ <p>As a side effect, it makes it the active sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var templateSheet = ss.getSheetByName(&#39;Sales&#39;);
  ss.insertSheet({template: templateSheet});
@@ -10390,10 +11329,9 @@ SpreadsheetApp.Spreadsheet.prototype.insertSheet = function(options){};
 /**
  * Inserts a new sheet in the spreadsheet with the given name.
 
- As a side effect, it makes it the active sheet.
+ <p>As a side effect, it makes it the active sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  ss.insertSheet(&#39;My New Sheet&#39;);
  </code></pre>
@@ -10405,20 +11343,18 @@ SpreadsheetApp.Spreadsheet.prototype.insertSheet = function(options){};
 SpreadsheetApp.Spreadsheet.prototype.insertSheet = function(sheetName){};
 
 /**
- * Inserts a new sheet in the spreadsheet with the given name
- at the given index.
+ * Inserts a new sheet in the spreadsheet with the given name at the given index.
 
- As a side effect, it makes it the active sheet.
+ <p>As a side effect, it makes it the active sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  ss.insertSheet(&#39;My New Sheet&#39;, 1);
  </code></pre>
  *
  * @param {String} sheetName - the name of the new sheet
  * @param {number} sheetIndex - the index of the newly created sheet. To insert a sheet as the first one in
-    the spreadsheet, set it to 0.
+     the spreadsheet, set it to 0.
  *
  * @return {SpreadsheetApp.Sheet} the new sheet
  */
@@ -10428,10 +11364,9 @@ SpreadsheetApp.Spreadsheet.prototype.insertSheet = function(sheetName, sheetInde
  * Inserts a new sheet in the spreadsheet with the given name at the given index and uses optional
  advanced arguments.
 
- As a side effect, it makes it the active sheet.
+ <p>As a side effect, it makes it the active sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var templateSheet = ss.getSheetByName(&#39;Sales&#39;);
  ss.insertSheet(&#39;My New Sheet&#39;, 1, {template: templateSheet});
@@ -10439,7 +11374,7 @@ SpreadsheetApp.Spreadsheet.prototype.insertSheet = function(sheetName, sheetInde
  *
  * @param {String} sheetName - the name of the new sheet
  * @param {number} sheetIndex - index of the newly inserted sheet. To insert a sheet as the first one in a
-    spreadsheet, set it to 0.
+     spreadsheet, set it to 0.
  * @param {Object} options - optional JavaScript advanced arguments
  *
  * @return {SpreadsheetApp.Sheet} the new sheet
@@ -10449,11 +11384,9 @@ SpreadsheetApp.Spreadsheet.prototype.insertSheet = function(sheetName, sheetInde
 /**
  * Indicates whether the document allows anonymous viewing. As this is no longer supported in the
  <a href="https://support.google.com/drive/answer/3541068">new version of Google Sheets</a>, use
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../drive/file.html#getSharingAccess()'>File.getSharingAccess()</a></code> and
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../drive/file.html#getSharingPermission()'>File.getSharingPermission()</a></code> instead.
+ <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../drive/file.html#getSharingAccess()'>File.getSharingAccess()</a></code> and <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../drive/file.html#getSharingPermission()'>File.getSharingPermission()</a></code> instead.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Determine if the document allows anonymous viewing via the Drive API.
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var file = DriveApp.getFileById(ss.getId());
@@ -10470,13 +11403,10 @@ SpreadsheetApp.Spreadsheet.prototype.isAnonymousView = function(){};
 
 /**
  * Indicates whether the document allows edits from anonymous users. As this is no longer
- supported in the
- <a href="https://support.google.com/drive/answer/3541068">new version of Google Sheets</a>, use
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../drive/file.html#getSharingAccess()'>File.getSharingAccess()</a></code> and
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../drive/file.html#getSharingPermission()'>File.getSharingPermission()</a></code> instead.
+ supported in the <a href="https://support.google.com/drive/answer/3541068">new version of
+ Google Sheets</a>, use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../drive/file.html#getSharingAccess()'>File.getSharingAccess()</a></code> and <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../drive/file.html#getSharingPermission()'>File.getSharingPermission()</a></code> instead.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Determine if the document allow anonymous edits via the Drive API.
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var file = DriveApp.getFileById(ss.getId());
@@ -10492,12 +11422,10 @@ SpreadsheetApp.Spreadsheet.prototype.isAnonymousView = function(){};
 SpreadsheetApp.Spreadsheet.prototype.isAnonymousWrite = function(){};
 
 /**
- * Moves the active sheet to the given position in the list of sheets.
- Throws an exception if the position is negative or greater than the
- number of sheets.
+ * Moves the active sheet to the given position in the list of sheets. Throws an exception if the
+ position is negative or greater than the number of sheets.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // This example assumes there are two sheets in the current
  // active spreadsheet: one named &quot;first&quot;, and another named &quot;second&quot;,
  // and that the current active sheet (first) is in position 1
@@ -10522,7 +11450,7 @@ SpreadsheetApp.Spreadsheet.prototype.moveActiveSheet = function(pos){};
 /**
  * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>. This method does not
  block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> if they belong to a class of users who have
- general access ? for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> is shared with the user's entire domain.
+ general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> is shared with the user's entire domain.
  *
  * @param {String} emailAddress - the email address of the user to remove
  *
@@ -10534,8 +11462,7 @@ SpreadsheetApp.Spreadsheet.prototype.removeEditor = function(emailAddress){};
  * Removes a menu that was added by <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html#addMenu(String,Object)'>addMenu(name, subMenus)</a></code>. The <code>name</code> argument
  should have the same value as the corresponding call to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html#addMenu(String,Object)'>addMenu(name, subMenus)</a></code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // The onOpen function is executed automatically every time a Spreadsheet is loaded
  function onOpen() {
    var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -10562,7 +11489,7 @@ SpreadsheetApp.Spreadsheet.prototype.removeMenu = function(name){};
  is found in the spreadsheet.
 
  <pre class="prettyprint"><code>
- // The code below will create a new named range &quot;foo&quot;, and then remove it.
+ // The code below creates a new named range &quot;foo&quot;, and then remove it.
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  ss.setNamedRange(&quot;foo&quot;, ss.getActiveRange());
  ss.removeNamedRange(&quot;foo&quot;);
@@ -10575,10 +11502,10 @@ SpreadsheetApp.Spreadsheet.prototype.removeMenu = function(name){};
 SpreadsheetApp.Spreadsheet.prototype.removeNamedRange = function(name){};
 
 /**
- * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>.  This
+ * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>. This
  method has no effect if the user is an editor, not a viewer or commenter. This method also does
  not block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> if they belong to a class of users who
- have general access ? for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> is shared with the user's entire
+ have general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> is shared with the user's entire
  domain.
  *
  * @param {String} emailAddress - the email address of the user to remove
@@ -10590,8 +11517,7 @@ SpreadsheetApp.Spreadsheet.prototype.removeViewer = function(emailAddress){};
 /**
  * Renames the document.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  ss.rename(&quot;This is the new name&quot;);
  </code></pre>
@@ -10605,9 +11531,8 @@ SpreadsheetApp.Spreadsheet.prototype.rename = function(newName){};
 /**
  * Renames the current active sheet to the given new name.
 
- <pre class="prettyprint">
- <code>
- // The code below will rename the active sheet to &quot;Hello world&quot;
+ <pre class="prettyprint"><code>
+ // The code below renames the active sheet to &quot;Hello world&quot;
  SpreadsheetApp.getActiveSpreadsheet().renameActiveSheet(&quot;Hello world&quot;);
  </code></pre>
  *
@@ -10620,8 +11545,7 @@ SpreadsheetApp.Spreadsheet.prototype.renameActiveSheet = function(newName){};
 /**
  * Sets the active range for the active sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10638,8 +11562,7 @@ SpreadsheetApp.Spreadsheet.prototype.setActiveRange = function(range){};
 /**
  * Sets the active selection region for this sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10656,12 +11579,11 @@ SpreadsheetApp.Spreadsheet.prototype.setActiveSelection = function(range){};
 /**
  * Sets the given sheet to be the active sheet in the spreadsheet.
 
- The spreadsheet UI will display the chosen sheet unless the sheet belongs to a different
+ <p>The spreadsheet UI displays the chosen sheet unless the sheet belongs to a different
  spreadsheet.
 
- <pre class="prettyprint">
- <code>
- // The code below will make the first sheet active in the active workbook
+ <pre class="prettyprint"><code>
+ // The code below makes the first sheet active in the active workbook
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  ss.setActiveSheet(ss.getSheets()[0]);
  </code></pre>
@@ -10677,8 +11599,7 @@ SpreadsheetApp.Spreadsheet.prototype.setActiveSheet = function(sheet){};
  the <a href="https://support.google.com/drive/answer/3541068">new version of Google Sheets</a>,
  use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code> as an alternative.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Set the document&#39;s policy on anonymous reading and writing via the Drive API.
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var file = DriveApp.getFileById(ss.getId());
@@ -10703,8 +11624,7 @@ SpreadsheetApp.Spreadsheet.prototype.setAnonymousAccess = function(anonymousRead
 /**
  * Sets the width of the given column in pixels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10722,8 +11642,7 @@ SpreadsheetApp.Spreadsheet.prototype.setColumnWidth = function(columnPosition, w
 /**
  * Freezes the given number of columns. If zero, no columns are frozen.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10740,8 +11659,7 @@ SpreadsheetApp.Spreadsheet.prototype.setFrozenColumns = function(columns){};
 /**
  * Freezes the given number of rows. If zero, no rows are frozen.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10758,9 +11676,8 @@ SpreadsheetApp.Spreadsheet.prototype.setFrozenRows = function(rows){};
 /**
  * Names a range.
 
- <pre class="prettyprint">
- <code>
- // The code below will create a new named range &quot;TaxRates&quot; in the active spreadsheet
+ <pre class="prettyprint"><code>
+ // The code below creates a new named range &quot;TaxRates&quot; in the active spreadsheet
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  ss.setNamedRange(&quot;TaxRates&quot;, SpreadsheetApp.getActiveRange());
  </code></pre>
@@ -10775,8 +11692,7 @@ SpreadsheetApp.Spreadsheet.prototype.setNamedRange = function(name, range){};
 /**
  * Sets the row height of the given row in pixels.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10794,8 +11710,7 @@ SpreadsheetApp.Spreadsheet.prototype.setRowHeight = function(rowPosition, height
 /**
  * Sets the permissions for the current sheet.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10833,22 +11748,19 @@ SpreadsheetApp.Spreadsheet.prototype.setSpreadsheetTimeZone = function(timezone)
 
 /**
  * Displays a custom user interface component in a dialog centered in the user's browser's
- viewport. The server-side script's execution will <em>not</em> be suspended. To communicate
- with the server side, the user interface component must make asynchronous callbacks to the
- server-side script.
+ viewport. The server-side script's execution is <em>not</em> suspended. To communicate with the
+ server side, the user interface component must make asynchronous callbacks to the server-side
+ script.
 
  <p>If the server-side script previously displayed a dialog that has not yet been dismissed,
- then the existing dialog will be replaced with the newly requested dialog's user interface.
+ then the existing dialog is replaced with the newly requested dialog's user interface.
 
- The following code snippet displays a simple
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../html/html-service.html'>HtmlService</a></code> application in a dialog with
- the specified title, height, and width:
+ <p>The following code snippet displays a simple <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../html/html-service.html'>HtmlService</a></code> application in a dialog with the
+ specified title, height, and width:
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var htmlApp = HtmlService
      .createHtmlOutput(&#39;&lt;p&gt;A change of speed, a change of style...&lt;/p&gt;&#39;)
-     .setSandboxMode(HtmlService.SandboxMode.IFRAME)
      .setTitle(&#39;My HtmlService Application&#39;)
      .setWidth(250)
      .setHeight(300);
@@ -10858,12 +11770,10 @@ SpreadsheetApp.Spreadsheet.prototype.setSpreadsheetTimeZone = function(timezone)
  // The script resumes execution immediately after showing the dialog.
  </code></pre>
 
- Likewise, the following code snippet displays a simple
- <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../ui/ui-app.html'>UiApp</a></s></code> application in a dialog with the
+ Likewise, the following code snippet displays a simple <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../ui/ui-app.html'>UiApp</a></s></code> application in a dialog with the
  specified title, height, and width:
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var uiApp = UiApp.createApplication()
      .setTitle(&#39;My UiApp Application&#39;)
      .setWidth(250)
@@ -10885,8 +11795,7 @@ SpreadsheetApp.Spreadsheet.prototype.show = function(userInterface){};
 /**
  * Sorts a sheet by column, ascending.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10903,8 +11812,7 @@ SpreadsheetApp.Spreadsheet.prototype.sort = function(columnPosition){};
 /**
  * Shows a popup window in the lower right corner of the spreadsheet with the given message.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Show a popup with the message &quot;Task started&quot;.
  SpreadsheetApp.getActiveSpreadsheet().toast(&#39;Task started&#39;);
  </code></pre>
@@ -10919,8 +11827,7 @@ SpreadsheetApp.Spreadsheet.prototype.toast = function(msg){};
  * Shows a popup window in the lower right corner of the spreadsheet with the given message and
  title.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  // Show a popup with the title &quot;Status&quot; and the message &quot;Task started&quot;.
  SpreadsheetApp.getActiveSpreadsheet().toast(&#39;Task started&#39;, &#39;Status&#39;);
  </code></pre>
@@ -10935,8 +11842,7 @@ SpreadsheetApp.Spreadsheet.prototype.toast = function(msg, title){};
 /**
  * Unhides the column in the given range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10954,8 +11860,7 @@ SpreadsheetApp.Spreadsheet.prototype.unhideColumn = function(column){};
 /**
  * Unhides the row in the given range.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var sheet = ss.getSheets()[0];
 
@@ -10971,11 +11876,9 @@ SpreadsheetApp.Spreadsheet.prototype.unhideColumn = function(column){};
 SpreadsheetApp.Spreadsheet.prototype.unhideRow = function(row){};
 
 /**
- * Updates a menu that was added by <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html#addMenu(String,Object)'>addMenu(name, subMenus)</a></code>. Works exactly like
- <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html#addMenu(String,Object)'>addMenu(name, subMenus)</a></code>.
+ * Updates a menu that was added by <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html#addMenu(String,Object)'>addMenu(name, subMenus)</a></code>. Works exactly like <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html#addMenu(String,Object)'>addMenu(name, subMenus)</a></code>.
 
- <pre class="prettyprint">
- <code>
+ <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
  var menuEntries = [];
  menuEntries.push({name: &quot;Lone Menu Entry&quot;, functionName: &quot;function1&quot;});
@@ -10983,8 +11886,8 @@ SpreadsheetApp.Spreadsheet.prototype.unhideRow = function(row){};
  </code></pre>
  *
  * @param {String} name - the name of the menu to update
- * @param {Object[]} subMenus - an array of JavaScript maps with <code>name</code> and
-        <code>functionName</code> parameters
+ * @param {Object[]} subMenus - an array of JavaScript maps with <code>name</code> and <code>functionName
+     </code> parameters
  *
  * @return void
  */

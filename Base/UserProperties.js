@@ -34,8 +34,8 @@ UserProperties.getKeys = function(){};
 
 /**
  * Get all of the available properties at once.
- <p>
- This gives a copy, not a live view, so changing the properties on the returned object won't
+
+ <p>This gives a copy, not a live view, so changing the properties on the returned object won't
  update them in storage and vice versa.
 
  <pre class="prettyprint"><code>
