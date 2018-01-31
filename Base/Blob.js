@@ -52,6 +52,15 @@ Blob.getContentType = function(){};
 Blob.getDataAsString = function(){};
 
 /**
+ * Gets the data of this blob as a string with the specified encoding.
+ *
+ * @param {String} charset - the charset to use in encoding the data in this blob as a string
+ *
+ * @return {String} the data as a string
+ */
+Blob.getDataAsString = function(charset){};
+
+/**
  * Gets the name of this blob.
  *
  * @return {String} the name of this data, if known, or null
@@ -99,6 +108,16 @@ Blob.setContentTypeFromExtension = function(){};
  * @return {Blob} this blob, for chaining
  */
 Blob.setDataFromString = function(string){};
+
+/**
+ * Sets the data of this blob from a string with the specified encoding.
+ *
+ * @param {String} string - the string data
+ * @param {String} charset - the charset to use in interpreting the string as bytes
+ *
+ * @return {Blob} this blob, for chaining
+ */
+Blob.setDataFromString = function(string, charset){};
 
 /**
  * Sets the name of this blob.

@@ -20,7 +20,25 @@ BigNumber.add = function(augend){};
 /**
  * undefined
  *
+ * @param {Number} augend - undefined
+ *
+ * @return {BigNumber}
+ */
+BigNumber.add = function(augend){};
+
+/**
+ * undefined
+ *
  * @param {BigNumber} value - undefined
+ *
+ * @return {number}
+ */
+BigNumber.compareTo = function(value){};
+
+/**
+ * undefined
+ *
+ * @param {Number} value - undefined
  *
  * @return {number}
  */
@@ -38,7 +56,25 @@ BigNumber.divide = function(divisor){};
 /**
  * undefined
  *
+ * @param {Number} divisor - undefined
+ *
+ * @return {BigNumber}
+ */
+BigNumber.divide = function(divisor){};
+
+/**
+ * undefined
+ *
  * @param {BigNumber} divisor - undefined
+ *
+ * @return {BigNumber[]}
+ */
+BigNumber.divideAndRemainder = function(divisor){};
+
+/**
+ * undefined
+ *
+ * @param {Number} divisor - undefined
  *
  * @return {BigNumber[]}
  */
@@ -56,6 +92,15 @@ BigNumber.divideToIntegralValue = function(divisor){};
 /**
  * undefined
  *
+ * @param {Number} divisor - undefined
+ *
+ * @return {BigNumber}
+ */
+BigNumber.divideToIntegralValue = function(divisor){};
+
+/**
+ * undefined
+ *
  * @param {BigNumber} value - undefined
  *
  * @return {BigNumber}
@@ -65,7 +110,25 @@ BigNumber.max = function(value){};
 /**
  * undefined
  *
+ * @param {Number} value - undefined
+ *
+ * @return {BigNumber}
+ */
+BigNumber.max = function(value){};
+
+/**
+ * undefined
+ *
  * @param {BigNumber} value - undefined
+ *
+ * @return {BigNumber}
+ */
+BigNumber.min = function(value){};
+
+/**
+ * undefined
+ *
+ * @param {Number} value - undefined
  *
  * @return {BigNumber}
  */
@@ -101,6 +164,15 @@ BigNumber.multiply = function(multiplicand){};
 /**
  * undefined
  *
+ * @param {Number} multiplicand - undefined
+ *
+ * @return {BigNumber}
+ */
+BigNumber.multiply = function(multiplicand){};
+
+/**
+ * undefined
+ *
  * @return {BigNumber}
  */
 BigNumber.negate = function(){};
@@ -120,6 +192,16 @@ BigNumber.newInstance = function(){};
  * @return {BigNumber}
  */
 BigNumber.parse = function(value){};
+
+/**
+ * undefined
+ *
+ * @param {String} value - undefined
+ * @param {number} radix - undefined
+ *
+ * @return {BigNumber}
+ */
+BigNumber.parse = function(value, radix){};
 
 /**
  * undefined
@@ -156,6 +238,15 @@ BigNumber.remainder = function(divisor){};
 /**
  * undefined
  *
+ * @param {Number} divisor - undefined
+ *
+ * @return {BigNumber}
+ */
+BigNumber.remainder = function(divisor){};
+
+/**
+ * undefined
+ *
  * @return {number}
  */
 BigNumber.sign = function(){};
@@ -164,6 +255,15 @@ BigNumber.sign = function(){};
  * undefined
  *
  * @param {BigNumber} subtrahend - undefined
+ *
+ * @return {BigNumber}
+ */
+BigNumber.subtract = function(subtrahend){};
+
+/**
+ * undefined
+ *
+ * @param {Number} subtrahend - undefined
  *
  * @return {BigNumber}
  */

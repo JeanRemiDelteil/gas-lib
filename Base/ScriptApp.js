@@ -316,6 +316,23 @@ ScriptApp.getUserTriggers = function(document){};
 ScriptApp.getUserTriggers = function(form){};
 
 /**
+ * Gets all installable triggers owned by this user in the given spreadsheet, for this script or
+ add-on only. This method cannot be used to see the triggers attached to other scripts.
+
+ <pre class="prettyprint"><code>
+ var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var triggers = ScriptApp.getUserTriggers(ss);
+ // Log the event type for the first trigger in the array.
+ Logger.log(triggers[0].getEventType());
+ </code></pre>
+ *
+ * @param {SpreadsheetApp.Spreadsheet} spreadsheet - a Google Sheets file that may contain installable triggers
+ *
+ * @return {ScriptApp.Trigger[]} an array of triggers owned by this user in the given spreadsheet
+ */
+ScriptApp.getUserTriggers = function(spreadsheet){};
+
+/**
  * Invalidates the authorization the effective user has to execute the current script. Used to
  invalidate any permissions for the current script. This is especially useful for functions
  tagged as one-shot authorization. Since one-shot authorization functions can only be called the
@@ -996,6 +1013,22 @@ ScriptApp.TriggerBuilder = function(){};
 ScriptApp.TriggerBuilder.prototype.forDocument = function(document){};
 
 /**
+ * Creates and returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/document-trigger-builder.html'>DocumentTriggerBuilder</a></code> tied to the document with the given ID.
+
+ <pre class="prettyprint"><code>
+ ScriptApp.newTrigger(&#39;myFunction&#39;)
+   .forDocument(&#39;1234567890abcdefghijklmnopqrstuvwxyz&#39;)
+   .onOpen()
+   .create();
+ </code></pre>
+ *
+ * @param {String} key - the ID for the document
+ *
+ * @return {ScriptApp.DocumentTriggerBuilder} the new DocumentTriggerBuilder
+ */
+ScriptApp.TriggerBuilder.prototype.forDocument = function(key){};
+
+/**
  * Creates and returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/form-trigger-builder.html'>FormTriggerBuilder</a></code> tied to the given form.
 
  <pre class="prettyprint"><code>
@@ -1012,6 +1045,22 @@ ScriptApp.TriggerBuilder.prototype.forDocument = function(document){};
 ScriptApp.TriggerBuilder.prototype.forForm = function(form){};
 
 /**
+ * Creates and returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/form-trigger-builder.html'>FormTriggerBuilder</a></code> tied to the form with the given ID.
+
+ <pre class="prettyprint"><code>
+ ScriptApp.newTrigger(&#39;myFunction&#39;)
+   .forForm(&#39;1234567890abcdefghijklmnopqrstuvwxyz&#39;)
+   .onFormSubmit()
+   .create();
+ </code></pre>
+ *
+ * @param {String} key - the ID for the form
+ *
+ * @return {ScriptApp.FormTriggerBuilder} the new FormTriggerBuilder
+ */
+ScriptApp.TriggerBuilder.prototype.forForm = function(key){};
+
+/**
  * Creates and returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/spreadsheet-trigger-builder.html'>SpreadsheetTriggerBuilder</a></code> tied to the given spreadsheet.
 
  <pre class="prettyprint"><code>
@@ -1026,6 +1075,23 @@ ScriptApp.TriggerBuilder.prototype.forForm = function(form){};
  * @return {ScriptApp.SpreadsheetTriggerBuilder} the new SpreadsheetTriggerBuilder
  */
 ScriptApp.TriggerBuilder.prototype.forSpreadsheet = function(sheet){};
+
+/**
+ * Creates and returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/spreadsheet-trigger-builder.html'>SpreadsheetTriggerBuilder</a></code> tied to the spreadsheet with the given
+ ID.
+
+ <pre class="prettyprint"><code>
+ ScriptApp.newTrigger(&#39;myFunction&#39;)
+   .forSpreadsheet(&#39;1234567890abcdefghijklmnopqrstuvwxyz&#39;)
+   .onEdit()
+   .create();
+ </code></pre>
+ *
+ * @param {String} key - the ID for the spreadsheet
+ *
+ * @return {ScriptApp.SpreadsheetTriggerBuilder} the new SpreadsheetTriggerBuilder
+ */
+ScriptApp.TriggerBuilder.prototype.forSpreadsheet = function(key){};
 
 /**
  * Creates and returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/clock-trigger-builder.html'>ClockTriggerBuilder</a></code> for building time-based triggers.

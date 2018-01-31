@@ -144,6 +144,25 @@ PropertiesService.Properties.prototype.getProperty = function(key){};
 PropertiesService.Properties.prototype.setProperties = function(properties){};
 
 /**
+ * Sets all key-value pairs from the given object in the current <code>Properties</code> store,
+ optionally deleting all other properties in the store.
+
+ <pre class="prettyprint"><code>
+ // Sets multiple user properties at once while deleting all other user properties.
+ var userProperties = PropertiesService.getUserProperties();
+ var newProperties = {nickname: &#39;Bob&#39;, region: &#39;US&#39;, language: &#39;EN&#39;};
+ userProperties.setProperties(newProperties, true);
+ </code></pre>
+ *
+ * @param {Object} properties - an object containing key-values pairs to set
+ * @param {Boolean} deleteAllOthers - <code>true</code> to delete all other key-value pairs in the properties
+     object; <code>false</code> to not
+ *
+ * @return {PropertiesService.Properties} this <code>Properties</code> store, for chaining
+ */
+PropertiesService.Properties.prototype.setProperties = function(properties, deleteAllOthers){};
+
+/**
  * Sets the given key-value pair in the current <code>Properties</code> store.
 
  <pre class="prettyprint"><code>

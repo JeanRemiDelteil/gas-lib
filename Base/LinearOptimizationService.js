@@ -182,6 +182,32 @@ LinearOptimizationService.LinearOptimizationEngine.prototype.addVariable = funct
 LinearOptimizationService.LinearOptimizationEngine.prototype.addVariable = function(name, lowerBound, upperBound, type){};
 
 /**
+ * Adds a new variable to the model. The variable is referenced by its name.
+
+ <pre class="prettyprint"><code>
+ var engine = LinearOptimizationService.createEngine();
+ var constraint = engine.addConstraint(0, 10);
+
+ // Add a boolean variable (integer &gt;= 0 and &lt;= 1)
+ engine.addVariable(&#39;x&#39;, 0, 1, LinearOptimizationService.VariableType.INTEGER, 2);
+ // The objective is now 2 * x.
+
+ // Add a real (continuous) variable
+ engine.addVariable(&#39;y&#39;, 0, 100, LinearOptimizationService.VariableType.CONTINUOUS, -5);
+ // The objective is now 2 * x - 5 * y.
+ </code></pre>
+ *
+ * @param {String} name - unique name of the variable
+ * @param {Number} lowerBound - lower bound of the variable
+ * @param {Number} upperBound - upper bound of the variable
+ * @param {LinearOptimizationService.VariableType} type - type of the variable, can be one of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/optimization/variable-type.html'>VariableType</a></code>
+ * @param {Number} objectiveCoefficient - objective coefficient of the variable
+ *
+ * @return {LinearOptimizationService.LinearOptimizationEngine} a linear optimization engine
+ */
+LinearOptimizationService.LinearOptimizationEngine.prototype.addVariable = function(name, lowerBound, upperBound, type, objectiveCoefficient){};
+
+/**
  * Sets the optimization direction to maximizing the linear objective function.
 
  <pre class="prettyprint"><code>
@@ -266,6 +292,32 @@ LinearOptimizationService.LinearOptimizationEngine.prototype.setObjectiveCoeffic
  * @return {LinearOptimizationService.LinearOptimizationSolution} solution of the optimization
  */
 LinearOptimizationService.LinearOptimizationEngine.prototype.solve = function(){};
+
+/**
+ * Solves the current linear program. Returns the solution found. and if it is an optimal
+ solution.
+
+ <pre class="prettyprint"><code>
+ var engine = LinearOptimizationService.createEngine();
+
+ // Add variables, constraints and define the objective with addVariable(), addConstraint(), etc
+ engine.addVariable(&#39;x&#39;, 0, 10);
+
+ // ...
+
+ // Solve the linear program
+ var solution = engine.solve(300);
+ if (!solution.isValid()) {
+   throw &#39;No solution &#39; + solution.getStatus();
+ }
+ Logger.log(&#39;Value of x: &#39; + solution.getVariableValue(&#39;x&#39;));
+ </code></pre>
+ *
+ * @param {Number} seconds - deadline for solving the problem, in seconds; the maximum deadline is 300 seconds
+ *
+ * @return {LinearOptimizationService.LinearOptimizationSolution} solution of the optimization
+ */
+LinearOptimizationService.LinearOptimizationEngine.prototype.solve = function(seconds){};
 
 /** @constructor */
 LinearOptimizationService.LinearOptimizationSolution = function(){};

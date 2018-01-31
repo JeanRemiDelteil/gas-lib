@@ -373,6 +373,25 @@ CalendarApp.createAllDayEvent = function(title, startDate, endDate){};
 CalendarApp.createAllDayEvent = function(title, startDate, endDate, options){};
 
 /**
+ * Creates a new all-day event.
+
+ <pre class="prettyprint"><code>
+ // Creates an all-day event for the moon landing and logs the ID.
+ var event = CalendarApp.getDefaultCalendar().createAllDayEvent(&#39;Apollo 11 Landing&#39;,
+     new Date(&#39;July 20, 1969&#39;),
+     {location: &#39;The Moon&#39;});
+ Logger.log(&#39;Event ID: &#39; + event.getId());
+ </code></pre>
+ *
+ * @param {String} title - the title of the event
+ * @param {Date} date - the date of the event (only the day is used; the time is ignored)
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {CalendarApp.CalendarEvent} the created event
+ */
+CalendarApp.createAllDayEvent = function(title, date, options){};
+
+/**
  * Creates a new all-day event series.
 
  <pre class="prettyprint"><code>
@@ -395,6 +414,30 @@ CalendarApp.createAllDayEvent = function(title, startDate, endDate, options){};
 CalendarApp.createAllDayEventSeries = function(title, startDate, recurrence){};
 
 /**
+ * Creates a new all-day event series.
+
+ <pre class="prettyprint"><code>
+ // Creates an event series for a no-meetings day, taking place every Wednesday in 2013.
+ var eventSeries = CalendarApp.getDefaultCalendar().createAllDayEventSeries(&#39;No Meetings&#39;,
+     new Date(&#39;January 2, 2013 03:00:00 PM EST&#39;),
+     CalendarApp.newRecurrence().addWeeklyRule()
+         .onlyOnWeekday(CalendarApp.Weekday.WEDNESDAY)
+         .until(new Date(&#39;January 1, 2014&#39;)),
+     {guests: &#39;everyone@example.com&#39;});
+ Logger.log(&#39;Event Series ID: &#39; + eventSeries.getId());
+ </code></pre>
+ *
+ * @param {String} title - the title of the events in the series
+ * @param {Date} startDate - the date of the first event in the series (only the day is used; the time is
+     ignored)
+ * @param {CalendarApp.EventRecurrence} recurrence - the recurrence settings of the event series
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {CalendarApp.CalendarEventSeries} the created event series
+ */
+CalendarApp.createAllDayEventSeries = function(title, startDate, recurrence, options){};
+
+/**
  * Creates a new calendar, owned by the user.
 
  <pre class="prettyprint"><code>
@@ -409,6 +452,26 @@ CalendarApp.createAllDayEventSeries = function(title, startDate, recurrence){};
  * @return {CalendarApp.Calendar} the newly created calendar
  */
 CalendarApp.createCalendar = function(name){};
+
+/**
+ * Creates a new calendar, owned by the user.
+
+ <pre class="prettyprint"><code>
+ // Creates a new calendar named &quot;Travel Plans&quot; with a summary and color.
+ var calendar = CalendarApp.createCalendar(&#39;Travel Plans&#39;, {
+   summary: &#39;A calendar to plan my travel schedule.&#39;,
+   color: CalendarApp.Color.BLUE
+ });
+ Logger.log(&#39;Created the calendar &quot;%s&quot;, with the ID &quot;%s&quot;.&#39;,
+     calendar.getName(), calendar.getId());
+ </code></pre>
+ *
+ * @param {String} name - the name of the new calendar
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {CalendarApp.Calendar} the newly created calendar
+ */
+CalendarApp.createCalendar = function(name, options){};
 
 /**
  * Creates a new event.
@@ -431,6 +494,30 @@ CalendarApp.createCalendar = function(name){};
  * @return {CalendarApp.CalendarEvent} the created event
  */
 CalendarApp.createEvent = function(title, startTime, endTime){};
+
+/**
+ * Creates a new event.
+
+ <p>If no time zone is specified, the time values are interpreted in the context of the script's
+ time zone, which may be different than the calendar's time zone.
+
+ <pre class="prettyprint"><code>
+ // Creates an event for the moon landing and logs the ID.
+ var event = CalendarApp.getDefaultCalendar().createEvent(&#39;Apollo 11 Landing&#39;,
+     new Date(&#39;July 20, 1969 20:00:00 UTC&#39;),
+     new Date(&#39;July 20, 1969 21:00:00 UTC&#39;),
+     {location: &#39;The Moon&#39;});
+ Logger.log(&#39;Event ID: &#39; + event.getId());
+ </code></pre>
+ *
+ * @param {String} title - the title of the event
+ * @param {Date} startTime - the date and time when the event starts
+ * @param {Date} endTime - the date and time when the event ends
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {CalendarApp.CalendarEvent} the created event
+ */
+CalendarApp.createEvent = function(title, startTime, endTime, options){};
 
 /**
  * Creates an event from a free-form description.
@@ -473,6 +560,31 @@ CalendarApp.createEventFromDescription = function(description){};
  * @return {CalendarApp.CalendarEventSeries} the created event series
  */
 CalendarApp.createEventSeries = function(title, startTime, endTime, recurrence){};
+
+/**
+ * Creates a new event series.
+
+ <pre class="prettyprint"><code>
+ // Creates an event series for a team meeting, taking place every Tuesday and Thursday in 2013.
+ var eventSeries = CalendarApp.getDefaultCalendar().createEventSeries(&#39;Team Meeting&#39;,
+     new Date(&#39;January 1, 2013 03:00:00 PM EST&#39;),
+     new Date(&#39;January 1, 2013 04:00:00 PM EST&#39;),
+     CalendarApp.newRecurrence().addWeeklyRule()
+         .onlyOnWeekdays([CalendarApp.Weekday.TUESDAY, CalendarApp.Weekday.THURSDAY])
+         .until(new Date(&#39;January 1, 2014&#39;)),
+     {location: &#39;Conference Room&#39;});
+ Logger.log(&#39;Event Series ID: &#39; + eventSeries.getId());
+ </code></pre>
+ *
+ * @param {String} title - the title of the events in the series
+ * @param {Date} startTime - the date and time when the first event in the series starts
+ * @param {Date} endTime - the date and time when the first event in the series ends
+ * @param {CalendarApp.EventRecurrence} recurrence - the recurrence settings of the event series
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {CalendarApp.CalendarEventSeries} the created event series
+ */
+CalendarApp.createEventSeries = function(title, startTime, endTime, recurrence, options){};
 
 /**
  * Gets all calendars that the user owns or is subscribed to.
@@ -615,6 +727,36 @@ CalendarApp.getEventSeriesById = function(iCalId){};
 CalendarApp.getEvents = function(startTime, endTime){};
 
 /**
+ * Gets all events that occur within a given time range and meet the specified criteria.
+
+ <p>This method returns events that start during the given time range, ends during the time
+ range, or encompasses the time range. If no time zone is specified, the time values are
+ interpreted in the context of the script's time zone, which may be different from the
+ calendar's time zone.
+
+ <p>Be aware that filtering on <code>author</code>, <code>search</code>, or <code>statusFilters</code> takes
+ place after applying <code>start</code> and <code>max</code>. This means that the number of events
+ returned may be less than <code>max</code>, even though additional events meet the criteria.
+
+ <pre class="prettyprint"><code>
+ // Determines how many events are happening in the next two hours that contain the term
+ // &quot;meeting&quot;.
+ var now = new Date();
+ var twoHoursFromNow = new Date(now.getTime() + (2 * 60 * 60 * 1000));
+ var events = CalendarApp.getDefaultCalendar().getEvents(now, twoHoursFromNow,
+     {search: &#39;meeting&#39;});
+ Logger.log(&#39;Number of events: &#39; + events.length);
+ </code></pre>
+ *
+ * @param {Date} startTime - the start of the time range
+ * @param {Date} endTime - the end of the time range, non-inclusive
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {CalendarApp.CalendarEvent[]} the events that take place within the time range and match the criteria
+ */
+CalendarApp.getEvents = function(startTime, endTime, options){};
+
+/**
  * Gets all events that occur on a given day.
 
  <p>This method returns events if they start during the given day, end during the day, or
@@ -636,6 +778,34 @@ CalendarApp.getEvents = function(startTime, endTime){};
  * @return {CalendarApp.CalendarEvent[]} the events that occur on the given date
  */
 CalendarApp.getEventsForDay = function(date){};
+
+/**
+ * Gets all events that occur on a given day and meet specified criteria.
+
+ <p>This method returns events if they start during the given day, end during the day, or
+ encompass the day.
+
+ <p>Note that only the date portion of the Date object is used, and the time portion is ignored.
+ The date is interpreted as midnight that day to midnight the next day in the calendar's time
+ zone.
+
+ <p>Be aware that filtering on <code>author</code>, <code>search</code>, or <code>statusFilters</code> takes
+ place after applying <code>start</code> and <code>max</code>. This means that the number of events
+ returned may be less than <code>max</code>, even though additional events meet the criteria.
+
+ <pre class="prettyprint"><code>
+ // Determines how many events are happening today and contain the term &quot;meeting&quot;.
+ var today = new Date();
+ var events = CalendarApp.getDefaultCalendar().getEventsForDay(today, {search: &#39;meeting&#39;});
+ Logger.log(&#39;Number of events: &#39; + events.length);
+ </code></pre>
+ *
+ * @param {Date} date - the date to retrieve events for (only the day is used; the time is ignored)
+ * @param {Object} options - advanced filtering options
+ *
+ * @return {CalendarApp.CalendarEvent[]} the events that occur on the given date and match the criteria
+ */
+CalendarApp.getEventsForDay = function(date, options){};
 
 /**
  * Gets the ID of the calendar. The ID for a user's default calendar is their email address.
@@ -813,6 +983,24 @@ CalendarApp.setTimeZone = function(timeZone){};
  */
 CalendarApp.subscribeToCalendar = function(id){};
 
+/**
+ * Subscribes the user to the calendar with the given ID, if the user is allowed to subscribe.
+
+ <pre class="prettyprint"><code>
+ // Subscribe to the calendar &quot;US Holidays&quot;, and set it to the color blue.
+ var calendar = CalendarApp.subscribeToCalendar(
+     &#39;en.usa#holiday@group.v.calendar.google.com&#39;,
+     { color: CalendarApp.Color.BLUE });
+ Logger.log(&#39;Subscribed to the calendar &quot;%s&quot;.&#39;, calendar.getName());
+ </code></pre>
+ *
+ * @param {String} id - the ID of the calendar to subscribe to
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {CalendarApp.Calendar} the newly subscribed calendar
+ */
+CalendarApp.subscribeToCalendar = function(id, options){};
+
 /** @constructor */
 CalendarApp.Calendar = function(){};
 
@@ -874,6 +1062,25 @@ CalendarApp.Calendar.prototype.createAllDayEvent = function(title, startDate, en
 CalendarApp.Calendar.prototype.createAllDayEvent = function(title, startDate, endDate, options){};
 
 /**
+ * Creates a new all-day event.
+
+ <pre class="prettyprint"><code>
+ // Creates an all-day event for the moon landing and logs the ID.
+ var event = CalendarApp.getDefaultCalendar().createAllDayEvent(&#39;Apollo 11 Landing&#39;,
+     new Date(&#39;July 20, 1969&#39;),
+     {location: &#39;The Moon&#39;});
+ Logger.log(&#39;Event ID: &#39; + event.getId());
+ </code></pre>
+ *
+ * @param {String} title - the title of the event
+ * @param {Date} date - the date of the event (only the day is used; the time is ignored)
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {CalendarApp.CalendarEvent} the created event
+ */
+CalendarApp.Calendar.prototype.createAllDayEvent = function(title, date, options){};
+
+/**
  * Creates a new all-day event series.
 
  <pre class="prettyprint"><code>
@@ -896,6 +1103,30 @@ CalendarApp.Calendar.prototype.createAllDayEvent = function(title, startDate, en
 CalendarApp.Calendar.prototype.createAllDayEventSeries = function(title, startDate, recurrence){};
 
 /**
+ * Creates a new all-day event series.
+
+ <pre class="prettyprint"><code>
+ // Creates an event series for a no-meetings day, taking place every Wednesday in 2013.
+ var eventSeries = CalendarApp.getDefaultCalendar().createAllDayEventSeries(&#39;No Meetings&#39;,
+     new Date(&#39;January 2, 2013 03:00:00 PM EST&#39;),
+     CalendarApp.newRecurrence().addWeeklyRule()
+         .onlyOnWeekday(CalendarApp.Weekday.WEDNESDAY)
+         .until(new Date(&#39;January 1, 2014&#39;)),
+     {guests: &#39;everyone@example.com&#39;});
+ Logger.log(&#39;Event Series ID: &#39; + eventSeries.getId());
+ </code></pre>
+ *
+ * @param {String} title - the title of the events in the series
+ * @param {Date} startDate - the date of the first event in the series (only the day is used; the time is
+     ignored)
+ * @param {CalendarApp.EventRecurrence} recurrence - the recurrence settings of the event series
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {CalendarApp.CalendarEventSeries} the created event series
+ */
+CalendarApp.Calendar.prototype.createAllDayEventSeries = function(title, startDate, recurrence, options){};
+
+/**
  * Creates a new event.
 
  <p>If no time zone is specified, the time values are interpreted in the context of the script's
@@ -916,6 +1147,30 @@ CalendarApp.Calendar.prototype.createAllDayEventSeries = function(title, startDa
  * @return {CalendarApp.CalendarEvent} the created event
  */
 CalendarApp.Calendar.prototype.createEvent = function(title, startTime, endTime){};
+
+/**
+ * Creates a new event.
+
+ <p>If no time zone is specified, the time values are interpreted in the context of the script's
+ time zone, which may be different than the calendar's time zone.
+
+ <pre class="prettyprint"><code>
+ // Creates an event for the moon landing and logs the ID.
+ var event = CalendarApp.getDefaultCalendar().createEvent(&#39;Apollo 11 Landing&#39;,
+     new Date(&#39;July 20, 1969 20:00:00 UTC&#39;),
+     new Date(&#39;July 20, 1969 21:00:00 UTC&#39;),
+     {location: &#39;The Moon&#39;});
+ Logger.log(&#39;Event ID: &#39; + event.getId());
+ </code></pre>
+ *
+ * @param {String} title - the title of the event
+ * @param {Date} startTime - the date and time when the event starts
+ * @param {Date} endTime - the date and time when the event ends
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {CalendarApp.CalendarEvent} the created event
+ */
+CalendarApp.Calendar.prototype.createEvent = function(title, startTime, endTime, options){};
 
 /**
  * Creates an event from a free-form description.
@@ -958,6 +1213,31 @@ CalendarApp.Calendar.prototype.createEventFromDescription = function(description
  * @return {CalendarApp.CalendarEventSeries} the created event series
  */
 CalendarApp.Calendar.prototype.createEventSeries = function(title, startTime, endTime, recurrence){};
+
+/**
+ * Creates a new event series.
+
+ <pre class="prettyprint"><code>
+ // Creates an event series for a team meeting, taking place every Tuesday and Thursday in 2013.
+ var eventSeries = CalendarApp.getDefaultCalendar().createEventSeries(&#39;Team Meeting&#39;,
+     new Date(&#39;January 1, 2013 03:00:00 PM EST&#39;),
+     new Date(&#39;January 1, 2013 04:00:00 PM EST&#39;),
+     CalendarApp.newRecurrence().addWeeklyRule()
+         .onlyOnWeekdays([CalendarApp.Weekday.TUESDAY, CalendarApp.Weekday.THURSDAY])
+         .until(new Date(&#39;January 1, 2014&#39;)),
+     {location: &#39;Conference Room&#39;});
+ Logger.log(&#39;Event Series ID: &#39; + eventSeries.getId());
+ </code></pre>
+ *
+ * @param {String} title - the title of the events in the series
+ * @param {Date} startTime - the date and time when the first event in the series starts
+ * @param {Date} endTime - the date and time when the first event in the series ends
+ * @param {CalendarApp.EventRecurrence} recurrence - the recurrence settings of the event series
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {CalendarApp.CalendarEventSeries} the created event series
+ */
+CalendarApp.Calendar.prototype.createEventSeries = function(title, startTime, endTime, recurrence, options){};
 
 /**
  * Deletes the calendar permanently. A user can only delete a calendar they own.
@@ -1033,6 +1313,36 @@ CalendarApp.Calendar.prototype.getEventSeriesById = function(iCalId){};
 CalendarApp.Calendar.prototype.getEvents = function(startTime, endTime){};
 
 /**
+ * Gets all events that occur within a given time range and meet the specified criteria.
+
+ <p>This method returns events that start during the given time range, ends during the time
+ range, or encompasses the time range. If no time zone is specified, the time values are
+ interpreted in the context of the script's time zone, which may be different from the
+ calendar's time zone.
+
+ <p>Be aware that filtering on <code>author</code>, <code>search</code>, or <code>statusFilters</code> takes
+ place after applying <code>start</code> and <code>max</code>. This means that the number of events
+ returned may be less than <code>max</code>, even though additional events meet the criteria.
+
+ <pre class="prettyprint"><code>
+ // Determines how many events are happening in the next two hours that contain the term
+ // &quot;meeting&quot;.
+ var now = new Date();
+ var twoHoursFromNow = new Date(now.getTime() + (2 * 60 * 60 * 1000));
+ var events = CalendarApp.getDefaultCalendar().getEvents(now, twoHoursFromNow,
+     {search: &#39;meeting&#39;});
+ Logger.log(&#39;Number of events: &#39; + events.length);
+ </code></pre>
+ *
+ * @param {Date} startTime - the start of the time range
+ * @param {Date} endTime - the end of the time range, non-inclusive
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {CalendarApp.CalendarEvent[]} the events that take place within the time range and match the criteria
+ */
+CalendarApp.Calendar.prototype.getEvents = function(startTime, endTime, options){};
+
+/**
  * Gets all events that occur on a given day.
 
  <p>This method returns events if they start during the given day, end during the day, or
@@ -1054,6 +1364,34 @@ CalendarApp.Calendar.prototype.getEvents = function(startTime, endTime){};
  * @return {CalendarApp.CalendarEvent[]} the events that occur on the given date
  */
 CalendarApp.Calendar.prototype.getEventsForDay = function(date){};
+
+/**
+ * Gets all events that occur on a given day and meet specified criteria.
+
+ <p>This method returns events if they start during the given day, end during the day, or
+ encompass the day.
+
+ <p>Note that only the date portion of the Date object is used, and the time portion is ignored.
+ The date is interpreted as midnight that day to midnight the next day in the calendar's time
+ zone.
+
+ <p>Be aware that filtering on <code>author</code>, <code>search</code>, or <code>statusFilters</code> takes
+ place after applying <code>start</code> and <code>max</code>. This means that the number of events
+ returned may be less than <code>max</code>, even though additional events meet the criteria.
+
+ <pre class="prettyprint"><code>
+ // Determines how many events are happening today and contain the term &quot;meeting&quot;.
+ var today = new Date();
+ var events = CalendarApp.getDefaultCalendar().getEventsForDay(today, {search: &#39;meeting&#39;});
+ Logger.log(&#39;Number of events: &#39; + events.length);
+ </code></pre>
+ *
+ * @param {Date} date - the date to retrieve events for (only the day is used; the time is ignored)
+ * @param {Object} options - advanced filtering options
+ *
+ * @return {CalendarApp.CalendarEvent[]} the events that occur on the given date and match the criteria
+ */
+CalendarApp.Calendar.prototype.getEventsForDay = function(date, options){};
 
 /**
  * Gets the ID of the calendar. The ID for a user's default calendar is their email address.
@@ -1336,6 +1674,15 @@ CalendarApp.CalendarEvent.prototype.getGuestByEmail = function(email){};
  * @return {CalendarApp.EventGuest[]} an array of the guests
  */
 CalendarApp.CalendarEvent.prototype.getGuestList = function(){};
+
+/**
+ * Gets the guests for the event, potentially including the event owners.
+ *
+ * @param {Boolean} includeOwner - whether to include the owners as a guest
+ *
+ * @return {CalendarApp.EventGuest[]} an array of the guests
+ */
+CalendarApp.CalendarEvent.prototype.getGuestList = function(includeOwner){};
 
 /**
  * Gets the ID of the event.
@@ -1747,6 +2094,15 @@ CalendarApp.CalendarEventSeries.prototype.getGuestByEmail = function(email){};
 CalendarApp.CalendarEventSeries.prototype.getGuestList = function(){};
 
 /**
+ * Gets the guests for the event, potentially including the event owners.
+ *
+ * @param {Boolean} includeOwner - whether to include the owners as a guest
+ *
+ * @return {CalendarApp.EventGuest[]} an array of the guests
+ */
+CalendarApp.CalendarEventSeries.prototype.getGuestList = function(includeOwner){};
+
+/**
  * Gets the ID of the event.
  *
  * @return {String} the ID of the event
@@ -1964,6 +2320,30 @@ CalendarApp.CalendarEventSeries.prototype.setMyStatus = function(status){};
  * @return {CalendarApp.CalendarEventSeries} this CalendarEventSeries for chaining
  */
 CalendarApp.CalendarEventSeries.prototype.setRecurrence = function(recurrence, startDate){};
+
+/**
+ * Sets the recurrence rules for this event series. Applying this method changes an all-day event
+ series into a regular event series.
+
+ <pre class="prettyprint"><code>
+ // Sets the events in a series to take place from 3pm to 4pm every Tuesday and Thursday in
+ // 2013.
+ var eventSeries = CalendarApp.getDefaultCalendar().getEventSeriesById(&#39;123456789@google.com&#39;);
+ var startTime = new Date(&#39;January 1, 2013 03:00:00 PM EST&#39;);
+ var endTime = new Date(&#39;January 1, 2013 04:00:00 PM EST&#39;);
+ var recurrence = CalendarApp.newRecurrence().addWeeklyRule()
+      .onlyOnWeekdays([CalendarApp.Weekday.TUESDAY, CalendarApp.Weekday.THURSDAY])
+      .until(new Date(&#39;January 1, 2014&#39;));
+ eventSeries.setRecurrence(recurrence, startTime, endTime);
+ </code></pre>
+ *
+ * @param {CalendarApp.EventRecurrence} recurrence - the recurrence rules to use
+ * @param {Date} startTime - the date and time when the first event in the series starts
+ * @param {Date} endTime - the date and time when the first event in the series ends
+ *
+ * @return {CalendarApp.CalendarEventSeries} this CalendarEventSeries for chaining
+ */
+CalendarApp.CalendarEventSeries.prototype.setRecurrence = function(recurrence, startTime, endTime){};
 
 /**
  * Sets a key/value tag on the event, for storing custom metadata.

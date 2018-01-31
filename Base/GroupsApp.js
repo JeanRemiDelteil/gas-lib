@@ -165,6 +165,31 @@ GroupsApp.Group.prototype.getGroups = function(){};
 GroupsApp.Group.prototype.getRole = function(email){};
 
 /**
+ * Retrieves a user's role in the context of the group. A user who is a direct member of a group
+ has exactly one role within that group. Throws an exception if the user is not a member of the
+ group or if you do not have permission to view the group's member list.
+
+ <p>This example lists the owners of a group:
+
+ <pre class="prettyprint"><code>
+ var group = GroupsApp.getGroupByEmail(&quot;example@googlegroups.com&quot;);
+ var users = group.getUsers();
+ Logger.log(&#39;These are the group owners:&#39;);
+ for (var i = 0; i &lt; users.length; i++) {
+   var user = users[i];
+   if (group.getRole(user) == GroupsApp.Role.OWNER) {
+     Logger.log(user.getEmail());
+   }
+ }
+ </code></pre>
+ *
+ * @param {User} user - the user whose role to retrieve
+ *
+ * @return {GroupsApp.Role} that user's role within the group
+ */
+GroupsApp.Group.prototype.getRole = function(user){};
+
+/**
  * Retrieves the direct members of the group that have a known corresponding Google account.
  Throws an exception if you do not have permission to view the group's member list.
 
@@ -218,6 +243,24 @@ GroupsApp.Group.prototype.getUsers = function(){};
 GroupsApp.Group.prototype.hasGroup = function(group){};
 
 /**
+ * Tests if a group is a direct member of this group. The method does not return <code>true</code> if
+ the tested group is nested more than one level below this group. Throws an exception if you do
+ not have permission to view the group's member list.
+
+ <pre class="prettyprint"><code>
+ var group = GroupsApp.getGroupByEmail(&quot;example@googlegroups.com&quot;);
+ if (group.hasGroup(&quot;childgroup@googlegroups.com&quot;)) {
+   Logger.log(&quot;childgroup@googlegroups.com is a child group&quot;);
+ }
+ </code></pre>
+ *
+ * @param {String} email - a group's email address
+ *
+ * @return {Boolean} true if that group is a child group of this group
+ */
+GroupsApp.Group.prototype.hasGroup = function(email){};
+
+/**
  * Tests if a user is a direct member of the group. Throws an exception if you do not have
  permission to view the group's member list.
 
@@ -236,4 +279,24 @@ GroupsApp.Group.prototype.hasGroup = function(group){};
  * @return {Boolean} true if that user is a member of the group
  */
 GroupsApp.Group.prototype.hasUser = function(email){};
+
+/**
+ * Tests if a user is a direct member of the group. Throws an exception if you do not have
+ permission to view the group's member list.
+
+ <p>Here's an example which checks if the current user is a member of a group:
+
+ <pre class="prettyprint"><code>
+ var group = GroupsApp.getGroupByEmail(&quot;example@googlegroups.com&quot;);
+ var currentUser = Session.getActiveUser();
+ if (group.hasUser(currentUser)) {
+   Logger.log(&quot;You are a member&quot;);
+ }
+ </code></pre>
+ *
+ * @param {User} user - the user whose membership to test
+ *
+ * @return {Boolean} true if that user is a member of the group
+ */
+GroupsApp.Group.prototype.hasUser = function(user){};
 
