@@ -1,4 +1,4 @@
-var Ui = {};
+var Ui = function(){};
 
 
 /**
@@ -33,7 +33,7 @@ var Ui = {};
  *
  * @return {Button} the button the user clicked
  */
-Ui.alert = function(prompt){};
+Ui.prototype.alert = function(prompt){};
 
 /**
  * Opens a dialog box in the user's editor with the given message and set of buttons. This method
@@ -62,7 +62,7 @@ Ui.alert = function(prompt){};
  *
  * @return {Button} the button the user clicked
  */
-Ui.alert = function(prompt, buttons){};
+Ui.prototype.alert = function(prompt, buttons){};
 
 /**
  * Opens a dialog box in the user's editor with the given title, message, and set of buttons. This
@@ -92,7 +92,7 @@ Ui.alert = function(prompt, buttons){};
  *
  * @return {Button} the button the user clicked
  */
-Ui.alert = function(title, prompt, buttons){};
+Ui.prototype.alert = function(title, prompt, buttons){};
 
 /**
  * Creates a builder that can be used to insert a sub-menu into the editor's Add-on menu. The menu
@@ -113,7 +113,7 @@ Ui.alert = function(title, prompt, buttons){};
  *
  * @return {Menu} the new menu builder
  */
-Ui.createAddonMenu = function(){};
+Ui.prototype.createAddonMenu = function(){};
 
 /**
  * Creates a builder that can be used to add a menu to the editor's user interface. The menu will
@@ -143,7 +143,7 @@ Ui.createAddonMenu = function(){};
  *
  * @return {Menu} the new menu builder
  */
-Ui.createMenu = function(caption){};
+Ui.prototype.createMenu = function(caption){};
 
 /**
  * Opens an input dialog box in the user's editor with the given message and an "OK" button. This
@@ -171,7 +171,7 @@ Ui.createMenu = function(caption){};
  *
  * @return {PromptResponse} a representation of the user's response
  */
-Ui.prompt = function(prompt){};
+Ui.prototype.prompt = function(prompt){};
 
 /**
  * Opens an input dialog box in the user's editor with the given message and set of buttons. This
@@ -202,7 +202,7 @@ Ui.prompt = function(prompt){};
  *
  * @return {PromptResponse} a representation of the user's response
  */
-Ui.prompt = function(prompt, buttons){};
+Ui.prototype.prompt = function(prompt, buttons){};
 
 /**
  * Opens an input dialog box in the user's editor with the given title, message, and set of
@@ -233,7 +233,7 @@ Ui.prompt = function(prompt, buttons){};
  *
  * @return {PromptResponse} a representation of the user's response
  */
-Ui.prompt = function(title, prompt, buttons){};
+Ui.prototype.prompt = function(title, prompt, buttons){};
 
 /**
  * Opens a dialog box in the user's editor with custom client-side content. This method does
@@ -270,7 +270,7 @@ Ui.prompt = function(title, prompt, buttons){};
  *
  * @return void
  */
-Ui.showDialog = function(userInterface){};
+Ui.prototype.showDialog = function(userInterface){};
 
 /**
  * Opens a modal dialog box in the user's editor with custom client-side content. This method does
@@ -311,7 +311,7 @@ Ui.showDialog = function(userInterface){};
  *
  * @return void
  */
-Ui.showModalDialog = function(userInterface, title){};
+Ui.prototype.showModalDialog = function(userInterface, title){};
 
 /**
  * Opens a modeless dialog box in the user's editor with custom client-side content. This method
@@ -353,7 +353,7 @@ Ui.showModalDialog = function(userInterface, title){};
  *
  * @return void
  */
-Ui.showModelessDialog = function(userInterface, title){};
+Ui.prototype.showModelessDialog = function(userInterface, title){};
 
 /**
  * Opens a sidebar in the user's editor with custom client-side content. This method does
@@ -390,5 +390,5 @@ Ui.showModelessDialog = function(userInterface, title){};
  *
  * @return void
  */
-Ui.showSidebar = function(userInterface){};
+Ui.prototype.showSidebar = function(userInterface){};
 
