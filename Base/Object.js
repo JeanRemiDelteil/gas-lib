@@ -13,6 +13,16 @@ Object.create = function(proto){};
 /**
  * undefined
  *
+ * @param {Object} proto - undefined
+ * @param {Object} propertiesObject - undefined
+ *
+ * @return {Object}
+ */
+Object.create = function(proto, propertiesObject){};
+
+/**
+ * undefined
+ *
  * @param {Object} obj - undefined
  * @param {Object} props - undefined
  *

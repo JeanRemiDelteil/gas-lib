@@ -637,6 +637,24 @@ ContactsApp.getContactsByAddress = function(query){};
 ContactsApp.getContactsByAddress = function(query, label){};
 
 /**
+ * Get contacts matching an address, limited to the specified custom address label.
+
+ <pre class="prettyprint"><code>
+ // The code below returns an array of contacts where the contact&#39;s address contains
+ // &quot;San Francisco&quot; in a custom address label (created by the user) called
+ // &quot;vacation&quot;.
+ var contacts = ContactsApp.getContactsByAddress(&#39;San Francisco&#39;, &#39;vacation&#39;);
+ </code></pre>
+ *
+ * @param {String} query - the string to search for in contact's addresses with the specified custom address
+     label
+ * @param {String} label - the custom address label to search within
+ *
+ * @return {ContactsApp.Contact[]} an array of matching contacts
+ */
+ContactsApp.getContactsByAddress = function(query, label){};
+
+/**
  * Get contacts matching the company field.
 
  <pre class="prettyprint"><code>
@@ -726,6 +744,23 @@ ContactsApp.getContactsByDate = function(month, day, year, label){};
 ContactsApp.getContactsByDate = function(month, day, year, label){};
 
 /**
+ * Get contacts matching a given month and day for a particular custom field.
+
+ <pre class="prettyprint"><code>
+ // The code below returns an array of contacts where the contact&#39;s custom &quot;Start Date&quot; field
+ // contains April for the month and 19 for the day.
+ var contacts = ContactsApp.getContactsByDate(ContactsApp.Month.APRIL, 19, &#39;Start Date&#39;);
+ </code></pre>
+ *
+ * @param {Month} month - the month to match, as one of the values from ContactsApp.Month
+ * @param {number} day - the day to match
+ * @param {String} label - the custom field to search within
+ *
+ * @return {ContactsApp.Contact[]} an array of matching contacts
+ */
+ContactsApp.getContactsByDate = function(month, day, label){};
+
+/**
  * Get contacts matching an email address.
 
  <pre class="prettyprint"><code>
@@ -752,6 +787,24 @@ ContactsApp.getContactsByEmailAddress = function(query){};
  *
  * @param {String} query - the string to search for in contact email addresses
  * @param {ContactsApp.Field} label - the field to search within
+ *
+ * @return {ContactsApp.Contact[]} an array of matching contacts
+ */
+ContactsApp.getContactsByEmailAddress = function(query, label){};
+
+/**
+ * Get contacts matching an email address, limited to the specified custom email address label.
+
+ <pre class="prettyprint"><code>
+ // The code below returns an array of contacts where the contact&#39;s email address contains
+ // &quot;john.doe@example.com&quot; in a custom email address label (created by the user) called
+ // &quot;alternate&quot;.
+ var contacts = ContactsApp.getContactsByEmailAddress(&#39;john.doe@example.com&#39;, &#39;alternate&#39;);
+ </code></pre>
+ *
+ * @param {String} query - the string to search for in contact email addresses with the specified custom
+     email address label
+ * @param {String} label - the custom email address label to search within
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
@@ -806,6 +859,25 @@ ContactsApp.getContactsByIM = function(query){};
 ContactsApp.getContactsByIM = function(query, label){};
 
 /**
+ * Get contacts matching an instant messaging address, limited to the specified custom instant
+ messaging label.
+
+ <pre class="prettyprint"><code>
+ // The code below returns an array of contacts where the contact&#39;s instant messaging address
+ // contains &quot;ChatWithJohnDoe&quot; in a custom instant messaging label (created by the user) called
+ // &quot;eBuddy&quot;.
+ var contacts = ContactsApp.getContactsByIM(&#39;ChatWithJohnDoe&#39;, &#39;eBuddy&#39;);
+ </code></pre>
+ *
+ * @param {String} query - the string to search for in contact's instant messaging addresses with the
+     specified custom instant messaging label
+ * @param {String} label - the custom instant messaging label to search within
+ *
+ * @return {ContactsApp.Contact[]} an array of matching contacts
+ */
+ContactsApp.getContactsByIM = function(query, label){};
+
+/**
  * Get contacts matching the job title field.
 
  <pre class="prettyprint"><code>
@@ -833,6 +905,22 @@ ContactsApp.getContactsByJobTitle = function(query){};
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
 ContactsApp.getContactsByName = function(query){};
+
+/**
+ * Get contacts matching a name, limited to a specific field.
+
+ <pre class="prettyprint"><code>
+ // The code below returns an array of contacts where the contact name contains &quot;John&quot;
+ // in the Given Name field.
+ var contacts = ContactsApp.getContactsByName(&#39;John&#39;, ContactsApp.Field.GIVEN_NAME);
+ </code></pre>
+ *
+ * @param {String} query - the string to search for in contact names
+ * @param {ContactsApp.Field} label - the field to search within
+ *
+ * @return {ContactsApp.Contact[]} an array of matching contacts
+ */
+ContactsApp.getContactsByName = function(query, label){};
 
 /**
  * Get contacts matching the notes field.
@@ -890,6 +978,28 @@ ContactsApp.getContactsByPhone = function(query){};
 ContactsApp.getContactsByPhone = function(query, label){};
 
 /**
+ * Get contacts matching a phone number, limited to the specified custom phone number label.
+
+ <p>This method will expand out lettered phone numbers, so if you search for '212-555-CODE' and
+ you have '212-555-2633' in your contacts or vice versa, the method will find the appropriate
+ contact.
+
+ <pre class="prettyprint"><code>
+ // The code below returns an array of contacts where the contact&#39;s phone number contains
+ // &quot;212-555-1234&quot; in a custom phone number label (created by the user) called
+ // &quot;alternate&quot;.
+ var contacts = ContactsApp.getContactsByPhone(&#39;212-555-1234&#39;, &#39;alternate&#39;);
+ </code></pre>
+ *
+ * @param {String} query - the string to search for in contact's phone numbers with the specified custom
+     phone number label
+ * @param {String} label - the custom phone number label to search within
+ *
+ * @return {ContactsApp.Contact[]} an array of matching contacts
+ */
+ContactsApp.getContactsByPhone = function(query, label){};
+
+/**
  * Get contacts matching a URL.
 
  <pre class="prettyprint"><code>
@@ -916,6 +1026,23 @@ ContactsApp.getContactsByUrl = function(query){};
  *
  * @param {String} query - the string to search for in contact's URLs
  * @param {ContactsApp.Field} label - the field to search within
+ *
+ * @return {ContactsApp.Contact[]} an array of matching contacts
+ */
+ContactsApp.getContactsByUrl = function(query, label){};
+
+/**
+ * Get contacts matching a URL, limited to the specified custom URL label.
+
+ <pre class="prettyprint"><code>
+ // The code below returns an array of contacts where the contact&#39;s URL contains
+ // &quot;www.example.com&quot; in a custom URL label (created by the user) called
+ // &quot;alternate work&quot;.
+ var contacts = ContactsApp.getContactsByUrl(&#39;www.example.com&#39;, &#39;alternate work&#39;);
+ </code></pre>
+ *
+ * @param {String} query - the string to search for in contact's URLs with the specified custom URL label
+ * @param {String} label - the custom URL label to search within
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
@@ -1038,6 +1165,24 @@ ContactsApp.AddressField.prototype.setAsPrimary = function(){};
  * @return {ContactsApp.AddressField} this FieldValue for chaining
  */
 ContactsApp.AddressField.prototype.setLabel = function(field){};
+
+/**
+ * Sets the label of this field.
+
+ <pre class="prettyprint"><code>
+ // Sets the label to &#39;Apartment&#39; for the first address field associated
+ // with contact &#39;John Doe&#39;. This method can be similarly called for any
+ // field that has a label.
+ var contacts = ContactsApp.getContactsByName(&#39;John Doe&#39;);
+ var addressFields = contacts[0].getAddresses();
+ addressFields[0].setLabel(&#39;Apartment&#39;);
+ </code></pre>
+ *
+ * @param {String} label - the new label for this field
+ *
+ * @return {ContactsApp.AddressField} this field, useful for chaining
+ */
+ContactsApp.AddressField.prototype.setLabel = function(label){};
 
 /** @constructor */
 ContactsApp.CompanyField = function(){};
@@ -1356,6 +1501,27 @@ ContactsApp.Contact.prototype.deleteContact = function(){};
 ContactsApp.Contact.prototype.getAddresses = function(){};
 
 /**
+ * Gets all the addresses for this contact matching a particular field.
+
+ <p>The label can be either from ContactsApp.Field or a custom label string.
+
+ <pre class="prettyprint"><code>
+ // The code below retrieves a contact named &quot;John Doe&quot; and logs the addresses
+ // associated with that contact that are in the ContactsApp.Field.WORK_ADDRESS label.
+ var contacts = ContactsApp.getContactsByName(&#39;John Doe&#39;);
+ var addresses = contacts[0].getAddresses(ContactsApp.Field.WORK_ADDRESS);
+ for (var i in addresses) {
+   Logger.log(addresses[i].getAddress());
+ }
+ </code></pre>
+ *
+ * @param {Object} label - the label to match, either from ContactsApp.Field or a custom string
+ *
+ * @return {ContactsApp.AddressField[]} a list of addresses
+ */
+ContactsApp.Contact.prototype.getAddresses = function(label){};
+
+/**
  * Gets all the companies for this contact.
 
  <pre class="prettyprint"><code>
@@ -1405,6 +1571,28 @@ ContactsApp.Contact.prototype.getContactGroups = function(){};
 ContactsApp.Contact.prototype.getCustomFields = function(){};
 
 /**
+ * Gets all the custom fields for this contact matching a particular field.
+
+ <p>The label can be either a standard label from ContactsApp.ExtendedField or a custom label
+ string.
+
+ <pre class="prettyprint"><code>
+ // The code below retrieves a contact named &quot;John Doe&quot; and logs the custom fields
+ // associated with that contact that are in the ContactsApp.ExtendedField.HOBBY label.
+ var contacts = ContactsApp.getContactsByName(&#39;John Doe&#39;);
+ var hobbies = contacts[0].getCustomFields(ContactsApp.ExtendedField.HOBBY);
+ for (var i in hobbies) {
+   Logger.log(hobbies[i].getValue());
+ }
+ </code></pre>
+ *
+ * @param {Object} label - the label to match, either from ContactsApp.ExtendedField or a custom string
+ *
+ * @return {ContactsApp.CustomField[]} a list of custom fields
+ */
+ContactsApp.Contact.prototype.getCustomFields = function(label){};
+
+/**
  * Gets all the dates for this contact.
 
  <pre class="prettyprint"><code>
@@ -1420,6 +1608,27 @@ ContactsApp.Contact.prototype.getCustomFields = function(){};
  * @return {ContactsApp.DateField[]} a list of dates
  */
 ContactsApp.Contact.prototype.getDates = function(){};
+
+/**
+ * Gets all the dates for this contact matching a particular field.
+
+ <p>The label can be either a standard label from ContactsApp.Field or a custom label string.
+
+ <pre class="prettyprint"><code>
+ // The code below retrieves a contact named &quot;John Doe&quot; and logs the day of the month
+ // associated with that contact that are in the ContactsApp.Field.BIRTHDAY label.
+ var contacts = ContactsApp.getContactsByName(&#39;John Doe&#39;);
+ var birthdays = contacts[0].getDates(ContactsApp.Field.BIRTHDAY);
+ for (var i in birthdays) {
+   Logger.log(birthdays[i].getDay());
+ }
+ </code></pre>
+ *
+ * @param {Object} label - the label to match, either from ContactsApp.Field or a custom string
+ *
+ * @return {ContactsApp.DateField[]} a list of dates
+ */
+ContactsApp.Contact.prototype.getDates = function(label){};
 
 /**
  * Gets a list of the email addresses available for this Contact.
@@ -1444,6 +1653,27 @@ ContactsApp.Contact.prototype.getEmailAddresses = function(){};
  * @return {ContactsApp.EmailField[]} the list of email addresses for the the contact
  */
 ContactsApp.Contact.prototype.getEmails = function(){};
+
+/**
+ * Gets the email addresses for this contact matching a particular field.
+
+ <p>The label can be either a standard label from ContactsApp.Field or a custom label string.
+
+ <pre class="prettyprint"><code>
+ // The code below retrieves a contact named &quot;John Doe&quot; and logs the email addresses
+ // associated with that contact that are in the ContactsApp.Field.HOME_EMAIL label.
+ var contacts = ContactsApp.getContactsByName(&#39;John Doe&#39;);
+ var emails = contacts[0].getEmails(ContactsApp.Field.HOME_EMAIL);
+ for (var i in emails) {
+   Logger.log(emails[i].getAddress());
+ }
+ </code></pre>
+ *
+ * @param {Object} label - the label to match, either from ContactsApp.Field or a custom string
+ *
+ * @return {ContactsApp.EmailField[]} the list of email addresses for the the contact
+ */
+ContactsApp.Contact.prototype.getEmails = function(label){};
 
 /**
  * Gets the family name (last name) of the contact as a string.
@@ -1525,6 +1755,27 @@ ContactsApp.Contact.prototype.getHomePhone = function(){};
  * @return {ContactsApp.IMField[]} a list of IM addresses
  */
 ContactsApp.Contact.prototype.getIMs = function(){};
+
+/**
+ * Gets all the IM addresses for this contact matching a particular field.
+
+ <p>The label can be either from ContactsApp.Field or a custom label string.
+
+ <pre class="prettyprint"><code>
+ // The code below retrieves a contact named &quot;John Doe&quot; and logs the IM addresses
+ // associated with that contact that are in the ContactsApp.Field.GOOGLE_TALK label.
+ var contacts = ContactsApp.getContactsByName(&#39;John Doe&#39;);
+ var imAddresses = contacts[0].getIMs(ContactsApp.Field.GOOGLE_TALK);
+ for (var i in imAddresses) {
+   Logger.log(imAddresses[i].getAddress());
+ }
+ </code></pre>
+ *
+ * @param {Object} label - the label to match, either from ContactsApp.Field or a custom string
+ *
+ * @return {ContactsApp.IMField[]} a list of IM addresses
+ */
+ContactsApp.Contact.prototype.getIMs = function(label){};
 
 /**
  * Returns the unique id of this contact.
@@ -1659,6 +1910,27 @@ ContactsApp.Contact.prototype.getPager = function(){};
 ContactsApp.Contact.prototype.getPhones = function(){};
 
 /**
+ * Gets all the phone numbers for this contact matching a particular field.
+
+ <p>The label can be either from ContactsApp.Field or a custom label string.
+
+ <pre class="prettyprint"><code>
+ // The code below retrieves a contact named &quot;John Doe&quot; and logs the phone numbers
+ // associated with that contact that are in the ContactsApp.Field.WORK_PHONE label.
+ var contacts = ContactsApp.getContactsByName(&#39;John Doe&#39;);
+ var phones = contacts[0].getPhones(ContactsApp.Field.WORK_PHONE);
+ for (var i in phones) {
+   Logger.log(phones[i].getPhoneNumber());
+ }
+ </code></pre>
+ *
+ * @param {Object} label - the label to match, either from ContactsApp.Field or a custom string
+ *
+ * @return {ContactsApp.PhoneField[]} a list of phone numbers
+ */
+ContactsApp.Contact.prototype.getPhones = function(label){};
+
+/**
  * Gets the prefix to the contact's name.
 
  <pre class="prettyprint"><code>
@@ -1733,6 +2005,27 @@ ContactsApp.Contact.prototype.getSuffix = function(){};
  * @return {ContactsApp.UrlField[]} a list of URLs
  */
 ContactsApp.Contact.prototype.getUrls = function(){};
+
+/**
+ * Gets all the URLs for this contact matching a particular field.
+
+ <p>The label can be either from ContactsApp.Field or a custom label string.
+
+ <pre class="prettyprint"><code>
+ // The code below retrieves a contact named &quot;John Doe&quot; and logs the URLs
+ // associated with that contact that are in the ContactsApp.Field.WORK_WEBSITE label.
+ var contacts = ContactsApp.getContactsByName(&#39;John Doe&#39;);
+ var urls = contacts[0].getUrls(ContactsApp.Field.WORK_WEBSITE);
+ for (var i in urls) {
+   Logger.log(urls[i].getAddress());
+ }
+ </code></pre>
+ *
+ * @param {Object} label - the label to match, either from ContactsApp.Field or a custom string
+ *
+ * @return {ContactsApp.UrlField[]} a list of URLs
+ */
+ContactsApp.Contact.prototype.getUrls = function(label){};
 
 /**
  * Gets the user defined value associated with the given key.
@@ -2307,6 +2600,24 @@ ContactsApp.CustomField.prototype.getValue = function(){};
 ContactsApp.CustomField.prototype.setLabel = function(field){};
 
 /**
+ * Sets the label of this field.
+
+ <pre class="prettyprint"><code>
+ // Sets the label to &#39;Apartment&#39; for the first address field associated
+ // with contact &#39;John Doe&#39;. This method can be similarly called for any
+ // field that has a label.
+ var contacts = ContactsApp.getContactsByName(&#39;John Doe&#39;);
+ var addressFields = contacts[0].getAddresses();
+ addressFields[0].setLabel(&#39;Apartment&#39;);
+ </code></pre>
+ *
+ * @param {String} label - the new label for this field
+ *
+ * @return {ContactsApp.CustomField} this field, useful for chaining
+ */
+ContactsApp.CustomField.prototype.setLabel = function(label){};
+
+/**
  * Sets the value of this field.
 
  <pre class="prettyprint"><code>
@@ -2427,6 +2738,24 @@ ContactsApp.DateField.prototype.getYear = function(){};
 ContactsApp.DateField.prototype.setDate = function(month, day){};
 
 /**
+ * Sets the date to this day.
+
+ <pre class="prettyprint"><code>
+ // Sets the birthday for contact &#39;John Doe&#39; to April 1, 1980
+ var contacts = ContactsApp.getContactsByName(&#39;John Doe&#39;);
+ var birthday = contacts[0].getDates(ContactsApp.Field.BIRTHDAY)[0];
+ birthday.setDate(ContactsApp.Month.APRIL, 1, 1980);
+ </code></pre>
+ *
+ * @param {Month} month - the month
+ * @param {number} day - the day
+ * @param {number} year - the year
+ *
+ * @return {ContactsApp.DateField} this date, useful for chaining
+ */
+ContactsApp.DateField.prototype.setDate = function(month, day, year){};
+
+/**
  * Sets the label of this field, such as 'Birthday' or 'Anniversary'.
 
  <pre class="prettyprint"><code>
@@ -2438,6 +2767,24 @@ ContactsApp.DateField.prototype.setDate = function(month, day){};
  </code></pre>
  *
  * @param {ContactsApp.Field} label - the new standard label
+ *
+ * @return {ContactsApp.DateField} this field, useful for chaining
+ */
+ContactsApp.DateField.prototype.setLabel = function(label){};
+
+/**
+ * Sets the label of this field.
+
+ <pre class="prettyprint"><code>
+ // Sets the label to &#39;Apartment&#39; for the first address field associated
+ // with contact &#39;John Doe&#39;. This method can be similarly called for any
+ // field that has a label.
+ var contacts = ContactsApp.getContactsByName(&#39;John Doe&#39;);
+ var addressFields = contacts[0].getAddresses();
+ addressFields[0].setLabel(&#39;Apartment&#39;);
+ </code></pre>
+ *
+ * @param {String} label - the new label for this field
  *
  * @return {ContactsApp.DateField} this field, useful for chaining
  */
@@ -2589,6 +2936,24 @@ ContactsApp.EmailField.prototype.setDisplayName = function(name){};
  */
 ContactsApp.EmailField.prototype.setLabel = function(field){};
 
+/**
+ * Sets the label of this field.
+
+ <pre class="prettyprint"><code>
+ // Sets the label to &#39;Apartment&#39; for the first address field associated
+ // with contact &#39;John Doe&#39;. This method can be similarly called for any
+ // field that has a label.
+ var contacts = ContactsApp.getContactsByName(&#39;John Doe&#39;);
+ var addressFields = contacts[0].getAddresses();
+ addressFields[0].setLabel(&#39;Apartment&#39;);
+ </code></pre>
+ *
+ * @param {String} label - the new label for this field
+ *
+ * @return {ContactsApp.EmailField} this field, useful for chaining
+ */
+ContactsApp.EmailField.prototype.setLabel = function(label){};
+
 /** @constructor */
 ContactsApp.IMField = function(){};
 
@@ -2706,6 +3071,24 @@ ContactsApp.IMField.prototype.setAsPrimary = function(){};
  */
 ContactsApp.IMField.prototype.setLabel = function(field){};
 
+/**
+ * Sets the label of this field.
+
+ <pre class="prettyprint"><code>
+ // Sets the label to &#39;Apartment&#39; for the first address field associated
+ // with contact &#39;John Doe&#39;. This method can be similarly called for any
+ // field that has a label.
+ var contacts = ContactsApp.getContactsByName(&#39;John Doe&#39;);
+ var addressFields = contacts[0].getAddresses();
+ addressFields[0].setLabel(&#39;Apartment&#39;);
+ </code></pre>
+ *
+ * @param {String} label - the new label for this field
+ *
+ * @return {ContactsApp.IMField} this field, useful for chaining
+ */
+ContactsApp.IMField.prototype.setLabel = function(label){};
+
 /** @constructor */
 ContactsApp.PhoneField = function(){};
 
@@ -2804,6 +3187,24 @@ ContactsApp.PhoneField.prototype.setAsPrimary = function(){};
  * @return {ContactsApp.PhoneField} this FieldValue for chaining
  */
 ContactsApp.PhoneField.prototype.setLabel = function(field){};
+
+/**
+ * Sets the label of this field.
+
+ <pre class="prettyprint"><code>
+ // Sets the label to &#39;Apartment&#39; for the first address field associated
+ // with contact &#39;John Doe&#39;. This method can be similarly called for any
+ // field that has a label.
+ var contacts = ContactsApp.getContactsByName(&#39;John Doe&#39;);
+ var addressFields = contacts[0].getAddresses();
+ addressFields[0].setLabel(&#39;Apartment&#39;);
+ </code></pre>
+ *
+ * @param {String} label - the new label for this field
+ *
+ * @return {ContactsApp.PhoneField} this field, useful for chaining
+ */
+ContactsApp.PhoneField.prototype.setLabel = function(label){};
 
 /**
  * Sets the phone number for this field.
@@ -2937,4 +3338,22 @@ ContactsApp.UrlField.prototype.setAsPrimary = function(){};
  * @return {ContactsApp.UrlField} this FieldValue for chaining
  */
 ContactsApp.UrlField.prototype.setLabel = function(field){};
+
+/**
+ * Sets the label of this field.
+
+ <pre class="prettyprint"><code>
+ // Sets the label to &#39;Apartment&#39; for the first address field associated
+ // with contact &#39;John Doe&#39;. This method can be similarly called for any
+ // field that has a label.
+ var contacts = ContactsApp.getContactsByName(&#39;John Doe&#39;);
+ var addressFields = contacts[0].getAddresses();
+ addressFields[0].setLabel(&#39;Apartment&#39;);
+ </code></pre>
+ *
+ * @param {String} label - the new label for this field
+ *
+ * @return {ContactsApp.UrlField} this field, useful for chaining
+ */
+ContactsApp.UrlField.prototype.setLabel = function(label){};
 

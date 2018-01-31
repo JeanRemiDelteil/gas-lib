@@ -76,6 +76,22 @@ var ContentService = {};
  */
 ContentService.createTextOutput = function(){};
 
+/**
+ * Create a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/content/text-output.html'>TextOutput</a></code> object that can serve the given content.
+
+ <pre class="prettyprint"><code>
+ function doGet() {
+   var output = ContentService.createTextOutput(&quot;Hello world!&quot;);
+   return output;
+ }
+ </code></pre>
+ *
+ * @param {String} content - the content to serve.
+ *
+ * @return {ContentService.TextOutput} the new TextOutput object.
+ */
+ContentService.createTextOutput = function(content){};
+
 /** @constructor */
 ContentService.TextOutput = function(){};
 

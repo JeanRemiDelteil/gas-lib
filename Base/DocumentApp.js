@@ -919,6 +919,19 @@ DocumentApp.Body.prototype.appendHorizontalRule = function(){};
 DocumentApp.Body.prototype.appendImage = function(image){};
 
 /**
+ * Appends the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/inline-image.html'>InlineImage</a></code>.
+
+ <p>The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/inline-image.html'>InlineImage</a></code> will be contained in a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code>.
+
+ <p>Use this version of <code>appendImage</code> when appending a copy of an existing <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/inline-image.html'>InlineImage</a></code>.
+ *
+ * @param {DocumentApp.InlineImage} image - the image data
+ *
+ * @return {DocumentApp.InlineImage} the appended image
+ */
+DocumentApp.Body.prototype.appendImage = function(image){};
+
+/**
  * Appends the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/list-item.html'>ListItem</a></code>.
 
  <p>Use this version of <code>appendListItem</code> when appending a copy of an existing <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/list-item.html'>ListItem</a></code>.
@@ -930,6 +943,17 @@ DocumentApp.Body.prototype.appendImage = function(image){};
 DocumentApp.Body.prototype.appendListItem = function(listItem){};
 
 /**
+ * Creates and appends a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/list-item.html'>ListItem</a></code> containing the specified text contents.
+
+ <p>Consecutive list items are added as part of the same list.
+ *
+ * @param {String} text - the list item's text contents
+ *
+ * @return {DocumentApp.ListItem} the new list item
+ */
+DocumentApp.Body.prototype.appendListItem = function(text){};
+
+/**
  * Creates and appends a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreak</a></code>.
 
  <p>The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreak</a></code> will be contained in a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code>.
@@ -937,6 +961,19 @@ DocumentApp.Body.prototype.appendListItem = function(listItem){};
  * @return {DocumentApp.PageBreak} the new page break
  */
 DocumentApp.Body.prototype.appendPageBreak = function(){};
+
+/**
+ * Appends the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreak</a></code>.
+
+ <p>The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreak</a></code> will be contained in a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code>.
+
+ <p>Use this version of <code>appendPageBreak</code> when appending a copy of an existing <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreak</a></code>.
+ *
+ * @param {DocumentApp.PageBreak} pageBreak - the page break to append
+ *
+ * @return {DocumentApp.PageBreak} the appended page break
+ */
+DocumentApp.Body.prototype.appendPageBreak = function(pageBreak){};
 
 /**
  * Appends the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code>.
@@ -948,6 +985,15 @@ DocumentApp.Body.prototype.appendPageBreak = function(){};
  * @return {DocumentApp.Paragraph} the appended paragraph
  */
 DocumentApp.Body.prototype.appendParagraph = function(paragraph){};
+
+/**
+ * Creates and appends a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code> containing the specified text contents.
+ *
+ * @param {String} text - the paragraph's text contents
+ *
+ * @return {DocumentApp.Paragraph} the new paragraph
+ */
+DocumentApp.Body.prototype.appendParagraph = function(text){};
 
 /**
  * Creates and appends a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table.html'>Table</a></code>.
@@ -971,6 +1017,18 @@ DocumentApp.Body.prototype.appendTable = function(){};
  * @return {DocumentApp.Table} the appended table
  */
 DocumentApp.Body.prototype.appendTable = function(table){};
+
+/**
+ * Appends a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table.html'>Table</a></code> containing a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table-cell.html'>TableCell</a></code> for each specified string value.
+
+ <p>This method will also append an empty paragraph after the table, since Google Docs documents
+ cannot end with a table.
+ *
+ * @param {String[][]} cells - the text contents of the table cells to add to the new table
+ *
+ * @return {DocumentApp.Table} the appended table
+ */
+DocumentApp.Body.prototype.appendTable = function(cells){};
 
 /**
  * Clears the contents of the element.
@@ -1023,6 +1081,37 @@ DocumentApp.Body.prototype.editAsText = function(){};
 DocumentApp.Body.prototype.findElement = function(elementType){};
 
 /**
+ * Searches the contents of the element for a descendant of the specified type, starting from the
+ specified <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/range-element.html'>RangeElement</a></code>.
+
+ <pre class="prettyprint"><code>
+ // Get the body section of the active document.
+ var body = DocumentApp.getActiveDocument().getBody();
+
+ // Define the search parameters.
+ var searchType = DocumentApp.ElementType.PARAGRAPH;
+ var searchHeading = DocumentApp.ParagraphHeading.HEADING1;
+ var searchResult = null;
+
+ // Search until the paragraph is found.
+ while (searchResult = body.findElement(searchType, searchResult)) {
+   var par = searchResult.getElement().asParagraph();
+   if (par.getHeading() == searchHeading) {
+     // Found one, update and stop.
+     par.setText(&#39;This is the first header.&#39;);
+     return;
+   }
+ }
+ </code></pre>
+ *
+ * @param {DocumentApp.ElementType} elementType - the type of element to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search element
+ */
+DocumentApp.Body.prototype.findElement = function(elementType, from){};
+
+/**
  * Searches the contents of the element for the specified text pattern using regular expressions.
 
  <p>A subset of the JavaScript regular expression features are not fully supported, such as
@@ -1037,6 +1126,24 @@ DocumentApp.Body.prototype.findElement = function(elementType){};
      match
  */
 DocumentApp.Body.prototype.findText = function(searchPattern){};
+
+/**
+ * Searches the contents of the element for the specified text pattern, starting from a given
+ search result.
+
+ <p>A subset of the JavaScript regular expression features are not fully supported, such as
+ capture groups and mode modifiers.
+
+ <p>The provided regular expression pattern is independently matched against each text block
+ contained in the current element.
+ *
+ * @param {String} searchPattern - the pattern to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search text, or null if there is no
+     match
+ */
+DocumentApp.Body.prototype.findText = function(searchPattern, from){};
 
 /**
  * Retrieves the element's attributes.
@@ -1294,6 +1401,18 @@ DocumentApp.Body.prototype.insertHorizontalRule = function(childIndex){};
 DocumentApp.Body.prototype.insertImage = function(childIndex, image){};
 
 /**
+ * Inserts the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/inline-image.html'>InlineImage</a></code> at the specified index.
+
+ <p>The image will be contained in a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code>.
+ *
+ * @param {number} childIndex - the index at which to insert the element
+ * @param {DocumentApp.InlineImage} image - the image to insert
+ *
+ * @return {DocumentApp.InlineImage} the inserted inline image
+ */
+DocumentApp.Body.prototype.insertImage = function(childIndex, image){};
+
+/**
  * Inserts the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/list-item.html'>ListItem</a></code> at the specified index.
  *
  * @param {number} childIndex - the index at which to insert
@@ -1302,6 +1421,17 @@ DocumentApp.Body.prototype.insertImage = function(childIndex, image){};
  * @return {DocumentApp.ListItem} the inserted list item
  */
 DocumentApp.Body.prototype.insertListItem = function(childIndex, listItem){};
+
+/**
+ * Creates and inserts a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/list-item.html'>ListItem</a></code> at the specified index, containing the specified
+ text contents.
+ *
+ * @param {number} childIndex - the index at which to insert
+ * @param {String} text - the list item's text contents
+ *
+ * @return {DocumentApp.ListItem} the new list item
+ */
+DocumentApp.Body.prototype.insertListItem = function(childIndex, text){};
 
 /**
  * Creates and inserts a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreak</a></code> at the specified index.
@@ -1315,6 +1445,18 @@ DocumentApp.Body.prototype.insertListItem = function(childIndex, listItem){};
 DocumentApp.Body.prototype.insertPageBreak = function(childIndex){};
 
 /**
+ * Inserts the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreak</a></code> at the specified index.
+
+ <p>The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreak</a></code> will be contained in a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code>.
+ *
+ * @param {number} childIndex - the index at which to insert the element
+ * @param {DocumentApp.PageBreak} pageBreak - the p[age break to insert
+ *
+ * @return {DocumentApp.PageBreak} the inserted page break
+ */
+DocumentApp.Body.prototype.insertPageBreak = function(childIndex, pageBreak){};
+
+/**
  * Inserts the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code> at the specified index.
  *
  * @param {number} childIndex - the index at which to insert
@@ -1323,6 +1465,17 @@ DocumentApp.Body.prototype.insertPageBreak = function(childIndex){};
  * @return {DocumentApp.Paragraph} the inserted paragraph
  */
 DocumentApp.Body.prototype.insertParagraph = function(childIndex, paragraph){};
+
+/**
+ * Creates and inserts a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code> at the specified index, containing the specified
+ text contents.
+ *
+ * @param {number} childIndex - the index at which to insert
+ * @param {String} text - the paragraph's text contents
+ *
+ * @return {DocumentApp.Paragraph} the new paragraph
+ */
+DocumentApp.Body.prototype.insertParagraph = function(childIndex, text){};
 
 /**
  * Creates and inserts a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table.html'>Table</a></code> at the specified index.
@@ -1342,6 +1495,16 @@ DocumentApp.Body.prototype.insertTable = function(childIndex){};
  * @return {DocumentApp.Table} the inserted table
  */
 DocumentApp.Body.prototype.insertTable = function(childIndex, table){};
+
+/**
+ * Creates and inserts a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table.html'>Table</a></code> containing the specified cells, at the specified index.
+ *
+ * @param {number} childIndex - the index at which to insert
+ * @param {String[][]} cells - the text contents of the table cells to add to the new table
+ *
+ * @return {DocumentApp.Table} the new table
+ */
+DocumentApp.Body.prototype.insertTable = function(childIndex, cells){};
 
 /**
  * Determines whether the element is at the end of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>.
@@ -1707,6 +1870,37 @@ DocumentApp.ContainerElement.prototype.editAsText = function(){};
 DocumentApp.ContainerElement.prototype.findElement = function(elementType){};
 
 /**
+ * Searches the contents of the element for a descendant of the specified type, starting from the
+ specified <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/range-element.html'>RangeElement</a></code>.
+
+ <pre class="prettyprint"><code>
+ // Get the body section of the active document.
+ var body = DocumentApp.getActiveDocument().getBody();
+
+ // Define the search parameters.
+ var searchType = DocumentApp.ElementType.PARAGRAPH;
+ var searchHeading = DocumentApp.ParagraphHeading.HEADING1;
+ var searchResult = null;
+
+ // Search until the paragraph is found.
+ while (searchResult = body.findElement(searchType, searchResult)) {
+   var par = searchResult.getElement().asParagraph();
+   if (par.getHeading() == searchHeading) {
+     // Found one, update and stop.
+     par.setText(&#39;This is the first header.&#39;);
+     return;
+   }
+ }
+ </code></pre>
+ *
+ * @param {DocumentApp.ElementType} elementType - the type of element to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search element
+ */
+DocumentApp.ContainerElement.prototype.findElement = function(elementType, from){};
+
+/**
  * Searches the contents of the element for the specified text pattern using regular expressions.
 
  <p>A subset of the JavaScript regular expression features are not fully supported, such as
@@ -1721,6 +1915,24 @@ DocumentApp.ContainerElement.prototype.findElement = function(elementType){};
      match
  */
 DocumentApp.ContainerElement.prototype.findText = function(searchPattern){};
+
+/**
+ * Searches the contents of the element for the specified text pattern, starting from a given
+ search result.
+
+ <p>A subset of the JavaScript regular expression features are not fully supported, such as
+ capture groups and mode modifiers.
+
+ <p>The provided regular expression pattern is independently matched against each text block
+ contained in the current element.
+ *
+ * @param {String} searchPattern - the pattern to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search text, or null if there is no
+     match
+ */
+DocumentApp.ContainerElement.prototype.findText = function(searchPattern, from){};
 
 /**
  * Retrieves the element's attributes.
@@ -2022,6 +2234,16 @@ DocumentApp.Document.prototype.addBookmark = function(position){};
 DocumentApp.Document.prototype.addEditor = function(emailAddress){};
 
 /**
+ * Adds the given user to the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>. If the user was already
+ on the list of viewers, this method promotes the user out of the list of viewers.
+ *
+ * @param {User} user - a representation of the user to add
+ *
+ * @return {DocumentApp.Document} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>, for chaining
+ */
+DocumentApp.Document.prototype.addEditor = function(user){};
+
+/**
  * Adds the given array of users to the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>. If any of the
  users were already on the list of viewers, this method promotes them out of the list of
  viewers.
@@ -2084,6 +2306,16 @@ DocumentApp.Document.prototype.addNamedRange = function(name, range){};
  * @return {DocumentApp.Document} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>, for chaining
  */
 DocumentApp.Document.prototype.addViewer = function(emailAddress){};
+
+/**
+ * Adds the given user to the list of viewers for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>. If the user was already
+ on the list of editors, this method has no effect.
+ *
+ * @param {User} user - a representation of the user to add
+ *
+ * @return {DocumentApp.Document} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>, for chaining
+ */
+DocumentApp.Document.prototype.addViewer = function(user){};
 
 /**
  * Adds the given array of users to the list of viewers for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>. If any of the
@@ -2237,6 +2469,20 @@ DocumentApp.Document.prototype.getNamedRangeById = function(id){};
 DocumentApp.Document.prototype.getNamedRanges = function(){};
 
 /**
+ * Gets all <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/named-range.html'>NamedRange</a></code> objects in the document with the given name. Names are not
+ necessarily unique; several different ranges in the same document may share the same name, much
+ like a class in HTML. By contrast, IDs are unique within the document, like an ID in HTML.
+
+ <p>A <code>NamedRange</code> can be accessed by any script that accesses the document. To avoid
+ unintended conflicts between scripts, consider prefixing range names with a unique string.
+ *
+ * @param {String} name - the range's name, which is not necessarily unique
+ *
+ * @return {DocumentApp.NamedRange[]} an array of the <code>NamedRange</code> objects in the document with the given name
+ */
+DocumentApp.Document.prototype.getNamedRanges = function(name){};
+
+/**
  * Gets the user's selection in the active document. A script can only access the selection of the
  user who is running the script, and only if the script is <a
  href="/apps-script/scripts_containers">bound</a> to the document.
@@ -2331,6 +2577,17 @@ DocumentApp.Document.prototype.newRange = function(){};
 DocumentApp.Document.prototype.removeEditor = function(emailAddress){};
 
 /**
+ * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>. This method does not
+ block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code> if they belong to a class of users who have
+ general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code> is shared with the user's entire domain.
+ *
+ * @param {User} user - a representation of the user to remove
+ *
+ * @return {DocumentApp.Document} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>, for chaining
+ */
+DocumentApp.Document.prototype.removeEditor = function(user){};
+
+/**
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>. This
  method has no effect if the user is an editor, not a viewer or commenter. This method also does
  not block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code> if they belong to a class of users who
@@ -2342,6 +2599,18 @@ DocumentApp.Document.prototype.removeEditor = function(emailAddress){};
  * @return {DocumentApp.Document} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code> for chaining
  */
 DocumentApp.Document.prototype.removeViewer = function(emailAddress){};
+
+/**
+ * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>. This
+ method has no effect if the user is an editor, not a viewer. This method also does not block
+ users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code> if they belong to a class of users who have general
+ access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code> is shared with the user's entire domain.
+ *
+ * @param {User} user - a representation of the user to remove
+ *
+ * @return {DocumentApp.Document} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code> for chaining
+ */
+DocumentApp.Document.prototype.removeViewer = function(user){};
 
 /**
  * Saves the current <code>Document</code>. Causes pending updates to be flushed and applied.
@@ -2829,6 +3098,37 @@ DocumentApp.Equation.prototype.editAsText = function(){};
 DocumentApp.Equation.prototype.findElement = function(elementType){};
 
 /**
+ * Searches the contents of the element for a descendant of the specified type, starting from the
+ specified <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/range-element.html'>RangeElement</a></code>.
+
+ <pre class="prettyprint"><code>
+ // Get the body section of the active document.
+ var body = DocumentApp.getActiveDocument().getBody();
+
+ // Define the search parameters.
+ var searchType = DocumentApp.ElementType.PARAGRAPH;
+ var searchHeading = DocumentApp.ParagraphHeading.HEADING1;
+ var searchResult = null;
+
+ // Search until the paragraph is found.
+ while (searchResult = body.findElement(searchType, searchResult)) {
+   var par = searchResult.getElement().asParagraph();
+   if (par.getHeading() == searchHeading) {
+     // Found one, update and stop.
+     par.setText(&#39;This is the first header.&#39;);
+     return;
+   }
+ }
+ </code></pre>
+ *
+ * @param {DocumentApp.ElementType} elementType - the type of element to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search element
+ */
+DocumentApp.Equation.prototype.findElement = function(elementType, from){};
+
+/**
  * Searches the contents of the element for the specified text pattern using regular expressions.
 
  <p>A subset of the JavaScript regular expression features are not fully supported, such as
@@ -2843,6 +3143,24 @@ DocumentApp.Equation.prototype.findElement = function(elementType){};
      match
  */
 DocumentApp.Equation.prototype.findText = function(searchPattern){};
+
+/**
+ * Searches the contents of the element for the specified text pattern, starting from a given
+ search result.
+
+ <p>A subset of the JavaScript regular expression features are not fully supported, such as
+ capture groups and mode modifiers.
+
+ <p>The provided regular expression pattern is independently matched against each text block
+ contained in the current element.
+ *
+ * @param {String} searchPattern - the pattern to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search text, or null if there is no
+     match
+ */
+DocumentApp.Equation.prototype.findText = function(searchPattern, from){};
 
 /**
  * Retrieves the element's attributes.
@@ -3175,6 +3493,37 @@ DocumentApp.EquationFunction.prototype.editAsText = function(){};
 DocumentApp.EquationFunction.prototype.findElement = function(elementType){};
 
 /**
+ * Searches the contents of the element for a descendant of the specified type, starting from the
+ specified <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/range-element.html'>RangeElement</a></code>.
+
+ <pre class="prettyprint"><code>
+ // Get the body section of the active document.
+ var body = DocumentApp.getActiveDocument().getBody();
+
+ // Define the search parameters.
+ var searchType = DocumentApp.ElementType.PARAGRAPH;
+ var searchHeading = DocumentApp.ParagraphHeading.HEADING1;
+ var searchResult = null;
+
+ // Search until the paragraph is found.
+ while (searchResult = body.findElement(searchType, searchResult)) {
+   var par = searchResult.getElement().asParagraph();
+   if (par.getHeading() == searchHeading) {
+     // Found one, update and stop.
+     par.setText(&#39;This is the first header.&#39;);
+     return;
+   }
+ }
+ </code></pre>
+ *
+ * @param {DocumentApp.ElementType} elementType - the type of element to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search element
+ */
+DocumentApp.EquationFunction.prototype.findElement = function(elementType, from){};
+
+/**
  * Searches the contents of the element for the specified text pattern using regular expressions.
 
  <p>A subset of the JavaScript regular expression features are not fully supported, such as
@@ -3189,6 +3538,24 @@ DocumentApp.EquationFunction.prototype.findElement = function(elementType){};
      match
  */
 DocumentApp.EquationFunction.prototype.findText = function(searchPattern){};
+
+/**
+ * Searches the contents of the element for the specified text pattern, starting from a given
+ search result.
+
+ <p>A subset of the JavaScript regular expression features are not fully supported, such as
+ capture groups and mode modifiers.
+
+ <p>The provided regular expression pattern is independently matched against each text block
+ contained in the current element.
+ *
+ * @param {String} searchPattern - the pattern to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search text, or null if there is no
+     match
+ */
+DocumentApp.EquationFunction.prototype.findText = function(searchPattern, from){};
 
 /**
  * Retrieves the element's attributes.
@@ -3843,6 +4210,19 @@ DocumentApp.FooterSection.prototype.appendHorizontalRule = function(){};
 DocumentApp.FooterSection.prototype.appendImage = function(image){};
 
 /**
+ * Appends the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/inline-image.html'>InlineImage</a></code>.
+
+ <p>The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/inline-image.html'>InlineImage</a></code> will be contained in a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code>.
+
+ <p>Use this version of <code>appendImage</code> when appending a copy of an existing <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/inline-image.html'>InlineImage</a></code>.
+ *
+ * @param {DocumentApp.InlineImage} image - the image data
+ *
+ * @return {DocumentApp.InlineImage} the appended image
+ */
+DocumentApp.FooterSection.prototype.appendImage = function(image){};
+
+/**
  * Appends the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/list-item.html'>ListItem</a></code>.
 
  <p>Use this version of <code>appendListItem</code> when appending a copy of an existing <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/list-item.html'>ListItem</a></code>.
@@ -3854,6 +4234,17 @@ DocumentApp.FooterSection.prototype.appendImage = function(image){};
 DocumentApp.FooterSection.prototype.appendListItem = function(listItem){};
 
 /**
+ * Creates and appends a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/list-item.html'>ListItem</a></code> containing the specified text contents.
+
+ <p>Consecutive list items are added as part of the same list.
+ *
+ * @param {String} text - the list item's text contents
+ *
+ * @return {DocumentApp.ListItem} the new list item
+ */
+DocumentApp.FooterSection.prototype.appendListItem = function(text){};
+
+/**
  * Appends the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code>.
 
  <p>Use this version of <code>appendParagraph</code> when appending a copy of an existing <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code>.
@@ -3863,6 +4254,15 @@ DocumentApp.FooterSection.prototype.appendListItem = function(listItem){};
  * @return {DocumentApp.Paragraph} the appended paragraph
  */
 DocumentApp.FooterSection.prototype.appendParagraph = function(paragraph){};
+
+/**
+ * Creates and appends a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code> containing the specified text contents.
+ *
+ * @param {String} text - the paragraph's text contents
+ *
+ * @return {DocumentApp.Paragraph} the new paragraph
+ */
+DocumentApp.FooterSection.prototype.appendParagraph = function(text){};
 
 /**
  * Creates and appends a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table.html'>Table</a></code>.
@@ -3886,6 +4286,18 @@ DocumentApp.FooterSection.prototype.appendTable = function(){};
  * @return {DocumentApp.Table} the appended table
  */
 DocumentApp.FooterSection.prototype.appendTable = function(table){};
+
+/**
+ * Appends a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table.html'>Table</a></code> containing a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table-cell.html'>TableCell</a></code> for each specified string value.
+
+ <p>This method will also append an empty paragraph after the table, since Google Docs documents
+ cannot end with a table.
+ *
+ * @param {String[][]} cells - the text contents of the table cells to add to the new table
+ *
+ * @return {DocumentApp.Table} the appended table
+ */
+DocumentApp.FooterSection.prototype.appendTable = function(cells){};
 
 /**
  * Clears the contents of the element.
@@ -3938,6 +4350,37 @@ DocumentApp.FooterSection.prototype.editAsText = function(){};
 DocumentApp.FooterSection.prototype.findElement = function(elementType){};
 
 /**
+ * Searches the contents of the element for a descendant of the specified type, starting from the
+ specified <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/range-element.html'>RangeElement</a></code>.
+
+ <pre class="prettyprint"><code>
+ // Get the body section of the active document.
+ var body = DocumentApp.getActiveDocument().getBody();
+
+ // Define the search parameters.
+ var searchType = DocumentApp.ElementType.PARAGRAPH;
+ var searchHeading = DocumentApp.ParagraphHeading.HEADING1;
+ var searchResult = null;
+
+ // Search until the paragraph is found.
+ while (searchResult = body.findElement(searchType, searchResult)) {
+   var par = searchResult.getElement().asParagraph();
+   if (par.getHeading() == searchHeading) {
+     // Found one, update and stop.
+     par.setText(&#39;This is the first header.&#39;);
+     return;
+   }
+ }
+ </code></pre>
+ *
+ * @param {DocumentApp.ElementType} elementType - the type of element to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search element
+ */
+DocumentApp.FooterSection.prototype.findElement = function(elementType, from){};
+
+/**
  * Searches the contents of the element for the specified text pattern using regular expressions.
 
  <p>A subset of the JavaScript regular expression features are not fully supported, such as
@@ -3952,6 +4395,24 @@ DocumentApp.FooterSection.prototype.findElement = function(elementType){};
      match
  */
 DocumentApp.FooterSection.prototype.findText = function(searchPattern){};
+
+/**
+ * Searches the contents of the element for the specified text pattern, starting from a given
+ search result.
+
+ <p>A subset of the JavaScript regular expression features are not fully supported, such as
+ capture groups and mode modifiers.
+
+ <p>The provided regular expression pattern is independently matched against each text block
+ contained in the current element.
+ *
+ * @param {String} searchPattern - the pattern to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search text, or null if there is no
+     match
+ */
+DocumentApp.FooterSection.prototype.findText = function(searchPattern, from){};
 
 /**
  * Retrieves the element's attributes.
@@ -4158,6 +4619,18 @@ DocumentApp.FooterSection.prototype.insertHorizontalRule = function(childIndex){
 DocumentApp.FooterSection.prototype.insertImage = function(childIndex, image){};
 
 /**
+ * Inserts the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/inline-image.html'>InlineImage</a></code> at the specified index.
+
+ <p>The image will be contained in a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code>.
+ *
+ * @param {number} childIndex - the index at which to insert the element
+ * @param {DocumentApp.InlineImage} image - the image to insert
+ *
+ * @return {DocumentApp.InlineImage} the inserted inline image
+ */
+DocumentApp.FooterSection.prototype.insertImage = function(childIndex, image){};
+
+/**
  * Inserts the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/list-item.html'>ListItem</a></code> at the specified index.
  *
  * @param {number} childIndex - the index at which to insert
@@ -4168,6 +4641,17 @@ DocumentApp.FooterSection.prototype.insertImage = function(childIndex, image){};
 DocumentApp.FooterSection.prototype.insertListItem = function(childIndex, listItem){};
 
 /**
+ * Creates and inserts a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/list-item.html'>ListItem</a></code> at the specified index, containing the specified
+ text contents.
+ *
+ * @param {number} childIndex - the index at which to insert
+ * @param {String} text - the list item's text contents
+ *
+ * @return {DocumentApp.ListItem} the new list item
+ */
+DocumentApp.FooterSection.prototype.insertListItem = function(childIndex, text){};
+
+/**
  * Inserts the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code> at the specified index.
  *
  * @param {number} childIndex - the index at which to insert
@@ -4176,6 +4660,17 @@ DocumentApp.FooterSection.prototype.insertListItem = function(childIndex, listIt
  * @return {DocumentApp.Paragraph} the inserted paragraph
  */
 DocumentApp.FooterSection.prototype.insertParagraph = function(childIndex, paragraph){};
+
+/**
+ * Creates and inserts a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code> at the specified index, containing the specified
+ text contents.
+ *
+ * @param {number} childIndex - the index at which to insert
+ * @param {String} text - the paragraph's text contents
+ *
+ * @return {DocumentApp.Paragraph} the new paragraph
+ */
+DocumentApp.FooterSection.prototype.insertParagraph = function(childIndex, text){};
 
 /**
  * Creates and inserts a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table.html'>Table</a></code> at the specified index.
@@ -4195,6 +4690,16 @@ DocumentApp.FooterSection.prototype.insertTable = function(childIndex){};
  * @return {DocumentApp.Table} the inserted table
  */
 DocumentApp.FooterSection.prototype.insertTable = function(childIndex, table){};
+
+/**
+ * Creates and inserts a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table.html'>Table</a></code> containing the specified cells, at the specified index.
+ *
+ * @param {number} childIndex - the index at which to insert
+ * @param {String[][]} cells - the text contents of the table cells to add to the new table
+ *
+ * @return {DocumentApp.Table} the new table
+ */
+DocumentApp.FooterSection.prototype.insertTable = function(childIndex, cells){};
 
 /**
  * Determines whether the element is at the end of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>.
@@ -4491,6 +4996,15 @@ DocumentApp.FootnoteSection = function(){};
 DocumentApp.FootnoteSection.prototype.appendParagraph = function(paragraph){};
 
 /**
+ * Creates and appends a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code> containing the specified text contents.
+ *
+ * @param {String} text - the paragraph's text contents
+ *
+ * @return {DocumentApp.Paragraph} the new paragraph
+ */
+DocumentApp.FootnoteSection.prototype.appendParagraph = function(text){};
+
+/**
  * Clears the contents of the element.
  *
  * @return {DocumentApp.FootnoteSection} the current element
@@ -4541,6 +5055,37 @@ DocumentApp.FootnoteSection.prototype.editAsText = function(){};
 DocumentApp.FootnoteSection.prototype.findElement = function(elementType){};
 
 /**
+ * Searches the contents of the element for a descendant of the specified type, starting from the
+ specified <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/range-element.html'>RangeElement</a></code>.
+
+ <pre class="prettyprint"><code>
+ // Get the body section of the active document.
+ var body = DocumentApp.getActiveDocument().getBody();
+
+ // Define the search parameters.
+ var searchType = DocumentApp.ElementType.PARAGRAPH;
+ var searchHeading = DocumentApp.ParagraphHeading.HEADING1;
+ var searchResult = null;
+
+ // Search until the paragraph is found.
+ while (searchResult = body.findElement(searchType, searchResult)) {
+   var par = searchResult.getElement().asParagraph();
+   if (par.getHeading() == searchHeading) {
+     // Found one, update and stop.
+     par.setText(&#39;This is the first header.&#39;);
+     return;
+   }
+ }
+ </code></pre>
+ *
+ * @param {DocumentApp.ElementType} elementType - the type of element to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search element
+ */
+DocumentApp.FootnoteSection.prototype.findElement = function(elementType, from){};
+
+/**
  * Searches the contents of the element for the specified text pattern using regular expressions.
 
  <p>A subset of the JavaScript regular expression features are not fully supported, such as
@@ -4555,6 +5100,24 @@ DocumentApp.FootnoteSection.prototype.findElement = function(elementType){};
      match
  */
 DocumentApp.FootnoteSection.prototype.findText = function(searchPattern){};
+
+/**
+ * Searches the contents of the element for the specified text pattern, starting from a given
+ search result.
+
+ <p>A subset of the JavaScript regular expression features are not fully supported, such as
+ capture groups and mode modifiers.
+
+ <p>The provided regular expression pattern is independently matched against each text block
+ contained in the current element.
+ *
+ * @param {String} searchPattern - the pattern to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search text, or null if there is no
+     match
+ */
+DocumentApp.FootnoteSection.prototype.findText = function(searchPattern, from){};
 
 /**
  * Retrieves the element's attributes.
@@ -4728,6 +5291,17 @@ DocumentApp.FootnoteSection.prototype.getType = function(){};
 DocumentApp.FootnoteSection.prototype.insertParagraph = function(childIndex, paragraph){};
 
 /**
+ * Creates and inserts a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code> at the specified index, containing the specified
+ text contents.
+ *
+ * @param {number} childIndex - the index at which to insert
+ * @param {String} text - the paragraph's text contents
+ *
+ * @return {DocumentApp.Paragraph} the new paragraph
+ */
+DocumentApp.FootnoteSection.prototype.insertParagraph = function(childIndex, text){};
+
+/**
  * Determines whether the element is at the end of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>.
  *
  * @return {Boolean} whether the element is at the end of the document
@@ -4878,6 +5452,19 @@ DocumentApp.HeaderSection.prototype.appendHorizontalRule = function(){};
 DocumentApp.HeaderSection.prototype.appendImage = function(image){};
 
 /**
+ * Appends the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/inline-image.html'>InlineImage</a></code>.
+
+ <p>The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/inline-image.html'>InlineImage</a></code> will be contained in a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code>.
+
+ <p>Use this version of <code>appendImage</code> when appending a copy of an existing <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/inline-image.html'>InlineImage</a></code>.
+ *
+ * @param {DocumentApp.InlineImage} image - the image data
+ *
+ * @return {DocumentApp.InlineImage} the appended image
+ */
+DocumentApp.HeaderSection.prototype.appendImage = function(image){};
+
+/**
  * Appends the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/list-item.html'>ListItem</a></code>.
 
  <p>Use this version of <code>appendListItem</code> when appending a copy of an existing <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/list-item.html'>ListItem</a></code>.
@@ -4889,6 +5476,17 @@ DocumentApp.HeaderSection.prototype.appendImage = function(image){};
 DocumentApp.HeaderSection.prototype.appendListItem = function(listItem){};
 
 /**
+ * Creates and appends a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/list-item.html'>ListItem</a></code> containing the specified text contents.
+
+ <p>Consecutive list items are added as part of the same list.
+ *
+ * @param {String} text - the list item's text contents
+ *
+ * @return {DocumentApp.ListItem} the new list item
+ */
+DocumentApp.HeaderSection.prototype.appendListItem = function(text){};
+
+/**
  * Appends the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code>.
 
  <p>Use this version of <code>appendParagraph</code> when appending a copy of an existing <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code>.
@@ -4898,6 +5496,15 @@ DocumentApp.HeaderSection.prototype.appendListItem = function(listItem){};
  * @return {DocumentApp.Paragraph} the appended paragraph
  */
 DocumentApp.HeaderSection.prototype.appendParagraph = function(paragraph){};
+
+/**
+ * Creates and appends a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code> containing the specified text contents.
+ *
+ * @param {String} text - the paragraph's text contents
+ *
+ * @return {DocumentApp.Paragraph} the new paragraph
+ */
+DocumentApp.HeaderSection.prototype.appendParagraph = function(text){};
 
 /**
  * Creates and appends a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table.html'>Table</a></code>.
@@ -4921,6 +5528,18 @@ DocumentApp.HeaderSection.prototype.appendTable = function(){};
  * @return {DocumentApp.Table} the appended table
  */
 DocumentApp.HeaderSection.prototype.appendTable = function(table){};
+
+/**
+ * Appends a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table.html'>Table</a></code> containing a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table-cell.html'>TableCell</a></code> for each specified string value.
+
+ <p>This method will also append an empty paragraph after the table, since Google Docs documents
+ cannot end with a table.
+ *
+ * @param {String[][]} cells - the text contents of the table cells to add to the new table
+ *
+ * @return {DocumentApp.Table} the appended table
+ */
+DocumentApp.HeaderSection.prototype.appendTable = function(cells){};
 
 /**
  * Clears the contents of the element.
@@ -4973,6 +5592,37 @@ DocumentApp.HeaderSection.prototype.editAsText = function(){};
 DocumentApp.HeaderSection.prototype.findElement = function(elementType){};
 
 /**
+ * Searches the contents of the element for a descendant of the specified type, starting from the
+ specified <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/range-element.html'>RangeElement</a></code>.
+
+ <pre class="prettyprint"><code>
+ // Get the body section of the active document.
+ var body = DocumentApp.getActiveDocument().getBody();
+
+ // Define the search parameters.
+ var searchType = DocumentApp.ElementType.PARAGRAPH;
+ var searchHeading = DocumentApp.ParagraphHeading.HEADING1;
+ var searchResult = null;
+
+ // Search until the paragraph is found.
+ while (searchResult = body.findElement(searchType, searchResult)) {
+   var par = searchResult.getElement().asParagraph();
+   if (par.getHeading() == searchHeading) {
+     // Found one, update and stop.
+     par.setText(&#39;This is the first header.&#39;);
+     return;
+   }
+ }
+ </code></pre>
+ *
+ * @param {DocumentApp.ElementType} elementType - the type of element to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search element
+ */
+DocumentApp.HeaderSection.prototype.findElement = function(elementType, from){};
+
+/**
  * Searches the contents of the element for the specified text pattern using regular expressions.
 
  <p>A subset of the JavaScript regular expression features are not fully supported, such as
@@ -4987,6 +5637,24 @@ DocumentApp.HeaderSection.prototype.findElement = function(elementType){};
      match
  */
 DocumentApp.HeaderSection.prototype.findText = function(searchPattern){};
+
+/**
+ * Searches the contents of the element for the specified text pattern, starting from a given
+ search result.
+
+ <p>A subset of the JavaScript regular expression features are not fully supported, such as
+ capture groups and mode modifiers.
+
+ <p>The provided regular expression pattern is independently matched against each text block
+ contained in the current element.
+ *
+ * @param {String} searchPattern - the pattern to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search text, or null if there is no
+     match
+ */
+DocumentApp.HeaderSection.prototype.findText = function(searchPattern, from){};
 
 /**
  * Retrieves the element's attributes.
@@ -5193,6 +5861,18 @@ DocumentApp.HeaderSection.prototype.insertHorizontalRule = function(childIndex){
 DocumentApp.HeaderSection.prototype.insertImage = function(childIndex, image){};
 
 /**
+ * Inserts the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/inline-image.html'>InlineImage</a></code> at the specified index.
+
+ <p>The image will be contained in a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code>.
+ *
+ * @param {number} childIndex - the index at which to insert the element
+ * @param {DocumentApp.InlineImage} image - the image to insert
+ *
+ * @return {DocumentApp.InlineImage} the inserted inline image
+ */
+DocumentApp.HeaderSection.prototype.insertImage = function(childIndex, image){};
+
+/**
  * Inserts the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/list-item.html'>ListItem</a></code> at the specified index.
  *
  * @param {number} childIndex - the index at which to insert
@@ -5203,6 +5883,17 @@ DocumentApp.HeaderSection.prototype.insertImage = function(childIndex, image){};
 DocumentApp.HeaderSection.prototype.insertListItem = function(childIndex, listItem){};
 
 /**
+ * Creates and inserts a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/list-item.html'>ListItem</a></code> at the specified index, containing the specified
+ text contents.
+ *
+ * @param {number} childIndex - the index at which to insert
+ * @param {String} text - the list item's text contents
+ *
+ * @return {DocumentApp.ListItem} the new list item
+ */
+DocumentApp.HeaderSection.prototype.insertListItem = function(childIndex, text){};
+
+/**
  * Inserts the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code> at the specified index.
  *
  * @param {number} childIndex - the index at which to insert
@@ -5211,6 +5902,17 @@ DocumentApp.HeaderSection.prototype.insertListItem = function(childIndex, listIt
  * @return {DocumentApp.Paragraph} the inserted paragraph
  */
 DocumentApp.HeaderSection.prototype.insertParagraph = function(childIndex, paragraph){};
+
+/**
+ * Creates and inserts a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code> at the specified index, containing the specified
+ text contents.
+ *
+ * @param {number} childIndex - the index at which to insert
+ * @param {String} text - the paragraph's text contents
+ *
+ * @return {DocumentApp.Paragraph} the new paragraph
+ */
+DocumentApp.HeaderSection.prototype.insertParagraph = function(childIndex, text){};
 
 /**
  * Creates and inserts a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table.html'>Table</a></code> at the specified index.
@@ -5230,6 +5932,16 @@ DocumentApp.HeaderSection.prototype.insertTable = function(childIndex){};
  * @return {DocumentApp.Table} the inserted table
  */
 DocumentApp.HeaderSection.prototype.insertTable = function(childIndex, table){};
+
+/**
+ * Creates and inserts a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table.html'>Table</a></code> containing the specified cells, at the specified index.
+ *
+ * @param {number} childIndex - the index at which to insert
+ * @param {String[][]} cells - the text contents of the table cells to add to the new table
+ *
+ * @return {DocumentApp.Table} the new table
+ */
+DocumentApp.HeaderSection.prototype.insertTable = function(childIndex, cells){};
 
 /**
  * Determines whether the element is at the end of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>.
@@ -6011,6 +6723,15 @@ DocumentApp.ListItem.prototype.appendHorizontalRule = function(){};
 DocumentApp.ListItem.prototype.appendInlineImage = function(image){};
 
 /**
+ * Appends the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/inline-image.html'>InlineImage</a></code>.
+ *
+ * @param {DocumentApp.InlineImage} image - the image data
+ *
+ * @return {DocumentApp.InlineImage} the appended image
+ */
+DocumentApp.ListItem.prototype.appendInlineImage = function(image){};
+
+/**
  * Creates and appends a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreak</a></code>.
 
  <p>Note: <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreaks</a></code> may not be contained within <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table-cell.html'>TableCells</a></code>.
@@ -6021,11 +6742,32 @@ DocumentApp.ListItem.prototype.appendInlineImage = function(image){};
 DocumentApp.ListItem.prototype.appendPageBreak = function(){};
 
 /**
+ * Appends the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreak</a></code>.
+
+ <p>Note: <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreaks</a></code> may not be contained within <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table-cell.html'>TableCells</a></code>.
+ If the current element is contained in a table cell, an exception will be thrown.
+ *
+ * @param {DocumentApp.PageBreak} pageBreak - the page break to append
+ *
+ * @return {DocumentApp.PageBreak} the appended page break element
+ */
+DocumentApp.ListItem.prototype.appendPageBreak = function(pageBreak){};
+
+/**
  * Appends the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/text.html'>Text</a></code> element.
  *
  * @param {DocumentApp.Text} text - the text element to append
  *
  * @return {DocumentApp.Text} the appended text element
+ */
+DocumentApp.ListItem.prototype.appendText = function(text){};
+
+/**
+ * Creates and appends a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/text.html'>Text</a></code> element with the specified contents.
+ *
+ * @param {String} text - the text contents
+ *
+ * @return {DocumentApp.Text} the new text element
  */
 DocumentApp.ListItem.prototype.appendText = function(text){};
 
@@ -6080,6 +6822,37 @@ DocumentApp.ListItem.prototype.editAsText = function(){};
 DocumentApp.ListItem.prototype.findElement = function(elementType){};
 
 /**
+ * Searches the contents of the element for a descendant of the specified type, starting from the
+ specified <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/range-element.html'>RangeElement</a></code>.
+
+ <pre class="prettyprint"><code>
+ // Get the body section of the active document.
+ var body = DocumentApp.getActiveDocument().getBody();
+
+ // Define the search parameters.
+ var searchType = DocumentApp.ElementType.PARAGRAPH;
+ var searchHeading = DocumentApp.ParagraphHeading.HEADING1;
+ var searchResult = null;
+
+ // Search until the paragraph is found.
+ while (searchResult = body.findElement(searchType, searchResult)) {
+   var par = searchResult.getElement().asParagraph();
+   if (par.getHeading() == searchHeading) {
+     // Found one, update and stop.
+     par.setText(&#39;This is the first header.&#39;);
+     return;
+   }
+ }
+ </code></pre>
+ *
+ * @param {DocumentApp.ElementType} elementType - the type of element to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search element
+ */
+DocumentApp.ListItem.prototype.findElement = function(elementType, from){};
+
+/**
  * Searches the contents of the element for the specified text pattern using regular expressions.
 
  <p>A subset of the JavaScript regular expression features are not fully supported, such as
@@ -6094,6 +6867,24 @@ DocumentApp.ListItem.prototype.findElement = function(elementType){};
      match
  */
 DocumentApp.ListItem.prototype.findText = function(searchPattern){};
+
+/**
+ * Searches the contents of the element for the specified text pattern, starting from a given
+ search result.
+
+ <p>A subset of the JavaScript regular expression features are not fully supported, such as
+ capture groups and mode modifiers.
+
+ <p>The provided regular expression pattern is independently matched against each text block
+ contained in the current element.
+ *
+ * @param {String} searchPattern - the pattern to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search text, or null if there is no
+     match
+ */
+DocumentApp.ListItem.prototype.findText = function(searchPattern, from){};
 
 /**
  * Retrieves the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/horizontal-alignment.html'>HorizontalAlignment</a></code>.
@@ -6359,6 +7150,16 @@ DocumentApp.ListItem.prototype.insertHorizontalRule = function(childIndex){};
 DocumentApp.ListItem.prototype.insertInlineImage = function(childIndex, image){};
 
 /**
+ * Inserts the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/inline-image.html'>InlineImage</a></code> at the specified index.
+ *
+ * @param {number} childIndex - the index at which to insert the element
+ * @param {DocumentApp.InlineImage} image - the image data
+ *
+ * @return {DocumentApp.InlineImage} the inserted inline image element
+ */
+DocumentApp.ListItem.prototype.insertInlineImage = function(childIndex, image){};
+
+/**
  * Creates and inserts a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreak</a></code> at the specified index.
 
  <p>Note: <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreaks</a></code> may not be contained within <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table-cell.html'>TableCells</a></code>.
@@ -6371,6 +7172,19 @@ DocumentApp.ListItem.prototype.insertInlineImage = function(childIndex, image){}
 DocumentApp.ListItem.prototype.insertPageBreak = function(childIndex){};
 
 /**
+ * Inserts the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreak</a></code> at the specified index.
+
+ <p>Note: <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreaks</a></code> may not be contained within <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table-cell.html'>TableCells</a></code>.
+ If the current element is contained in a table cell, an exception will be thrown.
+ *
+ * @param {number} childIndex - the index at which to insert the element
+ * @param {DocumentApp.PageBreak} pageBreak - the p[age break to insert
+ *
+ * @return {DocumentApp.PageBreak} the inserted page break element
+ */
+DocumentApp.ListItem.prototype.insertPageBreak = function(childIndex, pageBreak){};
+
+/**
  * Inserts the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/text.html'>Text</a></code> element at the specified index, with the specified text
  contents.
  *
@@ -6378,6 +7192,16 @@ DocumentApp.ListItem.prototype.insertPageBreak = function(childIndex){};
  * @param {DocumentApp.Text} text - the text element to insert
  *
  * @return {DocumentApp.Text} the inserted text element
+ */
+DocumentApp.ListItem.prototype.insertText = function(childIndex, text){};
+
+/**
+ * Creates and inserts a new text element at the specified index.
+ *
+ * @param {number} childIndex - the index at which to insert the element
+ * @param {String} text - the text contents
+ *
+ * @return {DocumentApp.Text} the new text element
  */
 DocumentApp.ListItem.prototype.insertText = function(childIndex, text){};
 
@@ -6868,6 +7692,15 @@ DocumentApp.Paragraph.prototype.appendHorizontalRule = function(){};
 DocumentApp.Paragraph.prototype.appendInlineImage = function(image){};
 
 /**
+ * Appends the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/inline-image.html'>InlineImage</a></code>.
+ *
+ * @param {DocumentApp.InlineImage} image - the image data
+ *
+ * @return {DocumentApp.InlineImage} the appended image
+ */
+DocumentApp.Paragraph.prototype.appendInlineImage = function(image){};
+
+/**
  * Creates and appends a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreak</a></code>.
 
  <p>Note: <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreaks</a></code> may not be contained within <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table-cell.html'>TableCells</a></code>.
@@ -6878,11 +7711,32 @@ DocumentApp.Paragraph.prototype.appendInlineImage = function(image){};
 DocumentApp.Paragraph.prototype.appendPageBreak = function(){};
 
 /**
+ * Appends the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreak</a></code>.
+
+ <p>Note: <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreaks</a></code> may not be contained within <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table-cell.html'>TableCells</a></code>.
+ If the current element is contained in a table cell, an exception will be thrown.
+ *
+ * @param {DocumentApp.PageBreak} pageBreak - the page break to append
+ *
+ * @return {DocumentApp.PageBreak} the appended page break element
+ */
+DocumentApp.Paragraph.prototype.appendPageBreak = function(pageBreak){};
+
+/**
  * Appends the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/text.html'>Text</a></code> element.
  *
  * @param {DocumentApp.Text} text - the text element to append
  *
  * @return {DocumentApp.Text} the appended text element
+ */
+DocumentApp.Paragraph.prototype.appendText = function(text){};
+
+/**
+ * Creates and appends a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/text.html'>Text</a></code> element with the specified contents.
+ *
+ * @param {String} text - the text contents
+ *
+ * @return {DocumentApp.Text} the new text element
  */
 DocumentApp.Paragraph.prototype.appendText = function(text){};
 
@@ -6937,6 +7791,37 @@ DocumentApp.Paragraph.prototype.editAsText = function(){};
 DocumentApp.Paragraph.prototype.findElement = function(elementType){};
 
 /**
+ * Searches the contents of the element for a descendant of the specified type, starting from the
+ specified <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/range-element.html'>RangeElement</a></code>.
+
+ <pre class="prettyprint"><code>
+ // Get the body section of the active document.
+ var body = DocumentApp.getActiveDocument().getBody();
+
+ // Define the search parameters.
+ var searchType = DocumentApp.ElementType.PARAGRAPH;
+ var searchHeading = DocumentApp.ParagraphHeading.HEADING1;
+ var searchResult = null;
+
+ // Search until the paragraph is found.
+ while (searchResult = body.findElement(searchType, searchResult)) {
+   var par = searchResult.getElement().asParagraph();
+   if (par.getHeading() == searchHeading) {
+     // Found one, update and stop.
+     par.setText(&#39;This is the first header.&#39;);
+     return;
+   }
+ }
+ </code></pre>
+ *
+ * @param {DocumentApp.ElementType} elementType - the type of element to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search element
+ */
+DocumentApp.Paragraph.prototype.findElement = function(elementType, from){};
+
+/**
  * Searches the contents of the element for the specified text pattern using regular expressions.
 
  <p>A subset of the JavaScript regular expression features are not fully supported, such as
@@ -6951,6 +7836,24 @@ DocumentApp.Paragraph.prototype.findElement = function(elementType){};
      match
  */
 DocumentApp.Paragraph.prototype.findText = function(searchPattern){};
+
+/**
+ * Searches the contents of the element for the specified text pattern, starting from a given
+ search result.
+
+ <p>A subset of the JavaScript regular expression features are not fully supported, such as
+ capture groups and mode modifiers.
+
+ <p>The provided regular expression pattern is independently matched against each text block
+ contained in the current element.
+ *
+ * @param {String} searchPattern - the pattern to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search text, or null if there is no
+     match
+ */
+DocumentApp.Paragraph.prototype.findText = function(searchPattern, from){};
 
 /**
  * Retrieves the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/horizontal-alignment.html'>HorizontalAlignment</a></code>.
@@ -7192,6 +8095,16 @@ DocumentApp.Paragraph.prototype.insertHorizontalRule = function(childIndex){};
 DocumentApp.Paragraph.prototype.insertInlineImage = function(childIndex, image){};
 
 /**
+ * Inserts the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/inline-image.html'>InlineImage</a></code> at the specified index.
+ *
+ * @param {number} childIndex - the index at which to insert the element
+ * @param {DocumentApp.InlineImage} image - the image data
+ *
+ * @return {DocumentApp.InlineImage} the inserted inline image element
+ */
+DocumentApp.Paragraph.prototype.insertInlineImage = function(childIndex, image){};
+
+/**
  * Creates and inserts a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreak</a></code> at the specified index.
 
  <p>Note: <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreaks</a></code> may not be contained within <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table-cell.html'>TableCells</a></code>.
@@ -7204,6 +8117,19 @@ DocumentApp.Paragraph.prototype.insertInlineImage = function(childIndex, image){
 DocumentApp.Paragraph.prototype.insertPageBreak = function(childIndex){};
 
 /**
+ * Inserts the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreak</a></code> at the specified index.
+
+ <p>Note: <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreaks</a></code> may not be contained within <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table-cell.html'>TableCells</a></code>.
+ If the current element is contained in a table cell, an exception will be thrown.
+ *
+ * @param {number} childIndex - the index at which to insert the element
+ * @param {DocumentApp.PageBreak} pageBreak - the p[age break to insert
+ *
+ * @return {DocumentApp.PageBreak} the inserted page break element
+ */
+DocumentApp.Paragraph.prototype.insertPageBreak = function(childIndex, pageBreak){};
+
+/**
  * Inserts the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/text.html'>Text</a></code> element at the specified index, with the specified text
  contents.
  *
@@ -7211,6 +8137,16 @@ DocumentApp.Paragraph.prototype.insertPageBreak = function(childIndex){};
  * @param {DocumentApp.Text} text - the text element to insert
  *
  * @return {DocumentApp.Text} the inserted text element
+ */
+DocumentApp.Paragraph.prototype.insertText = function(childIndex, text){};
+
+/**
+ * Creates and inserts a new text element at the specified index.
+ *
+ * @param {number} childIndex - the index at which to insert the element
+ * @param {String} text - the text contents
+ *
+ * @return {DocumentApp.Text} the new text element
  */
 DocumentApp.Paragraph.prototype.insertText = function(childIndex, text){};
 
@@ -7686,6 +8622,19 @@ DocumentApp.RangeBuilder = function(){};
 DocumentApp.RangeBuilder.prototype.addElement = function(element){};
 
 /**
+ * Adds a partial <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/text.html'>Text</a></code> element to this <code>RangeBuilder</code>.
+ *
+ * @param {DocumentApp.Text} textElement - the text element to be partially added
+ * @param {number} startOffset - the number of characters before the first character to be included (that is,
+     the index of the first character in the range)
+ * @param {number} endOffsetInclusive - the number of characters before the last character to be included
+     (that is, the index of the last character in the range)
+ *
+ * @return {DocumentApp.RangeBuilder} this builder, for chaining
+ */
+DocumentApp.RangeBuilder.prototype.addElement = function(textElement, startOffset, endOffsetInclusive){};
+
+/**
  * Adds two entire elements, and all elements between them, to this <code>RangeBuilder</code>.
  *
  * @param {DocumentApp.Element} startElement - the first element to be added
@@ -7694,6 +8643,19 @@ DocumentApp.RangeBuilder.prototype.addElement = function(element){};
  * @return {DocumentApp.RangeBuilder} this builder, for chaining
  */
 DocumentApp.RangeBuilder.prototype.addElementsBetween = function(startElement, endElementInclusive){};
+
+/**
+ * Adds two partial <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/text.html'>Text</a></code> elements, and all elements between them, to the <code>RangeBuilder</code>.
+ *
+ * @param {DocumentApp.Text} startTextElement - the first text element to be partially added
+ * @param {number} startOffset - the number of characters before the first character of <code>startTextElement</code> to be included (that is, the index of the first character in the range)
+ * @param {DocumentApp.Text} endTextElementInclusive - the last text element to be partially added
+ * @param {number} endOffsetInclusive - the number of characters before the last character of <code>endTextElementInclusive</code> to be included (that is, the index of the last character in the
+     range)
+ *
+ * @return {DocumentApp.RangeBuilder} this builder, for chaining
+ */
+DocumentApp.RangeBuilder.prototype.addElementsBetween = function(startTextElement, startOffset, endTextElementInclusive, endOffsetInclusive){};
 
 /**
  * Adds the contents of another <code>Range</code> to this <code>RangeBuilder</code>.
@@ -7793,6 +8755,15 @@ DocumentApp.Table = function(){};
 DocumentApp.Table.prototype.appendTableRow = function(){};
 
 /**
+ * Appends the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table-row.html'>TableRow</a></code>.
+ *
+ * @param {DocumentApp.TableRow} tableRow - the table row to append
+ *
+ * @return {DocumentApp.TableRow} the appended table row element
+ */
+DocumentApp.Table.prototype.appendTableRow = function(tableRow){};
+
+/**
  * Clears the contents of the element.
  *
  * @return {DocumentApp.Table} the current element
@@ -7843,6 +8814,37 @@ DocumentApp.Table.prototype.editAsText = function(){};
 DocumentApp.Table.prototype.findElement = function(elementType){};
 
 /**
+ * Searches the contents of the element for a descendant of the specified type, starting from the
+ specified <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/range-element.html'>RangeElement</a></code>.
+
+ <pre class="prettyprint"><code>
+ // Get the body section of the active document.
+ var body = DocumentApp.getActiveDocument().getBody();
+
+ // Define the search parameters.
+ var searchType = DocumentApp.ElementType.PARAGRAPH;
+ var searchHeading = DocumentApp.ParagraphHeading.HEADING1;
+ var searchResult = null;
+
+ // Search until the paragraph is found.
+ while (searchResult = body.findElement(searchType, searchResult)) {
+   var par = searchResult.getElement().asParagraph();
+   if (par.getHeading() == searchHeading) {
+     // Found one, update and stop.
+     par.setText(&#39;This is the first header.&#39;);
+     return;
+   }
+ }
+ </code></pre>
+ *
+ * @param {DocumentApp.ElementType} elementType - the type of element to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search element
+ */
+DocumentApp.Table.prototype.findElement = function(elementType, from){};
+
+/**
  * Searches the contents of the element for the specified text pattern using regular expressions.
 
  <p>A subset of the JavaScript regular expression features are not fully supported, such as
@@ -7857,6 +8859,24 @@ DocumentApp.Table.prototype.findElement = function(elementType){};
      match
  */
 DocumentApp.Table.prototype.findText = function(searchPattern){};
+
+/**
+ * Searches the contents of the element for the specified text pattern, starting from a given
+ search result.
+
+ <p>A subset of the JavaScript regular expression features are not fully supported, such as
+ capture groups and mode modifiers.
+
+ <p>The provided regular expression pattern is independently matched against each text block
+ contained in the current element.
+ *
+ * @param {String} searchPattern - the pattern to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search text, or null if there is no
+     match
+ */
+DocumentApp.Table.prototype.findText = function(searchPattern, from){};
 
 /**
  * Retrieves the element's attributes.
@@ -8064,6 +9084,16 @@ DocumentApp.Table.prototype.getType = function(){};
 DocumentApp.Table.prototype.insertTableRow = function(childIndex){};
 
 /**
+ * Inserts the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table-row.html'>TableRow</a></code> at the specified index.
+ *
+ * @param {number} childIndex - the index at which to insert the element
+ * @param {DocumentApp.TableRow} tableRow - the table row to insert
+ *
+ * @return {DocumentApp.TableRow} the inserted table row element
+ */
+DocumentApp.Table.prototype.insertTableRow = function(childIndex, tableRow){};
+
+/**
  * Determines whether the element is at the end of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>.
  *
  * @return {Boolean} whether the element is at the end of the document
@@ -8240,6 +9270,17 @@ DocumentApp.TableCell.prototype.appendHorizontalRule = function(){};
 DocumentApp.TableCell.prototype.appendImage = function(image){};
 
 /**
+ * Appends the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/inline-image.html'>InlineImage</a></code>.
+
+ <p>The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/inline-image.html'>InlineImage</a></code> will be contained in a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code>.
+ *
+ * @param {DocumentApp.InlineImage} image - the image data
+ *
+ * @return {DocumentApp.InlineImage} the appended image
+ */
+DocumentApp.TableCell.prototype.appendImage = function(image){};
+
+/**
  * Appends the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/list-item.html'>ListItem</a></code>.
  *
  * @param {DocumentApp.ListItem} listItem - the list item to append
@@ -8249,6 +9290,15 @@ DocumentApp.TableCell.prototype.appendImage = function(image){};
 DocumentApp.TableCell.prototype.appendListItem = function(listItem){};
 
 /**
+ * Creates and appends a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/list-item.html'>ListItem</a></code>.
+ *
+ * @param {String} text - the text contents
+ *
+ * @return {DocumentApp.ListItem} the new list item
+ */
+DocumentApp.TableCell.prototype.appendListItem = function(text){};
+
+/**
  * Appends the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code>.
  *
  * @param {DocumentApp.Paragraph} paragraph - the paragraph to append
@@ -8256,6 +9306,15 @@ DocumentApp.TableCell.prototype.appendListItem = function(listItem){};
  * @return {DocumentApp.Paragraph} the appended paragraph
  */
 DocumentApp.TableCell.prototype.appendParagraph = function(paragraph){};
+
+/**
+ * Creates and appends a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code>.
+ *
+ * @param {String} text - the text contents
+ *
+ * @return {DocumentApp.Paragraph} the new paragraph
+ */
+DocumentApp.TableCell.prototype.appendParagraph = function(text){};
 
 /**
  * Creates and appends a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table.html'>Table</a></code>.
@@ -8272,6 +9331,15 @@ DocumentApp.TableCell.prototype.appendTable = function(){};
  * @return {DocumentApp.Table} the appended table
  */
 DocumentApp.TableCell.prototype.appendTable = function(table){};
+
+/**
+ * Appends a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table.html'>Table</a></code> containing the specified cells.
+ *
+ * @param {String[][]} cells - the text contents of the table cells to add to the new table
+ *
+ * @return {DocumentApp.Table} the appended table
+ */
+DocumentApp.TableCell.prototype.appendTable = function(cells){};
 
 /**
  * Clears the contents of the element.
@@ -8324,6 +9392,37 @@ DocumentApp.TableCell.prototype.editAsText = function(){};
 DocumentApp.TableCell.prototype.findElement = function(elementType){};
 
 /**
+ * Searches the contents of the element for a descendant of the specified type, starting from the
+ specified <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/range-element.html'>RangeElement</a></code>.
+
+ <pre class="prettyprint"><code>
+ // Get the body section of the active document.
+ var body = DocumentApp.getActiveDocument().getBody();
+
+ // Define the search parameters.
+ var searchType = DocumentApp.ElementType.PARAGRAPH;
+ var searchHeading = DocumentApp.ParagraphHeading.HEADING1;
+ var searchResult = null;
+
+ // Search until the paragraph is found.
+ while (searchResult = body.findElement(searchType, searchResult)) {
+   var par = searchResult.getElement().asParagraph();
+   if (par.getHeading() == searchHeading) {
+     // Found one, update and stop.
+     par.setText(&#39;This is the first header.&#39;);
+     return;
+   }
+ }
+ </code></pre>
+ *
+ * @param {DocumentApp.ElementType} elementType - the type of element to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search element
+ */
+DocumentApp.TableCell.prototype.findElement = function(elementType, from){};
+
+/**
  * Searches the contents of the element for the specified text pattern using regular expressions.
 
  <p>A subset of the JavaScript regular expression features are not fully supported, such as
@@ -8338,6 +9437,24 @@ DocumentApp.TableCell.prototype.findElement = function(elementType){};
      match
  */
 DocumentApp.TableCell.prototype.findText = function(searchPattern){};
+
+/**
+ * Searches the contents of the element for the specified text pattern, starting from a given
+ search result.
+
+ <p>A subset of the JavaScript regular expression features are not fully supported, such as
+ capture groups and mode modifiers.
+
+ <p>The provided regular expression pattern is independently matched against each text block
+ contained in the current element.
+ *
+ * @param {String} searchPattern - the pattern to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search text, or null if there is no
+     match
+ */
+DocumentApp.TableCell.prototype.findText = function(searchPattern, from){};
 
 /**
  * Retrieves the element's attributes.
@@ -8590,6 +9707,18 @@ DocumentApp.TableCell.prototype.insertHorizontalRule = function(childIndex){};
 DocumentApp.TableCell.prototype.insertImage = function(childIndex, image){};
 
 /**
+ * Inserts the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/inline-image.html'>InlineImage</a></code> at the specified index.
+
+ <p>The image will be contained in a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code>.
+ *
+ * @param {number} childIndex - the index at which to insert the element
+ * @param {DocumentApp.InlineImage} image - the image to insert
+ *
+ * @return {DocumentApp.InlineImage} the inserted inline image
+ */
+DocumentApp.TableCell.prototype.insertImage = function(childIndex, image){};
+
+/**
  * Inserts the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/list-item.html'>ListItem</a></code> at the specified index.
  *
  * @param {number} childIndex - the index at which to insert the element
@@ -8600,6 +9729,16 @@ DocumentApp.TableCell.prototype.insertImage = function(childIndex, image){};
 DocumentApp.TableCell.prototype.insertListItem = function(childIndex, listItem){};
 
 /**
+ * Creates and inserts a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/list-item.html'>ListItem</a></code> at the specified index.
+ *
+ * @param {number} childIndex - the index at which to insert the element
+ * @param {String} text - the text contents
+ *
+ * @return {DocumentApp.ListItem} the new list item
+ */
+DocumentApp.TableCell.prototype.insertListItem = function(childIndex, text){};
+
+/**
  * Inserts the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code> at the specified index.
  *
  * @param {number} childIndex - the index at which to insert the element
@@ -8608,6 +9747,16 @@ DocumentApp.TableCell.prototype.insertListItem = function(childIndex, listItem){
  * @return {DocumentApp.Paragraph} the inserted paragraph
  */
 DocumentApp.TableCell.prototype.insertParagraph = function(childIndex, paragraph){};
+
+/**
+ * Creates and inserts a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code> at the specified index.
+ *
+ * @param {number} childIndex - the index at which to insert the element
+ * @param {String} text - the text contents
+ *
+ * @return {DocumentApp.Paragraph} the new paragraph
+ */
+DocumentApp.TableCell.prototype.insertParagraph = function(childIndex, text){};
 
 /**
  * Creates and inserts a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table.html'>Table</a></code> at the specified index.
@@ -8627,6 +9776,16 @@ DocumentApp.TableCell.prototype.insertTable = function(childIndex){};
  * @return {DocumentApp.Table} the inserted table
  */
 DocumentApp.TableCell.prototype.insertTable = function(childIndex, table){};
+
+/**
+ * Creates and inserts a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table.html'>Table</a></code> containing the specified cells, at the specified index.
+ *
+ * @param {number} childIndex - the index at which to insert
+ * @param {String[][]} cells - the text contents of the table cells to add to the new table
+ *
+ * @return {DocumentApp.Table} the new table
+ */
+DocumentApp.TableCell.prototype.insertTable = function(childIndex, cells){};
 
 /**
  * Determines whether the element is at the end of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>.
@@ -8895,6 +10054,37 @@ DocumentApp.TableOfContents.prototype.editAsText = function(){};
 DocumentApp.TableOfContents.prototype.findElement = function(elementType){};
 
 /**
+ * Searches the contents of the element for a descendant of the specified type, starting from the
+ specified <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/range-element.html'>RangeElement</a></code>.
+
+ <pre class="prettyprint"><code>
+ // Get the body section of the active document.
+ var body = DocumentApp.getActiveDocument().getBody();
+
+ // Define the search parameters.
+ var searchType = DocumentApp.ElementType.PARAGRAPH;
+ var searchHeading = DocumentApp.ParagraphHeading.HEADING1;
+ var searchResult = null;
+
+ // Search until the paragraph is found.
+ while (searchResult = body.findElement(searchType, searchResult)) {
+   var par = searchResult.getElement().asParagraph();
+   if (par.getHeading() == searchHeading) {
+     // Found one, update and stop.
+     par.setText(&#39;This is the first header.&#39;);
+     return;
+   }
+ }
+ </code></pre>
+ *
+ * @param {DocumentApp.ElementType} elementType - the type of element to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search element
+ */
+DocumentApp.TableOfContents.prototype.findElement = function(elementType, from){};
+
+/**
  * Searches the contents of the element for the specified text pattern using regular expressions.
 
  <p>A subset of the JavaScript regular expression features are not fully supported, such as
@@ -8909,6 +10099,24 @@ DocumentApp.TableOfContents.prototype.findElement = function(elementType){};
      match
  */
 DocumentApp.TableOfContents.prototype.findText = function(searchPattern){};
+
+/**
+ * Searches the contents of the element for the specified text pattern, starting from a given
+ search result.
+
+ <p>A subset of the JavaScript regular expression features are not fully supported, such as
+ capture groups and mode modifiers.
+
+ <p>The provided regular expression pattern is independently matched against each text block
+ contained in the current element.
+ *
+ * @param {String} searchPattern - the pattern to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search text, or null if there is no
+     match
+ */
+DocumentApp.TableOfContents.prototype.findText = function(searchPattern, from){};
 
 /**
  * Retrieves the element's attributes.
@@ -9184,6 +10392,15 @@ DocumentApp.TableRow.prototype.appendTableCell = function(){};
 DocumentApp.TableRow.prototype.appendTableCell = function(tableCell){};
 
 /**
+ * Appends the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table-cell.html'>TableCell</a></code> containing the specified text.
+ *
+ * @param {String} textContents - the cell's text contents
+ *
+ * @return {DocumentApp.TableCell} the appended table cell element
+ */
+DocumentApp.TableRow.prototype.appendTableCell = function(textContents){};
+
+/**
  * Clears the contents of the element.
  *
  * @return {DocumentApp.TableRow} the current element
@@ -9234,6 +10451,37 @@ DocumentApp.TableRow.prototype.editAsText = function(){};
 DocumentApp.TableRow.prototype.findElement = function(elementType){};
 
 /**
+ * Searches the contents of the element for a descendant of the specified type, starting from the
+ specified <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/range-element.html'>RangeElement</a></code>.
+
+ <pre class="prettyprint"><code>
+ // Get the body section of the active document.
+ var body = DocumentApp.getActiveDocument().getBody();
+
+ // Define the search parameters.
+ var searchType = DocumentApp.ElementType.PARAGRAPH;
+ var searchHeading = DocumentApp.ParagraphHeading.HEADING1;
+ var searchResult = null;
+
+ // Search until the paragraph is found.
+ while (searchResult = body.findElement(searchType, searchResult)) {
+   var par = searchResult.getElement().asParagraph();
+   if (par.getHeading() == searchHeading) {
+     // Found one, update and stop.
+     par.setText(&#39;This is the first header.&#39;);
+     return;
+   }
+ }
+ </code></pre>
+ *
+ * @param {DocumentApp.ElementType} elementType - the type of element to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search element
+ */
+DocumentApp.TableRow.prototype.findElement = function(elementType, from){};
+
+/**
  * Searches the contents of the element for the specified text pattern using regular expressions.
 
  <p>A subset of the JavaScript regular expression features are not fully supported, such as
@@ -9248,6 +10496,24 @@ DocumentApp.TableRow.prototype.findElement = function(elementType){};
      match
  */
 DocumentApp.TableRow.prototype.findText = function(searchPattern){};
+
+/**
+ * Searches the contents of the element for the specified text pattern, starting from a given
+ search result.
+
+ <p>A subset of the JavaScript regular expression features are not fully supported, such as
+ capture groups and mode modifiers.
+
+ <p>The provided regular expression pattern is independently matched against each text block
+ contained in the current element.
+ *
+ * @param {String} searchPattern - the pattern to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search text, or null if there is no
+     match
+ */
+DocumentApp.TableRow.prototype.findText = function(searchPattern, from){};
 
 /**
  * Retrieves the element's attributes.
@@ -9444,6 +10710,16 @@ DocumentApp.TableRow.prototype.insertTableCell = function(childIndex){};
  * @return {DocumentApp.TableCell} the inserted table cell
  */
 DocumentApp.TableRow.prototype.insertTableCell = function(childIndex, tableCell){};
+
+/**
+ * Inserts the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table-cell.html'>TableCell</a></code> at the specified index, containing the given text.
+ *
+ * @param {number} childIndex - the index at which to insert the element
+ * @param {String} textContents - the cell's text contents
+ *
+ * @return {DocumentApp.TableCell} the inserted table cell
+ */
+DocumentApp.TableRow.prototype.insertTableCell = function(childIndex, textContents){};
 
 /**
  * Determines whether the element is at the end of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>.
@@ -9675,6 +10951,24 @@ DocumentApp.Text.prototype.editAsText = function(){};
 DocumentApp.Text.prototype.findText = function(searchPattern){};
 
 /**
+ * Searches the contents of the element for the specified text pattern, starting from a given
+ search result.
+
+ <p>A subset of the JavaScript regular expression features are not fully supported, such as
+ capture groups and mode modifiers.
+
+ <p>The provided regular expression pattern is independently matched against each text block
+ contained in the current element.
+ *
+ * @param {String} searchPattern - the pattern to search for
+ * @param {DocumentApp.RangeElement} from - the search result to search from
+ *
+ * @return {DocumentApp.RangeElement} a search result indicating the next position of the search text, or null if there is no
+     match
+ */
+DocumentApp.Text.prototype.findText = function(searchPattern, from){};
+
+/**
  * Retrieves the element's attributes.
 
  <p>The result is an object containing a property for each valid element attribute where each
@@ -9702,12 +10996,33 @@ DocumentApp.Text.prototype.findText = function(searchPattern){};
 DocumentApp.Text.prototype.getAttributes = function(){};
 
 /**
+ * Retrieves the attributes at the specified character offset.
+
+ <p>The result is an object containing a property for each valid text attribute where each
+ property name corresponds to an item in the <code>DocumentApp.Attribute</code> enumeration.
+ *
+ * @param {number} offset - the character offset
+ *
+ * @return {Object} the element's attributes
+ */
+DocumentApp.Text.prototype.getAttributes = function(offset){};
+
+/**
  * Retrieves the background color setting.
  *
  * @return {String} the background color, formatted in CSS notation (like <code>'#ffffff'</code>), or null
      if the element contains multiple values for this attribute
  */
 DocumentApp.Text.prototype.getBackgroundColor = function(){};
+
+/**
+ * Retrieves the background color at the specified character offset.
+ *
+ * @param {number} offset - the character offset
+ *
+ * @return {String} the background color, formatted in CSS notation (like <code>'#ffffff'</code>)
+ */
+DocumentApp.Text.prototype.getBackgroundColor = function(offset){};
 
 /**
  * Retrieves the font family setting. The name can be any font from the Font menu in Docs or <a
@@ -9720,11 +11035,33 @@ DocumentApp.Text.prototype.getBackgroundColor = function(){};
 DocumentApp.Text.prototype.getFontFamily = function(){};
 
 /**
+ * Retrieves the font family at the specified character offset. The name can be any font from the
+ Font menu in Docs or <a href="https://www.google.com/fonts">Google Fonts</a>, and is
+ case-sensitive. The methods <code>getFontFamily()</code> and <code>setFontFamily(fontFamilyName)</code>
+ now use string names for fonts instead of the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/document/font-family.html'>FontFamily</a></s></code> enum. Although this enum is
+ deprecated, it will remain available for compatibility with older scripts.
+ *
+ * @param {number} offset - the character offset
+ *
+ * @return {String} the font family
+ */
+DocumentApp.Text.prototype.getFontFamily = function(offset){};
+
+/**
  * Retrieves the font size setting.
  *
  * @return {number} the font size, or null if the element contains multiple values for this attribute
  */
 DocumentApp.Text.prototype.getFontSize = function(){};
+
+/**
+ * Retrieves the font size at the specified character offset.
+ *
+ * @param {number} offset - the character offset
+ *
+ * @return {number} the font size
+ */
+DocumentApp.Text.prototype.getFontSize = function(offset){};
 
 /**
  * Retrieves the foreground color setting.
@@ -9735,11 +11072,29 @@ DocumentApp.Text.prototype.getFontSize = function(){};
 DocumentApp.Text.prototype.getForegroundColor = function(){};
 
 /**
+ * Retrieves the foreground color at the specified character offset.
+ *
+ * @param {number} offset - the character offset
+ *
+ * @return {String} the foreground color, formatted in CSS notation (like <code>'#ffffff'</code>)
+ */
+DocumentApp.Text.prototype.getForegroundColor = function(offset){};
+
+/**
  * Retrieves the link url.
  *
  * @return {String} the link url, or null if the element contains multiple values for this attribute
  */
 DocumentApp.Text.prototype.getLinkUrl = function(){};
+
+/**
+ * Retrieves the link url at the specified character offset.
+ *
+ * @param {number} offset - the character offset
+ *
+ * @return {String} the link url
+ */
+DocumentApp.Text.prototype.getLinkUrl = function(offset){};
 
 /**
  * Retrieves the element's next sibling element.
@@ -9782,6 +11137,15 @@ DocumentApp.Text.prototype.getText = function(){};
      alignments or if the text alignment has never been set
  */
 DocumentApp.Text.prototype.getTextAlignment = function(){};
+
+/**
+ * Gets the text alignment for a single character. The available types of alignment are <code>DocumentApp.TextAlignment.NORMAL</code>, <code>DocumentApp.TextAlignment.SUBSCRIPT</code>, and <code>DocumentApp.TextAlignment.SUPERSCRIPT</code>.
+ *
+ * @param {number} offset - the offset of the character
+ *
+ * @return {DocumentApp.TextAlignment} the type of text alignment, or <code>null</code> if the text alignment has never been set
+ */
+DocumentApp.Text.prototype.getTextAlignment = function(offset){};
 
 /**
  * Retrieves the set of text indices that correspond to the start of distinct text formatting
@@ -9841,12 +11205,30 @@ DocumentApp.Text.prototype.isAtDocumentEnd = function(){};
 DocumentApp.Text.prototype.isBold = function(){};
 
 /**
+ * Retrieves the bold setting at the specified character offset.
+ *
+ * @param {number} offset - the character offset
+ *
+ * @return {Boolean} the bold setting
+ */
+DocumentApp.Text.prototype.isBold = function(offset){};
+
+/**
  * Retrieves the italic setting.
  *
  * @return {Boolean} whether the text is italic, or null if the element contains multiple values for this
      attribute
  */
 DocumentApp.Text.prototype.isItalic = function(){};
+
+/**
+ * Retrieves the italic setting at the specified character offset.
+ *
+ * @param {number} offset - the character offset
+ *
+ * @return {Boolean} the italic setting
+ */
+DocumentApp.Text.prototype.isItalic = function(offset){};
 
 /**
  * Retrieves the strikethrough setting.
@@ -9857,12 +11239,30 @@ DocumentApp.Text.prototype.isItalic = function(){};
 DocumentApp.Text.prototype.isStrikethrough = function(){};
 
 /**
+ * Retrieves the strikethrough setting at the specified character offset.
+ *
+ * @param {number} offset - the character offset
+ *
+ * @return {Boolean} the strikethrough setting
+ */
+DocumentApp.Text.prototype.isStrikethrough = function(offset){};
+
+/**
  * Retrieves the underline setting.
  *
  * @return {Boolean} whether the text is underlined, or null if the element contains multiple values for
      this attribute
  */
 DocumentApp.Text.prototype.isUnderline = function(){};
+
+/**
+ * Retrieves the underline setting at the specified character offset.
+ *
+ * @param {number} offset - the character offset
+ *
+ * @return {Boolean} the underline setting
+ */
+DocumentApp.Text.prototype.isUnderline = function(offset){};
 
 /**
  * Merges the element with the preceding sibling of the same type.
@@ -9948,6 +11348,37 @@ DocumentApp.Text.prototype.replaceText = function(searchPattern, replacement){};
 DocumentApp.Text.prototype.setAttributes = function(startOffset, endOffsetInclusive, attributes){};
 
 /**
+ * Sets the element's attributes.
+
+ <p>The specified attributes parameter must be an object where each property name is an item in
+ the <code>DocumentApp.Attribute</code> enumeration and each property value is the new value to be
+ applied.
+
+ <pre class="prettyprint"><code>
+ var body = DocumentApp.getActiveDocument().getBody();
+
+ // Define a custom paragraph style.
+ var style = {};
+ style[DocumentApp.Attribute.HORIZONTAL_ALIGNMENT] =
+     DocumentApp.HorizontalAlignment.RIGHT;
+ style[DocumentApp.Attribute.FONT_FAMILY] = &#39;Calibri&#39;;
+ style[DocumentApp.Attribute.FONT_SIZE] = 18;
+ style[DocumentApp.Attribute.BOLD] = true;
+
+ // Append a plain paragraph.
+ var par = body.appendParagraph(&#39;A paragraph with custom style.&#39;);
+
+ // Apply the custom style.
+ par.setAttributes(style);
+ </code></pre>
+ *
+ * @param {Object} attributes - the element's attributes
+ *
+ * @return {DocumentApp.Text} the current element
+ */
+DocumentApp.Text.prototype.setAttributes = function(attributes){};
+
+/**
  * Sets the background color for the specified character range.
  *
  * @param {number} startOffset - the text range's start offset
@@ -9959,6 +11390,15 @@ DocumentApp.Text.prototype.setAttributes = function(startOffset, endOffsetInclus
 DocumentApp.Text.prototype.setBackgroundColor = function(startOffset, endOffsetInclusive, color){};
 
 /**
+ * Sets the background color.
+ *
+ * @param {String} color - the background color, formatted in CSS notation (like <code>'#ffffff'</code>)
+ *
+ * @return {DocumentApp.Text} the current element
+ */
+DocumentApp.Text.prototype.setBackgroundColor = function(color){};
+
+/**
  * Sets the bold setting.
  *
  * @param {Boolean} bold - the bold setting
@@ -9966,6 +11406,17 @@ DocumentApp.Text.prototype.setBackgroundColor = function(startOffset, endOffsetI
  * @return {DocumentApp.Text} the current element
  */
 DocumentApp.Text.prototype.setBold = function(bold){};
+
+/**
+ * Sets the bold setting for the specified character range.
+ *
+ * @param {number} startOffset - the text range's start offset
+ * @param {number} endOffsetInclusive - the text range's end offset
+ * @param {Boolean} bold - the bold setting
+ *
+ * @return {DocumentApp.Text} the current element
+ */
+DocumentApp.Text.prototype.setBold = function(startOffset, endOffsetInclusive, bold){};
 
 /**
  * Sets the font family for the specified character range. The name can be any font from the Font
@@ -9983,6 +11434,18 @@ DocumentApp.Text.prototype.setBold = function(bold){};
 DocumentApp.Text.prototype.setFontFamily = function(startOffset, endOffsetInclusive, fontFamilyName){};
 
 /**
+ * Sets the font family. The name can be any font from the Font menu in Docs or <a
+ href="https://www.google.com/fonts">Google Fonts</a>, and is case-sensitive. Unrecognized font
+ names will render as Arial. The methods <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/text.html#getFontFamily()'>getFontFamily()</a></code> and <code>setFontFamily(fontFamilyName)</code> now use string names for fonts instead of the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/document/font-family.html'>FontFamily</a></s></code> enum. Although this enum is
+ deprecated, it will remain available for compatibility with older scripts.
+ *
+ * @param {String} fontFamilyName - the name of the font family, from the Font menu in Docs or Google Fonts
+ *
+ * @return {DocumentApp.Text} the current element
+ */
+DocumentApp.Text.prototype.setFontFamily = function(fontFamilyName){};
+
+/**
  * Sets the font size.
  *
  * @param {number} size - the font size
@@ -9990,6 +11453,17 @@ DocumentApp.Text.prototype.setFontFamily = function(startOffset, endOffsetInclus
  * @return {DocumentApp.Text} the current element
  */
 DocumentApp.Text.prototype.setFontSize = function(size){};
+
+/**
+ * Sets the font size for the specified character range.
+ *
+ * @param {number} startOffset - the text range's start offset
+ * @param {number} endOffsetInclusive - the text range's end offset
+ * @param {number} size - the font size
+ *
+ * @return {DocumentApp.Text} the current element
+ */
+DocumentApp.Text.prototype.setFontSize = function(startOffset, endOffsetInclusive, size){};
 
 /**
  * Sets the foreground color for the specified character range.
@@ -10003,6 +11477,15 @@ DocumentApp.Text.prototype.setFontSize = function(size){};
 DocumentApp.Text.prototype.setForegroundColor = function(startOffset, endOffsetInclusive, color){};
 
 /**
+ * Sets the foreground color.
+ *
+ * @param {String} color - the foreground color, formatted in CSS notation (like <code>'#ffffff'</code>)
+ *
+ * @return {DocumentApp.Text} the current element
+ */
+DocumentApp.Text.prototype.setForegroundColor = function(color){};
+
+/**
  * Sets the italic setting.
  *
  * @param {Boolean} italic - the italic setting
@@ -10010,6 +11493,17 @@ DocumentApp.Text.prototype.setForegroundColor = function(startOffset, endOffsetI
  * @return {DocumentApp.Text} the current element
  */
 DocumentApp.Text.prototype.setItalic = function(italic){};
+
+/**
+ * Sets the italic setting for the specified character range.
+ *
+ * @param {number} startOffset - the text range's start offset
+ * @param {number} endOffsetInclusive - the text range's end offset
+ * @param {Boolean} italic - the italic setting
+ *
+ * @return {DocumentApp.Text} the current element
+ */
+DocumentApp.Text.prototype.setItalic = function(startOffset, endOffsetInclusive, italic){};
 
 /**
  * Sets the link url for the specified character range.
@@ -10023,6 +11517,15 @@ DocumentApp.Text.prototype.setItalic = function(italic){};
 DocumentApp.Text.prototype.setLinkUrl = function(startOffset, endOffsetInclusive, url){};
 
 /**
+ * Sets the link url.
+ *
+ * @param {String} url - the link url
+ *
+ * @return {DocumentApp.Text} the current element
+ */
+DocumentApp.Text.prototype.setLinkUrl = function(url){};
+
+/**
  * Sets the strikethrough setting.
  *
  * @param {Boolean} strikethrough - the strikethrough setting
@@ -10030,6 +11533,17 @@ DocumentApp.Text.prototype.setLinkUrl = function(startOffset, endOffsetInclusive
  * @return {DocumentApp.Text} the current element
  */
 DocumentApp.Text.prototype.setStrikethrough = function(strikethrough){};
+
+/**
+ * Sets the strikethrough setting for the specified character range.
+ *
+ * @param {number} startOffset - the text range's start offset
+ * @param {number} endOffsetInclusive - the text range's end offset
+ * @param {Boolean} strikethrough - the strikethrough setting
+ *
+ * @return {DocumentApp.Text} the current element
+ */
+DocumentApp.Text.prototype.setStrikethrough = function(startOffset, endOffsetInclusive, strikethrough){};
 
 /**
  * Sets the text contents.
@@ -10056,6 +11570,25 @@ DocumentApp.Text.prototype.setText = function(text){};
 DocumentApp.Text.prototype.setTextAlignment = function(textAlignment){};
 
 /**
+ * Sets the text alignment for a given character range. The available types of alignment are
+ <code>DocumentApp.TextAlignment.NORMAL</code>, <code>DocumentApp.TextAlignment.SUBSCRIPT</code>, and
+ <code>DocumentApp.TextAlignment.SUPERSCRIPT</code>.
+
+ <pre class="prettyprint"><code>
+ // Make the first character in the first paragraph be superscript.
+ var text = DocumentApp.getActiveDocument().getBody().getParagraphs()[0].editAsText();
+ text.setTextAlignment(0, 0, DocumentApp.TextAlignment.SUPERSCRIPT);
+ </code></pre>
+ *
+ * @param {number} startOffset - the start offset of the character range
+ * @param {number} endOffsetInclusive - the end offset of the character range (inclusive)
+ * @param {DocumentApp.TextAlignment} textAlignment - the type of text alignment to apply
+ *
+ * @return {DocumentApp.Text} the current element
+ */
+DocumentApp.Text.prototype.setTextAlignment = function(startOffset, endOffsetInclusive, textAlignment){};
+
+/**
  * Sets the underline setting.
  *
  * @param {Boolean} underline - the underline setting
@@ -10063,6 +11596,17 @@ DocumentApp.Text.prototype.setTextAlignment = function(textAlignment){};
  * @return {DocumentApp.Text} the current element
  */
 DocumentApp.Text.prototype.setUnderline = function(underline){};
+
+/**
+ * Sets the underline setting for the specified character range.
+ *
+ * @param {number} startOffset - the text range's start offset
+ * @param {number} endOffsetInclusive - the text range's end offset
+ * @param {Boolean} underline - the underline setting
+ *
+ * @return {DocumentApp.Text} the current element
+ */
+DocumentApp.Text.prototype.setUnderline = function(startOffset, endOffsetInclusive, underline){};
 
 /** @constructor */
 DocumentApp.UnsupportedElement = function(){};

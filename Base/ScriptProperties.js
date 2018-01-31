@@ -92,6 +92,21 @@ ScriptProperties.getProperty = function(key){};
 ScriptProperties.setProperties = function(properties){};
 
 /**
+ * Bulk-sets all the properties drawn from the given object.
+
+ <pre class="prettyprint"><code>
+ // This deletes all other properties
+ ScriptProperties.setProperties({special: &#39;sauce&#39;, &#39;meaning&#39;: 42}, true);
+ </code></pre>
+ *
+ * @param {Object} properties - an object containing the properties to set.
+ * @param {Boolean} deleteAllOthers - whether to delete all existing properties.
+ *
+ * @return {ScriptProperties} this object, for chaining
+ */
+ScriptProperties.setProperties = function(properties, deleteAllOthers){};
+
+/**
  * Persists the specified in value with the provided key. Any existing value associated with this
  key will be overwritten.
 

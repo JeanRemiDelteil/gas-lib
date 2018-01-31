@@ -6,7 +6,7 @@ var console = {};
  *
  * @param {Object} formatOrObject - a string containing zero or more substitution strings, or a JavaScript
      object to be logged as a JavaScript object if no other parameters.
- * @param {Object...} [values] - objects with which to replace substitution strings within the message. This gives
+ * @param {Object...} values - objects with which to replace substitution strings within the message. This gives
      you additional control over the format of the output.
  *
  * @return void
@@ -18,7 +18,7 @@ console.error = function(formatOrObject, values){};
  *
  * @param {Object} formatOrObject - a string containing zero or more substitution strings, or a JavaScript
      object to be logged as a JavaScript object if no other parameters.
- * @param {Object...} [values] - objects with which to replace substitution strings within the message. This gives
+ * @param {Object...} values - objects with which to replace substitution strings within the message. This gives
      you additional control over the format of the output.
  *
  * @return void
@@ -30,7 +30,7 @@ console.info = function(formatOrObject, values){};
  *
  * @param {Object} formatOrObject - a string containing zero or more substitution strings, or a JavaScript
      object to be logged as a JavaScript object if no other parameters.
- * @param {Object...} [values] - objects with which to replace substitution strings within the message. This gives
+ * @param {Object...} values - objects with which to replace substitution strings within the message. This gives
      you additional control over the format of the output.
  *
  * @return void
@@ -61,7 +61,7 @@ console.timeEnd = function(label){};
  *
  * @param {Object} formatOrObject - a string containing zero or more substitution strings, or a JavaScript
      object to be logged as a JavaScript object if no other parameters.
- * @param {Object...} [values] - objects with which to replace substitution strings within the message. This gives
+ * @param {Object...} values - objects with which to replace substitution strings within the message. This gives
      you additional control over the format of the output.
  *
  * @return void

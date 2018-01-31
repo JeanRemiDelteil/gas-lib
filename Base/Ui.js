@@ -1,4 +1,4 @@
-var Ui = function(){};
+var Ui = {};
 
 
 /**
@@ -33,7 +33,7 @@ var Ui = function(){};
  *
  * @return {Button} the button the user clicked
  */
-Ui.prototype.alert = function(prompt){};
+Ui.alert = function(prompt){};
 
 /**
  * Opens a dialog box in the user's editor with the given message and set of buttons. This method
@@ -62,7 +62,37 @@ Ui.prototype.alert = function(prompt){};
  *
  * @return {Button} the button the user clicked
  */
-Ui.prototype.alert = function(prompt, buttons){};
+Ui.alert = function(prompt, buttons){};
+
+/**
+ * Opens a dialog box in the user's editor with the given title, message, and set of buttons. This
+ method suspends the server-side script while the dialog is open. The script will resume after
+ the user dismisses the dialog, but <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../jdbc/jdbc.html'>Jdbc</a></code>
+ connections and <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../lock/lock-service.html'>LockService</a></code> locks will
+ not persist across the suspension. For more information, see the <a
+ href="/apps-script/guides/dialogs">guide to dialogs and sidebars</a>.
+
+ <pre class="prettyprint">
+ // Display a dialog box with a title, message, and "Yes" and "No" buttons. The user can also
+ // close the dialog by clicking the close button in its title bar.
+ var ui = SpreadsheetApp.getUi();
+ var response = ui.alert('Confirm', 'Are you sure you want to continue?', ui.ButtonSet.YES_NO);
+
+ // Process the user's response.
+ if (response == ui.Button.YES) {
+   Logger.log('The user clicked "Yes."');
+ } else {
+   Logger.log('The user clicked "No" or the close button in the dialog\'s title bar.');
+ }
+ </pre>
+ *
+ * @param {String} title - the title to display above the dialog box
+ * @param {String} prompt - the message to display in the dialog box
+ * @param {ButtonSet} buttons - the button set to display in the dialog box
+ *
+ * @return {Button} the button the user clicked
+ */
+Ui.alert = function(title, prompt, buttons){};
 
 /**
  * Creates a builder that can be used to insert a sub-menu into the editor's Add-on menu. The menu
@@ -83,7 +113,7 @@ Ui.prototype.alert = function(prompt, buttons){};
  *
  * @return {Menu} the new menu builder
  */
-Ui.prototype.createAddonMenu = function(){};
+Ui.createAddonMenu = function(){};
 
 /**
  * Creates a builder that can be used to add a menu to the editor's user interface. The menu will
@@ -113,7 +143,7 @@ Ui.prototype.createAddonMenu = function(){};
  *
  * @return {Menu} the new menu builder
  */
-Ui.prototype.createMenu = function(caption){};
+Ui.createMenu = function(caption){};
 
 /**
  * Opens an input dialog box in the user's editor with the given message and an "OK" button. This
@@ -141,7 +171,7 @@ Ui.prototype.createMenu = function(caption){};
  *
  * @return {PromptResponse} a representation of the user's response
  */
-Ui.prototype.prompt = function(prompt){};
+Ui.prompt = function(prompt){};
 
 /**
  * Opens an input dialog box in the user's editor with the given message and set of buttons. This
@@ -172,7 +202,38 @@ Ui.prototype.prompt = function(prompt){};
  *
  * @return {PromptResponse} a representation of the user's response
  */
-Ui.prototype.prompt = function(prompt, buttons){};
+Ui.prompt = function(prompt, buttons){};
+
+/**
+ * Opens an input dialog box in the user's editor with the given title, message, and set of
+ buttons. This method suspends the server-side script while the dialog is open. The script will
+ resume after the user dismisses the dialog, but <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../jdbc/jdbc.html'>Jdbc</a></code> connections and <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../lock/lock-service.html'>LockService</a></code> locks will not persist across the
+ suspension. For more information, see the <a href="/apps-script/guides/dialogs">guide to
+ dialogs and sidebars</a>.
+
+ <pre class="prettyprint">
+ // Display a dialog box with a title, message, input field, and "Yes" and "No" buttons. The
+ // user can also close the dialog by clicking the close button in its title bar.
+ var ui = SpreadsheetApp.getUi();
+ var response = ui.prompt('Getting to know you', 'May I know your name?', ui.ButtonSet.YES_NO);
+
+ // Process the user's response.
+ if (response.getSelectedButton() == ui.Button.YES) {
+   Logger.log('The user\'s name is %s.', response.getResponseText());
+ } else if (response.getSelectedButton() == ui.Button.NO) {
+   Logger.log('The user didn\'t want to provide a name.');
+ } else {
+   Logger.log('The user clicked the close button in the dialog\'s title bar.');
+ }
+ </pre>
+ *
+ * @param {String} title - the title to display above the dialog box
+ * @param {String} prompt - the message to display in the dialog box
+ * @param {ButtonSet} buttons - the button set to display in the dialog box
+ *
+ * @return {PromptResponse} a representation of the user's response
+ */
+Ui.prompt = function(title, prompt, buttons){};
 
 /**
  * Opens a dialog box in the user's editor with custom client-side content. This method does
@@ -209,7 +270,7 @@ Ui.prototype.prompt = function(prompt, buttons){};
  *
  * @return void
  */
-Ui.prototype.showDialog = function(userInterface){};
+Ui.showDialog = function(userInterface){};
 
 /**
  * Opens a modal dialog box in the user's editor with custom client-side content. This method does
@@ -250,7 +311,7 @@ Ui.prototype.showDialog = function(userInterface){};
  *
  * @return void
  */
-Ui.prototype.showModalDialog = function(userInterface, title){};
+Ui.showModalDialog = function(userInterface, title){};
 
 /**
  * Opens a modeless dialog box in the user's editor with custom client-side content. This method
@@ -292,7 +353,7 @@ Ui.prototype.showModalDialog = function(userInterface, title){};
  *
  * @return void
  */
-Ui.prototype.showModelessDialog = function(userInterface, title){};
+Ui.showModelessDialog = function(userInterface, title){};
 
 /**
  * Opens a sidebar in the user's editor with custom client-side content. This method does
@@ -329,5 +390,5 @@ Ui.prototype.showModelessDialog = function(userInterface, title){};
  *
  * @return void
  */
-Ui.prototype.showSidebar = function(userInterface){};
+Ui.showSidebar = function(userInterface){};
 

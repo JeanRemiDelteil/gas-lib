@@ -13,11 +13,96 @@ var UrlFetchApp = {};
  </code></pre>
  *
  * @param {String} url - the URL to fetch
- * @param {Object} [params] - optional JavaScript object specifying advanced parameters as defined below
  *
  * @return {UrlFetchApp.HTTPResponse} the HTTP response data
  */
+UrlFetchApp.fetch = function(url){};
+
+/**
+ * Makes a request to fetch a URL using optional advanced parameters.
+
+ <p>This works over HTTP as well as HTTPS.
+
+ <pre class="prettyprint"><code>
+ // Make a GET request and log the returned content.
+ var response = UrlFetchApp.fetch(&#39;http://www.google.com/&#39;);
+ Logger.log(response.getContentText());
+ </code></pre>
+
+ <pre class="prettyprint"><code>
+ // Make a POST request with form data.
+ var resumeBlob = Utilities.newBlob(&#39;Hire me!&#39;, &#39;text/plain&#39;, &#39;resume.txt&#39;);
+ var formData = {
+   &#39;name&#39;: &#39;Bob Smith&#39;,
+   &#39;email&#39;: &#39;bob@example.com&#39;,
+   &#39;resume&#39;: resumeBlob
+ };
+ // Because payload is a JavaScript object, it will be interpreted as
+ // as form data. (No need to specify contentType; it will automatically
+ // default to either &#39;application/x-www-form-urlencoded&#39;
+ // or &#39;multipart/form-data&#39;)
+ var options = {
+   &#39;method&#39; : &#39;post&#39;,
+   &#39;payload&#39; : formData
+ };
+ UrlFetchApp.fetch(&#39;https://httpbin.org/post&#39;, options);
+ </code></pre>
+
+ <pre class="prettyprint"><code>
+ // Make a POST request with a JSON payload.
+ var data = {
+   &#39;name&#39;: &#39;Bob Smith&#39;,
+   &#39;age&#39;: 35,
+   &#39;pets&#39;: [&#39;fido&#39;, &#39;fluffy&#39;]
+ };
+ var options = {
+   &#39;method&#39; : &#39;post&#39;,
+   &#39;contentType&#39;: &#39;application/json&#39;,
+   // Convert the JavaScript object to a JSON string.
+   &#39;payload&#39; : JSON.stringify(data)
+ };
+ UrlFetchApp.fetch(&#39;https://httpbin.org/post&#39;, options);
+ </code></pre>
+ *
+ * @param {String} url - the URL to fetch
+ * @param {Object} params - optional JavaScript object specifying advanced parameters as defined below
+ *
+ * @return {UrlFetchApp.HTTPResponse} the http response data
+ */
 UrlFetchApp.fetch = function(url, params){};
+
+/**
+ * Makes multiple requests to fetch multiple URLs using optional advanced parameters.
+
+ <p>This works over HTTP as well as HTTPS.
+
+ <pre class="prettyprint"><code>
+ // Make both a POST request with form data, and a GET request.
+ var resumeBlob = Utilities.newBlob(&#39;Hire me!&#39;, &#39;text/plain&#39;, &#39;resume.txt&#39;);
+ var formData1 = {
+   &#39;name&#39;: &#39;Bob Smith&#39;,
+   &#39;email&#39;: &#39;bob@example.com&#39;,
+   &#39;resume&#39;: resumeBlob
+ };
+ // Because payload is a JavaScript object, it is interpreted as
+ // as form data. (No need to specify contentType; it defaults to either
+ // &#39;application/x-www-form-urlencoded&#39; or &#39;multipart/form-data&#39;)
+ var request1 = {
+   &#39;url&#39;: &#39;https://httpbin.org/post&#39;,
+   &#39;method&#39; : &#39;post&#39;,
+   &#39;payload&#39; : formData
+ };
+ // A request may also just be a URL.
+ var request2 = &#39;https://httpbin.org/get?key=value&#39;;
+ UrlFetchApp.fetchAll(request1, request2);
+ </code></pre>
+ *
+ * @param {Object[]} requests - array of either URLs, or JavaScript objects specifying requests as defined
+     below
+ *
+ * @return {UrlFetchApp.HTTPResponse[]} an array of http response data from each input request
+ */
+UrlFetchApp.fetchAll = function(requests){};
 
 /**
  * Returns the request that would be made if the operation was invoked.
@@ -38,6 +123,19 @@ UrlFetchApp.fetch = function(url, params){};
      contentType, payload, headers.
  */
 UrlFetchApp.getRequest = function(url){};
+
+/**
+ * Returns the request that would be made if the operation were invoked.
+
+ <p>This method does not actually issue the request.
+ *
+ * @param {String} url - the url to look up
+ * @param {Object} params - optional JavaScript object specifying advanced parameters as defined below
+ *
+ * @return {Object} a map of Field Name to Value. The map has at least the following keys: url, method,
+     contentType, payload, headers.
+ */
+UrlFetchApp.getRequest = function(url, params){};
 
 /** @constructor */
 UrlFetchApp.HTTPResponse = function(){};
@@ -104,6 +202,22 @@ UrlFetchApp.HTTPResponse.prototype.getContent = function(){};
  * @return {String} the content of the HTTP response, as a string
  */
 UrlFetchApp.HTTPResponse.prototype.getContentText = function(){};
+
+/**
+ * Returns the content of an HTTP response encoded as a string of the given charset.
+
+ <pre class="prettyprint"><code>
+ // The code below logs the HTML code of the Google home page with the UTF-8 charset.
+ var response = UrlFetchApp.fetch(&quot;http://www.google.com/&quot;);
+ Logger.log(response.getContentText(&quot;UTF-8&quot;));
+ </code></pre>
+ *
+ * @param {String} charset - a string representing the charset to be used for encoding the HTTP response
+     content
+ *
+ * @return {String} the content of the HTTP response, encoded using the given charset
+ */
+UrlFetchApp.HTTPResponse.prototype.getContentText = function(charset){};
 
 /**
  * Returns an attribute/value map of headers for the HTTP response.

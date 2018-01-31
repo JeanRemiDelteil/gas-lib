@@ -19,49 +19,11 @@ var Utilities = {};
  * 
  */
 
-
 /**
  * 
  * 
- * @class Utilities.DigestAlgorithm
+ * @class DigestAlgorithm
  */
-
-/**
- * @typedef {Utilities.DigestAlgorithm} Utilities.DigestAlgorithm.MD2
- *
- *
- */
-
-/**
- * @typedef {Utilities.DigestAlgorithm} Utilities.DigestAlgorithm.MD5
- *
- *
- */
-
-/**
- * @typedef {Utilities.DigestAlgorithm} Utilities.DigestAlgorithm.SHA_1
- *
- *
- */
-
-/**
- * @typedef {Utilities.DigestAlgorithm} Utilities.DigestAlgorithm.SHA_256
- *
- *
- */
-
-/**
- * @typedef {Utilities.DigestAlgorithm} Utilities.DigestAlgorithm.SHA_384
- *
- *
- */
-
-/**
- * @typedef {Utilities.DigestAlgorithm} Utilities.DigestAlgorithm.SHA_512
- *
- *
- */
-
 
 /**
  * 
@@ -124,6 +86,32 @@ var Utilities = {};
 Utilities.base64Decode = function(encoded){};
 
 /**
+ * Decodes a base-64 encoded string into a byte array in a specific character set.
+
+ <pre class="prettyprint"><code>
+ // This is the base64 encoded form of &quot;Google グループ&quot;
+ var base64data = &quot;R29vZ2xlIOOCsOODq+ODvOODlw==&quot;;
+
+ var decoded = Utilities.base64Decode(base64data, Utilities.Charset.UTF_8);
+
+ // This will log:
+ //     [71, 111, 111, 103, 108, 101, 32, -29, -126, -80,
+ //      -29, -125, -85, -29, -125, -68, -29, -125, -105]
+ Logger.log(decoded);
+
+ // If we want a String instead of a byte array:
+ // This will log the original &quot;Google グループ&quot;
+ Logger.log(Utilities.newBlob(decoded).getDataAsString());
+ </code></pre>
+ *
+ * @param {String} encoded - the string of data to decode
+ * @param {Utilities.Charset} charset - a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/utilities/charset.html'>Charset</a></code> specifying the charset of the input
+ *
+ * @return {Byte[]} the raw data represented by the base-64 encoded argument as a byte array
+ */
+Utilities.base64Decode = function(encoded, charset){};
+
+/**
  * Decodes a base-64 web-safe encoded string into a UTF-8 byte array.
 
  <pre class="prettyprint"><code>
@@ -147,6 +135,32 @@ Utilities.base64Decode = function(encoded){};
  * @return {Byte[]} the raw data represented by the base-64 web-safe encoded argument as a byte array
  */
 Utilities.base64DecodeWebSafe = function(encoded){};
+
+/**
+ * Decodes a base-64 web-safe encoded string into a byte array in a specific character set.
+
+ <pre class="prettyprint"><code>
+ // This is the base64 web-safe encoded form of &quot;Google グループ&quot;
+ var base64data = &quot;R29vZ2xlIOOCsOODq-ODvOODlw==&quot;;
+
+ var decoded = Utilities.base64DecodeWebSafe(base64data, Utilities.Charset.UTF_8);
+
+ // This will log:
+ //     [71, 111, 111, 103, 108, 101, 32, -29, -126, -80,
+ //      -29, -125, -85, -29, -125, -68, -29, -125, -105]
+ Logger.log(decoded);
+
+ // If we want a String instead of a byte array:
+ // This will log the original &quot;Google グループ&quot;
+ Logger.log(Utilities.newBlob(decoded).getDataAsString());
+ </code></pre>
+ *
+ * @param {String} encoded - the string of web-safe data to decode
+ * @param {Utilities.Charset} charset - a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/utilities/charset.html'>Charset</a></code> specifying the charset of the input
+ *
+ * @return {Byte[]} the raw data represented by the base-64 web-safe encoded argument as a byte array
+ */
+Utilities.base64DecodeWebSafe = function(encoded, charset){};
 
 /**
  * Generates a base-64 encoded string from the given byte array. Base 64 is a common encoding
@@ -186,6 +200,31 @@ Utilities.base64Encode = function(data){};
 Utilities.base64Encode = function(data){};
 
 /**
+ * Generates a base-64 encoded string from the given string in a specific character set. A Charset
+ is a way of encoding characters such that they can be encoded. These are typically done in a
+ binary format, which can generally be incompatible with certain data transmission protocols. To
+ make the data compatible, they are generally encoded into base 64, which is a common encoding
+ accepted by a variety of tools that cannot accept binary data. Base 64 is commonly used in
+ internet protocols such as email, HTTP, or in XML documents.
+
+ <pre class="prettyprint"><code>
+ // &quot;Google Groups&quot; in Katakana (Japanese)
+ var input = &quot;Google グループ&quot;;
+
+ // Writes &quot;R29vZ2xlIOOCsOODq+ODvOODlw==&quot; to the log
+ var encoded = Utilities.base64Encode(input, Utilities.Charset.UTF_8);
+ Logger.log(encoded);
+
+ </code></pre>
+ *
+ * @param {String} data - the string of data to encode
+ * @param {Utilities.Charset} charset - a <code>Charset</code> specifying the charset of the input
+ *
+ * @return {String} the base-64 encoded representation of the input string with the given <code>Charset</code>
+ */
+Utilities.base64Encode = function(data, charset){};
+
+/**
  * Generates a base-64 web-safe encoded string from the given byte array. Base 64 is a common
  encoding accepted by a variety of tools that cannot accept binary data. Base 64 web-safe is
  commonly used in internet protocols such as email, HTTP, or in XML documents.
@@ -223,6 +262,31 @@ Utilities.base64EncodeWebSafe = function(data){};
 Utilities.base64EncodeWebSafe = function(data){};
 
 /**
+ * Generates a base-64 web-safe encoded string from the given string in a specific character set.
+ A Charset is a way of encoding characters such that they can be encoded. These are typically
+ done in a binary format, which can generally be incompatible with certain data transmission
+ protocols. To make the data compatible, they are generally encoded into base 64, which is a
+ common encoding accepted by a variety of tools that cannot accept binary data. Base 64 web-safe
+ is commonly used in internet protocols such as email, HTTP, or in XML documents.
+
+ <pre class="prettyprint"><code>
+ // &quot;Google Groups&quot; in Katakana (Japanese)
+ var input = &quot;Google グループ&quot;;
+
+ // Writes &quot;R29vZ2xlIOOCsOODq-ODvOODlw==&quot; to the log
+ var encoded = Utilities.base64EncodeWebSafe(input, Utilities.Charset.UTF_8);
+ Logger.log(encoded);
+
+ </code></pre>
+ *
+ * @param {String} data - the string of data to encode
+ * @param {Utilities.Charset} charset - a <code>Charset</code> specifying the charset of the input
+ *
+ * @return {String} the base-64 web-safe encoded representation of the input string with the given <code>Charset</code>
+ */
+Utilities.base64EncodeWebSafe = function(data, charset){};
+
+/**
  * Compute a digest using the specified algorithm on the specified value
 
  <pre class="prettyprint"><code>
@@ -236,6 +300,24 @@ Utilities.base64EncodeWebSafe = function(data){};
  * @return {Byte[]} a byte[] representing the output digest
  */
 Utilities.computeDigest = function(algorithm, value){};
+
+/**
+ * Compute a digest using the specified algorithm on the specified value
+
+ <pre class="prettyprint"><code>
+ var digest = Utilities.computeDigest(Utilities.DigestAlgorithm.MD5,
+                                      &quot;input to hash&quot;,
+                                      Utilities.Charset.US_ASCII);
+ Logger.log(digest);
+ </code></pre>
+ *
+ * @param {DigestAlgorithm} algorithm - a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/utilities/digest-algorithm.html'>DigestAlgorithm</a></code> to use
+ * @param {String} value - an input string value to compute a digest for
+ * @param {Utilities.Charset} charset - a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/utilities/charset.html'>Charset</a></code> representing the input character set
+ *
+ * @return {Byte[]} a byte[] representing the output digest
+ */
+Utilities.computeDigest = function(algorithm, value, charset){};
 
 /**
  * Signs the provided value using HMAC-SHA256 with the given key.
@@ -253,6 +335,25 @@ Utilities.computeDigest = function(algorithm, value){};
  * @return {Byte[]} a byte[] representing the output signature
  */
 Utilities.computeHmacSha256Signature = function(value, key){};
+
+/**
+ * Signs the provided value using HMAC-SHA256 with the given key and character set.
+
+ <pre class="prettyprint"><code>
+ // This will write an array of bytes to the log.
+ var signature = Utilities.computeHmacSha256Signature(&quot;this is my input&quot;,
+                                                      &quot;my key - use a stronger one&quot;,
+                                                      Utilities.Charset.US_ASCII);
+ Logger.log(signature);
+ </code></pre>
+ *
+ * @param {String} value - the input value to generate a hash for
+ * @param {String} key - a key to use to generate the hash with
+ * @param {Utilities.Charset} charset - a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/utilities/charset.html'>Charset</a></code> representing the input character set
+ *
+ * @return {Byte[]} a byte[] representing the output signature
+ */
+Utilities.computeHmacSha256Signature = function(value, key, charset){};
 
 /**
  * Compute a message authentication code using the specified algorithm on the specified key and
@@ -275,6 +376,28 @@ Utilities.computeHmacSha256Signature = function(value, key){};
 Utilities.computeHmacSignature = function(algorithm, value, key){};
 
 /**
+ * Compute a message authentication code using the specified algorithm on the specified key and
+ value.
+
+ <pre class="prettyprint"><code>
+ // This will write an array of bytes to the log.
+ var signature = Utilities.computeHmacSignature(Utilities.MacAlgorithm.HMAC_MD5,
+                                                &quot;input to hash&quot;,
+                                                &quot;key&quot;,
+                                                Utilities.Charset.US_ASCII);
+ Logger.log(signature);
+ </code></pre>
+ *
+ * @param {Utilities.MacAlgorithm} algorithm - a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/utilities/mac-algorithm.html'>MacAlgorithm</a></code> algorithm to use to hash the input value
+ * @param {String} value - the input value to generate a hash for
+ * @param {String} key - a key to use to generate the hash with
+ * @param {Utilities.Charset} charset - a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/utilities/charset.html'>Charset</a></code> representing the input character set
+ *
+ * @return {Byte[]} a byte[] representing the output signature
+ */
+Utilities.computeHmacSignature = function(algorithm, value, key, charset){};
+
+/**
  * Signs the provided value using RSA-SHA256 with the given key.
 
  <pre class="prettyprint"><code>
@@ -290,6 +413,24 @@ Utilities.computeHmacSignature = function(algorithm, value, key){};
  * @return {Byte[]} a byte[] representing the output signature
  */
 Utilities.computeRsaSha256Signature = function(value, key){};
+
+/**
+ * Signs the provided value using RSA-SHA256 with the given key.
+
+ <pre class="prettyprint"><code>
+ // This will write an array of bytes to the log.
+ var signature = Utilities.computeRsaSha256Signature(&quot;this is my input&quot;,
+     &quot;-----BEGIN PRIVATE KEY-----\nprivatekeyhere\n-----END PRIVATE KEY-----\n&quot;);
+ Logger.log(signature);
+ </code></pre>
+ *
+ * @param {String} value - the input value to generate a hash for
+ * @param {String} key - a PEM formatted key to use to generate the signature
+ * @param {Utilities.Charset} charset - a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/utilities/charset.html'>Charset</a></code> representing the input character set
+ *
+ * @return {Byte[]} a byte[] representing the output signature
+ */
+Utilities.computeRsaSha256Signature = function(value, key, charset){};
 
 /**
  * Formats date according to specification described in Java SE SimpleDateFormat class. Please
@@ -431,6 +572,18 @@ Utilities.newBlob = function(data){};
 Utilities.newBlob = function(data, contentType){};
 
 /**
+ * Create a new Blob object from a string, content type, and name. Blobs are used in many Apps
+ Script APIs that take binary data as input.
+ *
+ * @param {String} data - the string for the blob, assumed UTF-8
+ * @param {String} contentType - the content type of the blob - can be null
+ * @param {String} name - the name of the blob - can be null
+ *
+ * @return {Blob} the newly created Blob
+ */
+Utilities.newBlob = function(data, contentType, name){};
+
+/**
  * Returns a tabular 2D array representation of a CSV string.
 
  <pre class="prettyprint"><code>
@@ -444,6 +597,22 @@ Utilities.newBlob = function(data, contentType){};
  * @return {String[][]} a 2 dimensional array containing the values in the CSV string
  */
 Utilities.parseCsv = function(csv){};
+
+/**
+ * Returns a tabular 2D array representation of a CSV string using a custom delimiter.
+
+ <pre class="prettyprint"><code>
+ // This will create a 2 dimensional array of the format [[a, b, c], [d, e, f]]
+ var csvString = &quot;a,b,c\td,e,f&quot;;
+ var data = Utilities.parseCsv(csvString, &#39;\t&#39;);
+ </code></pre>
+ *
+ * @param {String} csv - a string containing a single or multiline data in comma-separated value (CSV) format
+ * @param {Char} delimiter - between values
+ *
+ * @return {String[][]} a 2 dimensional array containing the values in the CSV string
+ */
+Utilities.parseCsv = function(csv, delimiter){};
 
 /**
  * Sleeps for specified number of milliseconds. Immediately puts the script to sleep for the
@@ -499,4 +668,27 @@ Utilities.unzip = function(blob){};
  * @return {Blob} a new blob containing the inputs as an archive
  */
 Utilities.zip = function(blobs){};
+
+/**
+ * Creates a new Blob object that is a zip file containing the data from the Blobs passed in. This
+ version of the method allows a filename to be specified.
+
+ <pre class="prettyprint"><code>
+ var googleFavIconUrl = &quot;https://www.google.com/favicon.ico&quot;;
+ var googleLogoUrl = &quot;https://www.google.com/images/srpr/logo3w.png&quot;;
+
+ // Fetch the Google favicon.ico file and get the Blob data
+ var faviconBlob = UrlFetchApp.fetch(googleFavIconUrl).getBlob();
+ var logoBlob = UrlFetchApp.fetch(googleLogoUrl).getBlob();
+
+ // zip now references a blob containing an archive of both faviconBlob and logoBlob
+ var zip = Utilities.zip([faviconBlob, logoBlob], &quot;google_images.zip&quot;);
+ </code></pre>
+ *
+ * @param {BlobSource[]} blobs - a array of blobs to zip up
+ * @param {String} name - the name of the zip file to be created
+ *
+ * @return {Blob} a new blob containing the inputs as an archive
+ */
+Utilities.zip = function(blobs, name){};
 

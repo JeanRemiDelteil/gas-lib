@@ -86,6 +86,19 @@ HtmlService.createHtmlOutput = function(){};
 HtmlService.createHtmlOutput = function(blob){};
 
 /**
+ * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-output.html'>HtmlOutput</a></code> object that can be returned from the script.
+
+ <pre class="prettyprint"><code>
+ var output = HtmlService.createHtmlOutput(&#39;&lt;b&gt;Hello world!&lt;/b&gt;&#39;);
+ </code></pre>
+ *
+ * @param {String} html - the content to serve
+ *
+ * @return {HtmlService.HtmlOutput} the new HtmlOutput object
+ */
+HtmlService.createHtmlOutput = function(html){};
+
+/**
  * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-output.html'>HtmlOutput</a></code> object from a file in the code editor.
 
  <pre class="prettyprint"><code>
@@ -113,6 +126,19 @@ HtmlService.createHtmlOutputFromFile = function(filename){};
  * @return {HtmlService.HtmlTemplate} the new <code>HtmlTemplate</code> object
  */
 HtmlService.createTemplate = function(blob){};
+
+/**
+ * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-template.html'>HtmlTemplate</a></code> object that can be returned from the script.
+
+ <pre class="prettyprint"><code>
+ var template = HtmlService.createTemplate(&#39;&lt;b&gt;The time is &amp;lt;?= new Date() ?&amp;gt;&lt;/b&gt;&#39;);
+ </code></pre>
+ *
+ * @param {String} html - the content of the template
+ *
+ * @return {HtmlService.HtmlTemplate} the new <code>HtmlTemplate</code> object
+ */
+HtmlService.createTemplate = function(html){};
 
 /**
  * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-template.html'>HtmlTemplate</a></code> object from a file in the code editor.

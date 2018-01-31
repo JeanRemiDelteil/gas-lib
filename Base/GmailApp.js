@@ -20,6 +20,29 @@ var GmailApp = {};
 GmailApp.createDraft = function(recipient, subject, body){};
 
 /**
+ * Creates a draft email message with optional arguments. The email can contain plain text or an
+ HTML body. The size of the email (including headers, but excluding attachments) is <a
+ href="/apps-script/guides/services/quotas#current_limitations">quota limited</a>.
+
+ <pre class="prettyprint"><code>
+ // Create a draft email with a file from Google Drive attached as a PDF.
+ var file = DriveApp.getFileById(&#39;1234567890abcdefghijklmnopqrstuvwxyz&#39;);
+ GmailApp.createDraft(&#39;mike@example.com&#39;, &#39;Attachment example&#39;, &#39;Please see attached file.&#39;, {
+     attachments: [file.getAs(MimeType.PDF)],
+     name: &#39;Automatic Emailer Script&#39;
+ });
+ </code></pre>
+ *
+ * @param {String} recipient - the addresses of the recipient
+ * @param {String} subject - the subject line
+ * @param {String} body - the body of the email
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {GmailApp.GmailDraft} the newly created GmailDraft
+ */
+GmailApp.createDraft = function(recipient, subject, body, options){};
+
+/**
  * Create a new user label of the given name.
 
  <pre class="prettyprint"><code>
@@ -84,6 +107,24 @@ GmailApp.getAliases = function(){};
  * @return {GmailApp.GmailThread[]} an array of chat Gmail threads
  */
 GmailApp.getChatThreads = function(){};
+
+/**
+ * Retrieves a range of chat threads irrespective of labels.
+
+ <pre class="prettyprint"><code>
+ // Get first 50 chat threads
+ var threads = GmailApp.getChatThreads(0,50);
+ // Will log no more than 50.0
+ Logger.log(threads.length);
+ Logger.log(threads[0].getFirstMessageSubject());
+ </code></pre>
+ *
+ * @param {number} start - the index of the first thread to retrieve
+ * @param {number} max - the maximum number of threads to retrieve
+ *
+ * @return {GmailApp.GmailThread[]} an array of chat Gmail threads
+ */
+GmailApp.getChatThreads = function(start, max){};
 
 /**
  * Retrieve an email message draft by ID.
@@ -152,6 +193,24 @@ GmailApp.getDrafts = function(){};
  * @return {GmailApp.GmailThread[]} an array of Gmail threads in the Inbox
  */
 GmailApp.getInboxThreads = function(){};
+
+/**
+ * Retrieves a range of Inbox threads irrespective of labels.
+
+ <pre class="prettyprint"><code>
+ // Log the subject lines of up to the first 50 emails in your Inbox
+ var threads = GmailApp.getInboxThreads(0, 50);
+ for (var i = 0; i &lt; threads.length; i++) {
+   Logger.log(threads[i].getFirstMessageSubject());
+ }
+ </code></pre>
+ *
+ * @param {number} start - the index of the first thread to retrieve
+ * @param {number} max - the maximum number of threads to retrieve
+ *
+ * @return {GmailApp.GmailThread[]} an array of Gmail threads in the Inbox
+ */
+GmailApp.getInboxThreads = function(start, max){};
 
 /**
  * Gets the number of unread threads in the inbox.
@@ -242,6 +301,22 @@ GmailApp.getMessagesForThreads = function(threads){};
 GmailApp.getPriorityInboxThreads = function(){};
 
 /**
+ * Retrieves a range of Priority Inbox threads irrespective of labels.
+
+ <pre class="prettyprint"><code>
+ // Will log some number 2 or less
+ Logger.log(&quot;# of messages in your Priority Inbox: &quot; +
+            GmailApp.getPriorityInboxThreads(0, 2).length);
+ </code></pre>
+ *
+ * @param {number} start - the index of the first thread to retrieve
+ * @param {number} max - the maximum number of threads to retrieve
+ *
+ * @return {GmailApp.GmailThread[]} an array of Gmail threads in the Priority Inbox
+ */
+GmailApp.getPriorityInboxThreads = function(start, max){};
+
+/**
  * Gets the number of unread threads in the Priority Inbox.
 
  <pre class="prettyprint"><code>
@@ -267,6 +342,21 @@ GmailApp.getPriorityInboxUnreadCount = function(){};
  * @return {GmailApp.GmailThread[]} an array of Gmail threads in the spam folder
  */
 GmailApp.getSpamThreads = function(){};
+
+/**
+ * Retrieves a range of spam threads irrespective of labels.
+
+ <pre class="prettyprint"><code>
+ // Will log a number at most 5
+ Logger.log(&quot;# of total spam threads: &quot; + GmailApp.getSpamThreads(0, 5).length);
+ </code></pre>
+ *
+ * @param {number} start - the index of the first thread to retrieve
+ * @param {number} max - the maximum number of threads to retrieve
+ *
+ * @return {GmailApp.GmailThread[]} an array of Gmail threads in the spam folder
+ */
+GmailApp.getSpamThreads = function(start, max){};
 
 /**
  * Gets the number of unread threads that are spam.
@@ -296,6 +386,21 @@ GmailApp.getSpamUnreadCount = function(){};
  * @return {GmailApp.GmailThread[]} an array of starred Gmail threads
  */
 GmailApp.getStarredThreads = function(){};
+
+/**
+ * Retrieves a range of starred threads irrespective of labels.
+
+ <pre class="prettyprint"><code>
+ // Logs the number of starred threads to a maximum of 5
+ Logger.log(&quot;# Starred threads: &quot; + GmailApp.getStarredThreads(0, 5).length);
+ </code></pre>
+ *
+ * @param {number} start - the index of the first thread to retrieve
+ * @param {number} max - the maximum number of threads to retrieve
+ *
+ * @return {GmailApp.GmailThread[]} an array of starred Gmail threads
+ */
+GmailApp.getStarredThreads = function(start, max){};
 
 /**
  * Gets the number of unread threads that are starred.
@@ -343,6 +448,21 @@ GmailApp.getThreadById = function(id){};
  * @return {GmailApp.GmailThread[]} an array of Gmail threads in the trash
  */
 GmailApp.getTrashThreads = function(){};
+
+/**
+ * Retrieves a range of trash threads irrespective of labels.
+
+ <pre class="prettyprint"><code>
+ // Will log a number at most 5
+ Logger.log(&quot;# of total trash threads: &quot; + GmailApp.getTrashThreads(0, 5).length);
+ </code></pre>
+ *
+ * @param {number} start - the index of the first thread to retrieve
+ * @param {number} max - the maximum number of threads to retrieve
+ *
+ * @return {GmailApp.GmailThread[]} an array of Gmail threads in the trash
+ */
+GmailApp.getTrashThreads = function(start, max){};
 
 /**
  * Retrieves a label given the label name.
@@ -798,6 +918,23 @@ GmailApp.refreshThreads = function(threads){};
 GmailApp.search = function(query){};
 
 /**
+ * Search Gmail with the given query.
+
+ <pre class="prettyprint"><code>
+ // Find starred messages with subject IMPORTANT and return second batch of 10.
+ // Assumes there are at least 11 of them, otherwise this will return an empty array.
+ var threads = GmailApp.search(&#39;is:starred subject:&quot;IMPORTANT&quot;&#39;, 10, 10);
+ </code></pre>
+ *
+ * @param {String} query - the search query, as you would type it into Gmail
+ * @param {number} start - the index of the starting thread
+ * @param {number} max - the maximum number of threads to return
+ *
+ * @return {GmailApp.GmailThread[]} an array of Gmail threads matching this query
+ */
+GmailApp.search = function(query, start, max){};
+
+/**
  * Sends an email message. The size of the email (including headers) is <a
  href="/apps-script/guides/services/quotas#current_limitations">quota limited</a>.
 
@@ -810,7 +947,29 @@ GmailApp.search = function(query){};
  * @param {String} recipient - comma separated list of email addresses
  * @param {String} subject - subject of the email
  * @param {String} body - body of the email
- * @param {Object} [options] - a JavaScript object that specifies advanced parameters, as listed below, https://developers.google.com/apps-script/reference/gmail/gmail-app#sendEmail(String,String,String,Object)
+ *
+ * @return {GmailApp} the Gmail service, useful for chaining
+ */
+GmailApp.sendEmail = function(recipient, subject, body){};
+
+/**
+ * Sends an email message with optional arguments. The email can contain plain text or an HTML
+ body. The size of the email (including headers, but excluding attachments) is <a
+ href="/apps-script/guides/services/quotas#current_limitations">quota limited</a>.
+
+ <pre class="prettyprint"><code>
+ // Send an email with a file from Google Drive attached as a PDF.
+ var file = DriveApp.getFileById(&#39;1234567890abcdefghijklmnopqrstuvwxyz&#39;);
+ GmailApp.sendEmail(&#39;mike@example.com&#39;, &#39;Attachment example&#39;, &#39;Please see the attached file.&#39;, {
+     attachments: [file.getAs(MimeType.PDF)],
+     name: &#39;Automatic Emailer Script&#39;
+ });
+ </code></pre>
+ *
+ * @param {String} recipient - the addresses of the recipient
+ * @param {String} subject - the subject line
+ * @param {String} body - the body of the email
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
@@ -934,6 +1093,15 @@ GmailApp.GmailAttachment.prototype.getContentType = function(){};
 GmailApp.GmailAttachment.prototype.getDataAsString = function(){};
 
 /**
+ * Gets the data of this blob as a string with the specified encoding.
+ *
+ * @param {String} charset - the charset to use in encoding the data in this blob as a string
+ *
+ * @return {String} the data as a string
+ */
+GmailApp.GmailAttachment.prototype.getDataAsString = function(charset){};
+
+/**
  * Gets the name of this blob.
  *
  * @return {String} the name of this data, if known, or null
@@ -988,6 +1156,16 @@ GmailApp.GmailAttachment.prototype.setContentTypeFromExtension = function(){};
  * @return {Blob} this blob, for chaining
  */
 GmailApp.GmailAttachment.prototype.setDataFromString = function(string){};
+
+/**
+ * Sets the data of this blob from a string with the specified encoding.
+ *
+ * @param {String} string - the string data
+ * @param {String} charset - the charset to use in interpreting the string as bytes
+ *
+ * @return {Blob} this blob, for chaining
+ */
+GmailApp.GmailAttachment.prototype.setDataFromString = function(string, charset){};
 
 /**
  * Sets the name of this blob.
@@ -1087,6 +1265,30 @@ GmailApp.GmailDraft.prototype.send = function(){};
  */
 GmailApp.GmailDraft.prototype.update = function(recipient, subject, body){};
 
+/**
+ * Replaces the contents of this draft message using optional arguments. The email can contain
+ plain text or an HTML body. The size of the email (including headers) is <a
+ href="/apps-script/guides/services/quotas#current_limitations">quota limited</a>.
+
+ <pre class="prettyprint"><code>
+ // Update a draft email with a file from Google Drive attached as a PDF.
+ var draft = GmailApp.getDrafts()[0]; // The first draft message in the drafts folder
+ var file = DriveApp.getFileById(&#39;1234567890abcdefghijklmnopqrstuvwxyz&#39;);
+ draft.update(&#39;mike@example.com&#39;, &#39;Attachment example&#39;, &#39;Please see attached file.&#39;, {
+     attachments: [file.getAs(MimeType.PDF)],
+     name: &#39;Automatic Emailer Script&#39;
+ });
+ </code></pre>
+ *
+ * @param {String} recipient - comma separated list of email addresses
+ * @param {String} subject - subject of the email
+ * @param {String} body - body of the email
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {GmailApp.GmailDraft} the newly updated draft
+ */
+GmailApp.GmailDraft.prototype.update = function(recipient, subject, body, options){};
+
 /** @constructor */
 GmailApp.GmailLabel = function(){};
 
@@ -1166,6 +1368,25 @@ GmailApp.GmailLabel.prototype.getName = function(){};
 GmailApp.GmailLabel.prototype.getThreads = function(){};
 
 /**
+ * Gets a range of threads marked with this label.
+
+ <pre class="prettyprint"><code>
+ // log the subject lines of up to the first 30 threads with the label MyLabel
+ var label = GmailApp.getUserLabelByName(&quot;MyLabel&quot;);
+ var threads = label.getThreads(0, 30);
+ for (var i = 0; i &lt; threads.length; i++) {
+   Logger.log(threads[i].getFirstMessageSubject());
+ }
+ </code></pre>
+ *
+ * @param {number} start - the index of the starting thread
+ * @param {number} max - the maximum number of threads to return
+ *
+ * @return {GmailApp.GmailThread[]} an array of threads marked with this label
+ */
+GmailApp.GmailLabel.prototype.getThreads = function(start, max){};
+
+/**
  * Gets the number of unread threads tagged with this label.
 
  <pre class="prettyprint"><code>
@@ -1232,6 +1453,31 @@ GmailApp.GmailMessage = function(){};
 GmailApp.GmailMessage.prototype.createDraftReply = function(body){};
 
 /**
+ * Creates a draft message replying to the sender of this message using the reply-to address, with
+ optional arguments.
+
+ <p>The email can contain both plain text and an HTML body. The size of the email (including
+ headers) is <a href="/apps-script/guides/services/quotas#current_limitations">quota
+ limited</a>.
+
+ <pre class="prettyprint"><code>
+ // Create a draft response with an HTML text body.
+ var firstThread = GmailApp.getInboxThreads(0,1)[0];
+ var message = firstThread.getMessages()[0];
+ message.createDraftReply(&quot;incapable of HTML&quot;, {
+   htmlBody: &quot;&lt;b&gt;some HTML body text&lt;/b&gt;&quot;,
+   cc: &quot;another@example.com&quot;
+ });
+ </code></pre>
+ *
+ * @param {String} body - the body of the email
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {GmailApp.GmailDraft} the newly created draft message
+ */
+GmailApp.GmailMessage.prototype.createDraftReply = function(body, options){};
+
+/**
  * Creates a draft message replying to the sender using the reply-to address and all recipients of
  this message. The size of the email (including headers) is <a
  href="/apps-script/guides/services/quotas#current_limitations">quota limited</a>.
@@ -1250,6 +1496,31 @@ GmailApp.GmailMessage.prototype.createDraftReply = function(body){};
 GmailApp.GmailMessage.prototype.createDraftReplyAll = function(body){};
 
 /**
+ * Creates a draft message replying to the sender of this message using the reply-to address and
+ all recipients, with optional arguments.
+
+ <p>The email can contain both plain text and an HTML body. The size of the email (including
+ headers) is <a href="/apps-script/guides/services/quotas#current_limitations">quota
+ limited</a>.
+
+ <pre class="prettyprint"><code>
+ // Create a draft response to all recipients (except those bcc&#39;d) using an HTML text body.
+ var firstThread = GmailApp.getInboxThreads(0,1)[0];
+ var message = firstThread.getMessages[0];
+ message.createDraftReplyAll(&quot;incapable of HTML&quot;, {
+   htmlBody: &quot;&lt;b&gt;some HTML body text&lt;/b&gt;&quot;,
+   cc: &quot;another@example.com&quot;
+ });
+ </code></pre>
+ *
+ * @param {String} body - the body of the email
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {GmailApp.GmailDraft} the newly created draft message
+ */
+GmailApp.GmailMessage.prototype.createDraftReplyAll = function(body, options){};
+
+/**
  * Forwards this message to new recipients. The size of the email (including headers) is <a
  href="/apps-script/guides/services/quotas#current_limitations">quota limited</a>.
 
@@ -1265,6 +1536,29 @@ GmailApp.GmailMessage.prototype.createDraftReplyAll = function(body){};
  * @return {GmailApp.GmailMessage} this message, useful for chaining
  */
 GmailApp.GmailMessage.prototype.forward = function(recipient){};
+
+/**
+ * Forwards this message to new recipients, with optional arguments.
+
+ <p>The email can contain both plain text, and also an HTML body. The size of the email
+ (including headers) is <a href="/apps-script/guides/services/quotas#current_limitations">quota
+ limited</a>.
+
+ <pre class="prettyprint"><code>
+ var firstThread = GmailApp.getInboxThreads(0,1)[0];
+ var message = firstThread.getMessages()[0];
+ message.forward(&quot;recipient1@example.com,recipient2@example.com&quot;, {
+   cc: &quot;myboss@example.com&quot;,
+   bcc: &quot;mybosses-boss@example.com,vp@example.com&quot;
+ });
+ </code></pre>
+ *
+ * @param {String} recipient - a comma-separated list of email addresses
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {GmailApp.GmailMessage} this message, useful for chaining
+ */
+GmailApp.GmailMessage.prototype.forward = function(recipient, options){};
 
 /**
  * Gets all the attachments for this message.
@@ -1597,6 +1891,30 @@ GmailApp.GmailMessage.prototype.refresh = function(){};
 GmailApp.GmailMessage.prototype.reply = function(body){};
 
 /**
+ * Replies to the sender of this message using the reply-to address, with optional arguments.
+
+ <p>The email can contain both plain text, and also an HTML body. The size of the email
+ (including headers) is <a href="/apps-script/guides/services/quotas#current_limitations">quota
+ limited</a>.
+
+ <pre class="prettyprint"><code>
+ // Respond with HTML body text
+ var firstThread = GmailApp.getInboxThreads(0,1)[0];
+ var message = firstThread.getMessages()[0];
+ message.reply(&quot;incapable of HTML&quot;, {
+   htmlBody: &quot;&lt;b&gt;some HTML body text&lt;/b&gt;&quot;,
+   noReply: true
+ });
+ </code></pre>
+ *
+ * @param {String} body - the body of the email
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {GmailApp.GmailMessage} this message, useful for chaining
+ */
+GmailApp.GmailMessage.prototype.reply = function(body, options){};
+
+/**
  * Replies to the sender using the reply-to address and all recipients of this message. The size
  of the email (including headers) is <a
  href="/apps-script/guides/services/quotas#current_limitations">quota limited</a>.
@@ -1613,6 +1931,31 @@ GmailApp.GmailMessage.prototype.reply = function(body){};
  * @return {GmailApp.GmailMessage} this message,useful for chaining
  */
 GmailApp.GmailMessage.prototype.replyAll = function(body){};
+
+/**
+ * Replies to the sender of this message using the reply-to address and all recipients, with
+ optional arguments.
+
+ <p>The email can contain both plain text, and also an HTML body. The size of the email
+ (including headers) is <a href="/apps-script/guides/services/quotas#current_limitations">quota
+ limited</a>.
+
+ <pre class="prettyprint"><code>
+ // Respond with HTML body text
+ var firstThread = GmailApp.getInboxThreads(0,1)[0];
+ var message = firstThread.getMessages[0];
+ messageThread.replyAll(&quot;incapable of HTML&quot;, {
+   htmlBody: &quot;&lt;b&gt;some HTML body text&lt;/b&gt;&quot;,
+   noReply: true
+ });
+ </code></pre>
+ *
+ * @param {String} body - the body of the email
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {GmailApp.GmailMessage} this message, useful for chaining
+ */
+GmailApp.GmailMessage.prototype.replyAll = function(body, options){};
 
 /**
  * Stars the message.
@@ -1677,6 +2020,30 @@ GmailApp.GmailThread.prototype.addLabel = function(label){};
 GmailApp.GmailThread.prototype.createDraftReply = function(body){};
 
 /**
+ * Creates a draft message replying to the sender of the last message in this thread using the
+ reply-to address, with optional arguments.
+
+ <p>The email can contain both plain text and an HTML body. The size of the email (including
+ headers) is <a href="/apps-script/guides/services/quotas#current_limitations">quota
+ limited</a>.
+
+ <pre class="prettyprint"><code>
+ // Create a draft response with an HTML text body.
+ var firstThread = GmailApp.getInboxThreads(0,1)[0];
+ firstThread.createDraftReply(&quot;incapable of HTML&quot;, {
+   htmlBody: &quot;&lt;b&gt;some HTML body text&lt;/b&gt;&quot;,
+   cc: &quot;another@example.com&quot;
+ });
+ </code></pre>
+ *
+ * @param {String} body - the body of the email
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {GmailApp.GmailDraft} the newly created draft message
+ */
+GmailApp.GmailThread.prototype.createDraftReply = function(body, options){};
+
+/**
  * Creates a draft message replying to the sender of the last message in this thread, using the
  reply-to address and all recipients of this message. The size of the email (including headers)
  is <a href="/apps-script/guides/services/quotas#current_limitations">quota limited</a>.
@@ -1694,6 +2061,31 @@ GmailApp.GmailThread.prototype.createDraftReply = function(body){};
  * @return {GmailApp.GmailDraft} the newly created draft message
  */
 GmailApp.GmailThread.prototype.createDraftReplyAll = function(body){};
+
+/**
+ * Creates a draft message replying to the sender of the last message in this thread, using the
+ reply-to address and all recipients, with optional arguments.
+
+ <p>The email can contain both plain text and an HTML body. The size of the email (including
+ headers) is <a href="/apps-script/guides/services/quotas#current_limitations">quota
+ limited</a>.
+
+ <pre class="prettyprint"><code>
+ // Create a draft reply, using an HTML text body, to all recipients (except those bcc&#39;d) of
+ // the last email of in this thread.
+ var firstThread = GmailApp.getInboxThreads(0,1)[0];
+ firstThread.createDraftReplyAll(&quot;incapable of HTML&quot;, {
+   htmlBody: &quot;&lt;b&gt;some HTML body text&lt;/b&gt;&quot;,
+   cc: &quot;another@example.com&quot;
+ });
+ </code></pre>
+ *
+ * @param {String} body - the body of the email
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {GmailApp.GmailDraft} the newly created draft message
+ */
+GmailApp.GmailThread.prototype.createDraftReplyAll = function(body, options){};
 
 /**
  * Gets the subject of the first message in the thread.
@@ -2058,6 +2450,27 @@ GmailApp.GmailThread.prototype.removeLabel = function(label){};
 GmailApp.GmailThread.prototype.reply = function(body){};
 
 /**
+ * Reply to the sender of the last message on this thread using the replyTo address, with optional
+ arguments. The email can contain both plain text, and also an HTML body. Note that the total
+ size of the email (including all headers, but excluding attachments) may not exceed 20KB.
+
+ <pre class="prettyprint"><code>
+ // Respond with HTML body text.
+ var firstThread = GmailApp.getInboxThreads(0,1)[0];
+ firstThread.reply(&quot;incapable of HTML&quot;, {
+   htmlBody: &quot;some HTML body text&quot;,
+   noReply: true
+ });
+ </code></pre>
+ *
+ * @param {String} body - the body of the email
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {GmailApp.GmailThread} this thread, useful for chaining
+ */
+GmailApp.GmailThread.prototype.reply = function(body, options){};
+
+/**
  * Reply to the sender (using the replyTo address), and all recipients of the last message on this
  thread.
 
@@ -2074,4 +2487,26 @@ GmailApp.GmailThread.prototype.reply = function(body){};
  * @return {GmailApp.GmailThread} this thread, useful for chaining
  */
 GmailApp.GmailThread.prototype.replyAll = function(body){};
+
+/**
+ * Reply to the sender (using the <code>replyTo</code> address), and all recipients of the last message
+ on this thread, with optional arguments. The email can contain both plain text, and also an
+ HTML body. Note that the total size of the email (including all headers, but excluding
+ attachments) may not exceed 20KB.
+
+ <pre class="prettyprint"><code>
+ // Respond with HTML body text.
+ var firstThread = GmailApp.getInboxThreads(0,1)[0];
+ firstThread.replyAll(&quot;incapable of HTML&quot;, {
+   htmlBody: &quot;some HTML body text&quot;,
+   noReply: true
+ });
+ </code></pre>
+ *
+ * @param {String} body - the body of the email
+ * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
+ *
+ * @return {GmailApp.GmailThread} this thread, useful for chaining
+ */
+GmailApp.GmailThread.prototype.replyAll = function(body, options){};
 

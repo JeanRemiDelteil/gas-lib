@@ -510,6 +510,16 @@ FormApp.CheckboxItem.prototype.clearValidation = function(){};
 FormApp.CheckboxItem.prototype.createChoice = function(value){};
 
 /**
+ * Creates a new choice.
+ *
+ * @param {String} value - the choice's value, which respondents see as a label when viewing the form
+ * @param {Boolean} isCorrect - whether the choice is a correct answer
+ *
+ * @return {FormApp.Choice} the new choice
+ */
+FormApp.CheckboxItem.prototype.createChoice = function(value, isCorrect){};
+
+/**
  * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/item-response.html'>ItemResponse</a></code> for this checkbox item. The argument <code>responses</code> is a
  <code>String[]</code> array containing values that need to be checked. Throws an exception if any
  value does not match a valid choice for this item, unless <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/checkbox-item.html#showOtherOption(Boolean)'>showOtherOption(enabled)</a></code> is set to <code>true</code>.
@@ -1255,6 +1265,16 @@ FormApp.Form.prototype.addDurationItem = function(){};
 FormApp.Form.prototype.addEditor = function(emailAddress){};
 
 /**
+ * Adds the given user to the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>. If the user was already
+ on the list of viewers, this method promotes the user out of the list of viewers.
+ *
+ * @param {User} user - a representation of the user to add
+ *
+ * @return {FormApp.Form} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>, for chaining
+ */
+FormApp.Form.prototype.addEditor = function(user){};
+
+/**
  * Adds the given array of users to the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>. If any of the
  users were already on the list of viewers, this method promotes them out of the list of
  viewers.
@@ -1393,6 +1413,16 @@ FormApp.Form.prototype.deleteAllResponses = function(){};
 FormApp.Form.prototype.deleteItem = function(item){};
 
 /**
+ * Deletes the item at a given index among all the items in the form. Throws a scripting exception
+ if no item exists at the given index.
+ *
+ * @param {number} index - the index of the item among all the items in the form
+ *
+ * @return void
+ */
+FormApp.Form.prototype.deleteItem = function(index){};
+
+/**
  * Gets the form's confirmation message.
  *
  * @return {String} the form's confirmation message
@@ -1469,6 +1499,15 @@ FormApp.Form.prototype.getItemById = function(id){};
 FormApp.Form.prototype.getItems = function(){};
 
 /**
+ * Gets an array of all items of a given type.
+ *
+ * @param {FormApp.ItemType} itemType - the type of items to retrieve
+ *
+ * @return {FormApp.Item[]} an array of all items of that type
+ */
+FormApp.Form.prototype.getItems = function(itemType){};
+
+/**
  * Gets the URL that can be used to respond to the form.
  *
  * @return {String} the URL to respond to the form
@@ -1487,8 +1526,16 @@ FormApp.Form.prototype.getResponse = function(responseId){};
 /**
  * Gets an array of all of the form's responses.
  *
- * @param {Date} [timestamp] - the earliest date and time for which form responses should be returned
  * @return {FormApp.FormResponse[]} an array of all of the form's responses
+ */
+FormApp.Form.prototype.getResponses = function(){};
+
+/**
+ * Gets an array of all of the form's responses after a given date and time.
+ *
+ * @param {Date} timestamp - the earliest date and time for which form responses should be returned
+ *
+ * @return {FormApp.FormResponse[]} the list of form responses
  */
 FormApp.Form.prototype.getResponses = function(timestamp){};
 
@@ -1572,6 +1619,17 @@ FormApp.Form.prototype.isQuiz = function(){};
 FormApp.Form.prototype.moveItem = function(item, toIndex){};
 
 /**
+ * Moves an item at a given index among all the items in the form to another given index. Throws a
+ scripting exception if the <code>to</code> index is out of bounds.
+ *
+ * @param {number} from - the current index of the item among all the items in the form
+ * @param {number} to - the new index for the item among all the items in the form
+ *
+ * @return {FormApp.Item} the item that was moved
+ */
+FormApp.Form.prototype.moveItem = function(from, to){};
+
+/**
  * Unlinks the form from its current response destination. The unlinked former destination still
  retains a copy of all previous responses. All forms, including those that do not have a
  destination set explicitly, <a
@@ -1593,6 +1651,17 @@ FormApp.Form.prototype.removeDestination = function(){};
  * @return {FormApp.Form} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>, for chaining
  */
 FormApp.Form.prototype.removeEditor = function(emailAddress){};
+
+/**
+ * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>. This method does not
+ block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code> if they belong to a class of users who have
+ general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code> is shared with the user's entire domain.
+ *
+ * @param {User} user - a representation of the user to remove
+ *
+ * @return {FormApp.Form} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>, for chaining
+ */
+FormApp.Form.prototype.removeEditor = function(user){};
 
 /**
  * Determines whether the form requires respondents to log in to an account in the same domain or
@@ -2510,6 +2579,22 @@ FormApp.ListItem.prototype.createChoice = function(value, isCorrect){};
 FormApp.ListItem.prototype.createChoice = function(value, navigationItem){};
 
 /**
+ * Creates a new choice with a page-navigation option. Choices that use page navigation cannot be
+ combined in the same item with choices that do not use page navigation.
+
+ <p>The page navigation occurs after the respondent completes a page that contains the option,
+ and only if the respondent chose that option. If the respondent chose multiple options with
+ page-navigation instructions on the same page, only the last navigation option has any effect.
+ Page navigation also has no effect on the last page of a form.
+ *
+ * @param {String} value - the choice's value, which respondents see as a label when viewing the form
+ * @param {FormApp.PageNavigationType} navigationType - the choice's navigation type
+ *
+ * @return {FormApp.Choice} the new choice
+ */
+FormApp.ListItem.prototype.createChoice = function(value, navigationType){};
+
+/**
  * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/item-response.html'>ItemResponse</a></code> for this list item. Throws an exception if the <code>response</code> argument does not match a valid choice for this item.
  *
  * @param {String} response - a valid answer for this list item
@@ -2740,6 +2825,22 @@ FormApp.MultipleChoiceItem.prototype.createChoice = function(value, isCorrect){}
  * @return {FormApp.Choice} the new choice
  */
 FormApp.MultipleChoiceItem.prototype.createChoice = function(value, navigationItem){};
+
+/**
+ * Creates a new choice with a page-navigation option. Choices that use page navigation cannot be
+ combined in the same item with choices that do not use page navigation.
+
+ <p>The page navigation occurs after the respondent completes a page that contains the option,
+ and only if the respondent chose that option. If the respondent chose multiple options with
+ page-navigation instructions on the same page, only the last navigation option has any effect.
+ Page navigation also has no effect on the last page of a form.
+ *
+ * @param {String} value - the choice's value, which respondents see as a label when viewing the form
+ * @param {FormApp.PageNavigationType} navigationType - the choice's navigation type
+ *
+ * @return {FormApp.Choice} the new choice
+ */
+FormApp.MultipleChoiceItem.prototype.createChoice = function(value, navigationType){};
 
 /**
  * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/item-response.html'>ItemResponse</a></code> for this multiple-choice item. Throws an exception if the
@@ -3027,6 +3128,19 @@ FormApp.PageBreakItem.prototype.getType = function(){};
 FormApp.PageBreakItem.prototype.setGoToPage = function(goToPageItem){};
 
 /**
+ * Sets the type of page navigation that occurs after completing the page before this page break
+ (that is, upon reaching this page break by normal linear progression through the form). If the
+ page contained a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/multiple-choice-item.html'>MultipleChoiceItem</a></code> or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/list-item.html'>ListItem</a></code> with a navigation option, that
+ navigation overrules this navigation.
+ *
+ * @param {FormApp.PageNavigationType} navigationType - the navigation action to take after completing the page before this page
+     break
+ *
+ * @return {FormApp.PageBreakItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/page-break-item.html'>PageBreakItem</a></code>, for chaining
+ */
+FormApp.PageBreakItem.prototype.setGoToPage = function(navigationType){};
+
+/**
  * Sets the item's help text (sometimes called description text for layout items like <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/image-item.html'>ImageItems</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/page-break-item.html'>PageBreakItems</a></code>, and <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/section-header-item.html'>SectionHeaderItems</a></code>).
  *
  * @param {String} text - the new help text
@@ -3272,6 +3386,16 @@ FormApp.QuizFeedbackBuilder = function(){};
  * @return {FormApp.QuizFeedbackBuilder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/quiz-feedback-builder.html'>QuizFeedbackBuilder</a></code>, for chaining
  */
 FormApp.QuizFeedbackBuilder.prototype.addLink = function(url){};
+
+/**
+ * Adds a link to the feedback's supplemental material.
+ *
+ * @param {String} url - the link to display under the display text
+ * @param {String} displayText - the text to display for the link
+ *
+ * @return {FormApp.QuizFeedbackBuilder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/quiz-feedback-builder.html'>QuizFeedbackBuilder</a></code>, for chaining
+ */
+FormApp.QuizFeedbackBuilder.prototype.addLink = function(url, displayText){};
 
 /**
  * Builds a Feedback of the corresponding type for this builder.

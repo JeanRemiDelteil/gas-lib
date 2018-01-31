@@ -2459,6 +2459,19 @@ SlidesApp.Fill.prototype.setSolidFill = function(color, alpha){};
 SlidesApp.Fill.prototype.setSolidFill = function(hexString){};
 
 /**
+ * Sets the solid fill to the given alpha and hex color string.
+
+ <p>The hex string must be in the format '#RRGGBB'. For example, pink would be represented as
+ '#FFC0CB'.
+ *
+ * @param {String} hexString - 
+ * @param {Number} alpha - 
+ *
+ * @return void
+ */
+SlidesApp.Fill.prototype.setSolidFill = function(hexString, alpha){};
+
+/**
  * Sets the background to transparent.
  *
  * @return void
@@ -2685,6 +2698,43 @@ SlidesApp.Group.prototype.scaleWidth = function(ratio){};
  * @return void
  */
 SlidesApp.Group.prototype.select = function(){};
+
+/**
+ * Selects the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> in the active presentation.
+
+ <p>A script can only access the selection of the user who is running the script, and only if
+ the script is <a href="/apps-script/scripts_containers">bound</a> to the presentation.
+
+ <p>The <code>select(true)</code> selects only the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> and removes any previous
+ selection. This also sets the parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> as the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/selection.html#getCurrentPage()'>current page selection</a></code>.
+
+ <p><code>select(false)</code> should be used to select multiple <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects. The
+ <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects must be in the same <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code>.
+
+ <p>The following conditions must be met while selecting a page element using <code>select(false)</code>: <br>
+ 1) The parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> object must be the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/selection.html#getCurrentPage()'>current page selection</a></code> <br>
+ 2) There should not be multiple <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> objects selected. <br>
+
+ <p>To make sure that’s the case the preferred approach is to select the parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code>
+ first using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html#selectAsCurrentPage()'>Page.selectAsCurrentPage()</a></code> and then select the page elements in that page.
+
+ <pre class="prettyprint">
+ var slide = SlidesApp.getActivePresentation().getSlides()[0];
+ // First select the slide page, as the current page selection.
+ slide.selectAsCurrentPage();
+ // Then select all the page elements in the selected slide page.
+ var pageElements = slide.getPageElements();
+ for (var i = 0; i < pageElements.length; i++) {
+   pageElements[i].select(false);
+ }
+ </pre>
+ *
+ * @param {Boolean} replace - if <code>true</code>, the selection replaces any previous selection, otherwise the
+     selection is added to any previous selection.
+ *
+ * @return void
+ */
+SlidesApp.Group.prototype.select = function(replace){};
 
 /**
  * Sets the element's height in points, which is the height of the element's bounding box when the
@@ -3047,6 +3097,24 @@ SlidesApp.Image.prototype.replace = function(blobSource, crop){};
 SlidesApp.Image.prototype.replace = function(imageUrl){};
 
 /**
+ * Replaces this image with another image downloaded from the provided URL, optionally cropping
+ the image to fit.
+
+ <p>Inserting the image fetches it from the URL once and a copy is stored for display inside the
+ presentation. Images must be less than 50MB in size, cannot exceed 25 megapixels, and must be
+ in either in PNG, JPEG, or GIF format.
+
+ <p>The provided URL must be no larger than 2kB.
+ *
+ * @param {String} imageUrl - The URL to download the image from.
+ * @param {Boolean} crop - If <code>true</code>, crops the image to fit the existing image's size. Otherwise, the
+     image is scaled and centered.
+ *
+ * @return {SlidesApp.Image} this <code>Image</code>
+ */
+SlidesApp.Image.prototype.replace = function(imageUrl, crop){};
+
+/**
  * Scales the element's height by the specified ratio. The element's height is the height of its
  bounding box when the element has no rotation.
  *
@@ -3085,6 +3153,43 @@ SlidesApp.Image.prototype.scaleWidth = function(ratio){};
  * @return void
  */
 SlidesApp.Image.prototype.select = function(){};
+
+/**
+ * Selects the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> in the active presentation.
+
+ <p>A script can only access the selection of the user who is running the script, and only if
+ the script is <a href="/apps-script/scripts_containers">bound</a> to the presentation.
+
+ <p>The <code>select(true)</code> selects only the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> and removes any previous
+ selection. This also sets the parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> as the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/selection.html#getCurrentPage()'>current page selection</a></code>.
+
+ <p><code>select(false)</code> should be used to select multiple <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects. The
+ <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects must be in the same <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code>.
+
+ <p>The following conditions must be met while selecting a page element using <code>select(false)</code>: <br>
+ 1) The parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> object must be the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/selection.html#getCurrentPage()'>current page selection</a></code> <br>
+ 2) There should not be multiple <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> objects selected. <br>
+
+ <p>To make sure that’s the case the preferred approach is to select the parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code>
+ first using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html#selectAsCurrentPage()'>Page.selectAsCurrentPage()</a></code> and then select the page elements in that page.
+
+ <pre class="prettyprint">
+ var slide = SlidesApp.getActivePresentation().getSlides()[0];
+ // First select the slide page, as the current page selection.
+ slide.selectAsCurrentPage();
+ // Then select all the page elements in the selected slide page.
+ var pageElements = slide.getPageElements();
+ for (var i = 0; i < pageElements.length; i++) {
+   pageElements[i].select(false);
+ }
+ </pre>
+ *
+ * @param {Boolean} replace - if <code>true</code>, the selection replaces any previous selection, otherwise the
+     selection is added to any previous selection.
+ *
+ * @return void
+ */
+SlidesApp.Image.prototype.select = function(replace){};
 
 /**
  * Sets the element's height in points, which is the height of the element's bounding box when the
@@ -3134,6 +3239,20 @@ SlidesApp.Image.prototype.setLinkSlide = function(slideIndex){};
  * @return {SlidesApp.Link} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> that was set
  */
 SlidesApp.Image.prototype.setLinkSlide = function(slide){};
+
+/**
+ * Sets a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> to the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/slide.html'>Slide</a></code> using the relative position of the slide.
+
+ <pre class="prettyprint">
+ // Set a link to the first slide of the presentation.
+ shape.setLinkSlide(SlideApp.SlidePosition.FIRST_SLIDE);
+ </pre>
+ *
+ * @param {SlidesApp.SlidePosition} slidePosition - The relative <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/slide-position.html'>SlidePosition</a></code>.
+ *
+ * @return {SlidesApp.Link} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> that was set
+ */
+SlidesApp.Image.prototype.setLinkSlide = function(slidePosition){};
 
 /**
  * Sets a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> to the given non-empty URL string.
@@ -3290,6 +3409,25 @@ SlidesApp.Layout.prototype.getPageType = function(){};
 SlidesApp.Layout.prototype.getPlaceholder = function(placeholderType){};
 
 /**
+ * Returns the placeholder <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> object for a specified <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/placeholder-type.html'>PlaceholderType</a></code> and
+ a placeholder index, or <code>null</code> if the placeholder is not present.
+
+ <p>If there are multiple placeholders with the same type and index, it returns the first
+ placeholder from the page's page elements collection.
+
+ <pre class="prettyprint">
+ var slide = SlidesApp.getActivePresentation().getSlides()[0];
+ var placeholder = slide.getPlaceholder(SlidesApp.PlaceholderType.CENTERED_TITLE, 0);
+ </pre>
+ *
+ * @param {SlidesApp.PlaceholderType} placeholderType - 
+ * @param {number} placeholderIndex - 
+ *
+ * @return {SlidesApp.PageElement}
+ */
+SlidesApp.Layout.prototype.getPlaceholder = function(placeholderType, placeholderIndex){};
+
+/**
  * Returns the list of placeholder <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects in the page.
 
  <pre class="prettyprint">
@@ -3404,6 +3542,30 @@ SlidesApp.Layout.prototype.insertImage = function(blobSource, left, top, width, 
 SlidesApp.Layout.prototype.insertImage = function(imageUrl){};
 
 /**
+ * Inserts an image on the page with the provided position and size from the provided URL.
+
+ <p>Inserting the image fetches it from the URL once and a copy is stored for display inside the
+ presentation. Images must be less than 50MB in size, cannot exceed 25 megapixels, and must be
+ in either in PNG, JPEG, or GIF format.
+
+ <p>The provided URL must be no larger than 2kB.
+
+ <p>In order to maintain the image's aspect ratio, the image is scaled and centered with respect
+ to the provided size.
+ *
+ * @param {String} imageUrl - The image URL.
+ * @param {Number} left - The horizontal position of the image in points, measured from the upper left corner
+     of the page.
+ * @param {Number} top - The vertical position of the image in points, measured from the upper left corner of
+     the page.
+ * @param {Number} width - The width of the image in points.
+ * @param {Number} height - The height of the image in points.
+ *
+ * @return {SlidesApp.Image} the inserted image
+ */
+SlidesApp.Layout.prototype.insertImage = function(imageUrl, left, top, width, height){};
+
+/**
  * Inserts a line on the page.
 
  <pre class="prettyprint">
@@ -3451,6 +3613,20 @@ SlidesApp.Layout.prototype.insertLine = function(lineCategory, startLeft, startT
 SlidesApp.Layout.prototype.insertShape = function(shapeType){};
 
 /**
+ * Inserts a shape on the page.
+ *
+ * @param {SlidesApp.ShapeType} shapeType - The type of shape to insert.
+ * @param {Number} left - The horizontal position of the shape, measured from the upper left corner of the
+     page.
+ * @param {Number} top - The vertical position of the shape, measured from the upper left corner of the page.
+ * @param {Number} width - The width of the shape.
+ * @param {Number} height - The height of the shape.
+ *
+ * @return {SlidesApp.Shape} the inserted shape
+ */
+SlidesApp.Layout.prototype.insertShape = function(shapeType, left, top, width, height){};
+
+/**
  * Inserts a Google Sheets chart on the page.
 
  <p>The chart is inserted with a default size at the top left corner of the page.
@@ -3471,6 +3647,42 @@ SlidesApp.Layout.prototype.insertShape = function(shapeType){};
  * @return {SlidesApp.SheetsChart} the inserted chart in the page
  */
 SlidesApp.Layout.prototype.insertSheetsChart = function(sourceChart){};
+
+/**
+ * Inserts a Google Sheets chart on the page with the provided position and size.
+
+ <p>In order to maintain the chart's aspect ratio, the chart is scaled and centered with respect
+ to the provided size.
+
+ <p>The inserted chart is linked with the source Google Sheets chart which allows it to be
+ updated. Other collaborators can see the link to the source spreadsheet.
+
+ <pre class="prettyprint">
+ var sheet = SpreadsheetApp.openById('spreadsheetId').getSheets()[0];
+ var chart = sheet.getCharts()[0];
+ // Insert the spreadsheet chart in the first slide.
+ var slide = SlidesApp.getActivePresentation().getSlides()[0];
+ var position = {left: 0, top: 0};
+ var size = {width: 200, height: 200};
+ slide.insertSheetsChart(
+     chart,
+     position.left,
+     position.top,
+     size.width,
+     size.height);
+ </pre>
+ *
+ * @param {SpreadsheetApp.EmbeddedChart} sourceChart - The chart in a spreadsheet to be inserted in the page.
+ * @param {Number} left - The horizontal position of the chart in points, measured from the upper left corner
+     of the page.
+ * @param {Number} top - The vertical position of the chart in points, measured from the upper left corner of
+     the page.
+ * @param {Number} width - The width of the chart in points.
+ * @param {Number} height - The height of the chart in points.
+ *
+ * @return {SlidesApp.SheetsChart} the inserted chart in the page
+ */
+SlidesApp.Layout.prototype.insertSheetsChart = function(sourceChart, left, top, width, height){};
 
 /**
  * Inserts a Google Sheets chart as an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/image.html'>Image</a></code> on the page.
@@ -3494,6 +3706,42 @@ SlidesApp.Layout.prototype.insertSheetsChart = function(sourceChart){};
 SlidesApp.Layout.prototype.insertSheetsChartAsImage = function(sourceChart){};
 
 /**
+ * Inserts a Google Sheets chart as an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/image.html'>Image</a></code> on the page with the provided position and
+ size.
+
+ <p>In order to maintain the chart image's aspect ratio, the image is scaled and centered with
+ respect to the provided size.
+
+ <p>The inserted image of the chart is not linked with the source Google Sheets chart.
+
+ <pre class="prettyprint">
+ var sheet = SpreadsheetApp.openById('spreadsheetId').getSheets()[0];
+ var chart = sheet.getCharts()[0];
+ // Insert the spreadsheet chart in the first slide.
+ var slide = SlidesApp.getActivePresentation().getSlides()[0];
+ var position = {left: 0, top: 0};
+ var size = {width: 200, height: 200};
+ slide.insertSheetsChartAsImage(
+     chart,
+     position.left,
+     position.right,
+     size.width,
+     size.height);
+ </pre>
+ *
+ * @param {SpreadsheetApp.EmbeddedChart} sourceChart - The chart in a spreadsheet to be inserted in the page.
+ * @param {Number} left - The horizontal position of the chart in points, measured from the upper left corner
+     of the page.
+ * @param {Number} top - The vertical position of the chart in points, measured from the upper left corner of
+     the page.
+ * @param {Number} width - The width of the chart in points.
+ * @param {Number} height - The height of the chart in points.
+ *
+ * @return {SlidesApp.Image} the inserted image of the chart in the page
+ */
+SlidesApp.Layout.prototype.insertSheetsChartAsImage = function(sourceChart, left, top, width, height){};
+
+/**
  * Inserts a table on the page.
 
  <p>The table is centered on the page with default size and evenly distributed rows and columns.
@@ -3506,6 +3754,24 @@ SlidesApp.Layout.prototype.insertSheetsChartAsImage = function(sourceChart){};
 SlidesApp.Layout.prototype.insertTable = function(numRows, numColumns){};
 
 /**
+ * Inserts a table on the page with the provided position and size.
+
+ <p>Rows and columns are evenly distributed in the created table.
+ *
+ * @param {number} numRows - The number of rows in the table.
+ * @param {number} numColumns - The number of columns in the table.
+ * @param {Number} left - The horizontal position of the table, measured from the upper left corner of the
+     page.
+ * @param {Number} top - The vertical position of the table, measured from the upper left corner of the page.
+ * @param {Number} width - The width of the table.
+ * @param {Number} height - The minimum height of the table. The actual height of the rendered table depends
+     on factors such as text font size.
+ *
+ * @return {SlidesApp.Table} the inserted table
+ */
+SlidesApp.Layout.prototype.insertTable = function(numRows, numColumns, left, top, width, height){};
+
+/**
  * Inserts a video at the top left corner of the page with a default size.
 
  <p>Only YouTube videos are currently supported.
@@ -3515,6 +3781,23 @@ SlidesApp.Layout.prototype.insertTable = function(numRows, numColumns){};
  * @return {SlidesApp.Video} the inserted video
  */
 SlidesApp.Layout.prototype.insertVideo = function(videoUrl){};
+
+/**
+ * Inserts a video on the page with the provided position and size.
+
+ <p>Only YouTube videos are currently supported.
+ *
+ * @param {String} videoUrl - The URL of the video to insert.
+ * @param {Number} left - The horizontal position of the video in points, measured from the upper left corner
+     of the page.
+ * @param {Number} top - The vertical position of the video in points, measured from the upper left corner of
+     the page.
+ * @param {Number} width - The width of the video in points.
+ * @param {Number} height - The height of the video in points.
+ *
+ * @return {SlidesApp.Video} the inserted video
+ */
+SlidesApp.Layout.prototype.insertVideo = function(videoUrl, left, top, width, height){};
 
 /**
  * Removes the page.
@@ -3533,6 +3816,18 @@ SlidesApp.Layout.prototype.remove = function(){};
  * @return {number} the number of occurrences changed
  */
 SlidesApp.Layout.prototype.replaceAllText = function(findText, replaceText){};
+
+/**
+ * Replaces all instances of text matching find text with replace text.
+ *
+ * @param {String} findText - The text to find.
+ * @param {String} replaceText - The text to replace the matched text.
+ * @param {Boolean} matchCase - If <code>true</code>, the search is case sensitive; if <code>false</code>, the search is
+     case insensitive.
+ *
+ * @return {number} the number of occurrences changed
+ */
+SlidesApp.Layout.prototype.replaceAllText = function(findText, replaceText, matchCase){};
 
 /**
  * Selects the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> in the active presentation as the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/selection.html#getCurrentPage()'>current page selection</a></code> and removes any previous selection.
@@ -3848,6 +4143,43 @@ SlidesApp.Line.prototype.scaleWidth = function(ratio){};
 SlidesApp.Line.prototype.select = function(){};
 
 /**
+ * Selects the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> in the active presentation.
+
+ <p>A script can only access the selection of the user who is running the script, and only if
+ the script is <a href="/apps-script/scripts_containers">bound</a> to the presentation.
+
+ <p>The <code>select(true)</code> selects only the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> and removes any previous
+ selection. This also sets the parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> as the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/selection.html#getCurrentPage()'>current page selection</a></code>.
+
+ <p><code>select(false)</code> should be used to select multiple <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects. The
+ <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects must be in the same <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code>.
+
+ <p>The following conditions must be met while selecting a page element using <code>select(false)</code>: <br>
+ 1) The parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> object must be the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/selection.html#getCurrentPage()'>current page selection</a></code> <br>
+ 2) There should not be multiple <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> objects selected. <br>
+
+ <p>To make sure that’s the case the preferred approach is to select the parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code>
+ first using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html#selectAsCurrentPage()'>Page.selectAsCurrentPage()</a></code> and then select the page elements in that page.
+
+ <pre class="prettyprint">
+ var slide = SlidesApp.getActivePresentation().getSlides()[0];
+ // First select the slide page, as the current page selection.
+ slide.selectAsCurrentPage();
+ // Then select all the page elements in the selected slide page.
+ var pageElements = slide.getPageElements();
+ for (var i = 0; i < pageElements.length; i++) {
+   pageElements[i].select(false);
+ }
+ </pre>
+ *
+ * @param {Boolean} replace - if <code>true</code>, the selection replaces any previous selection, otherwise the
+     selection is added to any previous selection.
+ *
+ * @return void
+ */
+SlidesApp.Line.prototype.select = function(replace){};
+
+/**
  * Sets the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/dash-style.html'>DashStyle</a></code> of the line.
  *
  * @param {SlidesApp.DashStyle} style - 
@@ -3869,6 +4201,18 @@ SlidesApp.Line.prototype.setDashStyle = function(style){};
  * @return {SlidesApp.Line}
  */
 SlidesApp.Line.prototype.setEnd = function(left, top){};
+
+/**
+ * Sets the position of the end point of the line.
+
+ <p>The line path may be adjusted after the position changes.
+ *
+ * @param {SlidesApp.Point} point - The end point of the line, whose position is measured from the upper left corner
+     of the page.
+ *
+ * @return {SlidesApp.Line}
+ */
+SlidesApp.Line.prototype.setEnd = function(point){};
 
 /**
  * Sets the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/arrow-style.html'>ArrowStyle</a></code> of the arrow at the end of the line.
@@ -3929,6 +4273,20 @@ SlidesApp.Line.prototype.setLinkSlide = function(slideIndex){};
 SlidesApp.Line.prototype.setLinkSlide = function(slide){};
 
 /**
+ * Sets a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> to the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/slide.html'>Slide</a></code> using the relative position of the slide.
+
+ <pre class="prettyprint">
+ // Set a link to the first slide of the presentation.
+ shape.setLinkSlide(SlideApp.SlidePosition.FIRST_SLIDE);
+ </pre>
+ *
+ * @param {SlidesApp.SlidePosition} slidePosition - The relative <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/slide-position.html'>SlidePosition</a></code>.
+ *
+ * @return {SlidesApp.Link} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> that was set
+ */
+SlidesApp.Line.prototype.setLinkSlide = function(slidePosition){};
+
+/**
  * Sets a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> to the given non-empty URL string.
 
  <pre class="prettyprint">
@@ -3964,6 +4322,18 @@ SlidesApp.Line.prototype.setRotation = function(angle){};
  * @return {SlidesApp.Line}
  */
 SlidesApp.Line.prototype.setStart = function(left, top){};
+
+/**
+ * Sets the position of the start point of the line.
+
+ <p>The line path may be adjusted after the position changes.
+ *
+ * @param {SlidesApp.Point} point - The start point of the line, whose position is measured from the upper left corner
+     of the page.
+ *
+ * @return {SlidesApp.Line}
+ */
+SlidesApp.Line.prototype.setStart = function(point){};
 
 /**
  * Sets the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/arrow-style.html'>ArrowStyle</a></code> of the arrow at the beginning of the line.
@@ -4110,6 +4480,19 @@ SlidesApp.LineFill.prototype.setSolidFill = function(color, alpha){};
  * @return void
  */
 SlidesApp.LineFill.prototype.setSolidFill = function(hexString){};
+
+/**
+ * Sets the solid fill to the given alpha and hex color string.
+
+ <p>The hex string must be in the format '#RRGGBB'. For example, pink would be represented as
+ '#FFC0CB'.
+ *
+ * @param {String} hexString - 
+ * @param {Number} alpha - 
+ *
+ * @return void
+ */
+SlidesApp.LineFill.prototype.setSolidFill = function(hexString, alpha){};
 
 /** @constructor */
 SlidesApp.Link = function(){};
@@ -4374,6 +4757,25 @@ SlidesApp.Master.prototype.getPageType = function(){};
 SlidesApp.Master.prototype.getPlaceholder = function(placeholderType){};
 
 /**
+ * Returns the placeholder <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> object for a specified <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/placeholder-type.html'>PlaceholderType</a></code> and
+ a placeholder index, or <code>null</code> if the placeholder is not present.
+
+ <p>If there are multiple placeholders with the same type and index, it returns the first
+ placeholder from the page's page elements collection.
+
+ <pre class="prettyprint">
+ var slide = SlidesApp.getActivePresentation().getSlides()[0];
+ var placeholder = slide.getPlaceholder(SlidesApp.PlaceholderType.CENTERED_TITLE, 0);
+ </pre>
+ *
+ * @param {SlidesApp.PlaceholderType} placeholderType - 
+ * @param {number} placeholderIndex - 
+ *
+ * @return {SlidesApp.PageElement}
+ */
+SlidesApp.Master.prototype.getPlaceholder = function(placeholderType, placeholderIndex){};
+
+/**
  * Returns the list of placeholder <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects in the page.
 
  <pre class="prettyprint">
@@ -4488,6 +4890,30 @@ SlidesApp.Master.prototype.insertImage = function(blobSource, left, top, width, 
 SlidesApp.Master.prototype.insertImage = function(imageUrl){};
 
 /**
+ * Inserts an image on the page with the provided position and size from the provided URL.
+
+ <p>Inserting the image fetches it from the URL once and a copy is stored for display inside the
+ presentation. Images must be less than 50MB in size, cannot exceed 25 megapixels, and must be
+ in either in PNG, JPEG, or GIF format.
+
+ <p>The provided URL must be no larger than 2kB.
+
+ <p>In order to maintain the image's aspect ratio, the image is scaled and centered with respect
+ to the provided size.
+ *
+ * @param {String} imageUrl - The image URL.
+ * @param {Number} left - The horizontal position of the image in points, measured from the upper left corner
+     of the page.
+ * @param {Number} top - The vertical position of the image in points, measured from the upper left corner of
+     the page.
+ * @param {Number} width - The width of the image in points.
+ * @param {Number} height - The height of the image in points.
+ *
+ * @return {SlidesApp.Image} the inserted image
+ */
+SlidesApp.Master.prototype.insertImage = function(imageUrl, left, top, width, height){};
+
+/**
  * Inserts a line on the page.
 
  <pre class="prettyprint">
@@ -4535,6 +4961,20 @@ SlidesApp.Master.prototype.insertLine = function(lineCategory, startLeft, startT
 SlidesApp.Master.prototype.insertShape = function(shapeType){};
 
 /**
+ * Inserts a shape on the page.
+ *
+ * @param {SlidesApp.ShapeType} shapeType - The type of shape to insert.
+ * @param {Number} left - The horizontal position of the shape, measured from the upper left corner of the
+     page.
+ * @param {Number} top - The vertical position of the shape, measured from the upper left corner of the page.
+ * @param {Number} width - The width of the shape.
+ * @param {Number} height - The height of the shape.
+ *
+ * @return {SlidesApp.Shape} the inserted shape
+ */
+SlidesApp.Master.prototype.insertShape = function(shapeType, left, top, width, height){};
+
+/**
  * Inserts a Google Sheets chart on the page.
 
  <p>The chart is inserted with a default size at the top left corner of the page.
@@ -4555,6 +4995,42 @@ SlidesApp.Master.prototype.insertShape = function(shapeType){};
  * @return {SlidesApp.SheetsChart} the inserted chart in the page
  */
 SlidesApp.Master.prototype.insertSheetsChart = function(sourceChart){};
+
+/**
+ * Inserts a Google Sheets chart on the page with the provided position and size.
+
+ <p>In order to maintain the chart's aspect ratio, the chart is scaled and centered with respect
+ to the provided size.
+
+ <p>The inserted chart is linked with the source Google Sheets chart which allows it to be
+ updated. Other collaborators can see the link to the source spreadsheet.
+
+ <pre class="prettyprint">
+ var sheet = SpreadsheetApp.openById('spreadsheetId').getSheets()[0];
+ var chart = sheet.getCharts()[0];
+ // Insert the spreadsheet chart in the first slide.
+ var slide = SlidesApp.getActivePresentation().getSlides()[0];
+ var position = {left: 0, top: 0};
+ var size = {width: 200, height: 200};
+ slide.insertSheetsChart(
+     chart,
+     position.left,
+     position.top,
+     size.width,
+     size.height);
+ </pre>
+ *
+ * @param {SpreadsheetApp.EmbeddedChart} sourceChart - The chart in a spreadsheet to be inserted in the page.
+ * @param {Number} left - The horizontal position of the chart in points, measured from the upper left corner
+     of the page.
+ * @param {Number} top - The vertical position of the chart in points, measured from the upper left corner of
+     the page.
+ * @param {Number} width - The width of the chart in points.
+ * @param {Number} height - The height of the chart in points.
+ *
+ * @return {SlidesApp.SheetsChart} the inserted chart in the page
+ */
+SlidesApp.Master.prototype.insertSheetsChart = function(sourceChart, left, top, width, height){};
 
 /**
  * Inserts a Google Sheets chart as an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/image.html'>Image</a></code> on the page.
@@ -4578,6 +5054,42 @@ SlidesApp.Master.prototype.insertSheetsChart = function(sourceChart){};
 SlidesApp.Master.prototype.insertSheetsChartAsImage = function(sourceChart){};
 
 /**
+ * Inserts a Google Sheets chart as an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/image.html'>Image</a></code> on the page with the provided position and
+ size.
+
+ <p>In order to maintain the chart image's aspect ratio, the image is scaled and centered with
+ respect to the provided size.
+
+ <p>The inserted image of the chart is not linked with the source Google Sheets chart.
+
+ <pre class="prettyprint">
+ var sheet = SpreadsheetApp.openById('spreadsheetId').getSheets()[0];
+ var chart = sheet.getCharts()[0];
+ // Insert the spreadsheet chart in the first slide.
+ var slide = SlidesApp.getActivePresentation().getSlides()[0];
+ var position = {left: 0, top: 0};
+ var size = {width: 200, height: 200};
+ slide.insertSheetsChartAsImage(
+     chart,
+     position.left,
+     position.right,
+     size.width,
+     size.height);
+ </pre>
+ *
+ * @param {SpreadsheetApp.EmbeddedChart} sourceChart - The chart in a spreadsheet to be inserted in the page.
+ * @param {Number} left - The horizontal position of the chart in points, measured from the upper left corner
+     of the page.
+ * @param {Number} top - The vertical position of the chart in points, measured from the upper left corner of
+     the page.
+ * @param {Number} width - The width of the chart in points.
+ * @param {Number} height - The height of the chart in points.
+ *
+ * @return {SlidesApp.Image} the inserted image of the chart in the page
+ */
+SlidesApp.Master.prototype.insertSheetsChartAsImage = function(sourceChart, left, top, width, height){};
+
+/**
  * Inserts a table on the page.
 
  <p>The table is centered on the page with default size and evenly distributed rows and columns.
@@ -4590,6 +5102,24 @@ SlidesApp.Master.prototype.insertSheetsChartAsImage = function(sourceChart){};
 SlidesApp.Master.prototype.insertTable = function(numRows, numColumns){};
 
 /**
+ * Inserts a table on the page with the provided position and size.
+
+ <p>Rows and columns are evenly distributed in the created table.
+ *
+ * @param {number} numRows - The number of rows in the table.
+ * @param {number} numColumns - The number of columns in the table.
+ * @param {Number} left - The horizontal position of the table, measured from the upper left corner of the
+     page.
+ * @param {Number} top - The vertical position of the table, measured from the upper left corner of the page.
+ * @param {Number} width - The width of the table.
+ * @param {Number} height - The minimum height of the table. The actual height of the rendered table depends
+     on factors such as text font size.
+ *
+ * @return {SlidesApp.Table} the inserted table
+ */
+SlidesApp.Master.prototype.insertTable = function(numRows, numColumns, left, top, width, height){};
+
+/**
  * Inserts a video at the top left corner of the page with a default size.
 
  <p>Only YouTube videos are currently supported.
@@ -4599,6 +5129,23 @@ SlidesApp.Master.prototype.insertTable = function(numRows, numColumns){};
  * @return {SlidesApp.Video} the inserted video
  */
 SlidesApp.Master.prototype.insertVideo = function(videoUrl){};
+
+/**
+ * Inserts a video on the page with the provided position and size.
+
+ <p>Only YouTube videos are currently supported.
+ *
+ * @param {String} videoUrl - The URL of the video to insert.
+ * @param {Number} left - The horizontal position of the video in points, measured from the upper left corner
+     of the page.
+ * @param {Number} top - The vertical position of the video in points, measured from the upper left corner of
+     the page.
+ * @param {Number} width - The width of the video in points.
+ * @param {Number} height - The height of the video in points.
+ *
+ * @return {SlidesApp.Video} the inserted video
+ */
+SlidesApp.Master.prototype.insertVideo = function(videoUrl, left, top, width, height){};
 
 /**
  * Removes the page.
@@ -4617,6 +5164,18 @@ SlidesApp.Master.prototype.remove = function(){};
  * @return {number} the number of occurrences changed
  */
 SlidesApp.Master.prototype.replaceAllText = function(findText, replaceText){};
+
+/**
+ * Replaces all instances of text matching find text with replace text.
+ *
+ * @param {String} findText - The text to find.
+ * @param {String} replaceText - The text to replace the matched text.
+ * @param {Boolean} matchCase - If <code>true</code>, the search is case sensitive; if <code>false</code>, the search is
+     case insensitive.
+ *
+ * @return {number} the number of occurrences changed
+ */
+SlidesApp.Master.prototype.replaceAllText = function(findText, replaceText, matchCase){};
 
 /**
  * Selects the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> in the active presentation as the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/selection.html#getCurrentPage()'>current page selection</a></code> and removes any previous selection.
@@ -4691,6 +5250,25 @@ SlidesApp.NotesMaster.prototype.getPageElements = function(){};
  * @return {SlidesApp.PageElement}
  */
 SlidesApp.NotesMaster.prototype.getPlaceholder = function(placeholderType){};
+
+/**
+ * Returns the placeholder <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> object for a specified <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/placeholder-type.html'>PlaceholderType</a></code> and
+ a placeholder index, or <code>null</code> if the placeholder is not present.
+
+ <p>If there are multiple placeholders with the same type and index, it returns the first
+ placeholder from the page's page elements collection.
+
+ <pre class="prettyprint">
+ var slide = SlidesApp.getActivePresentation().getSlides()[0];
+ var placeholder = slide.getPlaceholder(SlidesApp.PlaceholderType.CENTERED_TITLE, 0);
+ </pre>
+ *
+ * @param {SlidesApp.PlaceholderType} placeholderType - 
+ * @param {number} placeholderIndex - 
+ *
+ * @return {SlidesApp.PageElement}
+ */
+SlidesApp.NotesMaster.prototype.getPlaceholder = function(placeholderType, placeholderIndex){};
 
 /**
  * Returns the list of placeholder <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects in the page.
@@ -4798,6 +5376,25 @@ SlidesApp.NotesPage.prototype.getPageElements = function(){};
 SlidesApp.NotesPage.prototype.getPlaceholder = function(placeholderType){};
 
 /**
+ * Returns the placeholder <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> object for a specified <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/placeholder-type.html'>PlaceholderType</a></code> and
+ a placeholder index, or <code>null</code> if the placeholder is not present.
+
+ <p>If there are multiple placeholders with the same type and index, it returns the first
+ placeholder from the page's page elements collection.
+
+ <pre class="prettyprint">
+ var slide = SlidesApp.getActivePresentation().getSlides()[0];
+ var placeholder = slide.getPlaceholder(SlidesApp.PlaceholderType.CENTERED_TITLE, 0);
+ </pre>
+ *
+ * @param {SlidesApp.PlaceholderType} placeholderType - 
+ * @param {number} placeholderIndex - 
+ *
+ * @return {SlidesApp.PageElement}
+ */
+SlidesApp.NotesPage.prototype.getPlaceholder = function(placeholderType, placeholderIndex){};
+
+/**
  * Returns the list of placeholder <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects in the page.
 
  <pre class="prettyprint">
@@ -4861,6 +5458,18 @@ SlidesApp.NotesPage.prototype.getWordArts = function(){};
  * @return {number} the number of occurrences changed
  */
 SlidesApp.NotesPage.prototype.replaceAllText = function(findText, replaceText){};
+
+/**
+ * Replaces all instances of text matching find text with replace text.
+ *
+ * @param {String} findText - The text to find.
+ * @param {String} replaceText - The text to replace the matched text.
+ * @param {Boolean} matchCase - If <code>true</code>, the search is case sensitive; if <code>false</code>, the search is
+     case insensitive.
+ *
+ * @return {number} the number of occurrences changed
+ */
+SlidesApp.NotesPage.prototype.replaceAllText = function(findText, replaceText, matchCase){};
 
 /** @constructor */
 SlidesApp.Page = function(){};
@@ -4961,6 +5570,25 @@ SlidesApp.Page.prototype.getPageType = function(){};
  * @return {SlidesApp.PageElement}
  */
 SlidesApp.Page.prototype.getPlaceholder = function(placeholderType){};
+
+/**
+ * Returns the placeholder <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> object for a specified <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/placeholder-type.html'>PlaceholderType</a></code> and
+ a placeholder index, or <code>null</code> if the placeholder is not present.
+
+ <p>If there are multiple placeholders with the same type and index, it returns the first
+ placeholder from the page's page elements collection.
+
+ <pre class="prettyprint">
+ var slide = SlidesApp.getActivePresentation().getSlides()[0];
+ var placeholder = slide.getPlaceholder(SlidesApp.PlaceholderType.CENTERED_TITLE, 0);
+ </pre>
+ *
+ * @param {SlidesApp.PlaceholderType} placeholderType - 
+ * @param {number} placeholderIndex - 
+ *
+ * @return {SlidesApp.PageElement}
+ */
+SlidesApp.Page.prototype.getPlaceholder = function(placeholderType, placeholderIndex){};
 
 /**
  * Returns the list of placeholder <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects in the page.
@@ -5077,6 +5705,30 @@ SlidesApp.Page.prototype.insertImage = function(blobSource, left, top, width, he
 SlidesApp.Page.prototype.insertImage = function(imageUrl){};
 
 /**
+ * Inserts an image on the page with the provided position and size from the provided URL.
+
+ <p>Inserting the image fetches it from the URL once and a copy is stored for display inside the
+ presentation. Images must be less than 50MB in size, cannot exceed 25 megapixels, and must be
+ in either in PNG, JPEG, or GIF format.
+
+ <p>The provided URL must be no larger than 2kB.
+
+ <p>In order to maintain the image's aspect ratio, the image is scaled and centered with respect
+ to the provided size.
+ *
+ * @param {String} imageUrl - The image URL.
+ * @param {Number} left - The horizontal position of the image in points, measured from the upper left corner
+     of the page.
+ * @param {Number} top - The vertical position of the image in points, measured from the upper left corner of
+     the page.
+ * @param {Number} width - The width of the image in points.
+ * @param {Number} height - The height of the image in points.
+ *
+ * @return {SlidesApp.Image} the inserted image
+ */
+SlidesApp.Page.prototype.insertImage = function(imageUrl, left, top, width, height){};
+
+/**
  * Inserts a line on the page.
 
  <pre class="prettyprint">
@@ -5124,6 +5776,20 @@ SlidesApp.Page.prototype.insertLine = function(lineCategory, startLeft, startTop
 SlidesApp.Page.prototype.insertShape = function(shapeType){};
 
 /**
+ * Inserts a shape on the page.
+ *
+ * @param {SlidesApp.ShapeType} shapeType - The type of shape to insert.
+ * @param {Number} left - The horizontal position of the shape, measured from the upper left corner of the
+     page.
+ * @param {Number} top - The vertical position of the shape, measured from the upper left corner of the page.
+ * @param {Number} width - The width of the shape.
+ * @param {Number} height - The height of the shape.
+ *
+ * @return {SlidesApp.Shape} the inserted shape
+ */
+SlidesApp.Page.prototype.insertShape = function(shapeType, left, top, width, height){};
+
+/**
  * Inserts a Google Sheets chart on the page.
 
  <p>The chart is inserted with a default size at the top left corner of the page.
@@ -5144,6 +5810,42 @@ SlidesApp.Page.prototype.insertShape = function(shapeType){};
  * @return {SlidesApp.SheetsChart} the inserted chart in the page
  */
 SlidesApp.Page.prototype.insertSheetsChart = function(sourceChart){};
+
+/**
+ * Inserts a Google Sheets chart on the page with the provided position and size.
+
+ <p>In order to maintain the chart's aspect ratio, the chart is scaled and centered with respect
+ to the provided size.
+
+ <p>The inserted chart is linked with the source Google Sheets chart which allows it to be
+ updated. Other collaborators can see the link to the source spreadsheet.
+
+ <pre class="prettyprint">
+ var sheet = SpreadsheetApp.openById('spreadsheetId').getSheets()[0];
+ var chart = sheet.getCharts()[0];
+ // Insert the spreadsheet chart in the first slide.
+ var slide = SlidesApp.getActivePresentation().getSlides()[0];
+ var position = {left: 0, top: 0};
+ var size = {width: 200, height: 200};
+ slide.insertSheetsChart(
+     chart,
+     position.left,
+     position.top,
+     size.width,
+     size.height);
+ </pre>
+ *
+ * @param {SpreadsheetApp.EmbeddedChart} sourceChart - The chart in a spreadsheet to be inserted in the page.
+ * @param {Number} left - The horizontal position of the chart in points, measured from the upper left corner
+     of the page.
+ * @param {Number} top - The vertical position of the chart in points, measured from the upper left corner of
+     the page.
+ * @param {Number} width - The width of the chart in points.
+ * @param {Number} height - The height of the chart in points.
+ *
+ * @return {SlidesApp.SheetsChart} the inserted chart in the page
+ */
+SlidesApp.Page.prototype.insertSheetsChart = function(sourceChart, left, top, width, height){};
 
 /**
  * Inserts a Google Sheets chart as an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/image.html'>Image</a></code> on the page.
@@ -5167,6 +5869,42 @@ SlidesApp.Page.prototype.insertSheetsChart = function(sourceChart){};
 SlidesApp.Page.prototype.insertSheetsChartAsImage = function(sourceChart){};
 
 /**
+ * Inserts a Google Sheets chart as an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/image.html'>Image</a></code> on the page with the provided position and
+ size.
+
+ <p>In order to maintain the chart image's aspect ratio, the image is scaled and centered with
+ respect to the provided size.
+
+ <p>The inserted image of the chart is not linked with the source Google Sheets chart.
+
+ <pre class="prettyprint">
+ var sheet = SpreadsheetApp.openById('spreadsheetId').getSheets()[0];
+ var chart = sheet.getCharts()[0];
+ // Insert the spreadsheet chart in the first slide.
+ var slide = SlidesApp.getActivePresentation().getSlides()[0];
+ var position = {left: 0, top: 0};
+ var size = {width: 200, height: 200};
+ slide.insertSheetsChartAsImage(
+     chart,
+     position.left,
+     position.right,
+     size.width,
+     size.height);
+ </pre>
+ *
+ * @param {SpreadsheetApp.EmbeddedChart} sourceChart - The chart in a spreadsheet to be inserted in the page.
+ * @param {Number} left - The horizontal position of the chart in points, measured from the upper left corner
+     of the page.
+ * @param {Number} top - The vertical position of the chart in points, measured from the upper left corner of
+     the page.
+ * @param {Number} width - The width of the chart in points.
+ * @param {Number} height - The height of the chart in points.
+ *
+ * @return {SlidesApp.Image} the inserted image of the chart in the page
+ */
+SlidesApp.Page.prototype.insertSheetsChartAsImage = function(sourceChart, left, top, width, height){};
+
+/**
  * Inserts a table on the page.
 
  <p>The table is centered on the page with default size and evenly distributed rows and columns.
@@ -5179,6 +5917,24 @@ SlidesApp.Page.prototype.insertSheetsChartAsImage = function(sourceChart){};
 SlidesApp.Page.prototype.insertTable = function(numRows, numColumns){};
 
 /**
+ * Inserts a table on the page with the provided position and size.
+
+ <p>Rows and columns are evenly distributed in the created table.
+ *
+ * @param {number} numRows - The number of rows in the table.
+ * @param {number} numColumns - The number of columns in the table.
+ * @param {Number} left - The horizontal position of the table, measured from the upper left corner of the
+     page.
+ * @param {Number} top - The vertical position of the table, measured from the upper left corner of the page.
+ * @param {Number} width - The width of the table.
+ * @param {Number} height - The minimum height of the table. The actual height of the rendered table depends
+     on factors such as text font size.
+ *
+ * @return {SlidesApp.Table} the inserted table
+ */
+SlidesApp.Page.prototype.insertTable = function(numRows, numColumns, left, top, width, height){};
+
+/**
  * Inserts a video at the top left corner of the page with a default size.
 
  <p>Only YouTube videos are currently supported.
@@ -5188,6 +5944,23 @@ SlidesApp.Page.prototype.insertTable = function(numRows, numColumns){};
  * @return {SlidesApp.Video} the inserted video
  */
 SlidesApp.Page.prototype.insertVideo = function(videoUrl){};
+
+/**
+ * Inserts a video on the page with the provided position and size.
+
+ <p>Only YouTube videos are currently supported.
+ *
+ * @param {String} videoUrl - The URL of the video to insert.
+ * @param {Number} left - The horizontal position of the video in points, measured from the upper left corner
+     of the page.
+ * @param {Number} top - The vertical position of the video in points, measured from the upper left corner of
+     the page.
+ * @param {Number} width - The width of the video in points.
+ * @param {Number} height - The height of the video in points.
+ *
+ * @return {SlidesApp.Video} the inserted video
+ */
+SlidesApp.Page.prototype.insertVideo = function(videoUrl, left, top, width, height){};
 
 /**
  * Removes the page.
@@ -5206,6 +5979,18 @@ SlidesApp.Page.prototype.remove = function(){};
  * @return {number} the number of occurrences changed
  */
 SlidesApp.Page.prototype.replaceAllText = function(findText, replaceText){};
+
+/**
+ * Replaces all instances of text matching find text with replace text.
+ *
+ * @param {String} findText - The text to find.
+ * @param {String} replaceText - The text to replace the matched text.
+ * @param {Boolean} matchCase - If <code>true</code>, the search is case sensitive; if <code>false</code>, the search is
+     case insensitive.
+ *
+ * @return {number} the number of occurrences changed
+ */
+SlidesApp.Page.prototype.replaceAllText = function(findText, replaceText, matchCase){};
 
 /**
  * Selects the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> in the active presentation as the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/selection.html#getCurrentPage()'>current page selection</a></code> and removes any previous selection.
@@ -5269,6 +6054,22 @@ SlidesApp.PageBackground.prototype.isVisible = function(){};
  * @return void
  */
 SlidesApp.PageBackground.prototype.setPictureFill = function(blobSource){};
+
+/**
+ * Sets the image at the provided URL as the page background. The image is stretched to match the
+ dimensions of the page.
+
+ <p>Inserting the image fetches it from the URL once and a copy is stored for display inside the
+ presentation. Images must be less than 50MB in size, cannot exceed 25 megapixels, and must be
+ in either in PNG, JPEG, or GIF format.
+
+ <p>The provided URL must be no larger than 2kB.
+ *
+ * @param {String} imageUrl - The URL to download the image from.
+ *
+ * @return void
+ */
+SlidesApp.PageBackground.prototype.setPictureFill = function(imageUrl){};
 
 /**
  * Sets the solid fill to the given RGB values.
@@ -5342,6 +6143,19 @@ SlidesApp.PageBackground.prototype.setSolidFill = function(color, alpha){};
  * @return void
  */
 SlidesApp.PageBackground.prototype.setSolidFill = function(hexString){};
+
+/**
+ * Sets the solid fill to the given alpha and hex color string.
+
+ <p>The hex string must be in the format '#RRGGBB'. For example, pink would be represented as
+ '#FFC0CB'.
+ *
+ * @param {String} hexString - 
+ * @param {Number} alpha - 
+ *
+ * @return void
+ */
+SlidesApp.PageBackground.prototype.setSolidFill = function(hexString, alpha){};
 
 /**
  * Sets the background to transparent.
@@ -5621,6 +6435,43 @@ SlidesApp.PageElement.prototype.scaleWidth = function(ratio){};
  * @return void
  */
 SlidesApp.PageElement.prototype.select = function(){};
+
+/**
+ * Selects the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> in the active presentation.
+
+ <p>A script can only access the selection of the user who is running the script, and only if
+ the script is <a href="/apps-script/scripts_containers">bound</a> to the presentation.
+
+ <p>The <code>select(true)</code> selects only the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> and removes any previous
+ selection. This also sets the parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> as the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/selection.html#getCurrentPage()'>current page selection</a></code>.
+
+ <p><code>select(false)</code> should be used to select multiple <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects. The
+ <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects must be in the same <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code>.
+
+ <p>The following conditions must be met while selecting a page element using <code>select(false)</code>: <br>
+ 1) The parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> object must be the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/selection.html#getCurrentPage()'>current page selection</a></code> <br>
+ 2) There should not be multiple <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> objects selected. <br>
+
+ <p>To make sure that’s the case the preferred approach is to select the parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code>
+ first using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html#selectAsCurrentPage()'>Page.selectAsCurrentPage()</a></code> and then select the page elements in that page.
+
+ <pre class="prettyprint">
+ var slide = SlidesApp.getActivePresentation().getSlides()[0];
+ // First select the slide page, as the current page selection.
+ slide.selectAsCurrentPage();
+ // Then select all the page elements in the selected slide page.
+ var pageElements = slide.getPageElements();
+ for (var i = 0; i < pageElements.length; i++) {
+   pageElements[i].select(false);
+ }
+ </pre>
+ *
+ * @param {Boolean} replace - if <code>true</code>, the selection replaces any previous selection, otherwise the
+     selection is added to any previous selection.
+ *
+ * @return void
+ */
+SlidesApp.PageElement.prototype.select = function(replace){};
 
 /**
  * Sets the element's height in points, which is the height of the element's bounding box when the
@@ -5950,6 +6801,16 @@ SlidesApp.Presentation = function(){};
 SlidesApp.Presentation.prototype.addEditor = function(emailAddress){};
 
 /**
+ * Adds the given user to the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>. If the user was already
+ on the list of viewers, this method promotes the user out of the list of viewers.
+ *
+ * @param {User} user - a representation of the user to add
+ *
+ * @return {SlidesApp.Presentation} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>, for chaining
+ */
+SlidesApp.Presentation.prototype.addEditor = function(user){};
+
+/**
  * Adds the given array of users to the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>. If any of the
  users were already on the list of viewers, this method promotes them out of the list of
  viewers.
@@ -5969,6 +6830,16 @@ SlidesApp.Presentation.prototype.addEditors = function(emailAddresses){};
  * @return {SlidesApp.Presentation} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>, for chaining
  */
 SlidesApp.Presentation.prototype.addViewer = function(emailAddress){};
+
+/**
+ * Adds the given user to the list of viewers for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>. If the user was already
+ on the list of editors, this method has no effect.
+ *
+ * @param {User} user - a representation of the user to add
+ *
+ * @return {SlidesApp.Presentation} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>, for chaining
+ */
+SlidesApp.Presentation.prototype.addViewer = function(user){};
 
 /**
  * Adds the given array of users to the list of viewers for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>. If any of the
@@ -6007,6 +6878,22 @@ SlidesApp.Presentation.prototype.appendSlide = function(){};
  * @return {SlidesApp.Slide} the new slide
  */
 SlidesApp.Presentation.prototype.appendSlide = function(layout){};
+
+/**
+ * Appends a slide to the end of the presentation using the specified predefined layout based on
+ the current master. The current master is one of the following:
+
+ <ul>
+   <li>The master of the current last slide.
+   <li>The first master in the presentation, if there is no slide.
+ </ul>
+ *
+ * @param {SlidesApp.PredefinedLayout} predefinedLayout - The predefined layout to use for the new slide; it should be present in
+     the current master.
+ *
+ * @return {SlidesApp.Slide} the new slide
+ */
+SlidesApp.Presentation.prototype.appendSlide = function(predefinedLayout){};
 
 /**
  * Gets the list of editors for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>. If the user who executes the script does
@@ -6167,6 +7054,24 @@ SlidesApp.Presentation.prototype.insertSlide = function(insertionIndex){};
 SlidesApp.Presentation.prototype.insertSlide = function(insertionIndex, layout){};
 
 /**
+ * Inserts a slide at the specified index in the presentation using the specified predefined
+ layout based on the current master. The current master is one of the following:
+
+ <ul>
+   <li>The master of the previous slide.
+   <li>The master of the first slide, if the insertionIndex is zero.
+   <li>The first master in the presentation, if there is no slide.
+ </ul>
+ *
+ * @param {number} insertionIndex - The zero-based index indicating where to insert the slide.
+ * @param {SlidesApp.PredefinedLayout} predefinedLayout - The predefined layout to use for the new slide; it should be present in
+     the current master.
+ *
+ * @return {SlidesApp.Slide} the new slide
+ */
+SlidesApp.Presentation.prototype.insertSlide = function(insertionIndex, predefinedLayout){};
+
+/**
  * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>. This method does not
  block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> if they belong to a class of users who have
  general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> is shared with the user's entire domain.
@@ -6176,6 +7081,17 @@ SlidesApp.Presentation.prototype.insertSlide = function(insertionIndex, layout){
  * @return {SlidesApp.Presentation} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>, for chaining
  */
 SlidesApp.Presentation.prototype.removeEditor = function(emailAddress){};
+
+/**
+ * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>. This method does not
+ block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> if they belong to a class of users who have
+ general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> is shared with the user's entire domain.
+ *
+ * @param {User} user - a representation of the user to remove
+ *
+ * @return {SlidesApp.Presentation} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>, for chaining
+ */
+SlidesApp.Presentation.prototype.removeEditor = function(user){};
 
 /**
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>. This
@@ -6191,6 +7107,18 @@ SlidesApp.Presentation.prototype.removeEditor = function(emailAddress){};
 SlidesApp.Presentation.prototype.removeViewer = function(emailAddress){};
 
 /**
+ * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>. This
+ method has no effect if the user is an editor, not a viewer. This method also does not block
+ users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> if they belong to a class of users who have general
+ access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> is shared with the user's entire domain.
+ *
+ * @param {User} user - a representation of the user to remove
+ *
+ * @return {SlidesApp.Presentation} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> for chaining
+ */
+SlidesApp.Presentation.prototype.removeViewer = function(user){};
+
+/**
  * Replaces all instances of text matching find text with replace text. The search is case
  insensitive.
  *
@@ -6200,6 +7128,18 @@ SlidesApp.Presentation.prototype.removeViewer = function(emailAddress){};
  * @return {number} the number of occurrences changed
  */
 SlidesApp.Presentation.prototype.replaceAllText = function(findText, replaceText){};
+
+/**
+ * Replaces all instances of text matching find text with replace text.
+ *
+ * @param {String} findText - The text to find.
+ * @param {String} replaceText - The text to replace the matched text.
+ * @param {Boolean} matchCase - If <code>true</code>, the search is case sensitive; if <code>false</code>, the search is
+     case insensitive.
+ *
+ * @return {number} the number of occurrences changed
+ */
+SlidesApp.Presentation.prototype.replaceAllText = function(findText, replaceText, matchCase){};
 
 /**
  * Saves the current <code>Presentation</code>. Causes pending updates to be flushed and applied.
@@ -6697,6 +7637,23 @@ SlidesApp.Shape.prototype.replaceWithImage = function(blobSource, crop){};
 SlidesApp.Shape.prototype.replaceWithImage = function(imageUrl){};
 
 /**
+ * Replaces this shape with an image.
+
+ <p>Inserting the image fetches it from the URL once and a copy is stored for display inside the
+ presentation. Images must be less than 50MB in size, cannot exceed 25 megapixels, and must be
+ in either in PNG, JPEG, or GIF format.
+
+ <p>The provided URL must be no larger than 2kB.
+ *
+ * @param {String} imageUrl - The image URL to download the image from.
+ * @param {Boolean} crop - If <code>true</code>, crops the image to fit the existing shape's size. Otherwise, the
+     image is scaled and centered.
+ *
+ * @return {SlidesApp.Image} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/image.html'>Image</a></code> that replaced the shape
+ */
+SlidesApp.Shape.prototype.replaceWithImage = function(imageUrl, crop){};
+
+/**
  * Replaces this shape with an Google Sheets chart.
 
  <p>The chart is linked with the source Google Sheets chart which allows it to be updated. Other
@@ -6779,6 +7736,43 @@ SlidesApp.Shape.prototype.scaleWidth = function(ratio){};
 SlidesApp.Shape.prototype.select = function(){};
 
 /**
+ * Selects the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> in the active presentation.
+
+ <p>A script can only access the selection of the user who is running the script, and only if
+ the script is <a href="/apps-script/scripts_containers">bound</a> to the presentation.
+
+ <p>The <code>select(true)</code> selects only the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> and removes any previous
+ selection. This also sets the parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> as the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/selection.html#getCurrentPage()'>current page selection</a></code>.
+
+ <p><code>select(false)</code> should be used to select multiple <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects. The
+ <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects must be in the same <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code>.
+
+ <p>The following conditions must be met while selecting a page element using <code>select(false)</code>: <br>
+ 1) The parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> object must be the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/selection.html#getCurrentPage()'>current page selection</a></code> <br>
+ 2) There should not be multiple <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> objects selected. <br>
+
+ <p>To make sure that’s the case the preferred approach is to select the parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code>
+ first using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html#selectAsCurrentPage()'>Page.selectAsCurrentPage()</a></code> and then select the page elements in that page.
+
+ <pre class="prettyprint">
+ var slide = SlidesApp.getActivePresentation().getSlides()[0];
+ // First select the slide page, as the current page selection.
+ slide.selectAsCurrentPage();
+ // Then select all the page elements in the selected slide page.
+ var pageElements = slide.getPageElements();
+ for (var i = 0; i < pageElements.length; i++) {
+   pageElements[i].select(false);
+ }
+ </pre>
+ *
+ * @param {Boolean} replace - if <code>true</code>, the selection replaces any previous selection, otherwise the
+     selection is added to any previous selection.
+ *
+ * @return void
+ */
+SlidesApp.Shape.prototype.select = function(replace){};
+
+/**
  * Sets the element's height in points, which is the height of the element's bounding box when the
  element has no rotation.
  *
@@ -6826,6 +7820,20 @@ SlidesApp.Shape.prototype.setLinkSlide = function(slideIndex){};
  * @return {SlidesApp.Link} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> that was set
  */
 SlidesApp.Shape.prototype.setLinkSlide = function(slide){};
+
+/**
+ * Sets a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> to the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/slide.html'>Slide</a></code> using the relative position of the slide.
+
+ <pre class="prettyprint">
+ // Set a link to the first slide of the presentation.
+ shape.setLinkSlide(SlideApp.SlidePosition.FIRST_SLIDE);
+ </pre>
+ *
+ * @param {SlidesApp.SlidePosition} slidePosition - The relative <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/slide-position.html'>SlidePosition</a></code>.
+ *
+ * @return {SlidesApp.Link} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> that was set
+ */
+SlidesApp.Shape.prototype.setLinkSlide = function(slidePosition){};
 
 /**
  * Sets a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> to the given non-empty URL string.
@@ -7166,6 +8174,43 @@ SlidesApp.SheetsChart.prototype.scaleWidth = function(ratio){};
 SlidesApp.SheetsChart.prototype.select = function(){};
 
 /**
+ * Selects the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> in the active presentation.
+
+ <p>A script can only access the selection of the user who is running the script, and only if
+ the script is <a href="/apps-script/scripts_containers">bound</a> to the presentation.
+
+ <p>The <code>select(true)</code> selects only the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> and removes any previous
+ selection. This also sets the parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> as the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/selection.html#getCurrentPage()'>current page selection</a></code>.
+
+ <p><code>select(false)</code> should be used to select multiple <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects. The
+ <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects must be in the same <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code>.
+
+ <p>The following conditions must be met while selecting a page element using <code>select(false)</code>: <br>
+ 1) The parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> object must be the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/selection.html#getCurrentPage()'>current page selection</a></code> <br>
+ 2) There should not be multiple <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> objects selected. <br>
+
+ <p>To make sure that’s the case the preferred approach is to select the parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code>
+ first using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html#selectAsCurrentPage()'>Page.selectAsCurrentPage()</a></code> and then select the page elements in that page.
+
+ <pre class="prettyprint">
+ var slide = SlidesApp.getActivePresentation().getSlides()[0];
+ // First select the slide page, as the current page selection.
+ slide.selectAsCurrentPage();
+ // Then select all the page elements in the selected slide page.
+ var pageElements = slide.getPageElements();
+ for (var i = 0; i < pageElements.length; i++) {
+   pageElements[i].select(false);
+ }
+ </pre>
+ *
+ * @param {Boolean} replace - if <code>true</code>, the selection replaces any previous selection, otherwise the
+     selection is added to any previous selection.
+ *
+ * @return void
+ */
+SlidesApp.SheetsChart.prototype.select = function(replace){};
+
+/**
  * Sets the element's height in points, which is the height of the element's bounding box when the
  element has no rotation.
  *
@@ -7213,6 +8258,20 @@ SlidesApp.SheetsChart.prototype.setLinkSlide = function(slideIndex){};
  * @return {SlidesApp.Link} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> that was set
  */
 SlidesApp.SheetsChart.prototype.setLinkSlide = function(slide){};
+
+/**
+ * Sets a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> to the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/slide.html'>Slide</a></code> using the relative position of the slide.
+
+ <pre class="prettyprint">
+ // Set a link to the first slide of the presentation.
+ shape.setLinkSlide(SlideApp.SlidePosition.FIRST_SLIDE);
+ </pre>
+ *
+ * @param {SlidesApp.SlidePosition} slidePosition - The relative <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/slide-position.html'>SlidePosition</a></code>.
+ *
+ * @return {SlidesApp.Link} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> that was set
+ */
+SlidesApp.SheetsChart.prototype.setLinkSlide = function(slidePosition){};
 
 /**
  * Sets a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> to the given non-empty URL string.
@@ -7379,6 +8438,25 @@ SlidesApp.Slide.prototype.getPageType = function(){};
 SlidesApp.Slide.prototype.getPlaceholder = function(placeholderType){};
 
 /**
+ * Returns the placeholder <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> object for a specified <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/placeholder-type.html'>PlaceholderType</a></code> and
+ a placeholder index, or <code>null</code> if the placeholder is not present.
+
+ <p>If there are multiple placeholders with the same type and index, it returns the first
+ placeholder from the page's page elements collection.
+
+ <pre class="prettyprint">
+ var slide = SlidesApp.getActivePresentation().getSlides()[0];
+ var placeholder = slide.getPlaceholder(SlidesApp.PlaceholderType.CENTERED_TITLE, 0);
+ </pre>
+ *
+ * @param {SlidesApp.PlaceholderType} placeholderType - 
+ * @param {number} placeholderIndex - 
+ *
+ * @return {SlidesApp.PageElement}
+ */
+SlidesApp.Slide.prototype.getPlaceholder = function(placeholderType, placeholderIndex){};
+
+/**
  * Returns the list of placeholder <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects in the page.
 
  <pre class="prettyprint">
@@ -7493,6 +8571,30 @@ SlidesApp.Slide.prototype.insertImage = function(blobSource, left, top, width, h
 SlidesApp.Slide.prototype.insertImage = function(imageUrl){};
 
 /**
+ * Inserts an image on the page with the provided position and size from the provided URL.
+
+ <p>Inserting the image fetches it from the URL once and a copy is stored for display inside the
+ presentation. Images must be less than 50MB in size, cannot exceed 25 megapixels, and must be
+ in either in PNG, JPEG, or GIF format.
+
+ <p>The provided URL must be no larger than 2kB.
+
+ <p>In order to maintain the image's aspect ratio, the image is scaled and centered with respect
+ to the provided size.
+ *
+ * @param {String} imageUrl - The image URL.
+ * @param {Number} left - The horizontal position of the image in points, measured from the upper left corner
+     of the page.
+ * @param {Number} top - The vertical position of the image in points, measured from the upper left corner of
+     the page.
+ * @param {Number} width - The width of the image in points.
+ * @param {Number} height - The height of the image in points.
+ *
+ * @return {SlidesApp.Image} the inserted image
+ */
+SlidesApp.Slide.prototype.insertImage = function(imageUrl, left, top, width, height){};
+
+/**
  * Inserts a line on the page.
 
  <pre class="prettyprint">
@@ -7540,6 +8642,20 @@ SlidesApp.Slide.prototype.insertLine = function(lineCategory, startLeft, startTo
 SlidesApp.Slide.prototype.insertShape = function(shapeType){};
 
 /**
+ * Inserts a shape on the page.
+ *
+ * @param {SlidesApp.ShapeType} shapeType - The type of shape to insert.
+ * @param {Number} left - The horizontal position of the shape, measured from the upper left corner of the
+     page.
+ * @param {Number} top - The vertical position of the shape, measured from the upper left corner of the page.
+ * @param {Number} width - The width of the shape.
+ * @param {Number} height - The height of the shape.
+ *
+ * @return {SlidesApp.Shape} the inserted shape
+ */
+SlidesApp.Slide.prototype.insertShape = function(shapeType, left, top, width, height){};
+
+/**
  * Inserts a Google Sheets chart on the page.
 
  <p>The chart is inserted with a default size at the top left corner of the page.
@@ -7560,6 +8676,42 @@ SlidesApp.Slide.prototype.insertShape = function(shapeType){};
  * @return {SlidesApp.SheetsChart} the inserted chart in the page
  */
 SlidesApp.Slide.prototype.insertSheetsChart = function(sourceChart){};
+
+/**
+ * Inserts a Google Sheets chart on the page with the provided position and size.
+
+ <p>In order to maintain the chart's aspect ratio, the chart is scaled and centered with respect
+ to the provided size.
+
+ <p>The inserted chart is linked with the source Google Sheets chart which allows it to be
+ updated. Other collaborators can see the link to the source spreadsheet.
+
+ <pre class="prettyprint">
+ var sheet = SpreadsheetApp.openById('spreadsheetId').getSheets()[0];
+ var chart = sheet.getCharts()[0];
+ // Insert the spreadsheet chart in the first slide.
+ var slide = SlidesApp.getActivePresentation().getSlides()[0];
+ var position = {left: 0, top: 0};
+ var size = {width: 200, height: 200};
+ slide.insertSheetsChart(
+     chart,
+     position.left,
+     position.top,
+     size.width,
+     size.height);
+ </pre>
+ *
+ * @param {SpreadsheetApp.EmbeddedChart} sourceChart - The chart in a spreadsheet to be inserted in the page.
+ * @param {Number} left - The horizontal position of the chart in points, measured from the upper left corner
+     of the page.
+ * @param {Number} top - The vertical position of the chart in points, measured from the upper left corner of
+     the page.
+ * @param {Number} width - The width of the chart in points.
+ * @param {Number} height - The height of the chart in points.
+ *
+ * @return {SlidesApp.SheetsChart} the inserted chart in the page
+ */
+SlidesApp.Slide.prototype.insertSheetsChart = function(sourceChart, left, top, width, height){};
 
 /**
  * Inserts a Google Sheets chart as an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/image.html'>Image</a></code> on the page.
@@ -7583,6 +8735,42 @@ SlidesApp.Slide.prototype.insertSheetsChart = function(sourceChart){};
 SlidesApp.Slide.prototype.insertSheetsChartAsImage = function(sourceChart){};
 
 /**
+ * Inserts a Google Sheets chart as an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/image.html'>Image</a></code> on the page with the provided position and
+ size.
+
+ <p>In order to maintain the chart image's aspect ratio, the image is scaled and centered with
+ respect to the provided size.
+
+ <p>The inserted image of the chart is not linked with the source Google Sheets chart.
+
+ <pre class="prettyprint">
+ var sheet = SpreadsheetApp.openById('spreadsheetId').getSheets()[0];
+ var chart = sheet.getCharts()[0];
+ // Insert the spreadsheet chart in the first slide.
+ var slide = SlidesApp.getActivePresentation().getSlides()[0];
+ var position = {left: 0, top: 0};
+ var size = {width: 200, height: 200};
+ slide.insertSheetsChartAsImage(
+     chart,
+     position.left,
+     position.right,
+     size.width,
+     size.height);
+ </pre>
+ *
+ * @param {SpreadsheetApp.EmbeddedChart} sourceChart - The chart in a spreadsheet to be inserted in the page.
+ * @param {Number} left - The horizontal position of the chart in points, measured from the upper left corner
+     of the page.
+ * @param {Number} top - The vertical position of the chart in points, measured from the upper left corner of
+     the page.
+ * @param {Number} width - The width of the chart in points.
+ * @param {Number} height - The height of the chart in points.
+ *
+ * @return {SlidesApp.Image} the inserted image of the chart in the page
+ */
+SlidesApp.Slide.prototype.insertSheetsChartAsImage = function(sourceChart, left, top, width, height){};
+
+/**
  * Inserts a table on the page.
 
  <p>The table is centered on the page with default size and evenly distributed rows and columns.
@@ -7595,6 +8783,24 @@ SlidesApp.Slide.prototype.insertSheetsChartAsImage = function(sourceChart){};
 SlidesApp.Slide.prototype.insertTable = function(numRows, numColumns){};
 
 /**
+ * Inserts a table on the page with the provided position and size.
+
+ <p>Rows and columns are evenly distributed in the created table.
+ *
+ * @param {number} numRows - The number of rows in the table.
+ * @param {number} numColumns - The number of columns in the table.
+ * @param {Number} left - The horizontal position of the table, measured from the upper left corner of the
+     page.
+ * @param {Number} top - The vertical position of the table, measured from the upper left corner of the page.
+ * @param {Number} width - The width of the table.
+ * @param {Number} height - The minimum height of the table. The actual height of the rendered table depends
+     on factors such as text font size.
+ *
+ * @return {SlidesApp.Table} the inserted table
+ */
+SlidesApp.Slide.prototype.insertTable = function(numRows, numColumns, left, top, width, height){};
+
+/**
  * Inserts a video at the top left corner of the page with a default size.
 
  <p>Only YouTube videos are currently supported.
@@ -7604,6 +8810,23 @@ SlidesApp.Slide.prototype.insertTable = function(numRows, numColumns){};
  * @return {SlidesApp.Video} the inserted video
  */
 SlidesApp.Slide.prototype.insertVideo = function(videoUrl){};
+
+/**
+ * Inserts a video on the page with the provided position and size.
+
+ <p>Only YouTube videos are currently supported.
+ *
+ * @param {String} videoUrl - The URL of the video to insert.
+ * @param {Number} left - The horizontal position of the video in points, measured from the upper left corner
+     of the page.
+ * @param {Number} top - The vertical position of the video in points, measured from the upper left corner of
+     the page.
+ * @param {Number} width - The width of the video in points.
+ * @param {Number} height - The height of the video in points.
+ *
+ * @return {SlidesApp.Video} the inserted video
+ */
+SlidesApp.Slide.prototype.insertVideo = function(videoUrl, left, top, width, height){};
 
 /**
  * Move the slide to the specified index.
@@ -7633,6 +8856,18 @@ SlidesApp.Slide.prototype.remove = function(){};
  * @return {number} the number of occurrences changed
  */
 SlidesApp.Slide.prototype.replaceAllText = function(findText, replaceText){};
+
+/**
+ * Replaces all instances of text matching find text with replace text.
+ *
+ * @param {String} findText - The text to find.
+ * @param {String} replaceText - The text to replace the matched text.
+ * @param {Boolean} matchCase - If <code>true</code>, the search is case sensitive; if <code>false</code>, the search is
+     case insensitive.
+ *
+ * @return {number} the number of occurrences changed
+ */
+SlidesApp.Slide.prototype.replaceAllText = function(findText, replaceText, matchCase){};
 
 /**
  * Selects the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> in the active presentation as the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/selection.html#getCurrentPage()'>current page selection</a></code> and removes any previous selection.
@@ -7964,6 +9199,43 @@ SlidesApp.Table.prototype.scaleWidth = function(ratio){};
 SlidesApp.Table.prototype.select = function(){};
 
 /**
+ * Selects the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> in the active presentation.
+
+ <p>A script can only access the selection of the user who is running the script, and only if
+ the script is <a href="/apps-script/scripts_containers">bound</a> to the presentation.
+
+ <p>The <code>select(true)</code> selects only the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> and removes any previous
+ selection. This also sets the parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> as the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/selection.html#getCurrentPage()'>current page selection</a></code>.
+
+ <p><code>select(false)</code> should be used to select multiple <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects. The
+ <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects must be in the same <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code>.
+
+ <p>The following conditions must be met while selecting a page element using <code>select(false)</code>: <br>
+ 1) The parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> object must be the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/selection.html#getCurrentPage()'>current page selection</a></code> <br>
+ 2) There should not be multiple <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> objects selected. <br>
+
+ <p>To make sure that’s the case the preferred approach is to select the parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code>
+ first using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html#selectAsCurrentPage()'>Page.selectAsCurrentPage()</a></code> and then select the page elements in that page.
+
+ <pre class="prettyprint">
+ var slide = SlidesApp.getActivePresentation().getSlides()[0];
+ // First select the slide page, as the current page selection.
+ slide.selectAsCurrentPage();
+ // Then select all the page elements in the selected slide page.
+ var pageElements = slide.getPageElements();
+ for (var i = 0; i < pageElements.length; i++) {
+   pageElements[i].select(false);
+ }
+ </pre>
+ *
+ * @param {Boolean} replace - if <code>true</code>, the selection replaces any previous selection, otherwise the
+     selection is added to any previous selection.
+ *
+ * @return void
+ */
+SlidesApp.Table.prototype.select = function(replace){};
+
+/**
  * Sets the element's height in points, which is the height of the element's bounding box when the
  element has no rotation.
  *
@@ -8290,6 +9562,25 @@ SlidesApp.TextRange.prototype.asString = function(){};
 SlidesApp.TextRange.prototype.clear = function(){};
 
 /**
+ * Clears the text bounded by the start and end offsets in the range.
+
+ <p>Since the text must end in a newline, the final newline in text is not removed even if it's
+ covered by the given offsets.
+ *
+ * @param {number} startOffset - The number of characters past the start index of the current text range used
+     to determine the inclusive start index of the range to clear. The start offset must be
+     equal to or greater than 0 and less than or equal to <code>endOffset</code>. <code>startOffset</code>
+     must also be less than the length of the current range.
+ * @param {number} endOffset - The number of characters past the start index of the current text range used
+     to determine the exclusive end index of the range to clear. The <code>endOffset</code> must be
+     equal to or greater than <code>startOffset</code>. <code>endOffset</code> must also be less than or
+     equal to the length of the current range.
+ *
+ * @return void
+ */
+SlidesApp.TextRange.prototype.clear = function(startOffset, endOffset){};
+
+/**
  * Returns all the ranges matching the search pattern in the current text range. The search is
  case sensitive.
  *
@@ -8299,6 +9590,20 @@ SlidesApp.TextRange.prototype.clear = function(){};
  * @return {SlidesApp.TextRange[]}
  */
 SlidesApp.TextRange.prototype.find = function(pattern){};
+
+/**
+ * Returns all the ranges matching the search pattern in the current text range starting from the
+ start offset. The search is case sensitive.
+ *
+ * @param {String} pattern - The regular expression pattern to search; any backslashes in the pattern should
+     be escaped.
+ * @param {number} startOffset - The number of characters past the start index of the current text range used
+     to determine the inclusive start index of the range to search. <code>startOffset</code> must
+     also be less than the length of the current range.
+ *
+ * @return {SlidesApp.TextRange[]}
+ */
+SlidesApp.TextRange.prototype.find = function(pattern, startOffset){};
 
 /**
  * Returns the auto texts within the current text range.
@@ -8461,6 +9766,18 @@ SlidesApp.TextRange.prototype.isEmpty = function(){};
  * @return {number} the number of occurrences changed
  */
 SlidesApp.TextRange.prototype.replaceAllText = function(findText, replaceText){};
+
+/**
+ * Replaces all instances of text matching find text with replace text.
+ *
+ * @param {String} findText - The text to find.
+ * @param {String} replaceText - The text to replace the matched text.
+ * @param {Boolean} matchCase - If <code>true</code>, the search is case sensitive; if <code>false</code>, the search is
+     case insensitive.
+ *
+ * @return {number} the number of occurrences changed
+ */
+SlidesApp.TextRange.prototype.replaceAllText = function(findText, replaceText, matchCase){};
 
 /**
  * Selects only the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/text-range.html'>TextRange</a></code> in the active presentation and removes any previous
@@ -8676,6 +9993,18 @@ SlidesApp.TextStyle.prototype.setBackgroundColor = function(color){};
 SlidesApp.TextStyle.prototype.setBackgroundColor = function(color){};
 
 /**
+ * Sets the background color of the text to the given hex color string.
+
+ <p>The hex string must be in the format '#RRGGBB'. For example, pink would be represented as
+ '#FFC0CB'.
+ *
+ * @param {String} hexColor - 
+ *
+ * @return {SlidesApp.TextStyle}
+ */
+SlidesApp.TextStyle.prototype.setBackgroundColor = function(hexColor){};
+
+/**
  * Sets the background color of the text to transparent.
  *
  * @return {SlidesApp.TextStyle}
@@ -8767,6 +10096,18 @@ SlidesApp.TextStyle.prototype.setForegroundColor = function(foregroundColor){};
 SlidesApp.TextStyle.prototype.setForegroundColor = function(color){};
 
 /**
+ * Sets the foreground color of the text to the given hex color string.
+
+ <p>The hex string must be in the format '#RRGGBB'. For example, pink would be represented as
+ '#FFC0CB'.
+ *
+ * @param {String} hexColor - 
+ *
+ * @return {SlidesApp.TextStyle}
+ */
+SlidesApp.TextStyle.prototype.setForegroundColor = function(hexColor){};
+
+/**
  * Sets the whether the text is italicized.
  *
  * @param {Boolean} italic - 
@@ -8813,6 +10154,25 @@ SlidesApp.TextStyle.prototype.setLinkSlide = function(slideIndex){};
  * @return {SlidesApp.TextStyle}
  */
 SlidesApp.TextStyle.prototype.setLinkSlide = function(slide){};
+
+/**
+ * Sets a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> to the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/slide.html'>Slide</a></code> using the relative position of the slide.
+
+ <p>Setting a link changes the style of the text to be underlined and to have a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/theme-color-type.html#HYPERLINK'>ThemeColorType.HYPERLINK</a></code> foreground color. This can be changed via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/text-style.html#setForegroundColor(String)'>setForegroundColor(hexColor)</a></code> and <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/text-style.html#setUnderline(Boolean)'>setUnderline(underline)</a></code>.
+
+ <p>Since links cannot be set on newline characters, newline characters in the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/text-range.html'>TextRange</a></code>
+ are ignored.
+
+ <pre class="prettyprint">
+ // Set a link to the first slide of the presentation.
+ text.getTextStyle().setLinkSlide(SlidesApp.SlidePosition.FIRST_SLIDE);
+ </pre>
+ *
+ * @param {SlidesApp.SlidePosition} slidePosition - The relative <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/slide-position.html'>SlidePosition</a></code>.
+ *
+ * @return {SlidesApp.TextStyle}
+ */
+SlidesApp.TextStyle.prototype.setLinkSlide = function(slidePosition){};
 
 /**
  * Sets a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> to the given non-empty URL string.
@@ -9133,6 +10493,43 @@ SlidesApp.Video.prototype.scaleWidth = function(ratio){};
 SlidesApp.Video.prototype.select = function(){};
 
 /**
+ * Selects the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> in the active presentation.
+
+ <p>A script can only access the selection of the user who is running the script, and only if
+ the script is <a href="/apps-script/scripts_containers">bound</a> to the presentation.
+
+ <p>The <code>select(true)</code> selects only the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> and removes any previous
+ selection. This also sets the parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> as the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/selection.html#getCurrentPage()'>current page selection</a></code>.
+
+ <p><code>select(false)</code> should be used to select multiple <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects. The
+ <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects must be in the same <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code>.
+
+ <p>The following conditions must be met while selecting a page element using <code>select(false)</code>: <br>
+ 1) The parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> object must be the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/selection.html#getCurrentPage()'>current page selection</a></code> <br>
+ 2) There should not be multiple <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> objects selected. <br>
+
+ <p>To make sure that’s the case the preferred approach is to select the parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code>
+ first using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html#selectAsCurrentPage()'>Page.selectAsCurrentPage()</a></code> and then select the page elements in that page.
+
+ <pre class="prettyprint">
+ var slide = SlidesApp.getActivePresentation().getSlides()[0];
+ // First select the slide page, as the current page selection.
+ slide.selectAsCurrentPage();
+ // Then select all the page elements in the selected slide page.
+ var pageElements = slide.getPageElements();
+ for (var i = 0; i < pageElements.length; i++) {
+   pageElements[i].select(false);
+ }
+ </pre>
+ *
+ * @param {Boolean} replace - if <code>true</code>, the selection replaces any previous selection, otherwise the
+     selection is added to any previous selection.
+ *
+ * @return void
+ */
+SlidesApp.Video.prototype.select = function(replace){};
+
+/**
  * Sets the element's height in points, which is the height of the element's bounding box when the
  element has no rotation.
  *
@@ -9448,6 +10845,43 @@ SlidesApp.WordArt.prototype.scaleWidth = function(ratio){};
 SlidesApp.WordArt.prototype.select = function(){};
 
 /**
+ * Selects the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> in the active presentation.
+
+ <p>A script can only access the selection of the user who is running the script, and only if
+ the script is <a href="/apps-script/scripts_containers">bound</a> to the presentation.
+
+ <p>The <code>select(true)</code> selects only the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> and removes any previous
+ selection. This also sets the parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> as the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/selection.html#getCurrentPage()'>current page selection</a></code>.
+
+ <p><code>select(false)</code> should be used to select multiple <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects. The
+ <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> objects must be in the same <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code>.
+
+ <p>The following conditions must be met while selecting a page element using <code>select(false)</code>: <br>
+ 1) The parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page-element.html'>PageElement</a></code> object must be the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/selection.html#getCurrentPage()'>current page selection</a></code> <br>
+ 2) There should not be multiple <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code> objects selected. <br>
+
+ <p>To make sure that’s the case the preferred approach is to select the parent <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html'>Page</a></code>
+ first using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/page.html#selectAsCurrentPage()'>Page.selectAsCurrentPage()</a></code> and then select the page elements in that page.
+
+ <pre class="prettyprint">
+ var slide = SlidesApp.getActivePresentation().getSlides()[0];
+ // First select the slide page, as the current page selection.
+ slide.selectAsCurrentPage();
+ // Then select all the page elements in the selected slide page.
+ var pageElements = slide.getPageElements();
+ for (var i = 0; i < pageElements.length; i++) {
+   pageElements[i].select(false);
+ }
+ </pre>
+ *
+ * @param {Boolean} replace - if <code>true</code>, the selection replaces any previous selection, otherwise the
+     selection is added to any previous selection.
+ *
+ * @return void
+ */
+SlidesApp.WordArt.prototype.select = function(replace){};
+
+/**
  * Sets the element's height in points, which is the height of the element's bounding box when the
  element has no rotation.
  *
@@ -9495,6 +10929,20 @@ SlidesApp.WordArt.prototype.setLinkSlide = function(slideIndex){};
  * @return {SlidesApp.Link} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> that was set
  */
 SlidesApp.WordArt.prototype.setLinkSlide = function(slide){};
+
+/**
+ * Sets a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> to the given <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/slide.html'>Slide</a></code> using the relative position of the slide.
+
+ <pre class="prettyprint">
+ // Set a link to the first slide of the presentation.
+ shape.setLinkSlide(SlideApp.SlidePosition.FIRST_SLIDE);
+ </pre>
+ *
+ * @param {SlidesApp.SlidePosition} slidePosition - The relative <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/slide-position.html'>SlidePosition</a></code>.
+ *
+ * @return {SlidesApp.Link} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> that was set
+ */
+SlidesApp.WordArt.prototype.setLinkSlide = function(slidePosition){};
 
 /**
  * Sets a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> to the given non-empty URL string.

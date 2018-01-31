@@ -434,6 +434,17 @@ Charts.AreaChartBuilder.prototype.setDataSourceUrl = function(url){};
 Charts.AreaChartBuilder.prototype.setDataTable = function(tableBuilder){};
 
 /**
+ * Sets the data table which contains the lines for the chart, as well as the X-axis labels. The
+ first column should be a string, and contain the horizontal axis labels. Any number of columns
+ can follow, all must be numeric. Each column is displayed as a separate line.
+ *
+ * @param {DataTableSource} table - the data table to use for the chart
+ *
+ * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ */
+Charts.AreaChartBuilder.prototype.setDataTable = function(table){};
+
+/**
  * Sets the data view definition to use for the chart.
  *
  * @param {Charts.DataViewDefinition} dataViewDefinition - a data view definition object that defines the view that should be
@@ -775,6 +786,17 @@ Charts.BarChartBuilder.prototype.setDataSourceUrl = function(url){};
 Charts.BarChartBuilder.prototype.setDataTable = function(tableBuilder){};
 
 /**
+ * Sets the data table which contains the lines for the chart, as well as the X-axis labels. The
+ first column should be a string, and contain the horizontal axis labels. Any number of columns
+ can follow, all must be numeric. Each column is displayed as a separate line.
+ *
+ * @param {DataTableSource} table - the data table to use for the chart
+ *
+ * @return {Charts.BarChartBuilder} this builder, useful for chaining
+ */
+Charts.BarChartBuilder.prototype.setDataTable = function(table){};
+
+/**
  * Sets the data view definition to use for the chart.
  *
  * @param {Charts.DataViewDefinition} dataViewDefinition - a data view definition object that defines the view that should be
@@ -1092,6 +1114,15 @@ Charts.CategoryFilterBuilder.prototype.setCaption = function(caption){};
 Charts.CategoryFilterBuilder.prototype.setDataTable = function(tableBuilder){};
 
 /**
+ * Sets the control data table, which will be the control's underlying data model.
+ *
+ * @param {DataTableSource} table - the data table to use for the control
+ *
+ * @return {Charts.CategoryFilterBuilder} this builder, useful for chaining
+ */
+Charts.CategoryFilterBuilder.prototype.setDataTable = function(table){};
+
+/**
  * Sets the index of the data table column to filter on.
 
  <p>The values of that column will determine whether or not each row should be filtered. It is
@@ -1345,6 +1376,17 @@ Charts.ColumnChartBuilder.prototype.setDataSourceUrl = function(url){};
  * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
  */
 Charts.ColumnChartBuilder.prototype.setDataTable = function(tableBuilder){};
+
+/**
+ * Sets the data table which contains the lines for the chart, as well as the X-axis labels. The
+ first column should be a string, and contain the horizontal axis labels. Any number of columns
+ can follow, all must be numeric. Each column is displayed as a separate line.
+ *
+ * @param {DataTableSource} table - the data table to use for the chart
+ *
+ * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
+ */
+Charts.ColumnChartBuilder.prototype.setDataTable = function(table){};
 
 /**
  * Sets the data view definition to use for the chart.
@@ -1674,6 +1716,15 @@ Charts.DashboardPanelBuilder.prototype.build = function(){};
  */
 Charts.DashboardPanelBuilder.prototype.setDataTable = function(tableBuilder){};
 
+/**
+ * Sets the dashboard's data table, which will be the control's underlying data model.
+ *
+ * @param {DataTableSource} source - the data source to use for the dashboard
+ *
+ * @return {Charts.DashboardPanelBuilder} this builder, useful for chaining
+ */
+Charts.DashboardPanelBuilder.prototype.setDataTable = function(source){};
+
 /** @constructor */
 Charts.DataViewDefinition = function(){};
 
@@ -1840,6 +1891,17 @@ Charts.LineChartBuilder.prototype.setDataSourceUrl = function(url){};
  * @return {Charts.LineChartBuilder} this builder, useful for chaining
  */
 Charts.LineChartBuilder.prototype.setDataTable = function(tableBuilder){};
+
+/**
+ * Sets the data table which contains the lines for the chart, as well as the X-axis labels. The
+ first column should be a string, and contain the horizontal axis labels. Any number of columns
+ can follow, all must be numeric. Each column is displayed as a separate line.
+ *
+ * @param {DataTableSource} table - the data table to use for the chart
+ *
+ * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ */
+Charts.LineChartBuilder.prototype.setDataTable = function(table){};
 
 /**
  * Sets the data view definition to use for the chart.
@@ -2105,6 +2167,15 @@ Charts.NumberRangeFilterBuilder.prototype.build = function(){};
 Charts.NumberRangeFilterBuilder.prototype.setDataTable = function(tableBuilder){};
 
 /**
+ * Sets the control data table, which will be the control's underlying data model.
+ *
+ * @param {DataTableSource} table - the data table to use for the control
+ *
+ * @return {Charts.NumberRangeFilterBuilder} this builder, useful for chaining
+ */
+Charts.NumberRangeFilterBuilder.prototype.setDataTable = function(table){};
+
+/**
  * Sets the index of the data table column to filter on.
 
  <p>The values of that column will determine whether or not each row should be filtered. It is
@@ -2339,6 +2410,17 @@ Charts.PieChartBuilder.prototype.setDataSourceUrl = function(url){};
 Charts.PieChartBuilder.prototype.setDataTable = function(tableBuilder){};
 
 /**
+ * Sets the data table which contains the lines for the chart, as well as the X-axis labels. The
+ first column should be a string, and contain the horizontal axis labels. Any number of columns
+ can follow, all must be numeric. Each column is displayed as a separate line.
+ *
+ * @param {DataTableSource} table - the data table to use for the chart
+ *
+ * @return {Charts.PieChartBuilder} this builder, useful for chaining
+ */
+Charts.PieChartBuilder.prototype.setDataTable = function(table){};
+
+/**
  * Sets the data view definition to use for the chart.
  *
  * @param {Charts.DataViewDefinition} dataViewDefinition - a data view definition object that defines the view that should be
@@ -2508,6 +2590,17 @@ Charts.ScatterChartBuilder.prototype.setDataSourceUrl = function(url){};
  * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
  */
 Charts.ScatterChartBuilder.prototype.setDataTable = function(tableBuilder){};
+
+/**
+ * Sets the data table which contains the lines for the chart, as well as the X-axis labels. The
+ first column should be a string, and contain the horizontal axis labels. Any number of columns
+ can follow, all must be numeric. Each column is displayed as a separate line.
+ *
+ * @param {DataTableSource} table - the data table to use for the chart
+ *
+ * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ */
+Charts.ScatterChartBuilder.prototype.setDataTable = function(table){};
 
 /**
  * Sets the data view definition to use for the chart.
@@ -2818,6 +2911,15 @@ Charts.StringFilterBuilder.prototype.setCaseSensitive = function(caseSensitive){
 Charts.StringFilterBuilder.prototype.setDataTable = function(tableBuilder){};
 
 /**
+ * Sets the control data table, which will be the control's underlying data model.
+ *
+ * @param {DataTableSource} table - the data table to use for the control
+ *
+ * @return {Charts.StringFilterBuilder} this builder, useful for chaining
+ */
+Charts.StringFilterBuilder.prototype.setDataTable = function(table){};
+
+/**
  * Sets the index of the data table column to filter on.
 
  <p>The values of that column will determine whether or not each row should be filtered. It is
@@ -2951,6 +3053,26 @@ Charts.TableChartBuilder.prototype.enablePaging = function(enablePaging){};
 Charts.TableChartBuilder.prototype.enablePaging = function(pageSize){};
 
 /**
+ * Enables paging, sets the number of rows in each page and the first table page to display (page
+ numbers are zero based).
+
+ <p>The default page size is 10, and the default start page is 0.
+
+ <pre class="prettyprint"><code>
+ // Creates a table chart builder and enables paging with page size of 5 and displays page 2
+ // first.
+ var builder = Charts.newTableChart();
+ builder.enablePaging(5, 2);
+ </code></pre>
+ *
+ * @param {number} pageSize - the number of rows in each page of the table
+ * @param {number} startPage - the first table page to display (page numbers are zero based)
+ *
+ * @return {Charts.TableChartBuilder} this builder, useful for chaining
+ */
+Charts.TableChartBuilder.prototype.enablePaging = function(pageSize, startPage){};
+
+/**
  * Adds basic support for right-to-left languages (such as Arabic or Hebrew) by reversing the
  column order of the table, so that column zero is the right-most column, and the last column is
  the left-most column.
@@ -3003,6 +3125,17 @@ Charts.TableChartBuilder.prototype.setDataSourceUrl = function(url){};
  * @return {Charts.TableChartBuilder} this builder, useful for chaining
  */
 Charts.TableChartBuilder.prototype.setDataTable = function(tableBuilder){};
+
+/**
+ * Sets the data table which contains the lines for the chart, as well as the X-axis labels. The
+ first column should be a string, and contain the horizontal axis labels. Any number of columns
+ can follow, all must be numeric. Each column is displayed as a separate line.
+ *
+ * @param {DataTableSource} table - the data table to use for the chart
+ *
+ * @return {Charts.TableChartBuilder} this builder, useful for chaining
+ */
+Charts.TableChartBuilder.prototype.setDataTable = function(table){};
 
 /**
  * Sets the data view definition to use for the chart.

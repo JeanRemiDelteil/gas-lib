@@ -95,3 +95,23 @@ MailApp.sendEmail = function(recipient, subject, body){};
  */
 MailApp.sendEmail = function(recipient, subject, body, options){};
 
+/**
+ * Sends an email message. This method allows a user to easily specify a Reply-To address for the
+ sent message that can differ from the sender.
+
+ <pre class="prettyprint"><code>
+ MailApp.sendEmail(&quot;recipient@example.com&quot;,
+                   &quot;replies@example.com&quot;,
+                   &quot;TPS report status&quot;,
+                   &quot;What is the status of those TPS reports?&quot;);
+ </code></pre>
+ *
+ * @param {String} to - the addresses of the recipients, separated by commas
+ * @param {String} replyTo - the reply-to address
+ * @param {String} subject - the subject line
+ * @param {String} body - the body of the email in plain text
+ *
+ * @return void
+ */
+MailApp.sendEmail = function(to, replyTo, subject, body){};
+
