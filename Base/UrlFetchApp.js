@@ -1,4 +1,6 @@
-var UrlFetchApp = {};
+/**********************************************
+ * @namespace UrlFetchApp
+ ***********************************************/
 
 
 /**
@@ -12,11 +14,12 @@ var UrlFetchApp = {};
  Logger.log(response.getContentText());
  </code></pre>
  *
+ * @function UrlFetchApp.fetch
+ *
  * @param {String} url - the URL to fetch
  *
  * @return {UrlFetchApp.HTTPResponse} the HTTP response data
  */
-UrlFetchApp.fetch = function(url){};
 
 /**
  * Makes a request to fetch a URL using optional advanced parameters.
@@ -64,12 +67,13 @@ UrlFetchApp.fetch = function(url){};
  UrlFetchApp.fetch(&#39;https://httpbin.org/post&#39;, options);
  </code></pre>
  *
+ * @function UrlFetchApp.fetch
+ *
  * @param {String} url - the URL to fetch
  * @param {Object} params - optional JavaScript object specifying advanced parameters as defined below
  *
  * @return {UrlFetchApp.HTTPResponse} the http response data
  */
-UrlFetchApp.fetch = function(url, params){};
 
 /**
  * Makes multiple requests to fetch multiple URLs using optional advanced parameters.
@@ -97,12 +101,13 @@ UrlFetchApp.fetch = function(url, params){};
  UrlFetchApp.fetchAll(request1, request2);
  </code></pre>
  *
+ * @function UrlFetchApp.fetchAll
+ *
  * @param {Object[]} requests - array of either URLs, or JavaScript objects specifying requests as defined
      below
  *
  * @return {UrlFetchApp.HTTPResponse[]} an array of http response data from each input request
  */
-UrlFetchApp.fetchAll = function(requests){};
 
 /**
  * Returns the request that would be made if the operation was invoked.
@@ -117,17 +122,20 @@ UrlFetchApp.fetchAll = function(requests){};
  }
  </code></pre>
  *
+ * @function UrlFetchApp.getRequest
+ *
  * @param {String} url - the URL to look up
  *
  * @return {Object} a map of Field Name to Value. The map has at least the following keys: url, method,
      contentType, payload, headers.
  */
-UrlFetchApp.getRequest = function(url){};
 
 /**
  * Returns the request that would be made if the operation were invoked.
 
  <p>This method does not actually issue the request.
+ *
+ * @function UrlFetchApp.getRequest
  *
  * @param {String} url - the url to look up
  * @param {Object} params - optional JavaScript object specifying advanced parameters as defined below
@@ -135,10 +143,10 @@ UrlFetchApp.getRequest = function(url){};
  * @return {Object} a map of Field Name to Value. The map has at least the following keys: url, method,
      contentType, payload, headers.
  */
-UrlFetchApp.getRequest = function(url, params){};
 
-/** @constructor */
-UrlFetchApp.HTTPResponse = function(){};
+/**
+ * @class UrlFetchApp.HTTPResponse
+ */
 
 /**
  * Returns an attribute/value map of headers for the HTTP response, with headers that have
@@ -151,16 +159,19 @@ UrlFetchApp.HTTPResponse = function(){};
  Logger.log(response.getAllHeaders().toSource());
  </code></pre>
  *
+ * @function UrlFetchApp.HTTPResponse#getAllHeaders
+ *
  * @return {Object} a JavaScript key/value map of HTTP headers
  */
-UrlFetchApp.HTTPResponse.prototype.getAllHeaders = function(){};
 
 /**
  * Return the data inside this object as a blob converted to the specified content type. This
- method adds the appropriate extension to the filename — for example, "myfile.pdf". However, it
+ method adds the appropriate extension to the filename—for example, "myfile.pdf". However, it
  assumes that the part of the filename that follows the last period (if any) is an existing
- extension that should be replaced. Consequently, "ChristmasList.12.25.2014" will become
+ extension that should be replaced. Consequently, "ChristmasList.12.25.2014" becomes
  "ChristmasList.12.25.pdf".
+ *
+ * @function UrlFetchApp.HTTPResponse#getAs
  *
  * @param {String} contentType - the MIME type to convert to. For most blobs, <code>&#39;application/pdf&#39;</code> is
      the only valid option. For images in BMP, GIF, JPEG, or PNG format, any of <code>&#39;image/bmp&#39;</code>, <code>&#39;image/gif&#39;</code>, <code>&#39;image/jpeg&#39;</code>, or <code>&#39;image/png&#39;</code> are also
@@ -168,14 +179,14 @@ UrlFetchApp.HTTPResponse.prototype.getAllHeaders = function(){};
  *
  * @return {Blob} the data as a blob
  */
-UrlFetchApp.HTTPResponse.prototype.getAs = function(contentType){};
 
 /**
  * Return the data inside this object as a blob.
  *
+ * @function UrlFetchApp.HTTPResponse#getBlob
+ *
  * @return {Blob} the data as a blob
  */
-UrlFetchApp.HTTPResponse.prototype.getBlob = function(){};
 
 /**
  * Gets the raw binary content of an HTTP response.
@@ -186,9 +197,10 @@ UrlFetchApp.HTTPResponse.prototype.getBlob = function(){};
  Logger.log(response.getContent()[0]);
  </code></pre>
  *
+ * @function UrlFetchApp.HTTPResponse#getContent
+ *
  * @return {Byte[]} the content as a raw binary array
  */
-UrlFetchApp.HTTPResponse.prototype.getContent = function(){};
 
 /**
  * Gets the content of an HTTP response encoded as a string.
@@ -199,9 +211,10 @@ UrlFetchApp.HTTPResponse.prototype.getContent = function(){};
  Logger.log(response.getContentText());
  </code></pre>
  *
+ * @function UrlFetchApp.HTTPResponse#getContentText
+ *
  * @return {String} the content of the HTTP response, as a string
  */
-UrlFetchApp.HTTPResponse.prototype.getContentText = function(){};
 
 /**
  * Returns the content of an HTTP response encoded as a string of the given charset.
@@ -212,12 +225,13 @@ UrlFetchApp.HTTPResponse.prototype.getContentText = function(){};
  Logger.log(response.getContentText(&quot;UTF-8&quot;));
  </code></pre>
  *
+ * @function UrlFetchApp.HTTPResponse#getContentText
+ *
  * @param {String} charset - a string representing the charset to be used for encoding the HTTP response
      content
  *
  * @return {String} the content of the HTTP response, encoded using the given charset
  */
-UrlFetchApp.HTTPResponse.prototype.getContentText = function(charset){};
 
 /**
  * Returns an attribute/value map of headers for the HTTP response.
@@ -229,9 +243,10 @@ UrlFetchApp.HTTPResponse.prototype.getContentText = function(charset){};
  Logger.log(response.getHeaders().toSource());
  </code></pre>
  *
+ * @function UrlFetchApp.HTTPResponse#getHeaders
+ *
  * @return {Object} a JavaScript key/value map of HTTP headers
  */
-UrlFetchApp.HTTPResponse.prototype.getHeaders = function(){};
 
 /**
  * Get the HTTP status code (200 for OK, etc.) of an HTTP response.
@@ -244,7 +259,8 @@ UrlFetchApp.HTTPResponse.prototype.getHeaders = function(){};
  Logger.log(response.getResponseCode());
  </code></pre>
  *
+ * @function UrlFetchApp.HTTPResponse#getResponseCode
+ *
  * @return {number} HTTP response code (e.g. 200 for OK)
  */
-UrlFetchApp.HTTPResponse.prototype.getResponseCode = function(){};
 

@@ -1,4 +1,6 @@
-var LanguageApp = {};
+/**********************************************
+ * @namespace LanguageApp
+ ***********************************************/
 
 
 /**
@@ -13,6 +15,8 @@ var LanguageApp = {};
  A list of language codes is available <a href="/translate/v2/using_rest#language-params">
  here</a>.
  *
+ * @function LanguageApp.translate
+ *
  * @param {String} text - the text to translate
  * @param {String} sourceLanguage - the language code in which text is written. If it is set to the empty
      string, the source language code will be auto-detected
@@ -20,7 +24,6 @@ var LanguageApp = {};
  *
  * @return {String} the translated text
  */
-LanguageApp.translate = function(text, sourceLanguage, targetLanguage){};
 
 /**
  * Automatically translates some text from a source language to a destination language.
@@ -35,6 +38,8 @@ LanguageApp.translate = function(text, sourceLanguage, targetLanguage){};
  A list of language codes is available <a href="/translate/v2/using_rest#language-params">
  here</a>.
  *
+ * @function LanguageApp.translate
+ *
  * @param {String} text - the text to translate
  * @param {String} sourceLanguage - the language code in which text is written. If it is set to the empty
      string, the source language code will be auto-detected
@@ -43,5 +48,4 @@ LanguageApp.translate = function(text, sourceLanguage, targetLanguage){};
  *
  * @return {String} the translated text
  */
-LanguageApp.translate = function(text, sourceLanguage, targetLanguage, advancedArgs){};
 

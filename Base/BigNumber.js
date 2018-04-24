@@ -1,299 +1,266 @@
-var BigNumber = {};
+/**********************************************
+ * @namespace BigNumber
+ ***********************************************/
 
 
 /**
- * undefined
+ * @function BigNumber.abs
  *
  * @return {BigNumber}
  */
-BigNumber.abs = function(){};
 
 /**
- * undefined
+ * @function BigNumber.add
  *
  * @param {BigNumber} augend - undefined
  *
  * @return {BigNumber}
  */
-BigNumber.add = function(augend){};
 
 /**
- * undefined
+ * @function BigNumber.add
  *
  * @param {Number} augend - undefined
  *
  * @return {BigNumber}
  */
-BigNumber.add = function(augend){};
 
 /**
- * undefined
+ * @function BigNumber.compareTo
  *
  * @param {BigNumber} value - undefined
  *
  * @return {number}
  */
-BigNumber.compareTo = function(value){};
 
 /**
- * undefined
+ * @function BigNumber.compareTo
  *
  * @param {Number} value - undefined
  *
  * @return {number}
  */
-BigNumber.compareTo = function(value){};
 
 /**
- * undefined
+ * @function BigNumber.divide
  *
  * @param {BigNumber} divisor - undefined
  *
  * @return {BigNumber}
  */
-BigNumber.divide = function(divisor){};
 
 /**
- * undefined
+ * @function BigNumber.divide
  *
  * @param {Number} divisor - undefined
  *
  * @return {BigNumber}
  */
-BigNumber.divide = function(divisor){};
 
 /**
- * undefined
+ * @function BigNumber.divideAndRemainder
  *
  * @param {BigNumber} divisor - undefined
  *
  * @return {BigNumber[]}
  */
-BigNumber.divideAndRemainder = function(divisor){};
 
 /**
- * undefined
+ * @function BigNumber.divideAndRemainder
  *
  * @param {Number} divisor - undefined
  *
  * @return {BigNumber[]}
  */
-BigNumber.divideAndRemainder = function(divisor){};
 
 /**
- * undefined
+ * @function BigNumber.divideToIntegralValue
  *
  * @param {BigNumber} divisor - undefined
  *
  * @return {BigNumber}
  */
-BigNumber.divideToIntegralValue = function(divisor){};
 
 /**
- * undefined
+ * @function BigNumber.divideToIntegralValue
  *
  * @param {Number} divisor - undefined
  *
  * @return {BigNumber}
  */
-BigNumber.divideToIntegralValue = function(divisor){};
 
 /**
- * undefined
+ * @function BigNumber.max
  *
  * @param {BigNumber} value - undefined
  *
  * @return {BigNumber}
  */
-BigNumber.max = function(value){};
 
 /**
- * undefined
+ * @function BigNumber.max
  *
  * @param {Number} value - undefined
  *
  * @return {BigNumber}
  */
-BigNumber.max = function(value){};
 
 /**
- * undefined
+ * @function BigNumber.min
  *
  * @param {BigNumber} value - undefined
  *
  * @return {BigNumber}
  */
-BigNumber.min = function(value){};
 
 /**
- * undefined
+ * @function BigNumber.min
  *
  * @param {Number} value - undefined
  *
  * @return {BigNumber}
  */
-BigNumber.min = function(value){};
 
 /**
- * undefined
+ * @function BigNumber.movePointLeft
  *
  * @param {number} shift - undefined
  *
  * @return {BigNumber}
  */
-BigNumber.movePointLeft = function(shift){};
 
 /**
- * undefined
+ * @function BigNumber.movePointRight
  *
  * @param {number} shift - undefined
  *
  * @return {BigNumber}
  */
-BigNumber.movePointRight = function(shift){};
 
 /**
- * undefined
+ * @function BigNumber.multiply
  *
  * @param {BigNumber} multiplicand - undefined
  *
  * @return {BigNumber}
  */
-BigNumber.multiply = function(multiplicand){};
 
 /**
- * undefined
+ * @function BigNumber.multiply
  *
  * @param {Number} multiplicand - undefined
  *
  * @return {BigNumber}
  */
-BigNumber.multiply = function(multiplicand){};
 
 /**
- * undefined
+ * @function BigNumber.negate
  *
  * @return {BigNumber}
  */
-BigNumber.negate = function(){};
 
 /**
- * undefined
+ * @function BigNumber.newInstance
  *
  * @return {BigNumber}
  */
-BigNumber.newInstance = function(){};
 
 /**
- * undefined
+ * @function BigNumber.parse
  *
  * @param {String} value - undefined
  *
  * @return {BigNumber}
  */
-BigNumber.parse = function(value){};
 
 /**
- * undefined
+ * @function BigNumber.parse
  *
  * @param {String} value - undefined
  * @param {number} radix - undefined
  *
  * @return {BigNumber}
  */
-BigNumber.parse = function(value, radix){};
 
 /**
- * undefined
+ * @function BigNumber.plus
  *
  * @return {BigNumber}
  */
-BigNumber.plus = function(){};
 
 /**
- * undefined
+ * @function BigNumber.pow
  *
  * @param {number} exponent - undefined
  *
  * @return {BigNumber}
  */
-BigNumber.pow = function(exponent){};
 
 /**
- * undefined
+ * @function BigNumber.precision
  *
  * @return {number}
  */
-BigNumber.precision = function(){};
 
 /**
- * undefined
+ * @function BigNumber.remainder
  *
  * @param {BigNumber} divisor - undefined
  *
  * @return {BigNumber}
  */
-BigNumber.remainder = function(divisor){};
 
 /**
- * undefined
+ * @function BigNumber.remainder
  *
  * @param {Number} divisor - undefined
  *
  * @return {BigNumber}
  */
-BigNumber.remainder = function(divisor){};
 
 /**
- * undefined
+ * @function BigNumber.sign
  *
  * @return {number}
  */
-BigNumber.sign = function(){};
 
 /**
- * undefined
+ * @function BigNumber.subtract
  *
  * @param {BigNumber} subtrahend - undefined
  *
  * @return {BigNumber}
  */
-BigNumber.subtract = function(subtrahend){};
 
 /**
- * undefined
+ * @function BigNumber.subtract
  *
  * @param {Number} subtrahend - undefined
  *
  * @return {BigNumber}
  */
-BigNumber.subtract = function(subtrahend){};
 
 /**
- * undefined
+ * @function BigNumber.toExponential
  *
  * @return {String}
  */
-BigNumber.toExponential = function(){};
 
 /**
- * undefined
+ * @function BigNumber.toFixed
  *
  * @return {String}
  */
-BigNumber.toFixed = function(){};
 
 /**
- * undefined
+ * @function BigNumber.toPrecision
  *
  * @return {String}
  */
-BigNumber.toPrecision = function(){};
 
 /**
- * undefined
+ * @function BigNumber.unitInTheLastPlaces
  *
  * @return {BigNumber}
  */
-BigNumber.unitInTheLastPlaces = function(){};
 

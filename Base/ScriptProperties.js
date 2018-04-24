@@ -1,4 +1,6 @@
-var ScriptProperties = {};
+/**********************************************
+ * @namespace ScriptProperties
+ ***********************************************/
 
 
 /**
@@ -8,9 +10,10 @@ var ScriptProperties = {};
  ScriptProperties.deleteAllProperties();
  </code></pre>
  *
+ * @function ScriptProperties.deleteAllProperties
+ *
  * @return {ScriptProperties} this object, for chaining
  */
-ScriptProperties.deleteAllProperties = function(){};
 
 /**
  * Deletes the property with the given key.
@@ -19,18 +22,20 @@ ScriptProperties.deleteAllProperties = function(){};
  ScriptProperties.deleteProperty(&#39;special&#39;);
  </code></pre>
  *
+ * @function ScriptProperties.deleteProperty
+ *
  * @param {String} key - key for property to delete
  *
  * @return {ScriptProperties} this object, for chaining
  */
-ScriptProperties.deleteProperty = function(key){};
 
 /**
  * Get all of the available keys.
  *
+ * @function ScriptProperties.getKeys
+ *
  * @return {String[]}
  */
-ScriptProperties.getKeys = function(){};
 
 /**
  * Get all of the available properties at once.
@@ -61,9 +66,10 @@ ScriptProperties.getKeys = function(){};
  }
  </code></pre>
  *
+ * @function ScriptProperties.getProperties
+ *
  * @return {Object} a copy of the properties containing key-value pairs
  */
-ScriptProperties.getProperties = function(){};
 
 /**
  * Returns the value associated with the provided key, or null if there is no such value.
@@ -72,11 +78,12 @@ ScriptProperties.getProperties = function(){};
  var specialValue = ScriptProperties.getProperty(&#39;special&#39;);
  </code></pre>
  *
+ * @function ScriptProperties.getProperty
+ *
  * @param {String} key - key for the value to retrieve
  *
  * @return {String} the value associated with the key
  */
-ScriptProperties.getProperty = function(key){};
 
 /**
  * Bulk-sets all the properties drawn from the given object.
@@ -85,11 +92,12 @@ ScriptProperties.getProperty = function(key){};
  ScriptProperties.setProperties({special: &#39;sauce&#39;, &#39;meaning&#39;: 42});
  </code></pre>
  *
+ * @function ScriptProperties.setProperties
+ *
  * @param {Object} properties - an object containing the properties to set.
  *
  * @return {ScriptProperties} this object, for chaining
  */
-ScriptProperties.setProperties = function(properties){};
 
 /**
  * Bulk-sets all the properties drawn from the given object.
@@ -99,12 +107,13 @@ ScriptProperties.setProperties = function(properties){};
  ScriptProperties.setProperties({special: &#39;sauce&#39;, &#39;meaning&#39;: 42}, true);
  </code></pre>
  *
+ * @function ScriptProperties.setProperties
+ *
  * @param {Object} properties - an object containing the properties to set.
  * @param {Boolean} deleteAllOthers - whether to delete all existing properties.
  *
  * @return {ScriptProperties} this object, for chaining
  */
-ScriptProperties.setProperties = function(properties, deleteAllOthers){};
 
 /**
  * Persists the specified in value with the provided key. Any existing value associated with this
@@ -114,10 +123,11 @@ ScriptProperties.setProperties = function(properties, deleteAllOthers){};
  ScriptProperties.setProperty(&#39;special&#39;, &#39;sauce&#39;);
  </code></pre>
  *
+ * @function ScriptProperties.setProperty
+ *
  * @param {String} key - key for property
  * @param {String} value - value to associate with the key
  *
  * @return {ScriptProperties} this object, for chaining
  */
-ScriptProperties.setProperty = function(key, value){};
 

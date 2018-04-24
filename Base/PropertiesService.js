@@ -1,4 +1,6 @@
-var PropertiesService = {};
+/**********************************************
+ * @namespace PropertiesService
+ ***********************************************/
 
 
 /**
@@ -10,27 +12,31 @@ var PropertiesService = {};
  properties created by a script are not accessible outside that script, even by other scripts
  accessing the same document.
  *
+ * @function PropertiesService.getDocumentProperties
+ *
  * @return {PropertiesService.Properties} a property store for this script only that all users of the current document can
      access, or <code>null</code> if the script is not either an add-on or bound to a G Suite file
  */
-PropertiesService.getDocumentProperties = function(){};
 
 /**
  * Gets a property store that all users can access, but only within this script.
  *
+ * @function PropertiesService.getScriptProperties
+ *
  * @return {PropertiesService.Properties} a property store that all users of the script can access
  */
-PropertiesService.getScriptProperties = function(){};
 
 /**
  * Gets a property store that only the current user can access, and only within this script.
  *
+ * @function PropertiesService.getUserProperties
+ *
  * @return {PropertiesService.Properties} a property store that only the current user of the script can access
  */
-PropertiesService.getUserProperties = function(){};
 
-/** @constructor */
-PropertiesService.Properties = function(){};
+/**
+ * @class PropertiesService.Properties
+ */
 
 /**
  * Deletes all properties in the current <code>Properties</code> store.
@@ -41,9 +47,10 @@ PropertiesService.Properties = function(){};
  userProperties.deleteAllProperties();
  </code></pre>
  *
+ * @function PropertiesService.Properties#deleteAllProperties
+ *
  * @return {PropertiesService.Properties} this <code>Properties</code> store, for chaining
  */
-PropertiesService.Properties.prototype.deleteAllProperties = function(){};
 
 /**
  * Deletes the property with the given key in the current <code>Properties</code> store.
@@ -54,11 +61,12 @@ PropertiesService.Properties.prototype.deleteAllProperties = function(){};
  userProperties.deleteProperty(&#39;nickname&#39;);
  </code></pre>
  *
+ * @function PropertiesService.Properties#deleteProperty
+ *
  * @param {String} key - the key for the property to delete
  *
  * @return {PropertiesService.Properties} this <code>Properties</code> store, for chaining
  */
-PropertiesService.Properties.prototype.deleteProperty = function(key){};
 
 /**
  * Gets all keys in the current <code>Properties</code> store.
@@ -78,9 +86,10 @@ PropertiesService.Properties.prototype.deleteProperty = function(key){};
  }
  </code></pre>
  *
+ * @function PropertiesService.Properties#getKeys
+ *
  * @return {String[]} an array of all keys in the current <code>Properties</code> store
  */
-PropertiesService.Properties.prototype.getKeys = function(){};
 
 /**
  * Gets a copy of all key-value pairs in the current <code>Properties</code> store. Note that the
@@ -107,9 +116,10 @@ PropertiesService.Properties.prototype.getKeys = function(){};
  }
  </code></pre>
  *
+ * @function PropertiesService.Properties#getProperties
+ *
  * @return {Object} a copy of all key-value pairs in the current <code>Properties</code> store
  */
-PropertiesService.Properties.prototype.getProperties = function(){};
 
 /**
  * Gets the value associated with the given key in the current <code>Properties</code> store, or <code>null</code> if no such key exists.
@@ -121,11 +131,12 @@ PropertiesService.Properties.prototype.getProperties = function(){};
  Logger.log(nickname);
  </code></pre>
  *
+ * @function PropertiesService.Properties#getProperty
+ *
  * @param {String} key - the key for the property value to retrieve
  *
  * @return {String} the value associated with the given key in the current <code>Properties</code> store
  */
-PropertiesService.Properties.prototype.getProperty = function(key){};
 
 /**
  * Sets all key-value pairs from the given object in the current <code>Properties</code> store.
@@ -137,11 +148,12 @@ PropertiesService.Properties.prototype.getProperty = function(key){};
  userProperties.setProperties(newProperties);
  </code></pre>
  *
+ * @function PropertiesService.Properties#setProperties
+ *
  * @param {Object} properties - an object containing key-values pairs to set
  *
  * @return {PropertiesService.Properties} this <code>Properties</code> store, for chaining
  */
-PropertiesService.Properties.prototype.setProperties = function(properties){};
 
 /**
  * Sets all key-value pairs from the given object in the current <code>Properties</code> store,
@@ -154,13 +166,14 @@ PropertiesService.Properties.prototype.setProperties = function(properties){};
  userProperties.setProperties(newProperties, true);
  </code></pre>
  *
+ * @function PropertiesService.Properties#setProperties
+ *
  * @param {Object} properties - an object containing key-values pairs to set
  * @param {Boolean} deleteAllOthers - <code>true</code> to delete all other key-value pairs in the properties
      object; <code>false</code> to not
  *
  * @return {PropertiesService.Properties} this <code>Properties</code> store, for chaining
  */
-PropertiesService.Properties.prototype.setProperties = function(properties, deleteAllOthers){};
 
 /**
  * Sets the given key-value pair in the current <code>Properties</code> store.
@@ -171,10 +184,11 @@ PropertiesService.Properties.prototype.setProperties = function(properties, dele
  userProperties.setProperty(&#39;nickname&#39;, &#39;Bobby&#39;);
  </code></pre>
  *
+ * @function PropertiesService.Properties#setProperty
+ *
  * @param {String} key - the key for the property
  * @param {String} value - the value to associate with the key
  *
  * @return {PropertiesService.Properties} this <code>Properties</code> store, for chaining
  */
-PropertiesService.Properties.prototype.setProperty = function(key, value){};
 

@@ -1,9 +1,9 @@
-var ContactsApp = {};
+/**********************************************
+ * @namespace ContactsApp
+ ***********************************************/
 
 
 /**
- * 
- * 
  * @class ContactsApp.ExtendedField
  */
 
@@ -80,8 +80,6 @@ var ContactsApp = {};
  */
 
 /**
- * 
- * 
  * @class ContactsApp.Field
  */
 
@@ -344,8 +342,6 @@ var ContactsApp = {};
  */
 
 /**
- * 
- * 
  * @class ContactsApp.Gender
  */
 
@@ -362,14 +358,10 @@ var ContactsApp = {};
  */
 
 /**
- * 
- * 
- * @class Month
+ * @typedef {Month} ContactsApp.Month
  */
 
 /**
- * 
- * 
  * @class ContactsApp.Priority
  */
 
@@ -392,8 +384,6 @@ var ContactsApp = {};
  */
 
 /**
- * 
- * 
  * @class ContactsApp.Sensitivity
  */
 
@@ -430,13 +420,14 @@ var ContactsApp = {};
  var contact = ContactsApp.createContact(&#39;John&#39;, &#39;Doe&#39;, &#39;john.doe@example.com&#39;);
  </code></pre>
  *
+ * @function ContactsApp.createContact
+ *
  * @param {String} givenName - the first name of the contact
  * @param {String} familyName - the last name of the contact
  * @param {String} email - the email address of the contact
  *
  * @return {ContactsApp.Contact} the newly created Contact object
  */
-ContactsApp.createContact = function(givenName, familyName, email){};
 
 /**
  * Creates a contact group with the given name
@@ -446,11 +437,12 @@ ContactsApp.createContact = function(givenName, familyName, email){};
  var group = ContactsApp.createContactGroup(&quot;Work Friends&quot;);
  </code></pre>
  *
+ * @function ContactsApp.createContactGroup
+ *
  * @param {String} name - the name of the new contact group
  *
  * @return {ContactsApp.ContactGroup} the newly created contact group
  */
-ContactsApp.createContactGroup = function(name){};
 
 /**
  * Deletes the contact.
@@ -462,11 +454,12 @@ ContactsApp.createContactGroup = function(name){};
  ContactsApp.deleteContact(contact);
  </code></pre>
  *
+ * @function ContactsApp.deleteContact
+ *
  * @param {ContactsApp.Contact} contact - the contact to be deleted
  *
  * @return void
  */
-ContactsApp.deleteContact = function(contact){};
 
 /**
  * Deletes the contact group
@@ -477,36 +470,40 @@ ContactsApp.deleteContact = function(contact){};
  ContactsApp.deleteContactGroup(group);
  </code></pre>
  *
+ * @function ContactsApp.deleteContactGroup
+ *
  * @param {ContactsApp.ContactGroup} group - the contact group to delete
  *
  * @return void
  */
-ContactsApp.deleteContactGroup = function(group){};
 
 /**
  * Finds a Contact with the given email address.
+ *
+ * @function ContactsApp.findByEmailAddress
  *
  * @param {String} email - the email address of the contact to be found
  *
  * @return {ContactsApp.Contact} the Contact containing that email address
  */
-ContactsApp.findByEmailAddress = function(email){};
 
 /**
  * Finds a contact group of the given name.
+ *
+ * @function ContactsApp.findContactGroup
  *
  * @param {String} name - the name of the contact group to find
  *
  * @return {ContactsApp.ContactGroup} the contact group matching the given name
  */
-ContactsApp.findContactGroup = function(name){};
 
 /**
  * Get all the contacts belonging to this user.
  *
+ * @function ContactsApp.getAllContacts
+ *
  * @return {ContactsApp.Contact[]} all the contacts for this user
  */
-ContactsApp.getAllContacts = function(){};
 
 /**
  * Gets a contact by the email address.
@@ -521,11 +518,12 @@ ContactsApp.getAllContacts = function(){};
  var contact = ContactsApp.getContact(&#39;john.doe@example.com&#39;);
  </code></pre>
  *
+ * @function ContactsApp.getContact
+ *
  * @param {String} emailAddress - the email address of the contact
  *
  * @return {ContactsApp.Contact} the contact containing that email address
  */
-ContactsApp.getContact = function(emailAddress){};
 
 /**
  * Gets the contact with this id.
@@ -537,11 +535,12 @@ ContactsApp.getContact = function(emailAddress){};
  var contact = ContactApp.getContactById(id);
  </code></pre>
  *
+ * @function ContactsApp.getContactById
+ *
  * @param {String} id - the id of the contact to retrieve
  *
  * @return {ContactsApp.Contact} the matching contact or null
  */
-ContactsApp.getContactById = function(id){};
 
 /**
  * Gets a contact group with the given name, or returns null if no such contact group is found.
@@ -551,11 +550,12 @@ ContactsApp.getContactById = function(id){};
  var group  = ContactsApp.getContactGroup(&#39;Work Friends&#39;);
  </code></pre>
  *
+ * @function ContactsApp.getContactGroup
+ *
  * @param {String} name - the name of the contact group to match
  *
  * @return {ContactsApp.ContactGroup} the matching contact group or null if no matching contact group is found
  */
-ContactsApp.getContactGroup = function(name){};
 
 /**
  * Gets a contact group with the given id, or returns null if no such contact group is found.
@@ -567,11 +567,12 @@ ContactsApp.getContactGroup = function(name){};
  var group  = ContactsApp.getContactGroupById(id);
  </code></pre>
  *
+ * @function ContactsApp.getContactGroupById
+ *
  * @param {String} id - the id of the contact group to match
  *
  * @return {ContactsApp.ContactGroup} the matching contact group or null if no matching contact group is found
  */
-ContactsApp.getContactGroupById = function(id){};
 
 /**
  * Gets the complete list of the user's contact groups.
@@ -588,9 +589,10 @@ ContactsApp.getContactGroupById = function(id){};
  }
  </code></pre>
  *
+ * @function ContactsApp.getContactGroups
+ *
  * @return {ContactsApp.ContactGroup[]} an array of the user's contact groups
  */
-ContactsApp.getContactGroups = function(){};
 
 /**
  * Gets all of the user's contacts.
@@ -600,9 +602,10 @@ ContactsApp.getContactGroups = function(){};
  var contacts = ContactsApp.getContacts();
  </code></pre>
  *
+ * @function ContactsApp.getContacts
+ *
  * @return {ContactsApp.Contact[]} an array of all the user's contacts
  */
-ContactsApp.getContacts = function(){};
 
 /**
  * Get contacts matching an address.
@@ -613,11 +616,12 @@ ContactsApp.getContacts = function(){};
  var contacts = ContactsApp.getContactsByAddress(&#39;San Francisco&#39;);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByAddress
+ *
  * @param {String} query - the string to search for in contact's addresses
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByAddress = function(query){};
 
 /**
  * Get contacts matching an address, limited to a specific field.
@@ -629,12 +633,13 @@ ContactsApp.getContactsByAddress = function(query){};
                                                  ContactsApp.Field.HOME_ADDRESS);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByAddress
+ *
  * @param {String} query - the string to search for in contact's addresses
  * @param {ContactsApp.Field} label - the field to search within
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByAddress = function(query, label){};
 
 /**
  * Get contacts matching an address, limited to the specified custom address label.
@@ -646,13 +651,14 @@ ContactsApp.getContactsByAddress = function(query, label){};
  var contacts = ContactsApp.getContactsByAddress(&#39;San Francisco&#39;, &#39;vacation&#39;);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByAddress
+ *
  * @param {String} query - the string to search for in contact's addresses with the specified custom address
      label
  * @param {String} label - the custom address label to search within
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByAddress = function(query, label){};
 
 /**
  * Get contacts matching the company field.
@@ -663,11 +669,12 @@ ContactsApp.getContactsByAddress = function(query, label){};
  var contacts = ContactsApp.getContactsByCompany(&#39;Google&#39;);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByCompany
+ *
  * @param {String} query - the string to search for in contact's company field
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByCompany = function(query){};
 
 /**
  * Get contacts matching a given value in a custom field.
@@ -681,12 +688,13 @@ ContactsApp.getContactsByCompany = function(query){};
  var contacts = ContactsApp.getContactsByCustomField(&#39;tennis&#39;, &#39;Favorite Sport&#39;);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByCustomField
+ *
  * @param {Object} query - the string to search for in contact's custom field
  * @param {ContactsApp.ExtendedField} label - the custom field to search within
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByCustomField = function(query, label){};
 
 /**
  * Get contacts matching a given month and day for a particular standard field.
@@ -698,13 +706,14 @@ ContactsApp.getContactsByCustomField = function(query, label){};
                                                ContactsApp.Field.BIRTHDAY);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByDate
+ *
  * @param {Month} month - the month to match, as one of the values from ContactsApp.Month
  * @param {number} day - the day to match
  * @param {ContactsApp.Field} label - the field to search within, from ContactsApp.Field
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByDate = function(month, day, label){};
 
 /**
  * Get contacts matching a given month, day, and year for a particular standard field.
@@ -716,6 +725,8 @@ ContactsApp.getContactsByDate = function(month, day, label){};
                                               ContactsApp.Field.BIRTHDAY);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByDate
+ *
  * @param {Month} month - the month to match, as one of the values from ContactsApp.Month
  * @param {number} day - the day to match
  * @param {number} year - the year to match, can be null
@@ -723,7 +734,6 @@ ContactsApp.getContactsByDate = function(month, day, label){};
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByDate = function(month, day, year, label){};
 
 /**
  * Get contacts matching a given month, day, and year for a particular custom field.
@@ -734,6 +744,8 @@ ContactsApp.getContactsByDate = function(month, day, year, label){};
  var contacts = ContactsApp.getContactsByDate(ContactsApp.Month.APRIL, 19, 2011, &#39;Start Date&#39;);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByDate
+ *
  * @param {Month} month - the month to match, as one of the values from ContactsApp.Month
  * @param {number} day - the day to match
  * @param {number} year - the year to match, can be null
@@ -741,7 +753,6 @@ ContactsApp.getContactsByDate = function(month, day, year, label){};
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByDate = function(month, day, year, label){};
 
 /**
  * Get contacts matching a given month and day for a particular custom field.
@@ -752,13 +763,14 @@ ContactsApp.getContactsByDate = function(month, day, year, label){};
  var contacts = ContactsApp.getContactsByDate(ContactsApp.Month.APRIL, 19, &#39;Start Date&#39;);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByDate
+ *
  * @param {Month} month - the month to match, as one of the values from ContactsApp.Month
  * @param {number} day - the day to match
  * @param {String} label - the custom field to search within
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByDate = function(month, day, label){};
 
 /**
  * Get contacts matching an email address.
@@ -769,11 +781,12 @@ ContactsApp.getContactsByDate = function(month, day, label){};
  var contacts = ContactsApp.getContactsByEmailAddress(&#39;john.doe@example.com&#39;);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByEmailAddress
+ *
  * @param {String} query - the string to search for in contact email addresses
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByEmailAddress = function(query){};
 
 /**
  * Get contacts matching an email address, limited to a specific field.
@@ -785,12 +798,13 @@ ContactsApp.getContactsByEmailAddress = function(query){};
                                                       ContactsApp.Field.HOME_EMAIL);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByEmailAddress
+ *
  * @param {String} query - the string to search for in contact email addresses
  * @param {ContactsApp.Field} label - the field to search within
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByEmailAddress = function(query, label){};
 
 /**
  * Get contacts matching an email address, limited to the specified custom email address label.
@@ -802,13 +816,14 @@ ContactsApp.getContactsByEmailAddress = function(query, label){};
  var contacts = ContactsApp.getContactsByEmailAddress(&#39;john.doe@example.com&#39;, &#39;alternate&#39;);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByEmailAddress
+ *
  * @param {String} query - the string to search for in contact email addresses with the specified custom
      email address label
  * @param {String} label - the custom email address label to search within
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByEmailAddress = function(query, label){};
 
 /**
  * Get the contacts in a given ContactGroup.
@@ -820,11 +835,12 @@ ContactsApp.getContactsByEmailAddress = function(query, label){};
  var contacts = ContactsApp.getContactsByGroup(group);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByGroup
+ *
  * @param {ContactsApp.ContactGroup} group - the group of contacts
  *
  * @return {ContactsApp.Contact[]} an array of of contacts in the given group
  */
-ContactsApp.getContactsByGroup = function(group){};
 
 /**
  * Get contacts matching an instant messaging address.
@@ -835,11 +851,12 @@ ContactsApp.getContactsByGroup = function(group){};
  var contacts = ContactsApp.getContactsByIM(&#39;ChatWithJohnDoe&#39;);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByIM
+ *
  * @param {String} query - the string to search for in contact's instant messaging addresses
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByIM = function(query){};
 
 /**
  * Get contacts matching an instant messaging address, limited to a specific field.
@@ -851,12 +868,13 @@ ContactsApp.getContactsByIM = function(query){};
                                              ContactsApp.Field.AIM);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByIM
+ *
  * @param {String} query - the string to search for in contact's instant messaging addresses
  * @param {ContactsApp.Field} label - the field to search within
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByIM = function(query, label){};
 
 /**
  * Get contacts matching an instant messaging address, limited to the specified custom instant
@@ -869,13 +887,14 @@ ContactsApp.getContactsByIM = function(query, label){};
  var contacts = ContactsApp.getContactsByIM(&#39;ChatWithJohnDoe&#39;, &#39;eBuddy&#39;);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByIM
+ *
  * @param {String} query - the string to search for in contact's instant messaging addresses with the
      specified custom instant messaging label
  * @param {String} label - the custom instant messaging label to search within
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByIM = function(query, label){};
 
 /**
  * Get contacts matching the job title field.
@@ -886,11 +905,12 @@ ContactsApp.getContactsByIM = function(query, label){};
  var contacts = ContactsApp.getContactsByJobTitle(&#39;Product Manager&#39;);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByJobTitle
+ *
  * @param {String} query - the string to search for in contact's job title field
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByJobTitle = function(query){};
 
 /**
  * Get contacts matching a name.
@@ -900,11 +920,12 @@ ContactsApp.getContactsByJobTitle = function(query){};
  var contacts = ContactsApp.getContactsByName(&#39;John&#39;);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByName
+ *
  * @param {String} query - the string to search for in contact names
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByName = function(query){};
 
 /**
  * Get contacts matching a name, limited to a specific field.
@@ -915,12 +936,13 @@ ContactsApp.getContactsByName = function(query){};
  var contacts = ContactsApp.getContactsByName(&#39;John&#39;, ContactsApp.Field.GIVEN_NAME);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByName
+ *
  * @param {String} query - the string to search for in contact names
  * @param {ContactsApp.Field} label - the field to search within
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByName = function(query, label){};
 
 /**
  * Get contacts matching the notes field.
@@ -931,11 +953,12 @@ ContactsApp.getContactsByName = function(query, label){};
  var contacts = ContactsApp.getContactsByNotes(&#39;sent birthday card&#39;);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByNotes
+ *
  * @param {String} query - the string to search for in contact's notes field
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByNotes = function(query){};
 
 /**
  * Get contacts matching a phone number.
@@ -950,11 +973,12 @@ ContactsApp.getContactsByNotes = function(query){};
  var contacts = ContactsApp.getContactsByPhone(&#39;212-555-1234&#39;);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByPhone
+ *
  * @param {String} query - the string to search for in contact's phone numbers
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByPhone = function(query){};
 
 /**
  * Get contacts matching a phone number, limited to a specific field.
@@ -970,12 +994,13 @@ ContactsApp.getContactsByPhone = function(query){};
                                                ContactsApp.Field.HOME_PHONE);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByPhone
+ *
  * @param {String} query - the string to search for in contact's phone numbers
  * @param {ContactsApp.Field} label - the field to search within
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByPhone = function(query, label){};
 
 /**
  * Get contacts matching a phone number, limited to the specified custom phone number label.
@@ -991,13 +1016,14 @@ ContactsApp.getContactsByPhone = function(query, label){};
  var contacts = ContactsApp.getContactsByPhone(&#39;212-555-1234&#39;, &#39;alternate&#39;);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByPhone
+ *
  * @param {String} query - the string to search for in contact's phone numbers with the specified custom
      phone number label
  * @param {String} label - the custom phone number label to search within
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByPhone = function(query, label){};
 
 /**
  * Get contacts matching a URL.
@@ -1008,11 +1034,12 @@ ContactsApp.getContactsByPhone = function(query, label){};
  var contacts = ContactsApp.getContactsByUrl(&#39;www.example.com&#39;);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByUrl
+ *
  * @param {String} query - the string to search for in contact's URLs
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByUrl = function(query){};
 
 /**
  * Get contacts matching a URL, limited to a specific field.
@@ -1024,12 +1051,13 @@ ContactsApp.getContactsByUrl = function(query){};
                                              ContactsApp.Field.WORK_WEBSITE);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByUrl
+ *
  * @param {String} query - the string to search for in contact's URLs
  * @param {ContactsApp.Field} label - the field to search within
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByUrl = function(query, label){};
 
 /**
  * Get contacts matching a URL, limited to the specified custom URL label.
@@ -1041,15 +1069,17 @@ ContactsApp.getContactsByUrl = function(query, label){};
  var contacts = ContactsApp.getContactsByUrl(&#39;www.example.com&#39;, &#39;alternate work&#39;);
  </code></pre>
  *
+ * @function ContactsApp.getContactsByUrl
+ *
  * @param {String} query - the string to search for in contact's URLs with the specified custom URL label
  * @param {String} label - the custom URL label to search within
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
-ContactsApp.getContactsByUrl = function(query, label){};
 
-/** @constructor */
-ContactsApp.AddressField = function(){};
+/**
+ * @class ContactsApp.AddressField
+ */
 
 /**
  * Deletes this address field.
@@ -1063,9 +1093,10 @@ ContactsApp.AddressField = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.AddressField#deleteAddressField
+ *
  * @return void
  */
-ContactsApp.AddressField.prototype.deleteAddressField = function(){};
 
 /**
  * Get the address for this field.
@@ -1078,9 +1109,10 @@ ContactsApp.AddressField.prototype.deleteAddressField = function(){};
  Logger.log(homeAddress[0].getAddress());
  </code></pre>
  *
+ * @function ContactsApp.AddressField#getAddress
+ *
  * @return {String} the address as a string
  */
-ContactsApp.AddressField.prototype.getAddress = function(){};
 
 /**
  * Gets the label for this field. This may be a Field, ExtendedField, or a String.
@@ -1096,9 +1128,10 @@ ContactsApp.AddressField.prototype.getAddress = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.AddressField#getLabel
+ *
  * @return {Object} the label for this field
  */
-ContactsApp.AddressField.prototype.getLabel = function(){};
 
 /**
  * Gets whether this is the primary field value.
@@ -1112,9 +1145,10 @@ ContactsApp.AddressField.prototype.getLabel = function(){};
  Logger.log(addressFields[0].isPrimary());
  </code></pre>
  *
+ * @function ContactsApp.AddressField#isPrimary
+ *
  * @return {Boolean} whether this is primary
  */
-ContactsApp.AddressField.prototype.isPrimary = function(){};
 
 /**
  * Sets the address of this field.
@@ -1127,11 +1161,12 @@ ContactsApp.AddressField.prototype.isPrimary = function(){};
  homeAddress[0].setAddress(&#39;123 Main St, Raleigh, NC, 27601&#39;);
  </code></pre>
  *
+ * @function ContactsApp.AddressField#setAddress
+ *
  * @param {String} address - the new address
  *
  * @return {ContactsApp.AddressField} this field, useful for chaining
  */
-ContactsApp.AddressField.prototype.setAddress = function(address){};
 
 /**
  * Sets this field to primary.
@@ -1144,9 +1179,10 @@ ContactsApp.AddressField.prototype.setAddress = function(address){};
  addressFields[0].setAsPrimary();
  </code></pre>
  *
+ * @function ContactsApp.AddressField#setAsPrimary
+ *
  * @return {ContactsApp.AddressField} this FieldValue for chaining
  */
-ContactsApp.AddressField.prototype.setAsPrimary = function(){};
 
 /**
  * Sets the label of this field.
@@ -1160,11 +1196,12 @@ ContactsApp.AddressField.prototype.setAsPrimary = function(){};
  addressFields[0].setLabel(ContactsApp.Field.WORK_ADDRESS);
  </code></pre>
  *
+ * @function ContactsApp.AddressField#setLabel
+ *
  * @param {ContactsApp.Field} field - the new standard label
  *
  * @return {ContactsApp.AddressField} this FieldValue for chaining
  */
-ContactsApp.AddressField.prototype.setLabel = function(field){};
 
 /**
  * Sets the label of this field.
@@ -1178,14 +1215,16 @@ ContactsApp.AddressField.prototype.setLabel = function(field){};
  addressFields[0].setLabel(&#39;Apartment&#39;);
  </code></pre>
  *
+ * @function ContactsApp.AddressField#setLabel
+ *
  * @param {String} label - the new label for this field
  *
  * @return {ContactsApp.AddressField} this field, useful for chaining
  */
-ContactsApp.AddressField.prototype.setLabel = function(label){};
 
-/** @constructor */
-ContactsApp.CompanyField = function(){};
+/**
+ * @class ContactsApp.CompanyField
+ */
 
 /**
  * Deletes this company field.
@@ -1197,9 +1236,10 @@ ContactsApp.CompanyField = function(){};
  company.deleteCompanyField();
  </code></pre>
  *
+ * @function ContactsApp.CompanyField#deleteCompanyField
+ *
  * @return void
  */
-ContactsApp.CompanyField.prototype.deleteCompanyField = function(){};
 
 /**
  * Gets the company name.
@@ -1213,9 +1253,10 @@ ContactsApp.CompanyField.prototype.deleteCompanyField = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.CompanyField#getCompanyName
+ *
  * @return {String} the name of the company
  */
-ContactsApp.CompanyField.prototype.getCompanyName = function(){};
 
 /**
  * Gets the job title.
@@ -1229,9 +1270,10 @@ ContactsApp.CompanyField.prototype.getCompanyName = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.CompanyField#getJobTitle
+ *
  * @return {String} the job title
  */
-ContactsApp.CompanyField.prototype.getJobTitle = function(){};
 
 /**
  * Gets whether this is the primary company.
@@ -1246,9 +1288,10 @@ ContactsApp.CompanyField.prototype.getJobTitle = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.CompanyField#isPrimary
+ *
  * @return {Boolean} whether this is primary
  */
-ContactsApp.CompanyField.prototype.isPrimary = function(){};
 
 /**
  * Sets this company as the primary company, and unsets whatever company was previously primary.
@@ -1260,9 +1303,10 @@ ContactsApp.CompanyField.prototype.isPrimary = function(){};
  company.setAsPrimary();
  </code></pre>
  *
+ * @function ContactsApp.CompanyField#setAsPrimary
+ *
  * @return {ContactsApp.CompanyField} this company field, useful for chaining
  */
-ContactsApp.CompanyField.prototype.setAsPrimary = function(){};
 
 /**
  * Sets the company name.
@@ -1274,11 +1318,12 @@ ContactsApp.CompanyField.prototype.setAsPrimary = function(){};
  company.setCompanyName(&#39;ACME Corp&#39;);
  </code></pre>
  *
+ * @function ContactsApp.CompanyField#setCompanyName
+ *
  * @param {String} company - the new name for the company
  *
  * @return {ContactsApp.CompanyField} this company field, useful for chaining
  */
-ContactsApp.CompanyField.prototype.setCompanyName = function(company){};
 
 /**
  * Sets the job title.
@@ -1290,14 +1335,16 @@ ContactsApp.CompanyField.prototype.setCompanyName = function(company){};
  company.setJobTitle(&#39;Manager&#39;);
  </code></pre>
  *
+ * @function ContactsApp.CompanyField#setJobTitle
+ *
  * @param {String} title - the new job title for the contact at this company
  *
  * @return {ContactsApp.CompanyField} this company field, useful for chaining
  */
-ContactsApp.CompanyField.prototype.setJobTitle = function(title){};
 
-/** @constructor */
-ContactsApp.Contact = function(){};
+/**
+ * @class ContactsApp.Contact
+ */
 
 /**
  * Adds an address to the contact with either a standard or custom label.
@@ -1312,12 +1359,13 @@ ContactsApp.Contact = function(){};
                                      &#39;123 Main St, Some City, NY 10011&#39;);
  </code></pre>
  *
+ * @function ContactsApp.Contact#addAddress
+ *
  * @param {Object} label - the label of the new address, either from ContactsApp.Field or a custom string
  * @param {String} address - the new address
  *
  * @return {ContactsApp.AddressField} the newly created field
  */
-ContactsApp.Contact.prototype.addAddress = function(label, address){};
 
 /**
  * Adds a company to the contact.
@@ -1329,12 +1377,13 @@ ContactsApp.Contact.prototype.addAddress = function(label, address){};
  var url = contacts[0].addCompany(&#39;Google&#39;, &#39;Product Manager&#39;);
  </code></pre>
  *
+ * @function ContactsApp.Contact#addCompany
+ *
  * @param {String} company - the name of the company to add to this contact
  * @param {String} title - the job title associated with this contact for this company
  *
  * @return {ContactsApp.CompanyField} the newly created field
  */
-ContactsApp.Contact.prototype.addCompany = function(company, title){};
 
 /**
  * Adds a custom field to the contact with either an extended or custom label.
@@ -1349,13 +1398,14 @@ ContactsApp.Contact.prototype.addCompany = function(company, title){};
  contacts[0].addCustomField(ContactsApp.ExtendedField.HOBBY, &#39;hiking&#39;);
  </code></pre>
  *
+ * @function ContactsApp.Contact#addCustomField
+ *
  * @param {Object} label - the label of the new address, either from ContactsApp.ExtendedField or a custom
      string
  * @param {Object} content - the value to store in the custom field
  *
  * @return {ContactsApp.CustomField} the newly created field
  */
-ContactsApp.Contact.prototype.addCustomField = function(label, content){};
 
 /**
  * Adds a date to the contact with either an standard or custom label.
@@ -1370,6 +1420,8 @@ ContactsApp.Contact.prototype.addCustomField = function(label, content){};
                                     ContactsApp.Month.APRIL, 19, 1950);
  </code></pre>
  *
+ * @function ContactsApp.Contact#addDate
+ *
  * @param {Object} label - the label of the new date, either from ContactsApp.Field or a custom string
  * @param {Month} month - the month, from ContactApps.Month
  * @param {number} day - the day
@@ -1377,7 +1429,6 @@ ContactsApp.Contact.prototype.addCustomField = function(label, content){};
  *
  * @return {ContactsApp.DateField} the newly created date
  */
-ContactsApp.Contact.prototype.addDate = function(label, month, day, year){};
 
 /**
  * Add an email address with a standard label (home, work, etc.) or a custom label
@@ -1389,12 +1440,13 @@ ContactsApp.Contact.prototype.addDate = function(label, month, day, year){};
  var emailField = contacts[0].addEmail(ContactsApp.Field.HOME_EMAIL, &#39;j.doe@example.com&#39;);
  </code></pre>
  *
+ * @function ContactsApp.Contact#addEmail
+ *
  * @param {Object} label - the label of the new email, either from ContactsApp.Field or a custom string
  * @param {String} address - the new email address
  *
  * @return {ContactsApp.EmailField} the newly added field
  */
-ContactsApp.Contact.prototype.addEmail = function(label, address){};
 
 /**
  * Adds an IM address to the contact with either a standard or custom label.
@@ -1408,12 +1460,13 @@ ContactsApp.Contact.prototype.addEmail = function(label, address){};
  var email = contacts[0].addIM(ContactsApp.Field.AIM, &#39;ChatWithJohn&#39;);
  </code></pre>
  *
+ * @function ContactsApp.Contact#addIM
+ *
  * @param {Object} label - the label of the new IM address, either from ContactsApp.Field or a custom string
  * @param {String} address - the new IM address
  *
  * @return {ContactsApp.IMField} the newly created field
  */
-ContactsApp.Contact.prototype.addIM = function(label, address){};
 
 /**
  * Adds a phone number to the contact with either a standard or custom label.
@@ -1427,13 +1480,14 @@ ContactsApp.Contact.prototype.addIM = function(label, address){};
  var phone = contacts[0].addPhone(ContactsApp.Field.WORK_PHONE, &#39;212-555-1234&#39;);
  </code></pre>
  *
+ * @function ContactsApp.Contact#addPhone
+ *
  * @param {Object} label - the label of the new phone number, either from ContactsApp.Field or a custom
      string
  * @param {String} number - the new phone number
  *
  * @return {ContactsApp.PhoneField} the newly created field
  */
-ContactsApp.Contact.prototype.addPhone = function(label, number){};
 
 /**
  * Adds this contact to the given contact group.
@@ -1446,11 +1500,12 @@ ContactsApp.Contact.prototype.addPhone = function(label, number){};
  contact = contact.addToGroup(group);
  </code></pre>
  *
+ * @function ContactsApp.Contact#addToGroup
+ *
  * @param {ContactsApp.ContactGroup} group - the contact group to add this contact to
  *
  * @return {ContactsApp.Contact} this contact
  */
-ContactsApp.Contact.prototype.addToGroup = function(group){};
 
 /**
  * Adds a URL to the contact with either a standard or custom label.
@@ -1464,12 +1519,13 @@ ContactsApp.Contact.prototype.addToGroup = function(group){};
  var url = contacts[0].addUrl(ContactsApp.Field.WORK_WEBSITE, &#39;http://www.example.com&#39;);
  </code></pre>
  *
+ * @function ContactsApp.Contact#addUrl
+ *
  * @param {Object} label - the label of the new address, either from ContactsApp.Field or a custom string
  * @param {String} url - the new URL
  *
  * @return {ContactsApp.UrlField} the newly created field
  */
-ContactsApp.Contact.prototype.addUrl = function(label, url){};
 
 /**
  * Deletes this contact.
@@ -1481,9 +1537,10 @@ ContactsApp.Contact.prototype.addUrl = function(label, url){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#deleteContact
+ *
  * @return void
  */
-ContactsApp.Contact.prototype.deleteContact = function(){};
 
 /**
  * Gets all the addresses for this contact.
@@ -1496,9 +1553,10 @@ ContactsApp.Contact.prototype.deleteContact = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getAddresses
+ *
  * @return {ContactsApp.AddressField[]} a list of addresses
  */
-ContactsApp.Contact.prototype.getAddresses = function(){};
 
 /**
  * Gets all the addresses for this contact matching a particular field.
@@ -1515,11 +1573,12 @@ ContactsApp.Contact.prototype.getAddresses = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getAddresses
+ *
  * @param {Object} label - the label to match, either from ContactsApp.Field or a custom string
  *
  * @return {ContactsApp.AddressField[]} a list of addresses
  */
-ContactsApp.Contact.prototype.getAddresses = function(label){};
 
 /**
  * Gets all the companies for this contact.
@@ -1535,9 +1594,10 @@ ContactsApp.Contact.prototype.getAddresses = function(label){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getCompanies
+ *
  * @return {ContactsApp.CompanyField[]} a list of companies
  */
-ContactsApp.Contact.prototype.getCompanies = function(){};
 
 /**
  * Gets all the contact groups that contain this contact.
@@ -1549,9 +1609,10 @@ ContactsApp.Contact.prototype.getCompanies = function(){};
  var groups = contacts[0].getContactGroups();
  </code></pre>
  *
+ * @function ContactsApp.Contact#getContactGroups
+ *
  * @return {ContactsApp.ContactGroup[]} the groups containing this contact
  */
-ContactsApp.Contact.prototype.getContactGroups = function(){};
 
 /**
  * Gets all the custom fields for this contact.
@@ -1566,9 +1627,10 @@ ContactsApp.Contact.prototype.getContactGroups = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getCustomFields
+ *
  * @return {ContactsApp.CustomField[]} a list of custom fields
  */
-ContactsApp.Contact.prototype.getCustomFields = function(){};
 
 /**
  * Gets all the custom fields for this contact matching a particular field.
@@ -1586,11 +1648,12 @@ ContactsApp.Contact.prototype.getCustomFields = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getCustomFields
+ *
  * @param {Object} label - the label to match, either from ContactsApp.ExtendedField or a custom string
  *
  * @return {ContactsApp.CustomField[]} a list of custom fields
  */
-ContactsApp.Contact.prototype.getCustomFields = function(label){};
 
 /**
  * Gets all the dates for this contact.
@@ -1605,9 +1668,10 @@ ContactsApp.Contact.prototype.getCustomFields = function(label){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getDates
+ *
  * @return {ContactsApp.DateField[]} a list of dates
  */
-ContactsApp.Contact.prototype.getDates = function(){};
 
 /**
  * Gets all the dates for this contact matching a particular field.
@@ -1624,18 +1688,20 @@ ContactsApp.Contact.prototype.getDates = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getDates
+ *
  * @param {Object} label - the label to match, either from ContactsApp.Field or a custom string
  *
  * @return {ContactsApp.DateField[]} a list of dates
  */
-ContactsApp.Contact.prototype.getDates = function(label){};
 
 /**
  * Gets a list of the email addresses available for this Contact.
  *
+ * @function ContactsApp.Contact#getEmailAddresses
+ *
  * @return {String[]} a list of email addresses available for this Contact
  */
-ContactsApp.Contact.prototype.getEmailAddresses = function(){};
 
 /**
  * Gets the email addresses of this contact.
@@ -1650,9 +1716,10 @@ ContactsApp.Contact.prototype.getEmailAddresses = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getEmails
+ *
  * @return {ContactsApp.EmailField[]} the list of email addresses for the the contact
  */
-ContactsApp.Contact.prototype.getEmails = function(){};
 
 /**
  * Gets the email addresses for this contact matching a particular field.
@@ -1669,11 +1736,12 @@ ContactsApp.Contact.prototype.getEmails = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getEmails
+ *
  * @param {Object} label - the label to match, either from ContactsApp.Field or a custom string
  *
  * @return {ContactsApp.EmailField[]} the list of email addresses for the the contact
  */
-ContactsApp.Contact.prototype.getEmails = function(label){};
 
 /**
  * Gets the family name (last name) of the contact as a string.
@@ -1686,9 +1754,10 @@ ContactsApp.Contact.prototype.getEmails = function(label){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getFamilyName
+ *
  * @return {String} the family name of the contact
  */
-ContactsApp.Contact.prototype.getFamilyName = function(){};
 
 /**
  * Gets the full name (given name and last name) of the contact as a string.
@@ -1701,9 +1770,10 @@ ContactsApp.Contact.prototype.getFamilyName = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getFullName
+ *
  * @return {String} the full name of the contact
  */
-ContactsApp.Contact.prototype.getFullName = function(){};
 
 /**
  * Gets the given name (first name) of the contact as a string.
@@ -1716,30 +1786,34 @@ ContactsApp.Contact.prototype.getFullName = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getGivenName
+ *
  * @return {String} the given name of the contact
  */
-ContactsApp.Contact.prototype.getGivenName = function(){};
 
 /**
  * Gets the home address of this Contact, or empty string if none exists.
  *
+ * @function ContactsApp.Contact#getHomeAddress
+ *
  * @return {String} the home address of this Contact, or empty string if none exists
  */
-ContactsApp.Contact.prototype.getHomeAddress = function(){};
 
 /**
  * Gets the home fax number of this Contact or empty string if none exists.
  *
+ * @function ContactsApp.Contact#getHomeFax
+ *
  * @return {String} the home fax number of this Contact or empty string if none exists
  */
-ContactsApp.Contact.prototype.getHomeFax = function(){};
 
 /**
  * Gets the home phone number of this Contact or empty string if none exists.
  *
+ * @function ContactsApp.Contact#getHomePhone
+ *
  * @return {String} the home phone number of this Contact or empty string if none exists
  */
-ContactsApp.Contact.prototype.getHomePhone = function(){};
 
 /**
  * Gets all the IM addresses for this contact.
@@ -1752,9 +1826,10 @@ ContactsApp.Contact.prototype.getHomePhone = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getIMs
+ *
  * @return {ContactsApp.IMField[]} a list of IM addresses
  */
-ContactsApp.Contact.prototype.getIMs = function(){};
 
 /**
  * Gets all the IM addresses for this contact matching a particular field.
@@ -1771,11 +1846,12 @@ ContactsApp.Contact.prototype.getIMs = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getIMs
+ *
  * @param {Object} label - the label to match, either from ContactsApp.Field or a custom string
  *
  * @return {ContactsApp.IMField[]} a list of IM addresses
  */
-ContactsApp.Contact.prototype.getIMs = function(label){};
 
 /**
  * Returns the unique id of this contact.
@@ -1785,9 +1861,10 @@ ContactsApp.Contact.prototype.getIMs = function(label){};
  var id = contact.getId();
  </code></pre>
  *
+ * @function ContactsApp.Contact#getId
+ *
  * @return {String} the id of this contact
  */
-ContactsApp.Contact.prototype.getId = function(){};
 
 /**
  * Gets the contact's initials.
@@ -1800,9 +1877,10 @@ ContactsApp.Contact.prototype.getId = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getInitials
+ *
  * @return {String} the initials of the contact
  */
-ContactsApp.Contact.prototype.getInitials = function(){};
 
 /**
  * Gets the date this contact was last updated.
@@ -1816,9 +1894,10 @@ ContactsApp.Contact.prototype.getInitials = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getLastUpdated
+ *
  * @return {Date} the date this contact was last updated
  */
-ContactsApp.Contact.prototype.getLastUpdated = function(){};
 
 /**
  * Gets the maiden name of the contact as a string.
@@ -1831,9 +1910,10 @@ ContactsApp.Contact.prototype.getLastUpdated = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getMaidenName
+ *
  * @return {String} the maiden name of the contact
  */
-ContactsApp.Contact.prototype.getMaidenName = function(){};
 
 /**
  * Gets the middle name of the contact as a string.
@@ -1846,16 +1926,18 @@ ContactsApp.Contact.prototype.getMaidenName = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getMiddleName
+ *
  * @return {String} the middle name of the contact
  */
-ContactsApp.Contact.prototype.getMiddleName = function(){};
 
 /**
  * Gets the mobile phone number of this Contact or empty string if none exists.
  *
+ * @function ContactsApp.Contact#getMobilePhone
+ *
  * @return {String} the mobile phone number of this Contact or empty string if none exists
  */
-ContactsApp.Contact.prototype.getMobilePhone = function(){};
 
 /**
  * Gets the nickname of the contact as a string.
@@ -1868,9 +1950,10 @@ ContactsApp.Contact.prototype.getMobilePhone = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getNickname
+ *
  * @return {String} the nickname of the contact
  */
-ContactsApp.Contact.prototype.getNickname = function(){};
 
 /**
  * Gets the notes associated with this contact, or an empty string if there are no notes.
@@ -1883,16 +1966,18 @@ ContactsApp.Contact.prototype.getNickname = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getNotes
+ *
  * @return {String} the notes associated with this contact
  */
-ContactsApp.Contact.prototype.getNotes = function(){};
 
 /**
  * Gets the pager phone number of this Contact or empty string if none exists.
  *
+ * @function ContactsApp.Contact#getPager
+ *
  * @return {String} the pager phone number of this Contact or empty string if none exists
  */
-ContactsApp.Contact.prototype.getPager = function(){};
 
 /**
  * Gets all the phone numbers for this contact.
@@ -1905,9 +1990,10 @@ ContactsApp.Contact.prototype.getPager = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getPhones
+ *
  * @return {ContactsApp.PhoneField[]} a list of phone numbers
  */
-ContactsApp.Contact.prototype.getPhones = function(){};
 
 /**
  * Gets all the phone numbers for this contact matching a particular field.
@@ -1924,11 +2010,12 @@ ContactsApp.Contact.prototype.getPhones = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getPhones
+ *
  * @param {Object} label - the label to match, either from ContactsApp.Field or a custom string
  *
  * @return {ContactsApp.PhoneField[]} a list of phone numbers
  */
-ContactsApp.Contact.prototype.getPhones = function(label){};
 
 /**
  * Gets the prefix to the contact's name.
@@ -1941,9 +2028,10 @@ ContactsApp.Contact.prototype.getPhones = function(label){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getPrefix
+ *
  * @return {String} the prefix of the contact's name
  */
-ContactsApp.Contact.prototype.getPrefix = function(){};
 
 /**
  * Gets the primary email address of the contact as a string.
@@ -1957,9 +2045,10 @@ ContactsApp.Contact.prototype.getPrefix = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getPrimaryEmail
+ *
  * @return {String} the primary email address of the contact
  */
-ContactsApp.Contact.prototype.getPrimaryEmail = function(){};
 
 /**
  * Gets the short name of the contact as a string.
@@ -1972,9 +2061,10 @@ ContactsApp.Contact.prototype.getPrimaryEmail = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getShortName
+ *
  * @return {String} the short name of the contact
  */
-ContactsApp.Contact.prototype.getShortName = function(){};
 
 /**
  * Gets the suffix to the contact's name.
@@ -1987,9 +2077,10 @@ ContactsApp.Contact.prototype.getShortName = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getSuffix
+ *
  * @return {String} the suffix of the contact's name
  */
-ContactsApp.Contact.prototype.getSuffix = function(){};
 
 /**
  * Gets all the URLs for this contact.
@@ -2002,9 +2093,10 @@ ContactsApp.Contact.prototype.getSuffix = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getUrls
+ *
  * @return {ContactsApp.UrlField[]} a list of URLs
  */
-ContactsApp.Contact.prototype.getUrls = function(){};
 
 /**
  * Gets all the URLs for this contact matching a particular field.
@@ -2021,49 +2113,55 @@ ContactsApp.Contact.prototype.getUrls = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#getUrls
+ *
  * @param {Object} label - the label to match, either from ContactsApp.Field or a custom string
  *
  * @return {ContactsApp.UrlField[]} a list of URLs
  */
-ContactsApp.Contact.prototype.getUrls = function(label){};
 
 /**
  * Gets the user defined value associated with the given key.
+ *
+ * @function ContactsApp.Contact#getUserDefinedField
  *
  * @param {String} key - the key can be any basic type (String, int, etc.)
  *
  * @return {String} the user defined content that has been stored with this key
  */
-ContactsApp.Contact.prototype.getUserDefinedField = function(key){};
 
 /**
  * Gets all the user defined fields for this Contact and returns them as the properties of a
  JavaScript Object.
  *
+ * @function ContactsApp.Contact#getUserDefinedFields
+ *
  * @return {Object} the user defined fields for this Contact, as properties of a JavaScript Object
  */
-ContactsApp.Contact.prototype.getUserDefinedFields = function(){};
 
 /**
  * Gets the work address of this Contact, or empty string if none exists.
  *
+ * @function ContactsApp.Contact#getWorkAddress
+ *
  * @return {String} the work address of this Contact, or empty string if none exists
  */
-ContactsApp.Contact.prototype.getWorkAddress = function(){};
 
 /**
  * Gets the work fax number of this Contact or empty string if none exists.
  *
+ * @function ContactsApp.Contact#getWorkFax
+ *
  * @return {String} the work fax number of this Contact or empty string if none exists
  */
-ContactsApp.Contact.prototype.getWorkFax = function(){};
 
 /**
  * Gets the work phone number of this Contact or empty string if none exists.
  *
+ * @function ContactsApp.Contact#getWorkPhone
+ *
  * @return {String} the work phone number of this Contact or empty string if none exists
  */
-ContactsApp.Contact.prototype.getWorkPhone = function(){};
 
 /**
  * Removes this contact from the given contact group.
@@ -2078,11 +2176,12 @@ ContactsApp.Contact.prototype.getWorkPhone = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#removeFromGroup
+ *
  * @param {ContactsApp.ContactGroup} group - the contact group to remove this contact from
  *
  * @return {ContactsApp.Contact} this contact
  */
-ContactsApp.Contact.prototype.removeFromGroup = function(group){};
 
 /**
  * Sets the family name (last name) of the contact.
@@ -2096,11 +2195,12 @@ ContactsApp.Contact.prototype.removeFromGroup = function(group){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#setFamilyName
+ *
  * @param {String} familyName - the new family name of the contact
  *
  * @return {ContactsApp.Contact} this contact
  */
-ContactsApp.Contact.prototype.setFamilyName = function(familyName){};
 
 /**
  * Sets the full name (given name and last name) of the contact.
@@ -2114,11 +2214,12 @@ ContactsApp.Contact.prototype.setFamilyName = function(familyName){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#setFullName
+ *
  * @param {String} fullName - the new full name of the contact
  *
  * @return {ContactsApp.Contact} this contact
  */
-ContactsApp.Contact.prototype.setFullName = function(fullName){};
 
 /**
  * Sets the given name (first name) of the contact.
@@ -2132,38 +2233,42 @@ ContactsApp.Contact.prototype.setFullName = function(fullName){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#setGivenName
+ *
  * @param {String} givenName - the new given name of the contact
  *
  * @return {ContactsApp.Contact} this contact
  */
-ContactsApp.Contact.prototype.setGivenName = function(givenName){};
 
 /**
  * Sets the home address of this Contact.
+ *
+ * @function ContactsApp.Contact#setHomeAddress
  *
  * @param {String} addr - the home address to set
  *
  * @return void
  */
-ContactsApp.Contact.prototype.setHomeAddress = function(addr){};
 
 /**
  * Sets the home fax number of this Contact.
+ *
+ * @function ContactsApp.Contact#setHomeFax
  *
  * @param {String} phone - the home fax number to set
  *
  * @return void
  */
-ContactsApp.Contact.prototype.setHomeFax = function(phone){};
 
 /**
  * Sets the home phone number of this Contact.
+ *
+ * @function ContactsApp.Contact#setHomePhone
  *
  * @param {String} phone - the home phone number to set
  *
  * @return void
  */
-ContactsApp.Contact.prototype.setHomePhone = function(phone){};
 
 /**
  * Sets the contact's initials.
@@ -2177,11 +2282,12 @@ ContactsApp.Contact.prototype.setHomePhone = function(phone){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#setInitials
+ *
  * @param {String} initials - the new initials of the contact
  *
  * @return {ContactsApp.Contact} this contact
  */
-ContactsApp.Contact.prototype.setInitials = function(initials){};
 
 /**
  * Sets the maiden name of the contact.
@@ -2195,11 +2301,12 @@ ContactsApp.Contact.prototype.setInitials = function(initials){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#setMaidenName
+ *
  * @param {String} maidenName - the new maiden name of the contact
  *
  * @return {ContactsApp.Contact} this contact
  */
-ContactsApp.Contact.prototype.setMaidenName = function(maidenName){};
 
 /**
  * Sets the middle name of the contact.
@@ -2213,20 +2320,22 @@ ContactsApp.Contact.prototype.setMaidenName = function(maidenName){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#setMiddleName
+ *
  * @param {String} middleName - the new middle name of the contact
  *
  * @return {ContactsApp.Contact} this contact
  */
-ContactsApp.Contact.prototype.setMiddleName = function(middleName){};
 
 /**
  * Sets the mobile phone number of this Contact.
+ *
+ * @function ContactsApp.Contact#setMobilePhone
  *
  * @param {String} phone - the mobile phone number to set
  *
  * @return void
  */
-ContactsApp.Contact.prototype.setMobilePhone = function(phone){};
 
 /**
  * Sets the nickname of the contact.
@@ -2240,11 +2349,12 @@ ContactsApp.Contact.prototype.setMobilePhone = function(phone){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#setNickname
+ *
  * @param {String} nickname - the new nickname of the contact
  *
  * @return {ContactsApp.Contact} this contact
  */
-ContactsApp.Contact.prototype.setNickname = function(nickname){};
 
 /**
  * Sets the notes associated with this contact.
@@ -2258,20 +2368,22 @@ ContactsApp.Contact.prototype.setNickname = function(nickname){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#setNotes
+ *
  * @param {String} notes - the notes to be stored for this contact
  *
  * @return {ContactsApp.Contact} this contact
  */
-ContactsApp.Contact.prototype.setNotes = function(notes){};
 
 /**
  * Sets the pager number of this Contact.
+ *
+ * @function ContactsApp.Contact#setPager
  *
  * @param {String} phone - the pager number to set
  *
  * @return void
  */
-ContactsApp.Contact.prototype.setPager = function(phone){};
 
 /**
  * Sets the prefix to the contact's name.
@@ -2285,20 +2397,22 @@ ContactsApp.Contact.prototype.setPager = function(phone){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#setPrefix
+ *
  * @param {String} prefix - the new prefix of the contact's name
  *
  * @return {ContactsApp.Contact} this contact
  */
-ContactsApp.Contact.prototype.setPrefix = function(prefix){};
 
 /**
  * Sets the primary email address of this Contact.
+ *
+ * @function ContactsApp.Contact#setPrimaryEmail
  *
  * @param {String} primaryEmail - the primary email address to set
  *
  * @return void
  */
-ContactsApp.Contact.prototype.setPrimaryEmail = function(primaryEmail){};
 
 /**
  * Sets the short name of the contact.
@@ -2312,11 +2426,12 @@ ContactsApp.Contact.prototype.setPrimaryEmail = function(primaryEmail){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#setShortName
+ *
  * @param {String} shortName - the new short name of the contact
  *
  * @return {ContactsApp.Contact} this contact
  */
-ContactsApp.Contact.prototype.setShortName = function(shortName){};
 
 /**
  * Sets the suffix to the contact's name.
@@ -2330,60 +2445,67 @@ ContactsApp.Contact.prototype.setShortName = function(shortName){};
  }
  </code></pre>
  *
+ * @function ContactsApp.Contact#setSuffix
+ *
  * @param {String} suffix - the new suffix of the contact's name
  *
  * @return {ContactsApp.Contact} this contact
  */
-ContactsApp.Contact.prototype.setSuffix = function(suffix){};
 
 /**
  * Sets a single user defined field for this Contact, to be stored with a given key.
+ *
+ * @function ContactsApp.Contact#setUserDefinedField
  *
  * @param {String} key - the key can be any basic type (String, int, etc.)
  * @param {String} value - the value can be any basic type (String, int, etc.)
  *
  * @return void
  */
-ContactsApp.Contact.prototype.setUserDefinedField = function(key, value){};
 
 /**
  * Sets the user defined fields for this Contact with the properties of the given Object.
+ *
+ * @function ContactsApp.Contact#setUserDefinedFields
  *
  * @param {Object} o - an Object with one or more properties in the form {key: value}
  *
  * @return void
  */
-ContactsApp.Contact.prototype.setUserDefinedFields = function(o){};
 
 /**
  * Sets the work address of this Contact.
+ *
+ * @function ContactsApp.Contact#setWorkAddress
  *
  * @param {String} addr - the work address to set
  *
  * @return void
  */
-ContactsApp.Contact.prototype.setWorkAddress = function(addr){};
 
 /**
  * Sets the work fax number of this Contact.
+ *
+ * @function ContactsApp.Contact#setWorkFax
  *
  * @param {String} phone - the work fax number to set
  *
  * @return void
  */
-ContactsApp.Contact.prototype.setWorkFax = function(phone){};
 
 /**
  * Sets the work phone number of this Contact.
+ *
+ * @function ContactsApp.Contact#setWorkPhone
  *
  * @param {String} phone - the work phone number to set
  *
  * @return void
  */
-ContactsApp.Contact.prototype.setWorkPhone = function(phone){};
 
-/** @constructor */
-ContactsApp.ContactGroup = function(){};
+/**
+ * @class ContactsApp.ContactGroup
+ */
 
 /**
  * Adds the given contact to this group
@@ -2395,11 +2517,12 @@ ContactsApp.ContactGroup = function(){};
  group.addContact(contact);
  </code></pre>
  *
+ * @function ContactsApp.ContactGroup#addContact
+ *
  * @param {ContactsApp.Contact} contact - the contact to be added to the group
  *
  * @return {ContactsApp.ContactGroup} this contact group
  */
-ContactsApp.ContactGroup.prototype.addContact = function(contact){};
 
 /**
  * Deletes this contact group.
@@ -2412,9 +2535,10 @@ ContactsApp.ContactGroup.prototype.addContact = function(contact){};
  group.deleteGroup();
  </code></pre>
  *
+ * @function ContactsApp.ContactGroup#deleteGroup
+ *
  * @return void
  */
-ContactsApp.ContactGroup.prototype.deleteGroup = function(){};
 
 /**
  * Gets all the contacts in this contact group.
@@ -2425,16 +2549,18 @@ ContactsApp.ContactGroup.prototype.deleteGroup = function(){};
  var contacts = group.getContacts();
  </code></pre>
  *
+ * @function ContactsApp.ContactGroup#getContacts
+ *
  * @return {ContactsApp.Contact[]} the contacts in this group
  */
-ContactsApp.ContactGroup.prototype.getContacts = function(){};
 
 /**
  * Returns the name of this group.
  *
+ * @function ContactsApp.ContactGroup#getGroupName
+ *
  * @return {String} the name of this group
  */
-ContactsApp.ContactGroup.prototype.getGroupName = function(){};
 
 /**
  * Gets the id of this contact group.
@@ -2445,9 +2571,10 @@ ContactsApp.ContactGroup.prototype.getGroupName = function(){};
  var id = group.getId();
  </code></pre>
  *
+ * @function ContactsApp.ContactGroup#getId
+ *
  * @return {String} the id of this group
  */
-ContactsApp.ContactGroup.prototype.getId = function(){};
 
 /**
  * Gets the name of this contact group.
@@ -2458,9 +2585,10 @@ ContactsApp.ContactGroup.prototype.getId = function(){};
  var name = group.getName();
  </code></pre>
  *
+ * @function ContactsApp.ContactGroup#getName
+ *
  * @return {String} this name of this contact group
  */
-ContactsApp.ContactGroup.prototype.getName = function(){};
 
 /**
  * Gets a boolean value to determine whether this contact group is a system group (undeletable) or
@@ -2479,9 +2607,10 @@ ContactsApp.ContactGroup.prototype.getName = function(){};
  Logger.log(systemGroup.isSystemGroup()); // Returns true.
  </code></pre>
  *
+ * @function ContactsApp.ContactGroup#isSystemGroup
+ *
  * @return {Boolean} whether or not this contact group is a system group
  */
-ContactsApp.ContactGroup.prototype.isSystemGroup = function(){};
 
 /**
  * Removes the given contact from this group
@@ -2496,20 +2625,22 @@ ContactsApp.ContactGroup.prototype.isSystemGroup = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.ContactGroup#removeContact
+ *
  * @param {ContactsApp.Contact} contact - the contact to be removed from the group
  *
  * @return {ContactsApp.ContactGroup} this contact group
  */
-ContactsApp.ContactGroup.prototype.removeContact = function(contact){};
 
 /**
  * Sets the name of this group.
+ *
+ * @function ContactsApp.ContactGroup#setGroupName
  *
  * @param {String} name - the name to set for this group
  *
  * @return void
  */
-ContactsApp.ContactGroup.prototype.setGroupName = function(name){};
 
 /**
  * Sets the name of this contact group.
@@ -2521,14 +2652,16 @@ ContactsApp.ContactGroup.prototype.setGroupName = function(name){};
  group.setName(&#39;Work Buddies&#39;);
  </code></pre>
  *
+ * @function ContactsApp.ContactGroup#setName
+ *
  * @param {String} name - the new name for the contact group
  *
  * @return {ContactsApp.ContactGroup} this contact group
  */
-ContactsApp.ContactGroup.prototype.setName = function(name){};
 
-/** @constructor */
-ContactsApp.CustomField = function(){};
+/**
+ * @class ContactsApp.CustomField
+ */
 
 /**
  * Deletes this field.
@@ -2543,9 +2676,10 @@ ContactsApp.CustomField = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.CustomField#deleteCustomField
+ *
  * @return void
  */
-ContactsApp.CustomField.prototype.deleteCustomField = function(){};
 
 /**
  * Gets the label for this field. This may be a Field, ExtendedField, or a String.
@@ -2561,9 +2695,10 @@ ContactsApp.CustomField.prototype.deleteCustomField = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.CustomField#getLabel
+ *
  * @return {Object} the label for this field
  */
-ContactsApp.CustomField.prototype.getLabel = function(){};
 
 /**
  * Gets the value of the field.
@@ -2577,9 +2712,10 @@ ContactsApp.CustomField.prototype.getLabel = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.CustomField#getValue
+ *
  * @return {Object} the value stored in the field
  */
-ContactsApp.CustomField.prototype.getValue = function(){};
 
 /**
  * Sets the label of this field.
@@ -2593,11 +2729,12 @@ ContactsApp.CustomField.prototype.getValue = function(){};
  field.setValue(&#39;Gmail&#39;);
  </code></pre>
  *
+ * @function ContactsApp.CustomField#setLabel
+ *
  * @param {ContactsApp.ExtendedField} field - the new standard label
  *
  * @return {ContactsApp.CustomField} this field, useful for chaining
  */
-ContactsApp.CustomField.prototype.setLabel = function(field){};
 
 /**
  * Sets the label of this field.
@@ -2611,11 +2748,12 @@ ContactsApp.CustomField.prototype.setLabel = function(field){};
  addressFields[0].setLabel(&#39;Apartment&#39;);
  </code></pre>
  *
+ * @function ContactsApp.CustomField#setLabel
+ *
  * @param {String} label - the new label for this field
  *
  * @return {ContactsApp.CustomField} this field, useful for chaining
  */
-ContactsApp.CustomField.prototype.setLabel = function(label){};
 
 /**
  * Sets the value of this field.
@@ -2629,14 +2767,16 @@ ContactsApp.CustomField.prototype.setLabel = function(label){};
  field.setValue(&#39;Gmail&#39;);
  </code></pre>
  *
+ * @function ContactsApp.CustomField#setValue
+ *
  * @param {Object} value - the new value
  *
  * @return {ContactsApp.CustomField} this field, useful for chaining
  */
-ContactsApp.CustomField.prototype.setValue = function(value){};
 
-/** @constructor */
-ContactsApp.DateField = function(){};
+/**
+ * @class ContactsApp.DateField
+ */
 
 /**
  * Deletes this date.
@@ -2650,9 +2790,10 @@ ContactsApp.DateField = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.DateField#deleteDateField
+ *
  * @return void
  */
-ContactsApp.DateField.prototype.deleteDateField = function(){};
 
 /**
  * Gets the day of the month for this date.
@@ -2668,9 +2809,10 @@ ContactsApp.DateField.prototype.deleteDateField = function(){};
  Logger.log(birthday.getDay());
  </code></pre>
  *
+ * @function ContactsApp.DateField#getDay
+ *
  * @return {number} the day of the month
  */
-ContactsApp.DateField.prototype.getDay = function(){};
 
 /**
  * Gets the label for this field. This may be a Field, ExtendedField, or a String.
@@ -2686,9 +2828,10 @@ ContactsApp.DateField.prototype.getDay = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.DateField#getLabel
+ *
  * @return {Object} the label for this field
  */
-ContactsApp.DateField.prototype.getLabel = function(){};
 
 /**
  * Gets the month for this date.
@@ -2700,9 +2843,10 @@ ContactsApp.DateField.prototype.getLabel = function(){};
  Logger.log(birthday.getMonth());
  </code></pre>
  *
+ * @function ContactsApp.DateField#getMonth
+ *
  * @return {Month} the month
  */
-ContactsApp.DateField.prototype.getMonth = function(){};
 
 /**
  * Gets the year for this date.
@@ -2714,9 +2858,10 @@ ContactsApp.DateField.prototype.getMonth = function(){};
  Logger.log(birthday.getYear());
  </code></pre>
  *
+ * @function ContactsApp.DateField#getYear
+ *
  * @return {number} the year
  */
-ContactsApp.DateField.prototype.getYear = function(){};
 
 /**
  * Sets the date to this day, without a year.
@@ -2730,12 +2875,13 @@ ContactsApp.DateField.prototype.getYear = function(){};
  birthday.setDate(ContactsApp.Month.APRIL, 1);
  </code></pre>
  *
+ * @function ContactsApp.DateField#setDate
+ *
  * @param {Month} month - the month
  * @param {number} day - the day
  *
  * @return {ContactsApp.DateField} this date, useful for chaining
  */
-ContactsApp.DateField.prototype.setDate = function(month, day){};
 
 /**
  * Sets the date to this day.
@@ -2747,13 +2893,14 @@ ContactsApp.DateField.prototype.setDate = function(month, day){};
  birthday.setDate(ContactsApp.Month.APRIL, 1, 1980);
  </code></pre>
  *
+ * @function ContactsApp.DateField#setDate
+ *
  * @param {Month} month - the month
  * @param {number} day - the day
  * @param {number} year - the year
  *
  * @return {ContactsApp.DateField} this date, useful for chaining
  */
-ContactsApp.DateField.prototype.setDate = function(month, day, year){};
 
 /**
  * Sets the label of this field, such as 'Birthday' or 'Anniversary'.
@@ -2766,11 +2913,12 @@ ContactsApp.DateField.prototype.setDate = function(month, day, year){};
  firstDate.setLabel(ContactsApp.Field.ANNIVERSARY);
  </code></pre>
  *
+ * @function ContactsApp.DateField#setLabel
+ *
  * @param {ContactsApp.Field} label - the new standard label
  *
  * @return {ContactsApp.DateField} this field, useful for chaining
  */
-ContactsApp.DateField.prototype.setLabel = function(label){};
 
 /**
  * Sets the label of this field.
@@ -2784,14 +2932,16 @@ ContactsApp.DateField.prototype.setLabel = function(label){};
  addressFields[0].setLabel(&#39;Apartment&#39;);
  </code></pre>
  *
+ * @function ContactsApp.DateField#setLabel
+ *
  * @param {String} label - the new label for this field
  *
  * @return {ContactsApp.DateField} this field, useful for chaining
  */
-ContactsApp.DateField.prototype.setLabel = function(label){};
 
-/** @constructor */
-ContactsApp.EmailField = function(){};
+/**
+ * @class ContactsApp.EmailField
+ */
 
 /**
  * Deletes this email address from the Contact.
@@ -2803,9 +2953,10 @@ ContactsApp.EmailField = function(){};
  workEmail[0].deleteEmailField();
  </code></pre>
  *
+ * @function ContactsApp.EmailField#deleteEmailField
+ *
  * @return void
  */
-ContactsApp.EmailField.prototype.deleteEmailField = function(){};
 
 /**
  * Get the address for this field.
@@ -2818,9 +2969,10 @@ ContactsApp.EmailField.prototype.deleteEmailField = function(){};
  Logger.log(homeAddress[0].getAddress());
  </code></pre>
  *
+ * @function ContactsApp.EmailField#getAddress
+ *
  * @return {String} the address as a string
  */
-ContactsApp.EmailField.prototype.getAddress = function(){};
 
 /**
  * Returns the display name for this email address.
@@ -2832,9 +2984,10 @@ ContactsApp.EmailField.prototype.getAddress = function(){};
  Logger.log(workEmail[0].getDisplayName());
  </code></pre>
  *
+ * @function ContactsApp.EmailField#getDisplayName
+ *
  * @return {String} the display name for this email
  */
-ContactsApp.EmailField.prototype.getDisplayName = function(){};
 
 /**
  * Gets the label for this field. This may be a Field, ExtendedField, or a String.
@@ -2850,9 +3003,10 @@ ContactsApp.EmailField.prototype.getDisplayName = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.EmailField#getLabel
+ *
  * @return {Object} the label for this field
  */
-ContactsApp.EmailField.prototype.getLabel = function(){};
 
 /**
  * Gets whether this is the primary field value.
@@ -2866,9 +3020,10 @@ ContactsApp.EmailField.prototype.getLabel = function(){};
  Logger.log(addressFields[0].isPrimary());
  </code></pre>
  *
+ * @function ContactsApp.EmailField#isPrimary
+ *
  * @return {Boolean} whether this is primary
  */
-ContactsApp.EmailField.prototype.isPrimary = function(){};
 
 /**
  * Sets the address of this field.
@@ -2881,11 +3036,12 @@ ContactsApp.EmailField.prototype.isPrimary = function(){};
  homeAddress[0].setAddress(&#39;123 Main St, Raleigh, NC, 27601&#39;);
  </code></pre>
  *
+ * @function ContactsApp.EmailField#setAddress
+ *
  * @param {String} address - the new address
  *
  * @return {ContactsApp.EmailField} this field, useful for chaining
  */
-ContactsApp.EmailField.prototype.setAddress = function(address){};
 
 /**
  * Sets this field to primary.
@@ -2898,9 +3054,10 @@ ContactsApp.EmailField.prototype.setAddress = function(address){};
  addressFields[0].setAsPrimary();
  </code></pre>
  *
+ * @function ContactsApp.EmailField#setAsPrimary
+ *
  * @return {ContactsApp.EmailField} this FieldValue for chaining
  */
-ContactsApp.EmailField.prototype.setAsPrimary = function(){};
 
 /**
  * Sets the display name for this email address.
@@ -2912,11 +3069,12 @@ ContactsApp.EmailField.prototype.setAsPrimary = function(){};
  workEmail[0].setDisplayName(&#39;Doe, John&#39;);
  </code></pre>
  *
+ * @function ContactsApp.EmailField#setDisplayName
+ *
  * @param {String} name - the new display name for this email address
  *
  * @return {ContactsApp.EmailField} this email field, useful for chaining
  */
-ContactsApp.EmailField.prototype.setDisplayName = function(name){};
 
 /**
  * Sets the label of this field.
@@ -2930,11 +3088,12 @@ ContactsApp.EmailField.prototype.setDisplayName = function(name){};
  addressFields[0].setLabel(ContactsApp.Field.WORK_ADDRESS);
  </code></pre>
  *
+ * @function ContactsApp.EmailField#setLabel
+ *
  * @param {ContactsApp.Field} field - the new standard label
  *
  * @return {ContactsApp.EmailField} this FieldValue for chaining
  */
-ContactsApp.EmailField.prototype.setLabel = function(field){};
 
 /**
  * Sets the label of this field.
@@ -2948,14 +3107,16 @@ ContactsApp.EmailField.prototype.setLabel = function(field){};
  addressFields[0].setLabel(&#39;Apartment&#39;);
  </code></pre>
  *
+ * @function ContactsApp.EmailField#setLabel
+ *
  * @param {String} label - the new label for this field
  *
  * @return {ContactsApp.EmailField} this field, useful for chaining
  */
-ContactsApp.EmailField.prototype.setLabel = function(label){};
 
-/** @constructor */
-ContactsApp.IMField = function(){};
+/**
+ * @class ContactsApp.IMField
+ */
 
 /**
  * Deletes this instant messaging field.
@@ -2968,9 +3129,10 @@ ContactsApp.IMField = function(){};
  imFields[0].deleteIMField();
  </code></pre>
  *
+ * @function ContactsApp.IMField#deleteIMField
+ *
  * @return void
  */
-ContactsApp.IMField.prototype.deleteIMField = function(){};
 
 /**
  * Get the address for this field.
@@ -2983,9 +3145,10 @@ ContactsApp.IMField.prototype.deleteIMField = function(){};
  Logger.log(homeAddress[0].getAddress());
  </code></pre>
  *
+ * @function ContactsApp.IMField#getAddress
+ *
  * @return {String} the address as a string
  */
-ContactsApp.IMField.prototype.getAddress = function(){};
 
 /**
  * Gets the label for this field. This may be a Field, ExtendedField, or a String.
@@ -3001,9 +3164,10 @@ ContactsApp.IMField.prototype.getAddress = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.IMField#getLabel
+ *
  * @return {Object} the label for this field
  */
-ContactsApp.IMField.prototype.getLabel = function(){};
 
 /**
  * Gets whether this is the primary field value.
@@ -3017,9 +3181,10 @@ ContactsApp.IMField.prototype.getLabel = function(){};
  Logger.log(addressFields[0].isPrimary());
  </code></pre>
  *
+ * @function ContactsApp.IMField#isPrimary
+ *
  * @return {Boolean} whether this is primary
  */
-ContactsApp.IMField.prototype.isPrimary = function(){};
 
 /**
  * Sets the address of this field.
@@ -3032,11 +3197,12 @@ ContactsApp.IMField.prototype.isPrimary = function(){};
  homeAddress[0].setAddress(&#39;123 Main St, Raleigh, NC, 27601&#39;);
  </code></pre>
  *
+ * @function ContactsApp.IMField#setAddress
+ *
  * @param {String} address - the new address
  *
  * @return {ContactsApp.IMField} this field, useful for chaining
  */
-ContactsApp.IMField.prototype.setAddress = function(address){};
 
 /**
  * Sets this field to primary.
@@ -3049,9 +3215,10 @@ ContactsApp.IMField.prototype.setAddress = function(address){};
  addressFields[0].setAsPrimary();
  </code></pre>
  *
+ * @function ContactsApp.IMField#setAsPrimary
+ *
  * @return {ContactsApp.IMField} this FieldValue for chaining
  */
-ContactsApp.IMField.prototype.setAsPrimary = function(){};
 
 /**
  * Sets the label of this field.
@@ -3065,11 +3232,12 @@ ContactsApp.IMField.prototype.setAsPrimary = function(){};
  addressFields[0].setLabel(ContactsApp.Field.WORK_ADDRESS);
  </code></pre>
  *
+ * @function ContactsApp.IMField#setLabel
+ *
  * @param {ContactsApp.Field} field - the new standard label
  *
  * @return {ContactsApp.IMField} this FieldValue for chaining
  */
-ContactsApp.IMField.prototype.setLabel = function(field){};
 
 /**
  * Sets the label of this field.
@@ -3083,14 +3251,16 @@ ContactsApp.IMField.prototype.setLabel = function(field){};
  addressFields[0].setLabel(&#39;Apartment&#39;);
  </code></pre>
  *
+ * @function ContactsApp.IMField#setLabel
+ *
  * @param {String} label - the new label for this field
  *
  * @return {ContactsApp.IMField} this field, useful for chaining
  */
-ContactsApp.IMField.prototype.setLabel = function(label){};
 
-/** @constructor */
-ContactsApp.PhoneField = function(){};
+/**
+ * @class ContactsApp.PhoneField
+ */
 
 /**
  * Deletes this phone number field.
@@ -3103,9 +3273,10 @@ ContactsApp.PhoneField = function(){};
  phoneFields[0].deletePhoneField();
  </code></pre>
  *
+ * @function ContactsApp.PhoneField#deletePhoneField
+ *
  * @return void
  */
-ContactsApp.PhoneField.prototype.deletePhoneField = function(){};
 
 /**
  * Gets the label for this field. This may be a Field, ExtendedField, or a String.
@@ -3121,9 +3292,10 @@ ContactsApp.PhoneField.prototype.deletePhoneField = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.PhoneField#getLabel
+ *
  * @return {Object} the label for this field
  */
-ContactsApp.PhoneField.prototype.getLabel = function(){};
 
 /**
  * Get the phone number for this field.
@@ -3135,9 +3307,10 @@ ContactsApp.PhoneField.prototype.getLabel = function(){};
  Logger.log(phoneFields[0].getPhoneNumber());
  </code></pre>
  *
+ * @function ContactsApp.PhoneField#getPhoneNumber
+ *
  * @return {String} the number as a string
  */
-ContactsApp.PhoneField.prototype.getPhoneNumber = function(){};
 
 /**
  * Gets whether this is the primary field value.
@@ -3151,9 +3324,10 @@ ContactsApp.PhoneField.prototype.getPhoneNumber = function(){};
  Logger.log(addressFields[0].isPrimary());
  </code></pre>
  *
+ * @function ContactsApp.PhoneField#isPrimary
+ *
  * @return {Boolean} whether this is primary
  */
-ContactsApp.PhoneField.prototype.isPrimary = function(){};
 
 /**
  * Sets this field to primary.
@@ -3166,9 +3340,10 @@ ContactsApp.PhoneField.prototype.isPrimary = function(){};
  addressFields[0].setAsPrimary();
  </code></pre>
  *
+ * @function ContactsApp.PhoneField#setAsPrimary
+ *
  * @return {ContactsApp.PhoneField} this FieldValue for chaining
  */
-ContactsApp.PhoneField.prototype.setAsPrimary = function(){};
 
 /**
  * Sets the label of this field.
@@ -3182,11 +3357,12 @@ ContactsApp.PhoneField.prototype.setAsPrimary = function(){};
  addressFields[0].setLabel(ContactsApp.Field.WORK_ADDRESS);
  </code></pre>
  *
+ * @function ContactsApp.PhoneField#setLabel
+ *
  * @param {ContactsApp.Field} field - the new standard label
  *
  * @return {ContactsApp.PhoneField} this FieldValue for chaining
  */
-ContactsApp.PhoneField.prototype.setLabel = function(field){};
 
 /**
  * Sets the label of this field.
@@ -3200,11 +3376,12 @@ ContactsApp.PhoneField.prototype.setLabel = function(field){};
  addressFields[0].setLabel(&#39;Apartment&#39;);
  </code></pre>
  *
+ * @function ContactsApp.PhoneField#setLabel
+ *
  * @param {String} label - the new label for this field
  *
  * @return {ContactsApp.PhoneField} this field, useful for chaining
  */
-ContactsApp.PhoneField.prototype.setLabel = function(label){};
 
 /**
  * Sets the phone number for this field.
@@ -3216,14 +3393,16 @@ ContactsApp.PhoneField.prototype.setLabel = function(label){};
  phoneFields[0].setPhoneNumber(&#39;212-555-1234&#39;);
  </code></pre>
  *
+ * @function ContactsApp.PhoneField#setPhoneNumber
+ *
  * @param {String} number - the new number
  *
  * @return {ContactsApp.PhoneField} this field, useful for chaining
  */
-ContactsApp.PhoneField.prototype.setPhoneNumber = function(number){};
 
-/** @constructor */
-ContactsApp.UrlField = function(){};
+/**
+ * @class ContactsApp.UrlField
+ */
 
 /**
  * Deletes this URL field.
@@ -3236,9 +3415,10 @@ ContactsApp.UrlField = function(){};
  urlFields[0].deleteUrlField();
  </code></pre>
  *
+ * @function ContactsApp.UrlField#deleteUrlField
+ *
  * @return void
  */
-ContactsApp.UrlField.prototype.deleteUrlField = function(){};
 
 /**
  * Get the address for this field.
@@ -3251,9 +3431,10 @@ ContactsApp.UrlField.prototype.deleteUrlField = function(){};
  Logger.log(homeAddress[0].getAddress());
  </code></pre>
  *
+ * @function ContactsApp.UrlField#getAddress
+ *
  * @return {String} the address as a string
  */
-ContactsApp.UrlField.prototype.getAddress = function(){};
 
 /**
  * Gets the label for this field. This may be a Field, ExtendedField, or a String.
@@ -3269,9 +3450,10 @@ ContactsApp.UrlField.prototype.getAddress = function(){};
  }
  </code></pre>
  *
+ * @function ContactsApp.UrlField#getLabel
+ *
  * @return {Object} the label for this field
  */
-ContactsApp.UrlField.prototype.getLabel = function(){};
 
 /**
  * Gets whether this is the primary field value.
@@ -3285,9 +3467,10 @@ ContactsApp.UrlField.prototype.getLabel = function(){};
  Logger.log(addressFields[0].isPrimary());
  </code></pre>
  *
+ * @function ContactsApp.UrlField#isPrimary
+ *
  * @return {Boolean} whether this is primary
  */
-ContactsApp.UrlField.prototype.isPrimary = function(){};
 
 /**
  * Sets the address of this field.
@@ -3300,11 +3483,12 @@ ContactsApp.UrlField.prototype.isPrimary = function(){};
  homeAddress[0].setAddress(&#39;123 Main St, Raleigh, NC, 27601&#39;);
  </code></pre>
  *
+ * @function ContactsApp.UrlField#setAddress
+ *
  * @param {String} address - the new address
  *
  * @return {ContactsApp.UrlField} this field, useful for chaining
  */
-ContactsApp.UrlField.prototype.setAddress = function(address){};
 
 /**
  * Sets this field to primary.
@@ -3317,9 +3501,10 @@ ContactsApp.UrlField.prototype.setAddress = function(address){};
  addressFields[0].setAsPrimary();
  </code></pre>
  *
+ * @function ContactsApp.UrlField#setAsPrimary
+ *
  * @return {ContactsApp.UrlField} this FieldValue for chaining
  */
-ContactsApp.UrlField.prototype.setAsPrimary = function(){};
 
 /**
  * Sets the label of this field.
@@ -3333,11 +3518,12 @@ ContactsApp.UrlField.prototype.setAsPrimary = function(){};
  addressFields[0].setLabel(ContactsApp.Field.WORK_ADDRESS);
  </code></pre>
  *
+ * @function ContactsApp.UrlField#setLabel
+ *
  * @param {ContactsApp.Field} field - the new standard label
  *
  * @return {ContactsApp.UrlField} this FieldValue for chaining
  */
-ContactsApp.UrlField.prototype.setLabel = function(field){};
 
 /**
  * Sets the label of this field.
@@ -3351,9 +3537,10 @@ ContactsApp.UrlField.prototype.setLabel = function(field){};
  addressFields[0].setLabel(&#39;Apartment&#39;);
  </code></pre>
  *
+ * @function ContactsApp.UrlField#setLabel
+ *
  * @param {String} label - the new label for this field
  *
  * @return {ContactsApp.UrlField} this field, useful for chaining
  */
-ContactsApp.UrlField.prototype.setLabel = function(label){};
 

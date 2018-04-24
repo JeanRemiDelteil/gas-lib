@@ -1,16 +1,14 @@
-var Maps = {};
+/**********************************************
+ * @namespace Maps
+ ***********************************************/
 
 
 /**
- * 
- * 
- * @class Maps.DirectionFinderEnums
+ * @class {Maps.DirectionFinderEnums} Maps.DirectionFinder
  */
 
 /**
- * 
- * 
- * @class Maps.StaticMapEnums
+ * @class {Maps.StaticMapEnums} Maps.StaticMap
  */
 
 /**
@@ -26,11 +24,12 @@ var Maps = {};
  }
  </code></pre>
  *
+ * @function Maps.decodePolyline
+ *
  * @param {String} polyline - an encoded polyline
  *
  * @return {Number[]} an array of latitude longitude pairs (lat0, long0, lat1, long1, ...)
  */
-Maps.decodePolyline = function(polyline){};
 
 /**
  * Encodes an array of points into a string.
@@ -41,39 +40,44 @@ Maps.decodePolyline = function(polyline){};
  var polyline = Maps.encodePolyline(points);
  </code></pre>
  *
+ * @function Maps.encodePolyline
+ *
  * @param {Number[]} points - an array of latitude/longitude pairs to encode
  *
  * @return {String} an encoded string
  */
-Maps.encodePolyline = function(points){};
 
 /**
  * Creates a new DirectionFinder object.
  *
+ * @function Maps.newDirectionFinder
+ *
  * @return {Maps.DirectionFinder} a DirectionFinder object
  */
-Maps.newDirectionFinder = function(){};
 
 /**
  * Creates an ElevationSampler object.
  *
+ * @function Maps.newElevationSampler
+ *
  * @return {Maps.ElevationSampler} an ElevationSampler object
  */
-Maps.newElevationSampler = function(){};
 
 /**
  * Creates a new Geocoder object.
  *
+ * @function Maps.newGeocoder
+ *
  * @return {Maps.Geocoder} a Geocoder object
  */
-Maps.newGeocoder = function(){};
 
 /**
  * Creates a new StaticMap object.
  *
+ * @function Maps.newStaticMap
+ *
  * @return {Maps.StaticMap} a StaticMap object
  */
-Maps.newStaticMap = function(){};
 
 /**
  * Enables the use of an externally established Maps API for Business account, to leverage
@@ -85,24 +89,29 @@ Maps.newStaticMap = function(){};
  Maps.setAuthentication(&#39;gme-123456789&#39;, &#39;VhSEZvOXVSdnlxTnpJcUE&#39;);
  </code></pre>
  *
+ * @function Maps.setAuthentication
+ *
  * @param {String} clientId - client identifier
  * @param {String} signingKey - private signing key
  *
  * @return void
  */
-Maps.setAuthentication = function(clientId, signingKey){};
 
-/** @constructor */
-Maps.Avoid = function(){};
+/**
+ * @class Maps.Avoid
+ */
 
-/** @constructor */
-Maps.Color = function(){};
+/**
+ * @class Maps.Color
+ */
 
-/** @constructor */
-Maps.DirectionFinderEnums = function(){};
+/**
+ * @class Maps.DirectionFinderEnums
+ */
 
-/** @constructor */
-Maps.ElevationSampler = function(){};
+/**
+ * @class Maps.ElevationSampler
+ */
 
 /**
  * Returns elevation data for a single point (lat/lng).
@@ -113,13 +122,14 @@ Maps.ElevationSampler = function(){};
  Logger.log(data.results[0].elevation);
  </code></pre>
  *
+ * @function Maps.ElevationSampler#sampleLocation
+ *
  * @param {Number} latitude - the latitude of the point to sample
  * @param {Number} longitude - the longitude of the point to sample
  *
  * @return {Object} a JSON Object containing the elevation data, as described <a
      href="/maps/documentation/elevation/#ElevationResponses">here</a>
  */
-Maps.ElevationSampler.prototype.sampleLocation = function(latitude, longitude){};
 
 /**
  * Returns elevation data for a series of points (lat/lng).
@@ -136,12 +146,13 @@ Maps.ElevationSampler.prototype.sampleLocation = function(latitude, longitude){}
  Logger.log(&#39;Central Park: &#39; + data.results[1].elevation);
  </code></pre>
  *
+ * @function Maps.ElevationSampler#sampleLocations
+ *
  * @param {Number[]} points - an array of latitude/longitude pairs
  *
  * @return {Object} a JSON Object containing the elevation data, as described <a
      href="/maps/documentation/elevation/#ElevationResponses">here</a>
  */
-Maps.ElevationSampler.prototype.sampleLocations = function(points){};
 
 /**
  * Returns elevation data for the points in an encoded polyline.
@@ -153,12 +164,13 @@ Maps.ElevationSampler.prototype.sampleLocations = function(points){};
  Logger.log(&#39;Central Park: &#39; + data.results[1].elevation);
  </code></pre>
  *
+ * @function Maps.ElevationSampler#sampleLocations
+ *
  * @param {String} encodedPolyline - an encoded polyline of points to sample
  *
  * @return {Object} a JSON Object containing the elevation data, as described <a
      href="/maps/documentation/elevation/#ElevationResponses">here</a>
  */
-Maps.ElevationSampler.prototype.sampleLocations = function(encodedPolyline){};
 
 /**
  * Returns elevation data for a number of samples along a line, defined using a series of points.
@@ -176,13 +188,14 @@ Maps.ElevationSampler.prototype.sampleLocations = function(encodedPolyline){};
  }
  </code></pre>
  *
+ * @function Maps.ElevationSampler#samplePath
+ *
  * @param {Number[]} points - an array of latitude/longitude pairs defining a path to sample over
  * @param {number} numSamples - the number of points to sample along the path of points
  *
  * @return {Object} a JSON Object containing the elevation data, as described <a
      href="/maps/documentation/elevation/#ElevationResponses">here</a>
  */
-Maps.ElevationSampler.prototype.samplePath = function(points, numSamples){};
 
 /**
  * Returns elevation data for a number of samples along a line, defined using an encoded polyline.
@@ -195,19 +208,22 @@ Maps.ElevationSampler.prototype.samplePath = function(points, numSamples){};
  }
  </code></pre>
  *
+ * @function Maps.ElevationSampler#samplePath
+ *
  * @param {String} encodedPolyline - an encoded polyline of points defining a path to sample over
  * @param {number} numSamples - the number of points to sample along the path of points
  *
  * @return {Object} a JSON Object containing the elevation data, as described <a
      href="/maps/documentation/elevation/#ElevationResponses">here</a>
  */
-Maps.ElevationSampler.prototype.samplePath = function(encodedPolyline, numSamples){};
 
-/** @constructor */
-Maps.Format = function(){};
+/**
+ * @class Maps.Format
+ */
 
-/** @constructor */
-Maps.Geocoder = function(){};
+/**
+ * @class Maps.Geocoder
+ */
 
 /**
  * Gets the approximate geographic points for a given address.
@@ -222,12 +238,13 @@ Maps.Geocoder = function(){};
  }
  </code></pre>
  *
+ * @function Maps.Geocoder#geocode
+ *
  * @param {String} address - an address
  *
  * @return {Object} a JSON Object containing the geocoding data, as described <a
      href="/maps/documentation/geocoding/#JSON">here</a>
  */
-Maps.Geocoder.prototype.geocode = function(address){};
 
 /**
  * Gets the approximate addresses for a given geographic point.
@@ -242,13 +259,14 @@ Maps.Geocoder.prototype.geocode = function(address){};
  }
  </code></pre>
  *
+ * @function Maps.Geocoder#reverseGeocode
+ *
  * @param {Number} latitude - the latitude of the point
  * @param {Number} longitude - the longitude of the point
  *
  * @return {Object} a JSON Object containing the reverse geocoding data, as described <a
      href="/maps/documentation/geocoding/#ReverseGeocoding">here</a>
  */
-Maps.Geocoder.prototype.reverseGeocode = function(latitude, longitude){};
 
 /**
  * Gets the approximate addresses for a given area.
@@ -263,6 +281,8 @@ Maps.Geocoder.prototype.reverseGeocode = function(latitude, longitude){};
  }
  </code></pre>
  *
+ * @function Maps.Geocoder#reverseGeocode
+ *
  * @param {Number} swLatitude - the latitude of the south west corner of the bounds
  * @param {Number} swLongitude - the longitude of the south west corner of the bounds
  * @param {Number} neLatitude - the latitude of the north east corner of the bounds
@@ -271,7 +291,6 @@ Maps.Geocoder.prototype.reverseGeocode = function(latitude, longitude){};
  * @return {Object} a JSON Object containing the reverse geocoding data, as described <a
      href="/maps/documentation/geocoding/#ReverseGeocoding">here</a>
  */
-Maps.Geocoder.prototype.reverseGeocode = function(swLatitude, swLongitude, neLatitude, neLongitude){};
 
 /**
  * Sets the bounds of an area that should be given extra preference in the results.
@@ -282,6 +301,8 @@ Maps.Geocoder.prototype.reverseGeocode = function(swLatitude, swLongitude, neLat
      .setBounds(40.699642, -74.021072, 40.877569, -73.908548);
  </code></pre>
  *
+ * @function Maps.Geocoder#setBounds
+ *
  * @param {Number} swLatitude - the latitude of the south west corner of the bounds
  * @param {Number} swLongitude - the longitude of the south west corner of the bounds
  * @param {Number} neLatitude - the latitude of the north east corner of the bounds
@@ -289,7 +310,6 @@ Maps.Geocoder.prototype.reverseGeocode = function(swLatitude, swLongitude, neLat
  *
  * @return {Maps.Geocoder} the Geocoder object to facilitate chaining of calls
  */
-Maps.Geocoder.prototype.setBounds = function(swLatitude, swLongitude, neLatitude, neLongitude){};
 
 /**
  * Sets the language to be used in the results.
@@ -299,11 +319,12 @@ Maps.Geocoder.prototype.setBounds = function(swLatitude, swLongitude, neLatitude
  var geocoder = Maps.newGeocoder().setLanguage(&#39;fr&#39;);
  </code></pre>
  *
+ * @function Maps.Geocoder#setLanguage
+ *
  * @param {String} language - a BCP-47 language identifier
  *
  * @return {Maps.Geocoder} the Geocoder object to facilitate chaining of calls.
  */
-Maps.Geocoder.prototype.setLanguage = function(language){};
 
 /**
  * Sets a region to use when interpreting location names. The supported region codes correspond to
@@ -315,21 +336,26 @@ Maps.Geocoder.prototype.setLanguage = function(language){};
  var geocoder = Maps.newGeocoder().setRegion(&#39;fr&#39;);
  </code></pre>
  *
+ * @function Maps.Geocoder#setRegion
+ *
  * @param {String} region - the region code to use
  *
  * @return {Maps.Geocoder} the Geocoder object to facilitate chaining of calls
  */
-Maps.Geocoder.prototype.setRegion = function(region){};
 
-/** @constructor */
-Maps.MarkerSize = function(){};
+/**
+ * @class Maps.MarkerSize
+ */
 
-/** @constructor */
-Maps.Mode = function(){};
+/**
+ * @class Maps.Mode
+ */
 
-/** @constructor */
-Maps.StaticMapEnums = function(){};
+/**
+ * @class Maps.StaticMapEnums
+ */
 
-/** @constructor */
-Maps.Type = function(){};
+/**
+ * @class Maps.Type
+ */
 

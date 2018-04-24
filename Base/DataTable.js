@@ -1,3 +1,4 @@
-var DataTable = {};
-
+/**
+ * @typedef {DataTable} undefined
+ */
 

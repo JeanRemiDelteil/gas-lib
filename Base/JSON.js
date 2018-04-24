@@ -1,46 +1,44 @@
-var JSON = {};
+/**********************************************
+ * @namespace JSON
+ ***********************************************/
 
 
 /**
- * undefined
+ * @function JSON.parse
  *
  * @param {String} text - undefined
  *
  * @return {Object}
  */
-JSON.parse = function(text){};
 
 /**
- * undefined
+ * @function JSON.parse
  *
  * @param {String} text - undefined
  * @param {Function} reviver - undefined
  *
  * @return {Object}
  */
-JSON.parse = function(text, reviver){};
 
 /**
- * undefined
+ * @function JSON.stringify
  *
  * @param {Object} value - undefined
  *
  * @return {String}
  */
-JSON.stringify = function(value){};
 
 /**
- * undefined
+ * @function JSON.stringify
  *
  * @param {Object} value - undefined
  * @param {Function} replacer - undefined
  *
  * @return {String}
  */
-JSON.stringify = function(value, replacer){};
 
 /**
- * undefined
+ * @function JSON.stringify
  *
  * @param {Object} value - undefined
  * @param {Function} replacer - undefined
@@ -48,5 +46,4 @@ JSON.stringify = function(value, replacer){};
  *
  * @return {String}
  */
-JSON.stringify = function(value, replacer, space){};
 

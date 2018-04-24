@@ -1,10 +1,12 @@
-var DriveApp = {};
+/**********************************************
+ * @namespace DriveApp
+ ***********************************************/
 
 
 /**
  * An enum representing classes of users who can access a file or folder, besides any individual
  users who have been explicitly given access.
- * 
+ *
  * @class DriveApp.Access
  */
 
@@ -57,7 +59,7 @@ var DriveApp = {};
 /**
  * An enum representing the permissions granted to users who can access a file or folder, besides
  any individual users who have been explicitly given access.
- * 
+ *
  * @class DriveApp.Permission
  */
 
@@ -110,45 +112,49 @@ var DriveApp = {};
  * Adds the given file to the root of the user's Drive. This method does not move the file out of its
  existing parent folder; a file can have more than one parent simultaneously.
  *
+ * @function DriveApp.addFile
+ *
  * @param {DriveApp.File} child - the child file to add
  *
  * @return {DriveApp.Folder} this The new parent of the file added as a child.
  */
-DriveApp.addFile = function(child){};
 
 /**
  * Adds the given folder to the root of the user's Drive. This method does not move the folder out of
  its existing parent folder; a folder can have more than one parent simultaneously.
  *
+ * @function DriveApp.addFolder
+ *
  * @param {DriveApp.Folder} child - the child folder to add
  *
  * @return {DriveApp.Folder} this The new parent of the folder added as a child.
  */
-DriveApp.addFolder = function(child){};
 
 /**
  * Resumes a file iteration using a continuation token from a previous iterator. This method is
  useful if processing an iterator in one execution would exceed the maximum execution time.
  Continuation tokens are generally valid for one week.
  *
+ * @function DriveApp.continueFileIterator
+ *
  * @param {String} continuationToken - a continuation token from a previous file iterator
  *
  * @return {DriveApp.FileIterator} a collection of files that remained in a previous iterator when the continuation token
      was generated
  */
-DriveApp.continueFileIterator = function(continuationToken){};
 
 /**
  * Resumes a folder iteration using a continuation token from a previous iterator. This method is
  useful if processing an iterator in one execution would exceed the maximum execution time.
  Continuation tokens are generally valid for one week.
  *
+ * @function DriveApp.continueFolderIterator
+ *
  * @param {String} continuationToken - a continuation token from a previous folder iterator
  *
  * @return {DriveApp.FolderIterator} a collection of folders that remained in a previous iterator when the continuation
      token was generated
  */
-DriveApp.continueFolderIterator = function(continuationToken){};
 
 /**
  * Creates a file in the root of the user's Drive from a given <code>Blob</code> of arbitrary data.
@@ -159,11 +165,12 @@ DriveApp.continueFolderIterator = function(continuationToken){};
  DriveApp.createFile(blob);
  </pre>
  *
+ * @function DriveApp.createFile
+ *
  * @param {BlobSource} blob - the data for the new file
  *
  * @return {DriveApp.File} the new file
  */
-DriveApp.createFile = function(blob){};
 
 /**
  * Creates a text file in the root of the user's Drive with the given name and contents. Throws an
@@ -174,12 +181,13 @@ DriveApp.createFile = function(blob){};
  DriveApp.createFile('New Text File', 'Hello, world!');
  </pre>
  *
+ * @function DriveApp.createFile
+ *
  * @param {String} name - the name of the new file
  * @param {String} content - the content for the new file
  *
  * @return {DriveApp.File} the new file
  */
-DriveApp.createFile = function(name, content){};
 
 /**
  * Creates a file in the root of the user's Drive with the given name, contents, and MIME type. Throws
@@ -190,140 +198,156 @@ DriveApp.createFile = function(name, content){};
  DriveApp.createFile(&#39;New HTML File&#39;, &#39;&lt;b&gt;Hello, world!&lt;/b&gt;&#39;, MimeType.HTML);
  </code></pre>
  *
+ * @function DriveApp.createFile
+ *
  * @param {String} name - the name of the new file
  * @param {String} content - the content for the new file
  * @param {String} mimeType - the MIME type of the new file
  *
  * @return {DriveApp.File} the new file
  */
-DriveApp.createFile = function(name, content, mimeType){};
 
 /**
  * Creates a folder in the root of the user's Drive with the given name.
+ *
+ * @function DriveApp.createFolder
  *
  * @param {String} name - the name of the new folder
  *
  * @return {DriveApp.Folder} the new folder
  */
-DriveApp.createFolder = function(name){};
 
 /**
  * Gets the file with the given ID. Throws a scripting exception if the file does not exist or the
  user does not have permission to access it.
  *
+ * @function DriveApp.getFileById
+ *
  * @param {String} id - the ID of the file
  *
  * @return {DriveApp.File} the file with the given ID
  */
-DriveApp.getFileById = function(id){};
 
 /**
  * Gets a collection of all files in the user's Drive.
  *
+ * @function DriveApp.getFiles
+ *
  * @return {DriveApp.FileIterator} a collection of all files in the user's Drive
  */
-DriveApp.getFiles = function(){};
 
 /**
  * Gets a collection of all files in the user's Drive that have the given name.
+ *
+ * @function DriveApp.getFilesByName
  *
  * @param {String} name - the name of the files to find
  *
  * @return {DriveApp.FileIterator} a collection of all files in the user's Drive that have the given name
  */
-DriveApp.getFilesByName = function(name){};
 
 /**
  * Gets a collection of all files in the user's Drive that have the given MIME type.
+ *
+ * @function DriveApp.getFilesByType
  *
  * @param {String} mimeType - the MIME type of the files to find
  *
  * @return {DriveApp.FileIterator} a collection of all files in the user's Drive that have the given MIME type
  */
-DriveApp.getFilesByType = function(mimeType){};
 
 /**
  * Gets the folder with the given ID. Throws a scripting exception if the folder does not exist or
  the user does not have permission to access it.
  *
+ * @function DriveApp.getFolderById
+ *
  * @param {String} id - the ID of the folder
  *
  * @return {DriveApp.Folder} the folder with the given ID
  */
-DriveApp.getFolderById = function(id){};
 
 /**
  * Gets a collection of all folders in the user's Drive.
  *
+ * @function DriveApp.getFolders
+ *
  * @return {DriveApp.FolderIterator} a collection of all folders in the user's Drive
  */
-DriveApp.getFolders = function(){};
 
 /**
  * Gets a collection of all folders in the user's Drive that have the given name.
+ *
+ * @function DriveApp.getFoldersByName
  *
  * @param {String} name - the name of the folders to find
  *
  * @return {DriveApp.FolderIterator} a collection of all folders in the user's Drive that have the given name
  */
-DriveApp.getFoldersByName = function(name){};
 
 /**
  * Gets the folder at the root of the user's Drive.
  *
+ * @function DriveApp.getRootFolder
+ *
  * @return {DriveApp.Folder} the root folder of the user's Drive
  */
-DriveApp.getRootFolder = function(){};
 
 /**
  * Gets the number of bytes the user is allowed to store in Drive.
  *
+ * @function DriveApp.getStorageLimit
+ *
  * @return {number} the number of bytes the user is allowed to store in Drive
  */
-DriveApp.getStorageLimit = function(){};
 
 /**
  * Gets the number of bytes the user is currently storing in Drive.
  *
+ * @function DriveApp.getStorageUsed
+ *
  * @return {number} the number of bytes the user is currently storing in Drive
  */
-DriveApp.getStorageUsed = function(){};
 
 /**
  * Gets a collection of all the files in the trash of the user's Drive.
  *
+ * @function DriveApp.getTrashedFiles
+ *
  * @return {DriveApp.FileIterator} a collection of files in the trash
  */
-DriveApp.getTrashedFiles = function(){};
 
 /**
  * Gets a collection of all the folders in the trash of the user's Drive.
  *
+ * @function DriveApp.getTrashedFolders
+ *
  * @return {DriveApp.FolderIterator} a collection of folders in the trash
  */
-DriveApp.getTrashedFolders = function(){};
 
 /**
  * Removes the given file from the root of the user's Drive. This method does not delete the file, but
  if a file is removed from all of its parents, it cannot be seen in Drive except by searching
  for it or using the "All items" view.
  *
+ * @function DriveApp.removeFile
+ *
  * @param {DriveApp.File} child - the child file to remove
  *
  * @return {DriveApp.Folder} this The previous parent of the child.
  */
-DriveApp.removeFile = function(child){};
 
 /**
  * Removes the given folder from the root of the user's Drive. This method does not delete the folder
  or its contents, but if a folder is removed from all of its parents, it cannot be seen in Drive
  except by searching for it or using the "All items" view.
  *
+ * @function DriveApp.removeFolder
+ *
  * @param {DriveApp.Folder} child - the child folder to remove
  *
  * @return {DriveApp.Folder} this The previous parent of the child.
  */
-DriveApp.removeFolder = function(child){};
 
 /**
  * Gets a collection of all files in the user's Drive that match the given search
@@ -343,13 +367,14 @@ DriveApp.removeFolder = function(child){};
  }
  </pre>
  *
+ * @function DriveApp.searchFiles
+ *
  * @param {String} params - the search criteria, as detailed in the <a
      href="/drive/v2/web/search-parameters">Google Drive SDK documentation</a>
  *
  * @return {DriveApp.FileIterator} a collection of all files in the user's Drive that match the search
      criteria
  */
-DriveApp.searchFiles = function(params){};
 
 /**
  * Gets a collection of all folders in the user's Drive that match the given search
@@ -367,133 +392,148 @@ DriveApp.searchFiles = function(params){};
  }
  </pre>
  *
+ * @function DriveApp.searchFolders
+ *
  * @param {String} params - the search criteria, as detailed in the <a
      href="/drive/v2/web/search-parameters">Google Drive SDK documentation</a>
  *
  * @return {DriveApp.FolderIterator} a collection of all folders in the user's Drive that match the search
      criteria
  */
-DriveApp.searchFolders = function(params){};
 
-/** @constructor */
-DriveApp.File = function(){};
+/**
+ * @class DriveApp.File
+ */
 
 /**
  * Add the given user to the list of commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. If the user was
  already on the list of viewers, this method promotes the user out of the list of viewers.
+ *
+ * @function DriveApp.File#addCommenter
  *
  * @param {String} emailAddress - the email address of the user to add
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.addCommenter = function(emailAddress){};
 
 /**
  * Add the given user to the list of commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. If the user was
  already on the list of viewers, this method promotes the user out of the list of viewers.
  *
+ * @function DriveApp.File#addCommenter
+ *
  * @param {User} user - a representation of the user to add
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.addCommenter = function(user){};
 
 /**
  * Add the given array of users to the list of commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. If any
  of the users were already on the list of viewers, this method promotes them out of the list of
  viewers.
  *
+ * @function DriveApp.File#addCommenters
+ *
  * @param {String[]} emailAddresses - an array of email addresses of the users to add
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.addCommenters = function(emailAddresses){};
 
 /**
  * Adds the given user to the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. If the user was already
  on the list of viewers, this method promotes the user out of the list of viewers.
+ *
+ * @function DriveApp.File#addEditor
  *
  * @param {String} emailAddress - the email address of the user to add
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.addEditor = function(emailAddress){};
 
 /**
  * Adds the given user to the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. If the user was already
  on the list of viewers, this method promotes the user out of the list of viewers.
  *
+ * @function DriveApp.File#addEditor
+ *
  * @param {User} user - a representation of the user to add
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.addEditor = function(user){};
 
 /**
  * Adds the given array of users to the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. If any of the
  users were already on the list of viewers, this method promotes them out of the list of
  viewers.
  *
+ * @function DriveApp.File#addEditors
+ *
  * @param {String[]} emailAddresses - an array of email addresses of the users to add
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.addEditors = function(emailAddresses){};
 
 /**
  * Adds the given user to the list of viewers for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. If the user was already
  on the list of editors, this method has no effect.
+ *
+ * @function DriveApp.File#addViewer
  *
  * @param {String} emailAddress - the email address of the user to add
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.addViewer = function(emailAddress){};
 
 /**
  * Adds the given user to the list of viewers for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. If the user was already
  on the list of editors, this method has no effect.
  *
+ * @function DriveApp.File#addViewer
+ *
  * @param {User} user - a representation of the user to add
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.addViewer = function(user){};
 
 /**
  * Adds the given array of users to the list of viewers for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. If any of the
  users were already on the list of editors, this method has no effect for them.
  *
+ * @function DriveApp.File#addViewers
+ *
  * @param {String[]} emailAddresses - an array of email addresses of the users to add
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.addViewers = function(emailAddresses){};
 
 /**
  * Gets the permission granted to the given user.
+ *
+ * @function DriveApp.File#getAccess
  *
  * @param {String} email - the email address of the user whose permissions should be checked
  *
  * @return {DriveApp.Permission} the permissions granted to the user
  */
-DriveApp.File.prototype.getAccess = function(email){};
 
 /**
  * Gets the permission granted to the given user.
+ *
+ * @function DriveApp.File#getAccess
  *
  * @param {User} user - a representation of the user whose permissions should be checked
  *
  * @return {DriveApp.Permission} the permissions granted to the user
  */
-DriveApp.File.prototype.getAccess = function(user){};
 
 /**
  * Return the data inside this object as a blob converted to the specified content type. This
- method adds the appropriate extension to the filename — for example, "myfile.pdf". However, it
+ method adds the appropriate extension to the filename—for example, "myfile.pdf". However, it
  assumes that the part of the filename that follows the last period (if any) is an existing
- extension that should be replaced. Consequently, "ChristmasList.12.25.2014" will become
+ extension that should be replaced. Consequently, "ChristmasList.12.25.2014" becomes
  "ChristmasList.12.25.pdf".
+ *
+ * @function DriveApp.File#getAs
  *
  * @param {String} contentType - the MIME type to convert to. For most blobs, <code>&#39;application/pdf&#39;</code> is
      the only valid option. For images in BMP, GIF, JPEG, or PNG format, any of <code>&#39;image/bmp&#39;</code>, <code>&#39;image/gif&#39;</code>, <code>&#39;image/jpeg&#39;</code>, or <code>&#39;image/png&#39;</code> are also
@@ -501,195 +541,218 @@ DriveApp.File.prototype.getAccess = function(user){};
  *
  * @return {Blob} the data as a blob
  */
-DriveApp.File.prototype.getAs = function(contentType){};
 
 /**
  * Return the data inside this object as a blob.
  *
+ * @function DriveApp.File#getBlob
+ *
  * @return {Blob} the data as a blob
  */
-DriveApp.File.prototype.getBlob = function(){};
 
 /**
  * Gets the date the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> was created.
  *
+ * @function DriveApp.File#getDateCreated
+ *
  * @return {Date} the date the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> was created
  */
-DriveApp.File.prototype.getDateCreated = function(){};
 
 /**
  * Gets the description for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>.
  *
+ * @function DriveApp.File#getDescription
+ *
  * @return {String} the description for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>
  */
-DriveApp.File.prototype.getDescription = function(){};
 
 /**
  * Gets the URL that can be used to download the file. Only users with permission to open the file
  in Google Drive can access the URL.
  *
+ * @function DriveApp.File#getDownloadUrl
+ *
  * @return {String} the URL that can be used to download the file
  */
-DriveApp.File.prototype.getDownloadUrl = function(){};
 
 /**
  * Gets the list of editors for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. If the user who executes the script
  does not have edit access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, this method returns an empty array.
  *
+ * @function DriveApp.File#getEditors
+ *
  * @return {DriveApp.User[]} an array of users with edit permission
  */
-DriveApp.File.prototype.getEditors = function(){};
 
 /**
  * Gets the ID of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>.
  *
+ * @function DriveApp.File#getId
+ *
  * @return {String} the ID of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>
  */
-DriveApp.File.prototype.getId = function(){};
 
 /**
  * Gets the date the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> was last updated.
  *
+ * @function DriveApp.File#getLastUpdated
+ *
  * @return {Date} the date the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> was last updated
  */
-DriveApp.File.prototype.getLastUpdated = function(){};
 
 /**
  * Gets the MIME type of the file.
  *
+ * @function DriveApp.File#getMimeType
+ *
  * @return {String} the MIME type of the file
  */
-DriveApp.File.prototype.getMimeType = function(){};
 
 /**
  * Gets the name of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>.
  *
+ * @function DriveApp.File#getName
+ *
  * @return {String} the name of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>
  */
-DriveApp.File.prototype.getName = function(){};
 
 /**
  * Gets the owner of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>.
  *
+ * @function DriveApp.File#getOwner
+ *
  * @return {DriveApp.User} a <code>User</code> object representing the owner
  */
-DriveApp.File.prototype.getOwner = function(){};
 
 /**
  * Gets a collection of folders that are immediate parents of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>.
  *
+ * @function DriveApp.File#getParents
+ *
  * @return {DriveApp.FolderIterator} a collection of folders that are immediate parents of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>
  */
-DriveApp.File.prototype.getParents = function(){};
 
 /**
  * Gets which class of users can access the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, besides any individual
  users who have been explicitly given access.
  *
+ * @function DriveApp.File#getSharingAccess
+ *
  * @return {DriveApp.Access} which class of users can access the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>
  */
-DriveApp.File.prototype.getSharingAccess = function(){};
 
 /**
  * Gets the permission granted to those users who can access the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>,
  besides any individual users who have been explicitly given access.
  *
+ * @function DriveApp.File#getSharingPermission
+ *
  * @return {DriveApp.Permission} the permissions granted to users who can access the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>
  */
-DriveApp.File.prototype.getSharingPermission = function(){};
 
 /**
  * Gets the number of bytes used to store the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> in Drive. Note that G
  Suite application files do not count toward Drive storage limits and thus return <code>0</code>
  bytes.
  *
+ * @function DriveApp.File#getSize
+ *
  * @return {number} the number of bytes used to store the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> in Drive
  */
-DriveApp.File.prototype.getSize = function(){};
 
 /**
  * Gets a thumbnail image for the file, or <code>null</code> if no thumbnail exists.
  *
+ * @function DriveApp.File#getThumbnail
+ *
  * @return {Blob} the thumbnail image for the file
  */
-DriveApp.File.prototype.getThumbnail = function(){};
 
 /**
  * Gets the URL that can be used to open the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> in a Google App like
  Drive or Docs.
  *
+ * @function DriveApp.File#getUrl
+ *
  * @return {String} the URL that can be used to view this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> in a Google App like
      Drive or Docs
  */
-DriveApp.File.prototype.getUrl = function(){};
 
 /**
  * Gets the list of viewers and commenters for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. If the user who
  executes the script does not have edit access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, this method
  returns an empty array.
  *
+ * @function DriveApp.File#getViewers
+ *
  * @return {DriveApp.User[]} an array of users with view or comment permission
  */
-DriveApp.File.prototype.getViewers = function(){};
 
 /**
  * Determines whether users with edit permissions to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> are allowed to
  share with other users or change the permissions.
  *
+ * @function DriveApp.File#isShareableByEditors
+ *
  * @return {Boolean} <code>true</code> if users with edit permissions are allowed to share with other users or
      change the permissions; <code>false</code> if not
  */
-DriveApp.File.prototype.isShareableByEditors = function(){};
 
 /**
  * Determines whether the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> has been starred in the user's Drive.
  *
+ * @function DriveApp.File#isStarred
+ *
  * @return {Boolean} <code>true</code> if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> is starred in the user's Drive; <code>false</code> if not
  */
-DriveApp.File.prototype.isStarred = function(){};
 
 /**
  * Determines whether the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> is in the trash of the user's Drive.
  *
+ * @function DriveApp.File#isTrashed
+ *
  * @return {Boolean} <code>true</code> if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> is in the trash of the user's Drive;
      <code>false</code> if not
  */
-DriveApp.File.prototype.isTrashed = function(){};
 
 /**
  * Creates a copy of the file.
  *
+ * @function DriveApp.File#makeCopy
+ *
  * @return {DriveApp.File} the new copy
  */
-DriveApp.File.prototype.makeCopy = function(){};
 
 /**
  * Creates a copy of the file in the destination directory.
  *
+ * @function DriveApp.File#makeCopy
+ *
  * @param {DriveApp.Folder} destination - the directory to copy the file into.
  *
  * @return {DriveApp.File} the new copy
  */
-DriveApp.File.prototype.makeCopy = function(destination){};
 
 /**
  * Creates a copy of the file and names it with the name provided.
  *
+ * @function DriveApp.File#makeCopy
+ *
  * @param {String} name - the filename that should be applied to the new copy
  *
  * @return {DriveApp.File} the new copy
  */
-DriveApp.File.prototype.makeCopy = function(name){};
 
 /**
  * Creates a copy of the file in the destination directory and names it with the name provided.
+ *
+ * @function DriveApp.File#makeCopy
  *
  * @param {String} name - the filename that should be applied to the new copy
  * @param {DriveApp.Folder} destination - the directory to copy the file into.
  *
  * @return {DriveApp.File} the new copy
  */
-DriveApp.File.prototype.makeCopy = function(name, destination){};
 
 /**
  * Removes the given user from the list of commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. This method
@@ -697,11 +760,12 @@ DriveApp.File.prototype.makeCopy = function(name, destination){};
  who have general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> is shared with the user's
  entire domain.
  *
+ * @function DriveApp.File#removeCommenter
+ *
  * @param {String} emailAddress - the email address of the user to remove
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.removeCommenter = function(emailAddress){};
 
 /**
  * Removes the given user from the list of commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. This method
@@ -709,33 +773,36 @@ DriveApp.File.prototype.removeCommenter = function(emailAddress){};
  who have general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> is shared with the user's
  entire domain.
  *
+ * @function DriveApp.File#removeCommenter
+ *
  * @param {User} user - a representation of the user to remove
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.removeCommenter = function(user){};
 
 /**
  * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. This method does not
  block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> if they belong to a class of users who have
  general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> is shared with the user's entire domain.
+ *
+ * @function DriveApp.File#removeEditor
  *
  * @param {String} emailAddress - the email address of the user to remove
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.removeEditor = function(emailAddress){};
 
 /**
  * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. This method does not
  block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> if they belong to a class of users who have
  general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> is shared with the user's entire domain.
  *
+ * @function DriveApp.File#removeEditor
+ *
  * @param {User} user - a representation of the user to remove
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.removeEditor = function(user){};
 
 /**
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. This
@@ -744,11 +811,12 @@ DriveApp.File.prototype.removeEditor = function(user){};
  have general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> is shared with the user's entire
  domain.
  *
+ * @function DriveApp.File#removeViewer
+ *
  * @param {String} emailAddress - the email address of the user to remove
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> for chaining
  */
-DriveApp.File.prototype.removeViewer = function(emailAddress){};
 
 /**
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. This
@@ -756,23 +824,25 @@ DriveApp.File.prototype.removeViewer = function(emailAddress){};
  users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> if they belong to a class of users who have general
  access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> is shared with the user's entire domain.
  *
+ * @function DriveApp.File#removeViewer
+ *
  * @param {User} user - a representation of the user to remove
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> for chaining
  */
-DriveApp.File.prototype.removeViewer = function(user){};
 
 /**
  * Revokes the access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> granted to the given user. This method does
  not block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> if they belong to a class of users
  who have general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> is shared with the user's
  entire domain.
+ *
+ * @function DriveApp.File#revokePermissions
  *
  * @param {String} user - the email address of the user whose access should be revoked
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.revokePermissions = function(user){};
 
 /**
  * Revokes the access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> granted to the given user. This method does
@@ -780,72 +850,79 @@ DriveApp.File.prototype.revokePermissions = function(user){};
  who have general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> is shared with the user's
  entire domain.
  *
+ * @function DriveApp.File#revokePermissions
+ *
  * @param {User} user - a representation of the user whose access should be revoked
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.revokePermissions = function(user){};
 
 /**
  * Overwrites the content of the file with a given replacement. Throws an exception if <code>content</code> is larger than 10MB.
 
  <p><aside class="warning">Beware: this change is irreversible.</aside>
  *
+ * @function DriveApp.File#setContent
+ *
  * @param {String} content - the new content for the file
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.setContent = function(content){};
 
 /**
  * Sets the description for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>.
+ *
+ * @function DriveApp.File#setDescription
  *
  * @param {String} description - the new description for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.setDescription = function(description){};
 
 /**
  * Sets the name of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>.
+ *
+ * @function DriveApp.File#setName
  *
  * @param {String} name - the new name of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.setName = function(name){};
 
 /**
  * Changes the owner of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. This method also gives the previous owner
  explicit edit access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>.
+ *
+ * @function DriveApp.File#setOwner
  *
  * @param {String} emailAddress - the email address of the user who should become the new owner
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.setOwner = function(emailAddress){};
 
 /**
  * Changes the owner of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. This method also gives the previous owner
  explicit edit access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>.
  *
+ * @function DriveApp.File#setOwner
+ *
  * @param {User} user - a representation of the user who should become the new owner
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.setOwner = function(user){};
 
 /**
  * Sets whether users with edit permissions to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> are allowed to share
  with other users or change the permissions. The default for a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> is
  <code>true</code>.
  *
+ * @function DriveApp.File#setShareableByEditors
+ *
  * @param {Boolean} shareable - <code>true</code> if users with edit permissions should be allowed to share with
      other users or change the permissions; <code>false</code> if not
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.setShareableByEditors = function(shareable){};
 
 /**
  * Sets which class of users can access the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> and what permissions
@@ -858,146 +935,162 @@ DriveApp.File.prototype.setShareableByEditors = function(shareable){};
  folder.setSharing(DriveApp.Access.ANYONE, DriveApp.Permission.EDIT);
  </pre>
  *
+ * @function DriveApp.File#setSharing
+ *
  * @param {DriveApp.Access} accessType - which class of users should be able to access the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>
  * @param {DriveApp.Permission} permissionType - the permissions that should be granted to users who can access the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.setSharing = function(accessType, permissionType){};
 
 /**
  * Sets whether the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> is starred in the user's Drive. The default for
  new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>s is <code>false</code>.
+ *
+ * @function DriveApp.File#setStarred
  *
  * @param {Boolean} starred - <code>true</code> if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> should be starred in the user's
      Drive; <code>false</code> if not
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.setStarred = function(starred){};
 
 /**
  * Sets whether the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> is in the trash of the user's Drive. Only the
  owner may trash the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. The default for new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>s is <code>false</code>.
+ *
+ * @function DriveApp.File#setTrashed
  *
  * @param {Boolean} trashed - <code>true</code> if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> should be moved to the trash of
      the user's Drive; <code>false</code> if not
  *
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
-DriveApp.File.prototype.setTrashed = function(trashed){};
 
-/** @constructor */
-DriveApp.FileIterator = function(){};
+/**
+ * @class DriveApp.FileIterator
+ */
 
 /**
  * Gets a token that can be used to resume this iteration at a later time. This method is useful
  if processing an iterator in one execution would exceed the maximum execution time.
  Continuation tokens are generally valid for one week.
  *
+ * @function DriveApp.FileIterator#getContinuationToken
+ *
  * @return {String} a continuation token that can be used to resume this iteration with the items that
      remained in the iterator when the token was generated
  */
-DriveApp.FileIterator.prototype.getContinuationToken = function(){};
 
 /**
  * Determines whether calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file-iterator.html#next()'>next()</a></code> will return an item.
  *
+ * @function DriveApp.FileIterator#hasNext
+ *
  * @return {Boolean} <code>true</code> if <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file-iterator.html#next()'>next()</a></code> will return an item; <code>false</code> if not
  */
-DriveApp.FileIterator.prototype.hasNext = function(){};
 
 /**
  * Gets the next item in the collection of files or folders. Throws an exception if no items
  remain.
  *
+ * @function DriveApp.FileIterator#next
+ *
  * @return {DriveApp.File} the next item in the collection
  */
-DriveApp.FileIterator.prototype.next = function(){};
 
-/** @constructor */
-DriveApp.Folder = function(){};
+/**
+ * @class DriveApp.Folder
+ */
 
 /**
  * Adds the given user to the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>. If the user was already
  on the list of viewers, this method promotes the user out of the list of viewers.
+ *
+ * @function DriveApp.Folder#addEditor
  *
  * @param {String} emailAddress - the email address of the user to add
  *
  * @return {DriveApp.Folder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>, for chaining
  */
-DriveApp.Folder.prototype.addEditor = function(emailAddress){};
 
 /**
  * Adds the given user to the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>. If the user was already
  on the list of viewers, this method promotes the user out of the list of viewers.
  *
+ * @function DriveApp.Folder#addEditor
+ *
  * @param {User} user - a representation of the user to add
  *
  * @return {DriveApp.Folder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>, for chaining
  */
-DriveApp.Folder.prototype.addEditor = function(user){};
 
 /**
  * Adds the given array of users to the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>. If any of the
  users were already on the list of viewers, this method promotes them out of the list of
  viewers.
  *
+ * @function DriveApp.Folder#addEditors
+ *
  * @param {String[]} emailAddresses - an array of email addresses of the users to add
  *
  * @return {DriveApp.Folder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>, for chaining
  */
-DriveApp.Folder.prototype.addEditors = function(emailAddresses){};
 
 /**
  * Adds the given file to the current folder. This method does not move the file out of its
  existing parent folder; a file can have more than one parent simultaneously.
  *
+ * @function DriveApp.Folder#addFile
+ *
  * @param {DriveApp.File} child - the child file to add
  *
  * @return {DriveApp.Folder} this The new parent of the file added as a child.
  */
-DriveApp.Folder.prototype.addFile = function(child){};
 
 /**
  * Adds the given folder to the current folder. This method does not move the folder out of
  its existing parent folder; a folder can have more than one parent simultaneously.
  *
+ * @function DriveApp.Folder#addFolder
+ *
  * @param {DriveApp.Folder} child - the child folder to add
  *
  * @return {DriveApp.Folder} this The new parent of the folder added as a child.
  */
-DriveApp.Folder.prototype.addFolder = function(child){};
 
 /**
  * Adds the given user to the list of viewers for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>. If the user was already
  on the list of editors, this method has no effect.
+ *
+ * @function DriveApp.Folder#addViewer
  *
  * @param {String} emailAddress - the email address of the user to add
  *
  * @return {DriveApp.Folder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>, for chaining
  */
-DriveApp.Folder.prototype.addViewer = function(emailAddress){};
 
 /**
  * Adds the given user to the list of viewers for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>. If the user was already
  on the list of editors, this method has no effect.
  *
+ * @function DriveApp.Folder#addViewer
+ *
  * @param {User} user - a representation of the user to add
  *
  * @return {DriveApp.Folder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>, for chaining
  */
-DriveApp.Folder.prototype.addViewer = function(user){};
 
 /**
  * Adds the given array of users to the list of viewers for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>. If any of the
  users were already on the list of editors, this method has no effect for them.
  *
+ * @function DriveApp.Folder#addViewers
+ *
  * @param {String[]} emailAddresses - an array of email addresses of the users to add
  *
  * @return {DriveApp.Folder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>, for chaining
  */
-DriveApp.Folder.prototype.addViewers = function(emailAddresses){};
 
 /**
  * Creates a file in the current folder from a given <code>Blob</code> of arbitrary data.
@@ -1008,11 +1101,12 @@ DriveApp.Folder.prototype.addViewers = function(emailAddresses){};
  DriveApp.getRootFolder().createFile(blob);
  </pre>
  *
+ * @function DriveApp.Folder#createFile
+ *
  * @param {BlobSource} blob - the data for the new file
  *
  * @return {DriveApp.File} the new file
  */
-DriveApp.Folder.prototype.createFile = function(blob){};
 
 /**
  * Creates a text file in the current folder with the given name and contents. Throws an
@@ -1023,12 +1117,13 @@ DriveApp.Folder.prototype.createFile = function(blob){};
  DriveApp.getRootFolder().createFile('New Text File', 'Hello, world!');
  </pre>
  *
+ * @function DriveApp.Folder#createFile
+ *
  * @param {String} name - the name of the new file
  * @param {String} content - the content for the new file
  *
  * @return {DriveApp.File} the new file
  */
-DriveApp.Folder.prototype.createFile = function(name, content){};
 
 /**
  * Creates a file in the current folder with the given name, contents, and MIME type. Throws
@@ -1039,249 +1134,278 @@ DriveApp.Folder.prototype.createFile = function(name, content){};
  DriveApp.getRootFolder().createFile(&#39;New HTML File&#39;, &#39;&lt;b&gt;Hello, world!&lt;/b&gt;&#39;, MimeType.HTML);
  </code></pre>
  *
+ * @function DriveApp.Folder#createFile
+ *
  * @param {String} name - the name of the new file
  * @param {String} content - the content for the new file
  * @param {String} mimeType - the MIME type of the new file
  *
  * @return {DriveApp.File} the new file
  */
-DriveApp.Folder.prototype.createFile = function(name, content, mimeType){};
 
 /**
  * Creates a folder in the current folder with the given name.
+ *
+ * @function DriveApp.Folder#createFolder
  *
  * @param {String} name - the name of the new folder
  *
  * @return {DriveApp.Folder} the new folder
  */
-DriveApp.Folder.prototype.createFolder = function(name){};
 
 /**
  * Gets the permission granted to the given user.
+ *
+ * @function DriveApp.Folder#getAccess
  *
  * @param {String} email - the email address of the user whose permissions should be checked
  *
  * @return {DriveApp.Permission} the permissions granted to the user
  */
-DriveApp.Folder.prototype.getAccess = function(email){};
 
 /**
  * Gets the permission granted to the given user.
+ *
+ * @function DriveApp.Folder#getAccess
  *
  * @param {User} user - a representation of the user whose permissions should be checked
  *
  * @return {DriveApp.Permission} the permissions granted to the user
  */
-DriveApp.Folder.prototype.getAccess = function(user){};
 
 /**
  * Gets the date the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> was created.
  *
+ * @function DriveApp.Folder#getDateCreated
+ *
  * @return {Date} the date the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> was created
  */
-DriveApp.Folder.prototype.getDateCreated = function(){};
 
 /**
  * Gets the description for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>.
  *
+ * @function DriveApp.Folder#getDescription
+ *
  * @return {String} the description for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>
  */
-DriveApp.Folder.prototype.getDescription = function(){};
 
 /**
  * Gets the list of editors for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>. If the user who executes the script
  does not have edit access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>, this method returns an empty array.
  *
+ * @function DriveApp.Folder#getEditors
+ *
  * @return {DriveApp.User[]} an array of users with edit permission
  */
-DriveApp.Folder.prototype.getEditors = function(){};
 
 /**
  * Gets a collection of all files that are children of the current folder.
  *
+ * @function DriveApp.Folder#getFiles
+ *
  * @return {DriveApp.FileIterator} a collection of all files that are children of the current folder
  */
-DriveApp.Folder.prototype.getFiles = function(){};
 
 /**
  * Gets a collection of all files that are children of the current folder and have the given name.
+ *
+ * @function DriveApp.Folder#getFilesByName
  *
  * @param {String} name - the name of the files to find
  *
  * @return {DriveApp.FileIterator} a collection of all files that are children of the current folder and have the given name
  */
-DriveApp.Folder.prototype.getFilesByName = function(name){};
 
 /**
  * Gets a collection of all files that are children of the current folder and have the given MIME type.
+ *
+ * @function DriveApp.Folder#getFilesByType
  *
  * @param {String} mimeType - the MIME type of the files to find
  *
  * @return {DriveApp.FileIterator} a collection of all files that are children of the current folder and have the given MIME type
  */
-DriveApp.Folder.prototype.getFilesByType = function(mimeType){};
 
 /**
  * Gets a collection of all folders that are children of the current folder.
  *
+ * @function DriveApp.Folder#getFolders
+ *
  * @return {DriveApp.FolderIterator} a collection of all folders that are children of the current folder
  */
-DriveApp.Folder.prototype.getFolders = function(){};
 
 /**
  * Gets a collection of all folders that are children of the current folder and have the given name.
+ *
+ * @function DriveApp.Folder#getFoldersByName
  *
  * @param {String} name - the name of the folders to find
  *
  * @return {DriveApp.FolderIterator} a collection of all folders that are children of the current folder and have the given name
  */
-DriveApp.Folder.prototype.getFoldersByName = function(name){};
 
 /**
  * Gets the ID of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>.
  *
+ * @function DriveApp.Folder#getId
+ *
  * @return {String} the ID of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>
  */
-DriveApp.Folder.prototype.getId = function(){};
 
 /**
  * Gets the date the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> was last updated.
  *
+ * @function DriveApp.Folder#getLastUpdated
+ *
  * @return {Date} the date the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> was last updated
  */
-DriveApp.Folder.prototype.getLastUpdated = function(){};
 
 /**
  * Gets the name of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>.
  *
+ * @function DriveApp.Folder#getName
+ *
  * @return {String} the name of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>
  */
-DriveApp.Folder.prototype.getName = function(){};
 
 /**
  * Gets the owner of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>.
  *
+ * @function DriveApp.Folder#getOwner
+ *
  * @return {DriveApp.User} a <code>User</code> object representing the owner
  */
-DriveApp.Folder.prototype.getOwner = function(){};
 
 /**
  * Gets a collection of folders that are immediate parents of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>.
  *
+ * @function DriveApp.Folder#getParents
+ *
  * @return {DriveApp.FolderIterator} a collection of folders that are immediate parents of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>
  */
-DriveApp.Folder.prototype.getParents = function(){};
 
 /**
  * Gets which class of users can access the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>, besides any individual
  users who have been explicitly given access.
  *
+ * @function DriveApp.Folder#getSharingAccess
+ *
  * @return {DriveApp.Access} which class of users can access the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>
  */
-DriveApp.Folder.prototype.getSharingAccess = function(){};
 
 /**
  * Gets the permission granted to those users who can access the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>,
  besides any individual users who have been explicitly given access.
  *
+ * @function DriveApp.Folder#getSharingPermission
+ *
  * @return {DriveApp.Permission} the permissions granted to users who can access the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>
  */
-DriveApp.Folder.prototype.getSharingPermission = function(){};
 
 /**
  * Gets the number of bytes used to store the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> in Drive. Note that G
  Suite application files do not count toward Drive storage limits and thus return <code>0</code>
  bytes.
  *
+ * @function DriveApp.Folder#getSize
+ *
  * @return {number} the number of bytes used to store the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> in Drive
  */
-DriveApp.Folder.prototype.getSize = function(){};
 
 /**
  * Gets the URL that can be used to open the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> in a Google App like
  Drive or Docs.
  *
+ * @function DriveApp.Folder#getUrl
+ *
  * @return {String} the URL that can be used to view this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> in a Google App like
      Drive or Docs
  */
-DriveApp.Folder.prototype.getUrl = function(){};
 
 /**
  * Gets the list of viewers and commenters for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>. If the user who
  executes the script does not have edit access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>, this method
  returns an empty array.
  *
+ * @function DriveApp.Folder#getViewers
+ *
  * @return {DriveApp.User[]} an array of users with view or comment permission
  */
-DriveApp.Folder.prototype.getViewers = function(){};
 
 /**
  * Determines whether users with edit permissions to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> are allowed to
  share with other users or change the permissions.
  *
+ * @function DriveApp.Folder#isShareableByEditors
+ *
  * @return {Boolean} <code>true</code> if users with edit permissions are allowed to share with other users or
      change the permissions; <code>false</code> if not
  */
-DriveApp.Folder.prototype.isShareableByEditors = function(){};
 
 /**
  * Determines whether the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> has been starred in the user's Drive.
  *
+ * @function DriveApp.Folder#isStarred
+ *
  * @return {Boolean} <code>true</code> if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> is starred in the user's Drive; <code>false</code> if not
  */
-DriveApp.Folder.prototype.isStarred = function(){};
 
 /**
  * Determines whether the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> is in the trash of the user's Drive.
  *
+ * @function DriveApp.Folder#isTrashed
+ *
  * @return {Boolean} <code>true</code> if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> is in the trash of the user's Drive;
      <code>false</code> if not
  */
-DriveApp.Folder.prototype.isTrashed = function(){};
 
 /**
  * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>. This method does not
  block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> if they belong to a class of users who have
  general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> is shared with the user's entire domain.
+ *
+ * @function DriveApp.Folder#removeEditor
  *
  * @param {String} emailAddress - the email address of the user to remove
  *
  * @return {DriveApp.Folder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>, for chaining
  */
-DriveApp.Folder.prototype.removeEditor = function(emailAddress){};
 
 /**
  * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>. This method does not
  block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> if they belong to a class of users who have
  general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> is shared with the user's entire domain.
  *
+ * @function DriveApp.Folder#removeEditor
+ *
  * @param {User} user - a representation of the user to remove
  *
  * @return {DriveApp.Folder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>, for chaining
  */
-DriveApp.Folder.prototype.removeEditor = function(user){};
 
 /**
  * Removes the given file from the current folder. This method does not delete the file, but
  if a file is removed from all of its parents, it cannot be seen in Drive except by searching
  for it or using the "All items" view.
  *
+ * @function DriveApp.Folder#removeFile
+ *
  * @param {DriveApp.File} child - the child file to remove
  *
  * @return {DriveApp.Folder} this The previous parent of the child.
  */
-DriveApp.Folder.prototype.removeFile = function(child){};
 
 /**
  * Removes the given folder from the current folder. This method does not delete the folder
  or its contents, but if a folder is removed from all of its parents, it cannot be seen in Drive
  except by searching for it or using the "All items" view.
  *
+ * @function DriveApp.Folder#removeFolder
+ *
  * @param {DriveApp.Folder} child - the child folder to remove
  *
  * @return {DriveApp.Folder} this The previous parent of the child.
  */
-DriveApp.Folder.prototype.removeFolder = function(child){};
 
 /**
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>. This
@@ -1290,11 +1414,12 @@ DriveApp.Folder.prototype.removeFolder = function(child){};
  have general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> is shared with the user's entire
  domain.
  *
+ * @function DriveApp.Folder#removeViewer
+ *
  * @param {String} emailAddress - the email address of the user to remove
  *
  * @return {DriveApp.Folder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> for chaining
  */
-DriveApp.Folder.prototype.removeViewer = function(emailAddress){};
 
 /**
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>. This
@@ -1302,23 +1427,25 @@ DriveApp.Folder.prototype.removeViewer = function(emailAddress){};
  users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> if they belong to a class of users who have general
  access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> is shared with the user's entire domain.
  *
+ * @function DriveApp.Folder#removeViewer
+ *
  * @param {User} user - a representation of the user to remove
  *
  * @return {DriveApp.Folder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> for chaining
  */
-DriveApp.Folder.prototype.removeViewer = function(user){};
 
 /**
  * Revokes the access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> granted to the given user. This method does
  not block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> if they belong to a class of users
  who have general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> is shared with the user's
  entire domain.
+ *
+ * @function DriveApp.Folder#revokePermissions
  *
  * @param {String} user - the email address of the user whose access should be revoked
  *
  * @return {DriveApp.Folder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>, for chaining
  */
-DriveApp.Folder.prototype.revokePermissions = function(user){};
 
 /**
  * Revokes the access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> granted to the given user. This method does
@@ -1326,11 +1453,12 @@ DriveApp.Folder.prototype.revokePermissions = function(user){};
  who have general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> is shared with the user's
  entire domain.
  *
+ * @function DriveApp.Folder#revokePermissions
+ *
  * @param {User} user - a representation of the user whose access should be revoked
  *
  * @return {DriveApp.Folder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>, for chaining
  */
-DriveApp.Folder.prototype.revokePermissions = function(user){};
 
 /**
  * Gets a collection of all files that are children of the current folder and match the given search
@@ -1350,13 +1478,14 @@ DriveApp.Folder.prototype.revokePermissions = function(user){};
  }
  </pre>
  *
+ * @function DriveApp.Folder#searchFiles
+ *
  * @param {String} params - the search criteria, as detailed in the <a
      href="/drive/v2/web/search-parameters">Google Drive SDK documentation</a>
  *
  * @return {DriveApp.FileIterator} a collection of all files that are children of the current folder and match the search
      criteria
  */
-DriveApp.Folder.prototype.searchFiles = function(params){};
 
 /**
  * Gets a collection of all folders that are children of the current folder and match the given search
@@ -1374,63 +1503,69 @@ DriveApp.Folder.prototype.searchFiles = function(params){};
  }
  </pre>
  *
+ * @function DriveApp.Folder#searchFolders
+ *
  * @param {String} params - the search criteria, as detailed in the <a
      href="/drive/v2/web/search-parameters">Google Drive SDK documentation</a>
  *
  * @return {DriveApp.FolderIterator} a collection of all folders that are children of the current folder and match the search
      criteria
  */
-DriveApp.Folder.prototype.searchFolders = function(params){};
 
 /**
  * Sets the description for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>.
+ *
+ * @function DriveApp.Folder#setDescription
  *
  * @param {String} description - the new description for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>
  *
  * @return {DriveApp.Folder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>, for chaining
  */
-DriveApp.Folder.prototype.setDescription = function(description){};
 
 /**
  * Sets the name of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>.
+ *
+ * @function DriveApp.Folder#setName
  *
  * @param {String} name - the new name of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>
  *
  * @return {DriveApp.Folder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>, for chaining
  */
-DriveApp.Folder.prototype.setName = function(name){};
 
 /**
  * Changes the owner of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>. This method also gives the previous owner
  explicit edit access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>.
+ *
+ * @function DriveApp.Folder#setOwner
  *
  * @param {String} emailAddress - the email address of the user who should become the new owner
  *
  * @return {DriveApp.Folder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>, for chaining
  */
-DriveApp.Folder.prototype.setOwner = function(emailAddress){};
 
 /**
  * Changes the owner of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>. This method also gives the previous owner
  explicit edit access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>.
  *
+ * @function DriveApp.Folder#setOwner
+ *
  * @param {User} user - a representation of the user who should become the new owner
  *
  * @return {DriveApp.Folder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>, for chaining
  */
-DriveApp.Folder.prototype.setOwner = function(user){};
 
 /**
  * Sets whether users with edit permissions to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> are allowed to share
  with other users or change the permissions. The default for a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> is
  <code>true</code>.
  *
+ * @function DriveApp.Folder#setShareableByEditors
+ *
  * @param {Boolean} shareable - <code>true</code> if users with edit permissions should be allowed to share with
      other users or change the permissions; <code>false</code> if not
  *
  * @return {DriveApp.Folder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>, for chaining
  */
-DriveApp.Folder.prototype.setShareableByEditors = function(shareable){};
 
 /**
  * Sets which class of users can access the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> and what permissions
@@ -1443,65 +1578,73 @@ DriveApp.Folder.prototype.setShareableByEditors = function(shareable){};
  folder.setSharing(DriveApp.Access.ANYONE, DriveApp.Permission.EDIT);
  </pre>
  *
+ * @function DriveApp.Folder#setSharing
+ *
  * @param {DriveApp.Access} accessType - which class of users should be able to access the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>
  * @param {DriveApp.Permission} permissionType - the permissions that should be granted to users who can access the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>
  *
  * @return {DriveApp.Folder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>, for chaining
  */
-DriveApp.Folder.prototype.setSharing = function(accessType, permissionType){};
 
 /**
  * Sets whether the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> is starred in the user's Drive. The default for
  new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>s is <code>false</code>.
+ *
+ * @function DriveApp.Folder#setStarred
  *
  * @param {Boolean} starred - <code>true</code> if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> should be starred in the user's
      Drive; <code>false</code> if not
  *
  * @return {DriveApp.Folder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>, for chaining
  */
-DriveApp.Folder.prototype.setStarred = function(starred){};
 
 /**
  * Sets whether the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> is in the trash of the user's Drive. Only the
  owner may trash the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>. The default for new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>s is <code>false</code>.
+ *
+ * @function DriveApp.Folder#setTrashed
  *
  * @param {Boolean} trashed - <code>true</code> if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> should be moved to the trash of
      the user's Drive; <code>false</code> if not
  *
  * @return {DriveApp.Folder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>, for chaining
  */
-DriveApp.Folder.prototype.setTrashed = function(trashed){};
 
-/** @constructor */
-DriveApp.FolderIterator = function(){};
+/**
+ * @class DriveApp.FolderIterator
+ */
 
 /**
  * Gets a token that can be used to resume this iteration at a later time. This method is useful
  if processing an iterator in one execution would exceed the maximum execution time.
  Continuation tokens are generally valid for one week.
  *
+ * @function DriveApp.FolderIterator#getContinuationToken
+ *
  * @return {String} a continuation token that can be used to resume this iteration with the items that
      remained in the iterator when the token was generated
  */
-DriveApp.FolderIterator.prototype.getContinuationToken = function(){};
 
 /**
  * Determines whether calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder-iterator.html#next()'>next()</a></code> will return an item.
  *
+ * @function DriveApp.FolderIterator#hasNext
+ *
  * @return {Boolean} <code>true</code> if <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder-iterator.html#next()'>next()</a></code> will return an item; <code>false</code> if not
  */
-DriveApp.FolderIterator.prototype.hasNext = function(){};
 
 /**
  * Gets the next item in the collection of files or folders. Throws an exception if no items
  remain.
  *
+ * @function DriveApp.FolderIterator#next
+ *
  * @return {DriveApp.Folder} the next item in the collection
  */
-DriveApp.FolderIterator.prototype.next = function(){};
 
-/** @constructor */
-DriveApp.User = function(){};
+/**
+ * @class DriveApp.User
+ */
 
 /**
  * Gets the domain name associated with the user's account.
@@ -1515,9 +1658,10 @@ DriveApp.User = function(){};
  }
  </code></pre>
  *
+ * @function DriveApp.User#getDomain
+ *
  * @return {String} the domain name associated with the user's account
  */
-DriveApp.User.prototype.getDomain = function(){};
 
 /**
  * Gets the user's email address. The user's email address is only available if the user has
@@ -1534,9 +1678,10 @@ DriveApp.User.prototype.getDomain = function(){};
  }
  </code></pre>
  *
+ * @function DriveApp.User#getEmail
+ *
  * @return {String} the user's email's address, or a blank string if the email address is not available
  */
-DriveApp.User.prototype.getEmail = function(){};
 
 /**
  * Gets the user's name. This method returns <code>null</code> if the user's name is not available.
@@ -1550,9 +1695,10 @@ DriveApp.User.prototype.getEmail = function(){};
  }
  </code></pre>
  *
+ * @function DriveApp.User#getName
+ *
  * @return {String} the user's name, or <code>null</code> if the name is not available
  */
-DriveApp.User.prototype.getName = function(){};
 
 /**
  * Gets the URL for the user's photo. This method returns <code>null</code> if the user's photo is not
@@ -1567,9 +1713,10 @@ DriveApp.User.prototype.getName = function(){};
  }
  </code></pre>
  *
+ * @function DriveApp.User#getPhotoUrl
+ *
  * @return {String} the URL for the user's photo, or <code>null</code> if the photo is not available
  */
-DriveApp.User.prototype.getPhotoUrl = function(){};
 
 /**
  * Gets the user's email address.
@@ -1579,7 +1726,8 @@ DriveApp.User.prototype.getPhotoUrl = function(){};
  Logger.log(Session.getActiveUser().getUserLoginId());
  </pre>
  *
+ * @function DriveApp.User#getUserLoginId
+ *
  * @return {String} the user's email's address
  */
-DriveApp.User.prototype.getUserLoginId = function(){};
 

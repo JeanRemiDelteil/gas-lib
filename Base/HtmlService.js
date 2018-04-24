@@ -1,10 +1,12 @@
-var HtmlService = {};
+/**********************************************
+ * @namespace HtmlService
+ ***********************************************/
 
 
 /**
  * An enum representing the sandbox modes that can be used for client-side <code>HtmlService</code>
  scripts.
- * 
+ *
  * @class HtmlService.SandboxMode
  */
 
@@ -39,7 +41,7 @@ var HtmlService = {};
 
 /**
  * An enum representing the <code>X-Frame-Options</code> modes that can be used for client-side <code>HtmlService</code> scripts.
- * 
+ *
  * @class HtmlService.XFrameOptionsMode
  */
 
@@ -65,9 +67,10 @@ var HtmlService = {};
  var output = HtmlService.createHtmlOutput();
  </code></pre>
  *
+ * @function HtmlService.createHtmlOutput
+ *
  * @return {HtmlService.HtmlOutput} the new HtmlOutput object
  */
-HtmlService.createHtmlOutput = function(){};
 
 /**
  * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-output.html'>HtmlOutput</a></code> object from a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/../base/blob-source.html'>BlobSource</a></code> resource.
@@ -79,11 +82,12 @@ HtmlService.createHtmlOutput = function(){};
  }
  </code></pre>
  *
+ * @function HtmlService.createHtmlOutput
+ *
  * @param {BlobSource} blob - the object to get HTML out of
  *
  * @return {HtmlService.HtmlOutput} the new <code>HtmlOutput</code> object
  */
-HtmlService.createHtmlOutput = function(blob){};
 
 /**
  * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-output.html'>HtmlOutput</a></code> object that can be returned from the script.
@@ -92,11 +96,12 @@ HtmlService.createHtmlOutput = function(blob){};
  var output = HtmlService.createHtmlOutput(&#39;&lt;b&gt;Hello world!&lt;/b&gt;&#39;);
  </code></pre>
  *
+ * @function HtmlService.createHtmlOutput
+ *
  * @param {String} html - the content to serve
  *
  * @return {HtmlService.HtmlOutput} the new HtmlOutput object
  */
-HtmlService.createHtmlOutput = function(html){};
 
 /**
  * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-output.html'>HtmlOutput</a></code> object from a file in the code editor.
@@ -105,11 +110,12 @@ HtmlService.createHtmlOutput = function(html){};
  var output = HtmlService.createHtmlOutputFromFile(&#39;myPage&#39;);
  </code></pre>
  *
+ * @function HtmlService.createHtmlOutputFromFile
+ *
  * @param {String} filename - the name of the file to use
  *
  * @return {HtmlService.HtmlOutput} the new <code>HtmlOutput</code> object
  */
-HtmlService.createHtmlOutputFromFile = function(filename){};
 
 /**
  * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-template.html'>HtmlTemplate</a></code> object from a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/../base/blob-source.html'>BlobSource</a></code> resource.
@@ -121,11 +127,12 @@ HtmlService.createHtmlOutputFromFile = function(filename){};
  }
  </code></pre>
  *
+ * @function HtmlService.createTemplate
+ *
  * @param {BlobSource} blob - the object to get HTML out of
  *
  * @return {HtmlService.HtmlTemplate} the new <code>HtmlTemplate</code> object
  */
-HtmlService.createTemplate = function(blob){};
 
 /**
  * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-template.html'>HtmlTemplate</a></code> object that can be returned from the script.
@@ -134,11 +141,12 @@ HtmlService.createTemplate = function(blob){};
  var template = HtmlService.createTemplate(&#39;&lt;b&gt;The time is &amp;lt;?= new Date() ?&amp;gt;&lt;/b&gt;&#39;);
  </code></pre>
  *
+ * @function HtmlService.createTemplate
+ *
  * @param {String} html - the content of the template
  *
  * @return {HtmlService.HtmlTemplate} the new <code>HtmlTemplate</code> object
  */
-HtmlService.createTemplate = function(html){};
 
 /**
  * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-template.html'>HtmlTemplate</a></code> object from a file in the code editor.
@@ -147,21 +155,24 @@ HtmlService.createTemplate = function(html){};
  var template = HtmlService.createTemplateFromFile(&#39;myTemplate&#39;);
  </code></pre>
  *
+ * @function HtmlService.createTemplateFromFile
+ *
  * @param {String} filename - the name of the file to use
  *
  * @return {HtmlService.HtmlTemplate} the new <code>HtmlTemplate</code> object
  */
-HtmlService.createTemplateFromFile = function(filename){};
 
 /**
  * Gets the user-agent string for the current browser.
  *
+ * @function HtmlService.getUserAgent
+ *
  * @return {String} the user-agent string
  */
-HtmlService.getUserAgent = function(){};
 
-/** @constructor */
-HtmlService.HtmlOutput = function(){};
+/**
+ * @class HtmlService.HtmlOutput
+ */
 
 /**
  * Adds a meta tag to the page. Meta tags included directly in an Apps Script HTML file are
@@ -179,12 +190,13 @@ HtmlService.HtmlOutput = function(){};
  output.addMetaTag(&#39;viewport&#39;, &#39;width=device-width, initial-scale=1&#39;);
  </code></pre>
  *
+ * @function HtmlService.HtmlOutput#addMetaTag
+ *
  * @param {String} name - the value of the meta tag's name attribute
  * @param {String} content - the value of the meta tag's content attribute
  *
  * @return {HtmlService.HtmlOutput} this <code>HtmlOutput</code> itself, useful for chaining
  */
-HtmlService.HtmlOutput.prototype.addMetaTag = function(name, content){};
 
 /**
  * Appends new content to the content of this <code>HtmlOutput</code>. Use this only for content from a
@@ -197,11 +209,12 @@ HtmlService.HtmlOutput.prototype.addMetaTag = function(name, content){};
  Logger.log(output.getContent());
  </code></pre>
  *
+ * @function HtmlService.HtmlOutput#append
+ *
  * @param {String} addedContent - the content to append
  *
  * @return {HtmlService.HtmlOutput} this <code>HtmlOutput</code> itself, useful for chaining
  */
-HtmlService.HtmlOutput.prototype.append = function(addedContent){};
 
 /**
  * Appends new content to the content of this <code>HtmlOutput</code>, using contextual escaping.
@@ -218,11 +231,12 @@ HtmlService.HtmlOutput.prototype.append = function(addedContent){};
  Logger.log(output.getContent());
  </code></pre>
  *
+ * @function HtmlService.HtmlOutput#appendUntrusted
+ *
  * @param {String} addedContent - the content to append
  *
  * @return {HtmlService.HtmlOutput} this <code>HtmlOutput</code> itself, useful for chaining
  */
-HtmlService.HtmlOutput.prototype.appendUntrusted = function(addedContent){};
 
 /**
  * Returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-template.html'>HtmlTemplate</a></code> backed by this <code>HtmlOutput</code>. This method can be used to
@@ -234,9 +248,10 @@ HtmlService.HtmlOutput.prototype.appendUntrusted = function(addedContent){};
  var template = output.asTemplate();
  </code></pre>
  *
+ * @function HtmlService.HtmlOutput#asTemplate
+ *
  * @return {HtmlService.HtmlTemplate} the new <code>HtmlTemplate</code>
  */
-HtmlService.HtmlOutput.prototype.asTemplate = function(){};
 
 /**
  * Clears the current content.
@@ -246,16 +261,19 @@ HtmlService.HtmlOutput.prototype.asTemplate = function(){};
  output.clear();
  </code></pre>
  *
+ * @function HtmlService.HtmlOutput#clear
+ *
  * @return {HtmlService.HtmlOutput} the <code>HtmlOutput</code> itself, useful for chaining
  */
-HtmlService.HtmlOutput.prototype.clear = function(){};
 
 /**
  * Return the data inside this object as a blob converted to the specified content type. This
- method adds the appropriate extension to the filename — for example, "myfile.pdf". However, it
+ method adds the appropriate extension to the filename—for example, "myfile.pdf". However, it
  assumes that the part of the filename that follows the last period (if any) is an existing
- extension that should be replaced. Consequently, "ChristmasList.12.25.2014" will become
+ extension that should be replaced. Consequently, "ChristmasList.12.25.2014" becomes
  "ChristmasList.12.25.pdf".
+ *
+ * @function HtmlService.HtmlOutput#getAs
  *
  * @param {String} contentType - the MIME type to convert to. For most blobs, <code>&#39;application/pdf&#39;</code> is
      the only valid option. For images in BMP, GIF, JPEG, or PNG format, any of <code>&#39;image/bmp&#39;</code>, <code>&#39;image/gif&#39;</code>, <code>&#39;image/jpeg&#39;</code>, or <code>&#39;image/png&#39;</code> are also
@@ -263,14 +281,14 @@ HtmlService.HtmlOutput.prototype.clear = function(){};
  *
  * @return {Blob} the data as a blob
  */
-HtmlService.HtmlOutput.prototype.getAs = function(contentType){};
 
 /**
  * Return the data inside this object as a blob.
  *
+ * @function HtmlService.HtmlOutput#getBlob
+ *
  * @return {Blob} the data as a blob
  */
-HtmlService.HtmlOutput.prototype.getBlob = function(){};
 
 /**
  * Gets the content of this <code>HtmlOutput</code>.
@@ -281,9 +299,10 @@ HtmlService.HtmlOutput.prototype.getBlob = function(){};
  Logger.log(output.getContent());
  </code></pre>
  *
+ * @function HtmlService.HtmlOutput#getContent
+ *
  * @return {String} the content that will be served
  */
-HtmlService.HtmlOutput.prototype.getContent = function(){};
 
 /**
  * Gets the URL for a favicon link tag added to the page by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-output.html#setFaviconUrl(String)'>setFaviconUrl(iconUrl)</a></code>. Favicon link tags included directly in an Apps Script HTML file are
@@ -295,9 +314,10 @@ HtmlService.HtmlOutput.prototype.getContent = function(){};
  Logger.log(output.getFaviconUrl();
  </code></pre>
  *
+ * @function HtmlService.HtmlOutput#getFaviconUrl
+ *
  * @return {String} the URL of the favicon image
  */
-HtmlService.HtmlOutput.prototype.getFaviconUrl = function(){};
 
 /**
  * Gets the initial height of the <a
@@ -313,9 +333,10 @@ HtmlService.HtmlOutput.prototype.getFaviconUrl = function(){};
  Logger.log(output.getHeight());
  </code></pre>
  *
+ * @function HtmlService.HtmlOutput#getHeight
+ *
  * @return {number} the height, in pixels
  */
-HtmlService.HtmlOutput.prototype.getHeight = function(){};
 
 /**
  * Gets an array of objects that represent meta tags added to the page by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-output.html#addMetaTag(String,String)'>addMetaTag(name, content)</a></code>. Meta tags included directly in an Apps Script HTML file are
@@ -329,9 +350,10 @@ HtmlService.HtmlOutput.prototype.getHeight = function(){};
  Logger.log(&#39;&lt;meta name=&quot;%s&quot; content=&quot;%s&quot;/&gt;&#39;, tags[0].getName(), tags[0].getContent());
  </code></pre>
  *
+ * @function HtmlService.HtmlOutput#getMetaTags
+ *
  * @return {HtmlService.HtmlOutputMetaTag[]} an array of objects that represent meta tags added to the page by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-output.html#addMetaTag(String,String)'>addMetaTag(name, content)</a></code>
  */
-HtmlService.HtmlOutput.prototype.getMetaTags = function(){};
 
 /**
  * Gets the title of the output page. Note that the &lt;title&gt; HTML element is ignored.
@@ -341,9 +363,10 @@ HtmlService.HtmlOutput.prototype.getMetaTags = function(){};
  Logger.log(output.getTitle());
  </code></pre>
  *
+ * @function HtmlService.HtmlOutput#getTitle
+ *
  * @return {String} the title of the page
  */
-HtmlService.HtmlOutput.prototype.getTitle = function(){};
 
 /**
  * Gets the initial width of the <a
@@ -359,9 +382,10 @@ HtmlService.HtmlOutput.prototype.getTitle = function(){};
  Logger.log(output.getWidth());
  </code></pre>
  *
+ * @function HtmlService.HtmlOutput#getWidth
+ *
  * @return {number} the width in pixels
  */
-HtmlService.HtmlOutput.prototype.getWidth = function(){};
 
 /**
  * Sets the content of this <code>HtmlOutput</code>.
@@ -371,11 +395,12 @@ HtmlService.HtmlOutput.prototype.getWidth = function(){};
  output.setContent(&#39;&lt;b&gt;Hello, world!&lt;/b&gt;&#39;);
  </code></pre>
  *
+ * @function HtmlService.HtmlOutput#setContent
+ *
  * @param {String} content - the content to serve
  *
  * @return {HtmlService.HtmlOutput} this <code>HtmlOutput</code> itself, useful for chaining
  */
-HtmlService.HtmlOutput.prototype.setContent = function(content){};
 
 /**
  * Adds a link tag for a favicon to the page. Favicon link tags included directly in an Apps
@@ -386,11 +411,12 @@ HtmlService.HtmlOutput.prototype.setContent = function(content){};
  output.setFaviconUrl(&#39;http://www.example.com/image.png&#39;);
  </code></pre>
  *
+ * @function HtmlService.HtmlOutput#setFaviconUrl
+ *
  * @param {String} iconUrl - the URL of the favicon image, with the image extension indicating the image type
  *
  * @return {HtmlService.HtmlOutput} this <code>HtmlOutput</code> itself, useful for chaining
  */
-HtmlService.HtmlOutput.prototype.setFaviconUrl = function(iconUrl){};
 
 /**
  * Sets the initial height of the <a
@@ -405,11 +431,12 @@ HtmlService.HtmlOutput.prototype.setFaviconUrl = function(iconUrl){};
  output.setHeight(200);
  </code></pre>
  *
+ * @function HtmlService.HtmlOutput#setHeight
+ *
  * @param {number} height - the new height in pixels; <code>null</code> results in a default value
  *
  * @return {HtmlService.HtmlOutput} this <code>HtmlOutput</code> itself, useful for chaining
  */
-HtmlService.HtmlOutput.prototype.setHeight = function(height){};
 
 /**
  * This method now has no effect &mdash; previously it set the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/sandbox-mode.html'>sandbox
@@ -433,11 +460,12 @@ HtmlService.HtmlOutput.prototype.setHeight = function(height){};
  &lt;/script&gt;
  </code></pre>
  *
+ * @function HtmlService.HtmlOutput#setSandboxMode
+ *
  * @param {HtmlService.SandboxMode} mode - the sandbox mode to use
  *
  * @return {HtmlService.HtmlOutput} this <code>HtmlOutput</code> itself, useful for chaining
  */
-HtmlService.HtmlOutput.prototype.setSandboxMode = function(mode){};
 
 /**
  * Sets the title of the output page. For web apps, this will be the title of the entire page,
@@ -448,11 +476,12 @@ HtmlService.HtmlOutput.prototype.setSandboxMode = function(mode){};
  output.setTitle(&#39;My First Page&#39;);
  </code></pre>
  *
+ * @function HtmlService.HtmlOutput#setTitle
+ *
  * @param {String} title - the new title
  *
  * @return {HtmlService.HtmlOutput} this <code>HtmlOutput</code> itself, useful for chaining
  */
-HtmlService.HtmlOutput.prototype.setTitle = function(title){};
 
 /**
  * Sets the initial width of a <a
@@ -467,11 +496,12 @@ HtmlService.HtmlOutput.prototype.setTitle = function(title){};
  output.setWidth(200);
  </code></pre>
  *
+ * @function HtmlService.HtmlOutput#setWidth
+ *
  * @param {number} width - the new width in pixels; <code>null</code> results in a default value
  *
  * @return {HtmlService.HtmlOutput} this <code>HtmlOutput</code> itself, useful for chaining
  */
-HtmlService.HtmlOutput.prototype.setWidth = function(width){};
 
 /**
  * Sets the state of the page's <code>X-Frame-Options</code> header, which controls clickjacking
@@ -488,31 +518,36 @@ HtmlService.HtmlOutput.prototype.setWidth = function(width){};
  output.setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL);
  </code></pre>
  *
+ * @function HtmlService.HtmlOutput#setXFrameOptionsMode
+ *
  * @param {HtmlService.XFrameOptionsMode} mode - 
  *
  * @return {HtmlService.HtmlOutput} this <code>HtmlOutput</code> itself, useful for chaining
  */
-HtmlService.HtmlOutput.prototype.setXFrameOptionsMode = function(mode){};
 
-/** @constructor */
-HtmlService.HtmlOutputMetaTag = function(){};
+/**
+ * @class HtmlService.HtmlOutputMetaTag
+ */
 
 /**
  * Gets the content of this meta tag.
  *
+ * @function HtmlService.HtmlOutputMetaTag#getContent
+ *
  * @return {String} the content of this meta tag.
  */
-HtmlService.HtmlOutputMetaTag.prototype.getContent = function(){};
 
 /**
  * Gets the name of this <code>HtmlOutputMetaTag</code>.
  *
+ * @function HtmlService.HtmlOutputMetaTag#getName
+ *
  * @return {String} the name of this meta tag.
  */
-HtmlService.HtmlOutputMetaTag.prototype.getName = function(){};
 
-/** @constructor */
-HtmlService.HtmlTemplate = function(){};
+/**
+ * @class HtmlService.HtmlTemplate
+ */
 
 /**
  * Evaluates this template and returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-output.html'>HtmlOutput</a></code> object. Any properties set on this
@@ -526,9 +561,10 @@ HtmlService.HtmlTemplate = function(){};
  Logger.log(template.evaluate().getContent());  // will log &#39;Hello World!&#39;
  </code></pre>
  *
+ * @function HtmlService.HtmlTemplate#evaluate
+ *
  * @return {HtmlService.HtmlOutput} an HtmlOutput object
  */
-HtmlService.HtmlTemplate.prototype.evaluate = function(){};
 
 /**
  * Generates a string of JavaScript code, based on the template file, that can be evaluated. This
@@ -546,9 +582,10 @@ HtmlService.HtmlTemplate.prototype.evaluate = function(){};
  Logger.log(template.getCode());
  </code></pre>
  *
+ * @function HtmlService.HtmlTemplate#getCode
+ *
  * @return {String} a string based on the template, which can be evaluated
  */
-HtmlService.HtmlTemplate.prototype.getCode = function(){};
 
 /**
  * Generates a string of JavaScript code that can be evaluated, with each line of the code
@@ -566,9 +603,10 @@ HtmlService.HtmlTemplate.prototype.getCode = function(){};
  Logger.log(template.getCodeWithComments());
  </code></pre>
  *
+ * @function HtmlService.HtmlTemplate#getCodeWithComments
+ *
  * @return {String} an string based on the template, which can be evaluated
  */
-HtmlService.HtmlTemplate.prototype.getCodeWithComments = function(){};
 
 /**
  * Returns the unprocessed content of this template.
@@ -578,7 +616,8 @@ HtmlService.HtmlTemplate.prototype.getCodeWithComments = function(){};
  Logger.log(template.getRawContent());
  </code></pre>
  *
+ * @function HtmlService.HtmlTemplate#getRawContent
+ *
  * @return {String} the template's raw content
  */
-HtmlService.HtmlTemplate.prototype.getRawContent = function(){};
 

@@ -1,165 +1,149 @@
-var Math = {};
+/**********************************************
+ * @namespace Math
+ ***********************************************/
 
 
 /**
- * undefined
+ * @function Math.abs
  *
  * @param {Number} x - undefined
  *
  * @return {Number}
  */
-Math.abs = function(x){};
 
 /**
- * undefined
+ * @function Math.acos
  *
  * @param {Number} x - undefined
  *
  * @return {Number}
  */
-Math.acos = function(x){};
 
 /**
- * undefined
+ * @function Math.asin
  *
  * @param {Number} x - undefined
  *
  * @return {Number}
  */
-Math.asin = function(x){};
 
 /**
- * undefined
+ * @function Math.atan
  *
  * @param {Number} x - undefined
  *
  * @return {Number}
  */
-Math.atan = function(x){};
 
 /**
- * undefined
+ * @function Math.atan2
  *
  * @param {Number} y - undefined
  * @param {Number} x - undefined
  *
  * @return {Number}
  */
-Math.atan2 = function(y, x){};
 
 /**
- * undefined
+ * @function Math.ceil
  *
  * @param {Number} x - undefined
  *
  * @return {number}
  */
-Math.ceil = function(x){};
 
 /**
- * undefined
+ * @function Math.cos
  *
  * @param {Number} x - undefined
  *
  * @return {Number}
  */
-Math.cos = function(x){};
 
 /**
- * undefined
+ * @function Math.exp
  *
  * @param {Number} x - undefined
  *
  * @return {Number}
  */
-Math.exp = function(x){};
 
 /**
- * undefined
+ * @function Math.floor
  *
  * @param {Number} x - undefined
  *
  * @return {number}
  */
-Math.floor = function(x){};
 
 /**
- * undefined
+ * @function Math.log
  *
  * @param {Number} x - undefined
  *
  * @return {Number}
  */
-Math.log = function(x){};
 
 /**
- * undefined
+ * @function Math.max
  *
  * @param {Number...} values - undefined
  *
  * @return {Number}
  */
-Math.max = function(values){};
 
 /**
- * undefined
+ * @function Math.min
  *
  * @param {Number...} values - undefined
  *
  * @return {Number}
  */
-Math.min = function(values){};
 
 /**
- * undefined
+ * @function Math.pow
  *
  * @param {Number} x - undefined
  * @param {Number} y - undefined
  *
  * @return {Number}
  */
-Math.pow = function(x, y){};
 
 /**
- * undefined
+ * @function Math.random
  *
  * @return {Number}
  */
-Math.random = function(){};
 
 /**
- * undefined
+ * @function Math.round
  *
  * @param {Number} x - undefined
  *
  * @return {number}
  */
-Math.round = function(x){};
 
 /**
- * undefined
+ * @function Math.sin
  *
  * @param {Number} x - undefined
  *
  * @return {Number}
  */
-Math.sin = function(x){};
 
 /**
- * undefined
+ * @function Math.sqrt
  *
  * @param {Number} x - undefined
  *
  * @return {Number}
  */
-Math.sqrt = function(x){};
 
 /**
- * undefined
+ * @function Math.tan
  *
  * @param {Number} x - undefined
  *
  * @return {Number}
  */
-Math.tan = function(x){};
 

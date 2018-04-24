@@ -1,9 +1,9 @@
-var SitesApp = {};
+/**********************************************
+ * @namespace SitesApp
+ ***********************************************/
 
 
 /**
- * 
- * 
  * @class SitesApp.AttachmentType
  */
 
@@ -20,8 +20,6 @@ var SitesApp = {};
  */
 
 /**
- * 
- * 
  * @class SitesApp.PageType
  */
 
@@ -78,6 +76,8 @@ var SitesApp = {};
                                   site);
  </code></pre>
  *
+ * @function SitesApp.copySite
+ *
  * @param {String} domain - The G Suite hosted domain (e.g. example.com)
  * @param {String} name - The webspace name found in the URL (e.g. mySite)
  * @param {String} title - The title of the site
@@ -89,7 +89,6 @@ var SitesApp = {};
  * @return {SitesApp.Site} The site that was copied. Note that the copy is asynchronous, and the copy operation
      may still be ongoing even though a reference to the site has been returned.
  */
-SitesApp.copySite = function(domain, name, title, summary, site){};
 
 /**
  * Creates a new Site.
@@ -103,6 +102,8 @@ SitesApp.copySite = function(domain, name, title, summary, site){};
                                 &quot;This is a new site I created!&quot;);
  </code></pre>
  *
+ * @function SitesApp.createSite
+ *
  * @param {String} domain - The G Suite hosted domain (e.g. example.com)
  * @param {String} name - the path name found in the URL (e.g. mySite)
  * @param {String} title - The title of the site
@@ -110,7 +111,6 @@ SitesApp.copySite = function(domain, name, title, summary, site){};
  *
  * @return {SitesApp.Site} The created site
  */
-SitesApp.createSite = function(domain, name, title, summary){};
 
 /**
  * Returns the active page, if the script is hosted in a container, or null otherwise.
@@ -119,9 +119,10 @@ SitesApp.createSite = function(domain, name, title, summary){};
  var site = SitesApp.getActivePage();
  </code></pre>
  *
+ * @function SitesApp.getActivePage
+ *
  * @return {SitesApp.Page} the active container if it is a sites page
  */
-SitesApp.getActivePage = function(){};
 
 /**
  * Returns the active container, if the script is hosted in a container, or null otherwise.
@@ -130,9 +131,10 @@ SitesApp.getActivePage = function(){};
  var site = SitesApp.getActiveSite();
  </code></pre>
  *
+ * @function SitesApp.getActiveSite
+ *
  * @return {SitesApp.Site} the active container if it is a site
  */
-SitesApp.getActiveSite = function(){};
 
 /**
  * Retrieves first page of Sites belonging to this domain.
@@ -146,11 +148,12 @@ SitesApp.getActiveSite = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.getAllSites
+ *
  * @param {String} domain - The G Suite hosted domain (e.g. example.com)
  *
  * @return {SitesApp.Site[]} an array of sites belonging to the domain
  */
-SitesApp.getAllSites = function(domain){};
 
 /**
  * Retrieves all Sites belonging to this domain.
@@ -164,13 +167,14 @@ SitesApp.getAllSites = function(domain){};
  }
  </code></pre>
  *
+ * @function SitesApp.getAllSites
+ *
  * @param {String} domain - The G Suite hosted domain (e.g. example.com)
  * @param {number} start - the index of the first site to return
  * @param {number} max - the maximum number of results to return
  *
  * @return {SitesApp.Site[]} an array of sites belonging to the domain
  */
-SitesApp.getAllSites = function(domain, start, max){};
 
 /**
  * Retrieves a Page by url.
@@ -184,11 +188,12 @@ SitesApp.getAllSites = function(domain, start, max){};
  Logger.log(page.getName());
  </code></pre>
  *
+ * @function SitesApp.getPageByUrl
+ *
  * @param {String} url - the public url
  *
  * @return {SitesApp.Page} a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code> instance corresponding to the page at the URL
  */
-SitesApp.getPageByUrl = function(url){};
 
 /**
  * Retrieves a Site for the given Google Site, if the user is a consumer who does not have a
@@ -199,11 +204,12 @@ SitesApp.getPageByUrl = function(url){};
  var site = SitesApp.getSite(&#39;mysite&#39;);
  </code></pre>
  *
+ * @function SitesApp.getSite
+ *
  * @param {String} name - The webspace name found in the URL (e.g. mySite)
  *
  * @return {SitesApp.Site} A Site instance corresponding to a consumer site
  */
-SitesApp.getSite = function(name){};
 
 /**
  * Retrieves a Site for the given Google Site.
@@ -213,12 +219,13 @@ SitesApp.getSite = function(name){};
  var site = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;);
  </code></pre>
  *
+ * @function SitesApp.getSite
+ *
  * @param {String} domain - The G Suite hosted domain (e.g. example.com)
  * @param {String} name - The webspace name found in the URL (e.g. mySite)
  *
  * @return {SitesApp.Site} A Site instance corresponding to a hosted domain
  */
-SitesApp.getSite = function(domain, name){};
 
 /**
  * Retrieves a Site by url.
@@ -231,11 +238,12 @@ SitesApp.getSite = function(domain, name){};
  Logger.log(site.getName());
  </code></pre>
  *
+ * @function SitesApp.getSiteByUrl
+ *
  * @param {String} url - the public url
  *
  * @return {SitesApp.Site} a Site found at the given URL
  */
-SitesApp.getSiteByUrl = function(url){};
 
 /**
  * Retrieves first page of Sites for a user, if the user is a consumer who does not have a hosted
@@ -250,9 +258,10 @@ SitesApp.getSiteByUrl = function(url){};
  }
  </code></pre>
  *
+ * @function SitesApp.getSites
+ *
  * @return {SitesApp.Site[]} An array of sites beloning to the user running the script
  */
-SitesApp.getSites = function(){};
 
 /**
  * Retrieves Sites for a user between the given bounds if the user is a consumer who does not have
@@ -265,12 +274,13 @@ SitesApp.getSites = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.getSites
+ *
  * @param {number} start - the index of the first site to return
  * @param {number} max - the maximum number of results to return
  *
  * @return {SitesApp.Site[]} an array of all the sites owned for a user
  */
-SitesApp.getSites = function(start, max){};
 
 /**
  * Retrieves first page of Sites belonging to this user in this domain.
@@ -284,11 +294,12 @@ SitesApp.getSites = function(start, max){};
  }
  </code></pre>
  *
+ * @function SitesApp.getSites
+ *
  * @param {String} domain - The G Suite hosted domain (e.g. example.com)
  *
  * @return {SitesApp.Site[]} An array of sites beloning to the user running the script
  */
-SitesApp.getSites = function(domain){};
 
 /**
  * Retrieves all Sites belonging to this user in this domain for the given range given.
@@ -302,16 +313,18 @@ SitesApp.getSites = function(domain){};
  }
  </code></pre>
  *
+ * @function SitesApp.getSites
+ *
  * @param {String} domain - The G Suite hosted domain (e.g. example.com)
  * @param {number} start - the index of the first site to return
  * @param {number} max - the maximum number of results to return
  *
  * @return {SitesApp.Site[]} an array of sites belonging to the user
  */
-SitesApp.getSites = function(domain, start, max){};
 
-/** @constructor */
-SitesApp.Attachment = function(){};
+/**
+ * @class SitesApp.Attachment
+ */
 
 /**
  * Deletes this attachment.
@@ -322,16 +335,19 @@ SitesApp.Attachment = function(){};
  attachments[0].deleteAttachment();
  </code></pre>
  *
+ * @function SitesApp.Attachment#deleteAttachment
+ *
  * @return void
  */
-SitesApp.Attachment.prototype.deleteAttachment = function(){};
 
 /**
  * Return the data inside this object as a blob converted to the specified content type. This
- method adds the appropriate extension to the filename — for example, "myfile.pdf". However, it
+ method adds the appropriate extension to the filename—for example, "myfile.pdf". However, it
  assumes that the part of the filename that follows the last period (if any) is an existing
- extension that should be replaced. Consequently, "ChristmasList.12.25.2014" will become
+ extension that should be replaced. Consequently, "ChristmasList.12.25.2014" becomes
  "ChristmasList.12.25.pdf".
+ *
+ * @function SitesApp.Attachment#getAs
  *
  * @param {String} contentType - the MIME type to convert to. For most blobs, <code>&#39;application/pdf&#39;</code> is
      the only valid option. For images in BMP, GIF, JPEG, or PNG format, any of <code>&#39;image/bmp&#39;</code>, <code>&#39;image/gif&#39;</code>, <code>&#39;image/jpeg&#39;</code>, or <code>&#39;image/png&#39;</code> are also
@@ -339,7 +355,6 @@ SitesApp.Attachment.prototype.deleteAttachment = function(){};
  *
  * @return {Blob} the data as a blob
  */
-SitesApp.Attachment.prototype.getAs = function(contentType){};
 
 /**
  * Return the type of this attachment (HOSTED or WEB).
@@ -365,16 +380,18 @@ SitesApp.Attachment.prototype.getAs = function(contentType){};
  }
  </code></pre>
  *
+ * @function SitesApp.Attachment#getAttachmentType
+ *
  * @return {SitesApp.AttachmentType} the attachment type
  */
-SitesApp.Attachment.prototype.getAttachmentType = function(){};
 
 /**
  * Return the data inside this object as a blob.
  *
+ * @function SitesApp.Attachment#getBlob
+ *
  * @return {Blob} the data as a blob
  */
-SitesApp.Attachment.prototype.getBlob = function(){};
 
 /**
  * Return the mime type of this attachment. Fails for web attachments.
@@ -385,9 +402,10 @@ SitesApp.Attachment.prototype.getBlob = function(){};
  var contentType = attachments[0].getContentType();
  </code></pre>
  *
+ * @function SitesApp.Attachment#getContentType
+ *
  * @return {String} the attachment mime type
  */
-SitesApp.Attachment.prototype.getContentType = function(){};
 
 /**
  * Return the date this attachment was first published.
@@ -398,9 +416,10 @@ SitesApp.Attachment.prototype.getContentType = function(){};
  var date = attachments[0].getDatePublished();
  </code></pre>
  *
+ * @function SitesApp.Attachment#getDatePublished
+ *
  * @return {Date} the date of original publication
  */
-SitesApp.Attachment.prototype.getDatePublished = function(){};
 
 /**
  * Return the description of this attachment.
@@ -411,9 +430,10 @@ SitesApp.Attachment.prototype.getDatePublished = function(){};
  var description = attachments[0].getDescription();
  </code></pre>
  *
+ * @function SitesApp.Attachment#getDescription
+ *
  * @return {String} the attachment description
  */
-SitesApp.Attachment.prototype.getDescription = function(){};
 
 /**
  * Return the date this attachment was last updated.
@@ -424,9 +444,10 @@ SitesApp.Attachment.prototype.getDescription = function(){};
  var date = attachments[0].getLastUpdated();
  </code></pre>
  *
+ * @function SitesApp.Attachment#getLastUpdated
+ *
  * @return {Date} the last updated date
  */
-SitesApp.Attachment.prototype.getLastUpdated = function(){};
 
 /**
  * Get the parent page of this attachment.
@@ -439,9 +460,10 @@ SitesApp.Attachment.prototype.getLastUpdated = function(){};
  var parent = attachments[0].getParent();
  </code></pre>
  *
+ * @function SitesApp.Attachment#getParent
+ *
  * @return {SitesApp.Page} the parent page
  */
-SitesApp.Attachment.prototype.getParent = function(){};
 
 /**
  * Return the title of this attachment.
@@ -452,9 +474,10 @@ SitesApp.Attachment.prototype.getParent = function(){};
  var title = attachments[0].getTitle();
  </code></pre>
  *
+ * @function SitesApp.Attachment#getTitle
+ *
  * @return {String} the attachment title
  */
-SitesApp.Attachment.prototype.getTitle = function(){};
 
 /**
  * Return the download url for this attachment.
@@ -465,9 +488,10 @@ SitesApp.Attachment.prototype.getTitle = function(){};
  var url = attachments[0].getUrl();
  </code></pre>
  *
+ * @function SitesApp.Attachment#getUrl
+ *
  * @return {String} the download url
  */
-SitesApp.Attachment.prototype.getUrl = function(){};
 
 /**
  * Set the mime type of this attachment. Fails for web attachments.
@@ -478,11 +502,12 @@ SitesApp.Attachment.prototype.getUrl = function(){};
  attachments[0].setContentType(&quot;text/plain&quot;);
  </code></pre>
  *
+ * @function SitesApp.Attachment#setContentType
+ *
  * @param {String} contentType - the new mime type
  *
  * @return {SitesApp.Attachment} this Attachment for chaining
  */
-SitesApp.Attachment.prototype.setContentType = function(contentType){};
 
 /**
  * Set the descripton of this attachment.
@@ -496,11 +521,12 @@ SitesApp.Attachment.prototype.setContentType = function(contentType){};
                .setDescription(&quot;New Description&quot;);
  </code></pre>
  *
+ * @function SitesApp.Attachment#setDescription
+ *
  * @param {String} description - the new description
  *
  * @return {SitesApp.Attachment} this Attachment for chaining
  */
-SitesApp.Attachment.prototype.setDescription = function(description){};
 
 /**
  * Set the actual data of this attachment. Fails for web attachments.
@@ -522,11 +548,12 @@ SitesApp.Attachment.prototype.setDescription = function(description){};
                .setFrom(blob);
  </code></pre>
  *
+ * @function SitesApp.Attachment#setFrom
+ *
  * @param {BlobSource} blob - the new data
  *
  * @return {SitesApp.Attachment} this Attachment for chaining
  */
-SitesApp.Attachment.prototype.setFrom = function(blob){};
 
 /**
  * Set the parent page of this attachment.
@@ -538,11 +565,12 @@ SitesApp.Attachment.prototype.setFrom = function(blob){};
  attachments[0].setParent(pages[1]);
  </code></pre>
  *
+ * @function SitesApp.Attachment#setParent
+ *
  * @param {SitesApp.Page} parent - the new parent
  *
  * @return {SitesApp.Attachment} this Attachment for chaining
  */
-SitesApp.Attachment.prototype.setParent = function(parent){};
 
 /**
  * Set the title of this attachment.
@@ -556,11 +584,12 @@ SitesApp.Attachment.prototype.setParent = function(parent){};
                .setDescription(&quot;New Description&quot;);
  </code></pre>
  *
+ * @function SitesApp.Attachment#setTitle
+ *
  * @param {String} title - the new title
  *
  * @return {SitesApp.Attachment} this Attachment for chaining
  */
-SitesApp.Attachment.prototype.setTitle = function(title){};
 
 /**
  * Sets the download url for this attachment. Only valid for web attachments.
@@ -574,14 +603,16 @@ SitesApp.Attachment.prototype.setTitle = function(title){};
                .setUrl(&quot;http://example.com/files/your_file.txt&quot;);
  </code></pre>
  *
+ * @function SitesApp.Attachment#setUrl
+ *
  * @param {String} url - 
  *
  * @return {SitesApp.Attachment} this Attachment for chaining
  */
-SitesApp.Attachment.prototype.setUrl = function(url){};
 
-/** @constructor */
-SitesApp.Column = function(){};
+/**
+ * @class SitesApp.Column
+ */
 
 /**
  * Deletes this column.
@@ -592,9 +623,10 @@ SitesApp.Column = function(){};
  columns[0].deleteColumn();
  </code></pre>
  *
+ * @function SitesApp.Column#deleteColumn
+ *
  * @return void
  */
-SitesApp.Column.prototype.deleteColumn = function(){};
 
 /**
  * Gets the name of this column.
@@ -605,9 +637,10 @@ SitesApp.Column.prototype.deleteColumn = function(){};
  var name = columns[0].getName();
  </code></pre>
  *
+ * @function SitesApp.Column#getName
+ *
  * @return {String} the column name
  */
-SitesApp.Column.prototype.getName = function(){};
 
 /**
  * Returns the List Page this column belongs to.
@@ -620,9 +653,10 @@ SitesApp.Column.prototype.getName = function(){};
  var parentPage = columns[0].getParent();
  </code></pre>
  *
+ * @function SitesApp.Column#getParent
+ *
  * @return {SitesApp.Page} the page this column belongs to
  */
-SitesApp.Column.prototype.getParent = function(){};
 
 /**
  * Sets the name of this column.
@@ -633,14 +667,16 @@ SitesApp.Column.prototype.getParent = function(){};
  columns[0].setName(&quot;New Name&quot;);
  </code></pre>
  *
+ * @function SitesApp.Column#setName
+ *
  * @param {String} name - the new name
  *
  * @return {SitesApp.Column} this Column for chaining
  */
-SitesApp.Column.prototype.setName = function(name){};
 
-/** @constructor */
-SitesApp.Comment = function(){};
+/**
+ * @class SitesApp.Comment
+ */
 
 /**
  * Deletes this comment.
@@ -657,16 +693,18 @@ SitesApp.Comment = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.Comment#deleteComment
+ *
  * @return void
  */
-SitesApp.Comment.prototype.deleteComment = function(){};
 
 /**
  * Gets the email address of the author of this comment.
  *
+ * @function SitesApp.Comment#getAuthorEmail
+ *
  * @return {String} the author's email
  */
-SitesApp.Comment.prototype.getAuthorEmail = function(){};
 
 /**
  * Gets the name of the author of this comment.
@@ -678,9 +716,10 @@ SitesApp.Comment.prototype.getAuthorEmail = function(){};
  var authorEmail = comment.getAuthorEmail();
  </code></pre>
  *
+ * @function SitesApp.Comment#getAuthorName
+ *
  * @return {String} the author's name
  */
-SitesApp.Comment.prototype.getAuthorName = function(){};
 
 /**
  * Return the content of this comment as a String.
@@ -691,9 +730,10 @@ SitesApp.Comment.prototype.getAuthorName = function(){};
  var content = comments[0].getContent()
  </code></pre>
  *
+ * @function SitesApp.Comment#getContent
+ *
  * @return {String} the comment content
  */
-SitesApp.Comment.prototype.getContent = function(){};
 
 /**
  * Return the date this comment was originally published.
@@ -704,9 +744,10 @@ SitesApp.Comment.prototype.getContent = function(){};
  var date = comments[0].getDatePublished();
  </code></pre>
  *
+ * @function SitesApp.Comment#getDatePublished
+ *
  * @return {Date} the date of original publication
  */
-SitesApp.Comment.prototype.getDatePublished = function(){};
 
 /**
  * Return the date this comment was last updated.
@@ -717,9 +758,10 @@ SitesApp.Comment.prototype.getDatePublished = function(){};
  var date = comments[0].getLastUpdated();
  </code></pre>
  *
+ * @function SitesApp.Comment#getLastUpdated
+ *
  * @return {Date} the last updated date
  */
-SitesApp.Comment.prototype.getLastUpdated = function(){};
 
 /**
  * Get the parent page of this comment.
@@ -733,9 +775,10 @@ SitesApp.Comment.prototype.getLastUpdated = function(){};
  var parentPage = comment.getParent();
  </code></pre>
  *
+ * @function SitesApp.Comment#getParent
+ *
  * @return {SitesApp.Page} the parent page
  */
-SitesApp.Comment.prototype.getParent = function(){};
 
 /**
  * Set the content of this comment.
@@ -751,11 +794,12 @@ SitesApp.Comment.prototype.getParent = function(){};
                              .getContent();
  </code></pre>
  *
+ * @function SitesApp.Comment#setContent
+ *
  * @param {String} content - the new content
  *
  * @return {SitesApp.Comment} this Comment for chaining
  */
-SitesApp.Comment.prototype.setContent = function(content){};
 
 /**
  * Set the parent page of this comment.
@@ -770,14 +814,16 @@ SitesApp.Comment.prototype.setContent = function(content){};
  var newParentPage = comment.setParent(pages[1]).getParent();
  </code></pre>
  *
+ * @function SitesApp.Comment#setParent
+ *
  * @param {SitesApp.Page} parent - the new parent
  *
  * @return {SitesApp.Comment} this Comment for chaining
  */
-SitesApp.Comment.prototype.setParent = function(parent){};
 
-/** @constructor */
-SitesApp.ListItem = function(){};
+/**
+ * @class SitesApp.ListItem
+ */
 
 /**
  * Deletes this list item.
@@ -793,9 +839,10 @@ SitesApp.ListItem = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.ListItem#deleteListItem
+ *
  * @return void
  */
-SitesApp.ListItem.prototype.deleteListItem = function(){};
 
 /**
  * Return the date this list item was first published.
@@ -806,9 +853,10 @@ SitesApp.ListItem.prototype.deleteListItem = function(){};
  var date = items[0].getDatePublished();
  </code></pre>
  *
+ * @function SitesApp.ListItem#getDatePublished
+ *
  * @return {Date} the date of original publication
  */
-SitesApp.ListItem.prototype.getDatePublished = function(){};
 
 /**
  * Return the date this comment was last updated.
@@ -819,9 +867,10 @@ SitesApp.ListItem.prototype.getDatePublished = function(){};
  var date = items[0].getLastUpdated();
  </code></pre>
  *
+ * @function SitesApp.ListItem#getLastUpdated
+ *
  * @return {Date} the last updated date
  */
-SitesApp.ListItem.prototype.getLastUpdated = function(){};
 
 /**
  * Get the parent page of this list item.
@@ -833,9 +882,10 @@ SitesApp.ListItem.prototype.getLastUpdated = function(){};
  var parentPage = items[0].getParent();
  </code></pre>
  *
+ * @function SitesApp.ListItem#getParent
+ *
  * @return {SitesApp.Page} the parent page
  */
-SitesApp.ListItem.prototype.getParent = function(){};
 
 /**
  * Get the value of this ListItem for a numbered column.
@@ -850,11 +900,12 @@ SitesApp.ListItem.prototype.getParent = function(){};
  var value = listItem.getValueByIndex(5);
  </code></pre>
  *
+ * @function SitesApp.ListItem#getValueByIndex
+ *
  * @param {number} index - the column to get the value of
  *
  * @return {String} the value of that column
  */
-SitesApp.ListItem.prototype.getValueByIndex = function(index){};
 
 /**
  * Get the value of this ListItem for a named column.
@@ -869,11 +920,12 @@ SitesApp.ListItem.prototype.getValueByIndex = function(index){};
  Logger.log(value);
  </code></pre>
  *
+ * @function SitesApp.ListItem#getValueByName
+ *
  * @param {String} name - the column to get the value of
  *
  * @return {String} the value of that column
  */
-SitesApp.ListItem.prototype.getValueByName = function(name){};
 
 /**
  * Set the parent page of this list item.
@@ -888,11 +940,12 @@ SitesApp.ListItem.prototype.getValueByName = function(name){};
  var parentPage = items[0].setParent(secondListPage).getParent();
  </code></pre>
  *
+ * @function SitesApp.ListItem#setParent
+ *
  * @param {SitesApp.Page} parent - the new parent
  *
  * @return {SitesApp.ListItem} this ListItem for chaining
  */
-SitesApp.ListItem.prototype.setParent = function(parent){};
 
 /**
  * Set the value of this ListItem for a numbered column. For URL columns the value must be an
@@ -905,12 +958,13 @@ SitesApp.ListItem.prototype.setParent = function(parent){};
  listItem.setValueByIndex(2, &#39;&lt;a href=&quot;http://www.example.com?a=1&amp;amp;b=2&quot;&gt;Example&lt;/a&gt;&#39;);
  </code></pre>
  *
+ * @function SitesApp.ListItem#setValueByIndex
+ *
  * @param {number} index - the column to set the value of
  * @param {String} value - the new value
  *
  * @return {SitesApp.ListItem} this ListItem for chaining
  */
-SitesApp.ListItem.prototype.setValueByIndex = function(index, value){};
 
 /**
  * Set the value of this ListItem for a numbered column. For URL columns the value must be an
@@ -923,15 +977,17 @@ SitesApp.ListItem.prototype.setValueByIndex = function(index, value){};
  listItem.setValueByName(&#39;Page&#39;, &#39;&lt;a href=&quot;http://www.example.com?a=1&amp;amp;b=2&quot;&gt;Example&lt;/a&gt;&#39;);
  </code></pre>
  *
+ * @function SitesApp.ListItem#setValueByName
+ *
  * @param {String} name - the column to set the value of
  * @param {String} value - the new value
  *
  * @return {SitesApp.ListItem} this ListItem for chaining
  */
-SitesApp.ListItem.prototype.setValueByName = function(name, value){};
 
-/** @constructor */
-SitesApp.Page = function(){};
+/**
+ * @class SitesApp.Page
+ */
 
 /**
  * Add a new column to the list. Only valid for list pages.
@@ -945,11 +1001,12 @@ SitesApp.Page = function(){};
  var columns = page.addColumn(&quot;new-column&quot;);
  </code></pre>
  *
+ * @function SitesApp.Page#addColumn
+ *
  * @param {String} name - the new column's name
  *
  * @return {SitesApp.Column} the newly created column
  */
-SitesApp.Page.prototype.addColumn = function(name){};
 
 /**
  * Deprecated. Add a comment to the page.
@@ -962,11 +1019,12 @@ SitesApp.Page.prototype.addColumn = function(name){};
                  &quot;of the user running the script&quot;);
  </code></pre>
  *
+ * @function SitesApp.Page#addComment
+ *
  * @param {String} content - the comment content
  *
  * @return {SitesApp.Comment} the newly created comment
  */
-SitesApp.Page.prototype.addComment = function(content){};
 
 /**
  * Add an attachment to the page.
@@ -983,11 +1041,12 @@ SitesApp.Page.prototype.addComment = function(content){};
  page.addHostedAttachment(blob);
  </code></pre>
  *
+ * @function SitesApp.Page#addHostedAttachment
+ *
  * @param {BlobSource} blob - the data for the attachment
  *
  * @return {SitesApp.Attachment} the newly created attachment
  */
-SitesApp.Page.prototype.addHostedAttachment = function(blob){};
 
 /**
  * Add an attachment to the page. This version of the function allows for a description.
@@ -1004,12 +1063,13 @@ SitesApp.Page.prototype.addHostedAttachment = function(blob){};
  page.addHostedAttachment(blob, &quot;Some newly created data&quot;);
  </code></pre>
  *
+ * @function SitesApp.Page#addHostedAttachment
+ *
  * @param {BlobSource} blob - the data for the attachment
  * @param {String} description - a description of the attachment
  *
  * @return {SitesApp.Attachment} the newly created attachment
  */
-SitesApp.Page.prototype.addHostedAttachment = function(blob, description){};
 
 /**
  * Add a list item to the list. Only valid for list pages.
@@ -1024,11 +1084,12 @@ SitesApp.Page.prototype.addHostedAttachment = function(blob, description){};
  page.addListItem([ &quot;John&quot;, &quot;Smith&quot;, &quot;123 Main St&quot;]);
  </code></pre>
  *
+ * @function SitesApp.Page#addListItem
+ *
  * @param {String[]} values - the values for each column
  *
  * @return {SitesApp.ListItem} the newly created <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/list-item.html'>ListItem</a></code>
  */
-SitesApp.Page.prototype.addListItem = function(values){};
 
 /**
  * Add a web attachment to the page. Only valid for file cabinet pages.
@@ -1046,13 +1107,14 @@ SitesApp.Page.prototype.addListItem = function(values){};
                        &quot;http://www.google.com/robots.txt&quot;);
  </code></pre>
  *
+ * @function SitesApp.Page#addWebAttachment
+ *
  * @param {String} title - the title of the attachment
  * @param {String} description - a description of the attachment
  * @param {String} url - the url of the file being attached
  *
  * @return {SitesApp.Attachment} the newly created attachment
  */
-SitesApp.Page.prototype.addWebAttachment = function(title, description, url){};
 
 /**
  * Create an announcements for this page. Only valid for announcement pages.
@@ -1068,12 +1130,13 @@ SitesApp.Page.prototype.addWebAttachment = function(title, description, url){};
  page.createAnnouncement(&quot;Breaking news!&quot;, &quot;&lt;h1&gt;Apps Script rocks!&lt;/h1&gt;&quot;);
  </code></pre>
  *
+ * @function SitesApp.Page#createAnnouncement
+ *
  * @param {String} title - the page title
  * @param {String} html - the page content
  *
  * @return {SitesApp.Page} the newly created Announcements
  */
-SitesApp.Page.prototype.createAnnouncement = function(title, html){};
 
 /**
  * Create an announcements for this page. Only valid for announcement pages.
@@ -1091,13 +1154,14 @@ SitesApp.Page.prototype.createAnnouncement = function(title, html){};
                          true);
  </code></pre>
  *
+ * @function SitesApp.Page#createAnnouncement
+ *
  * @param {String} title - the page title
  * @param {String} html - the page content
  * @param {Boolean} asDraft - whether to make the announcement a draft
  *
  * @return {SitesApp.Page} the newly created Announcements
  */
-SitesApp.Page.prototype.createAnnouncement = function(title, html, asDraft){};
 
 /**
  * Create a new announcements page. Note that a parent site or page cannot have more than 500
@@ -1118,13 +1182,14 @@ SitesApp.Page.prototype.createAnnouncement = function(title, html, asDraft){};
                               &quot;&lt;h1&gt;Your announcement goes here&lt;/h1&gt;&quot;);
  </code></pre>
  *
+ * @function SitesApp.Page#createAnnouncementsPage
+ *
  * @param {String} title - the page title
  * @param {String} name - the page name
  * @param {String} html - the page content
  *
  * @return {SitesApp.Page} the newly created <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code>
  */
-SitesApp.Page.prototype.createAnnouncementsPage = function(title, name, html){};
 
 /**
  * Create a new file-cabinet page. Note that a parent site or page cannot have more than 500 child
@@ -1144,13 +1209,14 @@ SitesApp.Page.prototype.createAnnouncementsPage = function(title, name, html){};
                               &quot;&lt;h1&gt;Your HTML here&lt;/h1&gt;&quot;);
  </code></pre>
  *
+ * @function SitesApp.Page#createFileCabinetPage
+ *
  * @param {String} title - the page title
  * @param {String} name - the page name
  * @param {String} html - the page content
  *
  * @return {SitesApp.Page} The newly created <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code>
  */
-SitesApp.Page.prototype.createFileCabinetPage = function(title, name, html){};
 
 /**
  * Create a new list page. Note that a parent site or page cannot have more than 500 child pages.
@@ -1171,6 +1237,8 @@ SitesApp.Page.prototype.createFileCabinetPage = function(title, name, html){};
                      [ &quot;col1&quot;, &quot;col2&quot; ]);
  </code></pre>
  *
+ * @function SitesApp.Page#createListPage
+ *
  * @param {String} title - the page title
  * @param {String} name - the page name
  * @param {String} html - the page content
@@ -1178,7 +1246,6 @@ SitesApp.Page.prototype.createFileCabinetPage = function(title, name, html){};
  *
  * @return {SitesApp.Page} The newly created <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code>
  */
-SitesApp.Page.prototype.createListPage = function(title, name, html, columnNames){};
 
 /**
  * Create a new page from a template. Note that a parent site or page cannot have more than 500
@@ -1193,13 +1260,14 @@ SitesApp.Page.prototype.createListPage = function(title, name, html, columnNames
  site.createPageFromTemplate(&quot;ClonedPage&quot;, &quot;cloned-page&quot;, template);
  </code></pre>
  *
+ * @function SitesApp.Page#createPageFromTemplate
+ *
  * @param {String} title - the page title
  * @param {String} name - the page name
  * @param {SitesApp.Page} template - the template page
  *
  * @return {SitesApp.Page} the newly created <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code>
  */
-SitesApp.Page.prototype.createPageFromTemplate = function(title, name, template){};
 
 /**
  * Create a new web page. Note that a parent site or page cannot have more than 500 child pages.
@@ -1218,13 +1286,14 @@ SitesApp.Page.prototype.createPageFromTemplate = function(title, name, template)
                               &quot;&lt;h1&gt;Your announcement goes here&lt;/h1&gt;&quot;);
  </code></pre>
  *
+ * @function SitesApp.Page#createWebPage
+ *
  * @param {String} title - the page title
  * @param {String} name - the page name
  * @param {String} html - the page content
  *
  * @return {SitesApp.Page} The newly created <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code>
  */
-SitesApp.Page.prototype.createWebPage = function(title, name, html){};
 
 /**
  * Deletes this page.
@@ -1239,9 +1308,10 @@ SitesApp.Page.prototype.createWebPage = function(title, name, html){};
  }
  </code></pre>
  *
+ * @function SitesApp.Page#deletePage
+ *
  * @return void
  */
-SitesApp.Page.prototype.deletePage = function(){};
 
 /**
  * Gets an array of descendant pages (direct and indirect), up to a limit of 200 pages.
@@ -1251,9 +1321,10 @@ SitesApp.Page.prototype.deletePage = function(){};
  var pages = site.getAllDescendants();
  </code></pre>
  *
+ * @function SitesApp.Page#getAllDescendants
+ *
  * @return {SitesApp.Page[]} an array of direct and indirect child pages
  */
-SitesApp.Page.prototype.getAllDescendants = function(){};
 
 /**
  * Gets an array of descendant pages, with optional advanced arguments.
@@ -1274,11 +1345,12 @@ SitesApp.Page.prototype.getAllDescendants = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.Page#getAllDescendants
+ *
  * @param {Object} options - JavaScript object fields defined in the Advanced Arguments section below
  *
  * @return {SitesApp.Page[]} an array of direct and indirect child pages of the given type
  */
-SitesApp.Page.prototype.getAllDescendants = function(options){};
 
 /**
  * Get the announcements for this page. Only valid for announcement pages.
@@ -1298,9 +1370,10 @@ SitesApp.Page.prototype.getAllDescendants = function(options){};
  }
  </code></pre>
  *
+ * @function SitesApp.Page#getAnnouncements
+ *
  * @return {SitesApp.Page[]} an array of Announcements
  */
-SitesApp.Page.prototype.getAnnouncements = function(){};
 
 /**
  * Get the announcements for this page. Only valid for announcement pages.
@@ -1324,11 +1397,12 @@ SitesApp.Page.prototype.getAnnouncements = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.Page#getAnnouncements
+ *
  * @param {Object} optOptions - A JavaScript object containing advanced parameters
  *
  * @return {SitesApp.Page[]} an array of Announcements
  */
-SitesApp.Page.prototype.getAnnouncements = function(optOptions){};
 
 /**
  * Get the attachments for this page.
@@ -1343,9 +1417,10 @@ SitesApp.Page.prototype.getAnnouncements = function(optOptions){};
  }
  </code></pre>
  *
+ * @function SitesApp.Page#getAttachments
+ *
  * @return {SitesApp.Attachment[]} an array of Attachments
  */
-SitesApp.Page.prototype.getAttachments = function(){};
 
 /**
  * Get the attachments for this page.
@@ -1361,11 +1436,12 @@ SitesApp.Page.prototype.getAttachments = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.Page#getAttachments
+ *
  * @param {Object} optOptions - a JavaScript object containing optional parameters
  *
  * @return {SitesApp.Attachment[]} an array of Attachments
  */
-SitesApp.Page.prototype.getAttachments = function(optOptions){};
 
 /**
  * Get the emails of the authors of the page
@@ -1380,9 +1456,10 @@ SitesApp.Page.prototype.getAttachments = function(optOptions){};
  }
  </code></pre>
  *
+ * @function SitesApp.Page#getAuthors
+ *
  * @return {String[]} an array of author email addresses
  */
-SitesApp.Page.prototype.getAuthors = function(){};
 
 /**
  * Gets a particular child page.
@@ -1392,11 +1469,12 @@ SitesApp.Page.prototype.getAuthors = function(){};
  var pages = site.getChildByName(&quot;childPage&quot;);
  </code></pre>
  *
+ * @function SitesApp.Page#getChildByName
+ *
  * @param {String} name - the child page name
  *
  * @return {SitesApp.Page} the child page
  */
-SitesApp.Page.prototype.getChildByName = function(name){};
 
 /**
  * Gets an array of child pages, up to a limit of 200 pages.
@@ -1406,9 +1484,10 @@ SitesApp.Page.prototype.getChildByName = function(name){};
  var pages = site.getChildren();
  </code></pre>
  *
+ * @function SitesApp.Page#getChildren
+ *
  * @return {SitesApp.Page[]} an array of direct child pages
  */
-SitesApp.Page.prototype.getChildren = function(){};
 
 /**
  * Gets an array of child pages, with optional advanced arguments.
@@ -1429,11 +1508,12 @@ SitesApp.Page.prototype.getChildren = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.Page#getChildren
+ *
  * @param {Object} options - JavaScript object fields defined in the Advanced Arguments section below
  *
  * @return {SitesApp.Page[]} an array of direct child pages of the given type
  */
-SitesApp.Page.prototype.getChildren = function(options){};
 
 /**
  * Get the columns for the list. Only valid for list pages.
@@ -1451,9 +1531,10 @@ SitesApp.Page.prototype.getChildren = function(options){};
  }
  </code></pre>
  *
+ * @function SitesApp.Page#getColumns
+ *
  * @return {SitesApp.Column[]} an array of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/column.html'>Column</a></code> instances
  */
-SitesApp.Page.prototype.getColumns = function(){};
 
 /**
  * Deprecated. Get the comments for this page.
@@ -1468,9 +1549,10 @@ SitesApp.Page.prototype.getColumns = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.Page#getComments
+ *
  * @return {SitesApp.Comment[]} an array of Comments.
  */
-SitesApp.Page.prototype.getComments = function(){};
 
 /**
  * Deprecated. Get the comments for this page.
@@ -1486,11 +1568,12 @@ SitesApp.Page.prototype.getComments = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.Page#getComments
+ *
  * @param {Object} optOptions - a JavaScript object containing optional parameters
  *
  * @return {SitesApp.Comment[]} an array of Comments.
  */
-SitesApp.Page.prototype.getComments = function(optOptions){};
 
 /**
  * Return the date this page was first published.
@@ -1501,9 +1584,10 @@ SitesApp.Page.prototype.getComments = function(optOptions){};
  Logger.log(page.getName() + &quot; was published &quot; + page.getDatePublished());
  </code></pre>
  *
+ * @function SitesApp.Page#getDatePublished
+ *
  * @return {Date} the date of original publication
  */
-SitesApp.Page.prototype.getDatePublished = function(){};
 
 /**
  * Get the HTML content of the page.
@@ -1514,9 +1598,10 @@ SitesApp.Page.prototype.getDatePublished = function(){};
  Logger.log(page.getHtmlContent());
  </code></pre>
  *
+ * @function SitesApp.Page#getHtmlContent
+ *
  * @return {String} the html content
  */
-SitesApp.Page.prototype.getHtmlContent = function(){};
 
 /**
  * Returns whether the page is in draft mode. Only valid for announcements.
@@ -1528,9 +1613,10 @@ SitesApp.Page.prototype.getHtmlContent = function(){};
  Logger.log(&quot;Is this Announcement Page a draft?&quot;, page.getIsDraft());
  </code></pre>
  *
+ * @function SitesApp.Page#getIsDraft
+ *
  * @return {Boolean} whether the page is in draft mode
  */
-SitesApp.Page.prototype.getIsDraft = function(){};
 
 /**
  * Return the last edit date, which includes only content edits.
@@ -1541,9 +1627,10 @@ SitesApp.Page.prototype.getIsDraft = function(){};
  Logger.log(page.getName() + &quot; was last updated &quot; + page.getLastEdited());
  </code></pre>
  *
+ * @function SitesApp.Page#getLastEdited
+ *
  * @return {Date} the date the page was last updated, including only content edits
  */
-SitesApp.Page.prototype.getLastEdited = function(){};
 
 /**
  * Return the last updated date, which includes non-content changes like moving.
@@ -1554,9 +1641,10 @@ SitesApp.Page.prototype.getLastEdited = function(){};
  Logger.log(page.getName() + &quot; was last updated &quot; + page.getLastUpdated());
  </code></pre>
  *
+ * @function SitesApp.Page#getLastUpdated
+ *
  * @return {Date} the date the page was last updated with non-content changes
  */
-SitesApp.Page.prototype.getLastUpdated = function(){};
 
 /**
  * Get the list items for the list. Only valid for list pages.
@@ -1574,9 +1662,10 @@ SitesApp.Page.prototype.getLastUpdated = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.Page#getListItems
+ *
  * @return {SitesApp.ListItem[]} an array of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/list-item.html'>ListItem</a></code> instances
  */
-SitesApp.Page.prototype.getListItems = function(){};
 
 /**
  * Get the list items for the list. Only valid for list pages.
@@ -1595,11 +1684,12 @@ SitesApp.Page.prototype.getListItems = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.Page#getListItems
+ *
  * @param {Object} optOptions - A JavaScript object of optional parameters
  *
  * @return {SitesApp.ListItem[]} an array of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/list-item.html'>ListItem</a></code> instances
  */
-SitesApp.Page.prototype.getListItems = function(optOptions){};
 
 /**
  * Return the page's name.
@@ -1610,9 +1700,10 @@ SitesApp.Page.prototype.getListItems = function(optOptions){};
  Logger.log(page.getName());
  </code></pre>
  *
+ * @function SitesApp.Page#getName
+ *
  * @return {String} the name of this page
  */
-SitesApp.Page.prototype.getName = function(){};
 
 /**
  * Deprecated. Replaced with getName for consistency.
@@ -1623,9 +1714,10 @@ SitesApp.Page.prototype.getName = function(){};
  Logger.log(page.getPageName());
  </code></pre>
  *
+ * @function SitesApp.Page#getPageName
+ *
  * @return {String} the name of this page
  */
-SitesApp.Page.prototype.getPageName = function(){};
 
 /**
  * Return the type of this page as a SitesApp.PageType enum.
@@ -1639,9 +1731,10 @@ SitesApp.Page.prototype.getPageName = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.Page#getPageType
+ *
  * @return {SitesApp.PageType} a PageType enum telling whether this is a Web, List, Announcement or File Cabinet Page
  */
-SitesApp.Page.prototype.getPageType = function(){};
 
 /**
  * Return the parent of this page.
@@ -1652,9 +1745,10 @@ SitesApp.Page.prototype.getPageType = function(){};
  Logger.log(page.getName() + &quot; parent: &quot; + page.getParent().getName());
  </code></pre>
  *
+ * @function SitesApp.Page#getParent
+ *
  * @return {SitesApp.Page} the parent page of this page
  */
-SitesApp.Page.prototype.getParent = function(){};
 
 /**
  * Deprecated. Returns the gData feed link of this page.
@@ -1665,9 +1759,10 @@ SitesApp.Page.prototype.getParent = function(){};
  Logger.log(page.getSelfLink());
  </code></pre>
  *
+ * @function SitesApp.Page#getSelfLink
+ *
  * @return {String} the gData feed link
  */
-SitesApp.Page.prototype.getSelfLink = function(){};
 
 /**
  * Returns the plain-text page content.
@@ -1678,9 +1773,10 @@ SitesApp.Page.prototype.getSelfLink = function(){};
  Logger.log(page.getName() + &quot; content: &quot; + page.getTextContent());
  </code></pre>
  *
+ * @function SitesApp.Page#getTextContent
+ *
  * @return {String} the plain-text content of the page
  */
-SitesApp.Page.prototype.getTextContent = function(){};
 
 /**
  * Return the page's title.
@@ -1691,9 +1787,10 @@ SitesApp.Page.prototype.getTextContent = function(){};
  Logger.log(page.getTitle());
  </code></pre>
  *
+ * @function SitesApp.Page#getTitle
+ *
  * @return {String} the title of this page
  */
-SitesApp.Page.prototype.getTitle = function(){};
 
 /**
  * Get the url of the page.
@@ -1704,16 +1801,18 @@ SitesApp.Page.prototype.getTitle = function(){};
  Logger.log(page.getUrl());
  </code></pre>
  *
+ * @function SitesApp.Page#getUrl
+ *
  * @return {String} the url of the page
  */
-SitesApp.Page.prototype.getUrl = function(){};
 
 /**
  * Returns whether a page has been deleted.
  *
+ * @function SitesApp.Page#isDeleted
+ *
  * @return {Boolean} whether the page has been deleted
  */
-SitesApp.Page.prototype.isDeleted = function(){};
 
 /**
  * Returns whether this page is a copyable template.
@@ -1726,9 +1825,10 @@ SitesApp.Page.prototype.isDeleted = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.Page#isTemplate
+ *
  * @return {Boolean} whether this page is a template
  */
-SitesApp.Page.prototype.isTemplate = function(){};
 
 /**
  * Publish this page as a copyable template.
@@ -1741,11 +1841,12 @@ SitesApp.Page.prototype.isTemplate = function(){};
  page.publishedAsTemplate(&quot;template-name&quot;);
  </code></pre>
  *
+ * @function SitesApp.Page#publishAsTemplate
+ *
  * @param {String} name - The name of the new template
  *
  * @return {SitesApp.Page} the newly published template
  */
-SitesApp.Page.prototype.publishAsTemplate = function(name){};
 
 /**
  * Gets an array of descendant pages that match a search query, up to a limit of 200 pages.
@@ -1759,11 +1860,12 @@ SitesApp.Page.prototype.publishAsTemplate = function(name){};
  }
  </code></pre>
  *
+ * @function SitesApp.Page#search
+ *
  * @param {String} query - the full text search query to match
  *
  * @return {SitesApp.Page[]} an array of direct and indirect child pages of the given type
  */
-SitesApp.Page.prototype.search = function(query){};
 
 /**
  * Gets an array of descendant pages that match a search query, with optional advanced arguments.
@@ -1784,12 +1886,13 @@ SitesApp.Page.prototype.search = function(query){};
  }
  </code></pre>
  *
+ * @function SitesApp.Page#search
+ *
  * @param {String} query - the full text search query to match
  * @param {Object} options - JavaScript object fields defined in the Advanced Arguments section below
  *
  * @return {SitesApp.Page[]} an array of direct and indirect child pages of the given type
  */
-SitesApp.Page.prototype.search = function(query, options){};
 
 /**
  * Set the HTML content of the page.
@@ -1800,11 +1903,12 @@ SitesApp.Page.prototype.search = function(query, options){};
  page.setHtmlContent(&quot;&lt;h1&gt;New Page Content&lt;/h1&gt;&quot;);
  </code></pre>
  *
+ * @function SitesApp.Page#setHtmlContent
+ *
  * @param {String} html - the new content
  *
  * @return {SitesApp.Page} this Page for chaining
  */
-SitesApp.Page.prototype.setHtmlContent = function(html){};
 
 /**
  * Sets whether the page is in draft mode. Only valid for announcements.
@@ -1817,11 +1921,12 @@ SitesApp.Page.prototype.setHtmlContent = function(html){};
  page.setIsDraft(false);
  </code></pre>
  *
+ * @function SitesApp.Page#setIsDraft
+ *
  * @param {Boolean} draft - the new status
  *
  * @return {SitesApp.Page} this Page for chaining
  */
-SitesApp.Page.prototype.setIsDraft = function(draft){};
 
 /**
  * Set this page's name.
@@ -1832,11 +1937,12 @@ SitesApp.Page.prototype.setIsDraft = function(draft){};
  page.setName(&quot;new-name&quot;);
  </code></pre>
  *
+ * @function SitesApp.Page#setName
+ *
  * @param {String} name - the new name
  *
  * @return {SitesApp.Page} this Page for chaining
  */
-SitesApp.Page.prototype.setName = function(name){};
 
 /**
  * Set the parent of this page.
@@ -1848,11 +1954,12 @@ SitesApp.Page.prototype.setName = function(name){};
  child.setParent(parent);
  </code></pre>
  *
+ * @function SitesApp.Page#setParent
+ *
  * @param {SitesApp.Page} parent - the new parent
  *
  * @return {SitesApp.Page} this Page for chaining
  */
-SitesApp.Page.prototype.setParent = function(parent){};
 
 /**
  * Set the page's title.
@@ -1863,14 +1970,16 @@ SitesApp.Page.prototype.setParent = function(parent){};
  page.setTitle(&quot;New Title&quot;);
  </code></pre>
  *
+ * @function SitesApp.Page#setTitle
+ *
  * @param {String} title - the new title
  *
  * @return {SitesApp.Page} this Page for chaining
  */
-SitesApp.Page.prototype.setTitle = function(title){};
 
-/** @constructor */
-SitesApp.Site = function(){};
+/**
+ * @class SitesApp.Site
+ */
 
 /**
  * Add a new collaborator to the site
@@ -1880,11 +1989,12 @@ SitesApp.Site = function(){};
  site.addCollaborator(&quot;eric@example.com&quot;);
  </code></pre>
  *
+ * @function SitesApp.Site#addCollaborator
+ *
  * @param {String} email - The email of the user to add as a collaborator
  *
  * @return {SitesApp.Site} this site for chaining
  */
-SitesApp.Site.prototype.addCollaborator = function(email){};
 
 /**
  * Add a new collaborator to the website
@@ -1895,42 +2005,46 @@ SitesApp.Site.prototype.addCollaborator = function(email){};
  site.addCollaborator(currentUser);
  </code></pre>
  *
+ * @function SitesApp.Site#addCollaborator
+ *
  * @param {User} user - The user to add as a collaborator
  *
  * @return {SitesApp.Site} this site for chaining
  */
-SitesApp.Site.prototype.addCollaborator = function(user){};
 
 /**
  * Adds the given user to the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. If the user was already
  on the list of viewers, this method promotes the user out of the list of viewers.
+ *
+ * @function SitesApp.Site#addEditor
  *
  * @param {String} emailAddress - the email address of the user to add
  *
  * @return {SitesApp.Site} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>, for chaining
  */
-SitesApp.Site.prototype.addEditor = function(emailAddress){};
 
 /**
  * Adds the given user to the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. If the user was already
  on the list of viewers, this method promotes the user out of the list of viewers.
  *
+ * @function SitesApp.Site#addEditor
+ *
  * @param {User} user - a representation of the user to add
  *
  * @return {SitesApp.Site} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>, for chaining
  */
-SitesApp.Site.prototype.addEditor = function(user){};
 
 /**
  * Adds the given array of users to the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. If any of the
  users were already on the list of viewers, this method promotes them out of the list of
  viewers.
  *
+ * @function SitesApp.Site#addEditors
+ *
  * @param {String[]} emailAddresses - an array of email addresses of the users to add
  *
  * @return {SitesApp.Site} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>, for chaining
  */
-SitesApp.Site.prototype.addEditors = function(emailAddresses){};
 
 /**
  * Add a new owner to the website
@@ -1940,11 +2054,12 @@ SitesApp.Site.prototype.addEditors = function(emailAddresses){};
  site.addOwner(&quot;eric@example.com&quot;);
  </code></pre>
  *
+ * @function SitesApp.Site#addOwner
+ *
  * @param {String} email - The email of the user to add as an owner
  *
  * @return {SitesApp.Site} this site for chaining
  */
-SitesApp.Site.prototype.addOwner = function(email){};
 
 /**
  * Add a new owner to the website
@@ -1955,44 +2070,50 @@ SitesApp.Site.prototype.addOwner = function(email){};
  site.addOwner(currentUser);
  </code></pre>
  *
+ * @function SitesApp.Site#addOwner
+ *
  * @param {User} user - The user to add as an owner
  *
  * @return {SitesApp.Site} this site for chaining
  */
-SitesApp.Site.prototype.addOwner = function(user){};
 
 /**
  * Adds the given user to the list of viewers for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. If the user was already
  on the list of editors, this method has no effect.
+ *
+ * @function SitesApp.Site#addViewer
  *
  * @param {String} emailAddress - the email address of the user to add
  *
  * @return {SitesApp.Site} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>, for chaining
  */
-SitesApp.Site.prototype.addViewer = function(emailAddress){};
 
 /**
  * Adds the given user to the list of viewers for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. If the user was already
  on the list of editors, this method has no effect.
  *
+ * @function SitesApp.Site#addViewer
+ *
  * @param {User} user - a representation of the user to add
  *
  * @return {SitesApp.Site} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>, for chaining
  */
-SitesApp.Site.prototype.addViewer = function(user){};
 
 /**
  * Adds the given array of users to the list of viewers for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. If any of the
  users were already on the list of editors, this method has no effect for them.
  *
+ * @function SitesApp.Site#addViewers
+ *
  * @param {String[]} emailAddresses - an array of email addresses of the users to add
  *
  * @return {SitesApp.Site} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>, for chaining
  */
-SitesApp.Site.prototype.addViewers = function(emailAddresses){};
 
 /**
  * Create a new Announcement
+ *
+ * @function SitesApp.Site#createAnnouncement
  *
  * @param {String} title - The title of the Announcement page to create
  * @param {String} html - The HTML body of the page
@@ -2000,7 +2121,6 @@ SitesApp.Site.prototype.addViewers = function(emailAddresses){};
  *
  * @return {SitesApp.Page} The created <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code>
  */
-SitesApp.Site.prototype.createAnnouncement = function(title, html, parent){};
 
 /**
  * Create a new announcements page. Note that a parent site or page cannot have more than 500
@@ -2021,18 +2141,21 @@ SitesApp.Site.prototype.createAnnouncement = function(title, html, parent){};
                               &quot;&lt;h1&gt;Your announcement goes here&lt;/h1&gt;&quot;);
  </code></pre>
  *
+ * @function SitesApp.Site#createAnnouncementsPage
+ *
  * @param {String} title - the page title
  * @param {String} name - the page name
  * @param {String} html - the page content
  *
  * @return {SitesApp.Page} the newly created <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code>
  */
-SitesApp.Site.prototype.createAnnouncementsPage = function(title, name, html){};
 
 /**
  * Deprecated. Replaced with createComment on <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code>.
 
  <p>Create a new Comment.
+ *
+ * @function SitesApp.Site#createComment
  *
  * @param {String} inReplyTo - a GData feed url - meaningless and broken
  * @param {String} html - the comment content
@@ -2040,7 +2163,6 @@ SitesApp.Site.prototype.createAnnouncementsPage = function(title, name, html){};
  *
  * @return {SitesApp.Comment} the newly created <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/comment.html'>Comment</a></code>
  */
-SitesApp.Site.prototype.createComment = function(inReplyTo, html, parent){};
 
 /**
  * Create a new file-cabinet page. Note that a parent site or page cannot have more than 500 child
@@ -2060,18 +2182,21 @@ SitesApp.Site.prototype.createComment = function(inReplyTo, html, parent){};
                               &quot;&lt;h1&gt;Your HTML here&lt;/h1&gt;&quot;);
  </code></pre>
  *
+ * @function SitesApp.Site#createFileCabinetPage
+ *
  * @param {String} title - the page title
  * @param {String} name - the page name
  * @param {String} html - the page content
  *
  * @return {SitesApp.Page} The newly created <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code>
  */
-SitesApp.Site.prototype.createFileCabinetPage = function(title, name, html){};
 
 /**
  * Deprecated. Replaced by createListItem on <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code>.
 
  <p>Create a new ListItem.
+ *
+ * @function SitesApp.Site#createListItem
  *
  * @param {String} html - the item content - meaningless and broken.
  * @param {String[]} columnNames - the names of the columns, which are unnecessary
@@ -2080,7 +2205,6 @@ SitesApp.Site.prototype.createFileCabinetPage = function(title, name, html){};
  *
  * @return {SitesApp.ListItem} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/list-item.html'>ListItem</a></code> for chaining.
  */
-SitesApp.Site.prototype.createListItem = function(html, columnNames, values, parent){};
 
 /**
  * Create a new list page. Note that a parent site or page cannot have more than 500 child pages.
@@ -2101,6 +2225,8 @@ SitesApp.Site.prototype.createListItem = function(html, columnNames, values, par
                      [ &quot;col1&quot;, &quot;col2&quot; ]);
  </code></pre>
  *
+ * @function SitesApp.Site#createListPage
+ *
  * @param {String} title - the page title
  * @param {String} name - the page name
  * @param {String} html - the page content
@@ -2108,7 +2234,6 @@ SitesApp.Site.prototype.createListItem = function(html, columnNames, values, par
  *
  * @return {SitesApp.Page} The newly created <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code>
  */
-SitesApp.Site.prototype.createListPage = function(title, name, html, columnNames){};
 
 /**
  * Create a new page from a template. Note that a parent site or page cannot have more than 500
@@ -2123,18 +2248,21 @@ SitesApp.Site.prototype.createListPage = function(title, name, html, columnNames
  site.createPageFromTemplate(&quot;ClonedPage&quot;, &quot;cloned-page&quot;, template);
  </code></pre>
  *
+ * @function SitesApp.Site#createPageFromTemplate
+ *
  * @param {String} title - the page title
  * @param {String} name - the page name
  * @param {SitesApp.Page} template - the template page
  *
  * @return {SitesApp.Page} the newly created <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code>
  */
-SitesApp.Site.prototype.createPageFromTemplate = function(title, name, template){};
 
 /**
  * Deprecated. Replaced by createWebAttachment on <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code>.
 
  <p>Create a new Web Attachment.
+ *
+ * @function SitesApp.Site#createWebAttachment
  *
  * @param {String} title - the attachment title
  * @param {String} url - the url of the attachment
@@ -2142,7 +2270,6 @@ SitesApp.Site.prototype.createPageFromTemplate = function(title, name, template)
  *
  * @return {SitesApp.Attachment} this Attachment for chaining.
  */
-SitesApp.Site.prototype.createWebAttachment = function(title, url, parent){};
 
 /**
  * Create a new web page. Note that a parent site or page cannot have more than 500 child pages.
@@ -2161,13 +2288,14 @@ SitesApp.Site.prototype.createWebAttachment = function(title, url, parent){};
                               &quot;&lt;h1&gt;Your announcement goes here&lt;/h1&gt;&quot;);
  </code></pre>
  *
+ * @function SitesApp.Site#createWebPage
+ *
  * @param {String} title - the page title
  * @param {String} name - the page name
  * @param {String} html - the page content
  *
  * @return {SitesApp.Page} The newly created <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code>
  */
-SitesApp.Site.prototype.createWebPage = function(title, name, html){};
 
 /**
  * Deletes this site.
@@ -2177,9 +2305,10 @@ SitesApp.Site.prototype.createWebPage = function(title, name, html){};
  site.deleteSite();
  </code></pre>
  *
+ * @function SitesApp.Site#deleteSite
+ *
  * @return void
  */
-SitesApp.Site.prototype.deleteSite = function(){};
 
 /**
  * Gets an array of descendant pages (direct and indirect), up to a limit of 200 pages.
@@ -2189,9 +2318,10 @@ SitesApp.Site.prototype.deleteSite = function(){};
  var pages = site.getAllDescendants();
  </code></pre>
  *
+ * @function SitesApp.Site#getAllDescendants
+ *
  * @return {SitesApp.Page[]} an array of direct and indirect child pages
  */
-SitesApp.Site.prototype.getAllDescendants = function(){};
 
 /**
  * Gets an array of descendant pages, with optional advanced arguments.
@@ -2212,11 +2342,12 @@ SitesApp.Site.prototype.getAllDescendants = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.Site#getAllDescendants
+ *
  * @param {Object} options - JavaScript object fields defined in the Advanced Arguments section below
  *
  * @return {SitesApp.Page[]} an array of direct and indirect child pages of the given type
  */
-SitesApp.Site.prototype.getAllDescendants = function(options){};
 
 /**
  * Retrieves a list of announcements for the given Google Site.
@@ -2230,9 +2361,10 @@ SitesApp.Site.prototype.getAllDescendants = function(options){};
  }
  </code></pre>
  *
+ * @function SitesApp.Site#getAnnouncements
+ *
  * @return {SitesApp.Page[]} an array of announcement @link Page} instances
  */
-SitesApp.Site.prototype.getAnnouncements = function(){};
 
 /**
  * Retrieves a list of announcements pages for the given Google Site.
@@ -2246,9 +2378,10 @@ SitesApp.Site.prototype.getAnnouncements = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.Site#getAnnouncementsPages
+ *
  * @return {SitesApp.Page[]} an array of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code> instances
  */
-SitesApp.Site.prototype.getAnnouncementsPages = function(){};
 
 /**
  * Retrieves a list of attachments for the given Google Site.
@@ -2263,9 +2396,10 @@ SitesApp.Site.prototype.getAnnouncementsPages = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.Site#getAttachments
+ *
  * @return {SitesApp.Attachment[]} an array of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/attachment.html'>Attachment</a></code> instances
  */
-SitesApp.Site.prototype.getAttachments = function(){};
 
 /**
  * Gets a particular child page.
@@ -2275,11 +2409,12 @@ SitesApp.Site.prototype.getAttachments = function(){};
  var pages = site.getChildByName(&quot;childPage&quot;);
  </code></pre>
  *
+ * @function SitesApp.Site#getChildByName
+ *
  * @param {String} name - the child page name
  *
  * @return {SitesApp.Page} the child page
  */
-SitesApp.Site.prototype.getChildByName = function(name){};
 
 /**
  * Gets an array of child pages, up to a limit of 200 pages.
@@ -2289,9 +2424,10 @@ SitesApp.Site.prototype.getChildByName = function(name){};
  var pages = site.getChildren();
  </code></pre>
  *
+ * @function SitesApp.Site#getChildren
+ *
  * @return {SitesApp.Page[]} an array of direct child pages
  */
-SitesApp.Site.prototype.getChildren = function(){};
 
 /**
  * Gets an array of child pages, with optional advanced arguments.
@@ -2312,11 +2448,12 @@ SitesApp.Site.prototype.getChildren = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.Site#getChildren
+ *
  * @param {Object} options - JavaScript object fields defined in the Advanced Arguments section below
  *
  * @return {SitesApp.Page[]} an array of direct child pages of the given type
  */
-SitesApp.Site.prototype.getChildren = function(options){};
 
 /**
  * Retrieves list of collaborators for the site
@@ -2328,9 +2465,10 @@ SitesApp.Site.prototype.getChildren = function(options){};
  }
  </code></pre>
  *
+ * @function SitesApp.Site#getCollaborators
+ *
  * @return {User[]} an array containing <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/../base/user.html'>User</a></code> instances representing collaborators
  */
-SitesApp.Site.prototype.getCollaborators = function(){};
 
 /**
  * Retrieves a list of comments for the given Google Site.
@@ -2344,17 +2482,19 @@ SitesApp.Site.prototype.getCollaborators = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.Site#getComments
+ *
  * @return {SitesApp.Comment[]} an array of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/comment.html'>Comment</a></code> instances
  */
-SitesApp.Site.prototype.getComments = function(){};
 
 /**
  * Gets the list of editors for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. If the user who executes the script does
  not have edit access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>, this method throws an exception.
  *
+ * @function SitesApp.Site#getEditors
+ *
  * @return {User[]} an array of users with edit permission
  */
-SitesApp.Site.prototype.getEditors = function(){};
 
 /**
  * Retrieves a list of File Cabinet pages for the given Google Site.
@@ -2368,9 +2508,10 @@ SitesApp.Site.prototype.getEditors = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.Site#getFileCabinetPages
+ *
  * @return {SitesApp.Page[]} an array of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code> instances
  */
-SitesApp.Site.prototype.getFileCabinetPages = function(){};
 
 /**
  * Retrieves a list of site List items for the given Google Site.
@@ -2384,9 +2525,10 @@ SitesApp.Site.prototype.getFileCabinetPages = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.Site#getListItems
+ *
  * @return {SitesApp.ListItem[]} an array of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/list-item.html'>ListItem</a></code> instances
  */
-SitesApp.Site.prototype.getListItems = function(){};
 
 /**
  * Retrieves a list of site List pages for the given Google Site.
@@ -2400,9 +2542,10 @@ SitesApp.Site.prototype.getListItems = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.Site#getListPages
+ *
  * @return {SitesApp.Page[]} an array of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code> instances
  */
-SitesApp.Site.prototype.getListPages = function(){};
 
 /**
  * Return the name of the site
@@ -2411,9 +2554,10 @@ SitesApp.Site.prototype.getListPages = function(){};
  var name = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getName();
  </code></pre>
  *
+ * @function SitesApp.Site#getName
+ *
  * @return {String} the name of this Site instance
  */
-SitesApp.Site.prototype.getName = function(){};
 
 /**
  * Retrieves list of owners for the site
@@ -2425,9 +2569,10 @@ SitesApp.Site.prototype.getName = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.Site#getOwners
+ *
  * @return {User[]} an array containing <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/../base/user.html'>User</a></code> instances representing owners
  */
-SitesApp.Site.prototype.getOwners = function(){};
 
 /**
  * Retrieves the feed url of this Site.
@@ -2437,9 +2582,10 @@ SitesApp.Site.prototype.getOwners = function(){};
  var url = site.getSelfLink();
  </code></pre>
  *
+ * @function SitesApp.Site#getSelfLink
+ *
  * @return {String} the url of this Site's feed
  */
-SitesApp.Site.prototype.getSelfLink = function(){};
 
 /**
  * Return the siteName of the site
@@ -2449,9 +2595,10 @@ SitesApp.Site.prototype.getSelfLink = function(){};
  var url = site.getSelfLink();
  </code></pre>
  *
+ * @function SitesApp.Site#getSiteName
+ *
  * @return {String} the siteName of the site
  */
-SitesApp.Site.prototype.getSiteName = function(){};
 
 /**
  * Return the summary of the web site
@@ -2460,9 +2607,10 @@ SitesApp.Site.prototype.getSiteName = function(){};
  var summary = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getSummary();
  </code></pre>
  *
+ * @function SitesApp.Site#getSummary
+ *
  * @return {String} the summary of this site
  */
-SitesApp.Site.prototype.getSummary = function(){};
 
 /**
  * Returns all template pages.
@@ -2474,9 +2622,10 @@ SitesApp.Site.prototype.getSummary = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.Site#getTemplates
+ *
  * @return {SitesApp.Page[]} an array containing <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code> instances representing templates
  */
-SitesApp.Site.prototype.getTemplates = function(){};
 
 /**
  * Gets the theme of the site
@@ -2485,9 +2634,10 @@ SitesApp.Site.prototype.getTemplates = function(){};
  var theme = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getTheme();
  </code></pre>
  *
+ * @function SitesApp.Site#getTheme
+ *
  * @return {String} the theme of this site
  */
-SitesApp.Site.prototype.getTheme = function(){};
 
 /**
  * Return the title of the site
@@ -2496,9 +2646,10 @@ SitesApp.Site.prototype.getTheme = function(){};
  var title = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getTitle();
  </code></pre>
  *
+ * @function SitesApp.Site#getTitle
+ *
  * @return {String} the title of this site
  */
-SitesApp.Site.prototype.getTitle = function(){};
 
 /**
  * Retrieves the url of this Site.
@@ -2507,17 +2658,19 @@ SitesApp.Site.prototype.getTitle = function(){};
  var url = SitesApp.getSite(&#39;example.com&#39;, &#39;mysite&#39;).getUrl();
  </code></pre>
  *
+ * @function SitesApp.Site#getUrl
+ *
  * @return {String} the url of this Site instance
  */
-SitesApp.Site.prototype.getUrl = function(){};
 
 /**
  * Gets the list of viewers and commenters for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. If the user who executes
  the script does not have edit access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>, this method throws an exception.
  *
+ * @function SitesApp.Site#getViewers
+ *
  * @return {User[]} an array of users with view or comment permission
  */
-SitesApp.Site.prototype.getViewers = function(){};
 
 /**
  * Retrieves a list of web attachments for the given Google Site.
@@ -2532,9 +2685,10 @@ SitesApp.Site.prototype.getViewers = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.Site#getWebAttachments
+ *
  * @return {SitesApp.Attachment[]} an array of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/attachment.html'>Attachment</a></code> instances
  */
-SitesApp.Site.prototype.getWebAttachments = function(){};
 
 /**
  * Retrieves a list of web pages for the given Google Site.
@@ -2548,9 +2702,10 @@ SitesApp.Site.prototype.getWebAttachments = function(){};
  }
  </code></pre>
  *
+ * @function SitesApp.Site#getWebPages
+ *
  * @return {SitesApp.Page[]} an array of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code> instances
  */
-SitesApp.Site.prototype.getWebPages = function(){};
 
 /**
  * Removes a collaborator from the site by user email
@@ -2561,11 +2716,12 @@ SitesApp.Site.prototype.getWebPages = function(){};
  site.removeCollaborator(&quot;eric@example.com&quot;);
  </code></pre>
  *
+ * @function SitesApp.Site#removeCollaborator
+ *
  * @param {String} email - The email of the user to remove from the collaborators
  *
  * @return {SitesApp.Site} the site instance for method chaining
  */
-SitesApp.Site.prototype.removeCollaborator = function(email){};
 
 /**
  * Removes a collaborator from the site
@@ -2576,33 +2732,36 @@ SitesApp.Site.prototype.removeCollaborator = function(email){};
  site.removeCollaborator(Session.getActiveUser());
  </code></pre>
  *
+ * @function SitesApp.Site#removeCollaborator
+ *
  * @param {User} user - A user to remove from the list of collaborators
  *
  * @return {SitesApp.Site} the site instance for method chaining
  */
-SitesApp.Site.prototype.removeCollaborator = function(user){};
 
 /**
  * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. This method does not
  block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> if they belong to a class of users who have
  general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> is shared with the user's entire domain.
+ *
+ * @function SitesApp.Site#removeEditor
  *
  * @param {String} emailAddress - the email address of the user to remove
  *
  * @return {SitesApp.Site} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>, for chaining
  */
-SitesApp.Site.prototype.removeEditor = function(emailAddress){};
 
 /**
  * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. This method does not
  block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> if they belong to a class of users who have
  general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> is shared with the user's entire domain.
  *
+ * @function SitesApp.Site#removeEditor
+ *
  * @param {User} user - a representation of the user to remove
  *
  * @return {SitesApp.Site} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>, for chaining
  */
-SitesApp.Site.prototype.removeEditor = function(user){};
 
 /**
  * Removes owner from the site by user email
@@ -2613,11 +2772,12 @@ SitesApp.Site.prototype.removeEditor = function(user){};
  site.removeOwner(&quot;eric@example.com&quot;);
  </code></pre>
  *
+ * @function SitesApp.Site#removeOwner
+ *
  * @param {String} email - The email of the user to remove from the owners
  *
  * @return {SitesApp.Site} the site instance for method chaining
  */
-SitesApp.Site.prototype.removeOwner = function(email){};
 
 /**
  * Removes owner from the site
@@ -2628,11 +2788,12 @@ SitesApp.Site.prototype.removeOwner = function(email){};
  site.removeOwner(Session.getActiveUser());
  </code></pre>
  *
+ * @function SitesApp.Site#removeOwner
+ *
  * @param {User} user - A user to remove from the list of owners
  *
  * @return {SitesApp.Site} the site instance for method chaining
  */
-SitesApp.Site.prototype.removeOwner = function(user){};
 
 /**
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. This
@@ -2641,11 +2802,12 @@ SitesApp.Site.prototype.removeOwner = function(user){};
  have general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> is shared with the user's entire
  domain.
  *
+ * @function SitesApp.Site#removeViewer
+ *
  * @param {String} emailAddress - the email address of the user to remove
  *
  * @return {SitesApp.Site} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> for chaining
  */
-SitesApp.Site.prototype.removeViewer = function(emailAddress){};
 
 /**
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. This
@@ -2653,11 +2815,12 @@ SitesApp.Site.prototype.removeViewer = function(emailAddress){};
  users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> if they belong to a class of users who have general
  access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> is shared with the user's entire domain.
  *
+ * @function SitesApp.Site#removeViewer
+ *
  * @param {User} user - a representation of the user to remove
  *
  * @return {SitesApp.Site} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> for chaining
  */
-SitesApp.Site.prototype.removeViewer = function(user){};
 
 /**
  * Gets an array of descendant pages that match a search query, up to a limit of 200 pages.
@@ -2671,11 +2834,12 @@ SitesApp.Site.prototype.removeViewer = function(user){};
  }
  </code></pre>
  *
+ * @function SitesApp.Site#search
+ *
  * @param {String} query - the full text search query to match
  *
  * @return {SitesApp.Page[]} an array of direct and indirect child pages of the given type
  */
-SitesApp.Site.prototype.search = function(query){};
 
 /**
  * Gets an array of descendant pages that match a search query, with optional advanced arguments.
@@ -2696,12 +2860,13 @@ SitesApp.Site.prototype.search = function(query){};
  }
  </code></pre>
  *
+ * @function SitesApp.Site#search
+ *
  * @param {String} query - the full text search query to match
  * @param {Object} options - JavaScript object fields defined in the Advanced Arguments section below
  *
  * @return {SitesApp.Page[]} an array of direct and indirect child pages of the given type
  */
-SitesApp.Site.prototype.search = function(query, options){};
 
 /**
  * Set the summary of the web site
@@ -2715,11 +2880,12 @@ SitesApp.Site.prototype.search = function(query, options){};
      .setTheme(&quot;simple&quot;);
  </code></pre>
  *
+ * @function SitesApp.Site#setSummary
+ *
  * @param {String} summary - A string summary describing the site
  *
  * @return {SitesApp.Site} the site for method chaining
  */
-SitesApp.Site.prototype.setSummary = function(summary){};
 
 /**
  * Sets the theme of the site
@@ -2740,11 +2906,12 @@ SitesApp.Site.prototype.setSummary = function(summary){};
      .setTheme(&quot;simple&quot;);
  </code></pre>
  *
+ * @function SitesApp.Site#setTheme
+ *
  * @param {String} theme - a string name for the theme to set for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>
  *
  * @return {SitesApp.Site} the site for method chaining
  */
-SitesApp.Site.prototype.setTheme = function(theme){};
 
 /**
  * Set the title of the site
@@ -2758,9 +2925,10 @@ SitesApp.Site.prototype.setTheme = function(theme){};
      .setTheme(&quot;simple&quot;);
  </code></pre>
  *
+ * @function SitesApp.Site#setTitle
+ *
  * @param {String} title - the new title of the site
  *
  * @return {SitesApp.Site} the site for method chaining
  */
-SitesApp.Site.prototype.setTitle = function(title){};
 

@@ -1,4 +1,6 @@
-var UserProperties = {};
+/**********************************************
+ * @namespace UserProperties
+ ***********************************************/
 
 
 /**
@@ -8,9 +10,10 @@ var UserProperties = {};
  UserProperties.deleteAllProperties();
  </code></pre>
  *
+ * @function UserProperties.deleteAllProperties
+ *
  * @return {UserProperties} this object, for chaining
  */
-UserProperties.deleteAllProperties = function(){};
 
 /**
  * Deletes the property with the given key.
@@ -19,18 +22,20 @@ UserProperties.deleteAllProperties = function(){};
  UserProperties.deleteProperty(&#39;special&#39;);
  </code></pre>
  *
+ * @function UserProperties.deleteProperty
+ *
  * @param {String} key - key for property to delete
  *
  * @return {UserProperties} this object, for chaining
  */
-UserProperties.deleteProperty = function(key){};
 
 /**
  * Get all of the available keys.
  *
+ * @function UserProperties.getKeys
+ *
  * @return {String[]}
  */
-UserProperties.getKeys = function(){};
 
 /**
  * Get all of the available properties at once.
@@ -61,9 +66,10 @@ UserProperties.getKeys = function(){};
  }
  </code></pre>
  *
+ * @function UserProperties.getProperties
+ *
  * @return {Object} a copy of the properties containing key-value pairs
  */
-UserProperties.getProperties = function(){};
 
 /**
  * Returns the value associated with the provided key, or null if there is no such value.
@@ -72,11 +78,12 @@ UserProperties.getProperties = function(){};
  var specialValue = UserProperties.getProperty(&#39;special&#39;);
  </code></pre>
  *
+ * @function UserProperties.getProperty
+ *
  * @param {String} key - key for the value to retrieve
  *
  * @return {String} the value associated with the key
  */
-UserProperties.getProperty = function(key){};
 
 /**
  * Bulk-sets all the properties drawn from the given object.
@@ -85,11 +92,12 @@ UserProperties.getProperty = function(key){};
  UserProperties.setProperties({special: &#39;sauce&#39;, &#39;meaning&#39;: 42});
  </code></pre>
  *
+ * @function UserProperties.setProperties
+ *
  * @param {Object} properties - an object containing the properties to set.
  *
  * @return {UserProperties} this object, for chaining
  */
-UserProperties.setProperties = function(properties){};
 
 /**
  * Bulk-sets all the properties drawn from the given object.
@@ -99,12 +107,13 @@ UserProperties.setProperties = function(properties){};
  UserProperties.setProperties({special: &#39;sauce&#39;, &#39;meaning&#39;: 42}, true);
  </code></pre>
  *
+ * @function UserProperties.setProperties
+ *
  * @param {Object} properties - an object containing the properties to set.
  * @param {Boolean} deleteAllOthers - whether to delete all existing properties.
  *
  * @return {UserProperties} this object, for chaining
  */
-UserProperties.setProperties = function(properties, deleteAllOthers){};
 
 /**
  * Persists the specified in value with the provided key. Any existing value associated with this
@@ -114,10 +123,11 @@ UserProperties.setProperties = function(properties, deleteAllOthers){};
  UserProperties.setProperty(&#39;special&#39;, &#39;sauce&#39;);
  </code></pre>
  *
+ * @function UserProperties.setProperty
+ *
  * @param {String} key - key for property
  * @param {String} value - value to associate with the key
  *
  * @return {UserProperties} this object, for chaining
  */
-UserProperties.setProperty = function(key, value){};
 
