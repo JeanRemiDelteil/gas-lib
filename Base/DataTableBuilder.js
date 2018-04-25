@@ -1,3 +1,7 @@
+/**********************************************
+ * @namespace DataTableBuilder
+ ***********************************************/
+
 /**
  * @class DataTableBuilder
  */
@@ -9,7 +13,7 @@
  charts, or slice labels in pie charts). The other columns are often used for data and therefore
  often require numeric values.
  *
- * @function DataTableBuilder.addColumn
+ * @function DataTableBuilder#addColumn
  *
  * @param {ColumnType} type - type of data in the column (number, string, or date)
  * @param {String} label - label of the column (it's used for chart legends).
@@ -20,7 +24,7 @@
 /**
  * Adds a row to the data table.
  *
- * @function DataTableBuilder.addRow
+ * @function DataTableBuilder#addRow
  *
  * @param {Object[]} values - values for the row, specified in the same order that the columns are entered.
  *
@@ -30,7 +34,7 @@
 /**
  * Builds and returns a data table.
  *
- * @function DataTableBuilder.build
+ * @function DataTableBuilder#build
  *
  * @return {DataTable} the data table
  */
@@ -43,12 +47,13 @@
 
  <p>Not all column values need to be filled in. Those missing will be considered <code>null</code>.
  *
- * @function DataTableBuilder.setValue
+ * @function DataTableBuilder#setValue
  *
- * @param {number} row - the row index (the first row has index 0)
- * @param {number} column - the column index (the first column has index 0)
+ * @param {IntegerNum} row - the row index (the first row has index 0)
+ * @param {IntegerNum} column - the column index (the first column has index 0)
  * @param {Object} value - the value of the table cell (should have the right type for the column).
  *
  * @return {DataTableBuilder} this builder, for chaining
  */
+
 

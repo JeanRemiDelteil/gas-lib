@@ -2,2064 +2,172 @@
  * @namespace SlidesApp
  ***********************************************/
 
-
 /**
  * An enumeration of the types of alignment positions.
  *
- * @class SlidesApp.AlignmentPosition
- */
-
-/**
- * @typedef {SlidesApp.AlignmentPosition} SlidesApp.AlignmentPosition.CENTER
- * 
- * Align to the center.
- */
-
-/**
- * @typedef {SlidesApp.AlignmentPosition} SlidesApp.AlignmentPosition.HORIZONTAL_CENTER
- * 
- * Align to the horizontal center.
- */
-
-/**
- * @typedef {SlidesApp.AlignmentPosition} SlidesApp.AlignmentPosition.VERTICAL_CENTER
- * 
- * Align to the vertical center.
+ * @typedef {SlidesApp.AlignmentPosition} SlidesApp.AlignmentPosition
  */
 
 /**
  * An enumeration of the different arrow styles that a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/line.html'>Line</a></code> can have.
  *
- * @class SlidesApp.ArrowStyle
- */
-
-/**
- * @typedef {SlidesApp.ArrowStyle} SlidesApp.ArrowStyle.FILL_ARROW
- * 
- * Filled arrow. Corresponds to ECMA-376 ST_LineEndType value 'triangle'.
- */
-
-/**
- * @typedef {SlidesApp.ArrowStyle} SlidesApp.ArrowStyle.FILL_CIRCLE
- * 
- * Filled circle. Corresponds to ECMA-376 ST_LineEndType value 'oval'.
- */
-
-/**
- * @typedef {SlidesApp.ArrowStyle} SlidesApp.ArrowStyle.FILL_DIAMOND
- * 
- * Filled diamond. Corresponds to ECMA-376 ST_LineEndType value 'diamond'.
- */
-
-/**
- * @typedef {SlidesApp.ArrowStyle} SlidesApp.ArrowStyle.FILL_SQUARE
- * 
- * Filled square.
- */
-
-/**
- * @typedef {SlidesApp.ArrowStyle} SlidesApp.ArrowStyle.NONE
- * 
- * No arrow.
- */
-
-/**
- * @typedef {SlidesApp.ArrowStyle} SlidesApp.ArrowStyle.OPEN_ARROW
- * 
- * Hollow arrow.
- */
-
-/**
- * @typedef {SlidesApp.ArrowStyle} SlidesApp.ArrowStyle.OPEN_CIRCLE
- * 
- * Hollow circle.
- */
-
-/**
- * @typedef {SlidesApp.ArrowStyle} SlidesApp.ArrowStyle.OPEN_DIAMOND
- * 
- * Hollow diamond.
- */
-
-/**
- * @typedef {SlidesApp.ArrowStyle} SlidesApp.ArrowStyle.OPEN_SQUARE
- * 
- * Hollow square.
- */
-
-/**
- * @typedef {SlidesApp.ArrowStyle} SlidesApp.ArrowStyle.STEALTH_ARROW
- * 
- * Arrow with notched back. Corresponds to ECMA-376 ST_LineEndType value 'stealth'.
- */
-
-/**
- * @typedef {SlidesApp.ArrowStyle} SlidesApp.ArrowStyle.UNSUPPORTED
- * 
- * An arrow style that is not supported.
+ * @typedef {SlidesApp.ArrowStyle} SlidesApp.ArrowStyle
  */
 
 /**
  * An enumeration of the types of auto text.
  *
- * @class SlidesApp.AutoTextType
- */
-
-/**
- * @typedef {SlidesApp.AutoTextType} SlidesApp.AutoTextType.SLIDE_NUMBER
- * 
- * A slide number.
- */
-
-/**
- * @typedef {SlidesApp.AutoTextType} SlidesApp.AutoTextType.UNSUPPORTED
- * 
- * An auto text type that is not supported.
+ * @typedef {SlidesApp.AutoTextType} SlidesApp.AutoTextType
  */
 
 /**
  * An enumeration of the different merge states of a table cell.
  *
- * @class SlidesApp.CellMergeState
- */
-
-/**
- * @typedef {SlidesApp.CellMergeState} SlidesApp.CellMergeState.HEAD
- * 
- * The cell is merged and it is the head (i.e. upper left) cell within the merged set of cells.
-
- <p>As an example, assume the following table.
-
- <pre class="prettyprint">
- -------------------
- |(0,0)|(0,1)|(0,2)|
- -------------------
- </pre>
-
- If the first two cells are merged to form the following table, cell (0,0) is the head cell and
- (0,1) is a merged cell.
-
- <pre class="prettyprint">
- -------------------
- |(0,0)      |(0,2)|
- -------------------
- </pre>
- */
-
-/**
- * @typedef {SlidesApp.CellMergeState} SlidesApp.CellMergeState.MERGED
- * 
- * The cell is merged but is not the head (i.e. upper left) cell.
-
- <p>As an example, assume the following table.
-
- <pre class="prettyprint">
- -------------------
- |(0,0)|(0,1)|(0,2)|
- -------------------
- </pre>
-
- If the first two cells are merged to form the following table, cell (0,0) is the head cell and
- (0,1) is a merged cell.
-
- <pre class="prettyprint">
- -------------------
- |(0,0)      |(0,2)|
- -------------------
- </pre>
- */
-
-/**
- * @typedef {SlidesApp.CellMergeState} SlidesApp.CellMergeState.NORMAL
- * 
- * The cell is not merged.
+ * @typedef {SlidesApp.CellMergeState} SlidesApp.CellMergeState
  */
 
 /**
  * An enumeration of color types.
  *
- * @class SlidesApp.ColorType
- */
-
-/**
- * @typedef {SlidesApp.ColorType} SlidesApp.ColorType.RGB
- * 
- * A color defined by red, green, blue color channels.
- */
-
-/**
- * @typedef {SlidesApp.ColorType} SlidesApp.ColorType.THEME
- * 
- * A color that refers to an entry in the page's color scheme.
- */
-
-/**
- * @typedef {SlidesApp.ColorType} SlidesApp.ColorType.UNSUPPORTED
- * 
- * A color type that is not supported.
+ * @typedef {SlidesApp.ColorType} SlidesApp.ColorType
  */
 
 /**
  * An enumeration of values used to specify content alignment.
  *
- * @class SlidesApp.ContentAlignment
- */
-
-/**
- * @typedef {SlidesApp.ContentAlignment} SlidesApp.ContentAlignment.BOTTOM
- * 
- * Aligns the content to the bottom of the content holder. Corresponds to ECMA-376
- ST_TextAnchoringType 'b'.
- */
-
-/**
- * @typedef {SlidesApp.ContentAlignment} SlidesApp.ContentAlignment.MIDDLE
- * 
- * Aligns the content to the middle of the content holder. Corresponds to ECMA-376
- ST_TextAnchoringType 'ctr'.
- */
-
-/**
- * @typedef {SlidesApp.ContentAlignment} SlidesApp.ContentAlignment.TOP
- * 
- * Aligns the content to the top of the content holder. Corresponds to ECMA-376
- ST_TextAnchoringType 't'.
- */
-
-/**
- * @typedef {SlidesApp.ContentAlignment} SlidesApp.ContentAlignment.UNSUPPORTED
- * 
- * A content alignment that is not supported.
+ * @typedef {SlidesApp.ContentAlignment} SlidesApp.ContentAlignment
  */
 
 /**
  * An enumeration of the different dash styles that a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/line.html'>Line</a></code> can have.
  *
- * @class SlidesApp.DashStyle
- */
-
-/**
- * @typedef {SlidesApp.DashStyle} SlidesApp.DashStyle.DASH
- * 
- * Dashed line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dash'.
- */
-
-/**
- * @typedef {SlidesApp.DashStyle} SlidesApp.DashStyle.DASH_DOT
- * 
- * Alternating dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dashDot'.
- */
-
-/**
- * @typedef {SlidesApp.DashStyle} SlidesApp.DashStyle.DOT
- * 
- * Dotted line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dot'.
- */
-
-/**
- * @typedef {SlidesApp.DashStyle} SlidesApp.DashStyle.LONG_DASH
- * 
- * Line with large dashes. Corresponds to ECMA-376 ST_PresetLineDashVal value 'lgDash'.
- */
-
-/**
- * @typedef {SlidesApp.DashStyle} SlidesApp.DashStyle.LONG_DASH_DOT
- * 
- * Alternating large dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value
- 'lgDashDot'.
- */
-
-/**
- * @typedef {SlidesApp.DashStyle} SlidesApp.DashStyle.SOLID
- * 
- * Solid line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'solid'. This is the default
- dash style.
- */
-
-/**
- * @typedef {SlidesApp.DashStyle} SlidesApp.DashStyle.UNSUPPORTED
- * 
- * A dash style that is not supported.
+ * @typedef {SlidesApp.DashStyle} SlidesApp.DashStyle
  */
 
 /**
  * An enumeration of fill types.
  *
- * @class SlidesApp.FillType
- */
-
-/**
- * @typedef {SlidesApp.FillType} SlidesApp.FillType.NONE
- * 
- * No fill, so the background is transparent.
- */
-
-/**
- * @typedef {SlidesApp.FillType} SlidesApp.FillType.SOLID
- * 
- * A solid color fill.
- */
-
-/**
- * @typedef {SlidesApp.FillType} SlidesApp.FillType.UNSUPPORTED
- * 
- * A fill type that is not supported.
+ * @typedef {SlidesApp.FillType} SlidesApp.FillType
  */
 
 /**
  * An enumeration of the categories of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/line.html'>Line</a></code>.
  *
- * @class SlidesApp.LineCategory
- */
-
-/**
- * @typedef {SlidesApp.LineCategory} SlidesApp.LineCategory.BENT
- * 
- * Bent connectors, including bent connector 2 to 5.
- */
-
-/**
- * @typedef {SlidesApp.LineCategory} SlidesApp.LineCategory.CURVED
- * 
- * Curved connectors, including curved connector 2 to 5.
- */
-
-/**
- * @typedef {SlidesApp.LineCategory} SlidesApp.LineCategory.STRAIGHT
- * 
- * Straight connectors, including straight connector 1
+ * @typedef {SlidesApp.LineCategory} SlidesApp.LineCategory
  */
 
 /**
  * An enumeration of the types of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/line-fill.html'>LineFill</a></code>.
  *
- * @class SlidesApp.LineFillType
- */
-
-/**
- * @typedef {SlidesApp.LineFillType} SlidesApp.LineFillType.NONE
- * 
- * No fill, so the line or outline is transparent.
- */
-
-/**
- * @typedef {SlidesApp.LineFillType} SlidesApp.LineFillType.SOLID
- * 
- * A solid color fill.
- */
-
-/**
- * @typedef {SlidesApp.LineFillType} SlidesApp.LineFillType.UNSUPPORTED
- * 
- * A line fill type that is not supported.
+ * @typedef {SlidesApp.LineFillType} SlidesApp.LineFillType
  */
 
 /**
  * An enumeration of the types of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/line.html'>Line</a></code>.
  *
- * @class SlidesApp.LineType
- */
-
-/**
- * @typedef {SlidesApp.LineType} SlidesApp.LineType.BENT_CONNECTOR_2
- * 
- * Bent connector 2 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector2'.
- */
-
-/**
- * @typedef {SlidesApp.LineType} SlidesApp.LineType.BENT_CONNECTOR_3
- * 
- * Bent connector 3 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector3'.
- */
-
-/**
- * @typedef {SlidesApp.LineType} SlidesApp.LineType.BENT_CONNECTOR_4
- * 
- * Bent connector 4 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector4'.
- */
-
-/**
- * @typedef {SlidesApp.LineType} SlidesApp.LineType.BENT_CONNECTOR_5
- * 
- * Bent connector 5 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector5'.
- */
-
-/**
- * @typedef {SlidesApp.LineType} SlidesApp.LineType.CURVED_CONNECTOR_2
- * 
- * Curved connector 2 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector2'.
- */
-
-/**
- * @typedef {SlidesApp.LineType} SlidesApp.LineType.CURVED_CONNECTOR_3
- * 
- * Curved connector 3 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector3'.
- */
-
-/**
- * @typedef {SlidesApp.LineType} SlidesApp.LineType.CURVED_CONNECTOR_4
- * 
- * Curved connector 4 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector4'.
- */
-
-/**
- * @typedef {SlidesApp.LineType} SlidesApp.LineType.CURVED_CONNECTOR_5
- * 
- * Curved connector 5 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector5'.
- */
-
-/**
- * @typedef {SlidesApp.LineType} SlidesApp.LineType.STRAIGHT_CONNECTOR_1
- * 
- * Straight connector 1 form. Corresponds to ECMA-376 ST_ShapeType 'straightConnector1'.
- */
-
-/**
- * @typedef {SlidesApp.LineType} SlidesApp.LineType.STRAIGHT_LINE
- * 
- * Straight line. Corresponds to ECMA-376 ST_ShapeType 'line'. This line type is not a connector.
- */
-
-/**
- * @typedef {SlidesApp.LineType} SlidesApp.LineType.UNSUPPORTED
- * 
- * A line type that is not supported.
+ * @typedef {SlidesApp.LineType} SlidesApp.LineType
  */
 
 /**
  * An enumeration of the types of links.
  *
- * @class SlidesApp.LinkType
- */
-
-/**
- * @typedef {SlidesApp.LinkType} SlidesApp.LinkType.SLIDE_ID
- * 
- * A link to a specific slide in this presentation, addressed by its ID.
- */
-
-/**
- * @typedef {SlidesApp.LinkType} SlidesApp.LinkType.SLIDE_INDEX
- * 
- * A link to a specific slide in this presentation, addressed by its zero-based index.
- */
-
-/**
- * @typedef {SlidesApp.LinkType} SlidesApp.LinkType.SLIDE_POSITION
- * 
- * A link to a specific slide in this presentation, addressed by its position.
- */
-
-/**
- * @typedef {SlidesApp.LinkType} SlidesApp.LinkType.UNSUPPORTED
- * 
- * A link type that is not supported.
- */
-
-/**
- * @typedef {SlidesApp.LinkType} SlidesApp.LinkType.URL
- * 
- * A link to an external web page.
+ * @typedef {SlidesApp.LinkType} SlidesApp.LinkType
  */
 
 /**
  * An enumeration of the types of list presets.
  *
- * @class SlidesApp.ListPreset
- */
-
-/**
- * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.ARROW3D_CIRCLE_SQUARE
- * 
- * A list with a `ARROW3D`, `CIRCLE` and `SQUARE` glyphs for the first 3 list nesting levels.
- */
-
-/**
- * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.ARROW_DIAMOND_DISC
- * 
- * A list with a `ARROW`, `DIAMOND` and `DISC` glyphs for the first 3 list nesting levels.
- */
-
-/**
- * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.CHECKBOX
- * 
- * A list with `CHECKBOX` glyphs for all list nesting levels.
- */
-
-/**
- * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.DIAMONDX_ARROW3D_SQUARE
- * 
- * A list with a `DIAMONDX`, `ARROW3D` and `SQUARE` glyphs for the first 3 list nesting levels.
- */
-
-/**
- * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.DIAMONDX_HOLLOWDIAMOND_SQUARE
- * 
- * A list with a `DIAMONDX`, `HOLLOWDIAMOND` and `SQUARE` glyphs for the first 3 list nesting
- levels.
- */
-
-/**
- * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.DIAMOND_CIRCLE_SQUARE
- * 
- * A list with a `DIAMOND`, `CIRCLE` and `SQUARE` glyphs for the first 3 list nesting levels.
- */
-
-/**
- * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.DIGIT_ALPHA_ROMAN
- * 
- * A list with `DIGIT`, `ALPHA` and `ROMAN` glyphs for the first 3 list nesting levels, followed
- by periods.
- */
-
-/**
- * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.DIGIT_ALPHA_ROMAN_PARENS
- * 
- * A list with `DIGIT`, `ALPHA` and `ROMAN` glyphs for the first 3 list nesting levels, followed
- by parenthesis.
- */
-
-/**
- * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.DIGIT_NESTED
- * 
- * A list with `DIGIT` glyphs separated by periods, where each nesting level uses the previous
- nesting level's glyph as a prefix. For example: '1.', '1.1.', '2.', '2.2.'.
- */
-
-/**
- * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.DISC_CIRCLE_SQUARE
- * 
- * A list with a `DISC`, `CIRCLE` and `SQUARE` glyphs for the first 3 list nesting levels.
- */
-
-/**
- * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.LEFTTRIANGLE_DIAMOND_DISC
- * 
- * A list with a `LEFTTRIANGLE`, `DIAMOND` and `DISC` glyphs for the first 3 list nesting levels.
- */
-
-/**
- * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.STAR_CIRCLE_SQUARE
- * 
- * A list with a `STAR`, `CIRCLE` and `SQUARE` glyphs for the first 3 list nesting levels.
- */
-
-/**
- * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.UPPERALPHA_ALPHA_ROMAN
- * 
- * A list with `UPPERALPHA`, `ALPHA` and `ROMAN` glyphs for the first 3 list nesting levels,
- followed by periods.
- */
-
-/**
- * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.UPPERROMAN_UPPERALPHA_DIGIT
- * 
- * A list with `UPPERROMAN`, `UPPERALPHA` and `DIGIT` glyphs for the first 3 list nesting levels,
- followed by periods.
- */
-
-/**
- * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.ZERODIGIT_ALPHA_ROMAN
- * 
- * A list with `ZERODIGIT`, `ALPHA` and `ROMAN` glyphs for the first 3 list nesting levels,
- followed by periods.
+ * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset
  */
 
 /**
  * An enumeration of the types of page backgrounds.
  *
- * @class SlidesApp.PageBackgroundType
- */
-
-/**
- * @typedef {SlidesApp.PageBackgroundType} SlidesApp.PageBackgroundType.NONE
- * 
- * No fill, so the background is rendered white.
- */
-
-/**
- * @typedef {SlidesApp.PageBackgroundType} SlidesApp.PageBackgroundType.PICTURE
- * 
- * A picture that is stretched to fill the page.
- */
-
-/**
- * @typedef {SlidesApp.PageBackgroundType} SlidesApp.PageBackgroundType.SOLID
- * 
- * A solid color fill.
- */
-
-/**
- * @typedef {SlidesApp.PageBackgroundType} SlidesApp.PageBackgroundType.UNSUPPORTED
- * 
- * A page background type that is not supported.
+ * @typedef {SlidesApp.PageBackgroundType} SlidesApp.PageBackgroundType
  */
 
 /**
  * An enumeration of the types of page elements.
  *
- * @class SlidesApp.PageElementType
- */
-
-/**
- * @typedef {SlidesApp.PageElementType} SlidesApp.PageElementType.GROUP
- * 
- * Represents a collection of page elements joined as a single unit.
- */
-
-/**
- * @typedef {SlidesApp.PageElementType} SlidesApp.PageElementType.IMAGE
- * 
- * Represents an image.
- */
-
-/**
- * @typedef {SlidesApp.PageElementType} SlidesApp.PageElementType.LINE
- * 
- * Represents a line.
- */
-
-/**
- * @typedef {SlidesApp.PageElementType} SlidesApp.PageElementType.SHAPE
- * 
- * Represents a generic shape that does not have a more specific classification.
- */
-
-/**
- * @typedef {SlidesApp.PageElementType} SlidesApp.PageElementType.SHEETS_CHART
- * 
- * Represents a linked chart embedded from Google Sheets.
- */
-
-/**
- * @typedef {SlidesApp.PageElementType} SlidesApp.PageElementType.TABLE
- * 
- * Represents a table.
- */
-
-/**
- * @typedef {SlidesApp.PageElementType} SlidesApp.PageElementType.UNSUPPORTED
- * 
- * Represents a page element that is not supported and cannot be further classified.
- */
-
-/**
- * @typedef {SlidesApp.PageElementType} SlidesApp.PageElementType.VIDEO
- * 
- * Represents a video.
- */
-
-/**
- * @typedef {SlidesApp.PageElementType} SlidesApp.PageElementType.WORD_ART
- * 
- * Represents word art.
+ * @typedef {SlidesApp.PageElementType} SlidesApp.PageElementType
  */
 
 /**
  * An enumeration of the types of pages.
  *
- * @class SlidesApp.PageType
- */
-
-/**
- * @typedef {SlidesApp.PageType} SlidesApp.PageType.LAYOUT
- * 
- * A layout page.
- */
-
-/**
- * @typedef {SlidesApp.PageType} SlidesApp.PageType.MASTER
- * 
- * A master page.
- */
-
-/**
- * @typedef {SlidesApp.PageType} SlidesApp.PageType.SLIDE
- * 
- * A slide page.
- */
-
-/**
- * @typedef {SlidesApp.PageType} SlidesApp.PageType.UNSUPPORTED
- * 
- * A page type that is not supported.
+ * @typedef {SlidesApp.PageType} SlidesApp.PageType
  */
 
 /**
  * An enumeration of the types of paragraph alignment.
  *
- * @class SlidesApp.ParagraphAlignment
- */
-
-/**
- * @typedef {SlidesApp.ParagraphAlignment} SlidesApp.ParagraphAlignment.CENTER
- * 
- * The paragraph is centered.
- */
-
-/**
- * @typedef {SlidesApp.ParagraphAlignment} SlidesApp.ParagraphAlignment.END
- * 
- * The paragraph is aligned to the end of the line. Right-aligned for left-to-right text,
- left-aligned otherwise.
- */
-
-/**
- * @typedef {SlidesApp.ParagraphAlignment} SlidesApp.ParagraphAlignment.JUSTIFIED
- * 
- * The paragraph is justified.
- */
-
-/**
- * @typedef {SlidesApp.ParagraphAlignment} SlidesApp.ParagraphAlignment.START
- * 
- * The paragraph is aligned to the start of the line. Left-aligned for left-to-right text,
- right-aligned otherwise.
- */
-
-/**
- * @typedef {SlidesApp.ParagraphAlignment} SlidesApp.ParagraphAlignment.UNSUPPORTED
- * 
- * A paragraph alignment that is not supported.
+ * @typedef {SlidesApp.ParagraphAlignment} SlidesApp.ParagraphAlignment
  */
 
 /**
  * An enumeration of the types of placeholders.
  *
- * @class SlidesApp.PlaceholderType
- */
-
-/**
- * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.BODY
- * 
- * Body text.
- */
-
-/**
- * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.CENTERED_TITLE
- * 
- * Title centered.
- */
-
-/**
- * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.CHART
- * 
- * Chart or graph.
- */
-
-/**
- * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.CLIP_ART
- * 
- * Clip art image.
- */
-
-/**
- * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.DATE_AND_TIME
- * 
- * Date and time.
- */
-
-/**
- * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.DIAGRAM
- * 
- * Diagram.
- */
-
-/**
- * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.FOOTER
- * 
- * Footer text.
- */
-
-/**
- * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.HEADER
- * 
- * Header text.
- */
-
-/**
- * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.MEDIA
- * 
- * Multimedia.
- */
-
-/**
- * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.NONE
- * 
- * Not a Placeholder.
- */
-
-/**
- * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.OBJECT
- * 
- * Any content type.
- */
-
-/**
- * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.PICTURE
- * 
- * Picture.
- */
-
-/**
- * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.SLIDE_IMAGE
- * 
- * Slide image.
- */
-
-/**
- * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.SLIDE_NUMBER
- * 
- * Number of a slide.
- */
-
-/**
- * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.SUBTITLE
- * 
- * Subtitle.
- */
-
-/**
- * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.TABLE
- * 
- * Table.
- */
-
-/**
- * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.TITLE
- * 
- * Slide title.
- */
-
-/**
- * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.UNSUPPORTED
- * 
- * A placeholder type that is not supported.
+ * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType
  */
 
 /**
  * An enumeration of the predefined layouts.
  *
- * @class SlidesApp.PredefinedLayout
- */
-
-/**
- * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.BIG_NUMBER
- * 
- * Layout with a big number heading.
- */
-
-/**
- * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.BLANK
- * 
- * Blank layout, with no placeholders.
- */
-
-/**
- * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.CAPTION_ONLY
- * 
- * Layout with a caption at the bottom.
- */
-
-/**
- * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.MAIN_POINT
- * 
- * Layout with a main point.
- */
-
-/**
- * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.ONE_COLUMN_TEXT
- * 
- * Layout with one title and one body, arranged in a single column.
- */
-
-/**
- * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.SECTION_HEADER
- * 
- * Layout with a section title.
- */
-
-/**
- * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.SECTION_TITLE_AND_DESCRIPTION
- * 
- * Layout with a title and subtitle on one side and description on the other.
- */
-
-/**
- * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.TITLE
- * 
- * Layout with a title and a subtitle.
- */
-
-/**
- * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.TITLE_AND_BODY
- * 
- * Layout with a title and body.
- */
-
-/**
- * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.TITLE_AND_TWO_COLUMNS
- * 
- * Layout with a title and two columns.
- */
-
-/**
- * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.TITLE_ONLY
- * 
- * Layout with only a title.
- */
-
-/**
- * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.UNSUPPORTED
- * 
- * A layout that is not supported.
+ * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout
  */
 
 /**
  * An enumeration of the types of selections.
  *
- * @class SlidesApp.SelectionType
- */
-
-/**
- * @typedef {SlidesApp.SelectionType} SlidesApp.SelectionType.CURRENT_PAGE
- * 
- * Current page selection.
- */
-
-/**
- * @typedef {SlidesApp.SelectionType} SlidesApp.SelectionType.NONE
- * 
- * No selection.
- */
-
-/**
- * @typedef {SlidesApp.SelectionType} SlidesApp.SelectionType.PAGE
- * 
- * Page selection in the thumbnail flimstrip.
- */
-
-/**
- * @typedef {SlidesApp.SelectionType} SlidesApp.SelectionType.PAGE_ELEMENT
- * 
- * Page element selection.
- */
-
-/**
- * @typedef {SlidesApp.SelectionType} SlidesApp.SelectionType.TABLE_CELL
- * 
- * Table cell selection.
- */
-
-/**
- * @typedef {SlidesApp.SelectionType} SlidesApp.SelectionType.TEXT
- * 
- * Text selection.
- */
-
-/**
- * @typedef {SlidesApp.SelectionType} SlidesApp.SelectionType.UNSUPPORTED
- * 
- * A selection type that is not supported.
+ * @typedef {SlidesApp.SelectionType} SlidesApp.SelectionType
  */
 
 /**
  * An enumeration of the types of shapes.
  *
- * @class SlidesApp.ShapeType
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.ARC
- * 
- * Curved arc shape. Corresponds to ECMA-376 ST_ShapeType 'arc'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.ARROW_EAST
- * 
- * East arrow shape.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.ARROW_NORTH
- * 
- * North arrow shape.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.ARROW_NORTH_EAST
- * 
- * Northeast arrow shape.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.BENT_ARROW
- * 
- * Bent arrow shape. Corresponds to ECMA-376 ST_ShapeType 'bentArrow'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.BENT_UP_ARROW
- * 
- * Bent up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'bentUpArrow'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.BEVEL
- * 
- * Bevel shape. Corresponds to ECMA-376 ST_ShapeType 'bevel'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.BLOCK_ARC
- * 
- * Block arc shape. Corresponds to ECMA-376 ST_ShapeType 'blockArc'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.BRACE_PAIR
- * 
- * Brace pair shape. Corresponds to ECMA-376 ST_ShapeType 'bracePair'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.BRACKET_PAIR
- * 
- * Bracket pair shape. Corresponds to ECMA-376 ST_ShapeType 'bracketPair'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CAN
- * 
- * Can shape. Corresponds to ECMA-376 ST_ShapeType 'can'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CHEVRON
- * 
- * Chevron shape. Corresponds to ECMA-376 ST_ShapeType 'chevron'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CHORD
- * 
- * Chord shape. Corresponds to ECMA-376 ST_ShapeType 'chord'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CLOUD
- * 
- * Cloud shape. Corresponds to ECMA-376 ST_ShapeType 'cloud'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CLOUD_CALLOUT
- * 
- * Callout cloud shape. Corresponds to ECMA-376 ST_ShapeType 'cloudCallout'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CORNER
- * 
- * Corner shape. Corresponds to ECMA-376 ST_ShapeType 'corner'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CUBE
- * 
- * Cube shape. Corresponds to ECMA-376 ST_ShapeType 'cube'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CURVED_DOWN_ARROW
- * 
- * Curved down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedDownArrow'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CURVED_LEFT_ARROW
- * 
- * Curved left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedLeftArrow'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CURVED_RIGHT_ARROW
- * 
- * Curved right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedRightArrow'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CURVED_UP_ARROW
- * 
- * Curved up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedUpArrow'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CUSTOM
- * 
- * Custom shape.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.DECAGON
- * 
- * Decagon shape. Corresponds to ECMA-376 ST_ShapeType 'decagon'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.DIAGONAL_STRIPE
- * 
- * Diagonal stripe shape. Corresponds to ECMA-376 ST_ShapeType 'diagStripe'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.DIAMOND
- * 
- * Diamond shape. Corresponds to ECMA-376 ST_ShapeType 'diamond'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.DODECAGON
- * 
- * Dodecagon shape. Corresponds to ECMA-376 ST_ShapeType 'dodecagon'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.DONUT
- * 
- * Donut shape. Corresponds to ECMA-376 ST_ShapeType 'donut'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.DOUBLE_WAVE
- * 
- * Double wave shape. Corresponds to ECMA-376 ST_ShapeType 'doubleWave'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.DOWN_ARROW
- * 
- * Down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'downArrow'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.DOWN_ARROW_CALLOUT
- * 
- * Callout down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'downArrowCallout'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.ELLIPSE
- * 
- * Ellipse shape. Corresponds to ECMA-376 ST_ShapeType 'ellipse'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.ELLIPSE_RIBBON
- * 
- * Ellipse ribbon shape. Corresponds to ECMA-376 ST_ShapeType 'ellipseRibbon'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.ELLIPSE_RIBBON_2
- * 
- * Ellipse ribbon 2 shape. Corresponds to ECMA-376 ST_ShapeType 'ellipseRibbon2'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_ALTERNATE_PROCESS
- * 
- * Alternate process flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartAlternateProcess'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_COLLATE
- * 
- * Collate flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartCollate'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_CONNECTOR
- * 
- * Connector flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartConnector'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_DECISION
- * 
- * Decision flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDecision'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_DELAY
- * 
- * Delay flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDelay'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_DISPLAY
- * 
- * Display flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDisplay'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_DOCUMENT
- * 
- * Document flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDocument'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_EXTRACT
- * 
- * Extract flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartExtract'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_INPUT_OUTPUT
- * 
- * Input output flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartInputOutput'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_INTERNAL_STORAGE
- * 
- * Internal storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartInternalStorage'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_MAGNETIC_DISK
- * 
- * Magnetic disk flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticDisk'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_MAGNETIC_DRUM
- * 
- * Magnetic drum flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticDrum'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_MAGNETIC_TAPE
- * 
- * Magnetic tape flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticTape'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_MANUAL_INPUT
- * 
- * Manual input flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartManualInput'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_MANUAL_OPERATION
- * 
- * Manual operation flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartManualOperation'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_MERGE
- * 
- * Merge flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMerge'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_MULTIDOCUMENT
- * 
- * Multi-document flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMultidocument'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_OFFLINE_STORAGE
- * 
- * Offline storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOfflineStorage'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_OFFPAGE_CONNECTOR
- * 
- * Off-page connector flow shape. Corresponds to ECMA-376 ST_ShapeType
- 'flowChartOffpageConnector'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_ONLINE_STORAGE
- * 
- * Online storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOnlineStorage'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_OR
- * 
- * Or flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOr'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_PREDEFINED_PROCESS
- * 
- * Predefined process flow shape. Corresponds to ECMA-376 ST_ShapeType
- 'flowChartPredefinedProcess'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_PREPARATION
- * 
- * Preparation flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPreparation'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_PROCESS
- * 
- * Process flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartProcess'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_PUNCHED_CARD
- * 
- * Punched card flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPunchedCard'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_PUNCHED_TAPE
- * 
- * Punched tape flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPunchedTape'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_SORT
- * 
- * Sort flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartSort'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_SUMMING_JUNCTION
- * 
- * Summing junction flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartSummingJunction'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_TERMINATOR
- * 
- * Terminator flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartTerminator'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FOLDED_CORNER
- * 
- * Folded corner shape. Corresponds to ECMA-376 ST_ShapeType 'foldedCorner'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FRAME
- * 
- * Frame shape. Corresponds to ECMA-376 ST_ShapeType 'frame'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.HALF_FRAME
- * 
- * Half frame shape. Corresponds to ECMA-376 ST_ShapeType 'halfFrame'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.HEART
- * 
- * Heart shape. Corresponds to ECMA-376 ST_ShapeType 'heart'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.HEPTAGON
- * 
- * Heptagon shape. Corresponds to ECMA-376 ST_ShapeType 'heptagon'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.HEXAGON
- * 
- * Hexagon shape. Corresponds to ECMA-376 ST_ShapeType 'hexagon'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.HOME_PLATE
- * 
- * Home plate shape. Corresponds to ECMA-376 ST_ShapeType 'homePlate'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.HORIZONTAL_SCROLL
- * 
- * Horizontal scroll shape. Corresponds to ECMA-376 ST_ShapeType 'horizontalScroll'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.IRREGULAR_SEAL_1
- * 
- * Irregular seal 1 shape. Corresponds to ECMA-376 ST_ShapeType 'irregularSeal1'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.IRREGULAR_SEAL_2
- * 
- * Irregular seal 2 shape. Corresponds to ECMA-376 ST_ShapeType 'irregularSeal2'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.LEFT_ARROW
- * 
- * Left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftArrow'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.LEFT_ARROW_CALLOUT
- * 
- * Callout left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftArrowCallout'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.LEFT_BRACE
- * 
- * Left brace shape. Corresponds to ECMA-376 ST_ShapeType 'leftBrace'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.LEFT_BRACKET
- * 
- * Left bracket shape. Corresponds to ECMA-376 ST_ShapeType 'leftBracket'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.LEFT_RIGHT_ARROW
- * 
- * Left right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightArrow'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.LEFT_RIGHT_ARROW_CALLOUT
- * 
- * Callout left right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightArrowCallout'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.LEFT_RIGHT_UP_ARROW
- * 
- * Left right up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightUpArrow'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.LEFT_UP_ARROW
- * 
- * Left up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftUpArrow'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.LIGHTNING_BOLT
- * 
- * Lightning bolt shape. Corresponds to ECMA-376 ST_ShapeType 'lightningBolt'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.MATH_DIVIDE
- * 
- * Divide math shape. Corresponds to ECMA-376 ST_ShapeType 'mathDivide'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.MATH_EQUAL
- * 
- * Equal math shape. Corresponds to ECMA-376 ST_ShapeType 'mathEqual'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.MATH_MINUS
- * 
- * Minus math shape. Corresponds to ECMA-376 ST_ShapeType 'mathMinus'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.MATH_MULTIPLY
- * 
- * Multiply math shape. Corresponds to ECMA-376 ST_ShapeType 'mathMultiply'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.MATH_NOT_EQUAL
- * 
- * Not equal math shape. Corresponds to ECMA-376 ST_ShapeType 'mathNotEqual'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.MATH_PLUS
- * 
- * Plus math shape. Corresponds to ECMA-376 ST_ShapeType 'mathPlus'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.MOON
- * 
- * Moon shape. Corresponds to ECMA-376 ST_ShapeType 'moon'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.NOTCHED_RIGHT_ARROW
- * 
- * Notched right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'notchedRightArrow'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.NO_SMOKING
- * 
- * No smoking shape. Corresponds to ECMA-376 ST_ShapeType 'noSmoking'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.OCTAGON
- * 
- * Octagon shape. Corresponds to ECMA-376 ST_ShapeType 'octagon'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.PARALLELOGRAM
- * 
- * Parallelogram shape. Corresponds to ECMA-376 ST_ShapeType 'parallelogram'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.PENTAGON
- * 
- * Pentagon shape. Corresponds to ECMA-376 ST_ShapeType 'pentagon'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.PIE
- * 
- * Pie shape. Corresponds to ECMA-376 ST_ShapeType 'pie'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.PLAQUE
- * 
- * Plaque shape. Corresponds to ECMA-376 ST_ShapeType 'plaque'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.PLUS
- * 
- * Plus shape. Corresponds to ECMA-376 ST_ShapeType 'plus'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.QUAD_ARROW
- * 
- * Quad-arrow shape. Corresponds to ECMA-376 ST_ShapeType 'quadArrow'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.QUAD_ARROW_CALLOUT
- * 
- * Callout quad-arrow shape. Corresponds to ECMA-376 ST_ShapeType 'quadArrowCallout'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.RECTANGLE
- * 
- * Rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'rect'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.RIBBON
- * 
- * Ribbon shape. Corresponds to ECMA-376 ST_ShapeType 'ribbon'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.RIBBON_2
- * 
- * Ribbon 2 shape. Corresponds to ECMA-376 ST_ShapeType 'ribbon2'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.RIGHT_ARROW
- * 
- * Right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'rightArrow'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.RIGHT_ARROW_CALLOUT
- * 
- * Callout right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'rightArrowCallout'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.RIGHT_BRACE
- * 
- * Right brace shape. Corresponds to ECMA-376 ST_ShapeType 'rightBrace'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.RIGHT_BRACKET
- * 
- * Right bracket shape. Corresponds to ECMA-376 ST_ShapeType 'rightBracket'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.RIGHT_TRIANGLE
- * 
- * Right triangle shape. Corresponds to ECMA-376 ST_ShapeType 'rtTriangle'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.ROUND_1_RECTANGLE
- * 
- * One round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'round1Rect'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.ROUND_2_DIAGONAL_RECTANGLE
- * 
- * Two diagonal round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType
- 'round2DiagRect'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.ROUND_2_SAME_RECTANGLE
- * 
- * Two same-side round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType
- 'round2SameRect'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.ROUND_RECTANGLE
- * 
- * Round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'roundRect'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.SMILEY_FACE
- * 
- * Smiley face shape. Corresponds to ECMA-376 ST_ShapeType 'smileyFace'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.SNIP_1_RECTANGLE
- * 
- * One snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snip1Rect'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.SNIP_2_DIAGONAL_RECTANGLE
- * 
- * Two diagonal snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snip2DiagRect'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.SNIP_2_SAME_RECTANGLE
- * 
- * Two same-side snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType
- 'snip2SameRect'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.SNIP_ROUND_RECTANGLE
- * 
- * One snip one round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType
- 'snipRoundRect'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.SPEECH
- * 
- * Speech shape.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STARBURST
- * 
- * Star burst shape.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STAR_10
- * 
- * Ten pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star10'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STAR_12
- * 
- * Twelve pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star12'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STAR_16
- * 
- * Sixteen pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star16'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STAR_24
- * 
- * Twenty four pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star24'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STAR_32
- * 
- * Thirty two pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star32'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STAR_4
- * 
- * Four pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star4'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STAR_5
- * 
- * Five pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star5'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STAR_6
- * 
- * Six pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star6'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STAR_7
- * 
- * Seven pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star7'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STAR_8
- * 
- * Eight pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star8'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STRIPED_RIGHT_ARROW
- * 
- * Striped right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'stripedRightArrow'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.SUN
- * 
- * Sun shape. Corresponds to ECMA-376 ST_ShapeType 'sun'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.TEARDROP
- * 
- * Teardrop shape. Corresponds to ECMA-376 ST_ShapeType 'teardrop'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.TEXT_BOX
- * 
- * Text box shape.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.TRAPEZOID
- * 
- * Trapezoid shape. Corresponds to ECMA-376 ST_ShapeType 'trapezoid'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.TRIANGLE
- * 
- * Triangle shape. Corresponds to ECMA-376 ST_ShapeType 'triangle'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.UNSUPPORTED
- * 
- * A shape type that is not supported.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.UP_ARROW
- * 
- * Up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upArrow'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.UP_ARROW_CALLOUT
- * 
- * Callout up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upArrowCallout'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.UP_DOWN_ARROW
- * 
- * Up down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upDownArrow'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.UTURN_ARROW
- * 
- * U-turn arrow shape. Corresponds to ECMA-376 ST_ShapeType 'uturnArrow'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.VERTICAL_SCROLL
- * 
- * Vertical scroll shape. Corresponds to ECMA-376 ST_ShapeType 'verticalScroll'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.WAVE
- * 
- * Wave shape. Corresponds to ECMA-376 ST_ShapeType 'wave'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.WEDGE_ELLIPSE_CALLOUT
- * 
- * Callout wedge ellipse shape. Corresponds to ECMA-376 ST_ShapeType 'wedgeEllipseCallout'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.WEDGE_RECTANGLE_CALLOUT
- * 
- * Callout wedge rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'wedgeRectCallout'.
- */
-
-/**
- * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.WEDGE_ROUND_RECTANGLE_CALLOUT
- * 
- * Callout wedge round rectangle shape. Corresponds to ECMA-376 ST_ShapeType
- 'wedgeRoundRectCallout'.
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType
  */
 
 /**
  * An enumeration of Sheets chart embed types.
  *
- * @class SlidesApp.SheetsChartEmbedType
- */
-
-/**
- * @typedef {SlidesApp.SheetsChartEmbedType} SlidesApp.SheetsChartEmbedType.IMAGE
- * 
- * Indicates that the chart is embedded as an image.
- */
-
-/**
- * @typedef {SlidesApp.SheetsChartEmbedType} SlidesApp.SheetsChartEmbedType.UNSUPPORTED
- * 
- * Represents a chart that is not supported and cannot be further classified.
+ * @typedef {SlidesApp.SheetsChartEmbedType} SlidesApp.SheetsChartEmbedType
  */
 
 /**
  * An enumeration of the types of slide positions.
  *
- * @class SlidesApp.SlidePosition
- */
-
-/**
- * @typedef {SlidesApp.SlidePosition} SlidesApp.SlidePosition.FIRST_SLIDE
- * 
- * The first slide in the presentation.
- */
-
-/**
- * @typedef {SlidesApp.SlidePosition} SlidesApp.SlidePosition.LAST_SLIDE
- * 
- * The last slide in the presentation.
- */
-
-/**
- * @typedef {SlidesApp.SlidePosition} SlidesApp.SlidePosition.NEXT_SLIDE
- * 
- * The next slide.
- */
-
-/**
- * @typedef {SlidesApp.SlidePosition} SlidesApp.SlidePosition.PREVIOUS_SLIDE
- * 
- * The previous slide.
+ * @typedef {SlidesApp.SlidePosition} SlidesApp.SlidePosition
  */
 
 /**
  * An enumeration of the types of spacing modes.
  *
- * @class SlidesApp.SpacingMode
- */
-
-/**
- * @typedef {SlidesApp.SpacingMode} SlidesApp.SpacingMode.COLLAPSE_LISTS
- * 
- * Paragraph spacing is skipped between list elements.
- */
-
-/**
- * @typedef {SlidesApp.SpacingMode} SlidesApp.SpacingMode.NEVER_COLLAPSE
- * 
- * Paragraph spacing is always rendered.
- */
-
-/**
- * @typedef {SlidesApp.SpacingMode} SlidesApp.SpacingMode.UNSUPPORTED
- * 
- * A spacing mode that is not supported.
+ * @typedef {SlidesApp.SpacingMode} SlidesApp.SpacingMode
  */
 
 /**
  * An enumeration of the types of text baseline offset.
  *
- * @class SlidesApp.TextBaselineOffset
- */
-
-/**
- * @typedef {SlidesApp.TextBaselineOffset} SlidesApp.TextBaselineOffset.NONE
- * 
- * The text is not vertically offset.
- */
-
-/**
- * @typedef {SlidesApp.TextBaselineOffset} SlidesApp.TextBaselineOffset.SUBSCRIPT
- * 
- * The text is vertically offset downwards.
- */
-
-/**
- * @typedef {SlidesApp.TextBaselineOffset} SlidesApp.TextBaselineOffset.SUPERSCRIPT
- * 
- * The text is vertically offset upwards.
- */
-
-/**
- * @typedef {SlidesApp.TextBaselineOffset} SlidesApp.TextBaselineOffset.UNSUPPORTED
- * 
- * An text baseline offset that is not supported.
+ * @typedef {SlidesApp.TextBaselineOffset} SlidesApp.TextBaselineOffset
  */
 
 /**
  * An enumeration of the types of text directions.
  *
- * @class SlidesApp.TextDirection
- */
-
-/**
- * @typedef {SlidesApp.TextDirection} SlidesApp.TextDirection.LEFT_TO_RIGHT
- * 
- * The text goes from left to right.
- */
-
-/**
- * @typedef {SlidesApp.TextDirection} SlidesApp.TextDirection.RIGHT_TO_LEFT
- * 
- * The text goes from right to left.
- */
-
-/**
- * @typedef {SlidesApp.TextDirection} SlidesApp.TextDirection.UNSUPPORTED
- * 
- * A text direction that is not supported.
+ * @typedef {SlidesApp.TextDirection} SlidesApp.TextDirection
  */
 
 /**
  * An enumeration of theme colors.
  *
- * @class SlidesApp.ThemeColorType
- */
-
-/**
- * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.ACCENT1
- * 
- * Represents the first accent color.
- */
-
-/**
- * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.ACCENT2
- * 
- * Represents the second accent color.
- */
-
-/**
- * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.ACCENT3
- * 
- * Represents the third accent color.
- */
-
-/**
- * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.ACCENT4
- * 
- * Represents the fourth accent color.
- */
-
-/**
- * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.ACCENT5
- * 
- * Represents the fifth accent color.
- */
-
-/**
- * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.ACCENT6
- * 
- * Represents the sixth accent color.
- */
-
-/**
- * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.DARK1
- * 
- * Represents the first dark color.
- */
-
-/**
- * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.DARK2
- * 
- * Represents the second dark color.
- */
-
-/**
- * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.FOLLOWED_HYPERLINK
- * 
- * Represents the color to use for visited hyperlinks.
- */
-
-/**
- * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.HYPERLINK
- * 
- * Represents the color to use for hyperlinks.
- */
-
-/**
- * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.LIGHT1
- * 
- * Represents the first light color.
- */
-
-/**
- * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.LIGHT2
- * 
- * Represents the second light color.
- */
-
-/**
- * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.UNSUPPORTED
- * 
- * Represents a theme color that is not supported.
+ * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType
  */
 
 /**
  * An enumeration of the types of video source.
  *
- * @class SlidesApp.VideoSourceType
- */
-
-/**
- * @typedef {SlidesApp.VideoSourceType} SlidesApp.VideoSourceType.UNSUPPORTED
- * 
- * A video source type that is not supported.
- */
-
-/**
- * @typedef {SlidesApp.VideoSourceType} SlidesApp.VideoSourceType.YOUTUBE
- * 
- * YouTube video.
+ * @typedef {SlidesApp.VideoSourceType} SlidesApp.VideoSourceType
  */
 
 /**
@@ -2138,7 +246,7 @@
  *
  * @function SlidesApp.openById
  *
- * @param {String} id - 
+ * @param {String} id
  *
  * @return {SlidesApp.Presentation} the presentation with the given ID
  */
@@ -2155,10 +263,11 @@
  *
  * @function SlidesApp.openByUrl
  *
- * @param {String} url - 
+ * @param {String} url
  *
  * @return {SlidesApp.Presentation} the presentation with the given URL
  */
+
 
 /**
  * @class SlidesApp.AffineTransform
@@ -2220,6 +329,7 @@
  * @return {SlidesApp.AffineTransformBuilder}
  */
 
+
 /**
  * @class SlidesApp.AffineTransformBuilder
  */
@@ -2237,7 +347,7 @@
  *
  * @function SlidesApp.AffineTransformBuilder#setScaleX
  *
- * @param {Number} scaleX - 
+ * @param {Number} scaleX
  *
  * @return {SlidesApp.AffineTransformBuilder}
  */
@@ -2247,7 +357,7 @@
  *
  * @function SlidesApp.AffineTransformBuilder#setScaleY
  *
- * @param {Number} scaleY - 
+ * @param {Number} scaleY
  *
  * @return {SlidesApp.AffineTransformBuilder}
  */
@@ -2257,7 +367,7 @@
  *
  * @function SlidesApp.AffineTransformBuilder#setShearX
  *
- * @param {Number} shearX - 
+ * @param {Number} shearX
  *
  * @return {SlidesApp.AffineTransformBuilder}
  */
@@ -2267,7 +377,7 @@
  *
  * @function SlidesApp.AffineTransformBuilder#setShearY
  *
- * @param {Number} shearY - 
+ * @param {Number} shearY
  *
  * @return {SlidesApp.AffineTransformBuilder}
  */
@@ -2277,7 +387,7 @@
  *
  * @function SlidesApp.AffineTransformBuilder#setTranslateX
  *
- * @param {Number} translateX - 
+ * @param {Number} translateX
  *
  * @return {SlidesApp.AffineTransformBuilder}
  */
@@ -2287,10 +397,105 @@
  *
  * @function SlidesApp.AffineTransformBuilder#setTranslateY
  *
- * @param {Number} translateY - 
+ * @param {Number} translateY
  *
  * @return {SlidesApp.AffineTransformBuilder}
  */
+
+
+/**
+ * @class SlidesApp.AlignmentPosition
+ */
+
+/**
+ * Align to the center.
+ *
+ * @typedef {SlidesApp.AlignmentPosition} SlidesApp.AlignmentPosition.CENTER
+ */
+
+/**
+ * Align to the horizontal center.
+ *
+ * @typedef {SlidesApp.AlignmentPosition} SlidesApp.AlignmentPosition.HORIZONTAL_CENTER
+ */
+
+/**
+ * Align to the vertical center.
+ *
+ * @typedef {SlidesApp.AlignmentPosition} SlidesApp.AlignmentPosition.VERTICAL_CENTER
+ */
+
+
+/**
+ * @class SlidesApp.ArrowStyle
+ */
+
+/**
+ * Filled arrow. Corresponds to ECMA-376 ST_LineEndType value 'triangle'.
+ *
+ * @typedef {SlidesApp.ArrowStyle} SlidesApp.ArrowStyle.FILL_ARROW
+ */
+
+/**
+ * Filled circle. Corresponds to ECMA-376 ST_LineEndType value 'oval'.
+ *
+ * @typedef {SlidesApp.ArrowStyle} SlidesApp.ArrowStyle.FILL_CIRCLE
+ */
+
+/**
+ * Filled diamond. Corresponds to ECMA-376 ST_LineEndType value 'diamond'.
+ *
+ * @typedef {SlidesApp.ArrowStyle} SlidesApp.ArrowStyle.FILL_DIAMOND
+ */
+
+/**
+ * Filled square.
+ *
+ * @typedef {SlidesApp.ArrowStyle} SlidesApp.ArrowStyle.FILL_SQUARE
+ */
+
+/**
+ * No arrow.
+ *
+ * @typedef {SlidesApp.ArrowStyle} SlidesApp.ArrowStyle.NONE
+ */
+
+/**
+ * Hollow arrow.
+ *
+ * @typedef {SlidesApp.ArrowStyle} SlidesApp.ArrowStyle.OPEN_ARROW
+ */
+
+/**
+ * Hollow circle.
+ *
+ * @typedef {SlidesApp.ArrowStyle} SlidesApp.ArrowStyle.OPEN_CIRCLE
+ */
+
+/**
+ * Hollow diamond.
+ *
+ * @typedef {SlidesApp.ArrowStyle} SlidesApp.ArrowStyle.OPEN_DIAMOND
+ */
+
+/**
+ * Hollow square.
+ *
+ * @typedef {SlidesApp.ArrowStyle} SlidesApp.ArrowStyle.OPEN_SQUARE
+ */
+
+/**
+ * Arrow with notched back. Corresponds to ECMA-376 ST_LineEndType value 'stealth'.
+ *
+ * @typedef {SlidesApp.ArrowStyle} SlidesApp.ArrowStyle.STEALTH_ARROW
+ */
+
+/**
+ * An arrow style that is not supported.
+ *
+ * @typedef {SlidesApp.ArrowStyle} SlidesApp.ArrowStyle.UNSUPPORTED
+ */
+
 
 /**
  * @class SlidesApp.AutoText
@@ -2309,7 +514,7 @@
  *
  * @function SlidesApp.AutoText#getIndex
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -2320,6 +525,24 @@
  *
  * @return {SlidesApp.TextRange}
  */
+
+
+/**
+ * @class SlidesApp.AutoTextType
+ */
+
+/**
+ * A slide number.
+ *
+ * @typedef {SlidesApp.AutoTextType} SlidesApp.AutoTextType.SLIDE_NUMBER
+ */
+
+/**
+ * An auto text type that is not supported.
+ *
+ * @typedef {SlidesApp.AutoTextType} SlidesApp.AutoTextType.UNSUPPORTED
+ */
+
 
 /**
  * @class SlidesApp.Border
@@ -2365,7 +588,7 @@
  *
  * @function SlidesApp.Border#setDashStyle
  *
- * @param {SlidesApp.DashStyle} style - 
+ * @param {SlidesApp.DashStyle} style
  *
  * @return {SlidesApp.Border}
  */
@@ -2385,10 +608,68 @@
  *
  * @function SlidesApp.Border#setWeight
  *
- * @param {Number} points - 
+ * @param {Number} points
  *
  * @return {SlidesApp.Border}
  */
+
+
+/**
+ * @class SlidesApp.CellMergeState
+ */
+
+/**
+ * The cell is merged and it is the head (i.e. upper left) cell within the merged set of cells.
+
+ <p>As an example, assume the following table.
+
+ <pre class="prettyprint">
+ -------------------
+ |(0,0)|(0,1)|(0,2)|
+ -------------------
+ </pre>
+
+ If the first two cells are merged to form the following table, cell (0,0) is the head cell and
+ (0,1) is a merged cell.
+
+ <pre class="prettyprint">
+ -------------------
+ |(0,0)      |(0,2)|
+ -------------------
+ </pre>
+ *
+ * @typedef {SlidesApp.CellMergeState} SlidesApp.CellMergeState.HEAD
+ */
+
+/**
+ * The cell is merged but is not the head (i.e. upper left) cell.
+
+ <p>As an example, assume the following table.
+
+ <pre class="prettyprint">
+ -------------------
+ |(0,0)|(0,1)|(0,2)|
+ -------------------
+ </pre>
+
+ If the first two cells are merged to form the following table, cell (0,0) is the head cell and
+ (0,1) is a merged cell.
+
+ <pre class="prettyprint">
+ -------------------
+ |(0,0)      |(0,2)|
+ -------------------
+ </pre>
+ *
+ * @typedef {SlidesApp.CellMergeState} SlidesApp.CellMergeState.MERGED
+ */
+
+/**
+ * The cell is not merged.
+ *
+ * @typedef {SlidesApp.CellMergeState} SlidesApp.CellMergeState.NORMAL
+ */
+
 
 /**
  * @class SlidesApp.Color
@@ -2418,6 +699,7 @@
  * @return {SlidesApp.ColorType}
  */
 
+
 /**
  * @class SlidesApp.ColorScheme
  */
@@ -2430,7 +712,7 @@
  *
  * @function SlidesApp.ColorScheme#getConcreteColor
  *
- * @param {SlidesApp.ThemeColorType} theme - 
+ * @param {SlidesApp.ThemeColorType} theme
  *
  * @return {SlidesApp.Color}
  */
@@ -2442,6 +724,111 @@
  *
  * @return {SlidesApp.ThemeColorType[]}
  */
+
+
+/**
+ * @class SlidesApp.ColorType
+ */
+
+/**
+ * A color defined by red, green, blue color channels.
+ *
+ * @typedef {SlidesApp.ColorType} SlidesApp.ColorType.RGB
+ */
+
+/**
+ * A color that refers to an entry in the page's color scheme.
+ *
+ * @typedef {SlidesApp.ColorType} SlidesApp.ColorType.THEME
+ */
+
+/**
+ * A color type that is not supported.
+ *
+ * @typedef {SlidesApp.ColorType} SlidesApp.ColorType.UNSUPPORTED
+ */
+
+
+/**
+ * @class SlidesApp.ContentAlignment
+ */
+
+/**
+ * Aligns the content to the bottom of the content holder. Corresponds to ECMA-376
+ ST_TextAnchoringType 'b'.
+ *
+ * @typedef {SlidesApp.ContentAlignment} SlidesApp.ContentAlignment.BOTTOM
+ */
+
+/**
+ * Aligns the content to the middle of the content holder. Corresponds to ECMA-376
+ ST_TextAnchoringType 'ctr'.
+ *
+ * @typedef {SlidesApp.ContentAlignment} SlidesApp.ContentAlignment.MIDDLE
+ */
+
+/**
+ * Aligns the content to the top of the content holder. Corresponds to ECMA-376
+ ST_TextAnchoringType 't'.
+ *
+ * @typedef {SlidesApp.ContentAlignment} SlidesApp.ContentAlignment.TOP
+ */
+
+/**
+ * A content alignment that is not supported.
+ *
+ * @typedef {SlidesApp.ContentAlignment} SlidesApp.ContentAlignment.UNSUPPORTED
+ */
+
+
+/**
+ * @class SlidesApp.DashStyle
+ */
+
+/**
+ * Dashed line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dash'.
+ *
+ * @typedef {SlidesApp.DashStyle} SlidesApp.DashStyle.DASH
+ */
+
+/**
+ * Alternating dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dashDot'.
+ *
+ * @typedef {SlidesApp.DashStyle} SlidesApp.DashStyle.DASH_DOT
+ */
+
+/**
+ * Dotted line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'dot'.
+ *
+ * @typedef {SlidesApp.DashStyle} SlidesApp.DashStyle.DOT
+ */
+
+/**
+ * Line with large dashes. Corresponds to ECMA-376 ST_PresetLineDashVal value 'lgDash'.
+ *
+ * @typedef {SlidesApp.DashStyle} SlidesApp.DashStyle.LONG_DASH
+ */
+
+/**
+ * Alternating large dashes and dots. Corresponds to ECMA-376 ST_PresetLineDashVal value
+ 'lgDashDot'.
+ *
+ * @typedef {SlidesApp.DashStyle} SlidesApp.DashStyle.LONG_DASH_DOT
+ */
+
+/**
+ * Solid line. Corresponds to ECMA-376 ST_PresetLineDashVal value 'solid'. This is the default
+ dash style.
+ *
+ * @typedef {SlidesApp.DashStyle} SlidesApp.DashStyle.SOLID
+ */
+
+/**
+ * A dash style that is not supported.
+ *
+ * @typedef {SlidesApp.DashStyle} SlidesApp.DashStyle.UNSUPPORTED
+ */
+
 
 /**
  * @class SlidesApp.Fill
@@ -2476,9 +863,9 @@
  *
  * @function SlidesApp.Fill#setSolidFill
  *
- * @param {number} red - 
- * @param {number} green - 
- * @param {number} blue - 
+ * @param {IntegerNum} red
+ * @param {IntegerNum} green
+ * @param {IntegerNum} blue
  *
  * @return void
  */
@@ -2488,10 +875,10 @@
  *
  * @function SlidesApp.Fill#setSolidFill
  *
- * @param {number} red - 
- * @param {number} green - 
- * @param {number} blue - 
- * @param {Number} alpha - 
+ * @param {IntegerNum} red
+ * @param {IntegerNum} green
+ * @param {IntegerNum} blue
+ * @param {Number} alpha
  *
  * @return void
  */
@@ -2501,7 +888,7 @@
  *
  * @function SlidesApp.Fill#setSolidFill
  *
- * @param {SlidesApp.Color} color - 
+ * @param {SlidesApp.Color} color
  *
  * @return void
  */
@@ -2511,8 +898,8 @@
  *
  * @function SlidesApp.Fill#setSolidFill
  *
- * @param {SlidesApp.Color} color - 
- * @param {Number} alpha - 
+ * @param {SlidesApp.Color} color
+ * @param {Number} alpha
  *
  * @return void
  */
@@ -2522,7 +909,7 @@
  *
  * @function SlidesApp.Fill#setSolidFill
  *
- * @param {SlidesApp.ThemeColorType} color - 
+ * @param {SlidesApp.ThemeColorType} color
  *
  * @return void
  */
@@ -2532,8 +919,8 @@
  *
  * @function SlidesApp.Fill#setSolidFill
  *
- * @param {SlidesApp.ThemeColorType} color - 
- * @param {Number} alpha - 
+ * @param {SlidesApp.ThemeColorType} color
+ * @param {Number} alpha
  *
  * @return void
  */
@@ -2546,7 +933,7 @@
  *
  * @function SlidesApp.Fill#setSolidFill
  *
- * @param {String} hexString - 
+ * @param {String} hexString
  *
  * @return void
  */
@@ -2559,8 +946,8 @@
  *
  * @function SlidesApp.Fill#setSolidFill
  *
- * @param {String} hexString - 
- * @param {Number} alpha - 
+ * @param {String} hexString
+ * @param {Number} alpha
  *
  * @return void
  */
@@ -2573,6 +960,30 @@
  * @return void
  */
 
+
+/**
+ * @class SlidesApp.FillType
+ */
+
+/**
+ * No fill, so the background is transparent.
+ *
+ * @typedef {SlidesApp.FillType} SlidesApp.FillType.NONE
+ */
+
+/**
+ * A solid color fill.
+ *
+ * @typedef {SlidesApp.FillType} SlidesApp.FillType.SOLID
+ */
+
+/**
+ * A fill type that is not supported.
+ *
+ * @typedef {SlidesApp.FillType} SlidesApp.FillType.UNSUPPORTED
+ */
+
+
 /**
  * @class SlidesApp.Group
  */
@@ -2582,7 +993,7 @@
  *
  * @function SlidesApp.Group#alignOnPage
  *
- * @param {SlidesApp.AlignmentPosition} alignmentPosition - 
+ * @param {SlidesApp.AlignmentPosition} alignmentPosition
  *
  * @return {SlidesApp.Group}
  */
@@ -2755,7 +1166,7 @@
  *
  * @function SlidesApp.Group#preconcatenateTransform
  *
- * @param {SlidesApp.AffineTransform} transform - 
+ * @param {SlidesApp.AffineTransform} transform
  *
  * @return {SlidesApp.Group}
  */
@@ -2780,7 +1191,7 @@
  *
  * @function SlidesApp.Group#scaleHeight
  *
- * @param {Number} ratio - 
+ * @param {Number} ratio
  *
  * @return {SlidesApp.Group}
  */
@@ -2791,7 +1202,7 @@
  *
  * @function SlidesApp.Group#scaleWidth
  *
- * @param {Number} ratio - 
+ * @param {Number} ratio
  *
  * @return {SlidesApp.Group}
  */
@@ -2861,7 +1272,7 @@
  *
  * @function SlidesApp.Group#setHeight
  *
- * @param {Number} height - 
+ * @param {Number} height
  *
  * @return {SlidesApp.Group}
  */
@@ -2872,7 +1283,7 @@
  *
  * @function SlidesApp.Group#setLeft
  *
- * @param {Number} left - 
+ * @param {Number} left
  *
  * @return {SlidesApp.Group}
  */
@@ -2882,7 +1293,7 @@
  *
  * @function SlidesApp.Group#setRotation
  *
- * @param {Number} angle - 
+ * @param {Number} angle
  *
  * @return {SlidesApp.Group}
  */
@@ -2893,7 +1304,7 @@
  *
  * @function SlidesApp.Group#setTop
  *
- * @param {Number} top - 
+ * @param {Number} top
  *
  * @return {SlidesApp.Group}
  */
@@ -2912,7 +1323,7 @@
  *
  * @function SlidesApp.Group#setTransform
  *
- * @param {SlidesApp.AffineTransform} transform - 
+ * @param {SlidesApp.AffineTransform} transform
  *
  * @return {SlidesApp.Group}
  */
@@ -2923,7 +1334,7 @@
  *
  * @function SlidesApp.Group#setWidth
  *
- * @param {Number} width - 
+ * @param {Number} width
  *
  * @return {SlidesApp.Group}
  */
@@ -2940,6 +1351,7 @@
  * @return void
  */
 
+
 /**
  * @class SlidesApp.Image
  */
@@ -2949,7 +1361,7 @@
  *
  * @function SlidesApp.Image#alignOnPage
  *
- * @param {SlidesApp.AlignmentPosition} alignmentPosition - 
+ * @param {SlidesApp.AlignmentPosition} alignmentPosition
  *
  * @return {SlidesApp.Image}
  */
@@ -3185,7 +1597,7 @@
  *
  * @function SlidesApp.Image#preconcatenateTransform
  *
- * @param {SlidesApp.AffineTransform} transform - 
+ * @param {SlidesApp.AffineTransform} transform
  *
  * @return {SlidesApp.Image}
  */
@@ -3314,7 +1726,7 @@
  *
  * @function SlidesApp.Image#scaleHeight
  *
- * @param {Number} ratio - 
+ * @param {Number} ratio
  *
  * @return {SlidesApp.Image}
  */
@@ -3325,7 +1737,7 @@
  *
  * @function SlidesApp.Image#scaleWidth
  *
- * @param {Number} ratio - 
+ * @param {Number} ratio
  *
  * @return {SlidesApp.Image}
  */
@@ -3395,7 +1807,7 @@
  *
  * @function SlidesApp.Image#setHeight
  *
- * @param {Number} height - 
+ * @param {Number} height
  *
  * @return {SlidesApp.Image}
  */
@@ -3406,7 +1818,7 @@
  *
  * @function SlidesApp.Image#setLeft
  *
- * @param {Number} left - 
+ * @param {Number} left
  *
  * @return {SlidesApp.Image}
  */
@@ -3421,7 +1833,7 @@
  *
  * @function SlidesApp.Image#setLinkSlide
  *
- * @param {number} slideIndex - The zero-based index to the slide.
+ * @param {IntegerNum} slideIndex - The zero-based index to the slide.
  *
  * @return {SlidesApp.Link} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> that was set
  */
@@ -3477,7 +1889,7 @@
  *
  * @function SlidesApp.Image#setRotation
  *
- * @param {Number} angle - 
+ * @param {Number} angle
  *
  * @return {SlidesApp.Image}
  */
@@ -3488,7 +1900,7 @@
  *
  * @function SlidesApp.Image#setTop
  *
- * @param {Number} top - 
+ * @param {Number} top
  *
  * @return {SlidesApp.Image}
  */
@@ -3507,7 +1919,7 @@
  *
  * @function SlidesApp.Image#setTransform
  *
- * @param {SlidesApp.AffineTransform} transform - 
+ * @param {SlidesApp.AffineTransform} transform
  *
  * @return {SlidesApp.Image}
  */
@@ -3518,10 +1930,11 @@
  *
  * @function SlidesApp.Image#setWidth
  *
- * @param {Number} width - 
+ * @param {Number} width
  *
  * @return {SlidesApp.Image}
  */
+
 
 /**
  * @class SlidesApp.Layout
@@ -3623,7 +2036,7 @@
  *
  * @function SlidesApp.Layout#getPlaceholder
  *
- * @param {SlidesApp.PlaceholderType} placeholderType - 
+ * @param {SlidesApp.PlaceholderType} placeholderType
  *
  * @return {SlidesApp.PageElement}
  */
@@ -3642,8 +2055,8 @@
  *
  * @function SlidesApp.Layout#getPlaceholder
  *
- * @param {SlidesApp.PlaceholderType} placeholderType - 
- * @param {number} placeholderIndex - 
+ * @param {SlidesApp.PlaceholderType} placeholderType
+ * @param {IntegerNum} placeholderIndex
  *
  * @return {SlidesApp.PageElement}
  */
@@ -3709,7 +2122,7 @@
  *
  * @function SlidesApp.Layout#group
  *
- * @param {SlidesApp.PageElement[]} pageElements - 
+ * @param {SlidesApp.PageElement[]} pageElements
  *
  * @return {SlidesApp.Group} The new group.
  */
@@ -4169,8 +2582,8 @@
  *
  * @function SlidesApp.Layout#insertTable
  *
- * @param {number} numRows - The number of rows in the table.
- * @param {number} numColumns - The number of columns in the table.
+ * @param {IntegerNum} numRows - The number of rows in the table.
+ * @param {IntegerNum} numColumns - The number of columns in the table.
  *
  * @return {SlidesApp.Table} the inserted table
  */
@@ -4182,8 +2595,8 @@
  *
  * @function SlidesApp.Layout#insertTable
  *
- * @param {number} numRows - The number of rows in the table.
- * @param {number} numColumns - The number of columns in the table.
+ * @param {IntegerNum} numRows - The number of rows in the table.
+ * @param {IntegerNum} numColumns - The number of columns in the table.
  * @param {Number} left - The horizontal position of the table, measured from the upper left corner of the
      page.
  * @param {Number} top - The vertical position of the table, measured from the upper left corner of the page.
@@ -4325,7 +2738,7 @@
  * @param {String} findText - The text to find.
  * @param {String} replaceText - The text to replace the matched text.
  *
- * @return {number} the number of occurrences changed
+ * @return {IntegerNum} the number of occurrences changed
  */
 
 /**
@@ -4338,7 +2751,7 @@
  * @param {Boolean} matchCase - If <code>true</code>, the search is case sensitive; if <code>false</code>, the search is
      case insensitive.
  *
- * @return {number} the number of occurrences changed
+ * @return {IntegerNum} the number of occurrences changed
  */
 
 /**
@@ -4358,6 +2771,7 @@
  * @return void
  */
 
+
 /**
  * @class SlidesApp.Line
  */
@@ -4367,7 +2781,7 @@
  *
  * @function SlidesApp.Line#alignOnPage
  *
- * @param {SlidesApp.AlignmentPosition} alignmentPosition - 
+ * @param {SlidesApp.AlignmentPosition} alignmentPosition
  *
  * @return {SlidesApp.Line}
  */
@@ -4613,7 +3027,7 @@
  *
  * @function SlidesApp.Line#preconcatenateTransform
  *
- * @param {SlidesApp.AffineTransform} transform - 
+ * @param {SlidesApp.AffineTransform} transform
  *
  * @return {SlidesApp.Line}
  */
@@ -4650,7 +3064,7 @@
  *
  * @function SlidesApp.Line#scaleHeight
  *
- * @param {Number} ratio - 
+ * @param {Number} ratio
  *
  * @return {SlidesApp.Line}
  */
@@ -4661,7 +3075,7 @@
  *
  * @function SlidesApp.Line#scaleWidth
  *
- * @param {Number} ratio - 
+ * @param {Number} ratio
  *
  * @return {SlidesApp.Line}
  */
@@ -4730,7 +3144,7 @@
  *
  * @function SlidesApp.Line#setDashStyle
  *
- * @param {SlidesApp.DashStyle} style - 
+ * @param {SlidesApp.DashStyle} style
  *
  * @return {SlidesApp.Line}
  */
@@ -4768,7 +3182,7 @@
  *
  * @function SlidesApp.Line#setEndArrow
  *
- * @param {SlidesApp.ArrowStyle} style - 
+ * @param {SlidesApp.ArrowStyle} style
  *
  * @return {SlidesApp.Line}
  */
@@ -4779,7 +3193,7 @@
  *
  * @function SlidesApp.Line#setHeight
  *
- * @param {Number} height - 
+ * @param {Number} height
  *
  * @return {SlidesApp.Line}
  */
@@ -4790,7 +3204,7 @@
  *
  * @function SlidesApp.Line#setLeft
  *
- * @param {Number} left - 
+ * @param {Number} left
  *
  * @return {SlidesApp.Line}
  */
@@ -4805,7 +3219,7 @@
  *
  * @function SlidesApp.Line#setLinkSlide
  *
- * @param {number} slideIndex - The zero-based index to the slide.
+ * @param {IntegerNum} slideIndex - The zero-based index to the slide.
  *
  * @return {SlidesApp.Link} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> that was set
  */
@@ -4861,7 +3275,7 @@
  *
  * @function SlidesApp.Line#setRotation
  *
- * @param {Number} angle - 
+ * @param {Number} angle
  *
  * @return {SlidesApp.Line}
  */
@@ -4899,7 +3313,7 @@
  *
  * @function SlidesApp.Line#setStartArrow
  *
- * @param {SlidesApp.ArrowStyle} style - 
+ * @param {SlidesApp.ArrowStyle} style
  *
  * @return {SlidesApp.Line}
  */
@@ -4910,7 +3324,7 @@
  *
  * @function SlidesApp.Line#setTop
  *
- * @param {Number} top - 
+ * @param {Number} top
  *
  * @return {SlidesApp.Line}
  */
@@ -4929,7 +3343,7 @@
  *
  * @function SlidesApp.Line#setTransform
  *
- * @param {SlidesApp.AffineTransform} transform - 
+ * @param {SlidesApp.AffineTransform} transform
  *
  * @return {SlidesApp.Line}
  */
@@ -4939,7 +3353,7 @@
  *
  * @function SlidesApp.Line#setWeight
  *
- * @param {Number} points - 
+ * @param {Number} points
  *
  * @return {SlidesApp.Line}
  */
@@ -4950,10 +3364,34 @@
  *
  * @function SlidesApp.Line#setWidth
  *
- * @param {Number} width - 
+ * @param {Number} width
  *
  * @return {SlidesApp.Line}
  */
+
+
+/**
+ * @class SlidesApp.LineCategory
+ */
+
+/**
+ * Bent connectors, including bent connector 2 to 5.
+ *
+ * @typedef {SlidesApp.LineCategory} SlidesApp.LineCategory.BENT
+ */
+
+/**
+ * Curved connectors, including curved connector 2 to 5.
+ *
+ * @typedef {SlidesApp.LineCategory} SlidesApp.LineCategory.CURVED
+ */
+
+/**
+ * Straight connectors, including straight connector 1
+ *
+ * @typedef {SlidesApp.LineCategory} SlidesApp.LineCategory.STRAIGHT
+ */
+
 
 /**
  * @class SlidesApp.LineFill
@@ -4980,9 +3418,9 @@
  *
  * @function SlidesApp.LineFill#setSolidFill
  *
- * @param {number} red - 
- * @param {number} green - 
- * @param {number} blue - 
+ * @param {IntegerNum} red
+ * @param {IntegerNum} green
+ * @param {IntegerNum} blue
  *
  * @return void
  */
@@ -4992,10 +3430,10 @@
  *
  * @function SlidesApp.LineFill#setSolidFill
  *
- * @param {number} red - 
- * @param {number} green - 
- * @param {number} blue - 
- * @param {Number} alpha - 
+ * @param {IntegerNum} red
+ * @param {IntegerNum} green
+ * @param {IntegerNum} blue
+ * @param {Number} alpha
  *
  * @return void
  */
@@ -5005,7 +3443,7 @@
  *
  * @function SlidesApp.LineFill#setSolidFill
  *
- * @param {SlidesApp.Color} color - 
+ * @param {SlidesApp.Color} color
  *
  * @return void
  */
@@ -5015,8 +3453,8 @@
  *
  * @function SlidesApp.LineFill#setSolidFill
  *
- * @param {SlidesApp.Color} color - 
- * @param {Number} alpha - 
+ * @param {SlidesApp.Color} color
+ * @param {Number} alpha
  *
  * @return void
  */
@@ -5026,7 +3464,7 @@
  *
  * @function SlidesApp.LineFill#setSolidFill
  *
- * @param {SlidesApp.ThemeColorType} color - 
+ * @param {SlidesApp.ThemeColorType} color
  *
  * @return void
  */
@@ -5036,8 +3474,8 @@
  *
  * @function SlidesApp.LineFill#setSolidFill
  *
- * @param {SlidesApp.ThemeColorType} color - 
- * @param {Number} alpha - 
+ * @param {SlidesApp.ThemeColorType} color
+ * @param {Number} alpha
  *
  * @return void
  */
@@ -5050,7 +3488,7 @@
  *
  * @function SlidesApp.LineFill#setSolidFill
  *
- * @param {String} hexString - 
+ * @param {String} hexString
  *
  * @return void
  */
@@ -5063,11 +3501,106 @@
  *
  * @function SlidesApp.LineFill#setSolidFill
  *
- * @param {String} hexString - 
- * @param {Number} alpha - 
+ * @param {String} hexString
+ * @param {Number} alpha
  *
  * @return void
  */
+
+
+/**
+ * @class SlidesApp.LineFillType
+ */
+
+/**
+ * No fill, so the line or outline is transparent.
+ *
+ * @typedef {SlidesApp.LineFillType} SlidesApp.LineFillType.NONE
+ */
+
+/**
+ * A solid color fill.
+ *
+ * @typedef {SlidesApp.LineFillType} SlidesApp.LineFillType.SOLID
+ */
+
+/**
+ * A line fill type that is not supported.
+ *
+ * @typedef {SlidesApp.LineFillType} SlidesApp.LineFillType.UNSUPPORTED
+ */
+
+
+/**
+ * @class SlidesApp.LineType
+ */
+
+/**
+ * Bent connector 2 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector2'.
+ *
+ * @typedef {SlidesApp.LineType} SlidesApp.LineType.BENT_CONNECTOR_2
+ */
+
+/**
+ * Bent connector 3 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector3'.
+ *
+ * @typedef {SlidesApp.LineType} SlidesApp.LineType.BENT_CONNECTOR_3
+ */
+
+/**
+ * Bent connector 4 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector4'.
+ *
+ * @typedef {SlidesApp.LineType} SlidesApp.LineType.BENT_CONNECTOR_4
+ */
+
+/**
+ * Bent connector 5 form. Corresponds to ECMA-376 ST_ShapeType 'bentConnector5'.
+ *
+ * @typedef {SlidesApp.LineType} SlidesApp.LineType.BENT_CONNECTOR_5
+ */
+
+/**
+ * Curved connector 2 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector2'.
+ *
+ * @typedef {SlidesApp.LineType} SlidesApp.LineType.CURVED_CONNECTOR_2
+ */
+
+/**
+ * Curved connector 3 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector3'.
+ *
+ * @typedef {SlidesApp.LineType} SlidesApp.LineType.CURVED_CONNECTOR_3
+ */
+
+/**
+ * Curved connector 4 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector4'.
+ *
+ * @typedef {SlidesApp.LineType} SlidesApp.LineType.CURVED_CONNECTOR_4
+ */
+
+/**
+ * Curved connector 5 form. Corresponds to ECMA-376 ST_ShapeType 'curvedConnector5'.
+ *
+ * @typedef {SlidesApp.LineType} SlidesApp.LineType.CURVED_CONNECTOR_5
+ */
+
+/**
+ * Straight connector 1 form. Corresponds to ECMA-376 ST_ShapeType 'straightConnector1'.
+ *
+ * @typedef {SlidesApp.LineType} SlidesApp.LineType.STRAIGHT_CONNECTOR_1
+ */
+
+/**
+ * Straight line. Corresponds to ECMA-376 ST_ShapeType 'line'. This line type is not a connector.
+ *
+ * @typedef {SlidesApp.LineType} SlidesApp.LineType.STRAIGHT_LINE
+ */
+
+/**
+ * A line type that is not supported.
+ *
+ * @typedef {SlidesApp.LineType} SlidesApp.LineType.UNSUPPORTED
+ */
+
 
 /**
  * @class SlidesApp.Link
@@ -5136,7 +3669,7 @@
  *
  * @function SlidesApp.Link#getSlideIndex
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -5171,6 +3704,42 @@
  * @return {String}
  */
 
+
+/**
+ * @class SlidesApp.LinkType
+ */
+
+/**
+ * A link to a specific slide in this presentation, addressed by its ID.
+ *
+ * @typedef {SlidesApp.LinkType} SlidesApp.LinkType.SLIDE_ID
+ */
+
+/**
+ * A link to a specific slide in this presentation, addressed by its zero-based index.
+ *
+ * @typedef {SlidesApp.LinkType} SlidesApp.LinkType.SLIDE_INDEX
+ */
+
+/**
+ * A link to a specific slide in this presentation, addressed by its position.
+ *
+ * @typedef {SlidesApp.LinkType} SlidesApp.LinkType.SLIDE_POSITION
+ */
+
+/**
+ * A link type that is not supported.
+ *
+ * @typedef {SlidesApp.LinkType} SlidesApp.LinkType.UNSUPPORTED
+ */
+
+/**
+ * A link to an external web page.
+ *
+ * @typedef {SlidesApp.LinkType} SlidesApp.LinkType.URL
+ */
+
+
 /**
  * @class SlidesApp.List
  */
@@ -5191,6 +3760,109 @@
  * @return {SlidesApp.Paragraph[]}
  */
 
+
+/**
+ * @class SlidesApp.ListPreset
+ */
+
+/**
+ * A list with a `ARROW3D`, `CIRCLE` and `SQUARE` glyphs for the first 3 list nesting levels.
+ *
+ * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.ARROW3D_CIRCLE_SQUARE
+ */
+
+/**
+ * A list with a `ARROW`, `DIAMOND` and `DISC` glyphs for the first 3 list nesting levels.
+ *
+ * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.ARROW_DIAMOND_DISC
+ */
+
+/**
+ * A list with `CHECKBOX` glyphs for all list nesting levels.
+ *
+ * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.CHECKBOX
+ */
+
+/**
+ * A list with a `DIAMONDX`, `ARROW3D` and `SQUARE` glyphs for the first 3 list nesting levels.
+ *
+ * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.DIAMONDX_ARROW3D_SQUARE
+ */
+
+/**
+ * A list with a `DIAMONDX`, `HOLLOWDIAMOND` and `SQUARE` glyphs for the first 3 list nesting
+ levels.
+ *
+ * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.DIAMONDX_HOLLOWDIAMOND_SQUARE
+ */
+
+/**
+ * A list with a `DIAMOND`, `CIRCLE` and `SQUARE` glyphs for the first 3 list nesting levels.
+ *
+ * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.DIAMOND_CIRCLE_SQUARE
+ */
+
+/**
+ * A list with `DIGIT`, `ALPHA` and `ROMAN` glyphs for the first 3 list nesting levels, followed
+ by periods.
+ *
+ * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.DIGIT_ALPHA_ROMAN
+ */
+
+/**
+ * A list with `DIGIT`, `ALPHA` and `ROMAN` glyphs for the first 3 list nesting levels, followed
+ by parenthesis.
+ *
+ * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.DIGIT_ALPHA_ROMAN_PARENS
+ */
+
+/**
+ * A list with `DIGIT` glyphs separated by periods, where each nesting level uses the previous
+ nesting level's glyph as a prefix. For example: '1.', '1.1.', '2.', '2.2.'.
+ *
+ * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.DIGIT_NESTED
+ */
+
+/**
+ * A list with a `DISC`, `CIRCLE` and `SQUARE` glyphs for the first 3 list nesting levels.
+ *
+ * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.DISC_CIRCLE_SQUARE
+ */
+
+/**
+ * A list with a `LEFTTRIANGLE`, `DIAMOND` and `DISC` glyphs for the first 3 list nesting levels.
+ *
+ * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.LEFTTRIANGLE_DIAMOND_DISC
+ */
+
+/**
+ * A list with a `STAR`, `CIRCLE` and `SQUARE` glyphs for the first 3 list nesting levels.
+ *
+ * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.STAR_CIRCLE_SQUARE
+ */
+
+/**
+ * A list with `UPPERALPHA`, `ALPHA` and `ROMAN` glyphs for the first 3 list nesting levels,
+ followed by periods.
+ *
+ * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.UPPERALPHA_ALPHA_ROMAN
+ */
+
+/**
+ * A list with `UPPERROMAN`, `UPPERALPHA` and `DIGIT` glyphs for the first 3 list nesting levels,
+ followed by periods.
+ *
+ * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.UPPERROMAN_UPPERALPHA_DIGIT
+ */
+
+/**
+ * A list with `ZERODIGIT`, `ALPHA` and `ROMAN` glyphs for the first 3 list nesting levels,
+ followed by periods.
+ *
+ * @typedef {SlidesApp.ListPreset} SlidesApp.ListPreset.ZERODIGIT_ALPHA_ROMAN
+ */
+
+
 /**
  * @class SlidesApp.ListStyle
  */
@@ -5208,7 +3880,7 @@
  *
  * @function SlidesApp.ListStyle#applyListPreset
  *
- * @param {SlidesApp.ListPreset} listPreset - 
+ * @param {SlidesApp.ListPreset} listPreset
  *
  * @return {SlidesApp.ListStyle}
  */
@@ -5238,7 +3910,7 @@
  *
  * @function SlidesApp.ListStyle#getNestingLevel
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -5261,6 +3933,7 @@
  *
  * @return {SlidesApp.ListStyle}
  */
+
 
 /**
  * @class SlidesApp.Master
@@ -5354,7 +4027,7 @@
  *
  * @function SlidesApp.Master#getPlaceholder
  *
- * @param {SlidesApp.PlaceholderType} placeholderType - 
+ * @param {SlidesApp.PlaceholderType} placeholderType
  *
  * @return {SlidesApp.PageElement}
  */
@@ -5373,8 +4046,8 @@
  *
  * @function SlidesApp.Master#getPlaceholder
  *
- * @param {SlidesApp.PlaceholderType} placeholderType - 
- * @param {number} placeholderIndex - 
+ * @param {SlidesApp.PlaceholderType} placeholderType
+ * @param {IntegerNum} placeholderIndex
  *
  * @return {SlidesApp.PageElement}
  */
@@ -5440,7 +4113,7 @@
  *
  * @function SlidesApp.Master#group
  *
- * @param {SlidesApp.PageElement[]} pageElements - 
+ * @param {SlidesApp.PageElement[]} pageElements
  *
  * @return {SlidesApp.Group} The new group.
  */
@@ -5900,8 +4573,8 @@
  *
  * @function SlidesApp.Master#insertTable
  *
- * @param {number} numRows - The number of rows in the table.
- * @param {number} numColumns - The number of columns in the table.
+ * @param {IntegerNum} numRows - The number of rows in the table.
+ * @param {IntegerNum} numColumns - The number of columns in the table.
  *
  * @return {SlidesApp.Table} the inserted table
  */
@@ -5913,8 +4586,8 @@
  *
  * @function SlidesApp.Master#insertTable
  *
- * @param {number} numRows - The number of rows in the table.
- * @param {number} numColumns - The number of columns in the table.
+ * @param {IntegerNum} numRows - The number of rows in the table.
+ * @param {IntegerNum} numColumns - The number of columns in the table.
  * @param {Number} left - The horizontal position of the table, measured from the upper left corner of the
      page.
  * @param {Number} top - The vertical position of the table, measured from the upper left corner of the page.
@@ -6056,7 +4729,7 @@
  * @param {String} findText - The text to find.
  * @param {String} replaceText - The text to replace the matched text.
  *
- * @return {number} the number of occurrences changed
+ * @return {IntegerNum} the number of occurrences changed
  */
 
 /**
@@ -6069,7 +4742,7 @@
  * @param {Boolean} matchCase - If <code>true</code>, the search is case sensitive; if <code>false</code>, the search is
      case insensitive.
  *
- * @return {number} the number of occurrences changed
+ * @return {IntegerNum} the number of occurrences changed
  */
 
 /**
@@ -6088,6 +4761,7 @@
  *
  * @return void
  */
+
 
 /**
  * @class SlidesApp.NotesMaster
@@ -6149,7 +4823,7 @@
  *
  * @function SlidesApp.NotesMaster#getPlaceholder
  *
- * @param {SlidesApp.PlaceholderType} placeholderType - 
+ * @param {SlidesApp.PlaceholderType} placeholderType
  *
  * @return {SlidesApp.PageElement}
  */
@@ -6168,8 +4842,8 @@
  *
  * @function SlidesApp.NotesMaster#getPlaceholder
  *
- * @param {SlidesApp.PlaceholderType} placeholderType - 
- * @param {number} placeholderIndex - 
+ * @param {SlidesApp.PlaceholderType} placeholderType
+ * @param {IntegerNum} placeholderIndex
  *
  * @return {SlidesApp.PageElement}
  */
@@ -6226,6 +4900,7 @@
  *
  * @return {SlidesApp.WordArt[]}
  */
+
 
 /**
  * @class SlidesApp.NotesPage
@@ -6287,7 +4962,7 @@
  *
  * @function SlidesApp.NotesPage#getPlaceholder
  *
- * @param {SlidesApp.PlaceholderType} placeholderType - 
+ * @param {SlidesApp.PlaceholderType} placeholderType
  *
  * @return {SlidesApp.PageElement}
  */
@@ -6306,8 +4981,8 @@
  *
  * @function SlidesApp.NotesPage#getPlaceholder
  *
- * @param {SlidesApp.PlaceholderType} placeholderType - 
- * @param {number} placeholderIndex - 
+ * @param {SlidesApp.PlaceholderType} placeholderType
+ * @param {IntegerNum} placeholderIndex
  *
  * @return {SlidesApp.PageElement}
  */
@@ -6382,7 +5057,7 @@
  * @param {String} findText - The text to find.
  * @param {String} replaceText - The text to replace the matched text.
  *
- * @return {number} the number of occurrences changed
+ * @return {IntegerNum} the number of occurrences changed
  */
 
 /**
@@ -6395,8 +5070,9 @@
  * @param {Boolean} matchCase - If <code>true</code>, the search is case sensitive; if <code>false</code>, the search is
      case insensitive.
  *
- * @return {number} the number of occurrences changed
+ * @return {IntegerNum} the number of occurrences changed
  */
+
 
 /**
  * @class SlidesApp.Page
@@ -6506,7 +5182,7 @@
  *
  * @function SlidesApp.Page#getPlaceholder
  *
- * @param {SlidesApp.PlaceholderType} placeholderType - 
+ * @param {SlidesApp.PlaceholderType} placeholderType
  *
  * @return {SlidesApp.PageElement}
  */
@@ -6525,8 +5201,8 @@
  *
  * @function SlidesApp.Page#getPlaceholder
  *
- * @param {SlidesApp.PlaceholderType} placeholderType - 
- * @param {number} placeholderIndex - 
+ * @param {SlidesApp.PlaceholderType} placeholderType
+ * @param {IntegerNum} placeholderIndex
  *
  * @return {SlidesApp.PageElement}
  */
@@ -6592,7 +5268,7 @@
  *
  * @function SlidesApp.Page#group
  *
- * @param {SlidesApp.PageElement[]} pageElements - 
+ * @param {SlidesApp.PageElement[]} pageElements
  *
  * @return {SlidesApp.Group} The new group.
  */
@@ -7052,8 +5728,8 @@
  *
  * @function SlidesApp.Page#insertTable
  *
- * @param {number} numRows - The number of rows in the table.
- * @param {number} numColumns - The number of columns in the table.
+ * @param {IntegerNum} numRows - The number of rows in the table.
+ * @param {IntegerNum} numColumns - The number of columns in the table.
  *
  * @return {SlidesApp.Table} the inserted table
  */
@@ -7065,8 +5741,8 @@
  *
  * @function SlidesApp.Page#insertTable
  *
- * @param {number} numRows - The number of rows in the table.
- * @param {number} numColumns - The number of columns in the table.
+ * @param {IntegerNum} numRows - The number of rows in the table.
+ * @param {IntegerNum} numColumns - The number of columns in the table.
  * @param {Number} left - The horizontal position of the table, measured from the upper left corner of the
      page.
  * @param {Number} top - The vertical position of the table, measured from the upper left corner of the page.
@@ -7208,7 +5884,7 @@
  * @param {String} findText - The text to find.
  * @param {String} replaceText - The text to replace the matched text.
  *
- * @return {number} the number of occurrences changed
+ * @return {IntegerNum} the number of occurrences changed
  */
 
 /**
@@ -7221,7 +5897,7 @@
  * @param {Boolean} matchCase - If <code>true</code>, the search is case sensitive; if <code>false</code>, the search is
      case insensitive.
  *
- * @return {number} the number of occurrences changed
+ * @return {IntegerNum} the number of occurrences changed
  */
 
 /**
@@ -7240,6 +5916,7 @@
  *
  * @return void
  */
+
 
 /**
  * @class SlidesApp.PageBackground
@@ -7317,9 +5994,9 @@
  *
  * @function SlidesApp.PageBackground#setSolidFill
  *
- * @param {number} red - 
- * @param {number} green - 
- * @param {number} blue - 
+ * @param {IntegerNum} red
+ * @param {IntegerNum} green
+ * @param {IntegerNum} blue
  *
  * @return void
  */
@@ -7329,10 +6006,10 @@
  *
  * @function SlidesApp.PageBackground#setSolidFill
  *
- * @param {number} red - 
- * @param {number} green - 
- * @param {number} blue - 
- * @param {Number} alpha - 
+ * @param {IntegerNum} red
+ * @param {IntegerNum} green
+ * @param {IntegerNum} blue
+ * @param {Number} alpha
  *
  * @return void
  */
@@ -7342,7 +6019,7 @@
  *
  * @function SlidesApp.PageBackground#setSolidFill
  *
- * @param {SlidesApp.Color} color - 
+ * @param {SlidesApp.Color} color
  *
  * @return void
  */
@@ -7352,8 +6029,8 @@
  *
  * @function SlidesApp.PageBackground#setSolidFill
  *
- * @param {SlidesApp.Color} color - 
- * @param {Number} alpha - 
+ * @param {SlidesApp.Color} color
+ * @param {Number} alpha
  *
  * @return void
  */
@@ -7363,7 +6040,7 @@
  *
  * @function SlidesApp.PageBackground#setSolidFill
  *
- * @param {SlidesApp.ThemeColorType} color - 
+ * @param {SlidesApp.ThemeColorType} color
  *
  * @return void
  */
@@ -7373,8 +6050,8 @@
  *
  * @function SlidesApp.PageBackground#setSolidFill
  *
- * @param {SlidesApp.ThemeColorType} color - 
- * @param {Number} alpha - 
+ * @param {SlidesApp.ThemeColorType} color
+ * @param {Number} alpha
  *
  * @return void
  */
@@ -7387,7 +6064,7 @@
  *
  * @function SlidesApp.PageBackground#setSolidFill
  *
- * @param {String} hexString - 
+ * @param {String} hexString
  *
  * @return void
  */
@@ -7400,8 +6077,8 @@
  *
  * @function SlidesApp.PageBackground#setSolidFill
  *
- * @param {String} hexString - 
- * @param {Number} alpha - 
+ * @param {String} hexString
+ * @param {Number} alpha
  *
  * @return void
  */
@@ -7414,6 +6091,36 @@
  * @return void
  */
 
+
+/**
+ * @class SlidesApp.PageBackgroundType
+ */
+
+/**
+ * No fill, so the background is rendered white.
+ *
+ * @typedef {SlidesApp.PageBackgroundType} SlidesApp.PageBackgroundType.NONE
+ */
+
+/**
+ * A picture that is stretched to fill the page.
+ *
+ * @typedef {SlidesApp.PageBackgroundType} SlidesApp.PageBackgroundType.PICTURE
+ */
+
+/**
+ * A solid color fill.
+ *
+ * @typedef {SlidesApp.PageBackgroundType} SlidesApp.PageBackgroundType.SOLID
+ */
+
+/**
+ * A page background type that is not supported.
+ *
+ * @typedef {SlidesApp.PageBackgroundType} SlidesApp.PageBackgroundType.UNSUPPORTED
+ */
+
+
 /**
  * @class SlidesApp.PageElement
  */
@@ -7423,7 +6130,7 @@
  *
  * @function SlidesApp.PageElement#alignOnPage
  *
- * @param {SlidesApp.AlignmentPosition} alignmentPosition - 
+ * @param {SlidesApp.AlignmentPosition} alignmentPosition
  *
  * @return {SlidesApp.PageElement}
  */
@@ -7654,7 +6361,7 @@
  *
  * @function SlidesApp.PageElement#preconcatenateTransform
  *
- * @param {SlidesApp.AffineTransform} transform - 
+ * @param {SlidesApp.AffineTransform} transform
  *
  * @return {SlidesApp.PageElement}
  */
@@ -7679,7 +6386,7 @@
  *
  * @function SlidesApp.PageElement#scaleHeight
  *
- * @param {Number} ratio - 
+ * @param {Number} ratio
  *
  * @return {SlidesApp.PageElement}
  */
@@ -7690,7 +6397,7 @@
  *
  * @function SlidesApp.PageElement#scaleWidth
  *
- * @param {Number} ratio - 
+ * @param {Number} ratio
  *
  * @return {SlidesApp.PageElement}
  */
@@ -7760,7 +6467,7 @@
  *
  * @function SlidesApp.PageElement#setHeight
  *
- * @param {Number} height - 
+ * @param {Number} height
  *
  * @return {SlidesApp.PageElement}
  */
@@ -7771,7 +6478,7 @@
  *
  * @function SlidesApp.PageElement#setLeft
  *
- * @param {Number} left - 
+ * @param {Number} left
  *
  * @return {SlidesApp.PageElement}
  */
@@ -7781,7 +6488,7 @@
  *
  * @function SlidesApp.PageElement#setRotation
  *
- * @param {Number} angle - 
+ * @param {Number} angle
  *
  * @return {SlidesApp.PageElement}
  */
@@ -7792,7 +6499,7 @@
  *
  * @function SlidesApp.PageElement#setTop
  *
- * @param {Number} top - 
+ * @param {Number} top
  *
  * @return {SlidesApp.PageElement}
  */
@@ -7811,7 +6518,7 @@
  *
  * @function SlidesApp.PageElement#setTransform
  *
- * @param {SlidesApp.AffineTransform} transform - 
+ * @param {SlidesApp.AffineTransform} transform
  *
  * @return {SlidesApp.PageElement}
  */
@@ -7822,10 +6529,11 @@
  *
  * @function SlidesApp.PageElement#setWidth
  *
- * @param {Number} width - 
+ * @param {Number} width
  *
  * @return {SlidesApp.PageElement}
  */
+
 
 /**
  * @class SlidesApp.PageElementRange
@@ -7839,6 +6547,66 @@
  * @return {SlidesApp.PageElement[]}
  */
 
+
+/**
+ * @class SlidesApp.PageElementType
+ */
+
+/**
+ * Represents a collection of page elements joined as a single unit.
+ *
+ * @typedef {SlidesApp.PageElementType} SlidesApp.PageElementType.GROUP
+ */
+
+/**
+ * Represents an image.
+ *
+ * @typedef {SlidesApp.PageElementType} SlidesApp.PageElementType.IMAGE
+ */
+
+/**
+ * Represents a line.
+ *
+ * @typedef {SlidesApp.PageElementType} SlidesApp.PageElementType.LINE
+ */
+
+/**
+ * Represents a generic shape that does not have a more specific classification.
+ *
+ * @typedef {SlidesApp.PageElementType} SlidesApp.PageElementType.SHAPE
+ */
+
+/**
+ * Represents a linked chart embedded from Google Sheets.
+ *
+ * @typedef {SlidesApp.PageElementType} SlidesApp.PageElementType.SHEETS_CHART
+ */
+
+/**
+ * Represents a table.
+ *
+ * @typedef {SlidesApp.PageElementType} SlidesApp.PageElementType.TABLE
+ */
+
+/**
+ * Represents a page element that is not supported and cannot be further classified.
+ *
+ * @typedef {SlidesApp.PageElementType} SlidesApp.PageElementType.UNSUPPORTED
+ */
+
+/**
+ * Represents a video.
+ *
+ * @typedef {SlidesApp.PageElementType} SlidesApp.PageElementType.VIDEO
+ */
+
+/**
+ * Represents word art.
+ *
+ * @typedef {SlidesApp.PageElementType} SlidesApp.PageElementType.WORD_ART
+ */
+
+
 /**
  * @class SlidesApp.PageRange
  */
@@ -7851,6 +6619,36 @@
  * @return {SlidesApp.Page[]}
  */
 
+
+/**
+ * @class SlidesApp.PageType
+ */
+
+/**
+ * A layout page.
+ *
+ * @typedef {SlidesApp.PageType} SlidesApp.PageType.LAYOUT
+ */
+
+/**
+ * A master page.
+ *
+ * @typedef {SlidesApp.PageType} SlidesApp.PageType.MASTER
+ */
+
+/**
+ * A slide page.
+ *
+ * @typedef {SlidesApp.PageType} SlidesApp.PageType.SLIDE
+ */
+
+/**
+ * A page type that is not supported.
+ *
+ * @typedef {SlidesApp.PageType} SlidesApp.PageType.UNSUPPORTED
+ */
+
+
 /**
  * @class SlidesApp.Paragraph
  */
@@ -7861,7 +6659,7 @@
  *
  * @function SlidesApp.Paragraph#getIndex
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -7872,6 +6670,44 @@
  *
  * @return {SlidesApp.TextRange}
  */
+
+
+/**
+ * @class SlidesApp.ParagraphAlignment
+ */
+
+/**
+ * The paragraph is centered.
+ *
+ * @typedef {SlidesApp.ParagraphAlignment} SlidesApp.ParagraphAlignment.CENTER
+ */
+
+/**
+ * The paragraph is aligned to the end of the line. Right-aligned for left-to-right text,
+ left-aligned otherwise.
+ *
+ * @typedef {SlidesApp.ParagraphAlignment} SlidesApp.ParagraphAlignment.END
+ */
+
+/**
+ * The paragraph is justified.
+ *
+ * @typedef {SlidesApp.ParagraphAlignment} SlidesApp.ParagraphAlignment.JUSTIFIED
+ */
+
+/**
+ * The paragraph is aligned to the start of the line. Left-aligned for left-to-right text,
+ right-aligned otherwise.
+ *
+ * @typedef {SlidesApp.ParagraphAlignment} SlidesApp.ParagraphAlignment.START
+ */
+
+/**
+ * A paragraph alignment that is not supported.
+ *
+ * @typedef {SlidesApp.ParagraphAlignment} SlidesApp.ParagraphAlignment.UNSUPPORTED
+ */
+
 
 /**
  * @class SlidesApp.ParagraphStyle
@@ -7970,7 +6806,7 @@
  *
  * @function SlidesApp.ParagraphStyle#setIndentEnd
  *
- * @param {Number} indent - 
+ * @param {Number} indent
  *
  * @return {SlidesApp.ParagraphStyle}
  */
@@ -7980,7 +6816,7 @@
  *
  * @function SlidesApp.ParagraphStyle#setIndentFirstLine
  *
- * @param {Number} indent - 
+ * @param {Number} indent
  *
  * @return {SlidesApp.ParagraphStyle}
  */
@@ -7992,7 +6828,7 @@
  *
  * @function SlidesApp.ParagraphStyle#setIndentStart
  *
- * @param {Number} indent - 
+ * @param {Number} indent
  *
  * @return {SlidesApp.ParagraphStyle}
  */
@@ -8005,7 +6841,7 @@
  *
  * @function SlidesApp.ParagraphStyle#setLineSpacing
  *
- * @param {Number} spacing - 
+ * @param {Number} spacing
  *
  * @return {SlidesApp.ParagraphStyle}
  */
@@ -8015,7 +6851,7 @@
  *
  * @function SlidesApp.ParagraphStyle#setParagraphAlignment
  *
- * @param {SlidesApp.ParagraphAlignment} alignment - 
+ * @param {SlidesApp.ParagraphAlignment} alignment
  *
  * @return {SlidesApp.ParagraphStyle}
  */
@@ -8025,7 +6861,7 @@
  *
  * @function SlidesApp.ParagraphStyle#setSpaceAbove
  *
- * @param {Number} space - 
+ * @param {Number} space
  *
  * @return {SlidesApp.ParagraphStyle}
  */
@@ -8035,7 +6871,7 @@
  *
  * @function SlidesApp.ParagraphStyle#setSpaceBelow
  *
- * @param {Number} space - 
+ * @param {Number} space
  *
  * @return {SlidesApp.ParagraphStyle}
  */
@@ -8045,7 +6881,7 @@
  *
  * @function SlidesApp.ParagraphStyle#setSpacingMode
  *
- * @param {SlidesApp.SpacingMode} mode - 
+ * @param {SlidesApp.SpacingMode} mode
  *
  * @return {SlidesApp.ParagraphStyle}
  */
@@ -8055,10 +6891,11 @@
  *
  * @function SlidesApp.ParagraphStyle#setTextDirection
  *
- * @param {SlidesApp.TextDirection} direction - 
+ * @param {SlidesApp.TextDirection} direction
  *
  * @return {SlidesApp.ParagraphStyle}
  */
+
 
 /**
  * @class SlidesApp.PictureFill
@@ -8110,6 +6947,120 @@
  * @return {String} the image URL or <code>null</code> if the image does not have a source URL
  */
 
+
+/**
+ * @class SlidesApp.PlaceholderType
+ */
+
+/**
+ * Body text.
+ *
+ * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.BODY
+ */
+
+/**
+ * Title centered.
+ *
+ * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.CENTERED_TITLE
+ */
+
+/**
+ * Chart or graph.
+ *
+ * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.CHART
+ */
+
+/**
+ * Clip art image.
+ *
+ * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.CLIP_ART
+ */
+
+/**
+ * Date and time.
+ *
+ * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.DATE_AND_TIME
+ */
+
+/**
+ * Diagram.
+ *
+ * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.DIAGRAM
+ */
+
+/**
+ * Footer text.
+ *
+ * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.FOOTER
+ */
+
+/**
+ * Header text.
+ *
+ * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.HEADER
+ */
+
+/**
+ * Multimedia.
+ *
+ * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.MEDIA
+ */
+
+/**
+ * Not a Placeholder.
+ *
+ * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.NONE
+ */
+
+/**
+ * Any content type.
+ *
+ * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.OBJECT
+ */
+
+/**
+ * Picture.
+ *
+ * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.PICTURE
+ */
+
+/**
+ * Slide image.
+ *
+ * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.SLIDE_IMAGE
+ */
+
+/**
+ * Number of a slide.
+ *
+ * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.SLIDE_NUMBER
+ */
+
+/**
+ * Subtitle.
+ *
+ * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.SUBTITLE
+ */
+
+/**
+ * Table.
+ *
+ * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.TABLE
+ */
+
+/**
+ * Slide title.
+ *
+ * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.TITLE
+ */
+
+/**
+ * A placeholder type that is not supported.
+ *
+ * @typedef {SlidesApp.PlaceholderType} SlidesApp.PlaceholderType.UNSUPPORTED
+ */
+
+
 /**
  * @class SlidesApp.Point
  */
@@ -8129,6 +7080,84 @@
  *
  * @return {Number}
  */
+
+
+/**
+ * @class SlidesApp.PredefinedLayout
+ */
+
+/**
+ * Layout with a big number heading.
+ *
+ * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.BIG_NUMBER
+ */
+
+/**
+ * Blank layout, with no placeholders.
+ *
+ * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.BLANK
+ */
+
+/**
+ * Layout with a caption at the bottom.
+ *
+ * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.CAPTION_ONLY
+ */
+
+/**
+ * Layout with a main point.
+ *
+ * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.MAIN_POINT
+ */
+
+/**
+ * Layout with one title and one body, arranged in a single column.
+ *
+ * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.ONE_COLUMN_TEXT
+ */
+
+/**
+ * Layout with a section title.
+ *
+ * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.SECTION_HEADER
+ */
+
+/**
+ * Layout with a title and subtitle on one side and description on the other.
+ *
+ * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.SECTION_TITLE_AND_DESCRIPTION
+ */
+
+/**
+ * Layout with a title and a subtitle.
+ *
+ * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.TITLE
+ */
+
+/**
+ * Layout with a title and body.
+ *
+ * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.TITLE_AND_BODY
+ */
+
+/**
+ * Layout with a title and two columns.
+ *
+ * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.TITLE_AND_TWO_COLUMNS
+ */
+
+/**
+ * Layout with only a title.
+ *
+ * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.TITLE_ONLY
+ */
+
+/**
+ * A layout that is not supported.
+ *
+ * @typedef {SlidesApp.PredefinedLayout} SlidesApp.PredefinedLayout.UNSUPPORTED
+ */
+
 
 /**
  * @class SlidesApp.Presentation
@@ -8420,7 +7449,7 @@
  *
  * @function SlidesApp.Presentation#insertSlide
  *
- * @param {number} insertionIndex - The zero-based index indicating where to insert the slide.
+ * @param {IntegerNum} insertionIndex - The zero-based index indicating where to insert the slide.
  *
  * @return {SlidesApp.Slide} the new slide
  */
@@ -8437,7 +7466,7 @@
  *
  * @function SlidesApp.Presentation#insertSlide
  *
- * @param {number} insertionIndex - The zero-based index indicating where to insert the slide.
+ * @param {IntegerNum} insertionIndex - The zero-based index indicating where to insert the slide.
  * @param {SlidesApp.Layout} layout - The layout to use for the new slide; it should be present in the current master.
  *
  * @return {SlidesApp.Slide} the new slide
@@ -8455,7 +7484,7 @@
  *
  * @function SlidesApp.Presentation#insertSlide
  *
- * @param {number} insertionIndex - The zero-based index indicating where to insert the slide.
+ * @param {IntegerNum} insertionIndex - The zero-based index indicating where to insert the slide.
  * @param {SlidesApp.PredefinedLayout} predefinedLayout - The predefined layout to use for the new slide; it should be present in
      the current master.
  *
@@ -8479,7 +7508,7 @@
  *
  * @function SlidesApp.Presentation#insertSlide
  *
- * @param {number} insertionIndex - The zero-based index indicating where to insert the slide.
+ * @param {IntegerNum} insertionIndex - The zero-based index indicating where to insert the slide.
  * @param {SlidesApp.Slide} slide - The slide to be copied and inserted.
  *
  * @return {SlidesApp.Slide} the new slide
@@ -8545,7 +7574,7 @@
  * @param {String} findText - The text to find.
  * @param {String} replaceText - The text to replace the matched text.
  *
- * @return {number} the number of occurrences changed
+ * @return {IntegerNum} the number of occurrences changed
  */
 
 /**
@@ -8558,7 +7587,7 @@
  * @param {Boolean} matchCase - If <code>true</code>, the search is case sensitive; if <code>false</code>, the search is
      case insensitive.
  *
- * @return {number} the number of occurrences changed
+ * @return {IntegerNum} the number of occurrences changed
  */
 
 /**
@@ -8579,10 +7608,11 @@
  *
  * @function SlidesApp.Presentation#setName
  *
- * @param {String} name - 
+ * @param {String} name
  *
  * @return void
  */
+
 
 /**
  * @class SlidesApp.RgbColor
@@ -8601,7 +7631,7 @@
  *
  * @function SlidesApp.RgbColor#getBlue
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -8617,7 +7647,7 @@
  *
  * @function SlidesApp.RgbColor#getGreen
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -8625,8 +7655,9 @@
  *
  * @function SlidesApp.RgbColor#getRed
  *
- * @return {number}
+ * @return {IntegerNum}
  */
+
 
 /**
  * @class SlidesApp.Selection
@@ -8751,6 +7782,54 @@
  * @return {SlidesApp.TextRange}
  */
 
+
+/**
+ * @class SlidesApp.SelectionType
+ */
+
+/**
+ * Current page selection.
+ *
+ * @typedef {SlidesApp.SelectionType} SlidesApp.SelectionType.CURRENT_PAGE
+ */
+
+/**
+ * No selection.
+ *
+ * @typedef {SlidesApp.SelectionType} SlidesApp.SelectionType.NONE
+ */
+
+/**
+ * Page selection in the thumbnail flimstrip.
+ *
+ * @typedef {SlidesApp.SelectionType} SlidesApp.SelectionType.PAGE
+ */
+
+/**
+ * Page element selection.
+ *
+ * @typedef {SlidesApp.SelectionType} SlidesApp.SelectionType.PAGE_ELEMENT
+ */
+
+/**
+ * Table cell selection.
+ *
+ * @typedef {SlidesApp.SelectionType} SlidesApp.SelectionType.TABLE_CELL
+ */
+
+/**
+ * Text selection.
+ *
+ * @typedef {SlidesApp.SelectionType} SlidesApp.SelectionType.TEXT
+ */
+
+/**
+ * A selection type that is not supported.
+ *
+ * @typedef {SlidesApp.SelectionType} SlidesApp.SelectionType.UNSUPPORTED
+ */
+
+
 /**
  * @class SlidesApp.Shape
  */
@@ -8760,7 +7839,7 @@
  *
  * @function SlidesApp.Shape#alignOnPage
  *
- * @param {SlidesApp.AlignmentPosition} alignmentPosition - 
+ * @param {SlidesApp.AlignmentPosition} alignmentPosition
  *
  * @return {SlidesApp.Shape}
  */
@@ -8915,7 +7994,7 @@
  *
  * @function SlidesApp.Shape#getPlaceholderIndex
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -9012,7 +8091,7 @@
  *
  * @function SlidesApp.Shape#preconcatenateTransform
  *
- * @param {SlidesApp.AffineTransform} transform - 
+ * @param {SlidesApp.AffineTransform} transform
  *
  * @return {SlidesApp.Shape}
  */
@@ -9180,7 +8259,7 @@
  *
  * @function SlidesApp.Shape#scaleHeight
  *
- * @param {Number} ratio - 
+ * @param {Number} ratio
  *
  * @return {SlidesApp.Shape}
  */
@@ -9191,7 +8270,7 @@
  *
  * @function SlidesApp.Shape#scaleWidth
  *
- * @param {Number} ratio - 
+ * @param {Number} ratio
  *
  * @return {SlidesApp.Shape}
  */
@@ -9260,7 +8339,7 @@
  *
  * @function SlidesApp.Shape#setContentAlignment
  *
- * @param {SlidesApp.ContentAlignment} contentAlignment - 
+ * @param {SlidesApp.ContentAlignment} contentAlignment
  *
  * @return {SlidesApp.Shape}
  */
@@ -9271,7 +8350,7 @@
  *
  * @function SlidesApp.Shape#setHeight
  *
- * @param {Number} height - 
+ * @param {Number} height
  *
  * @return {SlidesApp.Shape}
  */
@@ -9282,7 +8361,7 @@
  *
  * @function SlidesApp.Shape#setLeft
  *
- * @param {Number} left - 
+ * @param {Number} left
  *
  * @return {SlidesApp.Shape}
  */
@@ -9297,7 +8376,7 @@
  *
  * @function SlidesApp.Shape#setLinkSlide
  *
- * @param {number} slideIndex - The zero-based index to the slide.
+ * @param {IntegerNum} slideIndex - The zero-based index to the slide.
  *
  * @return {SlidesApp.Link} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> that was set
  */
@@ -9353,7 +8432,7 @@
  *
  * @function SlidesApp.Shape#setRotation
  *
- * @param {Number} angle - 
+ * @param {Number} angle
  *
  * @return {SlidesApp.Shape}
  */
@@ -9364,7 +8443,7 @@
  *
  * @function SlidesApp.Shape#setTop
  *
- * @param {Number} top - 
+ * @param {Number} top
  *
  * @return {SlidesApp.Shape}
  */
@@ -9383,7 +8462,7 @@
  *
  * @function SlidesApp.Shape#setTransform
  *
- * @param {SlidesApp.AffineTransform} transform - 
+ * @param {SlidesApp.AffineTransform} transform
  *
  * @return {SlidesApp.Shape}
  */
@@ -9394,10 +8473,881 @@
  *
  * @function SlidesApp.Shape#setWidth
  *
- * @param {Number} width - 
+ * @param {Number} width
  *
  * @return {SlidesApp.Shape}
  */
+
+
+/**
+ * @class SlidesApp.ShapeType
+ */
+
+/**
+ * Curved arc shape. Corresponds to ECMA-376 ST_ShapeType 'arc'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.ARC
+ */
+
+/**
+ * East arrow shape.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.ARROW_EAST
+ */
+
+/**
+ * North arrow shape.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.ARROW_NORTH
+ */
+
+/**
+ * Northeast arrow shape.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.ARROW_NORTH_EAST
+ */
+
+/**
+ * Bent arrow shape. Corresponds to ECMA-376 ST_ShapeType 'bentArrow'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.BENT_ARROW
+ */
+
+/**
+ * Bent up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'bentUpArrow'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.BENT_UP_ARROW
+ */
+
+/**
+ * Bevel shape. Corresponds to ECMA-376 ST_ShapeType 'bevel'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.BEVEL
+ */
+
+/**
+ * Block arc shape. Corresponds to ECMA-376 ST_ShapeType 'blockArc'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.BLOCK_ARC
+ */
+
+/**
+ * Brace pair shape. Corresponds to ECMA-376 ST_ShapeType 'bracePair'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.BRACE_PAIR
+ */
+
+/**
+ * Bracket pair shape. Corresponds to ECMA-376 ST_ShapeType 'bracketPair'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.BRACKET_PAIR
+ */
+
+/**
+ * Can shape. Corresponds to ECMA-376 ST_ShapeType 'can'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CAN
+ */
+
+/**
+ * Chevron shape. Corresponds to ECMA-376 ST_ShapeType 'chevron'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CHEVRON
+ */
+
+/**
+ * Chord shape. Corresponds to ECMA-376 ST_ShapeType 'chord'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CHORD
+ */
+
+/**
+ * Cloud shape. Corresponds to ECMA-376 ST_ShapeType 'cloud'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CLOUD
+ */
+
+/**
+ * Callout cloud shape. Corresponds to ECMA-376 ST_ShapeType 'cloudCallout'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CLOUD_CALLOUT
+ */
+
+/**
+ * Corner shape. Corresponds to ECMA-376 ST_ShapeType 'corner'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CORNER
+ */
+
+/**
+ * Cube shape. Corresponds to ECMA-376 ST_ShapeType 'cube'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CUBE
+ */
+
+/**
+ * Curved down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedDownArrow'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CURVED_DOWN_ARROW
+ */
+
+/**
+ * Curved left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedLeftArrow'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CURVED_LEFT_ARROW
+ */
+
+/**
+ * Curved right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedRightArrow'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CURVED_RIGHT_ARROW
+ */
+
+/**
+ * Curved up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'curvedUpArrow'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CURVED_UP_ARROW
+ */
+
+/**
+ * Custom shape.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.CUSTOM
+ */
+
+/**
+ * Decagon shape. Corresponds to ECMA-376 ST_ShapeType 'decagon'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.DECAGON
+ */
+
+/**
+ * Diagonal stripe shape. Corresponds to ECMA-376 ST_ShapeType 'diagStripe'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.DIAGONAL_STRIPE
+ */
+
+/**
+ * Diamond shape. Corresponds to ECMA-376 ST_ShapeType 'diamond'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.DIAMOND
+ */
+
+/**
+ * Dodecagon shape. Corresponds to ECMA-376 ST_ShapeType 'dodecagon'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.DODECAGON
+ */
+
+/**
+ * Donut shape. Corresponds to ECMA-376 ST_ShapeType 'donut'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.DONUT
+ */
+
+/**
+ * Double wave shape. Corresponds to ECMA-376 ST_ShapeType 'doubleWave'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.DOUBLE_WAVE
+ */
+
+/**
+ * Down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'downArrow'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.DOWN_ARROW
+ */
+
+/**
+ * Callout down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'downArrowCallout'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.DOWN_ARROW_CALLOUT
+ */
+
+/**
+ * Ellipse shape. Corresponds to ECMA-376 ST_ShapeType 'ellipse'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.ELLIPSE
+ */
+
+/**
+ * Ellipse ribbon shape. Corresponds to ECMA-376 ST_ShapeType 'ellipseRibbon'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.ELLIPSE_RIBBON
+ */
+
+/**
+ * Ellipse ribbon 2 shape. Corresponds to ECMA-376 ST_ShapeType 'ellipseRibbon2'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.ELLIPSE_RIBBON_2
+ */
+
+/**
+ * Alternate process flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartAlternateProcess'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_ALTERNATE_PROCESS
+ */
+
+/**
+ * Collate flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartCollate'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_COLLATE
+ */
+
+/**
+ * Connector flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartConnector'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_CONNECTOR
+ */
+
+/**
+ * Decision flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDecision'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_DECISION
+ */
+
+/**
+ * Delay flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDelay'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_DELAY
+ */
+
+/**
+ * Display flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDisplay'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_DISPLAY
+ */
+
+/**
+ * Document flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartDocument'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_DOCUMENT
+ */
+
+/**
+ * Extract flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartExtract'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_EXTRACT
+ */
+
+/**
+ * Input output flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartInputOutput'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_INPUT_OUTPUT
+ */
+
+/**
+ * Internal storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartInternalStorage'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_INTERNAL_STORAGE
+ */
+
+/**
+ * Magnetic disk flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticDisk'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_MAGNETIC_DISK
+ */
+
+/**
+ * Magnetic drum flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticDrum'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_MAGNETIC_DRUM
+ */
+
+/**
+ * Magnetic tape flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMagneticTape'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_MAGNETIC_TAPE
+ */
+
+/**
+ * Manual input flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartManualInput'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_MANUAL_INPUT
+ */
+
+/**
+ * Manual operation flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartManualOperation'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_MANUAL_OPERATION
+ */
+
+/**
+ * Merge flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMerge'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_MERGE
+ */
+
+/**
+ * Multi-document flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartMultidocument'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_MULTIDOCUMENT
+ */
+
+/**
+ * Offline storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOfflineStorage'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_OFFLINE_STORAGE
+ */
+
+/**
+ * Off-page connector flow shape. Corresponds to ECMA-376 ST_ShapeType
+ 'flowChartOffpageConnector'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_OFFPAGE_CONNECTOR
+ */
+
+/**
+ * Online storage flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOnlineStorage'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_ONLINE_STORAGE
+ */
+
+/**
+ * Or flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartOr'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_OR
+ */
+
+/**
+ * Predefined process flow shape. Corresponds to ECMA-376 ST_ShapeType
+ 'flowChartPredefinedProcess'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_PREDEFINED_PROCESS
+ */
+
+/**
+ * Preparation flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPreparation'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_PREPARATION
+ */
+
+/**
+ * Process flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartProcess'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_PROCESS
+ */
+
+/**
+ * Punched card flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPunchedCard'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_PUNCHED_CARD
+ */
+
+/**
+ * Punched tape flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartPunchedTape'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_PUNCHED_TAPE
+ */
+
+/**
+ * Sort flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartSort'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_SORT
+ */
+
+/**
+ * Summing junction flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartSummingJunction'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_SUMMING_JUNCTION
+ */
+
+/**
+ * Terminator flow shape. Corresponds to ECMA-376 ST_ShapeType 'flowChartTerminator'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FLOW_CHART_TERMINATOR
+ */
+
+/**
+ * Folded corner shape. Corresponds to ECMA-376 ST_ShapeType 'foldedCorner'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FOLDED_CORNER
+ */
+
+/**
+ * Frame shape. Corresponds to ECMA-376 ST_ShapeType 'frame'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.FRAME
+ */
+
+/**
+ * Half frame shape. Corresponds to ECMA-376 ST_ShapeType 'halfFrame'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.HALF_FRAME
+ */
+
+/**
+ * Heart shape. Corresponds to ECMA-376 ST_ShapeType 'heart'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.HEART
+ */
+
+/**
+ * Heptagon shape. Corresponds to ECMA-376 ST_ShapeType 'heptagon'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.HEPTAGON
+ */
+
+/**
+ * Hexagon shape. Corresponds to ECMA-376 ST_ShapeType 'hexagon'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.HEXAGON
+ */
+
+/**
+ * Home plate shape. Corresponds to ECMA-376 ST_ShapeType 'homePlate'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.HOME_PLATE
+ */
+
+/**
+ * Horizontal scroll shape. Corresponds to ECMA-376 ST_ShapeType 'horizontalScroll'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.HORIZONTAL_SCROLL
+ */
+
+/**
+ * Irregular seal 1 shape. Corresponds to ECMA-376 ST_ShapeType 'irregularSeal1'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.IRREGULAR_SEAL_1
+ */
+
+/**
+ * Irregular seal 2 shape. Corresponds to ECMA-376 ST_ShapeType 'irregularSeal2'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.IRREGULAR_SEAL_2
+ */
+
+/**
+ * Left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftArrow'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.LEFT_ARROW
+ */
+
+/**
+ * Callout left arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftArrowCallout'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.LEFT_ARROW_CALLOUT
+ */
+
+/**
+ * Left brace shape. Corresponds to ECMA-376 ST_ShapeType 'leftBrace'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.LEFT_BRACE
+ */
+
+/**
+ * Left bracket shape. Corresponds to ECMA-376 ST_ShapeType 'leftBracket'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.LEFT_BRACKET
+ */
+
+/**
+ * Left right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightArrow'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.LEFT_RIGHT_ARROW
+ */
+
+/**
+ * Callout left right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightArrowCallout'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.LEFT_RIGHT_ARROW_CALLOUT
+ */
+
+/**
+ * Left right up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftRightUpArrow'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.LEFT_RIGHT_UP_ARROW
+ */
+
+/**
+ * Left up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'leftUpArrow'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.LEFT_UP_ARROW
+ */
+
+/**
+ * Lightning bolt shape. Corresponds to ECMA-376 ST_ShapeType 'lightningBolt'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.LIGHTNING_BOLT
+ */
+
+/**
+ * Divide math shape. Corresponds to ECMA-376 ST_ShapeType 'mathDivide'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.MATH_DIVIDE
+ */
+
+/**
+ * Equal math shape. Corresponds to ECMA-376 ST_ShapeType 'mathEqual'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.MATH_EQUAL
+ */
+
+/**
+ * Minus math shape. Corresponds to ECMA-376 ST_ShapeType 'mathMinus'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.MATH_MINUS
+ */
+
+/**
+ * Multiply math shape. Corresponds to ECMA-376 ST_ShapeType 'mathMultiply'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.MATH_MULTIPLY
+ */
+
+/**
+ * Not equal math shape. Corresponds to ECMA-376 ST_ShapeType 'mathNotEqual'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.MATH_NOT_EQUAL
+ */
+
+/**
+ * Plus math shape. Corresponds to ECMA-376 ST_ShapeType 'mathPlus'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.MATH_PLUS
+ */
+
+/**
+ * Moon shape. Corresponds to ECMA-376 ST_ShapeType 'moon'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.MOON
+ */
+
+/**
+ * Notched right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'notchedRightArrow'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.NOTCHED_RIGHT_ARROW
+ */
+
+/**
+ * No smoking shape. Corresponds to ECMA-376 ST_ShapeType 'noSmoking'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.NO_SMOKING
+ */
+
+/**
+ * Octagon shape. Corresponds to ECMA-376 ST_ShapeType 'octagon'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.OCTAGON
+ */
+
+/**
+ * Parallelogram shape. Corresponds to ECMA-376 ST_ShapeType 'parallelogram'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.PARALLELOGRAM
+ */
+
+/**
+ * Pentagon shape. Corresponds to ECMA-376 ST_ShapeType 'pentagon'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.PENTAGON
+ */
+
+/**
+ * Pie shape. Corresponds to ECMA-376 ST_ShapeType 'pie'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.PIE
+ */
+
+/**
+ * Plaque shape. Corresponds to ECMA-376 ST_ShapeType 'plaque'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.PLAQUE
+ */
+
+/**
+ * Plus shape. Corresponds to ECMA-376 ST_ShapeType 'plus'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.PLUS
+ */
+
+/**
+ * Quad-arrow shape. Corresponds to ECMA-376 ST_ShapeType 'quadArrow'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.QUAD_ARROW
+ */
+
+/**
+ * Callout quad-arrow shape. Corresponds to ECMA-376 ST_ShapeType 'quadArrowCallout'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.QUAD_ARROW_CALLOUT
+ */
+
+/**
+ * Rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'rect'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.RECTANGLE
+ */
+
+/**
+ * Ribbon shape. Corresponds to ECMA-376 ST_ShapeType 'ribbon'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.RIBBON
+ */
+
+/**
+ * Ribbon 2 shape. Corresponds to ECMA-376 ST_ShapeType 'ribbon2'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.RIBBON_2
+ */
+
+/**
+ * Right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'rightArrow'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.RIGHT_ARROW
+ */
+
+/**
+ * Callout right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'rightArrowCallout'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.RIGHT_ARROW_CALLOUT
+ */
+
+/**
+ * Right brace shape. Corresponds to ECMA-376 ST_ShapeType 'rightBrace'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.RIGHT_BRACE
+ */
+
+/**
+ * Right bracket shape. Corresponds to ECMA-376 ST_ShapeType 'rightBracket'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.RIGHT_BRACKET
+ */
+
+/**
+ * Right triangle shape. Corresponds to ECMA-376 ST_ShapeType 'rtTriangle'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.RIGHT_TRIANGLE
+ */
+
+/**
+ * One round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'round1Rect'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.ROUND_1_RECTANGLE
+ */
+
+/**
+ * Two diagonal round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType
+ 'round2DiagRect'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.ROUND_2_DIAGONAL_RECTANGLE
+ */
+
+/**
+ * Two same-side round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType
+ 'round2SameRect'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.ROUND_2_SAME_RECTANGLE
+ */
+
+/**
+ * Round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'roundRect'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.ROUND_RECTANGLE
+ */
+
+/**
+ * Smiley face shape. Corresponds to ECMA-376 ST_ShapeType 'smileyFace'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.SMILEY_FACE
+ */
+
+/**
+ * One snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snip1Rect'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.SNIP_1_RECTANGLE
+ */
+
+/**
+ * Two diagonal snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'snip2DiagRect'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.SNIP_2_DIAGONAL_RECTANGLE
+ */
+
+/**
+ * Two same-side snip corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType
+ 'snip2SameRect'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.SNIP_2_SAME_RECTANGLE
+ */
+
+/**
+ * One snip one round corner rectangle shape. Corresponds to ECMA-376 ST_ShapeType
+ 'snipRoundRect'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.SNIP_ROUND_RECTANGLE
+ */
+
+/**
+ * Speech shape.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.SPEECH
+ */
+
+/**
+ * Star burst shape.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STARBURST
+ */
+
+/**
+ * Ten pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star10'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STAR_10
+ */
+
+/**
+ * Twelve pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star12'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STAR_12
+ */
+
+/**
+ * Sixteen pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star16'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STAR_16
+ */
+
+/**
+ * Twenty four pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star24'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STAR_24
+ */
+
+/**
+ * Thirty two pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star32'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STAR_32
+ */
+
+/**
+ * Four pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star4'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STAR_4
+ */
+
+/**
+ * Five pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star5'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STAR_5
+ */
+
+/**
+ * Six pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star6'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STAR_6
+ */
+
+/**
+ * Seven pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star7'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STAR_7
+ */
+
+/**
+ * Eight pointed star shape. Corresponds to ECMA-376 ST_ShapeType 'star8'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STAR_8
+ */
+
+/**
+ * Striped right arrow shape. Corresponds to ECMA-376 ST_ShapeType 'stripedRightArrow'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.STRIPED_RIGHT_ARROW
+ */
+
+/**
+ * Sun shape. Corresponds to ECMA-376 ST_ShapeType 'sun'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.SUN
+ */
+
+/**
+ * Teardrop shape. Corresponds to ECMA-376 ST_ShapeType 'teardrop'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.TEARDROP
+ */
+
+/**
+ * Text box shape.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.TEXT_BOX
+ */
+
+/**
+ * Trapezoid shape. Corresponds to ECMA-376 ST_ShapeType 'trapezoid'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.TRAPEZOID
+ */
+
+/**
+ * Triangle shape. Corresponds to ECMA-376 ST_ShapeType 'triangle'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.TRIANGLE
+ */
+
+/**
+ * A shape type that is not supported.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.UNSUPPORTED
+ */
+
+/**
+ * Up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upArrow'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.UP_ARROW
+ */
+
+/**
+ * Callout up arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upArrowCallout'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.UP_ARROW_CALLOUT
+ */
+
+/**
+ * Up down arrow shape. Corresponds to ECMA-376 ST_ShapeType 'upDownArrow'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.UP_DOWN_ARROW
+ */
+
+/**
+ * U-turn arrow shape. Corresponds to ECMA-376 ST_ShapeType 'uturnArrow'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.UTURN_ARROW
+ */
+
+/**
+ * Vertical scroll shape. Corresponds to ECMA-376 ST_ShapeType 'verticalScroll'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.VERTICAL_SCROLL
+ */
+
+/**
+ * Wave shape. Corresponds to ECMA-376 ST_ShapeType 'wave'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.WAVE
+ */
+
+/**
+ * Callout wedge ellipse shape. Corresponds to ECMA-376 ST_ShapeType 'wedgeEllipseCallout'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.WEDGE_ELLIPSE_CALLOUT
+ */
+
+/**
+ * Callout wedge rectangle shape. Corresponds to ECMA-376 ST_ShapeType 'wedgeRectCallout'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.WEDGE_RECTANGLE_CALLOUT
+ */
+
+/**
+ * Callout wedge round rectangle shape. Corresponds to ECMA-376 ST_ShapeType
+ 'wedgeRoundRectCallout'.
+ *
+ * @typedef {SlidesApp.ShapeType} SlidesApp.ShapeType.WEDGE_ROUND_RECTANGLE_CALLOUT
+ */
+
 
 /**
  * @class SlidesApp.SheetsChart
@@ -9408,7 +9358,7 @@
  *
  * @function SlidesApp.SheetsChart#alignOnPage
  *
- * @param {SlidesApp.AlignmentPosition} alignmentPosition - 
+ * @param {SlidesApp.AlignmentPosition} alignmentPosition
  *
  * @return {SlidesApp.SheetsChart}
  */
@@ -9436,7 +9386,7 @@
  *
  * @function SlidesApp.SheetsChart#getChartId
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -9622,7 +9572,7 @@
  *
  * @function SlidesApp.SheetsChart#preconcatenateTransform
  *
- * @param {SlidesApp.AffineTransform} transform - 
+ * @param {SlidesApp.AffineTransform} transform
  *
  * @return {SlidesApp.SheetsChart}
  */
@@ -9668,7 +9618,7 @@
  *
  * @function SlidesApp.SheetsChart#scaleHeight
  *
- * @param {Number} ratio - 
+ * @param {Number} ratio
  *
  * @return {SlidesApp.SheetsChart}
  */
@@ -9679,7 +9629,7 @@
  *
  * @function SlidesApp.SheetsChart#scaleWidth
  *
- * @param {Number} ratio - 
+ * @param {Number} ratio
  *
  * @return {SlidesApp.SheetsChart}
  */
@@ -9749,7 +9699,7 @@
  *
  * @function SlidesApp.SheetsChart#setHeight
  *
- * @param {Number} height - 
+ * @param {Number} height
  *
  * @return {SlidesApp.SheetsChart}
  */
@@ -9760,7 +9710,7 @@
  *
  * @function SlidesApp.SheetsChart#setLeft
  *
- * @param {Number} left - 
+ * @param {Number} left
  *
  * @return {SlidesApp.SheetsChart}
  */
@@ -9775,7 +9725,7 @@
  *
  * @function SlidesApp.SheetsChart#setLinkSlide
  *
- * @param {number} slideIndex - The zero-based index to the slide.
+ * @param {IntegerNum} slideIndex - The zero-based index to the slide.
  *
  * @return {SlidesApp.Link} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> that was set
  */
@@ -9831,7 +9781,7 @@
  *
  * @function SlidesApp.SheetsChart#setRotation
  *
- * @param {Number} angle - 
+ * @param {Number} angle
  *
  * @return {SlidesApp.SheetsChart}
  */
@@ -9842,7 +9792,7 @@
  *
  * @function SlidesApp.SheetsChart#setTop
  *
- * @param {Number} top - 
+ * @param {Number} top
  *
  * @return {SlidesApp.SheetsChart}
  */
@@ -9861,7 +9811,7 @@
  *
  * @function SlidesApp.SheetsChart#setTransform
  *
- * @param {SlidesApp.AffineTransform} transform - 
+ * @param {SlidesApp.AffineTransform} transform
  *
  * @return {SlidesApp.SheetsChart}
  */
@@ -9872,10 +9822,28 @@
  *
  * @function SlidesApp.SheetsChart#setWidth
  *
- * @param {Number} width - 
+ * @param {Number} width
  *
  * @return {SlidesApp.SheetsChart}
  */
+
+
+/**
+ * @class SlidesApp.SheetsChartEmbedType
+ */
+
+/**
+ * Indicates that the chart is embedded as an image.
+ *
+ * @typedef {SlidesApp.SheetsChartEmbedType} SlidesApp.SheetsChartEmbedType.IMAGE
+ */
+
+/**
+ * Represents a chart that is not supported and cannot be further classified.
+ *
+ * @typedef {SlidesApp.SheetsChartEmbedType} SlidesApp.SheetsChartEmbedType.UNSUPPORTED
+ */
+
 
 /**
  * @class SlidesApp.Slide
@@ -9988,7 +9956,7 @@
  *
  * @function SlidesApp.Slide#getPlaceholder
  *
- * @param {SlidesApp.PlaceholderType} placeholderType - 
+ * @param {SlidesApp.PlaceholderType} placeholderType
  *
  * @return {SlidesApp.PageElement}
  */
@@ -10007,8 +9975,8 @@
  *
  * @function SlidesApp.Slide#getPlaceholder
  *
- * @param {SlidesApp.PlaceholderType} placeholderType - 
- * @param {number} placeholderIndex - 
+ * @param {SlidesApp.PlaceholderType} placeholderType
+ * @param {IntegerNum} placeholderIndex
  *
  * @return {SlidesApp.PageElement}
  */
@@ -10074,7 +10042,7 @@
  *
  * @function SlidesApp.Slide#group
  *
- * @param {SlidesApp.PageElement[]} pageElements - 
+ * @param {SlidesApp.PageElement[]} pageElements
  *
  * @return {SlidesApp.Group} The new group.
  */
@@ -10534,8 +10502,8 @@
  *
  * @function SlidesApp.Slide#insertTable
  *
- * @param {number} numRows - The number of rows in the table.
- * @param {number} numColumns - The number of columns in the table.
+ * @param {IntegerNum} numRows - The number of rows in the table.
+ * @param {IntegerNum} numColumns - The number of columns in the table.
  *
  * @return {SlidesApp.Table} the inserted table
  */
@@ -10547,8 +10515,8 @@
  *
  * @function SlidesApp.Slide#insertTable
  *
- * @param {number} numRows - The number of rows in the table.
- * @param {number} numColumns - The number of columns in the table.
+ * @param {IntegerNum} numRows - The number of rows in the table.
+ * @param {IntegerNum} numColumns - The number of columns in the table.
  * @param {Number} left - The horizontal position of the table, measured from the upper left corner of the
      page.
  * @param {Number} top - The vertical position of the table, measured from the upper left corner of the page.
@@ -10678,7 +10646,7 @@
  *
  * @function SlidesApp.Slide#move
  *
- * @param {number} index - The index where the slide should be moved to, based on the slide arrangement
+ * @param {IntegerNum} index - The index where the slide should be moved to, based on the slide arrangement
      before the move. The index should be between zero and the number of slides in the
      presentation, inclusive.
  *
@@ -10702,7 +10670,7 @@
  * @param {String} findText - The text to find.
  * @param {String} replaceText - The text to replace the matched text.
  *
- * @return {number} the number of occurrences changed
+ * @return {IntegerNum} the number of occurrences changed
  */
 
 /**
@@ -10715,7 +10683,7 @@
  * @param {Boolean} matchCase - If <code>true</code>, the search is case sensitive; if <code>false</code>, the search is
      case insensitive.
  *
- * @return {number} the number of occurrences changed
+ * @return {IntegerNum} the number of occurrences changed
  */
 
 /**
@@ -10734,6 +10702,36 @@
  *
  * @return void
  */
+
+
+/**
+ * @class SlidesApp.SlidePosition
+ */
+
+/**
+ * The first slide in the presentation.
+ *
+ * @typedef {SlidesApp.SlidePosition} SlidesApp.SlidePosition.FIRST_SLIDE
+ */
+
+/**
+ * The last slide in the presentation.
+ *
+ * @typedef {SlidesApp.SlidePosition} SlidesApp.SlidePosition.LAST_SLIDE
+ */
+
+/**
+ * The next slide.
+ *
+ * @typedef {SlidesApp.SlidePosition} SlidesApp.SlidePosition.NEXT_SLIDE
+ */
+
+/**
+ * The previous slide.
+ *
+ * @typedef {SlidesApp.SlidePosition} SlidesApp.SlidePosition.PREVIOUS_SLIDE
+ */
+
 
 /**
  * @class SlidesApp.SolidFill
@@ -10755,6 +10753,30 @@
  * @return {SlidesApp.Color}
  */
 
+
+/**
+ * @class SlidesApp.SpacingMode
+ */
+
+/**
+ * Paragraph spacing is skipped between list elements.
+ *
+ * @typedef {SlidesApp.SpacingMode} SlidesApp.SpacingMode.COLLAPSE_LISTS
+ */
+
+/**
+ * Paragraph spacing is always rendered.
+ *
+ * @typedef {SlidesApp.SpacingMode} SlidesApp.SpacingMode.NEVER_COLLAPSE
+ */
+
+/**
+ * A spacing mode that is not supported.
+ *
+ * @typedef {SlidesApp.SpacingMode} SlidesApp.SpacingMode.UNSUPPORTED
+ */
+
+
 /**
  * @class SlidesApp.Table
  */
@@ -10764,7 +10786,7 @@
  *
  * @function SlidesApp.Table#alignOnPage
  *
- * @param {SlidesApp.AlignmentPosition} alignmentPosition - 
+ * @param {SlidesApp.AlignmentPosition} alignmentPosition
  *
  * @return {SlidesApp.Table}
  */
@@ -10800,8 +10822,8 @@
  *
  * @function SlidesApp.Table#getCell
  *
- * @param {number} rowIndex - The row index of the cell to retrieve.
- * @param {number} columnIndex - The column index of the cell to retrieve.
+ * @param {IntegerNum} rowIndex - The row index of the cell to retrieve.
+ * @param {IntegerNum} columnIndex - The column index of the cell to retrieve.
  *
  * @return {SlidesApp.TableCell} the table cell
  */
@@ -10811,7 +10833,7 @@
  *
  * @function SlidesApp.Table#getColumn
  *
- * @param {number} columnIndex - The 0-based column index.
+ * @param {IntegerNum} columnIndex - The 0-based column index.
  *
  * @return {SlidesApp.TableColumn} the table column
  */
@@ -10873,7 +10895,7 @@
  *
  * @function SlidesApp.Table#getNumColumns
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -10881,7 +10903,7 @@
  *
  * @function SlidesApp.Table#getNumRows
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -10931,7 +10953,7 @@
  *
  * @function SlidesApp.Table#getRow
  *
- * @param {number} rowIndex - The index of the row to retrieve.
+ * @param {IntegerNum} rowIndex - The index of the row to retrieve.
  *
  * @return {SlidesApp.TableRow} the table row
  */
@@ -10985,7 +11007,7 @@
  *
  * @function SlidesApp.Table#insertColumn
  *
- * @param {number} index - 
+ * @param {IntegerNum} index
  *
  * @return {SlidesApp.TableColumn} the inserted column
  */
@@ -10998,7 +11020,7 @@
  *
  * @function SlidesApp.Table#insertRow
  *
- * @param {number} index - 
+ * @param {IntegerNum} index
  *
  * @return {SlidesApp.TableRow} the inserted row
  */
@@ -11020,7 +11042,7 @@
  *
  * @function SlidesApp.Table#preconcatenateTransform
  *
- * @param {SlidesApp.AffineTransform} transform - 
+ * @param {SlidesApp.AffineTransform} transform
  *
  * @return {SlidesApp.Table}
  */
@@ -11045,7 +11067,7 @@
  *
  * @function SlidesApp.Table#scaleHeight
  *
- * @param {Number} ratio - 
+ * @param {Number} ratio
  *
  * @return {SlidesApp.Table}
  */
@@ -11056,7 +11078,7 @@
  *
  * @function SlidesApp.Table#scaleWidth
  *
- * @param {Number} ratio - 
+ * @param {Number} ratio
  *
  * @return {SlidesApp.Table}
  */
@@ -11126,7 +11148,7 @@
  *
  * @function SlidesApp.Table#setHeight
  *
- * @param {Number} height - 
+ * @param {Number} height
  *
  * @return {SlidesApp.Table}
  */
@@ -11137,7 +11159,7 @@
  *
  * @function SlidesApp.Table#setLeft
  *
- * @param {Number} left - 
+ * @param {Number} left
  *
  * @return {SlidesApp.Table}
  */
@@ -11147,7 +11169,7 @@
  *
  * @function SlidesApp.Table#setRotation
  *
- * @param {Number} angle - 
+ * @param {Number} angle
  *
  * @return {SlidesApp.Table}
  */
@@ -11158,7 +11180,7 @@
  *
  * @function SlidesApp.Table#setTop
  *
- * @param {Number} top - 
+ * @param {Number} top
  *
  * @return {SlidesApp.Table}
  */
@@ -11177,7 +11199,7 @@
  *
  * @function SlidesApp.Table#setTransform
  *
- * @param {SlidesApp.AffineTransform} transform - 
+ * @param {SlidesApp.AffineTransform} transform
  *
  * @return {SlidesApp.Table}
  */
@@ -11188,10 +11210,11 @@
  *
  * @function SlidesApp.Table#setWidth
  *
- * @param {Number} width - 
+ * @param {Number} width
  *
  * @return {SlidesApp.Table}
  */
+
 
 /**
  * @class SlidesApp.TableCell
@@ -11202,7 +11225,7 @@
  *
  * @function SlidesApp.TableCell#getColumnIndex
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -11210,7 +11233,7 @@
  *
  * @function SlidesApp.TableCell#getColumnSpan
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -11275,7 +11298,7 @@
  *
  * @function SlidesApp.TableCell#getRowIndex
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -11283,7 +11306,7 @@
  *
  * @function SlidesApp.TableCell#getRowSpan
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -11302,10 +11325,11 @@
  *
  * @function SlidesApp.TableCell#setContentAlignment
  *
- * @param {SlidesApp.ContentAlignment} contentAlignment - 
+ * @param {SlidesApp.ContentAlignment} contentAlignment
  *
  * @return {SlidesApp.TableCell}
  */
+
 
 /**
  * @class SlidesApp.TableCellRange
@@ -11319,6 +11343,7 @@
  * @return {SlidesApp.TableCell[]}
  */
 
+
 /**
  * @class SlidesApp.TableColumn
  */
@@ -11328,7 +11353,7 @@
  *
  * @function SlidesApp.TableColumn#getCell
  *
- * @param {number} cellIndex - The 0-based index of the cell to retrieve.
+ * @param {IntegerNum} cellIndex - The 0-based index of the cell to retrieve.
  *
  * @return {SlidesApp.TableCell}
  */
@@ -11338,7 +11363,7 @@
  *
  * @function SlidesApp.TableColumn#getIndex
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -11346,7 +11371,7 @@
  *
  * @function SlidesApp.TableColumn#getNumCells
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -11378,6 +11403,7 @@
  * @return void
  */
 
+
 /**
  * @class SlidesApp.TableRow
  */
@@ -11387,7 +11413,7 @@
  *
  * @function SlidesApp.TableRow#getCell
  *
- * @param {number} cellIndex - The 0-based index of the cell to retrieve.
+ * @param {IntegerNum} cellIndex - The 0-based index of the cell to retrieve.
  *
  * @return {SlidesApp.TableCell} the cell.
  */
@@ -11397,7 +11423,7 @@
  *
  * @function SlidesApp.TableRow#getIndex
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -11414,7 +11440,7 @@
  *
  * @function SlidesApp.TableRow#getNumCells
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -11437,6 +11463,59 @@
  *
  * @return void
  */
+
+
+/**
+ * @class SlidesApp.TextBaselineOffset
+ */
+
+/**
+ * The text is not vertically offset.
+ *
+ * @typedef {SlidesApp.TextBaselineOffset} SlidesApp.TextBaselineOffset.NONE
+ */
+
+/**
+ * The text is vertically offset downwards.
+ *
+ * @typedef {SlidesApp.TextBaselineOffset} SlidesApp.TextBaselineOffset.SUBSCRIPT
+ */
+
+/**
+ * The text is vertically offset upwards.
+ *
+ * @typedef {SlidesApp.TextBaselineOffset} SlidesApp.TextBaselineOffset.SUPERSCRIPT
+ */
+
+/**
+ * An text baseline offset that is not supported.
+ *
+ * @typedef {SlidesApp.TextBaselineOffset} SlidesApp.TextBaselineOffset.UNSUPPORTED
+ */
+
+
+/**
+ * @class SlidesApp.TextDirection
+ */
+
+/**
+ * The text goes from left to right.
+ *
+ * @typedef {SlidesApp.TextDirection} SlidesApp.TextDirection.LEFT_TO_RIGHT
+ */
+
+/**
+ * The text goes from right to left.
+ *
+ * @typedef {SlidesApp.TextDirection} SlidesApp.TextDirection.RIGHT_TO_LEFT
+ */
+
+/**
+ * A text direction that is not supported.
+ *
+ * @typedef {SlidesApp.TextDirection} SlidesApp.TextDirection.UNSUPPORTED
+ */
+
 
 /**
  * @class SlidesApp.TextRange
@@ -11540,11 +11619,11 @@
  *
  * @function SlidesApp.TextRange#clear
  *
- * @param {number} startOffset - The number of characters past the start index of the current text range used
+ * @param {IntegerNum} startOffset - The number of characters past the start index of the current text range used
      to determine the inclusive start index of the range to clear. The start offset must be
      equal to or greater than 0 and less than or equal to <code>endOffset</code>. <code>startOffset</code>
      must also be less than the length of the current range.
- * @param {number} endOffset - The number of characters past the start index of the current text range used
+ * @param {IntegerNum} endOffset - The number of characters past the start index of the current text range used
      to determine the exclusive end index of the range to clear. The <code>endOffset</code> must be
      equal to or greater than <code>startOffset</code>. <code>endOffset</code> must also be less than or
      equal to the length of the current range.
@@ -11572,7 +11651,7 @@
  *
  * @param {String} pattern - The regular expression pattern to search; any backslashes in the pattern should
      be escaped.
- * @param {number} startOffset - The number of characters past the start index of the current text range used
+ * @param {IntegerNum} startOffset - The number of characters past the start index of the current text range used
      to determine the inclusive start index of the range to search. <code>startOffset</code> must
      also be less than the length of the current range.
  *
@@ -11593,7 +11672,7 @@
  *
  * @function SlidesApp.TextRange#getEndIndex
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -11601,7 +11680,7 @@
  *
  * @function SlidesApp.TextRange#getLength
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -11663,11 +11742,11 @@
  *
  * @function SlidesApp.TextRange#getRange
  *
- * @param {number} startOffset - The number of characters past the start index of the current text range used
+ * @param {IntegerNum} startOffset - The number of characters past the start index of the current text range used
      to determine the inclusive start index of the returned range. The start offset must be
      equal to or greater than 0 and less than or equal to <code>endOffset</code>. <code>startOffset</code>
      must also be less than the length of the current range.
- * @param {number} endOffset - The number of characters past the start index of the current text range used
+ * @param {IntegerNum} endOffset - The number of characters past the start index of the current text range used
      to determine the exclusive end index of the returned range. The <code>endOffset</code> must be
      equal to or greater than <code>startOffset</code>. <code>endOffset</code> must also be less than or
      equal to the length of the current range.
@@ -11693,7 +11772,7 @@
  *
  * @function SlidesApp.TextRange#getStartIndex
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -11716,7 +11795,7 @@
  *
  * @function SlidesApp.TextRange#insertParagraph
  *
- * @param {number} startOffset - The number of characters past the start index of the current text range used
+ * @param {IntegerNum} startOffset - The number of characters past the start index of the current text range used
      to determine the inclusive start index of the text to insert.
  * @param {String} text - The string to insert.
  *
@@ -11730,7 +11809,7 @@
  *
  * @function SlidesApp.TextRange#insertRange
  *
- * @param {number} startOffset - The number of characters past the start index of the current text range used
+ * @param {IntegerNum} startOffset - The number of characters past the start index of the current text range used
      to determine the inclusive start index of the text to insert.
  * @param {SlidesApp.TextRange} textRange - The text range to insert.
  *
@@ -11746,7 +11825,7 @@
  *
  * @function SlidesApp.TextRange#insertRange
  *
- * @param {number} startOffset - The number of characters past the start index of the current text range used
+ * @param {IntegerNum} startOffset - The number of characters past the start index of the current text range used
      to determine the inclusive start index of the text to insert.
  * @param {SlidesApp.TextRange} textRange - The text range to insert.
  * @param {Boolean} matchSourceFormatting - If <code>true</code>, match the formatting of the source text; if
@@ -11761,7 +11840,7 @@
  *
  * @function SlidesApp.TextRange#insertText
  *
- * @param {number} startOffset - The number of characters past the start index of the current text range used
+ * @param {IntegerNum} startOffset - The number of characters past the start index of the current text range used
      to determine the inclusive start index of the text to insert.
  * @param {String} text - The string to insert.
  *
@@ -11786,7 +11865,7 @@
  * @param {String} findText - The text to find.
  * @param {String} replaceText - The text to replace the matched text.
  *
- * @return {number} the number of occurrences changed
+ * @return {IntegerNum} the number of occurrences changed
  */
 
 /**
@@ -11799,7 +11878,7 @@
  * @param {Boolean} matchCase - If <code>true</code>, the search is case sensitive; if <code>false</code>, the search is
      case insensitive.
  *
- * @return {number} the number of occurrences changed
+ * @return {IntegerNum} the number of occurrences changed
  */
 
 /**
@@ -11843,6 +11922,7 @@
  *
  * @return {SlidesApp.TextRange} the text range representing the set text
  */
+
 
 /**
  * @class SlidesApp.TextStyle
@@ -11895,7 +11975,7 @@
  *
  * @function SlidesApp.TextStyle#getFontWeight
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -12009,9 +12089,9 @@
  *
  * @function SlidesApp.TextStyle#setBackgroundColor
  *
- * @param {number} red - 
- * @param {number} green - 
- * @param {number} blue - 
+ * @param {IntegerNum} red
+ * @param {IntegerNum} green
+ * @param {IntegerNum} blue
  *
  * @return {SlidesApp.TextStyle}
  */
@@ -12021,7 +12101,7 @@
  *
  * @function SlidesApp.TextStyle#setBackgroundColor
  *
- * @param {SlidesApp.Color} color - 
+ * @param {SlidesApp.Color} color
  *
  * @return {SlidesApp.TextStyle}
  */
@@ -12031,7 +12111,7 @@
  *
  * @function SlidesApp.TextStyle#setBackgroundColor
  *
- * @param {SlidesApp.ThemeColorType} color - 
+ * @param {SlidesApp.ThemeColorType} color
  *
  * @return {SlidesApp.TextStyle}
  */
@@ -12044,7 +12124,7 @@
  *
  * @function SlidesApp.TextStyle#setBackgroundColor
  *
- * @param {String} hexColor - 
+ * @param {String} hexColor
  *
  * @return {SlidesApp.TextStyle}
  */
@@ -12062,7 +12142,7 @@
  *
  * @function SlidesApp.TextStyle#setBaselineOffset
  *
- * @param {SlidesApp.TextBaselineOffset} offset - 
+ * @param {SlidesApp.TextBaselineOffset} offset
  *
  * @return {SlidesApp.TextStyle}
  */
@@ -12074,7 +12154,7 @@
  *
  * @function SlidesApp.TextStyle#setBold
  *
- * @param {Boolean} bold - 
+ * @param {Boolean} bold
  *
  * @return {SlidesApp.TextStyle}
  */
@@ -12084,7 +12164,7 @@
  *
  * @function SlidesApp.TextStyle#setFontFamily
  *
- * @param {String} fontFamily - 
+ * @param {String} fontFamily
  *
  * @return {SlidesApp.TextStyle}
  */
@@ -12101,8 +12181,8 @@
  *
  * @function SlidesApp.TextStyle#setFontFamilyAndWeight
  *
- * @param {String} fontFamily - 
- * @param {number} fontWeight - 
+ * @param {String} fontFamily
+ * @param {IntegerNum} fontWeight
  *
  * @return {SlidesApp.TextStyle}
  */
@@ -12112,7 +12192,7 @@
  *
  * @function SlidesApp.TextStyle#setFontSize
  *
- * @param {Number} fontSize - 
+ * @param {Number} fontSize
  *
  * @return {SlidesApp.TextStyle}
  */
@@ -12122,9 +12202,9 @@
  *
  * @function SlidesApp.TextStyle#setForegroundColor
  *
- * @param {number} red - 
- * @param {number} green - 
- * @param {number} blue - 
+ * @param {IntegerNum} red
+ * @param {IntegerNum} green
+ * @param {IntegerNum} blue
  *
  * @return {SlidesApp.TextStyle}
  */
@@ -12134,7 +12214,7 @@
  *
  * @function SlidesApp.TextStyle#setForegroundColor
  *
- * @param {SlidesApp.Color} foregroundColor - 
+ * @param {SlidesApp.Color} foregroundColor
  *
  * @return {SlidesApp.TextStyle}
  */
@@ -12144,7 +12224,7 @@
  *
  * @function SlidesApp.TextStyle#setForegroundColor
  *
- * @param {SlidesApp.ThemeColorType} color - 
+ * @param {SlidesApp.ThemeColorType} color
  *
  * @return {SlidesApp.TextStyle}
  */
@@ -12157,7 +12237,7 @@
  *
  * @function SlidesApp.TextStyle#setForegroundColor
  *
- * @param {String} hexColor - 
+ * @param {String} hexColor
  *
  * @return {SlidesApp.TextStyle}
  */
@@ -12167,7 +12247,7 @@
  *
  * @function SlidesApp.TextStyle#setItalic
  *
- * @param {Boolean} italic - 
+ * @param {Boolean} italic
  *
  * @return {SlidesApp.TextStyle}
  */
@@ -12187,7 +12267,7 @@
  *
  * @function SlidesApp.TextStyle#setLinkSlide
  *
- * @param {number} slideIndex - The zero-based index to the slide.
+ * @param {IntegerNum} slideIndex - The zero-based index to the slide.
  *
  * @return {SlidesApp.TextStyle}
  */
@@ -12258,7 +12338,7 @@
  *
  * @function SlidesApp.TextStyle#setSmallCaps
  *
- * @param {Boolean} smallCaps - 
+ * @param {Boolean} smallCaps
  *
  * @return {SlidesApp.TextStyle}
  */
@@ -12268,7 +12348,7 @@
  *
  * @function SlidesApp.TextStyle#setStrikethrough
  *
- * @param {Boolean} strikethrough - 
+ * @param {Boolean} strikethrough
  *
  * @return {SlidesApp.TextStyle}
  */
@@ -12278,10 +12358,11 @@
  *
  * @function SlidesApp.TextStyle#setUnderline
  *
- * @param {Boolean} underline - 
+ * @param {Boolean} underline
  *
  * @return {SlidesApp.TextStyle}
  */
+
 
 /**
  * @class SlidesApp.ThemeColor
@@ -12303,6 +12384,90 @@
  * @return {SlidesApp.ThemeColorType}
  */
 
+
+/**
+ * @class SlidesApp.ThemeColorType
+ */
+
+/**
+ * Represents the first accent color.
+ *
+ * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.ACCENT1
+ */
+
+/**
+ * Represents the second accent color.
+ *
+ * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.ACCENT2
+ */
+
+/**
+ * Represents the third accent color.
+ *
+ * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.ACCENT3
+ */
+
+/**
+ * Represents the fourth accent color.
+ *
+ * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.ACCENT4
+ */
+
+/**
+ * Represents the fifth accent color.
+ *
+ * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.ACCENT5
+ */
+
+/**
+ * Represents the sixth accent color.
+ *
+ * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.ACCENT6
+ */
+
+/**
+ * Represents the first dark color.
+ *
+ * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.DARK1
+ */
+
+/**
+ * Represents the second dark color.
+ *
+ * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.DARK2
+ */
+
+/**
+ * Represents the color to use for visited hyperlinks.
+ *
+ * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.FOLLOWED_HYPERLINK
+ */
+
+/**
+ * Represents the color to use for hyperlinks.
+ *
+ * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.HYPERLINK
+ */
+
+/**
+ * Represents the first light color.
+ *
+ * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.LIGHT1
+ */
+
+/**
+ * Represents the second light color.
+ *
+ * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.LIGHT2
+ */
+
+/**
+ * Represents a theme color that is not supported.
+ *
+ * @typedef {SlidesApp.ThemeColorType} SlidesApp.ThemeColorType.UNSUPPORTED
+ */
+
+
 /**
  * @class SlidesApp.Video
  */
@@ -12312,7 +12477,7 @@
  *
  * @function SlidesApp.Video#alignOnPage
  *
- * @param {SlidesApp.AlignmentPosition} alignmentPosition - 
+ * @param {SlidesApp.AlignmentPosition} alignmentPosition
  *
  * @return {SlidesApp.Video}
  */
@@ -12523,7 +12688,7 @@
  *
  * @function SlidesApp.Video#preconcatenateTransform
  *
- * @param {SlidesApp.AffineTransform} transform - 
+ * @param {SlidesApp.AffineTransform} transform
  *
  * @return {SlidesApp.Video}
  */
@@ -12548,7 +12713,7 @@
  *
  * @function SlidesApp.Video#scaleHeight
  *
- * @param {Number} ratio - 
+ * @param {Number} ratio
  *
  * @return {SlidesApp.Video}
  */
@@ -12559,7 +12724,7 @@
  *
  * @function SlidesApp.Video#scaleWidth
  *
- * @param {Number} ratio - 
+ * @param {Number} ratio
  *
  * @return {SlidesApp.Video}
  */
@@ -12629,7 +12794,7 @@
  *
  * @function SlidesApp.Video#setHeight
  *
- * @param {Number} height - 
+ * @param {Number} height
  *
  * @return {SlidesApp.Video}
  */
@@ -12640,7 +12805,7 @@
  *
  * @function SlidesApp.Video#setLeft
  *
- * @param {Number} left - 
+ * @param {Number} left
  *
  * @return {SlidesApp.Video}
  */
@@ -12650,7 +12815,7 @@
  *
  * @function SlidesApp.Video#setRotation
  *
- * @param {Number} angle - 
+ * @param {Number} angle
  *
  * @return {SlidesApp.Video}
  */
@@ -12661,7 +12826,7 @@
  *
  * @function SlidesApp.Video#setTop
  *
- * @param {Number} top - 
+ * @param {Number} top
  *
  * @return {SlidesApp.Video}
  */
@@ -12680,7 +12845,7 @@
  *
  * @function SlidesApp.Video#setTransform
  *
- * @param {SlidesApp.AffineTransform} transform - 
+ * @param {SlidesApp.AffineTransform} transform
  *
  * @return {SlidesApp.Video}
  */
@@ -12691,10 +12856,28 @@
  *
  * @function SlidesApp.Video#setWidth
  *
- * @param {Number} width - 
+ * @param {Number} width
  *
  * @return {SlidesApp.Video}
  */
+
+
+/**
+ * @class SlidesApp.VideoSourceType
+ */
+
+/**
+ * A video source type that is not supported.
+ *
+ * @typedef {SlidesApp.VideoSourceType} SlidesApp.VideoSourceType.UNSUPPORTED
+ */
+
+/**
+ * YouTube video.
+ *
+ * @typedef {SlidesApp.VideoSourceType} SlidesApp.VideoSourceType.YOUTUBE
+ */
+
 
 /**
  * @class SlidesApp.WordArt
@@ -12705,7 +12888,7 @@
  *
  * @function SlidesApp.WordArt#alignOnPage
  *
- * @param {SlidesApp.AlignmentPosition} alignmentPosition - 
+ * @param {SlidesApp.AlignmentPosition} alignmentPosition
  *
  * @return {SlidesApp.WordArt}
  */
@@ -12895,7 +13078,7 @@
  *
  * @function SlidesApp.WordArt#preconcatenateTransform
  *
- * @param {SlidesApp.AffineTransform} transform - 
+ * @param {SlidesApp.AffineTransform} transform
  *
  * @return {SlidesApp.WordArt}
  */
@@ -12932,7 +13115,7 @@
  *
  * @function SlidesApp.WordArt#scaleHeight
  *
- * @param {Number} ratio - 
+ * @param {Number} ratio
  *
  * @return {SlidesApp.WordArt}
  */
@@ -12943,7 +13126,7 @@
  *
  * @function SlidesApp.WordArt#scaleWidth
  *
- * @param {Number} ratio - 
+ * @param {Number} ratio
  *
  * @return {SlidesApp.WordArt}
  */
@@ -13013,7 +13196,7 @@
  *
  * @function SlidesApp.WordArt#setHeight
  *
- * @param {Number} height - 
+ * @param {Number} height
  *
  * @return {SlidesApp.WordArt}
  */
@@ -13024,7 +13207,7 @@
  *
  * @function SlidesApp.WordArt#setLeft
  *
- * @param {Number} left - 
+ * @param {Number} left
  *
  * @return {SlidesApp.WordArt}
  */
@@ -13039,7 +13222,7 @@
  *
  * @function SlidesApp.WordArt#setLinkSlide
  *
- * @param {number} slideIndex - The zero-based index to the slide.
+ * @param {IntegerNum} slideIndex - The zero-based index to the slide.
  *
  * @return {SlidesApp.Link} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/link.html'>Link</a></code> that was set
  */
@@ -13095,7 +13278,7 @@
  *
  * @function SlidesApp.WordArt#setRotation
  *
- * @param {Number} angle - 
+ * @param {Number} angle
  *
  * @return {SlidesApp.WordArt}
  */
@@ -13106,7 +13289,7 @@
  *
  * @function SlidesApp.WordArt#setTop
  *
- * @param {Number} top - 
+ * @param {Number} top
  *
  * @return {SlidesApp.WordArt}
  */
@@ -13125,7 +13308,7 @@
  *
  * @function SlidesApp.WordArt#setTransform
  *
- * @param {SlidesApp.AffineTransform} transform - 
+ * @param {SlidesApp.AffineTransform} transform
  *
  * @return {SlidesApp.WordArt}
  */
@@ -13136,8 +13319,9 @@
  *
  * @function SlidesApp.WordArt#setWidth
  *
- * @param {Number} width - 
+ * @param {Number} width
  *
  * @return {SlidesApp.WordArt}
  */
+
 

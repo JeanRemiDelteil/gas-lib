@@ -1,379 +1,30 @@
 /**********************************************
  * @namespace UiApp
+ * @deprecated
  ***********************************************/
-
 
 /**
  * Constants to use with setFormat methods in UiApp widgets such as <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-picker.html'>DatePicker</a></s></code> and <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code>.
  *
- * @class UiApp.DateTimeFormat
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.DATE_FULL
- * 
- * Use "DayOfWeek, YYYY Month DD" format, for example, "Monday, 2013 March 04".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.DATE_LONG
- * 
- * Use "YYYY Month D" format, for example, "2013 March 4".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.DATE_MEDIUM
- * 
- * Use "YYYY Mon D" format, for example, "2013 Mar 4".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.DATE_SHORT
- * 
- * Use "YYYY-MM-DD" format, for example, "2013-03-04".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.DATE_TIME_FULL
- * 
- * Use "DayOfWeek, YYYY Month DD HH:MM:SS UTC-#" format, for example, "Monday, 2013 March 04
- 00:00:00 UTC-5".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.DATE_TIME_LONG
- * 
- * Use "YYYY Month D HH:MM:SS UTC-#" format, for example, "2013 March 4 00:00:00 UTC-5".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.DATE_TIME_MEDIUM
- * 
- * Use "YYYY Mon D HH:MM:SS" format, for example, "2013 Mar 4 00:00:00".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.DATE_TIME_SHORT
- * 
- * Use "YYYY-MM-DD HH:MM" format, for example, "2013-03-04 00:00".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.DAY
- * 
- * Use the day number, for example, "4" for the 4th of the month.
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.HOUR24_MINUTE
- * 
- * Use "HH:MM" format, for example, "14:30".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.HOUR24_MINUTE_SECOND
- * 
- * Use "HH:MM:SS" format, for example, "14:30:00".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.HOUR_MINUTE
- * 
- * Use "HH:MM AM/PM" format, for example, "12:00 AM".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.HOUR_MINUTE_SECOND
- * 
- * Use "HH:MM:SS AM/PM" format, for example, "12:00:00 AM".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.ISO_8601
- * 
- * Use the ISO 8601 standard format, for example, "2013-03-04T00:00:00.000-05:00".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.MINUTE_SECOND
- * 
- * Use "MM:SS" format, for example, "30:00".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.MONTH
- * 
- * Use the full month, for example, "March".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.MONTH_ABBR
- * 
- * Use the abbreviated month, for example, "Mar".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.MONTH_ABBR_DAY
- * 
- * Use "Mon D" format, for example, "Mar 4".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.MONTH_DAY
- * 
- * Use "Month D" format, for example, "March 4".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.MONTH_NUM_DAY
- * 
- * Use "M-D" format, for example, "3-4".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.MONTH_WEEKDAY_DAY
- * 
- * Use "DayOfWeek Month D" format, for example, "Monday March 4".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.RFC_2822
- * 
- * Use the RFC 2822 standard format, for example, "Mon, 4 Mar 2013 00:00:00 -0500".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.TIME_FULL
- * 
- * Use "HH:MM:SS UTC-#" format, for example, "01:30:00 UTC-5".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.TIME_LONG
- * 
- * Use "HH:MM:SS UTC-#" format, for example, "01:30:00 UTC-5".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.TIME_MEDIUM
- * 
- * Use "HH:MM:SS" format, for example, "01:30:00".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.TIME_SHORT
- * 
- * Use "HH:MM" format, for example, "01:30".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.YEAR
- * 
- * Use "YYYY" format, for example, "2013".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.YEAR_MONTH
- * 
- * Use "YYYY Month" format, for example, "2013 March".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.YEAR_MONTH_ABBR
- * 
- * Use "YYYY Mon" format, for example, "2013 Mar".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.YEAR_MONTH_ABBR_DAY
- * 
- * Use "YYYY Mon D" format, for example, "2013 Mar 4".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.YEAR_MONTH_DAY
- * 
- * Use "YYYY Month D" format, for example, "2013 March 4".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.YEAR_MONTH_NUM
- * 
- * Use "YYYY-M" format, for example, "2013-3".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.YEAR_MONTH_NUM_DAY
- * 
- * Use "YYYY-M-D" format, for example, "2013-3-4".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.YEAR_MONTH_WEEKDAY_DAY
- * 
- * Use "Wkdy, YYYY Mon D" format, for example, "Mon, 2013 Mar 4".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.YEAR_QUARTER
- * 
- * Use "YYYY ### quarter" format, for example, "2013 1st quarter".
- */
-
-/**
- * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.YEAR_QUARTER_ABBR
- * 
- * Use "YYYY Q#" format, for example, "2013 Q1".
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat
  */
 
 /**
  * Constants to use with UiApp.createGoogleDocsPicker(); <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-picker.html'>DatePicker</a></s></code> and <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code>.
  *
- * @class UiApp.FileType
- */
-
-/**
- * @typedef {UiApp.FileType} UiApp.FileType.ALL
- * 
- * Show all files
- */
-
-/**
- * @typedef {UiApp.FileType} UiApp.FileType.ALL_DOCS
- * 
- * Show all document file types
- */
-
-/**
- * @typedef {UiApp.FileType} UiApp.FileType.DOCUMENTS
- * 
- * Show documents
- */
-
-/**
- * @typedef {UiApp.FileType} UiApp.FileType.DRAWINGS
- * 
- * Show drawings
- */
-
-/**
- * @typedef {UiApp.FileType} UiApp.FileType.FOLDERS
- * 
- * Show folders
- */
-
-/**
- * @typedef {UiApp.FileType} UiApp.FileType.FORMS
- * 
- * Show forms
- */
-
-/**
- * @typedef {UiApp.FileType} UiApp.FileType.PDFS
- * 
- * Show PDFs
- */
-
-/**
- * @typedef {UiApp.FileType} UiApp.FileType.PHOTOS
- * 
- * Show photos
- */
-
-/**
- * @typedef {UiApp.FileType} UiApp.FileType.PHOTO_ALBUMS
- * 
- * Show photo albums
- */
-
-/**
- * @typedef {UiApp.FileType} UiApp.FileType.PRESENTATIONS
- * 
- * Show presentations
- */
-
-/**
- * @typedef {UiApp.FileType} UiApp.FileType.RECENTLY_PICKED
- * 
- * Show recently picked files
- */
-
-/**
- * @typedef {UiApp.FileType} UiApp.FileType.SPREADSHEETS
- * 
- * Show spreadsheets
+ * @typedef {UiApp.FileType} UiApp.FileType
  */
 
 /**
  * Constants to use with setHorizontalAlignment methods in UiApp.
  *
- * @class UiApp.HorizontalAlignment
- */
-
-/**
- * @typedef {UiApp.HorizontalAlignment} UiApp.HorizontalAlignment.CENTER
- * 
- * Use center alignment
- */
-
-/**
- * @typedef {UiApp.HorizontalAlignment} UiApp.HorizontalAlignment.DEFAULT
- * 
- * Use default alignment
- */
-
-/**
- * @typedef {UiApp.HorizontalAlignment} UiApp.HorizontalAlignment.JUSTIFY
- * 
- * Use justify alignment
- */
-
-/**
- * @typedef {UiApp.HorizontalAlignment} UiApp.HorizontalAlignment.LEFT
- * 
- * Use left alignment
- */
-
-/**
- * @typedef {UiApp.HorizontalAlignment} UiApp.HorizontalAlignment.LOCALE_END
- * 
- * Use locale end alignment
- */
-
-/**
- * @typedef {UiApp.HorizontalAlignment} UiApp.HorizontalAlignment.LOCALE_START
- * 
- * Use locale start alignment
- */
-
-/**
- * @typedef {UiApp.HorizontalAlignment} UiApp.HorizontalAlignment.RIGHT
- * 
- * Use right alignment
+ * @typedef {UiApp.HorizontalAlignment} UiApp.HorizontalAlignment
  */
 
 /**
  * Constants to use with setVerticalAlignment methods in UiApp.
  *
- * @class UiApp.VerticalAlignment
- */
-
-/**
- * @typedef {UiApp.VerticalAlignment} UiApp.VerticalAlignment.BOTTOM
- * 
- * Position at the bottom
- */
-
-/**
- * @typedef {UiApp.VerticalAlignment} UiApp.VerticalAlignment.MIDDLE
- * 
- * Position at the middle
- */
-
-/**
- * @typedef {UiApp.VerticalAlignment} UiApp.VerticalAlignment.TOP
- * 
- * Position at the top
+ * @typedef {UiApp.VerticalAlignment} UiApp.VerticalAlignment
  */
 
 /**
@@ -403,6 +54,7 @@
  UiInstance.
  *
  * @function UiApp.createApplication
+ * @deprecated
  *
  * @return {UiApp.UiInstance} a new UiInstance.
  */
@@ -427,6 +79,7 @@
  </code></pre>
  *
  * @function UiApp.getActiveApplication
+ * @deprecated
  *
  * @return {UiApp.UiInstance} the active UiInstance.
  */
@@ -435,9 +88,11 @@
  * Return the browser user-agent string, so that you can tailor your app as needed.
  *
  * @function UiApp.getUserAgent
+ * @deprecated
  *
  * @return {String} the user-agent string.
  */
+
 
 /**
  * @class UiApp.AbsolutePanel
@@ -447,6 +102,7 @@
  * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code>.
  *
  * @function UiApp.AbsolutePanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  *
@@ -457,10 +113,11 @@
  * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code>.
  *
  * @function UiApp.AbsolutePanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
- * @param {number} left - the widget's left position in pixels.
- * @param {number} top - the widget's top position in pixels.
+ * @param {IntegerNum} left - the widget's left position in pixels.
+ * @param {IntegerNum} top - the widget's top position in pixels.
  *
  * @return {UiApp.AbsolutePanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code> itself, useful for chaining.
  */
@@ -472,6 +129,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.AbsolutePanel#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -485,6 +143,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.AbsolutePanel#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -495,6 +154,7 @@
  * Remove all widgets from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code>.
  *
  * @function UiApp.AbsolutePanel#clear
+ * @deprecated
  *
  * @return {UiApp.AbsolutePanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code> itself, useful for chaining.
  */
@@ -506,6 +166,7 @@
  object.
  *
  * @function UiApp.AbsolutePanel#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -514,6 +175,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code>.
  *
  * @function UiApp.AbsolutePanel#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -522,6 +184,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.AbsolutePanel#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -531,8 +194,9 @@
  This will fail if the index is greater than or equal to the number of elements in the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code>.
  *
  * @function UiApp.AbsolutePanel#remove
+ * @deprecated
  *
- * @param {number} index - the index of the widget to remove.
+ * @param {IntegerNum} index - the index of the widget to remove.
  *
  * @return {UiApp.AbsolutePanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code> itself, useful for chaining.
  */
@@ -542,6 +206,7 @@
  actually a child of the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code>.
  *
  * @function UiApp.AbsolutePanel#remove
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to remove.
  *
@@ -552,6 +217,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code>.
  *
  * @function UiApp.AbsolutePanel#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -562,6 +228,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code>.
  *
  * @function UiApp.AbsolutePanel#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code> from
      app.getElementById(id).
@@ -575,8 +242,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.AbsolutePanel#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.AbsolutePanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code> itself, useful for chaining.
  */
@@ -585,9 +253,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code> in pixels.
  *
  * @function UiApp.AbsolutePanel#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.AbsolutePanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code> itself, useful for chaining.
  */
@@ -596,6 +265,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code>.
  *
  * @function UiApp.AbsolutePanel#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -615,6 +285,7 @@
  </code></pre>
  *
  * @function UiApp.AbsolutePanel#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -635,6 +306,7 @@
  </code></pre>
  *
  * @function UiApp.AbsolutePanel#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -649,6 +321,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.AbsolutePanel#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -662,6 +335,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.AbsolutePanel#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -672,6 +346,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code>.
  *
  * @function UiApp.AbsolutePanel#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -684,6 +359,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.AbsolutePanel#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -694,6 +370,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code> is visible.
  *
  * @function UiApp.AbsolutePanel#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code> should be visible or not.
  *
@@ -705,10 +382,11 @@
  will cause an error if the widget is not currently in the panel.
  *
  * @function UiApp.AbsolutePanel#setWidgetPosition
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to position.
- * @param {number} left - the widget's left position in pixels.
- * @param {number} top - the widget's top position in pixels.
+ * @param {IntegerNum} left - the widget's left position in pixels.
+ * @param {IntegerNum} top - the widget's top position in pixels.
  *
  * @return {UiApp.AbsolutePanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code> itself, useful for chaining.
  */
@@ -717,11 +395,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code>.
  *
  * @function UiApp.AbsolutePanel#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.AbsolutePanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.Anchor
@@ -760,6 +440,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Anchor#addBlurHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -815,6 +496,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Anchor#addClickHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -854,6 +536,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Anchor#addFocusHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -904,6 +587,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.Anchor#addKeyDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -954,6 +638,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.Anchor#addKeyPressHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -1004,6 +689,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.Anchor#addKeyUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -1059,6 +745,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Anchor#addMouseDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -1114,6 +801,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Anchor#addMouseMoveHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -1169,6 +857,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Anchor#addMouseOutHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -1224,6 +913,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Anchor#addMouseOverHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -1279,6 +969,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Anchor#addMouseUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -1334,6 +1025,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Anchor#addMouseWheelHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -1347,6 +1039,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Anchor#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -1360,6 +1053,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Anchor#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -1373,6 +1067,7 @@
  object.
  *
  * @function UiApp.Anchor#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -1381,6 +1076,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/anchor.html'>Anchor</a></s></code>.
  *
  * @function UiApp.Anchor#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -1389,6 +1085,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.Anchor#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -1398,6 +1095,7 @@
  modifier key) to automatically focus the widget.
  *
  * @function UiApp.Anchor#setAccessKey
+ * @deprecated
  *
  * @param {Char} accessKey - the character to use for focus
  *
@@ -1408,6 +1106,7 @@
  * Set the text direction.
  *
  * @function UiApp.Anchor#setDirection
+ * @deprecated
  *
  * @param {UiApp.Component} direction - the text direction
  *
@@ -1420,6 +1119,7 @@
  <p>This method is deprecated and has no effect.
  *
  * @function UiApp.Anchor#setEnabled
+ * @deprecated
  *
  * @param {Boolean} enabled - whether this anchor is enabled.
  *
@@ -1433,6 +1133,7 @@
  events.
  *
  * @function UiApp.Anchor#setFocus
+ * @deprecated
  *
  * @param {Boolean} focus - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/anchor.html'>Anchor</a></s></code> should have the current focus.
  *
@@ -1443,6 +1144,7 @@
  * Sets the HTML content of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/anchor.html'>Anchor</a></s></code>.
  *
  * @function UiApp.Anchor#setHTML
+ * @deprecated
  *
  * @param {String} html - the new HTML
  *
@@ -1453,6 +1155,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/anchor.html'>Anchor</a></s></code>.
  *
  * @function UiApp.Anchor#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -1463,6 +1166,7 @@
  * Set the horizontal text alignment of the display text of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/anchor.html'>Anchor</a></s></code>.
  *
  * @function UiApp.Anchor#setHorizontalAlignment
+ * @deprecated
  *
  * @param {UiApp.HorizontalAlignment} horizontalAlignment - the desired alignment, such as UiApp.HorizontalAlignment.CENTER.
  *
@@ -1473,6 +1177,7 @@
  * Set the URL that this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/anchor.html'>Anchor</a></s></code> links to.
  *
  * @function UiApp.Anchor#setHref
+ * @deprecated
  *
  * @param {String} href - the new URL.
  *
@@ -1483,6 +1188,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/anchor.html'>Anchor</a></s></code>.
  *
  * @function UiApp.Anchor#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/anchor.html'>Anchor</a></s></code> from
      app.getElementById(id).
@@ -1496,8 +1202,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.Anchor#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.Anchor} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/anchor.html'>Anchor</a></s></code> itself, useful for chaining.
  */
@@ -1507,6 +1214,7 @@
  hyperlinking within the app.
  *
  * @function UiApp.Anchor#setName
+ * @deprecated
  *
  * @param {String} name - the new name.
  *
@@ -1517,9 +1225,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/anchor.html'>Anchor</a></s></code> in pixels.
  *
  * @function UiApp.Anchor#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.Anchor} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/anchor.html'>Anchor</a></s></code> itself, useful for chaining.
  */
@@ -1528,6 +1237,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/anchor.html'>Anchor</a></s></code>.
  *
  * @function UiApp.Anchor#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -1547,6 +1257,7 @@
  </code></pre>
  *
  * @function UiApp.Anchor#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -1567,6 +1278,7 @@
  </code></pre>
  *
  * @function UiApp.Anchor#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -1581,6 +1293,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Anchor#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -1594,6 +1307,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Anchor#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -1608,8 +1322,9 @@
  order.
  *
  * @function UiApp.Anchor#setTabIndex
+ * @deprecated
  *
- * @param {number} index - the new tab index.
+ * @param {IntegerNum} index - the new tab index.
  *
  * @return {UiApp.Anchor} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/anchor.html'>Anchor</a></s></code> itself, useful for chaining.
  */
@@ -1618,6 +1333,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/anchor.html'>Anchor</a></s></code>.
  *
  * @function UiApp.Anchor#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -1634,6 +1350,7 @@
  effect when called inside a dialog, such as in a Google Spreadsheet.
  *
  * @function UiApp.Anchor#setTarget
+ * @deprecated
  *
  * @param {String} target - the new target.
  *
@@ -1644,6 +1361,7 @@
  * Set the display text of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/anchor.html'>Anchor</a></s></code>.
  *
  * @function UiApp.Anchor#setText
+ * @deprecated
  *
  * @param {String} text - the new text.
  *
@@ -1656,6 +1374,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.Anchor#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -1666,6 +1385,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/anchor.html'>Anchor</a></s></code> is visible.
  *
  * @function UiApp.Anchor#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/anchor.html'>Anchor</a></s></code> should be visible or not.
  *
@@ -1676,6 +1396,7 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/anchor.html'>Anchor</a></s></code>.
  *
  * @function UiApp.Anchor#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
@@ -1686,11 +1407,13 @@
  * Set whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/anchor.html'>Anchor</a></s></code> wraps its text.
  *
  * @function UiApp.Anchor#setWordWrap
+ * @deprecated
  *
  * @param {Boolean} wordWrap - whether to wrap.
  *
  * @return {UiApp.Anchor} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/anchor.html'>Anchor</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.Button
@@ -1729,6 +1452,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Button#addBlurHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -1784,6 +1508,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Button#addClickHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -1823,6 +1548,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Button#addFocusHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -1873,6 +1599,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.Button#addKeyDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -1923,6 +1650,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.Button#addKeyPressHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -1973,6 +1701,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.Button#addKeyUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -2028,6 +1757,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Button#addMouseDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -2083,6 +1813,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Button#addMouseMoveHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -2138,6 +1869,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Button#addMouseOutHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -2193,6 +1925,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Button#addMouseOverHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -2248,6 +1981,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Button#addMouseUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -2303,6 +2037,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Button#addMouseWheelHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -2316,6 +2051,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Button#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -2329,6 +2065,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Button#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -2342,6 +2079,7 @@
  object.
  *
  * @function UiApp.Button#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -2350,6 +2088,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code>.
  *
  * @function UiApp.Button#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -2358,6 +2097,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.Button#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -2367,6 +2107,7 @@
  modifier key) to automatically focus the widget.
  *
  * @function UiApp.Button#setAccessKey
+ * @deprecated
  *
  * @param {Char} accessKey - the character to use for focus
  *
@@ -2377,6 +2118,7 @@
  * Sets whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code> is enabled.
  *
  * @function UiApp.Button#setEnabled
+ * @deprecated
  *
  * @param {Boolean} enabled - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code> should be enabled or disabled.
  *
@@ -2390,6 +2132,7 @@
  events.
  *
  * @function UiApp.Button#setFocus
+ * @deprecated
  *
  * @param {Boolean} focus - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code> should have the current focus.
  *
@@ -2400,6 +2143,7 @@
  * Sets the HTML content of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code>.
  *
  * @function UiApp.Button#setHTML
+ * @deprecated
  *
  * @param {String} html - the new HTML
  *
@@ -2410,6 +2154,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code>.
  *
  * @function UiApp.Button#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -2420,6 +2165,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code>.
  *
  * @function UiApp.Button#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code> from
      app.getElementById(id).
@@ -2433,8 +2179,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.Button#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.Button} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code> itself, useful for chaining.
  */
@@ -2443,9 +2190,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code> in pixels.
  *
  * @function UiApp.Button#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.Button} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code> itself, useful for chaining.
  */
@@ -2454,6 +2202,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code>.
  *
  * @function UiApp.Button#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -2473,6 +2222,7 @@
  </code></pre>
  *
  * @function UiApp.Button#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -2493,6 +2243,7 @@
  </code></pre>
  *
  * @function UiApp.Button#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -2507,6 +2258,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Button#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -2520,6 +2272,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Button#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -2534,8 +2287,9 @@
  order.
  *
  * @function UiApp.Button#setTabIndex
+ * @deprecated
  *
- * @param {number} index - the new tab index.
+ * @param {IntegerNum} index - the new tab index.
  *
  * @return {UiApp.Button} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code> itself, useful for chaining.
  */
@@ -2544,6 +2298,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code>.
  *
  * @function UiApp.Button#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -2554,6 +2309,7 @@
  * Set the display text of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code>.
  *
  * @function UiApp.Button#setText
+ * @deprecated
  *
  * @param {String} text - the new text.
  *
@@ -2566,6 +2322,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.Button#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -2576,6 +2333,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code> is visible.
  *
  * @function UiApp.Button#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code> should be visible or not.
  *
@@ -2586,11 +2344,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code>.
  *
  * @function UiApp.Button#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.Button} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.CaptionPanel
@@ -2600,6 +2360,7 @@
  * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code>. This is a synonym for <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html#setWidget(Widget)'>setWidget(widget)</a></s></code>.
  *
  * @function UiApp.CaptionPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  *
@@ -2613,6 +2374,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.CaptionPanel#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -2626,6 +2388,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.CaptionPanel#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -2636,6 +2399,7 @@
  * Remove all widgets from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code>.
  *
  * @function UiApp.CaptionPanel#clear
+ * @deprecated
  *
  * @return {UiApp.CaptionPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code> itself, useful for chaining.
  */
@@ -2647,6 +2411,7 @@
  object.
  *
  * @function UiApp.CaptionPanel#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -2655,6 +2420,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code>.
  *
  * @function UiApp.CaptionPanel#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -2663,6 +2429,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.CaptionPanel#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -2671,6 +2438,7 @@
  * Set the caption of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code>. Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html#setText(String)'>setText(text)</a></s></code>.
  *
  * @function UiApp.CaptionPanel#setCaptionText
+ * @deprecated
  *
  * @param {String} text - the new text.
  *
@@ -2681,6 +2449,7 @@
  * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code>. Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html#setWidget(Widget)'>setWidget(widget)</a></s></code>.
  *
  * @function UiApp.CaptionPanel#setContentWidget
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  *
@@ -2691,6 +2460,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code>.
  *
  * @function UiApp.CaptionPanel#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -2701,6 +2471,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code>.
  *
  * @function UiApp.CaptionPanel#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code> from
      app.getElementById(id).
@@ -2714,8 +2485,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.CaptionPanel#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.CaptionPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code> itself, useful for chaining.
  */
@@ -2724,9 +2496,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code> in pixels.
  *
  * @function UiApp.CaptionPanel#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.CaptionPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code> itself, useful for chaining.
  */
@@ -2735,6 +2508,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code>.
  *
  * @function UiApp.CaptionPanel#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -2754,6 +2528,7 @@
  </code></pre>
  *
  * @function UiApp.CaptionPanel#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -2774,6 +2549,7 @@
  </code></pre>
  *
  * @function UiApp.CaptionPanel#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -2788,6 +2564,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.CaptionPanel#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -2801,6 +2578,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.CaptionPanel#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -2811,6 +2589,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code>.
  *
  * @function UiApp.CaptionPanel#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -2821,6 +2600,7 @@
  * Set the display text of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code>.
  *
  * @function UiApp.CaptionPanel#setText
+ * @deprecated
  *
  * @param {String} text - the new text.
  *
@@ -2833,6 +2613,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.CaptionPanel#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -2843,6 +2624,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code> is visible.
  *
  * @function UiApp.CaptionPanel#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code> should be visible or not.
  *
@@ -2853,6 +2635,7 @@
  * Sets the widget inside this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code>, removing anything previously there.
  *
  * @function UiApp.CaptionPanel#setWidget
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to put in this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code>.
  *
@@ -2863,11 +2646,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code>.
  *
  * @function UiApp.CaptionPanel#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.CaptionPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.CheckBox
@@ -2906,6 +2691,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.CheckBox#addBlurHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -2961,6 +2747,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.CheckBox#addClickHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -3000,6 +2787,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.CheckBox#addFocusHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -3050,6 +2838,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.CheckBox#addKeyDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -3100,6 +2889,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.CheckBox#addKeyPressHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -3150,6 +2940,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.CheckBox#addKeyUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -3205,6 +2996,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.CheckBox#addMouseDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -3260,6 +3052,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.CheckBox#addMouseMoveHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -3315,6 +3108,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.CheckBox#addMouseOutHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -3370,6 +3164,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.CheckBox#addMouseOverHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -3425,6 +3220,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.CheckBox#addMouseUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -3480,6 +3276,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.CheckBox#addMouseWheelHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -3493,6 +3290,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.CheckBox#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -3506,6 +3304,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.CheckBox#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -3545,6 +3344,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.CheckBox#addValueChangeHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -3558,6 +3358,7 @@
  object.
  *
  * @function UiApp.CheckBox#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -3566,6 +3367,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code>.
  *
  * @function UiApp.CheckBox#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -3574,6 +3376,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.CheckBox#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -3583,6 +3386,7 @@
  modifier key) to automatically focus the widget.
  *
  * @function UiApp.CheckBox#setAccessKey
+ * @deprecated
  *
  * @param {Char} accessKey - the character to use for focus
  *
@@ -3593,6 +3397,7 @@
  * Sets whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code> is enabled.
  *
  * @function UiApp.CheckBox#setEnabled
+ * @deprecated
  *
  * @param {Boolean} enabled - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code> should be enabled or disabled.
  *
@@ -3606,6 +3411,7 @@
  events.
  *
  * @function UiApp.CheckBox#setFocus
+ * @deprecated
  *
  * @param {Boolean} focus - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code> should have the current focus.
  *
@@ -3618,6 +3424,7 @@
  FormPanel that holds it is submitted and the box is checked.
  *
  * @function UiApp.CheckBox#setFormValue
+ * @deprecated
  *
  * @param {String} formValue - the new form value.
  *
@@ -3628,6 +3435,7 @@
  * Sets the HTML content of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code>.
  *
  * @function UiApp.CheckBox#setHTML
+ * @deprecated
  *
  * @param {String} html - the new HTML
  *
@@ -3639,6 +3447,7 @@
  the element's CSS <code>display</code> property is set to <code>inline-block</code>.
  *
  * @function UiApp.CheckBox#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -3649,6 +3458,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code>.
  *
  * @function UiApp.CheckBox#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code> from
      app.getElementById(id).
@@ -3662,8 +3472,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.CheckBox#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.CheckBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code> itself, useful for chaining.
  */
@@ -3673,6 +3484,7 @@
  FormPanel or as a callback element on an event handler.
  *
  * @function UiApp.CheckBox#setName
+ * @deprecated
  *
  * @param {String} name - the new name.
  *
@@ -3684,9 +3496,10 @@
  unless the element's CSS <code>display property</code> is set to <code>inline-block</code>.
  *
  * @function UiApp.CheckBox#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.CheckBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code> itself, useful for chaining.
  */
@@ -3696,6 +3509,7 @@
  element's CSS <code>display property</code> is set to <code>inline-block</code>.
  *
  * @function UiApp.CheckBox#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -3715,6 +3529,7 @@
  </code></pre>
  *
  * @function UiApp.CheckBox#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -3735,6 +3550,7 @@
  </code></pre>
  *
  * @function UiApp.CheckBox#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -3749,6 +3565,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.CheckBox#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -3762,6 +3579,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.CheckBox#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -3776,8 +3594,9 @@
  order.
  *
  * @function UiApp.CheckBox#setTabIndex
+ * @deprecated
  *
- * @param {number} index - the new tab index.
+ * @param {IntegerNum} index - the new tab index.
  *
  * @return {UiApp.CheckBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code> itself, useful for chaining.
  */
@@ -3786,6 +3605,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code>.
  *
  * @function UiApp.CheckBox#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -3796,6 +3616,7 @@
  * Set the display text of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code>.
  *
  * @function UiApp.CheckBox#setText
+ * @deprecated
  *
  * @param {String} text - the new text.
  *
@@ -3808,6 +3629,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.CheckBox#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -3819,6 +3641,7 @@
  changes as a result of this call.
  *
  * @function UiApp.CheckBox#setValue
+ * @deprecated
  *
  * @param {Boolean} value - the new checked/unchecked state.
  *
@@ -3830,6 +3653,7 @@
  value changes as a result of this call.
  *
  * @function UiApp.CheckBox#setValue
+ * @deprecated
  *
  * @param {Boolean} value - the new checked/unchecked state.
  * @param {Boolean} fireEvents - whether to fire an event if this changed the state.
@@ -3841,6 +3665,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code> is visible.
  *
  * @function UiApp.CheckBox#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code> should be visible or not.
  *
@@ -3852,11 +3677,13 @@
  element's CSS <code>display</code> property is set to <code>inline-block</code>.
  *
  * @function UiApp.CheckBox#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.CheckBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.ClientHandler
@@ -3868,6 +3695,7 @@
  directives.
  *
  * @function UiApp.ClientHandler#forEventSource
+ * @deprecated
  *
  * @return {UiApp.ClientHandler} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> itself, useful for chaining.
  */
@@ -3877,6 +3705,7 @@
  not change the target for any previous directives.
  *
  * @function UiApp.ClientHandler#forTargets
+ * @deprecated
  *
  * @param {Object...} widgets - the widgets to target.
  *
@@ -3890,6 +3719,7 @@
  object.
  *
  * @function UiApp.ClientHandler#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -3898,6 +3728,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code>.
  *
  * @function UiApp.ClientHandler#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -3906,6 +3737,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.ClientHandler#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -3915,6 +3747,7 @@
  will fail if the widgets being targeted do not support being enabled or disabled.
  *
  * @function UiApp.ClientHandler#setEnabled
+ * @deprecated
  *
  * @param {Boolean} enabled - whether the targeted widgets should be enabled.
  *
@@ -3926,6 +3759,7 @@
  the widgets being targeted do not support having html text set.
  *
  * @function UiApp.ClientHandler#setHTML
+ * @deprecated
  *
  * @param {String} html - the new html text for the targeted widgets.
  *
@@ -3936,6 +3770,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code>.
  *
  * @function UiApp.ClientHandler#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> from
      app.getElementById(id).
@@ -3948,9 +3783,10 @@
  handler is targeted to are not grids.
  *
  * @function UiApp.ClientHandler#setStyleAttribute
+ * @deprecated
  *
- * @param {number} row - the row of the grid.
- * @param {number} column - the column of the grid.
+ * @param {IntegerNum} row - the row of the grid.
+ * @param {IntegerNum} column - the column of the grid.
  * @param {String} attribute - the CSS attribute to set. Use camelCase (e.g. fontSize, not font-size).
  * @param {String} value - the CSS value to set.
  *
@@ -3961,6 +3797,7 @@
  * A directive to set a style attribute on the widgets the handler is targeted to.
  *
  * @function UiApp.ClientHandler#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute to set. Use camelCase (e.g. fontSize, not font-size).
  * @param {String} value - the CSS value to set.
@@ -3973,9 +3810,10 @@
  the handler is targeted to are not grids.
  *
  * @function UiApp.ClientHandler#setStyleAttributes
+ * @deprecated
  *
- * @param {number} row - the row of the grid.
- * @param {number} column - the column of the grid.
+ * @param {IntegerNum} row - the row of the grid.
+ * @param {IntegerNum} column - the column of the grid.
  * @param {Object} attributes - the CSS attributes and values to set.
  *
  * @return {UiApp.ClientHandler} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> itself, useful for chaining.
@@ -3985,6 +3823,7 @@
  * A directive to set multiple style attributes on the widgets the handler is targeted to.
  *
  * @function UiApp.ClientHandler#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - the CSS attributes and values to set.
  *
@@ -3995,6 +3834,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code>.
  *
  * @function UiApp.ClientHandler#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -4006,6 +3846,7 @@
  widgets being targeted do not support having their text set.
  *
  * @function UiApp.ClientHandler#setText
+ * @deprecated
  *
  * @param {String} text - the new text for the targeted widgets.
  *
@@ -4017,6 +3858,7 @@
  if the widgets being targeted do not support having a boolean value set.
  *
  * @function UiApp.ClientHandler#setValue
+ * @deprecated
  *
  * @param {Boolean} value - the new value for the targeted widgets.
  *
@@ -4028,6 +3870,7 @@
  the widgets being targeted do not support being made invisible.
  *
  * @function UiApp.ClientHandler#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether the targeted widgets should be visible.
  *
@@ -4040,6 +3883,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ClientHandler#validateEmail
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  *
@@ -4052,6 +3896,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ClientHandler#validateInteger
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  *
@@ -4065,10 +3910,11 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ClientHandler#validateLength
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
- * @param {number} min - the minimum length. If null, no minimum is enforced.
- * @param {number} max - the maximum length. If null, no maximum is enforced.
+ * @param {IntegerNum} min - the minimum length. If null, no minimum is enforced.
+ * @param {IntegerNum} max - the maximum length. If null, no maximum is enforced.
  *
  * @return {UiApp.ClientHandler} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> itself, useful for chaining.
  */
@@ -4079,6 +3925,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ClientHandler#validateMatches
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String} pattern - the regex to test, as a string.
@@ -4092,6 +3939,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ClientHandler#validateMatches
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String} pattern - the regex to test, as a string.
@@ -4106,6 +3954,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ClientHandler#validateNotEmail
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  *
@@ -4118,6 +3967,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ClientHandler#validateNotInteger
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  *
@@ -4131,10 +3981,11 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ClientHandler#validateNotLength
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
- * @param {number} min - the minimum length. If null, no minimum is enforced.
- * @param {number} max - the maximum length. If null, no maximum is enforced.
+ * @param {IntegerNum} min - the minimum length. If null, no minimum is enforced.
+ * @param {IntegerNum} max - the maximum length. If null, no maximum is enforced.
  *
  * @return {UiApp.ClientHandler} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> itself, useful for chaining.
  */
@@ -4146,6 +3997,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ClientHandler#validateNotMatches
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String} pattern - the regex to test, as a string.
@@ -4160,6 +4012,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ClientHandler#validateNotMatches
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String} pattern - the regex to test, as a string.
@@ -4174,6 +4027,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ClientHandler#validateNotNumber
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  *
@@ -4187,6 +4041,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ClientHandler#validateNotOptions
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String[]} options - the list of unacceptable values
@@ -4201,6 +4056,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ClientHandler#validateNotRange
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {Number} min - the minimum length. If null, no minimum is enforced.
@@ -4216,9 +4072,10 @@
  <p>This will cause an error if any of the widgets do not have a text property.
  *
  * @function UiApp.ClientHandler#validateNotSum
+ * @deprecated
  *
  * @param {UiApp.Widget[]} widgets - an array of the widgets to validate on.
- * @param {number} sum - the sum to validate with
+ * @param {IntegerNum} sum - the sum to validate with
  *
  * @return {UiApp.ClientHandler} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> itself, useful for chaining.
  */
@@ -4229,6 +4086,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ClientHandler#validateNumber
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  *
@@ -4242,6 +4100,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ClientHandler#validateOptions
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String[]} options - the list of acceptable values
@@ -4256,6 +4115,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ClientHandler#validateRange
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {Number} min - the minimum length. If null, no minimum is enforced.
@@ -4271,12 +4131,14 @@
  <p>This will cause an error if any of the widgets do not have a text property.
  *
  * @function UiApp.ClientHandler#validateSum
+ * @deprecated
  *
  * @param {UiApp.Widget[]} widgets - an array of the widgets to validate on.
- * @param {number} sum - the sum to validate with
+ * @param {IntegerNum} sum - the sum to validate with
  *
  * @return {UiApp.ClientHandler} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.Component
@@ -4289,6 +4151,7 @@
  object.
  *
  * @function UiApp.Component#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -4297,9 +4160,11 @@
  * Gets the type of this object.
  *
  * @function UiApp.Component#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
+
 
 /**
  * @class UiApp.DateBox
@@ -4312,6 +4177,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DateBox#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -4325,6 +4191,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DateBox#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -4364,6 +4231,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.DateBox#addValueChangeHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -4377,6 +4245,7 @@
  object.
  *
  * @function UiApp.DateBox#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -4385,6 +4254,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code>.
  *
  * @function UiApp.DateBox#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -4393,6 +4263,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.DateBox#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -4401,6 +4272,7 @@
  * Hide the date picker.
  *
  * @function UiApp.DateBox#hideDatePicker
+ * @deprecated
  *
  * @return {UiApp.DateBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code> itself, useful for chaining.
  */
@@ -4410,6 +4282,7 @@
  modifier key) to automatically focus the widget.
  *
  * @function UiApp.DateBox#setAccessKey
+ * @deprecated
  *
  * @param {Char} accessKey - the character to use for focus
  *
@@ -4420,6 +4293,7 @@
  * Sets whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code> is enabled.
  *
  * @function UiApp.DateBox#setEnabled
+ * @deprecated
  *
  * @param {Boolean} enabled - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code> should be enabled or disabled.
  *
@@ -4437,6 +4311,7 @@
  treated as null dates.
  *
  * @function UiApp.DateBox#setFireEventsForInvalid
+ * @deprecated
  *
  * @param {Boolean} fireEvents - if set to true, value change events will be fired when the box is changed
      from a valid date string to an invalid or empty string, with the date value in the event
@@ -4452,6 +4327,7 @@
  events.
  *
  * @function UiApp.DateBox#setFocus
+ * @deprecated
  *
  * @param {Boolean} focus - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code> should have the current focus.
  *
@@ -4465,6 +4341,7 @@
  contents in the new format.
  *
  * @function UiApp.DateBox#setFormat
+ * @deprecated
  *
  * @param {UiApp.DateTimeFormat} dateTimeFormat - the desired format such as UiApp.DateTimeFormat.DATE_TIME_FULL.
  *
@@ -4475,6 +4352,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code>.
  *
  * @function UiApp.DateBox#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -4485,6 +4363,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code>.
  *
  * @function UiApp.DateBox#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code> from
      app.getElementById(id).
@@ -4498,8 +4377,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.DateBox#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.DateBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code> itself, useful for chaining.
  */
@@ -4509,6 +4389,7 @@
  FormPanel or as a callback element on an event handler.
  *
  * @function UiApp.DateBox#setName
+ * @deprecated
  *
  * @param {String} name - the new name.
  *
@@ -4519,9 +4400,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code> in pixels.
  *
  * @function UiApp.DateBox#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.DateBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code> itself, useful for chaining.
  */
@@ -4530,6 +4412,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code>.
  *
  * @function UiApp.DateBox#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -4549,6 +4432,7 @@
  </code></pre>
  *
  * @function UiApp.DateBox#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -4569,6 +4453,7 @@
  </code></pre>
  *
  * @function UiApp.DateBox#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -4583,6 +4468,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DateBox#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -4596,6 +4482,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DateBox#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -4610,8 +4497,9 @@
  order.
  *
  * @function UiApp.DateBox#setTabIndex
+ * @deprecated
  *
- * @param {number} index - the new tab index.
+ * @param {IntegerNum} index - the new tab index.
  *
  * @return {UiApp.DateBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code> itself, useful for chaining.
  */
@@ -4620,6 +4508,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code>.
  *
  * @function UiApp.DateBox#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -4632,6 +4521,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.DateBox#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -4642,6 +4532,7 @@
  * Sets the date shown by this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code>.
  *
  * @function UiApp.DateBox#setValue
+ * @deprecated
  *
  * @param {Date} date - the new date value.
  *
@@ -4652,6 +4543,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code> is visible.
  *
  * @function UiApp.DateBox#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code> should be visible or not.
  *
@@ -4662,6 +4554,7 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code>.
  *
  * @function UiApp.DateBox#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
@@ -4672,9 +4565,11 @@
  * Parses the current <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code>'s value and shows that date.
  *
  * @function UiApp.DateBox#showDatePicker
+ * @deprecated
  *
  * @return {UiApp.DateBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.DatePicker
@@ -4687,6 +4582,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DatePicker#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -4700,6 +4596,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DatePicker#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -4739,6 +4636,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.DatePicker#addValueChangeHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -4752,6 +4650,7 @@
  object.
  *
  * @function UiApp.DatePicker#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -4760,6 +4659,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-picker.html'>DatePicker</a></s></code>.
  *
  * @function UiApp.DatePicker#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -4768,6 +4668,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.DatePicker#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -4776,6 +4677,7 @@
  * Sets the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-picker.html'>DatePicker</a></s></code> to show the given month without selecting a particular date.
  *
  * @function UiApp.DatePicker#setCurrentMonth
+ * @deprecated
  *
  * @param {Date} date - the date containing the month to show. For example, setCurrentMonth(new
      Date("January 1, 2000")) sets the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-picker.html'>DatePicker</a></s></code> to show January 2000.
@@ -4787,6 +4689,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-picker.html'>DatePicker</a></s></code>.
  *
  * @function UiApp.DatePicker#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -4797,6 +4700,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-picker.html'>DatePicker</a></s></code>.
  *
  * @function UiApp.DatePicker#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-picker.html'>DatePicker</a></s></code> from
      app.getElementById(id).
@@ -4810,8 +4714,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.DatePicker#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.DatePicker} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-picker.html'>DatePicker</a></s></code> itself, useful for chaining.
  */
@@ -4821,6 +4726,7 @@
  FormPanel or as a callback element on an event handler.
  *
  * @function UiApp.DatePicker#setName
+ * @deprecated
  *
  * @param {String} name - the new name.
  *
@@ -4831,9 +4737,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-picker.html'>DatePicker</a></s></code> in pixels.
  *
  * @function UiApp.DatePicker#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.DatePicker} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-picker.html'>DatePicker</a></s></code> itself, useful for chaining.
  */
@@ -4842,6 +4749,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-picker.html'>DatePicker</a></s></code>.
  *
  * @function UiApp.DatePicker#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -4861,6 +4769,7 @@
  </code></pre>
  *
  * @function UiApp.DatePicker#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -4881,6 +4790,7 @@
  </code></pre>
  *
  * @function UiApp.DatePicker#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -4895,6 +4805,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DatePicker#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -4908,6 +4819,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DatePicker#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -4918,6 +4830,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-picker.html'>DatePicker</a></s></code>.
  *
  * @function UiApp.DatePicker#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -4930,6 +4843,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.DatePicker#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -4940,6 +4854,7 @@
  * Sets the date shown by this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-picker.html'>DatePicker</a></s></code>.
  *
  * @function UiApp.DatePicker#setValue
+ * @deprecated
  *
  * @param {Date} date - the new date value.
  *
@@ -4950,6 +4865,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-picker.html'>DatePicker</a></s></code> is visible.
  *
  * @function UiApp.DatePicker#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-picker.html'>DatePicker</a></s></code> should be visible or not.
  *
@@ -4960,11 +4876,235 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-picker.html'>DatePicker</a></s></code>.
  *
  * @function UiApp.DatePicker#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.DatePicker} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-picker.html'>DatePicker</a></s></code> itself, useful for chaining.
  */
+
+
+/**
+ * @class UiApp.DateTimeFormat
+ */
+
+/**
+ * Use "DayOfWeek, YYYY Month DD" format, for example, "Monday, 2013 March 04".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.DATE_FULL
+ */
+
+/**
+ * Use "YYYY Month D" format, for example, "2013 March 4".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.DATE_LONG
+ */
+
+/**
+ * Use "YYYY Mon D" format, for example, "2013 Mar 4".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.DATE_MEDIUM
+ */
+
+/**
+ * Use "YYYY-MM-DD" format, for example, "2013-03-04".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.DATE_SHORT
+ */
+
+/**
+ * Use "DayOfWeek, YYYY Month DD HH:MM:SS UTC-#" format, for example, "Monday, 2013 March 04
+ 00:00:00 UTC-5".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.DATE_TIME_FULL
+ */
+
+/**
+ * Use "YYYY Month D HH:MM:SS UTC-#" format, for example, "2013 March 4 00:00:00 UTC-5".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.DATE_TIME_LONG
+ */
+
+/**
+ * Use "YYYY Mon D HH:MM:SS" format, for example, "2013 Mar 4 00:00:00".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.DATE_TIME_MEDIUM
+ */
+
+/**
+ * Use "YYYY-MM-DD HH:MM" format, for example, "2013-03-04 00:00".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.DATE_TIME_SHORT
+ */
+
+/**
+ * Use the day number, for example, "4" for the 4th of the month.
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.DAY
+ */
+
+/**
+ * Use "HH:MM" format, for example, "14:30".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.HOUR24_MINUTE
+ */
+
+/**
+ * Use "HH:MM:SS" format, for example, "14:30:00".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.HOUR24_MINUTE_SECOND
+ */
+
+/**
+ * Use "HH:MM AM/PM" format, for example, "12:00 AM".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.HOUR_MINUTE
+ */
+
+/**
+ * Use "HH:MM:SS AM/PM" format, for example, "12:00:00 AM".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.HOUR_MINUTE_SECOND
+ */
+
+/**
+ * Use the ISO 8601 standard format, for example, "2013-03-04T00:00:00.000-05:00".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.ISO_8601
+ */
+
+/**
+ * Use "MM:SS" format, for example, "30:00".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.MINUTE_SECOND
+ */
+
+/**
+ * Use the full month, for example, "March".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.MONTH
+ */
+
+/**
+ * Use the abbreviated month, for example, "Mar".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.MONTH_ABBR
+ */
+
+/**
+ * Use "Mon D" format, for example, "Mar 4".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.MONTH_ABBR_DAY
+ */
+
+/**
+ * Use "Month D" format, for example, "March 4".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.MONTH_DAY
+ */
+
+/**
+ * Use "M-D" format, for example, "3-4".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.MONTH_NUM_DAY
+ */
+
+/**
+ * Use "DayOfWeek Month D" format, for example, "Monday March 4".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.MONTH_WEEKDAY_DAY
+ */
+
+/**
+ * Use the RFC 2822 standard format, for example, "Mon, 4 Mar 2013 00:00:00 -0500".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.RFC_2822
+ */
+
+/**
+ * Use "HH:MM:SS UTC-#" format, for example, "01:30:00 UTC-5".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.TIME_FULL
+ */
+
+/**
+ * Use "HH:MM:SS UTC-#" format, for example, "01:30:00 UTC-5".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.TIME_LONG
+ */
+
+/**
+ * Use "HH:MM:SS" format, for example, "01:30:00".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.TIME_MEDIUM
+ */
+
+/**
+ * Use "HH:MM" format, for example, "01:30".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.TIME_SHORT
+ */
+
+/**
+ * Use "YYYY" format, for example, "2013".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.YEAR
+ */
+
+/**
+ * Use "YYYY Month" format, for example, "2013 March".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.YEAR_MONTH
+ */
+
+/**
+ * Use "YYYY Mon" format, for example, "2013 Mar".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.YEAR_MONTH_ABBR
+ */
+
+/**
+ * Use "YYYY Mon D" format, for example, "2013 Mar 4".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.YEAR_MONTH_ABBR_DAY
+ */
+
+/**
+ * Use "YYYY Month D" format, for example, "2013 March 4".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.YEAR_MONTH_DAY
+ */
+
+/**
+ * Use "YYYY-M" format, for example, "2013-3".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.YEAR_MONTH_NUM
+ */
+
+/**
+ * Use "YYYY-M-D" format, for example, "2013-3-4".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.YEAR_MONTH_NUM_DAY
+ */
+
+/**
+ * Use "Wkdy, YYYY Mon D" format, for example, "Mon, 2013 Mar 4".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.YEAR_MONTH_WEEKDAY_DAY
+ */
+
+/**
+ * Use "YYYY ### quarter" format, for example, "2013 1st quarter".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.YEAR_QUARTER
+ */
+
+/**
+ * Use "YYYY Q#" format, for example, "2013 Q1".
+ *
+ * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat.YEAR_QUARTER_ABBR
+ */
+
 
 /**
  * @class UiApp.DecoratedStackPanel
@@ -4974,6 +5114,7 @@
  * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code>.
  *
  * @function UiApp.DecoratedStackPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  *
@@ -4984,6 +5125,7 @@
  * Adds a widget to the stack with the given header text.
  *
  * @function UiApp.DecoratedStackPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  * @param {String} text - the new header text.
@@ -4995,6 +5137,7 @@
  * Adds a widget to the stack with the given header text.
  *
  * @function UiApp.DecoratedStackPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  * @param {String} text - the new header text.
@@ -5010,6 +5153,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DecoratedStackPanel#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -5023,6 +5167,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DecoratedStackPanel#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -5033,6 +5178,7 @@
  * Remove all widgets from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code>.
  *
  * @function UiApp.DecoratedStackPanel#clear
+ * @deprecated
  *
  * @return {UiApp.DecoratedStackPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code> itself, useful for chaining.
  */
@@ -5044,6 +5190,7 @@
  object.
  *
  * @function UiApp.DecoratedStackPanel#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -5052,6 +5199,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code>.
  *
  * @function UiApp.DecoratedStackPanel#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -5060,6 +5208,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.DecoratedStackPanel#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -5069,8 +5218,9 @@
  This will fail if the index is greater than or equal to the number of elements in the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code>.
  *
  * @function UiApp.DecoratedStackPanel#remove
+ * @deprecated
  *
- * @param {number} index - the index of the widget to remove.
+ * @param {IntegerNum} index - the index of the widget to remove.
  *
  * @return {UiApp.DecoratedStackPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code> itself, useful for chaining.
  */
@@ -5080,6 +5230,7 @@
  actually a child of the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code>.
  *
  * @function UiApp.DecoratedStackPanel#remove
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to remove.
  *
@@ -5090,6 +5241,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code>.
  *
  * @function UiApp.DecoratedStackPanel#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -5100,6 +5252,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code>.
  *
  * @function UiApp.DecoratedStackPanel#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code> from
      app.getElementById(id).
@@ -5113,8 +5266,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.DecoratedStackPanel#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.DecoratedStackPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code> itself, useful for chaining.
  */
@@ -5123,9 +5277,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code> in pixels.
  *
  * @function UiApp.DecoratedStackPanel#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.DecoratedStackPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code> itself, useful for chaining.
  */
@@ -5134,6 +5289,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code>.
  *
  * @function UiApp.DecoratedStackPanel#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -5145,8 +5301,9 @@
  * Sets the text associated with a child by its index.
  *
  * @function UiApp.DecoratedStackPanel#setStackText
+ * @deprecated
  *
- * @param {number} index - the index of the stack element whose text we want to change.
+ * @param {IntegerNum} index - the index of the stack element whose text we want to change.
  * @param {String} text - the new text.
  *
  * @return {UiApp.DecoratedStackPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code> itself, useful for chaining.
@@ -5156,8 +5313,9 @@
  * Sets the text associated with a child by its index.
  *
  * @function UiApp.DecoratedStackPanel#setStackText
+ * @deprecated
  *
- * @param {number} index - the index of the stack element whose text we want to change.
+ * @param {IntegerNum} index - the index of the stack element whose text we want to change.
  * @param {String} text - the new text.
  * @param {Boolean} asHtml - whether to treat the text as HTML.
  *
@@ -5176,6 +5334,7 @@
  </code></pre>
  *
  * @function UiApp.DecoratedStackPanel#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -5196,6 +5355,7 @@
  </code></pre>
  *
  * @function UiApp.DecoratedStackPanel#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -5210,6 +5370,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DecoratedStackPanel#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -5223,6 +5384,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DecoratedStackPanel#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -5233,6 +5395,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code>.
  *
  * @function UiApp.DecoratedStackPanel#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -5245,6 +5408,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.DecoratedStackPanel#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -5255,6 +5419,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code> is visible.
  *
  * @function UiApp.DecoratedStackPanel#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code> should be visible or not.
  *
@@ -5265,11 +5430,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code>.
  *
  * @function UiApp.DecoratedStackPanel#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.DecoratedStackPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.DecoratedTabBar
@@ -5282,6 +5449,7 @@
  selection so they are functionally identical.
  *
  * @function UiApp.DecoratedTabBar#addBeforeSelectionHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to invoke.
  *
@@ -5324,6 +5492,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.DecoratedTabBar#addSelectionHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -5337,6 +5506,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DecoratedTabBar#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -5350,6 +5520,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DecoratedTabBar#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -5360,6 +5531,7 @@
  * Add a tab with the given title.
  *
  * @function UiApp.DecoratedTabBar#addTab
+ * @deprecated
  *
  * @param {String} title - the new tab's title.
  *
@@ -5370,6 +5542,7 @@
  * Add a tab with the given title.
  *
  * @function UiApp.DecoratedTabBar#addTab
+ * @deprecated
  *
  * @param {String} title - the new tab's title.
  * @param {Boolean} asHtml - whether to treat the title as HTML.
@@ -5381,6 +5554,7 @@
  * Add a tab with the given widget as its title.
  *
  * @function UiApp.DecoratedTabBar#addTab
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the new tab's title widget.
  *
@@ -5394,6 +5568,7 @@
  object.
  *
  * @function UiApp.DecoratedTabBar#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -5402,6 +5577,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-bar.html'>DecoratedTabBar</a></s></code>.
  *
  * @function UiApp.DecoratedTabBar#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -5410,6 +5586,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.DecoratedTabBar#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -5418,8 +5595,9 @@
  * Select a tab by index.
  *
  * @function UiApp.DecoratedTabBar#selectTab
+ * @deprecated
  *
- * @param {number} index - the index of the tab to select.
+ * @param {IntegerNum} index - the index of the tab to select.
  *
  * @return {UiApp.DecoratedTabBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-bar.html'>DecoratedTabBar</a></s></code> itself, useful for chaining.
  */
@@ -5428,6 +5606,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-bar.html'>DecoratedTabBar</a></s></code>.
  *
  * @function UiApp.DecoratedTabBar#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -5438,6 +5617,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-bar.html'>DecoratedTabBar</a></s></code>.
  *
  * @function UiApp.DecoratedTabBar#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-bar.html'>DecoratedTabBar</a></s></code> from
      app.getElementById(id).
@@ -5451,8 +5631,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.DecoratedTabBar#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.DecoratedTabBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-bar.html'>DecoratedTabBar</a></s></code> itself, useful for chaining.
  */
@@ -5461,9 +5642,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-bar.html'>DecoratedTabBar</a></s></code> in pixels.
  *
  * @function UiApp.DecoratedTabBar#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.DecoratedTabBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-bar.html'>DecoratedTabBar</a></s></code> itself, useful for chaining.
  */
@@ -5472,6 +5654,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-bar.html'>DecoratedTabBar</a></s></code>.
  *
  * @function UiApp.DecoratedTabBar#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -5491,6 +5674,7 @@
  </code></pre>
  *
  * @function UiApp.DecoratedTabBar#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -5511,6 +5695,7 @@
  </code></pre>
  *
  * @function UiApp.DecoratedTabBar#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -5525,6 +5710,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DecoratedTabBar#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -5538,6 +5724,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DecoratedTabBar#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -5548,8 +5735,9 @@
  * Set whether the given tab is enabled.
  *
  * @function UiApp.DecoratedTabBar#setTabEnabled
+ * @deprecated
  *
- * @param {number} index - the tab index.
+ * @param {IntegerNum} index - the tab index.
  * @param {Boolean} enabled - whether the tab should be enabled.
  *
  * @return {UiApp.DecoratedTabBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-bar.html'>DecoratedTabBar</a></s></code> itself, useful for chaining.
@@ -5559,8 +5747,9 @@
  * Set the header text of a given tab.
  *
  * @function UiApp.DecoratedTabBar#setTabText
+ * @deprecated
  *
- * @param {number} index - the index of the tab.
+ * @param {IntegerNum} index - the index of the tab.
  * @param {String} text - the new header text.
  *
  * @return {UiApp.DecoratedTabBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-bar.html'>DecoratedTabBar</a></s></code> itself, useful for chaining.
@@ -5570,6 +5759,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-bar.html'>DecoratedTabBar</a></s></code>.
  *
  * @function UiApp.DecoratedTabBar#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -5582,6 +5772,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.DecoratedTabBar#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -5592,6 +5783,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-bar.html'>DecoratedTabBar</a></s></code> is visible.
  *
  * @function UiApp.DecoratedTabBar#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-bar.html'>DecoratedTabBar</a></s></code> should be visible or not.
  *
@@ -5602,11 +5794,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-bar.html'>DecoratedTabBar</a></s></code>.
  *
  * @function UiApp.DecoratedTabBar#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.DecoratedTabBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-bar.html'>DecoratedTabBar</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.DecoratedTabPanel
@@ -5616,6 +5810,7 @@
  * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-panel.html'>DecoratedTabPanel</a></s></code>.
  *
  * @function UiApp.DecoratedTabPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  *
@@ -5626,6 +5821,7 @@
  * Adds a widget to the stack with the given header text.
  *
  * @function UiApp.DecoratedTabPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  * @param {String} text - the new header text.
@@ -5637,6 +5833,7 @@
  * Adds a widget to the stack with the given header text.
  *
  * @function UiApp.DecoratedTabPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  * @param {String} text - the new header text.
@@ -5649,6 +5846,7 @@
  * Add a widget to this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-panel.html'>DecoratedTabPanel</a></s></code> with the given widget as its tab header.
  *
  * @function UiApp.DecoratedTabPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  * @param {UiApp.Widget} tabWidget - the header widget.
@@ -5663,6 +5861,7 @@
  selection so they are functionally identical.
  *
  * @function UiApp.DecoratedTabPanel#addBeforeSelectionHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to invoke.
  *
@@ -5705,6 +5904,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.DecoratedTabPanel#addSelectionHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -5718,6 +5918,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DecoratedTabPanel#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -5731,6 +5932,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DecoratedTabPanel#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -5744,6 +5946,7 @@
  object.
  *
  * @function UiApp.DecoratedTabPanel#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -5752,6 +5955,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-panel.html'>DecoratedTabPanel</a></s></code>.
  *
  * @function UiApp.DecoratedTabPanel#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -5760,6 +5964,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.DecoratedTabPanel#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -5768,8 +5973,9 @@
  * Select a tab by index.
  *
  * @function UiApp.DecoratedTabPanel#selectTab
+ * @deprecated
  *
- * @param {number} index - the index of the tab to select.
+ * @param {IntegerNum} index - the index of the tab to select.
  *
  * @return {UiApp.DecoratedTabPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-panel.html'>DecoratedTabPanel</a></s></code> itself, useful for chaining.
  */
@@ -5778,6 +5984,7 @@
  * Sets whether changing tabs <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-panel.html'>DecoratedTabPanel</a></s></code> is animated.
  *
  * @function UiApp.DecoratedTabPanel#setAnimationEnabled
+ * @deprecated
  *
  * @param {Boolean} animationEnabled - whether to animate changing tabs.
  *
@@ -5788,6 +5995,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-panel.html'>DecoratedTabPanel</a></s></code>.
  *
  * @function UiApp.DecoratedTabPanel#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -5798,6 +6006,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-panel.html'>DecoratedTabPanel</a></s></code>.
  *
  * @function UiApp.DecoratedTabPanel#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-panel.html'>DecoratedTabPanel</a></s></code> from
      app.getElementById(id).
@@ -5811,8 +6020,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.DecoratedTabPanel#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.DecoratedTabPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-panel.html'>DecoratedTabPanel</a></s></code> itself, useful for chaining.
  */
@@ -5821,9 +6031,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-panel.html'>DecoratedTabPanel</a></s></code> in pixels.
  *
  * @function UiApp.DecoratedTabPanel#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.DecoratedTabPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-panel.html'>DecoratedTabPanel</a></s></code> itself, useful for chaining.
  */
@@ -5832,6 +6043,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-panel.html'>DecoratedTabPanel</a></s></code>.
  *
  * @function UiApp.DecoratedTabPanel#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -5851,6 +6063,7 @@
  </code></pre>
  *
  * @function UiApp.DecoratedTabPanel#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -5871,6 +6084,7 @@
  </code></pre>
  *
  * @function UiApp.DecoratedTabPanel#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -5885,6 +6099,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DecoratedTabPanel#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -5898,6 +6113,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DecoratedTabPanel#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -5908,6 +6124,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-panel.html'>DecoratedTabPanel</a></s></code>.
  *
  * @function UiApp.DecoratedTabPanel#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -5920,6 +6137,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.DecoratedTabPanel#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -5930,6 +6148,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-panel.html'>DecoratedTabPanel</a></s></code> is visible.
  *
  * @function UiApp.DecoratedTabPanel#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-panel.html'>DecoratedTabPanel</a></s></code> should be visible or not.
  *
@@ -5940,11 +6159,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-panel.html'>DecoratedTabPanel</a></s></code>.
  *
  * @function UiApp.DecoratedTabPanel#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.DecoratedTabPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-panel.html'>DecoratedTabPanel</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.DecoratorPanel
@@ -5954,6 +6175,7 @@
  * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorator-panel.html'>DecoratorPanel</a></s></code>.
  *
  * @function UiApp.DecoratorPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  *
@@ -5967,6 +6189,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DecoratorPanel#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -5980,6 +6203,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DecoratorPanel#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -5990,6 +6214,7 @@
  * Remove all widgets from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorator-panel.html'>DecoratorPanel</a></s></code>.
  *
  * @function UiApp.DecoratorPanel#clear
+ * @deprecated
  *
  * @return {UiApp.DecoratorPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorator-panel.html'>DecoratorPanel</a></s></code> itself, useful for chaining.
  */
@@ -6001,6 +6226,7 @@
  object.
  *
  * @function UiApp.DecoratorPanel#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -6009,6 +6235,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorator-panel.html'>DecoratorPanel</a></s></code>.
  *
  * @function UiApp.DecoratorPanel#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -6017,6 +6244,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.DecoratorPanel#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -6025,6 +6253,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorator-panel.html'>DecoratorPanel</a></s></code>.
  *
  * @function UiApp.DecoratorPanel#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -6035,6 +6264,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorator-panel.html'>DecoratorPanel</a></s></code>.
  *
  * @function UiApp.DecoratorPanel#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorator-panel.html'>DecoratorPanel</a></s></code> from
      app.getElementById(id).
@@ -6048,8 +6278,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.DecoratorPanel#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.DecoratorPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorator-panel.html'>DecoratorPanel</a></s></code> itself, useful for chaining.
  */
@@ -6058,9 +6289,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorator-panel.html'>DecoratorPanel</a></s></code> in pixels.
  *
  * @function UiApp.DecoratorPanel#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.DecoratorPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorator-panel.html'>DecoratorPanel</a></s></code> itself, useful for chaining.
  */
@@ -6069,6 +6301,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorator-panel.html'>DecoratorPanel</a></s></code>.
  *
  * @function UiApp.DecoratorPanel#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -6088,6 +6321,7 @@
  </code></pre>
  *
  * @function UiApp.DecoratorPanel#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -6108,6 +6342,7 @@
  </code></pre>
  *
  * @function UiApp.DecoratorPanel#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -6122,6 +6357,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DecoratorPanel#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -6135,6 +6371,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DecoratorPanel#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -6145,6 +6382,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorator-panel.html'>DecoratorPanel</a></s></code>.
  *
  * @function UiApp.DecoratorPanel#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -6157,6 +6395,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.DecoratorPanel#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -6167,6 +6406,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorator-panel.html'>DecoratorPanel</a></s></code> is visible.
  *
  * @function UiApp.DecoratorPanel#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorator-panel.html'>DecoratorPanel</a></s></code> should be visible or not.
  *
@@ -6177,6 +6417,7 @@
  * Sets the widget inside this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorator-panel.html'>DecoratorPanel</a></s></code>, removing anything previously there.
  *
  * @function UiApp.DecoratorPanel#setWidget
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to put in this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorator-panel.html'>DecoratorPanel</a></s></code>.
  *
@@ -6187,11 +6428,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorator-panel.html'>DecoratorPanel</a></s></code>.
  *
  * @function UiApp.DecoratorPanel#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.DecoratorPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorator-panel.html'>DecoratorPanel</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.DialogBox
@@ -6201,6 +6444,7 @@
  * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code>.
  *
  * @function UiApp.DialogBox#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  *
@@ -6213,6 +6457,7 @@
  <p>This is not currently functional.
  *
  * @function UiApp.DialogBox#addAutoHidePartner
+ * @deprecated
  *
  * @param {UiApp.Component} partner - the partner widget.
  *
@@ -6255,6 +6500,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.DialogBox#addCloseHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -6268,6 +6514,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DialogBox#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -6281,6 +6528,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DialogBox#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -6291,6 +6539,7 @@
  * Remove all widgets from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code>.
  *
  * @function UiApp.DialogBox#clear
+ * @deprecated
  *
  * @return {UiApp.DialogBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code> itself, useful for chaining.
  */
@@ -6302,6 +6551,7 @@
  object.
  *
  * @function UiApp.DialogBox#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -6310,6 +6560,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code>.
  *
  * @function UiApp.DialogBox#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -6318,6 +6569,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.DialogBox#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -6326,6 +6578,7 @@
  * Hides the popup.
  *
  * @function UiApp.DialogBox#hide
+ * @deprecated
  *
  * @return {UiApp.DialogBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code> itself, useful for chaining.
  */
@@ -6334,6 +6587,7 @@
  * Sets whether opening and closing the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code> is animated.
  *
  * @function UiApp.DialogBox#setAnimationEnabled
+ * @deprecated
  *
  * @param {Boolean} animationEnabled - whether to animate opening and closing.
  *
@@ -6347,6 +6601,7 @@
  outside of it.
  *
  * @function UiApp.DialogBox#setAutoHideEnabled
+ * @deprecated
  *
  * @param {Boolean} enabled - whether auto-hiding should be enabled.
  *
@@ -6361,6 +6616,7 @@
  until it is hidden and shown again.
  *
  * @function UiApp.DialogBox#setGlassEnabled
+ * @deprecated
  *
  * @param {Boolean} enabled - whether the glass panel should be enabled.
  *
@@ -6371,6 +6627,7 @@
  * Set the style name of the glass panel.
  *
  * @function UiApp.DialogBox#setGlassStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -6381,6 +6638,7 @@
  * Sets the HTML content of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code>.
  *
  * @function UiApp.DialogBox#setHTML
+ * @deprecated
  *
  * @param {String} html - the new HTML
  *
@@ -6391,6 +6649,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code>.
  *
  * @function UiApp.DialogBox#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -6401,6 +6660,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code>.
  *
  * @function UiApp.DialogBox#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code> from
      app.getElementById(id).
@@ -6414,8 +6674,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.DialogBox#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.DialogBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code> itself, useful for chaining.
  */
@@ -6427,6 +6688,7 @@
  PopupPanel or its children will be ignored.
  *
  * @function UiApp.DialogBox#setModal
+ * @deprecated
  *
  * @param {Boolean} modal - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code> should be modal.
  *
@@ -6437,9 +6699,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code> in pixels.
  *
  * @function UiApp.DialogBox#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.DialogBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code> itself, useful for chaining.
  */
@@ -6450,9 +6713,10 @@
  <p>The popup's position may be set before calling show().
  *
  * @function UiApp.DialogBox#setPopupPosition
+ * @deprecated
  *
- * @param {number} left - the popup's left, in pixels.
- * @param {number} top - the popup's top, in pixels.
+ * @param {IntegerNum} left - the popup's left, in pixels.
+ * @param {IntegerNum} top - the popup's top, in pixels.
  *
  * @return {UiApp.DialogBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code> itself, useful for chaining.
  */
@@ -6463,8 +6727,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.DialogBox#setPopupPositionAndShow
+ * @deprecated
  *
- * @param {UiApp.Component} a - 
+ * @param {UiApp.Component} a
  *
  * @return {UiApp.DialogBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code> itself, useful for chaining.
  */
@@ -6479,6 +6744,7 @@
  popup opened.
  *
  * @function UiApp.DialogBox#setPreviewingAllNativeEvents
+ * @deprecated
  *
  * @param {Boolean} previewing - whether to preview all native events.
  *
@@ -6489,6 +6755,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code>.
  *
  * @function UiApp.DialogBox#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -6508,6 +6775,7 @@
  </code></pre>
  *
  * @function UiApp.DialogBox#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -6528,6 +6796,7 @@
  </code></pre>
  *
  * @function UiApp.DialogBox#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -6542,6 +6811,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DialogBox#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -6555,6 +6825,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.DialogBox#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -6565,6 +6836,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code>.
  *
  * @function UiApp.DialogBox#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -6575,6 +6847,7 @@
  * Sets the text inside the caption.
  *
  * @function UiApp.DialogBox#setText
+ * @deprecated
  *
  * @param {String} text - the new caption text.
  *
@@ -6587,6 +6860,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.DialogBox#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -6597,6 +6871,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code> is visible.
  *
  * @function UiApp.DialogBox#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code> should be visible or not.
  *
@@ -6607,6 +6882,7 @@
  * Sets the widget inside this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code>, removing anything previously there.
  *
  * @function UiApp.DialogBox#setWidget
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to put in this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code>.
  *
@@ -6617,6 +6893,7 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code>.
  *
  * @function UiApp.DialogBox#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
@@ -6627,9 +6904,11 @@
  * Shows the popup.
  *
  * @function UiApp.DialogBox#show
+ * @deprecated
  *
  * @return {UiApp.DialogBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.DocsListDialog
@@ -6671,6 +6950,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.DocsListDialog#addCloseHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -6713,6 +6993,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.DocsListDialog#addSelectionHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -6723,6 +7004,7 @@
  * Add a type of file that this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/docs-list-dialog.html'>DocsListDialog</a></s></code> will show.
  *
  * @function UiApp.DocsListDialog#addView
+ * @deprecated
  *
  * @param {UiApp.FileType} fileType - the type of file to add.
  *
@@ -6736,6 +7018,7 @@
  object.
  *
  * @function UiApp.DocsListDialog#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -6744,6 +7027,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.DocsListDialog#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -6752,6 +7036,7 @@
  * Set the title of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/docs-list-dialog.html'>DocsListDialog</a></s></code>.
  *
  * @function UiApp.DocsListDialog#setDialogTitle
+ * @deprecated
  *
  * @param {String} title - the new title.
  *
@@ -6762,8 +7047,9 @@
  * Set the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/docs-list-dialog.html'>DocsListDialog</a></s></code>.
  *
  * @function UiApp.DocsListDialog#setHeight
+ * @deprecated
  *
- * @param {number} height - the new height, in pixels.
+ * @param {IntegerNum} height - the new height, in pixels.
  *
  * @return {UiApp.DocsListDialog} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/docs-list-dialog.html'>DocsListDialog</a></s></code> itself, useful for chaining.
  */
@@ -6772,6 +7058,7 @@
  * Set the initial type of file that this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/docs-list-dialog.html'>DocsListDialog</a></s></code> will show.
  *
  * @function UiApp.DocsListDialog#setInitialView
+ * @deprecated
  *
  * @param {UiApp.FileType} fileType - the type of file to show.
  *
@@ -6782,6 +7069,7 @@
  * Set whether multiple items can be selected.
  *
  * @function UiApp.DocsListDialog#setMultiSelectEnabled
+ * @deprecated
  *
  * @param {Boolean} multiSelectEnabled - whether multiple items can be selected.
  *
@@ -6804,6 +7092,7 @@
  automatically set up the correct scope.
  *
  * @function UiApp.DocsListDialog#setOAuthToken
+ * @deprecated
  *
  * @param {String} oAuthToken - the OAuth token.
  *
@@ -6814,8 +7103,9 @@
  * Set the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/docs-list-dialog.html'>DocsListDialog</a></s></code>.
  *
  * @function UiApp.DocsListDialog#setWidth
+ * @deprecated
  *
- * @param {number} width - the new width, in pixels.
+ * @param {IntegerNum} width - the new width, in pixels.
  *
  * @return {UiApp.DocsListDialog} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/docs-list-dialog.html'>DocsListDialog</a></s></code> itself, useful for chaining.
  */
@@ -6824,9 +7114,88 @@
  * Show this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/docs-list-dialog.html'>DocsListDialog</a></s></code>.
  *
  * @function UiApp.DocsListDialog#showDocsPicker
+ * @deprecated
  *
  * @return {UiApp.DocsListDialog} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/docs-list-dialog.html'>DocsListDialog</a></s></code> itself, useful for chaining.
  */
+
+
+/**
+ * @class UiApp.FileType
+ */
+
+/**
+ * Show all files
+ *
+ * @typedef {UiApp.FileType} UiApp.FileType.ALL
+ */
+
+/**
+ * Show all document file types
+ *
+ * @typedef {UiApp.FileType} UiApp.FileType.ALL_DOCS
+ */
+
+/**
+ * Show documents
+ *
+ * @typedef {UiApp.FileType} UiApp.FileType.DOCUMENTS
+ */
+
+/**
+ * Show drawings
+ *
+ * @typedef {UiApp.FileType} UiApp.FileType.DRAWINGS
+ */
+
+/**
+ * Show folders
+ *
+ * @typedef {UiApp.FileType} UiApp.FileType.FOLDERS
+ */
+
+/**
+ * Show forms
+ *
+ * @typedef {UiApp.FileType} UiApp.FileType.FORMS
+ */
+
+/**
+ * Show PDFs
+ *
+ * @typedef {UiApp.FileType} UiApp.FileType.PDFS
+ */
+
+/**
+ * Show photos
+ *
+ * @typedef {UiApp.FileType} UiApp.FileType.PHOTOS
+ */
+
+/**
+ * Show photo albums
+ *
+ * @typedef {UiApp.FileType} UiApp.FileType.PHOTO_ALBUMS
+ */
+
+/**
+ * Show presentations
+ *
+ * @typedef {UiApp.FileType} UiApp.FileType.PRESENTATIONS
+ */
+
+/**
+ * Show recently picked files
+ *
+ * @typedef {UiApp.FileType} UiApp.FileType.RECENTLY_PICKED
+ */
+
+/**
+ * Show spreadsheets
+ *
+ * @typedef {UiApp.FileType} UiApp.FileType.SPREADSHEETS
+ */
+
 
 /**
  * @class UiApp.FileUpload
@@ -6865,6 +7234,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.FileUpload#addChangeHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -6878,6 +7248,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.FileUpload#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -6891,6 +7262,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.FileUpload#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -6904,6 +7276,7 @@
  object.
  *
  * @function UiApp.FileUpload#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -6912,6 +7285,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/file-upload.html'>FileUpload</a></s></code>.
  *
  * @function UiApp.FileUpload#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -6920,6 +7294,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.FileUpload#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -6928,6 +7303,7 @@
  * Sets whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/file-upload.html'>FileUpload</a></s></code> is enabled.
  *
  * @function UiApp.FileUpload#setEnabled
+ * @deprecated
  *
  * @param {Boolean} enabled - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/file-upload.html'>FileUpload</a></s></code> should be enabled or disabled.
  *
@@ -6938,6 +7314,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/file-upload.html'>FileUpload</a></s></code>.
  *
  * @function UiApp.FileUpload#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -6948,6 +7325,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/file-upload.html'>FileUpload</a></s></code>.
  *
  * @function UiApp.FileUpload#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/file-upload.html'>FileUpload</a></s></code> from
      app.getElementById(id).
@@ -6961,8 +7339,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.FileUpload#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.FileUpload} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/file-upload.html'>FileUpload</a></s></code> itself, useful for chaining.
  */
@@ -6972,6 +7351,7 @@
  FormPanel or as a callback element on an event handler.
  *
  * @function UiApp.FileUpload#setName
+ * @deprecated
  *
  * @param {String} name - the new name.
  *
@@ -6982,9 +7362,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/file-upload.html'>FileUpload</a></s></code> in pixels.
  *
  * @function UiApp.FileUpload#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.FileUpload} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/file-upload.html'>FileUpload</a></s></code> itself, useful for chaining.
  */
@@ -6993,6 +7374,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/file-upload.html'>FileUpload</a></s></code>.
  *
  * @function UiApp.FileUpload#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -7012,6 +7394,7 @@
  </code></pre>
  *
  * @function UiApp.FileUpload#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -7032,6 +7415,7 @@
  </code></pre>
  *
  * @function UiApp.FileUpload#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -7046,6 +7430,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.FileUpload#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -7059,6 +7444,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.FileUpload#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -7069,6 +7455,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/file-upload.html'>FileUpload</a></s></code>.
  *
  * @function UiApp.FileUpload#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -7081,6 +7468,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.FileUpload#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -7091,6 +7479,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/file-upload.html'>FileUpload</a></s></code> is visible.
  *
  * @function UiApp.FileUpload#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/file-upload.html'>FileUpload</a></s></code> should be visible or not.
  *
@@ -7101,11 +7490,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/file-upload.html'>FileUpload</a></s></code>.
  *
  * @function UiApp.FileUpload#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.FileUpload} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/file-upload.html'>FileUpload</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.FlexTable
@@ -7117,8 +7508,9 @@
  <p>This will cause an error if the row does not exist.
  *
  * @function UiApp.FlexTable#addCell
+ * @deprecated
  *
- * @param {number} row - the row to which the new cell will be added.
+ * @param {IntegerNum} row - the row to which the new cell will be added.
  *
  * @return {UiApp.FlexTable} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> itself, useful for chaining.
  */
@@ -7172,6 +7564,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.FlexTable#addClickHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -7185,6 +7578,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.FlexTable#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -7198,6 +7592,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.FlexTable#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -7208,6 +7603,7 @@
  * Remove all widgets from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code>.
  *
  * @function UiApp.FlexTable#clear
+ * @deprecated
  *
  * @return {UiApp.FlexTable} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> itself, useful for chaining.
  */
@@ -7219,6 +7615,7 @@
  object.
  *
  * @function UiApp.FlexTable#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -7227,6 +7624,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code>.
  *
  * @function UiApp.FlexTable#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -7235,6 +7633,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.FlexTable#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -7245,9 +7644,10 @@
  <p>This will cause an error if either the row or column do not exist.
  *
  * @function UiApp.FlexTable#insertCell
+ * @deprecated
  *
- * @param {number} beforeRow - the row before which the new cell will be added.
- * @param {number} beforeColumn - the column before which the new cell will be added.
+ * @param {IntegerNum} beforeRow - the row before which the new cell will be added.
+ * @param {IntegerNum} beforeColumn - the column before which the new cell will be added.
  *
  * @return {UiApp.FlexTable} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> itself, useful for chaining.
  */
@@ -7258,8 +7658,9 @@
  <p>This will cause an error if the row does not exist.
  *
  * @function UiApp.FlexTable#insertRow
+ * @deprecated
  *
- * @param {number} beforeRow - the row before which the new row will be added.
+ * @param {IntegerNum} beforeRow - the row before which the new row will be added.
  *
  * @return {UiApp.FlexTable} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> itself, useful for chaining.
  */
@@ -7268,9 +7669,10 @@
  * Removes the specified cell from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code>.
  *
  * @function UiApp.FlexTable#removeCell
+ * @deprecated
  *
- * @param {number} row - the row of the cell to remove.
- * @param {number} column - the column of the cell to remove.
+ * @param {IntegerNum} row - the row of the cell to remove.
+ * @param {IntegerNum} column - the column of the cell to remove.
  *
  * @return {UiApp.FlexTable} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> itself, useful for chaining.
  */
@@ -7279,10 +7681,11 @@
  * Removes a number of cells from one row in the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code>.
  *
  * @function UiApp.FlexTable#removeCells
+ * @deprecated
  *
- * @param {number} row - the row of the cells to be removed.
- * @param {number} column - the column of the first cell to be removed.
- * @param {number} num - the number of cells to be removed.
+ * @param {IntegerNum} row - the row of the cells to be removed.
+ * @param {IntegerNum} column - the column of the first cell to be removed.
+ * @param {IntegerNum} num - the number of cells to be removed.
  *
  * @return {UiApp.FlexTable} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> itself, useful for chaining.
  */
@@ -7291,8 +7694,9 @@
  * Removes the specified row from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code>.
  *
  * @function UiApp.FlexTable#removeRow
+ * @deprecated
  *
- * @param {number} row - the row to be removed.
+ * @param {IntegerNum} row - the row to be removed.
  *
  * @return {UiApp.FlexTable} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> itself, useful for chaining.
  */
@@ -7301,8 +7705,9 @@
  * Sets the border width.
  *
  * @function UiApp.FlexTable#setBorderWidth
+ * @deprecated
  *
- * @param {number} width - the border width, in pixels.
+ * @param {IntegerNum} width - the border width, in pixels.
  *
  * @return {UiApp.FlexTable} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> itself, useful for chaining.
  */
@@ -7311,8 +7716,9 @@
  * Sets the padding within cells.
  *
  * @function UiApp.FlexTable#setCellPadding
+ * @deprecated
  *
- * @param {number} padding - the padding, in pixels.
+ * @param {IntegerNum} padding - the padding, in pixels.
  *
  * @return {UiApp.FlexTable} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> itself, useful for chaining.
  */
@@ -7321,8 +7727,9 @@
  * Sets the spacing between cells.
  *
  * @function UiApp.FlexTable#setCellSpacing
+ * @deprecated
  *
- * @param {number} spacing - the spacing, in pixels.
+ * @param {IntegerNum} spacing - the spacing, in pixels.
  *
  * @return {UiApp.FlexTable} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> itself, useful for chaining.
  */
@@ -7331,8 +7738,9 @@
  * Sets a CSS style on a column of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code>.
  *
  * @function UiApp.FlexTable#setColumnStyleAttribute
+ * @deprecated
  *
- * @param {number} column - the column number.
+ * @param {IntegerNum} column - the column number.
  * @param {String} attribute - the CSS attribute, in camelCase. ("fontSize", not "font-size").
  * @param {String} value - the CSS value
  *
@@ -7343,8 +7751,9 @@
  * Sets a CSS style on a column of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code>.
  *
  * @function UiApp.FlexTable#setColumnStyleAttributes
+ * @deprecated
  *
- * @param {number} column - the column number.
+ * @param {IntegerNum} column - the column number.
  * @param {Object} attributes - the CSS attributes and values to set.
  *
  * @return {UiApp.FlexTable} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> itself, useful for chaining.
@@ -7354,6 +7763,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code>.
  *
  * @function UiApp.FlexTable#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -7364,6 +7774,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code>.
  *
  * @function UiApp.FlexTable#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> from
      app.getElementById(id).
@@ -7377,8 +7788,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.FlexTable#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.FlexTable} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> itself, useful for chaining.
  */
@@ -7387,9 +7799,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> in pixels.
  *
  * @function UiApp.FlexTable#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.FlexTable} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> itself, useful for chaining.
  */
@@ -7398,8 +7811,9 @@
  * Sets a CSS style on a row of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code>.
  *
  * @function UiApp.FlexTable#setRowStyleAttribute
+ * @deprecated
  *
- * @param {number} row - the row number.
+ * @param {IntegerNum} row - the row number.
  * @param {String} attribute - the CSS attribute, in camelCase. ("fontSize", not "font-size").
  * @param {String} value - the CSS value
  *
@@ -7410,8 +7824,9 @@
  * Sets a CSS style on a row of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code>.
  *
  * @function UiApp.FlexTable#setRowStyleAttributes
+ * @deprecated
  *
- * @param {number} row - the row number.
+ * @param {IntegerNum} row - the row number.
  * @param {Object} attributes - the CSS attributes and values to set.
  *
  * @return {UiApp.FlexTable} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> itself, useful for chaining.
@@ -7421,6 +7836,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code>.
  *
  * @function UiApp.FlexTable#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -7432,9 +7848,10 @@
  * Sets a CSS style on a cell of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code>.
  *
  * @function UiApp.FlexTable#setStyleAttribute
+ * @deprecated
  *
- * @param {number} row - the row of the cell.
- * @param {number} column - the column of the cell.
+ * @param {IntegerNum} row - the row of the cell.
+ * @param {IntegerNum} column - the column of the cell.
  * @param {String} attribute - the CSS attribute, in camelCase. ("fontSize", not "font-size").
  * @param {String} value - the CSS value
  *
@@ -7453,6 +7870,7 @@
  </code></pre>
  *
  * @function UiApp.FlexTable#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -7465,9 +7883,10 @@
  * Sets a CSS style on a cell of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code>.
  *
  * @function UiApp.FlexTable#setStyleAttributes
+ * @deprecated
  *
- * @param {number} row - the row of the cell.
- * @param {number} column - the column of the cell.
+ * @param {IntegerNum} row - the row of the cell.
+ * @param {IntegerNum} column - the column of the cell.
  * @param {Object} attributes - the CSS attributes and values to set.
  *
  * @return {UiApp.FlexTable} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> itself, useful for chaining.
@@ -7485,6 +7904,7 @@
  </code></pre>
  *
  * @function UiApp.FlexTable#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -7499,6 +7919,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.FlexTable#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -7512,6 +7933,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.FlexTable#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -7522,6 +7944,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code>.
  *
  * @function UiApp.FlexTable#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -7533,9 +7956,10 @@
  one was there.
  *
  * @function UiApp.FlexTable#setText
+ * @deprecated
  *
- * @param {number} row - the row of the cell.
- * @param {number} column - the column of the cell.
+ * @param {IntegerNum} row - the row of the cell.
+ * @param {IntegerNum} column - the column of the cell.
  * @param {String} text - the text to insert.
  *
  * @return {UiApp.FlexTable} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> itself, useful for chaining.
@@ -7547,6 +7971,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.FlexTable#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -7557,6 +7982,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> is visible.
  *
  * @function UiApp.FlexTable#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> should be visible or not.
  *
@@ -7567,9 +7993,10 @@
  * Sets the widget in a given cell. A cell can contain at most one widget.
  *
  * @function UiApp.FlexTable#setWidget
+ * @deprecated
  *
- * @param {number} row - the row of the cell.
- * @param {number} column - the column of the cell.
+ * @param {IntegerNum} row - the row of the cell.
+ * @param {IntegerNum} column - the column of the cell.
  * @param {UiApp.Widget} widget - the widget to insert.
  *
  * @return {UiApp.FlexTable} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> itself, useful for chaining.
@@ -7579,11 +8006,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code>.
  *
  * @function UiApp.FlexTable#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.FlexTable} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.FlowPanel
@@ -7593,6 +8022,7 @@
  * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code>.
  *
  * @function UiApp.FlowPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  *
@@ -7606,6 +8036,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.FlowPanel#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -7619,6 +8050,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.FlowPanel#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -7629,6 +8061,7 @@
  * Remove all widgets from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code>.
  *
  * @function UiApp.FlowPanel#clear
+ * @deprecated
  *
  * @return {UiApp.FlowPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code> itself, useful for chaining.
  */
@@ -7640,6 +8073,7 @@
  object.
  *
  * @function UiApp.FlowPanel#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -7648,6 +8082,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code>.
  *
  * @function UiApp.FlowPanel#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -7656,6 +8091,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.FlowPanel#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -7664,9 +8100,10 @@
  * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code> at a specific index.
  *
  * @function UiApp.FlowPanel#insert
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
- * @param {number} beforeIndex - the index to insert the widget before.
+ * @param {IntegerNum} beforeIndex - the index to insert the widget before.
  *
  * @return {UiApp.FlowPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code> itself, useful for chaining.
  */
@@ -7676,8 +8113,9 @@
  This will fail if the index is greater than or equal to the number of elements in the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code>.
  *
  * @function UiApp.FlowPanel#remove
+ * @deprecated
  *
- * @param {number} index - the index of the widget to remove.
+ * @param {IntegerNum} index - the index of the widget to remove.
  *
  * @return {UiApp.FlowPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code> itself, useful for chaining.
  */
@@ -7687,6 +8125,7 @@
  actually a child of the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code>.
  *
  * @function UiApp.FlowPanel#remove
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to remove.
  *
@@ -7697,6 +8136,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code>.
  *
  * @function UiApp.FlowPanel#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -7707,6 +8147,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code>.
  *
  * @function UiApp.FlowPanel#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code> from
      app.getElementById(id).
@@ -7720,8 +8161,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.FlowPanel#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.FlowPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code> itself, useful for chaining.
  */
@@ -7730,9 +8172,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code> in pixels.
  *
  * @function UiApp.FlowPanel#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.FlowPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code> itself, useful for chaining.
  */
@@ -7741,6 +8184,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code>.
  *
  * @function UiApp.FlowPanel#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -7760,6 +8204,7 @@
  </code></pre>
  *
  * @function UiApp.FlowPanel#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -7780,6 +8225,7 @@
  </code></pre>
  *
  * @function UiApp.FlowPanel#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -7794,6 +8240,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.FlowPanel#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -7807,6 +8254,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.FlowPanel#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -7817,6 +8265,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code>.
  *
  * @function UiApp.FlowPanel#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -7829,6 +8278,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.FlowPanel#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -7839,6 +8289,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code> is visible.
  *
  * @function UiApp.FlowPanel#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code> should be visible or not.
  *
@@ -7849,11 +8300,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code>.
  *
  * @function UiApp.FlowPanel#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.FlowPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.FocusPanel
@@ -7863,6 +8316,7 @@
  * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code>.
  *
  * @function UiApp.FocusPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  *
@@ -7902,6 +8356,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.FocusPanel#addBlurHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -7957,6 +8412,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.FocusPanel#addClickHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -7996,6 +8452,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.FocusPanel#addFocusHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -8046,6 +8503,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.FocusPanel#addKeyDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -8096,6 +8554,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.FocusPanel#addKeyPressHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -8146,6 +8605,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.FocusPanel#addKeyUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -8201,6 +8661,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.FocusPanel#addMouseDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -8256,6 +8717,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.FocusPanel#addMouseMoveHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -8311,6 +8773,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.FocusPanel#addMouseOutHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -8366,6 +8829,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.FocusPanel#addMouseOverHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -8421,6 +8885,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.FocusPanel#addMouseUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -8476,6 +8941,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.FocusPanel#addMouseWheelHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -8489,6 +8955,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.FocusPanel#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -8502,6 +8969,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.FocusPanel#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -8512,6 +8980,7 @@
  * Remove all widgets from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code>.
  *
  * @function UiApp.FocusPanel#clear
+ * @deprecated
  *
  * @return {UiApp.FocusPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code> itself, useful for chaining.
  */
@@ -8523,6 +8992,7 @@
  object.
  *
  * @function UiApp.FocusPanel#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -8531,6 +9001,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code>.
  *
  * @function UiApp.FocusPanel#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -8539,6 +9010,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.FocusPanel#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -8548,6 +9020,7 @@
  modifier key) to automatically focus the widget.
  *
  * @function UiApp.FocusPanel#setAccessKey
+ * @deprecated
  *
  * @param {Char} accessKey - the character to use for focus
  *
@@ -8561,6 +9034,7 @@
  events.
  *
  * @function UiApp.FocusPanel#setFocus
+ * @deprecated
  *
  * @param {Boolean} focus - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code> should have the current focus.
  *
@@ -8571,6 +9045,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code>.
  *
  * @function UiApp.FocusPanel#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -8581,6 +9056,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code>.
  *
  * @function UiApp.FocusPanel#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code> from
      app.getElementById(id).
@@ -8594,8 +9070,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.FocusPanel#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.FocusPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code> itself, useful for chaining.
  */
@@ -8604,9 +9081,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code> in pixels.
  *
  * @function UiApp.FocusPanel#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.FocusPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code> itself, useful for chaining.
  */
@@ -8615,6 +9093,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code>.
  *
  * @function UiApp.FocusPanel#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -8634,6 +9113,7 @@
  </code></pre>
  *
  * @function UiApp.FocusPanel#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -8654,6 +9134,7 @@
  </code></pre>
  *
  * @function UiApp.FocusPanel#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -8668,6 +9149,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.FocusPanel#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -8681,6 +9163,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.FocusPanel#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -8695,8 +9178,9 @@
  order.
  *
  * @function UiApp.FocusPanel#setTabIndex
+ * @deprecated
  *
- * @param {number} index - the new tab index.
+ * @param {IntegerNum} index - the new tab index.
  *
  * @return {UiApp.FocusPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code> itself, useful for chaining.
  */
@@ -8705,6 +9189,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code>.
  *
  * @function UiApp.FocusPanel#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -8717,6 +9202,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.FocusPanel#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -8727,6 +9213,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code> is visible.
  *
  * @function UiApp.FocusPanel#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code> should be visible or not.
  *
@@ -8737,6 +9224,7 @@
  * Sets the widget inside this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code>, removing anything previously there.
  *
  * @function UiApp.FocusPanel#setWidget
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to put in this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code>.
  *
@@ -8747,11 +9235,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code>.
  *
  * @function UiApp.FocusPanel#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.FocusPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.FormPanel
@@ -8761,6 +9251,7 @@
  * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/form-panel.html'>FormPanel</a></s></code>.
  *
  * @function UiApp.FormPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  *
@@ -8774,6 +9265,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.FormPanel#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -8787,6 +9279,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.FormPanel#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -8831,6 +9324,7 @@
  event, as "callback elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.FormPanel#addSubmitCompleteHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -8874,6 +9368,7 @@
  event, as "callback elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.FormPanel#addSubmitHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -8884,6 +9379,7 @@
  * Remove all widgets from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/form-panel.html'>FormPanel</a></s></code>.
  *
  * @function UiApp.FormPanel#clear
+ * @deprecated
  *
  * @return {UiApp.FormPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/form-panel.html'>FormPanel</a></s></code> itself, useful for chaining.
  */
@@ -8895,6 +9391,7 @@
  object.
  *
  * @function UiApp.FormPanel#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -8903,6 +9400,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/form-panel.html'>FormPanel</a></s></code>.
  *
  * @function UiApp.FormPanel#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -8911,6 +9409,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.FormPanel#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -8922,6 +9421,7 @@
  "doPost" method.
  *
  * @function UiApp.FormPanel#setAction
+ * @deprecated
  *
  * @param {String} action - the URL to submit the form to. May either be a relative URL or an absolute URL
      with an HTTP or HTTPS scheme.
@@ -8936,6 +9436,7 @@
  the default. There is rarely a reason to change this setting.
  *
  * @function UiApp.FormPanel#setEncoding
+ * @deprecated
  *
  * @param {String} encoding - the encoding to use.
  *
@@ -8946,6 +9447,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/form-panel.html'>FormPanel</a></s></code>.
  *
  * @function UiApp.FormPanel#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -8956,6 +9458,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/form-panel.html'>FormPanel</a></s></code>.
  *
  * @function UiApp.FormPanel#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/form-panel.html'>FormPanel</a></s></code> from
      app.getElementById(id).
@@ -8969,8 +9472,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.FormPanel#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.FormPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/form-panel.html'>FormPanel</a></s></code> itself, useful for chaining.
  */
@@ -8981,6 +9485,7 @@
  <p>Valid values are "get" and "post". The default is "post".
  *
  * @function UiApp.FormPanel#setMethod
+ * @deprecated
  *
  * @param {String} method - the HTTP method to use.
  *
@@ -8991,9 +9496,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/form-panel.html'>FormPanel</a></s></code> in pixels.
  *
  * @function UiApp.FormPanel#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.FormPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/form-panel.html'>FormPanel</a></s></code> itself, useful for chaining.
  */
@@ -9002,6 +9508,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/form-panel.html'>FormPanel</a></s></code>.
  *
  * @function UiApp.FormPanel#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -9021,6 +9528,7 @@
  </code></pre>
  *
  * @function UiApp.FormPanel#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -9041,6 +9549,7 @@
  </code></pre>
  *
  * @function UiApp.FormPanel#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -9055,6 +9564,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.FormPanel#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -9068,6 +9578,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.FormPanel#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -9078,6 +9589,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/form-panel.html'>FormPanel</a></s></code>.
  *
  * @function UiApp.FormPanel#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -9090,6 +9602,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.FormPanel#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -9100,6 +9613,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/form-panel.html'>FormPanel</a></s></code> is visible.
  *
  * @function UiApp.FormPanel#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/form-panel.html'>FormPanel</a></s></code> should be visible or not.
  *
@@ -9110,6 +9624,7 @@
  * Sets the widget inside this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/form-panel.html'>FormPanel</a></s></code>, removing anything previously there.
  *
  * @function UiApp.FormPanel#setWidget
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to put in this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/form-panel.html'>FormPanel</a></s></code>.
  *
@@ -9120,11 +9635,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/form-panel.html'>FormPanel</a></s></code>.
  *
  * @function UiApp.FormPanel#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.FormPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/form-panel.html'>FormPanel</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.Grid
@@ -9179,6 +9696,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Grid#addClickHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -9192,6 +9710,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Grid#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -9205,6 +9724,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Grid#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -9215,6 +9735,7 @@
  * Remove all widgets from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code>.
  *
  * @function UiApp.Grid#clear
+ * @deprecated
  *
  * @return {UiApp.Grid} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code> itself, useful for chaining.
  */
@@ -9226,6 +9747,7 @@
  object.
  *
  * @function UiApp.Grid#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -9234,6 +9756,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code>.
  *
  * @function UiApp.Grid#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -9242,6 +9765,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.Grid#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -9250,9 +9774,10 @@
  * Resizes the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code>.
  *
  * @function UiApp.Grid#resize
+ * @deprecated
  *
- * @param {number} rows - the new number of rows.
- * @param {number} columns - the new number of columns.
+ * @param {IntegerNum} rows - the new number of rows.
+ * @param {IntegerNum} columns - the new number of columns.
  *
  * @return {UiApp.Grid} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code> itself, useful for chaining.
  */
@@ -9261,8 +9786,9 @@
  * Sets the border width.
  *
  * @function UiApp.Grid#setBorderWidth
+ * @deprecated
  *
- * @param {number} width - the border width, in pixels.
+ * @param {IntegerNum} width - the border width, in pixels.
  *
  * @return {UiApp.Grid} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code> itself, useful for chaining.
  */
@@ -9271,8 +9797,9 @@
  * Sets the padding within cells.
  *
  * @function UiApp.Grid#setCellPadding
+ * @deprecated
  *
- * @param {number} padding - the padding, in pixels.
+ * @param {IntegerNum} padding - the padding, in pixels.
  *
  * @return {UiApp.Grid} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code> itself, useful for chaining.
  */
@@ -9281,8 +9808,9 @@
  * Sets the spacing between cells.
  *
  * @function UiApp.Grid#setCellSpacing
+ * @deprecated
  *
- * @param {number} spacing - the spacing, in pixels.
+ * @param {IntegerNum} spacing - the spacing, in pixels.
  *
  * @return {UiApp.Grid} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code> itself, useful for chaining.
  */
@@ -9291,8 +9819,9 @@
  * Sets a CSS style on a column of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code>.
  *
  * @function UiApp.Grid#setColumnStyleAttribute
+ * @deprecated
  *
- * @param {number} column - the column number.
+ * @param {IntegerNum} column - the column number.
  * @param {String} attribute - the CSS attribute, in camelCase. ("fontSize", not "font-size").
  * @param {String} value - the CSS value
  *
@@ -9303,8 +9832,9 @@
  * Sets a CSS style on a column of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code>.
  *
  * @function UiApp.Grid#setColumnStyleAttributes
+ * @deprecated
  *
- * @param {number} column - the column number.
+ * @param {IntegerNum} column - the column number.
  * @param {Object} attributes - the CSS attributes and values to set.
  *
  * @return {UiApp.Grid} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code> itself, useful for chaining.
@@ -9314,6 +9844,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code>.
  *
  * @function UiApp.Grid#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -9324,6 +9855,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code>.
  *
  * @function UiApp.Grid#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code> from
      app.getElementById(id).
@@ -9337,8 +9869,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.Grid#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.Grid} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code> itself, useful for chaining.
  */
@@ -9347,9 +9880,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code> in pixels.
  *
  * @function UiApp.Grid#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.Grid} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code> itself, useful for chaining.
  */
@@ -9358,8 +9892,9 @@
  * Sets a CSS style on a row of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code>.
  *
  * @function UiApp.Grid#setRowStyleAttribute
+ * @deprecated
  *
- * @param {number} row - the row number.
+ * @param {IntegerNum} row - the row number.
  * @param {String} attribute - the CSS attribute, in camelCase. ("fontSize", not "font-size").
  * @param {String} value - the CSS value
  *
@@ -9370,8 +9905,9 @@
  * Sets a CSS style on a row of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code>.
  *
  * @function UiApp.Grid#setRowStyleAttributes
+ * @deprecated
  *
- * @param {number} row - the row number.
+ * @param {IntegerNum} row - the row number.
  * @param {Object} attributes - the CSS attributes and values to set.
  *
  * @return {UiApp.Grid} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code> itself, useful for chaining.
@@ -9381,6 +9917,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code>.
  *
  * @function UiApp.Grid#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -9392,9 +9929,10 @@
  * Sets a CSS style on a cell of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code>.
  *
  * @function UiApp.Grid#setStyleAttribute
+ * @deprecated
  *
- * @param {number} row - the row of the cell.
- * @param {number} column - the column of the cell.
+ * @param {IntegerNum} row - the row of the cell.
+ * @param {IntegerNum} column - the column of the cell.
  * @param {String} attribute - the CSS attribute, in camelCase. ("fontSize", not "font-size").
  * @param {String} value - the CSS value
  *
@@ -9413,6 +9951,7 @@
  </code></pre>
  *
  * @function UiApp.Grid#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -9425,9 +9964,10 @@
  * Sets a CSS style on a cell of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code>.
  *
  * @function UiApp.Grid#setStyleAttributes
+ * @deprecated
  *
- * @param {number} row - the row of the cell.
- * @param {number} column - the column of the cell.
+ * @param {IntegerNum} row - the row of the cell.
+ * @param {IntegerNum} column - the column of the cell.
  * @param {Object} attributes - the CSS attributes and values to set.
  *
  * @return {UiApp.Grid} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code> itself, useful for chaining.
@@ -9445,6 +9985,7 @@
  </code></pre>
  *
  * @function UiApp.Grid#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -9459,6 +10000,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Grid#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -9472,6 +10014,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Grid#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -9482,6 +10025,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code>.
  *
  * @function UiApp.Grid#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -9493,9 +10037,10 @@
  one was there.
  *
  * @function UiApp.Grid#setText
+ * @deprecated
  *
- * @param {number} row - the row of the cell.
- * @param {number} column - the column of the cell.
+ * @param {IntegerNum} row - the row of the cell.
+ * @param {IntegerNum} column - the column of the cell.
  * @param {String} text - the text to insert.
  *
  * @return {UiApp.Grid} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code> itself, useful for chaining.
@@ -9507,6 +10052,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.Grid#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -9517,6 +10063,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code> is visible.
  *
  * @function UiApp.Grid#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code> should be visible or not.
  *
@@ -9527,9 +10074,10 @@
  * Sets the widget in a given cell. A cell can contain at most one widget.
  *
  * @function UiApp.Grid#setWidget
+ * @deprecated
  *
- * @param {number} row - the row of the cell.
- * @param {number} column - the column of the cell.
+ * @param {IntegerNum} row - the row of the cell.
+ * @param {IntegerNum} column - the column of the cell.
  * @param {UiApp.Widget} widget - the widget to insert.
  *
  * @return {UiApp.Grid} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code> itself, useful for chaining.
@@ -9539,11 +10087,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code>.
  *
  * @function UiApp.Grid#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.Grid} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.HTML
@@ -9598,6 +10148,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.HTML#addClickHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -9653,6 +10204,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.HTML#addMouseDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -9708,6 +10260,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.HTML#addMouseMoveHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -9763,6 +10316,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.HTML#addMouseOutHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -9818,6 +10372,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.HTML#addMouseOverHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -9873,6 +10428,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.HTML#addMouseUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -9928,6 +10484,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.HTML#addMouseWheelHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -9941,6 +10498,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.HTML#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -9954,6 +10512,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.HTML#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -9967,6 +10526,7 @@
  object.
  *
  * @function UiApp.HTML#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -9975,6 +10535,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/html.html'>HTML</a></s></code>.
  *
  * @function UiApp.HTML#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -9983,6 +10544,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.HTML#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -9991,6 +10553,7 @@
  * Set the text direction.
  *
  * @function UiApp.HTML#setDirection
+ * @deprecated
  *
  * @param {UiApp.Component} direction - the text direction
  *
@@ -10001,6 +10564,7 @@
  * Sets the HTML content of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/html.html'>HTML</a></s></code>.
  *
  * @function UiApp.HTML#setHTML
+ * @deprecated
  *
  * @param {String} html - the new HTML
  *
@@ -10011,6 +10575,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/html.html'>HTML</a></s></code>.
  *
  * @function UiApp.HTML#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -10021,6 +10586,7 @@
  * Set the horizontal text alignment of the display text of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/html.html'>HTML</a></s></code>.
  *
  * @function UiApp.HTML#setHorizontalAlignment
+ * @deprecated
  *
  * @param {UiApp.HorizontalAlignment} horizontalAlignment - the desired alignment, such as UiApp.HorizontalAlignment.CENTER.
  *
@@ -10031,6 +10597,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/html.html'>HTML</a></s></code>.
  *
  * @function UiApp.HTML#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/html.html'>HTML</a></s></code> from
      app.getElementById(id).
@@ -10044,8 +10611,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.HTML#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.HTML} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/html.html'>HTML</a></s></code> itself, useful for chaining.
  */
@@ -10054,9 +10622,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/html.html'>HTML</a></s></code> in pixels.
  *
  * @function UiApp.HTML#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.HTML} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/html.html'>HTML</a></s></code> itself, useful for chaining.
  */
@@ -10065,6 +10634,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/html.html'>HTML</a></s></code>.
  *
  * @function UiApp.HTML#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -10084,6 +10654,7 @@
  </code></pre>
  *
  * @function UiApp.HTML#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -10104,6 +10675,7 @@
  </code></pre>
  *
  * @function UiApp.HTML#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -10118,6 +10690,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.HTML#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -10131,6 +10704,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.HTML#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -10141,6 +10715,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/html.html'>HTML</a></s></code>.
  *
  * @function UiApp.HTML#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -10151,6 +10726,7 @@
  * Set the display text of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/html.html'>HTML</a></s></code>.
  *
  * @function UiApp.HTML#setText
+ * @deprecated
  *
  * @param {String} text - the new text.
  *
@@ -10163,6 +10739,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.HTML#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -10173,6 +10750,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/html.html'>HTML</a></s></code> is visible.
  *
  * @function UiApp.HTML#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/html.html'>HTML</a></s></code> should be visible or not.
  *
@@ -10183,6 +10761,7 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/html.html'>HTML</a></s></code>.
  *
  * @function UiApp.HTML#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
@@ -10193,11 +10772,13 @@
  * Set whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/html.html'>HTML</a></s></code> wraps its text.
  *
  * @function UiApp.HTML#setWordWrap
+ * @deprecated
  *
  * @param {Boolean} wordWrap - whether to wrap.
  *
  * @return {UiApp.HTML} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/html.html'>HTML</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.Handler
@@ -10210,6 +10791,7 @@
  object.
  *
  * @function UiApp.Handler#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -10218,6 +10800,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/handler.html'>Handler</a></s></code>.
  *
  * @function UiApp.Handler#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -10226,6 +10809,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.Handler#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -10234,6 +10818,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/handler.html'>Handler</a></s></code>.
  *
  * @function UiApp.Handler#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/handler.html'>Handler</a></s></code> from
      app.getElementById(id).
@@ -10245,6 +10830,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/handler.html'>Handler</a></s></code>.
  *
  * @function UiApp.Handler#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -10257,6 +10843,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.Handler#validateEmail
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  *
@@ -10269,6 +10856,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.Handler#validateInteger
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  *
@@ -10282,10 +10870,11 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.Handler#validateLength
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
- * @param {number} min - the minimum length. If null, no minimum is enforced.
- * @param {number} max - the maximum length. If null, no maximum is enforced.
+ * @param {IntegerNum} min - the minimum length. If null, no minimum is enforced.
+ * @param {IntegerNum} max - the maximum length. If null, no maximum is enforced.
  *
  * @return {UiApp.Handler} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/handler.html'>Handler</a></s></code> itself, useful for chaining.
  */
@@ -10296,6 +10885,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.Handler#validateMatches
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String} pattern - the regex to test, as a string.
@@ -10309,6 +10899,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.Handler#validateMatches
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String} pattern - the regex to test, as a string.
@@ -10323,6 +10914,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.Handler#validateNotEmail
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  *
@@ -10335,6 +10927,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.Handler#validateNotInteger
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  *
@@ -10348,10 +10941,11 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.Handler#validateNotLength
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
- * @param {number} min - the minimum length. If null, no minimum is enforced.
- * @param {number} max - the maximum length. If null, no maximum is enforced.
+ * @param {IntegerNum} min - the minimum length. If null, no minimum is enforced.
+ * @param {IntegerNum} max - the maximum length. If null, no maximum is enforced.
  *
  * @return {UiApp.Handler} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/handler.html'>Handler</a></s></code> itself, useful for chaining.
  */
@@ -10363,6 +10957,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.Handler#validateNotMatches
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String} pattern - the regex to test, as a string.
@@ -10377,6 +10972,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.Handler#validateNotMatches
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String} pattern - the regex to test, as a string.
@@ -10391,6 +10987,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.Handler#validateNotNumber
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  *
@@ -10404,6 +11001,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.Handler#validateNotOptions
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String[]} options - the list of unacceptable values
@@ -10418,6 +11016,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.Handler#validateNotRange
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {Number} min - the minimum length. If null, no minimum is enforced.
@@ -10433,9 +11032,10 @@
  <p>This will cause an error if any of the widgets do not have a text property.
  *
  * @function UiApp.Handler#validateNotSum
+ * @deprecated
  *
  * @param {UiApp.Widget[]} widgets - an array of the widgets to validate on.
- * @param {number} sum - the sum to validate with
+ * @param {IntegerNum} sum - the sum to validate with
  *
  * @return {UiApp.Handler} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/handler.html'>Handler</a></s></code> itself, useful for chaining.
  */
@@ -10446,6 +11046,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.Handler#validateNumber
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  *
@@ -10459,6 +11060,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.Handler#validateOptions
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String[]} options - the list of acceptable values
@@ -10473,6 +11075,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.Handler#validateRange
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {Number} min - the minimum length. If null, no minimum is enforced.
@@ -10488,12 +11091,14 @@
  <p>This will cause an error if any of the widgets do not have a text property.
  *
  * @function UiApp.Handler#validateSum
+ * @deprecated
  *
  * @param {UiApp.Widget[]} widgets - an array of the widgets to validate on.
- * @param {number} sum - the sum to validate with
+ * @param {IntegerNum} sum - the sum to validate with
  *
  * @return {UiApp.Handler} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/handler.html'>Handler</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.Hidden
@@ -10503,8 +11108,9 @@
  * This method is deprecated and has no effect for <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code> widgets.
  *
  * @function UiApp.Hidden#addStyleDependentName
+ * @deprecated
  *
- * @param {String} styleName - 
+ * @param {String} styleName
  *
  * @return {UiApp.Hidden} this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code>, for chaining.
  */
@@ -10513,8 +11119,9 @@
  * This method is deprecated and has no effect for <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code> widgets.
  *
  * @function UiApp.Hidden#addStyleName
+ * @deprecated
  *
- * @param {String} styleName - 
+ * @param {String} styleName
  *
  * @return {UiApp.Hidden} this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code>, for chaining.
  */
@@ -10526,6 +11133,7 @@
  object.
  *
  * @function UiApp.Hidden#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -10534,6 +11142,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code>.
  *
  * @function UiApp.Hidden#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -10542,6 +11151,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.Hidden#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -10550,6 +11160,7 @@
  * Set the default value of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code> if nothing else is set.
  *
  * @function UiApp.Hidden#setDefaultValue
+ * @deprecated
  *
  * @param {String} value - the new default value.
  *
@@ -10560,8 +11171,9 @@
  * This method is deprecated and has no effect for <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code> widgets.
  *
  * @function UiApp.Hidden#setHeight
+ * @deprecated
  *
- * @param {String} height - 
+ * @param {String} height
  *
  * @return {UiApp.Hidden} this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code>, for chaining.
  */
@@ -10572,6 +11184,7 @@
  <p>Note that this is not the same as setId with a lowercase 'd'.
  *
  * @function UiApp.Hidden#setID
+ * @deprecated
  *
  * @param {String} id - the new id.
  *
@@ -10582,6 +11195,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code>.
  *
  * @function UiApp.Hidden#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code> from
      app.getElementById(id).
@@ -10595,8 +11209,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.Hidden#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.Hidden} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code> itself, useful for chaining.
  */
@@ -10606,6 +11221,7 @@
  FormPanel or as a callback element on an event handler.
  *
  * @function UiApp.Hidden#setName
+ * @deprecated
  *
  * @param {String} name - the new name.
  *
@@ -10616,9 +11232,10 @@
  * This method is deprecated and has no effect for <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code> widgets.
  *
  * @function UiApp.Hidden#setPixelSize
+ * @deprecated
  *
- * @param {number} width - 
- * @param {number} height - 
+ * @param {IntegerNum} width
+ * @param {IntegerNum} height
  *
  * @return {UiApp.Hidden} this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code>, for chaining.
  */
@@ -10627,9 +11244,10 @@
  * This method is deprecated and has no effect for <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code> widgets.
  *
  * @function UiApp.Hidden#setSize
+ * @deprecated
  *
- * @param {String} width - 
- * @param {String} height - 
+ * @param {String} width
+ * @param {String} height
  *
  * @return {UiApp.Hidden} this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code>, for chaining.
  */
@@ -10638,9 +11256,10 @@
  * This method is deprecated and has no effect for <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code> widgets.
  *
  * @function UiApp.Hidden#setStyleAttribute
+ * @deprecated
  *
- * @param {String} attribute - 
- * @param {String} value - 
+ * @param {String} attribute
+ * @param {String} value
  *
  * @return {UiApp.Hidden} this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code>, for chaining.
  */
@@ -10657,6 +11276,7 @@
  </code></pre>
  *
  * @function UiApp.Hidden#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -10668,8 +11288,9 @@
  * This method is deprecated and has no effect for <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code> widgets.
  *
  * @function UiApp.Hidden#setStyleName
+ * @deprecated
  *
- * @param {String} styleName - 
+ * @param {String} styleName
  *
  * @return {UiApp.Hidden} this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code>, for chaining.
  */
@@ -10678,8 +11299,9 @@
  * This method is deprecated and has no effect for <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code> widgets.
  *
  * @function UiApp.Hidden#setStylePrimaryName
+ * @deprecated
  *
- * @param {String} styleName - 
+ * @param {String} styleName
  *
  * @return {UiApp.Hidden} this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code>, for chaining.
  */
@@ -10688,6 +11310,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code>.
  *
  * @function UiApp.Hidden#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -10698,8 +11321,9 @@
  * This method is deprecated and has no effect for <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code> widgets.
  *
  * @function UiApp.Hidden#setTitle
+ * @deprecated
  *
- * @param {String} title - 
+ * @param {String} title
  *
  * @return {UiApp.Hidden} this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code>, for chaining.
  */
@@ -10708,6 +11332,7 @@
  * Sets the value of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code>.
  *
  * @function UiApp.Hidden#setValue
+ * @deprecated
  *
  * @param {String} value - the new value.
  *
@@ -10718,8 +11343,9 @@
  * This method is deprecated and has no effect for <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code> widgets.
  *
  * @function UiApp.Hidden#setVisible
+ * @deprecated
  *
- * @param {Boolean} visible - 
+ * @param {Boolean} visible
  *
  * @return {UiApp.Hidden} this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code>, for chaining.
  */
@@ -10728,11 +11354,60 @@
  * This method is deprecated and has no effect for <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code> widgets.
  *
  * @function UiApp.Hidden#setWidth
+ * @deprecated
  *
- * @param {String} width - 
+ * @param {String} width
  *
  * @return {UiApp.Hidden} this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code>, for chaining.
  */
+
+
+/**
+ * @class UiApp.HorizontalAlignment
+ */
+
+/**
+ * Use center alignment
+ *
+ * @typedef {UiApp.HorizontalAlignment} UiApp.HorizontalAlignment.CENTER
+ */
+
+/**
+ * Use default alignment
+ *
+ * @typedef {UiApp.HorizontalAlignment} UiApp.HorizontalAlignment.DEFAULT
+ */
+
+/**
+ * Use justify alignment
+ *
+ * @typedef {UiApp.HorizontalAlignment} UiApp.HorizontalAlignment.JUSTIFY
+ */
+
+/**
+ * Use left alignment
+ *
+ * @typedef {UiApp.HorizontalAlignment} UiApp.HorizontalAlignment.LEFT
+ */
+
+/**
+ * Use locale end alignment
+ *
+ * @typedef {UiApp.HorizontalAlignment} UiApp.HorizontalAlignment.LOCALE_END
+ */
+
+/**
+ * Use locale start alignment
+ *
+ * @typedef {UiApp.HorizontalAlignment} UiApp.HorizontalAlignment.LOCALE_START
+ */
+
+/**
+ * Use right alignment
+ *
+ * @typedef {UiApp.HorizontalAlignment} UiApp.HorizontalAlignment.RIGHT
+ */
+
 
 /**
  * @class UiApp.HorizontalPanel
@@ -10742,6 +11417,7 @@
  * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code>.
  *
  * @function UiApp.HorizontalPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  *
@@ -10755,6 +11431,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.HorizontalPanel#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -10768,6 +11445,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.HorizontalPanel#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -10778,6 +11456,7 @@
  * Remove all widgets from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code>.
  *
  * @function UiApp.HorizontalPanel#clear
+ * @deprecated
  *
  * @return {UiApp.HorizontalPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code> itself, useful for chaining.
  */
@@ -10789,6 +11468,7 @@
  object.
  *
  * @function UiApp.HorizontalPanel#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -10797,6 +11477,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code>.
  *
  * @function UiApp.HorizontalPanel#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -10805,6 +11486,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.HorizontalPanel#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -10814,8 +11496,9 @@
  This will fail if the index is greater than or equal to the number of elements in the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code>.
  *
  * @function UiApp.HorizontalPanel#remove
+ * @deprecated
  *
- * @param {number} index - the index of the widget to remove.
+ * @param {IntegerNum} index - the index of the widget to remove.
  *
  * @return {UiApp.HorizontalPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code> itself, useful for chaining.
  */
@@ -10825,6 +11508,7 @@
  actually a child of the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code>.
  *
  * @function UiApp.HorizontalPanel#remove
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to remove.
  *
@@ -10838,8 +11522,9 @@
  the cells that contain this panel's children.
  *
  * @function UiApp.HorizontalPanel#setBorderWidth
+ * @deprecated
  *
- * @param {number} width - the new border width, in pixels.
+ * @param {IntegerNum} width - the new border width, in pixels.
  *
  * @return {UiApp.HorizontalPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code> itself, useful for chaining.
  */
@@ -10850,6 +11535,7 @@
  <p>This will cause an error if used with a widget that is not currently a child of the panel.
  *
  * @function UiApp.HorizontalPanel#setCellHeight
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to use in identifying the cell.
  * @param {String} height - the height in any valid CSS unit, such as "10px" or "15cm".
@@ -10863,6 +11549,7 @@
  <p>This will cause an error if used with a widget that is not currently a child of the panel.
  *
  * @function UiApp.HorizontalPanel#setCellHorizontalAlignment
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to align.
  * @param {UiApp.HorizontalAlignment} horizontalAlignment - the desired alignment, such as UiApp.HorizontalAlignment.CENTER.
@@ -10876,6 +11563,7 @@
  <p>This will cause an error if used with a widget that is not currently a child of the panel.
  *
  * @function UiApp.HorizontalPanel#setCellVerticalAlignment
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to align.
  * @param {UiApp.VerticalAlignment} verticalAlignment - the desired alignment, such as UiApp.VerticalAlignment.MIDDLE.
@@ -10889,6 +11577,7 @@
  <p>This will cause an error if used with a widget that is not currently a child of the panel.
  *
  * @function UiApp.HorizontalPanel#setCellWidth
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to use in identifying the cell.
  * @param {String} width - the width in any valid CSS unit, such as "10px" or "15cm".
@@ -10900,6 +11589,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code>.
  *
  * @function UiApp.HorizontalPanel#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -10910,6 +11600,7 @@
  * Set the horizontal alignment of widgets added to this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code>.
  *
  * @function UiApp.HorizontalPanel#setHorizontalAlignment
+ * @deprecated
  *
  * @param {UiApp.HorizontalAlignment} horizontalAlignment - the desired alignment, such as UiApp.HorizontalAlignment.CENTER.
  *
@@ -10920,6 +11611,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code>.
  *
  * @function UiApp.HorizontalPanel#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code> from
      app.getElementById(id).
@@ -10933,8 +11625,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.HorizontalPanel#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.HorizontalPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code> itself, useful for chaining.
  */
@@ -10943,9 +11636,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code> in pixels.
  *
  * @function UiApp.HorizontalPanel#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.HorizontalPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code> itself, useful for chaining.
  */
@@ -10954,6 +11648,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code>.
  *
  * @function UiApp.HorizontalPanel#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -10965,8 +11660,9 @@
  * Sets the amount of spacing between this panel's cells.
  *
  * @function UiApp.HorizontalPanel#setSpacing
+ * @deprecated
  *
- * @param {number} spacing - the spacing, in pixels.
+ * @param {IntegerNum} spacing - the spacing, in pixels.
  *
  * @return {UiApp.HorizontalPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code> itself, useful for chaining.
  */
@@ -10983,6 +11679,7 @@
  </code></pre>
  *
  * @function UiApp.HorizontalPanel#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -11003,6 +11700,7 @@
  </code></pre>
  *
  * @function UiApp.HorizontalPanel#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -11017,6 +11715,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.HorizontalPanel#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -11030,6 +11729,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.HorizontalPanel#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -11040,6 +11740,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code>.
  *
  * @function UiApp.HorizontalPanel#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -11052,6 +11753,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.HorizontalPanel#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -11062,6 +11764,7 @@
  * Set the vertical alignment of widgets added to this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code>.
  *
  * @function UiApp.HorizontalPanel#setVerticalAlignment
+ * @deprecated
  *
  * @param {UiApp.VerticalAlignment} verticalAlignment - the desired alignment, such as UiApp.VerticalAlignment.MIDDLE.
  *
@@ -11072,6 +11775,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code> is visible.
  *
  * @function UiApp.HorizontalPanel#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code> should be visible or not.
  *
@@ -11082,11 +11786,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code>.
  *
  * @function UiApp.HorizontalPanel#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.HorizontalPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.Image
@@ -11141,6 +11847,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Image#addClickHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -11176,6 +11883,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Image#addErrorHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -11211,6 +11919,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Image#addLoadHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -11266,6 +11975,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Image#addMouseDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -11321,6 +12031,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Image#addMouseMoveHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -11376,6 +12087,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Image#addMouseOutHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -11431,6 +12143,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Image#addMouseOverHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -11486,6 +12199,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Image#addMouseUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -11541,6 +12255,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Image#addMouseWheelHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -11554,6 +12269,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Image#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -11567,6 +12283,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Image#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -11580,6 +12297,7 @@
  object.
  *
  * @function UiApp.Image#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -11588,6 +12306,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/image.html'>Image</a></s></code>.
  *
  * @function UiApp.Image#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -11596,6 +12315,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.Image#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -11604,6 +12324,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/image.html'>Image</a></s></code>.
  *
  * @function UiApp.Image#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -11614,6 +12335,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/image.html'>Image</a></s></code>.
  *
  * @function UiApp.Image#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/image.html'>Image</a></s></code> from
      app.getElementById(id).
@@ -11627,8 +12349,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.Image#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.Image} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/image.html'>Image</a></s></code> itself, useful for chaining.
  */
@@ -11637,9 +12360,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/image.html'>Image</a></s></code> in pixels.
  *
  * @function UiApp.Image#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.Image} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/image.html'>Image</a></s></code> itself, useful for chaining.
  */
@@ -11650,8 +12374,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.Image#setResource
+ * @deprecated
  *
- * @param {UiApp.Component} resource - 
+ * @param {UiApp.Component} resource
  *
  * @return {UiApp.Image} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/image.html'>Image</a></s></code> itself, useful for chaining.
  */
@@ -11660,6 +12385,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/image.html'>Image</a></s></code>.
  *
  * @function UiApp.Image#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -11679,6 +12405,7 @@
  </code></pre>
  *
  * @function UiApp.Image#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -11699,6 +12426,7 @@
  </code></pre>
  *
  * @function UiApp.Image#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -11713,6 +12441,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Image#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -11726,6 +12455,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Image#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -11736,6 +12466,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/image.html'>Image</a></s></code>.
  *
  * @function UiApp.Image#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -11748,6 +12479,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.Image#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -11762,6 +12494,7 @@
  unclipped state, a load event will be fired.
  *
  * @function UiApp.Image#setUrl
+ * @deprecated
  *
  * @param {String} url - the new image url.
  *
@@ -11777,14 +12510,15 @@
  the clipped state.
  *
  * @function UiApp.Image#setUrlAndVisibleRect
+ * @deprecated
  *
  * @param {String} url - the new image url.
- * @param {number} left - the the horizontal coordinate of the upper-left vertex of the visibility rectangle,
+ * @param {IntegerNum} left - the the horizontal coordinate of the upper-left vertex of the visibility rectangle,
      in pixels.
- * @param {number} top - the the vertical coordinate of the upper-left vertex of the visibility rectangle, in
+ * @param {IntegerNum} top - the the vertical coordinate of the upper-left vertex of the visibility rectangle, in
      pixels.
- * @param {number} width - the width of the visibility rectangle.
- * @param {number} height - the height of the visibility rectangle.
+ * @param {IntegerNum} width - the width of the visibility rectangle.
+ * @param {IntegerNum} height - the height of the visibility rectangle.
  *
  * @return {UiApp.Image} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/image.html'>Image</a></s></code> itself, useful for chaining.
  */
@@ -11793,6 +12527,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/image.html'>Image</a></s></code> is visible.
  *
  * @function UiApp.Image#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/image.html'>Image</a></s></code> should be visible or not.
  *
@@ -11810,13 +12545,14 @@
  load event to fire.
  *
  * @function UiApp.Image#setVisibleRect
+ * @deprecated
  *
- * @param {number} left - the the horizontal coordinate of the upper-left vertex of the visibility rectangle,
+ * @param {IntegerNum} left - the the horizontal coordinate of the upper-left vertex of the visibility rectangle,
      in pixels.
- * @param {number} top - the the vertical coordinate of the upper-left vertex of the visibility rectangle, in
+ * @param {IntegerNum} top - the the vertical coordinate of the upper-left vertex of the visibility rectangle, in
      pixels.
- * @param {number} width - the width of the visibility rectangle.
- * @param {number} height - the height of the visibility rectangle.
+ * @param {IntegerNum} width - the width of the visibility rectangle.
+ * @param {IntegerNum} height - the height of the visibility rectangle.
  *
  * @return {UiApp.Image} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/image.html'>Image</a></s></code> itself, useful for chaining.
  */
@@ -11825,11 +12561,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/image.html'>Image</a></s></code>.
  *
  * @function UiApp.Image#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.Image} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/image.html'>Image</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.InlineLabel
@@ -11884,6 +12622,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.InlineLabel#addClickHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -11939,6 +12678,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.InlineLabel#addMouseDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -11994,6 +12734,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.InlineLabel#addMouseMoveHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -12049,6 +12790,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.InlineLabel#addMouseOutHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -12104,6 +12846,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.InlineLabel#addMouseOverHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -12159,6 +12902,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.InlineLabel#addMouseUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -12214,6 +12958,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.InlineLabel#addMouseWheelHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -12227,6 +12972,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.InlineLabel#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -12240,6 +12986,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.InlineLabel#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -12253,6 +13000,7 @@
  object.
  *
  * @function UiApp.InlineLabel#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -12261,6 +13009,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/inline-label.html'>InlineLabel</a></s></code>.
  *
  * @function UiApp.InlineLabel#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -12269,6 +13018,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.InlineLabel#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -12277,6 +13027,7 @@
  * Set the text direction.
  *
  * @function UiApp.InlineLabel#setDirection
+ * @deprecated
  *
  * @param {UiApp.Component} direction - the text direction
  *
@@ -12287,6 +13038,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/inline-label.html'>InlineLabel</a></s></code>.
  *
  * @function UiApp.InlineLabel#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -12297,6 +13049,7 @@
  * Set the horizontal text alignment of the display text of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/inline-label.html'>InlineLabel</a></s></code>.
  *
  * @function UiApp.InlineLabel#setHorizontalAlignment
+ * @deprecated
  *
  * @param {UiApp.HorizontalAlignment} horizontalAlignment - the desired alignment, such as UiApp.HorizontalAlignment.CENTER.
  *
@@ -12307,6 +13060,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/inline-label.html'>InlineLabel</a></s></code>.
  *
  * @function UiApp.InlineLabel#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/inline-label.html'>InlineLabel</a></s></code> from
      app.getElementById(id).
@@ -12320,8 +13074,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.InlineLabel#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.InlineLabel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/inline-label.html'>InlineLabel</a></s></code> itself, useful for chaining.
  */
@@ -12330,9 +13085,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/inline-label.html'>InlineLabel</a></s></code> in pixels.
  *
  * @function UiApp.InlineLabel#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.InlineLabel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/inline-label.html'>InlineLabel</a></s></code> itself, useful for chaining.
  */
@@ -12341,6 +13097,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/inline-label.html'>InlineLabel</a></s></code>.
  *
  * @function UiApp.InlineLabel#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -12360,6 +13117,7 @@
  </code></pre>
  *
  * @function UiApp.InlineLabel#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -12380,6 +13138,7 @@
  </code></pre>
  *
  * @function UiApp.InlineLabel#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -12394,6 +13153,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.InlineLabel#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -12407,6 +13167,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.InlineLabel#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -12417,6 +13178,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/inline-label.html'>InlineLabel</a></s></code>.
  *
  * @function UiApp.InlineLabel#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -12427,6 +13189,7 @@
  * Set the display text of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/inline-label.html'>InlineLabel</a></s></code>.
  *
  * @function UiApp.InlineLabel#setText
+ * @deprecated
  *
  * @param {String} text - the new text.
  *
@@ -12439,6 +13202,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.InlineLabel#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -12449,6 +13213,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/inline-label.html'>InlineLabel</a></s></code> is visible.
  *
  * @function UiApp.InlineLabel#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/inline-label.html'>InlineLabel</a></s></code> should be visible or not.
  *
@@ -12459,6 +13224,7 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/inline-label.html'>InlineLabel</a></s></code>.
  *
  * @function UiApp.InlineLabel#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
@@ -12469,11 +13235,13 @@
  * Set whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/inline-label.html'>InlineLabel</a></s></code> wraps its text.
  *
  * @function UiApp.InlineLabel#setWordWrap
+ * @deprecated
  *
  * @param {Boolean} wordWrap - whether to wrap.
  *
  * @return {UiApp.InlineLabel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/inline-label.html'>InlineLabel</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.Label
@@ -12528,6 +13296,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Label#addClickHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -12583,6 +13352,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Label#addMouseDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -12638,6 +13408,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Label#addMouseMoveHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -12693,6 +13464,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Label#addMouseOutHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -12748,6 +13520,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Label#addMouseOverHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -12803,6 +13576,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Label#addMouseUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -12858,6 +13632,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Label#addMouseWheelHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -12871,6 +13646,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Label#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -12884,6 +13660,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Label#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -12897,6 +13674,7 @@
  object.
  *
  * @function UiApp.Label#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -12905,6 +13683,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/label.html'>Label</a></s></code>.
  *
  * @function UiApp.Label#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -12913,6 +13692,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.Label#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -12921,6 +13701,7 @@
  * Set the text direction.
  *
  * @function UiApp.Label#setDirection
+ * @deprecated
  *
  * @param {UiApp.Component} direction - the text direction
  *
@@ -12931,6 +13712,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/label.html'>Label</a></s></code>.
  *
  * @function UiApp.Label#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -12941,6 +13723,7 @@
  * Set the horizontal text alignment of the display text of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/label.html'>Label</a></s></code>.
  *
  * @function UiApp.Label#setHorizontalAlignment
+ * @deprecated
  *
  * @param {UiApp.HorizontalAlignment} horizontalAlignment - the desired alignment, such as UiApp.HorizontalAlignment.CENTER.
  *
@@ -12951,6 +13734,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/label.html'>Label</a></s></code>.
  *
  * @function UiApp.Label#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/label.html'>Label</a></s></code> from
      app.getElementById(id).
@@ -12964,8 +13748,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.Label#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.Label} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/label.html'>Label</a></s></code> itself, useful for chaining.
  */
@@ -12974,9 +13759,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/label.html'>Label</a></s></code> in pixels.
  *
  * @function UiApp.Label#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.Label} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/label.html'>Label</a></s></code> itself, useful for chaining.
  */
@@ -12985,6 +13771,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/label.html'>Label</a></s></code>.
  *
  * @function UiApp.Label#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -13004,6 +13791,7 @@
  </code></pre>
  *
  * @function UiApp.Label#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -13024,6 +13812,7 @@
  </code></pre>
  *
  * @function UiApp.Label#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -13038,6 +13827,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Label#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -13051,6 +13841,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Label#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -13061,6 +13852,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/label.html'>Label</a></s></code>.
  *
  * @function UiApp.Label#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -13071,6 +13863,7 @@
  * Set the display text of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/label.html'>Label</a></s></code>.
  *
  * @function UiApp.Label#setText
+ * @deprecated
  *
  * @param {String} text - the new text.
  *
@@ -13083,6 +13876,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.Label#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -13093,6 +13887,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/label.html'>Label</a></s></code> is visible.
  *
  * @function UiApp.Label#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/label.html'>Label</a></s></code> should be visible or not.
  *
@@ -13103,6 +13898,7 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/label.html'>Label</a></s></code>.
  *
  * @function UiApp.Label#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
@@ -13113,11 +13909,13 @@
  * Set whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/label.html'>Label</a></s></code> wraps its text.
  *
  * @function UiApp.Label#setWordWrap
+ * @deprecated
  *
  * @param {Boolean} wordWrap - whether to wrap.
  *
  * @return {UiApp.Label} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/label.html'>Label</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.ListBox
@@ -13156,6 +13954,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ListBox#addBlurHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -13195,6 +13994,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ListBox#addChangeHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -13250,6 +14050,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ListBox#addClickHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -13289,6 +14090,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ListBox#addFocusHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -13301,6 +14103,7 @@
  <p>The item's value will be the same as its text.
  *
  * @function UiApp.ListBox#addItem
+ * @deprecated
  *
  * @param {String} text - the new item's text.
  *
@@ -13311,6 +14114,7 @@
  * Adds an item to the list box, specifying its value.
  *
  * @function UiApp.ListBox#addItem
+ * @deprecated
  *
  * @param {String} text - the new item's text.
  * @param {String} value - the new item's value.
@@ -13362,6 +14166,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.ListBox#addKeyDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -13412,6 +14217,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.ListBox#addKeyPressHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -13462,6 +14268,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.ListBox#addKeyUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -13517,6 +14324,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ListBox#addMouseDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -13572,6 +14380,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ListBox#addMouseMoveHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -13627,6 +14436,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ListBox#addMouseOutHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -13682,6 +14492,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ListBox#addMouseOverHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -13737,6 +14548,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ListBox#addMouseUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -13792,6 +14604,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ListBox#addMouseWheelHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -13805,6 +14618,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.ListBox#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -13818,6 +14632,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.ListBox#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -13828,6 +14643,7 @@
  * Removes all items from the list box.
  *
  * @function UiApp.ListBox#clear
+ * @deprecated
  *
  * @return {UiApp.ListBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code> itself, useful for chaining.
  */
@@ -13839,6 +14655,7 @@
  object.
  *
  * @function UiApp.ListBox#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -13847,6 +14664,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code>.
  *
  * @function UiApp.ListBox#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -13855,6 +14673,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.ListBox#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -13863,8 +14682,9 @@
  * Removes the item at the specified index.
  *
  * @function UiApp.ListBox#removeItem
+ * @deprecated
  *
- * @param {number} index - the index of the item to be removed.
+ * @param {IntegerNum} index - the index of the item to be removed.
  *
  * @return {UiApp.ListBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code> itself, useful for chaining.
  */
@@ -13874,6 +14694,7 @@
  modifier key) to automatically focus the widget.
  *
  * @function UiApp.ListBox#setAccessKey
+ * @deprecated
  *
  * @param {Char} accessKey - the character to use for focus
  *
@@ -13884,6 +14705,7 @@
  * Sets whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code> is enabled.
  *
  * @function UiApp.ListBox#setEnabled
+ * @deprecated
  *
  * @param {Boolean} enabled - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code> should be enabled or disabled.
  *
@@ -13897,6 +14719,7 @@
  events.
  *
  * @function UiApp.ListBox#setFocus
+ * @deprecated
  *
  * @param {Boolean} focus - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code> should have the current focus.
  *
@@ -13907,6 +14730,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code>.
  *
  * @function UiApp.ListBox#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -13917,6 +14741,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code>.
  *
  * @function UiApp.ListBox#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code> from
      app.getElementById(id).
@@ -13933,8 +14758,9 @@
  setting the selection programmatically does not cause a change event to be fired.
  *
  * @function UiApp.ListBox#setItemSelected
+ * @deprecated
  *
- * @param {number} index - the index of the item to be selected.
+ * @param {IntegerNum} index - the index of the item to be selected.
  * @param {Boolean} selected - whether the item should be selected or not.
  *
  * @return {UiApp.ListBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code> itself, useful for chaining.
@@ -13944,8 +14770,9 @@
  * Sets the text associated with the item at a given index.
  *
  * @function UiApp.ListBox#setItemText
+ * @deprecated
  *
- * @param {number} index - the index of the item to be changed.
+ * @param {IntegerNum} index - the index of the item to be changed.
  * @param {String} text - the item's new text.
  *
  * @return {UiApp.ListBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code> itself, useful for chaining.
@@ -13957,8 +14784,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.ListBox#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.ListBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code> itself, useful for chaining.
  */
@@ -13968,6 +14796,7 @@
  FormPanel or as a callback element on an event handler.
  *
  * @function UiApp.ListBox#setName
+ * @deprecated
  *
  * @param {String} name - the new name.
  *
@@ -13978,9 +14807,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code> in pixels.
  *
  * @function UiApp.ListBox#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.ListBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code> itself, useful for chaining.
  */
@@ -13994,8 +14824,9 @@
  to be fired.
  *
  * @function UiApp.ListBox#setSelectedIndex
+ * @deprecated
  *
- * @param {number} index - the index of the item to be selected.
+ * @param {IntegerNum} index - the index of the item to be selected.
  *
  * @return {UiApp.ListBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code> itself, useful for chaining.
  */
@@ -14004,6 +14835,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code>.
  *
  * @function UiApp.ListBox#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -14023,6 +14855,7 @@
  </code></pre>
  *
  * @function UiApp.ListBox#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -14043,6 +14876,7 @@
  </code></pre>
  *
  * @function UiApp.ListBox#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -14057,6 +14891,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.ListBox#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -14070,6 +14905,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.ListBox#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -14084,8 +14920,9 @@
  order.
  *
  * @function UiApp.ListBox#setTabIndex
+ * @deprecated
  *
- * @param {number} index - the new tab index.
+ * @param {IntegerNum} index - the new tab index.
  *
  * @return {UiApp.ListBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code> itself, useful for chaining.
  */
@@ -14094,6 +14931,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code>.
  *
  * @function UiApp.ListBox#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -14106,6 +14944,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.ListBox#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -14118,8 +14957,9 @@
  <p>This is passed to the server when the list box is submitted as part of a FormPanel.
  *
  * @function UiApp.ListBox#setValue
+ * @deprecated
  *
- * @param {number} index - the index of the item to be changed.
+ * @param {IntegerNum} index - the index of the item to be changed.
  * @param {String} value - the item's new value.
  *
  * @return {UiApp.ListBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code> itself, useful for chaining.
@@ -14129,6 +14969,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code> is visible.
  *
  * @function UiApp.ListBox#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code> should be visible or not.
  *
@@ -14141,8 +14982,9 @@
  <p>If only one item is visible, then the box will be displayed as a drop-down list.
  *
  * @function UiApp.ListBox#setVisibleItemCount
+ * @deprecated
  *
- * @param {number} count - the number of items to show.
+ * @param {IntegerNum} count - the number of items to show.
  *
  * @return {UiApp.ListBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code> itself, useful for chaining.
  */
@@ -14151,11 +14993,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code>.
  *
  * @function UiApp.ListBox#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.ListBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.MenuBar
@@ -14197,6 +15041,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.MenuBar#addCloseHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -14207,6 +15052,7 @@
  * Add a new menu item to this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code>.
  *
  * @function UiApp.MenuBar#addItem
+ * @deprecated
  *
  * @param {MenuItem} item - the item to add.
  *
@@ -14217,6 +15063,7 @@
  * Creates a new menu item with the given text and submenu and adds it to this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code>.
  *
  * @function UiApp.MenuBar#addItem
+ * @deprecated
  *
  * @param {String} text - the item text.
  * @param {Boolean} asHtml - whether to treat the text as HTML.
@@ -14229,6 +15076,7 @@
  * Creates a new menu item with the given text and command and adds it to this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code>.
  *
  * @function UiApp.MenuBar#addItem
+ * @deprecated
  *
  * @param {String} text - the item text.
  * @param {Boolean} asHtml - whether to treat the text as HTML.
@@ -14241,6 +15089,7 @@
  * Creates a new menu item with the given text and submenu and adds it to this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code>.
  *
  * @function UiApp.MenuBar#addItem
+ * @deprecated
  *
  * @param {String} text - the item text.
  * @param {MenuBar} subMenu - the menu to show when this item is clicked.
@@ -14252,6 +15101,7 @@
  * Creates a new menu item with the given text and command and adds it to this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code>.
  *
  * @function UiApp.MenuBar#addItem
+ * @deprecated
  *
  * @param {String} text - the item text.
  * @param {UiApp.Handler} command - the ClientHandler or ServerHandler to execute when the menu is clicked.
@@ -14263,6 +15113,7 @@
  * Add a separator to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code>.
  *
  * @function UiApp.MenuBar#addSeparator
+ * @deprecated
  *
  * @return {UiApp.MenuBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code> itself, useful for chaining.
  */
@@ -14275,6 +15126,7 @@
  manipulated in code.
  *
  * @function UiApp.MenuBar#addSeparator
+ * @deprecated
  *
  * @param {MenuItemSeparator} separator - the separator to add.
  *
@@ -14288,6 +15140,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.MenuBar#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -14301,6 +15154,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.MenuBar#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -14314,6 +15168,7 @@
  object.
  *
  * @function UiApp.MenuBar#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -14322,6 +15177,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code>.
  *
  * @function UiApp.MenuBar#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -14330,6 +15186,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.MenuBar#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -14338,6 +15195,7 @@
  * Sets whether opening and closing the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code> is animated.
  *
  * @function UiApp.MenuBar#setAnimationEnabled
+ * @deprecated
  *
  * @param {Boolean} animationEnabled - whether to animate opening and closing.
  *
@@ -14348,6 +15206,7 @@
  * Sets whether this menu bar's child menus will open when the mouse is moved over it.
  *
  * @function UiApp.MenuBar#setAutoOpen
+ * @deprecated
  *
  * @param {Boolean} autoOpen - whether to open when the mouse is over the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code>.
  *
@@ -14358,6 +15217,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code>.
  *
  * @function UiApp.MenuBar#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -14368,6 +15228,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code>.
  *
  * @function UiApp.MenuBar#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code> from
      app.getElementById(id).
@@ -14381,8 +15242,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.MenuBar#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.MenuBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code> itself, useful for chaining.
  */
@@ -14391,9 +15253,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code> in pixels.
  *
  * @function UiApp.MenuBar#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.MenuBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code> itself, useful for chaining.
  */
@@ -14402,6 +15265,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code>.
  *
  * @function UiApp.MenuBar#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -14421,6 +15285,7 @@
  </code></pre>
  *
  * @function UiApp.MenuBar#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -14441,6 +15306,7 @@
  </code></pre>
  *
  * @function UiApp.MenuBar#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -14455,6 +15321,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.MenuBar#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -14468,6 +15335,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.MenuBar#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -14478,6 +15346,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code>.
  *
  * @function UiApp.MenuBar#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -14490,6 +15359,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.MenuBar#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -14500,6 +15370,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code> is visible.
  *
  * @function UiApp.MenuBar#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code> should be visible or not.
  *
@@ -14510,11 +15381,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code>.
  *
  * @function UiApp.MenuBar#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.MenuBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.MenuItem
@@ -14527,6 +15400,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.MenuItem#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -14540,6 +15414,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.MenuItem#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -14553,6 +15428,7 @@
  object.
  *
  * @function UiApp.MenuItem#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -14561,6 +15437,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item.html'>MenuItem</a></s></code>.
  *
  * @function UiApp.MenuItem#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -14569,6 +15446,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.MenuItem#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -14577,6 +15455,7 @@
  * Sets the handler to execute when the menu is clicked.
  *
  * @function UiApp.MenuItem#setCommand
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the ClientHandler or ServerHandler to execute when the menu is clicked.
  *
@@ -14587,6 +15466,7 @@
  * Sets the HTML content of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item.html'>MenuItem</a></s></code>.
  *
  * @function UiApp.MenuItem#setHTML
+ * @deprecated
  *
  * @param {String} html - the new HTML
  *
@@ -14597,6 +15477,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item.html'>MenuItem</a></s></code>.
  *
  * @function UiApp.MenuItem#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -14607,6 +15488,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item.html'>MenuItem</a></s></code>.
  *
  * @function UiApp.MenuItem#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item.html'>MenuItem</a></s></code> from
      app.getElementById(id).
@@ -14618,9 +15500,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item.html'>MenuItem</a></s></code> in pixels.
  *
  * @function UiApp.MenuItem#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.MenuItem} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item.html'>MenuItem</a></s></code> itself, useful for chaining.
  */
@@ -14629,6 +15512,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item.html'>MenuItem</a></s></code>.
  *
  * @function UiApp.MenuItem#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -14648,6 +15532,7 @@
  </code></pre>
  *
  * @function UiApp.MenuItem#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -14668,6 +15553,7 @@
  </code></pre>
  *
  * @function UiApp.MenuItem#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -14682,6 +15568,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.MenuItem#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -14695,6 +15582,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.MenuItem#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -14705,6 +15593,7 @@
  * Sets the sub-menu to show when the menu is clicked.
  *
  * @function UiApp.MenuItem#setSubMenu
+ * @deprecated
  *
  * @param {MenuBar} subMenu - the sub-menu to show when the menu is clicked.
  *
@@ -14715,6 +15604,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item.html'>MenuItem</a></s></code>.
  *
  * @function UiApp.MenuItem#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -14725,6 +15615,7 @@
  * Set the display text of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item.html'>MenuItem</a></s></code>.
  *
  * @function UiApp.MenuItem#setText
+ * @deprecated
  *
  * @param {String} text - the new text.
  *
@@ -14737,6 +15628,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.MenuItem#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -14747,6 +15639,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item.html'>MenuItem</a></s></code> is visible.
  *
  * @function UiApp.MenuItem#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item.html'>MenuItem</a></s></code> should be visible or not.
  *
@@ -14757,11 +15650,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item.html'>MenuItem</a></s></code>.
  *
  * @function UiApp.MenuItem#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.MenuItem} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item.html'>MenuItem</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.MenuItemSeparator
@@ -14774,6 +15669,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.MenuItemSeparator#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -14787,6 +15683,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.MenuItemSeparator#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -14800,6 +15697,7 @@
  object.
  *
  * @function UiApp.MenuItemSeparator#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -14808,6 +15706,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item-separator.html'>MenuItemSeparator</a></s></code>.
  *
  * @function UiApp.MenuItemSeparator#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -14816,6 +15715,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.MenuItemSeparator#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -14824,6 +15724,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item-separator.html'>MenuItemSeparator</a></s></code>.
  *
  * @function UiApp.MenuItemSeparator#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -14834,6 +15735,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item-separator.html'>MenuItemSeparator</a></s></code>.
  *
  * @function UiApp.MenuItemSeparator#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item-separator.html'>MenuItemSeparator</a></s></code> from
      app.getElementById(id).
@@ -14845,9 +15747,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item-separator.html'>MenuItemSeparator</a></s></code> in pixels.
  *
  * @function UiApp.MenuItemSeparator#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.MenuItemSeparator} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item-separator.html'>MenuItemSeparator</a></s></code> itself, useful for chaining.
  */
@@ -14856,6 +15759,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item-separator.html'>MenuItemSeparator</a></s></code>.
  *
  * @function UiApp.MenuItemSeparator#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -14875,6 +15779,7 @@
  </code></pre>
  *
  * @function UiApp.MenuItemSeparator#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -14895,6 +15800,7 @@
  </code></pre>
  *
  * @function UiApp.MenuItemSeparator#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -14909,6 +15815,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.MenuItemSeparator#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -14922,6 +15829,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.MenuItemSeparator#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -14932,6 +15840,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item-separator.html'>MenuItemSeparator</a></s></code>.
  *
  * @function UiApp.MenuItemSeparator#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -14944,6 +15853,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.MenuItemSeparator#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -14954,6 +15864,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item-separator.html'>MenuItemSeparator</a></s></code> is visible.
  *
  * @function UiApp.MenuItemSeparator#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item-separator.html'>MenuItemSeparator</a></s></code> should be visible or not.
  *
@@ -14964,11 +15875,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item-separator.html'>MenuItemSeparator</a></s></code>.
  *
  * @function UiApp.MenuItemSeparator#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.MenuItemSeparator} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item-separator.html'>MenuItemSeparator</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.PasswordTextBox
@@ -15007,6 +15920,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.PasswordTextBox#addBlurHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -15046,6 +15960,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.PasswordTextBox#addChangeHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -15101,6 +16016,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.PasswordTextBox#addClickHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -15140,6 +16056,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.PasswordTextBox#addFocusHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -15190,6 +16107,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.PasswordTextBox#addKeyDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -15240,6 +16158,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.PasswordTextBox#addKeyPressHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -15290,6 +16209,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.PasswordTextBox#addKeyUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -15345,6 +16265,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.PasswordTextBox#addMouseDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -15400,6 +16321,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.PasswordTextBox#addMouseMoveHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -15455,6 +16377,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.PasswordTextBox#addMouseOutHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -15510,6 +16433,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.PasswordTextBox#addMouseOverHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -15565,6 +16489,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.PasswordTextBox#addMouseUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -15620,6 +16545,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.PasswordTextBox#addMouseWheelHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -15633,6 +16559,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.PasswordTextBox#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -15646,6 +16573,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.PasswordTextBox#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -15685,6 +16613,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.PasswordTextBox#addValueChangeHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -15698,6 +16627,7 @@
  object.
  *
  * @function UiApp.PasswordTextBox#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -15706,6 +16636,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code>.
  *
  * @function UiApp.PasswordTextBox#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -15714,6 +16645,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.PasswordTextBox#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -15723,6 +16655,7 @@
  modifier key) to automatically focus the widget.
  *
  * @function UiApp.PasswordTextBox#setAccessKey
+ * @deprecated
  *
  * @param {Char} accessKey - the character to use for focus
  *
@@ -15736,8 +16669,9 @@
  hidden.
  *
  * @function UiApp.PasswordTextBox#setCursorPos
+ * @deprecated
  *
- * @param {number} position - the new cursor position, in characters from the start.
+ * @param {IntegerNum} position - the new cursor position, in characters from the start.
  *
  * @return {UiApp.PasswordTextBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code> itself, useful for chaining.
  */
@@ -15746,6 +16680,7 @@
  * Set the text direction.
  *
  * @function UiApp.PasswordTextBox#setDirection
+ * @deprecated
  *
  * @param {UiApp.Component} direction - the text direction
  *
@@ -15756,6 +16691,7 @@
  * Sets whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code> is enabled.
  *
  * @function UiApp.PasswordTextBox#setEnabled
+ * @deprecated
  *
  * @param {Boolean} enabled - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code> should be enabled or disabled.
  *
@@ -15769,6 +16705,7 @@
  events.
  *
  * @function UiApp.PasswordTextBox#setFocus
+ * @deprecated
  *
  * @param {Boolean} focus - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code> should have the current focus.
  *
@@ -15779,6 +16716,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code>.
  *
  * @function UiApp.PasswordTextBox#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -15789,6 +16727,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code>.
  *
  * @function UiApp.PasswordTextBox#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code> from
      app.getElementById(id).
@@ -15802,8 +16741,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.PasswordTextBox#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.PasswordTextBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code> itself, useful for chaining.
  */
@@ -15812,8 +16752,9 @@
  * Sets the maximum allowable length of the text box's contents.
  *
  * @function UiApp.PasswordTextBox#setMaxLength
+ * @deprecated
  *
- * @param {number} length - the maximum length.
+ * @param {IntegerNum} length - the maximum length.
  *
  * @return {UiApp.PasswordTextBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code> itself, useful for chaining.
  */
@@ -15823,6 +16764,7 @@
  FormPanel or as a callback element on an event handler.
  *
  * @function UiApp.PasswordTextBox#setName
+ * @deprecated
  *
  * @param {String} name - the new name.
  *
@@ -15833,9 +16775,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code> in pixels.
  *
  * @function UiApp.PasswordTextBox#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.PasswordTextBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code> itself, useful for chaining.
  */
@@ -15844,6 +16787,7 @@
  * Sets whether the text in this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code> is read only and can't be edited.
  *
  * @function UiApp.PasswordTextBox#setReadOnly
+ * @deprecated
  *
  * @param {Boolean} readOnly - whether the text is read only.
  *
@@ -15857,9 +16801,10 @@
  hidden.
  *
  * @function UiApp.PasswordTextBox#setSelectionRange
+ * @deprecated
  *
- * @param {number} position - the position of the first character to be selected
- * @param {number} length - the number of characters to be selected
+ * @param {IntegerNum} position - the position of the first character to be selected
+ * @param {IntegerNum} length - the number of characters to be selected
  *
  * @return {UiApp.PasswordTextBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code> itself, useful for chaining.
  */
@@ -15868,6 +16813,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code>.
  *
  * @function UiApp.PasswordTextBox#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -15887,6 +16833,7 @@
  </code></pre>
  *
  * @function UiApp.PasswordTextBox#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -15907,6 +16854,7 @@
  </code></pre>
  *
  * @function UiApp.PasswordTextBox#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -15921,6 +16869,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.PasswordTextBox#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -15934,6 +16883,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.PasswordTextBox#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -15948,8 +16898,9 @@
  order.
  *
  * @function UiApp.PasswordTextBox#setTabIndex
+ * @deprecated
  *
- * @param {number} index - the new tab index.
+ * @param {IntegerNum} index - the new tab index.
  *
  * @return {UiApp.PasswordTextBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code> itself, useful for chaining.
  */
@@ -15958,6 +16909,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code>.
  *
  * @function UiApp.PasswordTextBox#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -15968,6 +16920,7 @@
  * Set the display text of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code>.
  *
  * @function UiApp.PasswordTextBox#setText
+ * @deprecated
  *
  * @param {String} text - the new text.
  *
@@ -15980,6 +16933,7 @@
  <p>This is not currently functional.
  *
  * @function UiApp.PasswordTextBox#setTextAlignment
+ * @deprecated
  *
  * @param {UiApp.Component} textAlign - the alignment
  *
@@ -15992,6 +16946,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.PasswordTextBox#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -16002,6 +16957,7 @@
  * Sets this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code>'s value without firing any events.
  *
  * @function UiApp.PasswordTextBox#setValue
+ * @deprecated
  *
  * @param {String} value - the new value.
  *
@@ -16012,6 +16968,7 @@
  * Sets this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code>'s value and potentially fire events.
  *
  * @function UiApp.PasswordTextBox#setValue
+ * @deprecated
  *
  * @param {String} value - the new value.
  * @param {Boolean} fireEvents - whether to fire events.
@@ -16023,6 +16980,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code> is visible.
  *
  * @function UiApp.PasswordTextBox#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code> should be visible or not.
  *
@@ -16035,8 +16993,9 @@
  <p>This is not an exact value, as not all characters are created equal.
  *
  * @function UiApp.PasswordTextBox#setVisibleLength
+ * @deprecated
  *
- * @param {number} length - the length, in characters.
+ * @param {IntegerNum} length - the length, in characters.
  *
  * @return {UiApp.PasswordTextBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code> itself, useful for chaining.
  */
@@ -16045,11 +17004,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code>.
  *
  * @function UiApp.PasswordTextBox#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.PasswordTextBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.PopupPanel
@@ -16059,6 +17020,7 @@
  * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code>.
  *
  * @function UiApp.PopupPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  *
@@ -16071,6 +17033,7 @@
  <p>This is not currently functional.
  *
  * @function UiApp.PopupPanel#addAutoHidePartner
+ * @deprecated
  *
  * @param {UiApp.Component} partner - the partner widget.
  *
@@ -16113,6 +17076,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.PopupPanel#addCloseHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -16126,6 +17090,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.PopupPanel#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -16139,6 +17104,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.PopupPanel#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -16149,6 +17115,7 @@
  * Remove all widgets from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code>.
  *
  * @function UiApp.PopupPanel#clear
+ * @deprecated
  *
  * @return {UiApp.PopupPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code> itself, useful for chaining.
  */
@@ -16160,6 +17127,7 @@
  object.
  *
  * @function UiApp.PopupPanel#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -16168,6 +17136,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code>.
  *
  * @function UiApp.PopupPanel#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -16176,6 +17145,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.PopupPanel#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -16184,6 +17154,7 @@
  * Hides the popup.
  *
  * @function UiApp.PopupPanel#hide
+ * @deprecated
  *
  * @return {UiApp.PopupPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code> itself, useful for chaining.
  */
@@ -16192,6 +17163,7 @@
  * Sets whether opening and closing the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code> is animated.
  *
  * @function UiApp.PopupPanel#setAnimationEnabled
+ * @deprecated
  *
  * @param {Boolean} animationEnabled - whether to animate opening and closing.
  *
@@ -16205,6 +17177,7 @@
  outside of it.
  *
  * @function UiApp.PopupPanel#setAutoHideEnabled
+ * @deprecated
  *
  * @param {Boolean} enabled - whether auto-hiding should be enabled.
  *
@@ -16219,6 +17192,7 @@
  until it is hidden and shown again.
  *
  * @function UiApp.PopupPanel#setGlassEnabled
+ * @deprecated
  *
  * @param {Boolean} enabled - whether the glass panel should be enabled.
  *
@@ -16229,6 +17203,7 @@
  * Set the style name of the glass panel.
  *
  * @function UiApp.PopupPanel#setGlassStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -16239,6 +17214,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code>.
  *
  * @function UiApp.PopupPanel#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -16249,6 +17225,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code>.
  *
  * @function UiApp.PopupPanel#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code> from
      app.getElementById(id).
@@ -16262,8 +17239,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.PopupPanel#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.PopupPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code> itself, useful for chaining.
  */
@@ -16275,6 +17253,7 @@
  PopupPanel or its children will be ignored.
  *
  * @function UiApp.PopupPanel#setModal
+ * @deprecated
  *
  * @param {Boolean} modal - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code> should be modal.
  *
@@ -16285,9 +17264,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code> in pixels.
  *
  * @function UiApp.PopupPanel#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.PopupPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code> itself, useful for chaining.
  */
@@ -16298,9 +17278,10 @@
  <p>The popup's position may be set before calling show().
  *
  * @function UiApp.PopupPanel#setPopupPosition
+ * @deprecated
  *
- * @param {number} left - the popup's left, in pixels.
- * @param {number} top - the popup's top, in pixels.
+ * @param {IntegerNum} left - the popup's left, in pixels.
+ * @param {IntegerNum} top - the popup's top, in pixels.
  *
  * @return {UiApp.PopupPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code> itself, useful for chaining.
  */
@@ -16311,8 +17292,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.PopupPanel#setPopupPositionAndShow
+ * @deprecated
  *
- * @param {UiApp.Component} a - 
+ * @param {UiApp.Component} a
  *
  * @return {UiApp.PopupPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code> itself, useful for chaining.
  */
@@ -16327,6 +17309,7 @@
  popup opened.
  *
  * @function UiApp.PopupPanel#setPreviewingAllNativeEvents
+ * @deprecated
  *
  * @param {Boolean} previewing - whether to preview all native events.
  *
@@ -16337,6 +17320,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code>.
  *
  * @function UiApp.PopupPanel#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -16356,6 +17340,7 @@
  </code></pre>
  *
  * @function UiApp.PopupPanel#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -16376,6 +17361,7 @@
  </code></pre>
  *
  * @function UiApp.PopupPanel#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -16390,6 +17376,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.PopupPanel#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -16403,6 +17390,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.PopupPanel#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -16413,6 +17401,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code>.
  *
  * @function UiApp.PopupPanel#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -16425,6 +17414,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.PopupPanel#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -16435,6 +17425,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code> is visible.
  *
  * @function UiApp.PopupPanel#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code> should be visible or not.
  *
@@ -16445,6 +17436,7 @@
  * Sets the widget inside this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code>, removing anything previously there.
  *
  * @function UiApp.PopupPanel#setWidget
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to put in this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code>.
  *
@@ -16455,6 +17447,7 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code>.
  *
  * @function UiApp.PopupPanel#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
@@ -16465,9 +17458,11 @@
  * Shows the popup.
  *
  * @function UiApp.PopupPanel#show
+ * @deprecated
  *
  * @return {UiApp.PopupPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.PushButton
@@ -16506,6 +17501,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.PushButton#addBlurHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -16561,6 +17557,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.PushButton#addClickHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -16600,6 +17597,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.PushButton#addFocusHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -16650,6 +17648,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.PushButton#addKeyDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -16700,6 +17699,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.PushButton#addKeyPressHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -16750,6 +17750,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.PushButton#addKeyUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -16805,6 +17806,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.PushButton#addMouseDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -16860,6 +17862,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.PushButton#addMouseMoveHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -16915,6 +17918,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.PushButton#addMouseOutHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -16970,6 +17974,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.PushButton#addMouseOverHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -17025,6 +18030,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.PushButton#addMouseUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -17080,6 +18086,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.PushButton#addMouseWheelHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -17093,6 +18100,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.PushButton#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -17106,6 +18114,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.PushButton#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -17119,6 +18128,7 @@
  object.
  *
  * @function UiApp.PushButton#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -17127,6 +18137,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code>.
  *
  * @function UiApp.PushButton#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -17135,6 +18146,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.PushButton#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -17144,6 +18156,7 @@
  modifier key) to automatically focus the widget.
  *
  * @function UiApp.PushButton#setAccessKey
+ * @deprecated
  *
  * @param {Char} accessKey - the character to use for focus
  *
@@ -17154,6 +18167,7 @@
  * Sets whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code> is enabled.
  *
  * @function UiApp.PushButton#setEnabled
+ * @deprecated
  *
  * @param {Boolean} enabled - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code> should be enabled or disabled.
  *
@@ -17167,6 +18181,7 @@
  events.
  *
  * @function UiApp.PushButton#setFocus
+ * @deprecated
  *
  * @param {Boolean} focus - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code> should have the current focus.
  *
@@ -17177,6 +18192,7 @@
  * Sets the HTML content of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code>.
  *
  * @function UiApp.PushButton#setHTML
+ * @deprecated
  *
  * @param {String} html - the new HTML
  *
@@ -17187,6 +18203,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code>.
  *
  * @function UiApp.PushButton#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -17197,6 +18214,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code>.
  *
  * @function UiApp.PushButton#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code> from
      app.getElementById(id).
@@ -17210,8 +18228,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.PushButton#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.PushButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code> itself, useful for chaining.
  */
@@ -17220,9 +18239,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code> in pixels.
  *
  * @function UiApp.PushButton#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.PushButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code> itself, useful for chaining.
  */
@@ -17231,6 +18251,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code>.
  *
  * @function UiApp.PushButton#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -17250,6 +18271,7 @@
  </code></pre>
  *
  * @function UiApp.PushButton#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -17270,6 +18292,7 @@
  </code></pre>
  *
  * @function UiApp.PushButton#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -17284,6 +18307,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.PushButton#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -17297,6 +18321,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.PushButton#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -17311,8 +18336,9 @@
  order.
  *
  * @function UiApp.PushButton#setTabIndex
+ * @deprecated
  *
- * @param {number} index - the new tab index.
+ * @param {IntegerNum} index - the new tab index.
  *
  * @return {UiApp.PushButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code> itself, useful for chaining.
  */
@@ -17321,6 +18347,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code>.
  *
  * @function UiApp.PushButton#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -17331,6 +18358,7 @@
  * Set the display text of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code>.
  *
  * @function UiApp.PushButton#setText
+ * @deprecated
  *
  * @param {String} text - the new text.
  *
@@ -17343,6 +18371,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.PushButton#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -17353,6 +18382,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code> is visible.
  *
  * @function UiApp.PushButton#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code> should be visible or not.
  *
@@ -17363,11 +18393,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code>.
  *
  * @function UiApp.PushButton#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.PushButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.RadioButton
@@ -17406,6 +18438,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.RadioButton#addBlurHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -17461,6 +18494,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.RadioButton#addClickHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -17500,6 +18534,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.RadioButton#addFocusHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -17550,6 +18585,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.RadioButton#addKeyDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -17600,6 +18636,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.RadioButton#addKeyPressHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -17650,6 +18687,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.RadioButton#addKeyUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -17705,6 +18743,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.RadioButton#addMouseDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -17760,6 +18799,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.RadioButton#addMouseMoveHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -17815,6 +18855,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.RadioButton#addMouseOutHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -17870,6 +18911,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.RadioButton#addMouseOverHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -17925,6 +18967,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.RadioButton#addMouseUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -17980,6 +19023,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.RadioButton#addMouseWheelHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -17993,6 +19037,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.RadioButton#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -18006,6 +19051,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.RadioButton#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -18045,6 +19091,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.RadioButton#addValueChangeHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -18058,6 +19105,7 @@
  object.
  *
  * @function UiApp.RadioButton#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -18066,6 +19114,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code>.
  *
  * @function UiApp.RadioButton#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -18074,6 +19123,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.RadioButton#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -18083,6 +19133,7 @@
  modifier key) to automatically focus the widget.
  *
  * @function UiApp.RadioButton#setAccessKey
+ * @deprecated
  *
  * @param {Char} accessKey - the character to use for focus
  *
@@ -18093,6 +19144,7 @@
  * Sets whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code> is enabled.
  *
  * @function UiApp.RadioButton#setEnabled
+ * @deprecated
  *
  * @param {Boolean} enabled - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code> should be enabled or disabled.
  *
@@ -18106,6 +19158,7 @@
  events.
  *
  * @function UiApp.RadioButton#setFocus
+ * @deprecated
  *
  * @param {Boolean} focus - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code> should have the current focus.
  *
@@ -18118,6 +19171,7 @@
  FormPanel that holds it is submitted and the box is checked.
  *
  * @function UiApp.RadioButton#setFormValue
+ * @deprecated
  *
  * @param {String} formValue - the new form value.
  *
@@ -18128,6 +19182,7 @@
  * Sets the HTML content of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code>.
  *
  * @function UiApp.RadioButton#setHTML
+ * @deprecated
  *
  * @param {String} html - the new HTML
  *
@@ -18139,6 +19194,7 @@
  unless the element's CSS <code>display</code> property is set to <code>inline-block</code>.
  *
  * @function UiApp.RadioButton#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -18149,6 +19205,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code>.
  *
  * @function UiApp.RadioButton#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code> from
      app.getElementById(id).
@@ -18162,8 +19219,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.RadioButton#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.RadioButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code> itself, useful for chaining.
  */
@@ -18173,6 +19231,7 @@
  FormPanel or as a callback element on an event handler.
  *
  * @function UiApp.RadioButton#setName
+ * @deprecated
  *
  * @param {String} name - the new name.
  *
@@ -18184,9 +19243,10 @@
  effect unless the element's CSS <code>display property</code> is set to <code>inline-block</code>.
  *
  * @function UiApp.RadioButton#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.RadioButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code> itself, useful for chaining.
  */
@@ -18196,6 +19256,7 @@
  the element's CSS <code>display property</code> is set to <code>inline-block</code>.
  *
  * @function UiApp.RadioButton#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -18215,6 +19276,7 @@
  </code></pre>
  *
  * @function UiApp.RadioButton#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -18235,6 +19297,7 @@
  </code></pre>
  *
  * @function UiApp.RadioButton#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -18249,6 +19312,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.RadioButton#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -18262,6 +19326,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.RadioButton#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -18276,8 +19341,9 @@
  order.
  *
  * @function UiApp.RadioButton#setTabIndex
+ * @deprecated
  *
- * @param {number} index - the new tab index.
+ * @param {IntegerNum} index - the new tab index.
  *
  * @return {UiApp.RadioButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code> itself, useful for chaining.
  */
@@ -18286,6 +19352,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code>.
  *
  * @function UiApp.RadioButton#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -18296,6 +19363,7 @@
  * Set the display text of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code>.
  *
  * @function UiApp.RadioButton#setText
+ * @deprecated
  *
  * @param {String} text - the new text.
  *
@@ -18308,6 +19376,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.RadioButton#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -18319,6 +19388,7 @@
  changes as a result of this call.
  *
  * @function UiApp.RadioButton#setValue
+ * @deprecated
  *
  * @param {Boolean} value - the new checked/unchecked state.
  *
@@ -18330,6 +19400,7 @@
  value changes as a result of this call.
  *
  * @function UiApp.RadioButton#setValue
+ * @deprecated
  *
  * @param {Boolean} value - the new checked/unchecked state.
  * @param {Boolean} fireEvents - whether to fire an event if this changed the state.
@@ -18341,6 +19412,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code> is visible.
  *
  * @function UiApp.RadioButton#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code> should be visible or not.
  *
@@ -18352,11 +19424,13 @@
  the element's CSS <code>display</code> property is set to <code>inline-block</code>.
  *
  * @function UiApp.RadioButton#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.RadioButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.ResetButton
@@ -18395,6 +19469,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ResetButton#addBlurHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -18450,6 +19525,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ResetButton#addClickHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -18489,6 +19565,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ResetButton#addFocusHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -18539,6 +19616,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.ResetButton#addKeyDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -18589,6 +19667,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.ResetButton#addKeyPressHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -18639,6 +19718,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.ResetButton#addKeyUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -18694,6 +19774,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ResetButton#addMouseDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -18749,6 +19830,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ResetButton#addMouseMoveHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -18804,6 +19886,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ResetButton#addMouseOutHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -18859,6 +19942,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ResetButton#addMouseOverHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -18914,6 +19998,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ResetButton#addMouseUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -18969,6 +20054,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ResetButton#addMouseWheelHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -18982,6 +20068,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.ResetButton#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -18995,6 +20082,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.ResetButton#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -19008,6 +20096,7 @@
  object.
  *
  * @function UiApp.ResetButton#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -19016,6 +20105,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code>.
  *
  * @function UiApp.ResetButton#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -19024,6 +20114,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.ResetButton#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -19033,6 +20124,7 @@
  modifier key) to automatically focus the widget.
  *
  * @function UiApp.ResetButton#setAccessKey
+ * @deprecated
  *
  * @param {Char} accessKey - the character to use for focus
  *
@@ -19043,6 +20135,7 @@
  * Sets whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code> is enabled.
  *
  * @function UiApp.ResetButton#setEnabled
+ * @deprecated
  *
  * @param {Boolean} enabled - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code> should be enabled or disabled.
  *
@@ -19056,6 +20149,7 @@
  events.
  *
  * @function UiApp.ResetButton#setFocus
+ * @deprecated
  *
  * @param {Boolean} focus - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code> should have the current focus.
  *
@@ -19066,6 +20160,7 @@
  * Sets the HTML content of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code>.
  *
  * @function UiApp.ResetButton#setHTML
+ * @deprecated
  *
  * @param {String} html - the new HTML
  *
@@ -19076,6 +20171,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code>.
  *
  * @function UiApp.ResetButton#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -19086,6 +20182,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code>.
  *
  * @function UiApp.ResetButton#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code> from
      app.getElementById(id).
@@ -19099,8 +20196,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.ResetButton#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.ResetButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code> itself, useful for chaining.
  */
@@ -19109,9 +20207,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code> in pixels.
  *
  * @function UiApp.ResetButton#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.ResetButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code> itself, useful for chaining.
  */
@@ -19120,6 +20219,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code>.
  *
  * @function UiApp.ResetButton#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -19139,6 +20239,7 @@
  </code></pre>
  *
  * @function UiApp.ResetButton#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -19159,6 +20260,7 @@
  </code></pre>
  *
  * @function UiApp.ResetButton#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -19173,6 +20275,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.ResetButton#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -19186,6 +20289,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.ResetButton#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -19200,8 +20304,9 @@
  order.
  *
  * @function UiApp.ResetButton#setTabIndex
+ * @deprecated
  *
- * @param {number} index - the new tab index.
+ * @param {IntegerNum} index - the new tab index.
  *
  * @return {UiApp.ResetButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code> itself, useful for chaining.
  */
@@ -19210,6 +20315,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code>.
  *
  * @function UiApp.ResetButton#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -19220,6 +20326,7 @@
  * Set the display text of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code>.
  *
  * @function UiApp.ResetButton#setText
+ * @deprecated
  *
  * @param {String} text - the new text.
  *
@@ -19232,6 +20339,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.ResetButton#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -19242,6 +20350,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code> is visible.
  *
  * @function UiApp.ResetButton#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code> should be visible or not.
  *
@@ -19252,11 +20361,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code>.
  *
  * @function UiApp.ResetButton#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.ResetButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.ScrollPanel
@@ -19266,6 +20377,7 @@
  * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code>.
  *
  * @function UiApp.ScrollPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  *
@@ -19305,6 +20417,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.ScrollPanel#addScrollHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -19318,6 +20431,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.ScrollPanel#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -19331,6 +20445,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.ScrollPanel#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -19341,6 +20456,7 @@
  * Remove all widgets from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code>.
  *
  * @function UiApp.ScrollPanel#clear
+ * @deprecated
  *
  * @return {UiApp.ScrollPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code> itself, useful for chaining.
  */
@@ -19352,6 +20468,7 @@
  object.
  *
  * @function UiApp.ScrollPanel#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -19360,6 +20477,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code>.
  *
  * @function UiApp.ScrollPanel#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -19368,6 +20486,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.ScrollPanel#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -19376,6 +20495,7 @@
  * Sets whether to always show scrollbars even if they are not needed.
  *
  * @function UiApp.ScrollPanel#setAlwaysShowScrollBars
+ * @deprecated
  *
  * @param {Boolean} alwaysShow - whether to always show scrollbars
  *
@@ -19386,6 +20506,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code>.
  *
  * @function UiApp.ScrollPanel#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -19396,8 +20517,9 @@
  * Sets the horizontal scroll position of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code>.
  *
  * @function UiApp.ScrollPanel#setHorizontalScrollPosition
+ * @deprecated
  *
- * @param {number} position - the new horizontal scroll position, in pixels.
+ * @param {IntegerNum} position - the new horizontal scroll position, in pixels.
  *
  * @return {UiApp.ScrollPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code> itself, useful for chaining.
  */
@@ -19406,6 +20528,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code>.
  *
  * @function UiApp.ScrollPanel#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code> from
      app.getElementById(id).
@@ -19419,8 +20542,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.ScrollPanel#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.ScrollPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code> itself, useful for chaining.
  */
@@ -19429,9 +20553,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code> in pixels.
  *
  * @function UiApp.ScrollPanel#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.ScrollPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code> itself, useful for chaining.
  */
@@ -19440,8 +20565,9 @@
  * Sets the vertical scroll position of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code>.
  *
  * @function UiApp.ScrollPanel#setScrollPosition
+ * @deprecated
  *
- * @param {number} position - the new vertical scroll position, in pixels.
+ * @param {IntegerNum} position - the new vertical scroll position, in pixels.
  *
  * @return {UiApp.ScrollPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code> itself, useful for chaining.
  */
@@ -19450,6 +20576,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code>.
  *
  * @function UiApp.ScrollPanel#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -19469,6 +20596,7 @@
  </code></pre>
  *
  * @function UiApp.ScrollPanel#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -19489,6 +20617,7 @@
  </code></pre>
  *
  * @function UiApp.ScrollPanel#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -19503,6 +20632,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.ScrollPanel#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -19516,6 +20646,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.ScrollPanel#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -19526,6 +20657,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code>.
  *
  * @function UiApp.ScrollPanel#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -19538,6 +20670,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.ScrollPanel#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -19548,6 +20681,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code> is visible.
  *
  * @function UiApp.ScrollPanel#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code> should be visible or not.
  *
@@ -19558,6 +20692,7 @@
  * Sets the widget inside this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code>, removing anything previously there.
  *
  * @function UiApp.ScrollPanel#setWidget
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to put in this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code>.
  *
@@ -19568,11 +20703,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code>.
  *
  * @function UiApp.ScrollPanel#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.ScrollPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.ServerHandler
@@ -19627,6 +20764,7 @@
  </code></pre>
  *
  * @function UiApp.ServerHandler#addCallbackElement
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the callback element.
  *
@@ -19640,6 +20778,7 @@
  object.
  *
  * @function UiApp.ServerHandler#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -19648,6 +20787,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.ServerHandler#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -19656,6 +20796,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.ServerHandler#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -19664,6 +20805,7 @@
  * Sets the name of the function to call when this handler is invoked.
  *
  * @function UiApp.ServerHandler#setCallbackFunction
+ * @deprecated
  *
  * @param {String} functionToInvoke - the name of the function to call.
  *
@@ -19674,6 +20816,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.ServerHandler#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> from
      app.getElementById(id).
@@ -19685,6 +20828,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.ServerHandler#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -19697,6 +20841,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ServerHandler#validateEmail
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  *
@@ -19709,6 +20854,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ServerHandler#validateInteger
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  *
@@ -19722,10 +20868,11 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ServerHandler#validateLength
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
- * @param {number} min - the minimum length. If null, no minimum is enforced.
- * @param {number} max - the maximum length. If null, no maximum is enforced.
+ * @param {IntegerNum} min - the minimum length. If null, no minimum is enforced.
+ * @param {IntegerNum} max - the maximum length. If null, no maximum is enforced.
  *
  * @return {UiApp.ServerHandler} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> itself, useful for chaining.
  */
@@ -19736,6 +20883,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ServerHandler#validateMatches
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String} pattern - the regex to test, as a string.
@@ -19749,6 +20897,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ServerHandler#validateMatches
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String} pattern - the regex to test, as a string.
@@ -19763,6 +20912,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ServerHandler#validateNotEmail
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  *
@@ -19775,6 +20925,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ServerHandler#validateNotInteger
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  *
@@ -19788,10 +20939,11 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ServerHandler#validateNotLength
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
- * @param {number} min - the minimum length. If null, no minimum is enforced.
- * @param {number} max - the maximum length. If null, no maximum is enforced.
+ * @param {IntegerNum} min - the minimum length. If null, no minimum is enforced.
+ * @param {IntegerNum} max - the maximum length. If null, no maximum is enforced.
  *
  * @return {UiApp.ServerHandler} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> itself, useful for chaining.
  */
@@ -19803,6 +20955,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ServerHandler#validateNotMatches
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String} pattern - the regex to test, as a string.
@@ -19817,6 +20970,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ServerHandler#validateNotMatches
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String} pattern - the regex to test, as a string.
@@ -19831,6 +20985,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ServerHandler#validateNotNumber
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  *
@@ -19844,6 +20999,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ServerHandler#validateNotOptions
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String[]} options - the list of unacceptable values
@@ -19858,6 +21014,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ServerHandler#validateNotRange
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {Number} min - the minimum length. If null, no minimum is enforced.
@@ -19873,9 +21030,10 @@
  <p>This will cause an error if any of the widgets do not have a text property.
  *
  * @function UiApp.ServerHandler#validateNotSum
+ * @deprecated
  *
  * @param {UiApp.Widget[]} widgets - an array of the widgets to validate on.
- * @param {number} sum - the sum to validate with
+ * @param {IntegerNum} sum - the sum to validate with
  *
  * @return {UiApp.ServerHandler} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> itself, useful for chaining.
  */
@@ -19886,6 +21044,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ServerHandler#validateNumber
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  *
@@ -19899,6 +21058,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ServerHandler#validateOptions
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {String[]} options - the list of acceptable values
@@ -19913,6 +21073,7 @@
  <p>This will cause an error if the widget does not have a text property.
  *
  * @function UiApp.ServerHandler#validateRange
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to validate on.
  * @param {Number} min - the minimum length. If null, no minimum is enforced.
@@ -19928,12 +21089,14 @@
  <p>This will cause an error if any of the widgets do not have a text property.
  *
  * @function UiApp.ServerHandler#validateSum
+ * @deprecated
  *
  * @param {UiApp.Widget[]} widgets - an array of the widgets to validate on.
- * @param {number} sum - the sum to validate with
+ * @param {IntegerNum} sum - the sum to validate with
  *
  * @return {UiApp.ServerHandler} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.SimpleCheckBox
@@ -19972,6 +21135,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SimpleCheckBox#addBlurHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -20027,6 +21191,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SimpleCheckBox#addClickHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -20066,6 +21231,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SimpleCheckBox#addFocusHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -20116,6 +21282,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.SimpleCheckBox#addKeyDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -20166,6 +21333,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.SimpleCheckBox#addKeyPressHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -20216,6 +21384,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.SimpleCheckBox#addKeyUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -20271,6 +21440,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SimpleCheckBox#addMouseDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -20326,6 +21496,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SimpleCheckBox#addMouseMoveHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -20381,6 +21552,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SimpleCheckBox#addMouseOutHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -20436,6 +21608,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SimpleCheckBox#addMouseOverHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -20491,6 +21664,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SimpleCheckBox#addMouseUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -20546,6 +21720,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SimpleCheckBox#addMouseWheelHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -20559,6 +21734,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SimpleCheckBox#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -20572,6 +21748,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SimpleCheckBox#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -20585,6 +21762,7 @@
  object.
  *
  * @function UiApp.SimpleCheckBox#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -20593,6 +21771,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-check-box.html'>SimpleCheckBox</a></s></code>.
  *
  * @function UiApp.SimpleCheckBox#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -20601,6 +21780,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.SimpleCheckBox#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -20610,6 +21790,7 @@
  modifier key) to automatically focus the widget.
  *
  * @function UiApp.SimpleCheckBox#setAccessKey
+ * @deprecated
  *
  * @param {Char} accessKey - the character to use for focus
  *
@@ -20620,6 +21801,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-check-box.html'>SimpleCheckBox</a></s></code> should be checked.
  *
  * @function UiApp.SimpleCheckBox#setChecked
+ * @deprecated
  *
  * @param {Boolean} checked - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-check-box.html'>SimpleCheckBox</a></s></code> should be checked.
  *
@@ -20630,6 +21812,7 @@
  * Sets whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-check-box.html'>SimpleCheckBox</a></s></code> is enabled.
  *
  * @function UiApp.SimpleCheckBox#setEnabled
+ * @deprecated
  *
  * @param {Boolean} enabled - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-check-box.html'>SimpleCheckBox</a></s></code> should be enabled or disabled.
  *
@@ -20643,6 +21826,7 @@
  events.
  *
  * @function UiApp.SimpleCheckBox#setFocus
+ * @deprecated
  *
  * @param {Boolean} focus - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-check-box.html'>SimpleCheckBox</a></s></code> should have the current focus.
  *
@@ -20653,6 +21837,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-check-box.html'>SimpleCheckBox</a></s></code>.
  *
  * @function UiApp.SimpleCheckBox#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -20663,6 +21848,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-check-box.html'>SimpleCheckBox</a></s></code>.
  *
  * @function UiApp.SimpleCheckBox#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-check-box.html'>SimpleCheckBox</a></s></code> from
      app.getElementById(id).
@@ -20676,8 +21862,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.SimpleCheckBox#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.SimpleCheckBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-check-box.html'>SimpleCheckBox</a></s></code> itself, useful for chaining.
  */
@@ -20687,6 +21874,7 @@
  FormPanel or as a callback element on an event handler.
  *
  * @function UiApp.SimpleCheckBox#setName
+ * @deprecated
  *
  * @param {String} name - the new name.
  *
@@ -20697,9 +21885,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-check-box.html'>SimpleCheckBox</a></s></code> in pixels.
  *
  * @function UiApp.SimpleCheckBox#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.SimpleCheckBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-check-box.html'>SimpleCheckBox</a></s></code> itself, useful for chaining.
  */
@@ -20708,6 +21897,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-check-box.html'>SimpleCheckBox</a></s></code>.
  *
  * @function UiApp.SimpleCheckBox#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -20727,6 +21917,7 @@
  </code></pre>
  *
  * @function UiApp.SimpleCheckBox#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -20747,6 +21938,7 @@
  </code></pre>
  *
  * @function UiApp.SimpleCheckBox#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -20761,6 +21953,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SimpleCheckBox#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -20774,6 +21967,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SimpleCheckBox#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -20788,8 +21982,9 @@
  order.
  *
  * @function UiApp.SimpleCheckBox#setTabIndex
+ * @deprecated
  *
- * @param {number} index - the new tab index.
+ * @param {IntegerNum} index - the new tab index.
  *
  * @return {UiApp.SimpleCheckBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-check-box.html'>SimpleCheckBox</a></s></code> itself, useful for chaining.
  */
@@ -20798,6 +21993,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-check-box.html'>SimpleCheckBox</a></s></code>.
  *
  * @function UiApp.SimpleCheckBox#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -20810,6 +22006,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.SimpleCheckBox#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -20820,6 +22017,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-check-box.html'>SimpleCheckBox</a></s></code> is visible.
  *
  * @function UiApp.SimpleCheckBox#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-check-box.html'>SimpleCheckBox</a></s></code> should be visible or not.
  *
@@ -20830,11 +22028,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-check-box.html'>SimpleCheckBox</a></s></code>.
  *
  * @function UiApp.SimpleCheckBox#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.SimpleCheckBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-check-box.html'>SimpleCheckBox</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.SimplePanel
@@ -20844,6 +22044,7 @@
  * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-panel.html'>SimplePanel</a></s></code>.
  *
  * @function UiApp.SimplePanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  *
@@ -20857,6 +22058,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SimplePanel#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -20870,6 +22072,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SimplePanel#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -20880,6 +22083,7 @@
  * Remove all widgets from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-panel.html'>SimplePanel</a></s></code>.
  *
  * @function UiApp.SimplePanel#clear
+ * @deprecated
  *
  * @return {UiApp.SimplePanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-panel.html'>SimplePanel</a></s></code> itself, useful for chaining.
  */
@@ -20891,6 +22095,7 @@
  object.
  *
  * @function UiApp.SimplePanel#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -20899,6 +22104,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-panel.html'>SimplePanel</a></s></code>.
  *
  * @function UiApp.SimplePanel#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -20907,6 +22113,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.SimplePanel#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -20915,6 +22122,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-panel.html'>SimplePanel</a></s></code>.
  *
  * @function UiApp.SimplePanel#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -20925,6 +22133,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-panel.html'>SimplePanel</a></s></code>.
  *
  * @function UiApp.SimplePanel#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-panel.html'>SimplePanel</a></s></code> from
      app.getElementById(id).
@@ -20938,8 +22147,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.SimplePanel#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.SimplePanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-panel.html'>SimplePanel</a></s></code> itself, useful for chaining.
  */
@@ -20948,9 +22158,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-panel.html'>SimplePanel</a></s></code> in pixels.
  *
  * @function UiApp.SimplePanel#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.SimplePanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-panel.html'>SimplePanel</a></s></code> itself, useful for chaining.
  */
@@ -20959,6 +22170,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-panel.html'>SimplePanel</a></s></code>.
  *
  * @function UiApp.SimplePanel#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -20978,6 +22190,7 @@
  </code></pre>
  *
  * @function UiApp.SimplePanel#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -20998,6 +22211,7 @@
  </code></pre>
  *
  * @function UiApp.SimplePanel#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -21012,6 +22226,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SimplePanel#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -21025,6 +22240,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SimplePanel#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -21035,6 +22251,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-panel.html'>SimplePanel</a></s></code>.
  *
  * @function UiApp.SimplePanel#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -21047,6 +22264,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.SimplePanel#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -21057,6 +22275,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-panel.html'>SimplePanel</a></s></code> is visible.
  *
  * @function UiApp.SimplePanel#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-panel.html'>SimplePanel</a></s></code> should be visible or not.
  *
@@ -21067,6 +22286,7 @@
  * Sets the widget inside this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-panel.html'>SimplePanel</a></s></code>, removing anything previously there.
  *
  * @function UiApp.SimplePanel#setWidget
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to put in this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-panel.html'>SimplePanel</a></s></code>.
  *
@@ -21077,11 +22297,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-panel.html'>SimplePanel</a></s></code>.
  *
  * @function UiApp.SimplePanel#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.SimplePanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-panel.html'>SimplePanel</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.SimpleRadioButton
@@ -21120,6 +22342,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SimpleRadioButton#addBlurHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -21175,6 +22398,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SimpleRadioButton#addClickHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -21214,6 +22438,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SimpleRadioButton#addFocusHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -21264,6 +22489,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.SimpleRadioButton#addKeyDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -21314,6 +22540,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.SimpleRadioButton#addKeyPressHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -21364,6 +22591,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.SimpleRadioButton#addKeyUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -21419,6 +22647,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SimpleRadioButton#addMouseDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -21474,6 +22703,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SimpleRadioButton#addMouseMoveHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -21529,6 +22759,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SimpleRadioButton#addMouseOutHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -21584,6 +22815,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SimpleRadioButton#addMouseOverHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -21639,6 +22871,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SimpleRadioButton#addMouseUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -21694,6 +22927,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SimpleRadioButton#addMouseWheelHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -21707,6 +22941,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SimpleRadioButton#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -21720,6 +22955,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SimpleRadioButton#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -21733,6 +22969,7 @@
  object.
  *
  * @function UiApp.SimpleRadioButton#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -21741,6 +22978,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-radio-button.html'>SimpleRadioButton</a></s></code>.
  *
  * @function UiApp.SimpleRadioButton#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -21749,6 +22987,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.SimpleRadioButton#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -21758,6 +22997,7 @@
  modifier key) to automatically focus the widget.
  *
  * @function UiApp.SimpleRadioButton#setAccessKey
+ * @deprecated
  *
  * @param {Char} accessKey - the character to use for focus
  *
@@ -21768,6 +23008,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-radio-button.html'>SimpleRadioButton</a></s></code> should be checked.
  *
  * @function UiApp.SimpleRadioButton#setChecked
+ * @deprecated
  *
  * @param {Boolean} checked - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-radio-button.html'>SimpleRadioButton</a></s></code> should be checked.
  *
@@ -21778,6 +23019,7 @@
  * Sets whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-radio-button.html'>SimpleRadioButton</a></s></code> is enabled.
  *
  * @function UiApp.SimpleRadioButton#setEnabled
+ * @deprecated
  *
  * @param {Boolean} enabled - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-radio-button.html'>SimpleRadioButton</a></s></code> should be enabled or disabled.
  *
@@ -21791,6 +23033,7 @@
  events.
  *
  * @function UiApp.SimpleRadioButton#setFocus
+ * @deprecated
  *
  * @param {Boolean} focus - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-radio-button.html'>SimpleRadioButton</a></s></code> should have the current focus.
  *
@@ -21801,6 +23044,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-radio-button.html'>SimpleRadioButton</a></s></code>.
  *
  * @function UiApp.SimpleRadioButton#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -21811,6 +23055,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-radio-button.html'>SimpleRadioButton</a></s></code>.
  *
  * @function UiApp.SimpleRadioButton#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-radio-button.html'>SimpleRadioButton</a></s></code> from
      app.getElementById(id).
@@ -21824,8 +23069,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.SimpleRadioButton#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.SimpleRadioButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-radio-button.html'>SimpleRadioButton</a></s></code> itself, useful for chaining.
  */
@@ -21835,6 +23081,7 @@
  FormPanel or as a callback element on an event handler.
  *
  * @function UiApp.SimpleRadioButton#setName
+ * @deprecated
  *
  * @param {String} name - the new name.
  *
@@ -21845,9 +23092,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-radio-button.html'>SimpleRadioButton</a></s></code> in pixels.
  *
  * @function UiApp.SimpleRadioButton#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.SimpleRadioButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-radio-button.html'>SimpleRadioButton</a></s></code> itself, useful for chaining.
  */
@@ -21856,6 +23104,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-radio-button.html'>SimpleRadioButton</a></s></code>.
  *
  * @function UiApp.SimpleRadioButton#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -21875,6 +23124,7 @@
  </code></pre>
  *
  * @function UiApp.SimpleRadioButton#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -21895,6 +23145,7 @@
  </code></pre>
  *
  * @function UiApp.SimpleRadioButton#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -21909,6 +23160,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SimpleRadioButton#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -21922,6 +23174,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SimpleRadioButton#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -21936,8 +23189,9 @@
  order.
  *
  * @function UiApp.SimpleRadioButton#setTabIndex
+ * @deprecated
  *
- * @param {number} index - the new tab index.
+ * @param {IntegerNum} index - the new tab index.
  *
  * @return {UiApp.SimpleRadioButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-radio-button.html'>SimpleRadioButton</a></s></code> itself, useful for chaining.
  */
@@ -21946,6 +23200,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-radio-button.html'>SimpleRadioButton</a></s></code>.
  *
  * @function UiApp.SimpleRadioButton#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -21958,6 +23213,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.SimpleRadioButton#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -21968,6 +23224,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-radio-button.html'>SimpleRadioButton</a></s></code> is visible.
  *
  * @function UiApp.SimpleRadioButton#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-radio-button.html'>SimpleRadioButton</a></s></code> should be visible or not.
  *
@@ -21978,11 +23235,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-radio-button.html'>SimpleRadioButton</a></s></code>.
  *
  * @function UiApp.SimpleRadioButton#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.SimpleRadioButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-radio-button.html'>SimpleRadioButton</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.SplitLayoutPanel
@@ -21992,6 +23251,7 @@
  * Adds a widget at the center of the dock. No further widgets may be added after this one.
  *
  * @function UiApp.SplitLayoutPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  *
@@ -22002,6 +23262,7 @@
  * Adds a widget to the east edge of the dock.
  *
  * @function UiApp.SplitLayoutPanel#addEast
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  * @param {Number} width - the width of the widget, in pixels.
@@ -22013,6 +23274,7 @@
  * Adds a widget to the north edge of the dock.
  *
  * @function UiApp.SplitLayoutPanel#addNorth
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  * @param {Number} height - the height of the widget, in pixels.
@@ -22024,6 +23286,7 @@
  * Adds a widget to the east edge of the dock.
  *
  * @function UiApp.SplitLayoutPanel#addSouth
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  * @param {Number} height - the height of the widget, in pixels.
@@ -22038,6 +23301,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SplitLayoutPanel#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -22051,6 +23315,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SplitLayoutPanel#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -22061,6 +23326,7 @@
  * Adds a widget to the west edge of the dock.
  *
  * @function UiApp.SplitLayoutPanel#addWest
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  * @param {Number} width - the width of the widget, in pixels.
@@ -22072,6 +23338,7 @@
  * Remove all widgets from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code>.
  *
  * @function UiApp.SplitLayoutPanel#clear
+ * @deprecated
  *
  * @return {UiApp.SplitLayoutPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code> itself, useful for chaining.
  */
@@ -22083,6 +23350,7 @@
  object.
  *
  * @function UiApp.SplitLayoutPanel#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -22091,6 +23359,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code>.
  *
  * @function UiApp.SplitLayoutPanel#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -22099,6 +23368,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.SplitLayoutPanel#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -22108,8 +23378,9 @@
  This will fail if the index is greater than or equal to the number of elements in the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code>.
  *
  * @function UiApp.SplitLayoutPanel#remove
+ * @deprecated
  *
- * @param {number} index - the index of the widget to remove.
+ * @param {IntegerNum} index - the index of the widget to remove.
  *
  * @return {UiApp.SplitLayoutPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code> itself, useful for chaining.
  */
@@ -22119,6 +23390,7 @@
  actually a child of the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code>.
  *
  * @function UiApp.SplitLayoutPanel#remove
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to remove.
  *
@@ -22129,6 +23401,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code>.
  *
  * @function UiApp.SplitLayoutPanel#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -22139,6 +23412,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code>.
  *
  * @function UiApp.SplitLayoutPanel#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code> from
      app.getElementById(id).
@@ -22152,8 +23426,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.SplitLayoutPanel#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.SplitLayoutPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code> itself, useful for chaining.
  */
@@ -22162,9 +23437,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code> in pixels.
  *
  * @function UiApp.SplitLayoutPanel#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.SplitLayoutPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code> itself, useful for chaining.
  */
@@ -22173,6 +23449,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code>.
  *
  * @function UiApp.SplitLayoutPanel#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -22192,6 +23469,7 @@
  </code></pre>
  *
  * @function UiApp.SplitLayoutPanel#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -22212,6 +23490,7 @@
  </code></pre>
  *
  * @function UiApp.SplitLayoutPanel#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -22226,6 +23505,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SplitLayoutPanel#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -22239,6 +23519,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SplitLayoutPanel#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -22249,6 +23530,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code>.
  *
  * @function UiApp.SplitLayoutPanel#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -22261,6 +23543,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.SplitLayoutPanel#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -22271,6 +23554,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code> is visible.
  *
  * @function UiApp.SplitLayoutPanel#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code> should be visible or not.
  *
@@ -22285,9 +23569,10 @@
  is not a child of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code>.
  *
  * @function UiApp.SplitLayoutPanel#setWidgetMinSize
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget whose minimum size is being set.
- * @param {number} minSize - the minimum size, in pixels.
+ * @param {IntegerNum} minSize - the minimum size, in pixels.
  *
  * @return {UiApp.SplitLayoutPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code> itself, useful for chaining.
  */
@@ -22296,11 +23581,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code>.
  *
  * @function UiApp.SplitLayoutPanel#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.SplitLayoutPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.StackPanel
@@ -22310,6 +23597,7 @@
  * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code>.
  *
  * @function UiApp.StackPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  *
@@ -22320,6 +23608,7 @@
  * Adds a widget to the stack with the given header text.
  *
  * @function UiApp.StackPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  * @param {String} text - the new header text.
@@ -22331,6 +23620,7 @@
  * Adds a widget to the stack with the given header text.
  *
  * @function UiApp.StackPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  * @param {String} text - the new header text.
@@ -22346,6 +23636,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.StackPanel#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -22359,6 +23650,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.StackPanel#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -22369,6 +23661,7 @@
  * Remove all widgets from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code>.
  *
  * @function UiApp.StackPanel#clear
+ * @deprecated
  *
  * @return {UiApp.StackPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code> itself, useful for chaining.
  */
@@ -22380,6 +23673,7 @@
  object.
  *
  * @function UiApp.StackPanel#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -22388,6 +23682,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code>.
  *
  * @function UiApp.StackPanel#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -22396,6 +23691,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.StackPanel#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -22405,8 +23701,9 @@
  This will fail if the index is greater than or equal to the number of elements in the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code>.
  *
  * @function UiApp.StackPanel#remove
+ * @deprecated
  *
- * @param {number} index - the index of the widget to remove.
+ * @param {IntegerNum} index - the index of the widget to remove.
  *
  * @return {UiApp.StackPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code> itself, useful for chaining.
  */
@@ -22416,6 +23713,7 @@
  actually a child of the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code>.
  *
  * @function UiApp.StackPanel#remove
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to remove.
  *
@@ -22426,6 +23724,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code>.
  *
  * @function UiApp.StackPanel#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -22436,6 +23735,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code>.
  *
  * @function UiApp.StackPanel#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code> from
      app.getElementById(id).
@@ -22449,8 +23749,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.StackPanel#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.StackPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code> itself, useful for chaining.
  */
@@ -22459,9 +23760,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code> in pixels.
  *
  * @function UiApp.StackPanel#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.StackPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code> itself, useful for chaining.
  */
@@ -22470,6 +23772,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code>.
  *
  * @function UiApp.StackPanel#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -22481,8 +23784,9 @@
  * Sets the text associated with a child by its index.
  *
  * @function UiApp.StackPanel#setStackText
+ * @deprecated
  *
- * @param {number} index - the index of the stack element whose text we want to change.
+ * @param {IntegerNum} index - the index of the stack element whose text we want to change.
  * @param {String} text - the new text.
  *
  * @return {UiApp.StackPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code> itself, useful for chaining.
@@ -22492,8 +23796,9 @@
  * Sets the text associated with a child by its index.
  *
  * @function UiApp.StackPanel#setStackText
+ * @deprecated
  *
- * @param {number} index - the index of the stack element whose text we want to change.
+ * @param {IntegerNum} index - the index of the stack element whose text we want to change.
  * @param {String} text - the new text.
  * @param {Boolean} asHtml - whether to treat the text as HTML.
  *
@@ -22512,6 +23817,7 @@
  </code></pre>
  *
  * @function UiApp.StackPanel#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -22532,6 +23838,7 @@
  </code></pre>
  *
  * @function UiApp.StackPanel#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -22546,6 +23853,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.StackPanel#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -22559,6 +23867,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.StackPanel#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -22569,6 +23878,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code>.
  *
  * @function UiApp.StackPanel#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -22581,6 +23891,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.StackPanel#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -22591,6 +23902,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code> is visible.
  *
  * @function UiApp.StackPanel#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code> should be visible or not.
  *
@@ -22601,11 +23913,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code>.
  *
  * @function UiApp.StackPanel#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.StackPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.SubmitButton
@@ -22644,6 +23958,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SubmitButton#addBlurHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -22699,6 +24014,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SubmitButton#addClickHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -22738,6 +24054,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SubmitButton#addFocusHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -22788,6 +24105,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.SubmitButton#addKeyDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -22838,6 +24156,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.SubmitButton#addKeyPressHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -22888,6 +24207,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.SubmitButton#addKeyUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -22943,6 +24263,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SubmitButton#addMouseDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -22998,6 +24319,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SubmitButton#addMouseMoveHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -23053,6 +24375,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SubmitButton#addMouseOutHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -23108,6 +24431,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SubmitButton#addMouseOverHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -23163,6 +24487,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SubmitButton#addMouseUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -23218,6 +24543,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SubmitButton#addMouseWheelHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -23231,6 +24557,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SubmitButton#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -23244,6 +24571,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SubmitButton#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -23257,6 +24585,7 @@
  object.
  *
  * @function UiApp.SubmitButton#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -23265,6 +24594,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/submit-button.html'>SubmitButton</a></s></code>.
  *
  * @function UiApp.SubmitButton#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -23273,6 +24603,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.SubmitButton#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -23282,6 +24613,7 @@
  modifier key) to automatically focus the widget.
  *
  * @function UiApp.SubmitButton#setAccessKey
+ * @deprecated
  *
  * @param {Char} accessKey - the character to use for focus
  *
@@ -23292,6 +24624,7 @@
  * Sets whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/submit-button.html'>SubmitButton</a></s></code> is enabled.
  *
  * @function UiApp.SubmitButton#setEnabled
+ * @deprecated
  *
  * @param {Boolean} enabled - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/submit-button.html'>SubmitButton</a></s></code> should be enabled or disabled.
  *
@@ -23305,6 +24638,7 @@
  events.
  *
  * @function UiApp.SubmitButton#setFocus
+ * @deprecated
  *
  * @param {Boolean} focus - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/submit-button.html'>SubmitButton</a></s></code> should have the current focus.
  *
@@ -23315,6 +24649,7 @@
  * Sets the HTML content of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/submit-button.html'>SubmitButton</a></s></code>.
  *
  * @function UiApp.SubmitButton#setHTML
+ * @deprecated
  *
  * @param {String} html - the new HTML
  *
@@ -23325,6 +24660,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/submit-button.html'>SubmitButton</a></s></code>.
  *
  * @function UiApp.SubmitButton#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -23335,6 +24671,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/submit-button.html'>SubmitButton</a></s></code>.
  *
  * @function UiApp.SubmitButton#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/submit-button.html'>SubmitButton</a></s></code> from
      app.getElementById(id).
@@ -23348,8 +24685,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.SubmitButton#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.SubmitButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/submit-button.html'>SubmitButton</a></s></code> itself, useful for chaining.
  */
@@ -23358,9 +24696,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/submit-button.html'>SubmitButton</a></s></code> in pixels.
  *
  * @function UiApp.SubmitButton#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.SubmitButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/submit-button.html'>SubmitButton</a></s></code> itself, useful for chaining.
  */
@@ -23369,6 +24708,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/submit-button.html'>SubmitButton</a></s></code>.
  *
  * @function UiApp.SubmitButton#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -23388,6 +24728,7 @@
  </code></pre>
  *
  * @function UiApp.SubmitButton#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -23408,6 +24749,7 @@
  </code></pre>
  *
  * @function UiApp.SubmitButton#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -23422,6 +24764,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SubmitButton#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -23435,6 +24778,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SubmitButton#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -23449,8 +24793,9 @@
  order.
  *
  * @function UiApp.SubmitButton#setTabIndex
+ * @deprecated
  *
- * @param {number} index - the new tab index.
+ * @param {IntegerNum} index - the new tab index.
  *
  * @return {UiApp.SubmitButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/submit-button.html'>SubmitButton</a></s></code> itself, useful for chaining.
  */
@@ -23459,6 +24804,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/submit-button.html'>SubmitButton</a></s></code>.
  *
  * @function UiApp.SubmitButton#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -23469,6 +24815,7 @@
  * Set the display text of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/submit-button.html'>SubmitButton</a></s></code>.
  *
  * @function UiApp.SubmitButton#setText
+ * @deprecated
  *
  * @param {String} text - the new text.
  *
@@ -23481,6 +24828,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.SubmitButton#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -23491,6 +24839,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/submit-button.html'>SubmitButton</a></s></code> is visible.
  *
  * @function UiApp.SubmitButton#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/submit-button.html'>SubmitButton</a></s></code> should be visible or not.
  *
@@ -23501,11 +24850,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/submit-button.html'>SubmitButton</a></s></code>.
  *
  * @function UiApp.SubmitButton#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.SubmitButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/submit-button.html'>SubmitButton</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.SuggestBox
@@ -23555,6 +24906,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.SuggestBox#addKeyDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -23605,6 +24957,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.SuggestBox#addKeyPressHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -23655,6 +25008,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.SuggestBox#addKeyUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -23697,6 +25051,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SuggestBox#addSelectionHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -23710,6 +25065,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SuggestBox#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -23723,6 +25079,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SuggestBox#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -23762,6 +25119,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.SuggestBox#addValueChangeHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -23775,6 +25133,7 @@
  object.
  *
  * @function UiApp.SuggestBox#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -23783,6 +25142,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code>.
  *
  * @function UiApp.SuggestBox#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -23791,6 +25151,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.SuggestBox#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -23800,6 +25161,7 @@
  modifier key) to automatically focus the widget.
  *
  * @function UiApp.SuggestBox#setAccessKey
+ * @deprecated
  *
  * @param {Char} accessKey - the character to use for focus
  *
@@ -23810,6 +25172,7 @@
  * Sets whether opening and closing the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code> is animated.
  *
  * @function UiApp.SuggestBox#setAnimationEnabled
+ * @deprecated
  *
  * @param {Boolean} animationEnabled - whether to animate opening and closing.
  *
@@ -23820,6 +25183,7 @@
  * Sets the auto-select behavior.
  *
  * @function UiApp.SuggestBox#setAutoSelectEnabled
+ * @deprecated
  *
  * @param {Boolean} autoSelectEnabled - whether auto-select is enabled.
  *
@@ -23833,6 +25197,7 @@
  events.
  *
  * @function UiApp.SuggestBox#setFocus
+ * @deprecated
  *
  * @param {Boolean} focus - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code> should have the current focus.
  *
@@ -23843,6 +25208,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code>.
  *
  * @function UiApp.SuggestBox#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -23853,6 +25219,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code>.
  *
  * @function UiApp.SuggestBox#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code> from
      app.getElementById(id).
@@ -23866,8 +25233,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.SuggestBox#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.SuggestBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code> itself, useful for chaining.
  */
@@ -23876,8 +25244,9 @@
  * Sets the suggest limit
  *
  * @function UiApp.SuggestBox#setLimit
+ * @deprecated
  *
- * @param {number} limit - max number of suggestions
+ * @param {IntegerNum} limit - max number of suggestions
  *
  * @return {UiApp.SuggestBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code> itself, useful for chaining.
  */
@@ -23886,9 +25255,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code> in pixels.
  *
  * @function UiApp.SuggestBox#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.SuggestBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code> itself, useful for chaining.
  */
@@ -23897,6 +25267,7 @@
  * Sets the popup style name.
  *
  * @function UiApp.SuggestBox#setPopupStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -23907,6 +25278,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code>.
  *
  * @function UiApp.SuggestBox#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -23926,6 +25298,7 @@
  </code></pre>
  *
  * @function UiApp.SuggestBox#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -23946,6 +25319,7 @@
  </code></pre>
  *
  * @function UiApp.SuggestBox#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -23960,6 +25334,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SuggestBox#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -23973,6 +25348,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.SuggestBox#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -23987,8 +25363,9 @@
  order.
  *
  * @function UiApp.SuggestBox#setTabIndex
+ * @deprecated
  *
- * @param {number} index - the new tab index.
+ * @param {IntegerNum} index - the new tab index.
  *
  * @return {UiApp.SuggestBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code> itself, useful for chaining.
  */
@@ -23997,6 +25374,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code>.
  *
  * @function UiApp.SuggestBox#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -24007,6 +25385,7 @@
  * Set the display text of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code>.
  *
  * @function UiApp.SuggestBox#setText
+ * @deprecated
  *
  * @param {String} text - the new text.
  *
@@ -24019,6 +25398,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.SuggestBox#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -24029,6 +25409,7 @@
  * Sets the value of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code>.
  *
  * @function UiApp.SuggestBox#setValue
+ * @deprecated
  *
  * @param {String} value - the new value.
  *
@@ -24039,6 +25420,7 @@
  * Sets the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code>'s value.
  *
  * @function UiApp.SuggestBox#setValue
+ * @deprecated
  *
  * @param {String} value - the new value.
  * @param {Boolean} fireEvents - whether to fire change events.
@@ -24050,6 +25432,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code> is visible.
  *
  * @function UiApp.SuggestBox#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code> should be visible or not.
  *
@@ -24060,11 +25443,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code>.
  *
  * @function UiApp.SuggestBox#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.SuggestBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.TabBar
@@ -24077,6 +25462,7 @@
  selection so they are functionally identical.
  *
  * @function UiApp.TabBar#addBeforeSelectionHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to invoke.
  *
@@ -24119,6 +25505,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TabBar#addSelectionHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -24132,6 +25519,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.TabBar#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -24145,6 +25533,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.TabBar#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -24155,6 +25544,7 @@
  * Add a tab with the given title.
  *
  * @function UiApp.TabBar#addTab
+ * @deprecated
  *
  * @param {String} title - the new tab's title.
  *
@@ -24165,6 +25555,7 @@
  * Add a tab with the given title.
  *
  * @function UiApp.TabBar#addTab
+ * @deprecated
  *
  * @param {String} title - the new tab's title.
  * @param {Boolean} asHtml - whether to treat the title as HTML.
@@ -24176,6 +25567,7 @@
  * Add a tab with the given widget as its title.
  *
  * @function UiApp.TabBar#addTab
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the new tab's title widget.
  *
@@ -24189,6 +25581,7 @@
  object.
  *
  * @function UiApp.TabBar#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -24197,6 +25590,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-bar.html'>TabBar</a></s></code>.
  *
  * @function UiApp.TabBar#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -24205,6 +25599,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.TabBar#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -24213,8 +25608,9 @@
  * Select a tab by index.
  *
  * @function UiApp.TabBar#selectTab
+ * @deprecated
  *
- * @param {number} index - the index of the tab to select.
+ * @param {IntegerNum} index - the index of the tab to select.
  *
  * @return {UiApp.TabBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-bar.html'>TabBar</a></s></code> itself, useful for chaining.
  */
@@ -24223,6 +25619,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-bar.html'>TabBar</a></s></code>.
  *
  * @function UiApp.TabBar#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -24233,6 +25630,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-bar.html'>TabBar</a></s></code>.
  *
  * @function UiApp.TabBar#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-bar.html'>TabBar</a></s></code> from
      app.getElementById(id).
@@ -24246,8 +25644,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.TabBar#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.TabBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-bar.html'>TabBar</a></s></code> itself, useful for chaining.
  */
@@ -24256,9 +25655,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-bar.html'>TabBar</a></s></code> in pixels.
  *
  * @function UiApp.TabBar#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.TabBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-bar.html'>TabBar</a></s></code> itself, useful for chaining.
  */
@@ -24267,6 +25667,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-bar.html'>TabBar</a></s></code>.
  *
  * @function UiApp.TabBar#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -24286,6 +25687,7 @@
  </code></pre>
  *
  * @function UiApp.TabBar#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -24306,6 +25708,7 @@
  </code></pre>
  *
  * @function UiApp.TabBar#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -24320,6 +25723,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.TabBar#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -24333,6 +25737,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.TabBar#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -24343,8 +25748,9 @@
  * Set whether the given tab is enabled.
  *
  * @function UiApp.TabBar#setTabEnabled
+ * @deprecated
  *
- * @param {number} index - the tab index.
+ * @param {IntegerNum} index - the tab index.
  * @param {Boolean} enabled - whether the tab should be enabled.
  *
  * @return {UiApp.TabBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-bar.html'>TabBar</a></s></code> itself, useful for chaining.
@@ -24354,8 +25760,9 @@
  * Set the header text of a given tab.
  *
  * @function UiApp.TabBar#setTabText
+ * @deprecated
  *
- * @param {number} index - the index of the tab.
+ * @param {IntegerNum} index - the index of the tab.
  * @param {String} text - the new header text.
  *
  * @return {UiApp.TabBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-bar.html'>TabBar</a></s></code> itself, useful for chaining.
@@ -24365,6 +25772,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-bar.html'>TabBar</a></s></code>.
  *
  * @function UiApp.TabBar#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -24377,6 +25785,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.TabBar#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -24387,6 +25796,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-bar.html'>TabBar</a></s></code> is visible.
  *
  * @function UiApp.TabBar#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-bar.html'>TabBar</a></s></code> should be visible or not.
  *
@@ -24397,11 +25807,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-bar.html'>TabBar</a></s></code>.
  *
  * @function UiApp.TabBar#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.TabBar} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-bar.html'>TabBar</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.TabPanel
@@ -24411,6 +25823,7 @@
  * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-panel.html'>TabPanel</a></s></code>.
  *
  * @function UiApp.TabPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  *
@@ -24421,6 +25834,7 @@
  * Adds a widget to the stack with the given header text.
  *
  * @function UiApp.TabPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  * @param {String} text - the new header text.
@@ -24432,6 +25846,7 @@
  * Adds a widget to the stack with the given header text.
  *
  * @function UiApp.TabPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  * @param {String} text - the new header text.
@@ -24444,6 +25859,7 @@
  * Add a widget to this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-panel.html'>TabPanel</a></s></code> with the given widget as its tab header.
  *
  * @function UiApp.TabPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  * @param {UiApp.Widget} tabWidget - the header widget.
@@ -24458,6 +25874,7 @@
  selection so they are functionally identical.
  *
  * @function UiApp.TabPanel#addBeforeSelectionHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to invoke.
  *
@@ -24500,6 +25917,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TabPanel#addSelectionHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -24513,6 +25931,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.TabPanel#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -24526,6 +25945,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.TabPanel#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -24539,6 +25959,7 @@
  object.
  *
  * @function UiApp.TabPanel#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -24547,6 +25968,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-panel.html'>TabPanel</a></s></code>.
  *
  * @function UiApp.TabPanel#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -24555,6 +25977,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.TabPanel#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -24563,8 +25986,9 @@
  * Select a tab by index.
  *
  * @function UiApp.TabPanel#selectTab
+ * @deprecated
  *
- * @param {number} index - the index of the tab to select.
+ * @param {IntegerNum} index - the index of the tab to select.
  *
  * @return {UiApp.TabPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-panel.html'>TabPanel</a></s></code> itself, useful for chaining.
  */
@@ -24573,6 +25997,7 @@
  * Sets whether changing tabs <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-panel.html'>TabPanel</a></s></code> is animated.
  *
  * @function UiApp.TabPanel#setAnimationEnabled
+ * @deprecated
  *
  * @param {Boolean} animationEnabled - whether to animate changing tabs.
  *
@@ -24583,6 +26008,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-panel.html'>TabPanel</a></s></code>.
  *
  * @function UiApp.TabPanel#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -24593,6 +26019,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-panel.html'>TabPanel</a></s></code>.
  *
  * @function UiApp.TabPanel#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-panel.html'>TabPanel</a></s></code> from
      app.getElementById(id).
@@ -24606,8 +26033,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.TabPanel#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.TabPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-panel.html'>TabPanel</a></s></code> itself, useful for chaining.
  */
@@ -24616,9 +26044,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-panel.html'>TabPanel</a></s></code> in pixels.
  *
  * @function UiApp.TabPanel#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.TabPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-panel.html'>TabPanel</a></s></code> itself, useful for chaining.
  */
@@ -24627,6 +26056,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-panel.html'>TabPanel</a></s></code>.
  *
  * @function UiApp.TabPanel#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -24646,6 +26076,7 @@
  </code></pre>
  *
  * @function UiApp.TabPanel#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -24666,6 +26097,7 @@
  </code></pre>
  *
  * @function UiApp.TabPanel#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -24680,6 +26112,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.TabPanel#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -24693,6 +26126,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.TabPanel#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -24703,6 +26137,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-panel.html'>TabPanel</a></s></code>.
  *
  * @function UiApp.TabPanel#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -24715,6 +26150,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.TabPanel#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -24725,6 +26161,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-panel.html'>TabPanel</a></s></code> is visible.
  *
  * @function UiApp.TabPanel#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-panel.html'>TabPanel</a></s></code> should be visible or not.
  *
@@ -24735,11 +26172,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-panel.html'>TabPanel</a></s></code>.
  *
  * @function UiApp.TabPanel#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.TabPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-panel.html'>TabPanel</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.TextArea
@@ -24778,6 +26217,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TextArea#addBlurHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -24817,6 +26257,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TextArea#addChangeHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -24872,6 +26313,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TextArea#addClickHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -24911,6 +26353,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TextArea#addFocusHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -24961,6 +26404,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.TextArea#addKeyDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -25011,6 +26455,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.TextArea#addKeyPressHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -25061,6 +26506,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.TextArea#addKeyUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -25116,6 +26562,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TextArea#addMouseDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -25171,6 +26618,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TextArea#addMouseMoveHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -25226,6 +26674,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TextArea#addMouseOutHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -25281,6 +26730,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TextArea#addMouseOverHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -25336,6 +26786,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TextArea#addMouseUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -25391,6 +26842,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TextArea#addMouseWheelHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -25404,6 +26856,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.TextArea#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -25417,6 +26870,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.TextArea#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -25456,6 +26910,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TextArea#addValueChangeHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -25469,6 +26924,7 @@
  object.
  *
  * @function UiApp.TextArea#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -25477,6 +26933,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code>.
  *
  * @function UiApp.TextArea#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -25485,6 +26942,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.TextArea#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -25494,6 +26952,7 @@
  modifier key) to automatically focus the widget.
  *
  * @function UiApp.TextArea#setAccessKey
+ * @deprecated
  *
  * @param {Char} accessKey - the character to use for focus
  *
@@ -25506,8 +26965,9 @@
  <p>This is not an exact value, as not all characters are created equal.
  *
  * @function UiApp.TextArea#setCharacterWidth
+ * @deprecated
  *
- * @param {number} width - the width, in characters.
+ * @param {IntegerNum} width - the width, in characters.
  *
  * @return {UiApp.TextArea} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code> itself, useful for chaining.
  */
@@ -25519,8 +26979,9 @@
  hidden.
  *
  * @function UiApp.TextArea#setCursorPos
+ * @deprecated
  *
- * @param {number} position - the new cursor position, in characters from the start.
+ * @param {IntegerNum} position - the new cursor position, in characters from the start.
  *
  * @return {UiApp.TextArea} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code> itself, useful for chaining.
  */
@@ -25529,6 +26990,7 @@
  * Set the text direction.
  *
  * @function UiApp.TextArea#setDirection
+ * @deprecated
  *
  * @param {UiApp.Component} direction - the text direction
  *
@@ -25539,6 +27001,7 @@
  * Sets whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code> is enabled.
  *
  * @function UiApp.TextArea#setEnabled
+ * @deprecated
  *
  * @param {Boolean} enabled - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code> should be enabled or disabled.
  *
@@ -25552,6 +27015,7 @@
  events.
  *
  * @function UiApp.TextArea#setFocus
+ * @deprecated
  *
  * @param {Boolean} focus - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code> should have the current focus.
  *
@@ -25562,6 +27026,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code>.
  *
  * @function UiApp.TextArea#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -25572,6 +27037,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code>.
  *
  * @function UiApp.TextArea#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code> from
      app.getElementById(id).
@@ -25585,8 +27051,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.TextArea#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.TextArea} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code> itself, useful for chaining.
  */
@@ -25596,6 +27063,7 @@
  FormPanel or as a callback element on an event handler.
  *
  * @function UiApp.TextArea#setName
+ * @deprecated
  *
  * @param {String} name - the new name.
  *
@@ -25606,9 +27074,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code> in pixels.
  *
  * @function UiApp.TextArea#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.TextArea} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code> itself, useful for chaining.
  */
@@ -25617,6 +27086,7 @@
  * Sets whether the text in this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code> is read only and can't be edited.
  *
  * @function UiApp.TextArea#setReadOnly
+ * @deprecated
  *
  * @param {Boolean} readOnly - whether the text is read only.
  *
@@ -25630,9 +27100,10 @@
  hidden.
  *
  * @function UiApp.TextArea#setSelectionRange
+ * @deprecated
  *
- * @param {number} position - the position of the first character to be selected
- * @param {number} length - the number of characters to be selected
+ * @param {IntegerNum} position - the position of the first character to be selected
+ * @param {IntegerNum} length - the number of characters to be selected
  *
  * @return {UiApp.TextArea} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code> itself, useful for chaining.
  */
@@ -25641,6 +27112,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code>.
  *
  * @function UiApp.TextArea#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -25660,6 +27132,7 @@
  </code></pre>
  *
  * @function UiApp.TextArea#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -25680,6 +27153,7 @@
  </code></pre>
  *
  * @function UiApp.TextArea#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -25694,6 +27168,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.TextArea#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -25707,6 +27182,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.TextArea#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -25721,8 +27197,9 @@
  order.
  *
  * @function UiApp.TextArea#setTabIndex
+ * @deprecated
  *
- * @param {number} index - the new tab index.
+ * @param {IntegerNum} index - the new tab index.
  *
  * @return {UiApp.TextArea} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code> itself, useful for chaining.
  */
@@ -25731,6 +27208,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code>.
  *
  * @function UiApp.TextArea#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -25741,6 +27219,7 @@
  * Set the display text of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code>.
  *
  * @function UiApp.TextArea#setText
+ * @deprecated
  *
  * @param {String} text - the new text.
  *
@@ -25753,6 +27232,7 @@
  <p>This is not currently functional.
  *
  * @function UiApp.TextArea#setTextAlignment
+ * @deprecated
  *
  * @param {UiApp.Component} textAlign - the alignment
  *
@@ -25765,6 +27245,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.TextArea#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -25775,6 +27256,7 @@
  * Sets this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code>'s value without firing any events.
  *
  * @function UiApp.TextArea#setValue
+ * @deprecated
  *
  * @param {String} value - the new value.
  *
@@ -25785,6 +27267,7 @@
  * Sets this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code>'s value and potentially fire events.
  *
  * @function UiApp.TextArea#setValue
+ * @deprecated
  *
  * @param {String} value - the new value.
  * @param {Boolean} fireEvents - whether to fire events.
@@ -25796,6 +27279,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code> is visible.
  *
  * @function UiApp.TextArea#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code> should be visible or not.
  *
@@ -25806,8 +27290,9 @@
  * Sets the number of text lines that are visible.
  *
  * @function UiApp.TextArea#setVisibleLines
+ * @deprecated
  *
- * @param {number} lines - the number of visible lines.
+ * @param {IntegerNum} lines - the number of visible lines.
  *
  * @return {UiApp.TextArea} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code> itself, useful for chaining.
  */
@@ -25816,11 +27301,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code>.
  *
  * @function UiApp.TextArea#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.TextArea} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.TextBox
@@ -25859,6 +27346,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TextBox#addBlurHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -25898,6 +27386,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TextBox#addChangeHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -25953,6 +27442,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TextBox#addClickHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -25992,6 +27482,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TextBox#addFocusHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -26042,6 +27533,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.TextBox#addKeyDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -26092,6 +27584,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.TextBox#addKeyPressHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -26142,6 +27635,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.TextBox#addKeyUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -26197,6 +27691,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TextBox#addMouseDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -26252,6 +27747,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TextBox#addMouseMoveHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -26307,6 +27803,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TextBox#addMouseOutHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -26362,6 +27859,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TextBox#addMouseOverHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -26417,6 +27915,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TextBox#addMouseUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -26472,6 +27971,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TextBox#addMouseWheelHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -26485,6 +27985,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.TextBox#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -26498,6 +27999,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.TextBox#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -26537,6 +28039,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.TextBox#addValueChangeHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -26550,6 +28053,7 @@
  object.
  *
  * @function UiApp.TextBox#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -26558,6 +28062,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code>.
  *
  * @function UiApp.TextBox#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -26566,6 +28071,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.TextBox#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -26575,6 +28081,7 @@
  modifier key) to automatically focus the widget.
  *
  * @function UiApp.TextBox#setAccessKey
+ * @deprecated
  *
  * @param {Char} accessKey - the character to use for focus
  *
@@ -26588,8 +28095,9 @@
  hidden.
  *
  * @function UiApp.TextBox#setCursorPos
+ * @deprecated
  *
- * @param {number} position - the new cursor position, in characters from the start.
+ * @param {IntegerNum} position - the new cursor position, in characters from the start.
  *
  * @return {UiApp.TextBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code> itself, useful for chaining.
  */
@@ -26598,6 +28106,7 @@
  * Set the text direction.
  *
  * @function UiApp.TextBox#setDirection
+ * @deprecated
  *
  * @param {UiApp.Component} direction - the text direction
  *
@@ -26608,6 +28117,7 @@
  * Sets whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code> is enabled.
  *
  * @function UiApp.TextBox#setEnabled
+ * @deprecated
  *
  * @param {Boolean} enabled - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code> should be enabled or disabled.
  *
@@ -26621,6 +28131,7 @@
  events.
  *
  * @function UiApp.TextBox#setFocus
+ * @deprecated
  *
  * @param {Boolean} focus - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code> should have the current focus.
  *
@@ -26631,6 +28142,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code>.
  *
  * @function UiApp.TextBox#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -26641,6 +28153,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code>.
  *
  * @function UiApp.TextBox#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code> from
      app.getElementById(id).
@@ -26654,8 +28167,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.TextBox#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.TextBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code> itself, useful for chaining.
  */
@@ -26664,8 +28178,9 @@
  * Sets the maximum allowable length of the text box's contents.
  *
  * @function UiApp.TextBox#setMaxLength
+ * @deprecated
  *
- * @param {number} length - the maximum length.
+ * @param {IntegerNum} length - the maximum length.
  *
  * @return {UiApp.TextBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code> itself, useful for chaining.
  */
@@ -26675,6 +28190,7 @@
  FormPanel or as a callback element on an event handler.
  *
  * @function UiApp.TextBox#setName
+ * @deprecated
  *
  * @param {String} name - the new name.
  *
@@ -26685,9 +28201,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code> in pixels.
  *
  * @function UiApp.TextBox#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.TextBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code> itself, useful for chaining.
  */
@@ -26696,6 +28213,7 @@
  * Sets whether the text in this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code> is read only and can't be edited.
  *
  * @function UiApp.TextBox#setReadOnly
+ * @deprecated
  *
  * @param {Boolean} readOnly - whether the text is read only.
  *
@@ -26709,9 +28227,10 @@
  hidden.
  *
  * @function UiApp.TextBox#setSelectionRange
+ * @deprecated
  *
- * @param {number} position - the position of the first character to be selected
- * @param {number} length - the number of characters to be selected
+ * @param {IntegerNum} position - the position of the first character to be selected
+ * @param {IntegerNum} length - the number of characters to be selected
  *
  * @return {UiApp.TextBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code> itself, useful for chaining.
  */
@@ -26720,6 +28239,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code>.
  *
  * @function UiApp.TextBox#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -26739,6 +28259,7 @@
  </code></pre>
  *
  * @function UiApp.TextBox#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -26759,6 +28280,7 @@
  </code></pre>
  *
  * @function UiApp.TextBox#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -26773,6 +28295,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.TextBox#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -26786,6 +28309,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.TextBox#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -26800,8 +28324,9 @@
  order.
  *
  * @function UiApp.TextBox#setTabIndex
+ * @deprecated
  *
- * @param {number} index - the new tab index.
+ * @param {IntegerNum} index - the new tab index.
  *
  * @return {UiApp.TextBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code> itself, useful for chaining.
  */
@@ -26810,6 +28335,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code>.
  *
  * @function UiApp.TextBox#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -26820,6 +28346,7 @@
  * Set the display text of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code>.
  *
  * @function UiApp.TextBox#setText
+ * @deprecated
  *
  * @param {String} text - the new text.
  *
@@ -26832,6 +28359,7 @@
  <p>This is not currently functional.
  *
  * @function UiApp.TextBox#setTextAlignment
+ * @deprecated
  *
  * @param {UiApp.Component} textAlign - the alignment
  *
@@ -26844,6 +28372,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.TextBox#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -26854,6 +28383,7 @@
  * Sets this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code>'s value without firing any events.
  *
  * @function UiApp.TextBox#setValue
+ * @deprecated
  *
  * @param {String} value - the new value.
  *
@@ -26864,6 +28394,7 @@
  * Sets this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code>'s value and potentially fire events.
  *
  * @function UiApp.TextBox#setValue
+ * @deprecated
  *
  * @param {String} value - the new value.
  * @param {Boolean} fireEvents - whether to fire events.
@@ -26875,6 +28406,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code> is visible.
  *
  * @function UiApp.TextBox#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code> should be visible or not.
  *
@@ -26887,8 +28419,9 @@
  <p>This is not an exact value, as not all characters are created equal.
  *
  * @function UiApp.TextBox#setVisibleLength
+ * @deprecated
  *
- * @param {number} length - the length, in characters.
+ * @param {IntegerNum} length - the length, in characters.
  *
  * @return {UiApp.TextBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code> itself, useful for chaining.
  */
@@ -26897,11 +28430,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code>.
  *
  * @function UiApp.TextBox#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.TextBox} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.ToggleButton
@@ -26940,6 +28475,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ToggleButton#addBlurHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -26995,6 +28531,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ToggleButton#addClickHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -27034,6 +28571,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ToggleButton#addFocusHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -27084,6 +28622,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.ToggleButton#addKeyDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -27134,6 +28673,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.ToggleButton#addKeyPressHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -27184,6 +28724,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.ToggleButton#addKeyUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -27239,6 +28780,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ToggleButton#addMouseDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -27294,6 +28836,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ToggleButton#addMouseMoveHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -27349,6 +28892,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ToggleButton#addMouseOutHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -27404,6 +28948,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ToggleButton#addMouseOverHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -27459,6 +29004,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ToggleButton#addMouseUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -27514,6 +29060,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.ToggleButton#addMouseWheelHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -27527,6 +29074,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.ToggleButton#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -27540,6 +29088,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.ToggleButton#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -27553,6 +29102,7 @@
  object.
  *
  * @function UiApp.ToggleButton#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -27561,6 +29111,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code>.
  *
  * @function UiApp.ToggleButton#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -27569,6 +29120,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.ToggleButton#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -27578,6 +29130,7 @@
  modifier key) to automatically focus the widget.
  *
  * @function UiApp.ToggleButton#setAccessKey
+ * @deprecated
  *
  * @param {Char} accessKey - the character to use for focus
  *
@@ -27588,6 +29141,7 @@
  * Sets whether the button is down.
  *
  * @function UiApp.ToggleButton#setDown
+ * @deprecated
  *
  * @param {Boolean} down - whether the button is down.
  *
@@ -27598,6 +29152,7 @@
  * Sets whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code> is enabled.
  *
  * @function UiApp.ToggleButton#setEnabled
+ * @deprecated
  *
  * @param {Boolean} enabled - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code> should be enabled or disabled.
  *
@@ -27611,6 +29166,7 @@
  events.
  *
  * @function UiApp.ToggleButton#setFocus
+ * @deprecated
  *
  * @param {Boolean} focus - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code> should have the current focus.
  *
@@ -27621,6 +29177,7 @@
  * Sets the HTML content of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code>.
  *
  * @function UiApp.ToggleButton#setHTML
+ * @deprecated
  *
  * @param {String} html - the new HTML
  *
@@ -27631,6 +29188,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code>.
  *
  * @function UiApp.ToggleButton#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -27641,6 +29199,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code>.
  *
  * @function UiApp.ToggleButton#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code> from
      app.getElementById(id).
@@ -27654,8 +29213,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.ToggleButton#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.ToggleButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code> itself, useful for chaining.
  */
@@ -27664,9 +29224,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code> in pixels.
  *
  * @function UiApp.ToggleButton#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.ToggleButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code> itself, useful for chaining.
  */
@@ -27675,6 +29236,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code>.
  *
  * @function UiApp.ToggleButton#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -27694,6 +29256,7 @@
  </code></pre>
  *
  * @function UiApp.ToggleButton#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -27714,6 +29277,7 @@
  </code></pre>
  *
  * @function UiApp.ToggleButton#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -27728,6 +29292,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.ToggleButton#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -27741,6 +29306,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.ToggleButton#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -27755,8 +29321,9 @@
  order.
  *
  * @function UiApp.ToggleButton#setTabIndex
+ * @deprecated
  *
- * @param {number} index - the new tab index.
+ * @param {IntegerNum} index - the new tab index.
  *
  * @return {UiApp.ToggleButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code> itself, useful for chaining.
  */
@@ -27765,6 +29332,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code>.
  *
  * @function UiApp.ToggleButton#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -27775,6 +29343,7 @@
  * Set the display text of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code>.
  *
  * @function UiApp.ToggleButton#setText
+ * @deprecated
  *
  * @param {String} text - the new text.
  *
@@ -27787,6 +29356,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.ToggleButton#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -27797,6 +29367,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code> is visible.
  *
  * @function UiApp.ToggleButton#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code> should be visible or not.
  *
@@ -27807,11 +29378,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code>.
  *
  * @function UiApp.ToggleButton#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.ToggleButton} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.Tree
@@ -27821,6 +29394,7 @@
  * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code>.
  *
  * @function UiApp.Tree#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  *
@@ -27860,6 +29434,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Tree#addBlurHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -27902,6 +29477,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Tree#addCloseHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -27941,6 +29517,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Tree#addFocusHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -27951,6 +29528,7 @@
  * Adds a new child tree item containing the specified HTML.
  *
  * @function UiApp.Tree#addItem
+ * @deprecated
  *
  * @param {String} text - the new item's text, treated as HTML.
  *
@@ -27961,6 +29539,7 @@
  * Adds a TreeItem as a child to this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code>.
  *
  * @function UiApp.Tree#addItem
+ * @deprecated
  *
  * @param {TreeItem} item - the child item.
  *
@@ -27971,6 +29550,7 @@
  * Adds a new child tree item containing the specified widget.
  *
  * @function UiApp.Tree#addItem
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to put inside the new item.
  *
@@ -28021,6 +29601,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.Tree#addKeyDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -28071,6 +29652,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.Tree#addKeyPressHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -28121,6 +29703,7 @@
  look <a href="http://www.quirksmode.org/js/keys.html">here</a>.
  *
  * @function UiApp.Tree#addKeyUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -28176,6 +29759,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Tree#addMouseDownHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -28231,6 +29815,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Tree#addMouseMoveHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -28286,6 +29871,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Tree#addMouseOutHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -28341,6 +29927,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Tree#addMouseOverHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -28396,6 +29983,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Tree#addMouseUpHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -28451,6 +30039,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Tree#addMouseWheelHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -28493,6 +30082,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Tree#addOpenHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -28535,6 +30125,7 @@
  elements." See the documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> for more information.
  *
  * @function UiApp.Tree#addSelectionHandler
+ * @deprecated
  *
  * @param {UiApp.Handler} handler - the handler to execute when the event occurs. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
@@ -28548,6 +30139,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Tree#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -28561,6 +30153,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Tree#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -28571,6 +30164,7 @@
  * Removes all children.
  *
  * @function UiApp.Tree#clear
+ * @deprecated
  *
  * @return {UiApp.Tree} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code> itself, useful for chaining.
  */
@@ -28582,6 +30176,7 @@
  object.
  *
  * @function UiApp.Tree#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -28590,6 +30185,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code>.
  *
  * @function UiApp.Tree#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -28598,6 +30194,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.Tree#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -28607,6 +30204,7 @@
  modifier key) to automatically focus the widget.
  *
  * @function UiApp.Tree#setAccessKey
+ * @deprecated
  *
  * @param {Char} accessKey - the character to use for focus
  *
@@ -28617,6 +30215,7 @@
  * Sets whether opening and closing the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code> is animated.
  *
  * @function UiApp.Tree#setAnimationEnabled
+ * @deprecated
  *
  * @param {Boolean} animationEnabled - whether to animate opening and closing.
  *
@@ -28630,6 +30229,7 @@
  events.
  *
  * @function UiApp.Tree#setFocus
+ * @deprecated
  *
  * @param {Boolean} focus - whether the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code> should have the current focus.
  *
@@ -28640,6 +30240,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code>.
  *
  * @function UiApp.Tree#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -28650,6 +30251,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code>.
  *
  * @function UiApp.Tree#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code> from
      app.getElementById(id).
@@ -28663,8 +30265,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.Tree#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.Tree} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code> itself, useful for chaining.
  */
@@ -28673,9 +30276,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code> in pixels.
  *
  * @function UiApp.Tree#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.Tree} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code> itself, useful for chaining.
  */
@@ -28686,6 +30290,7 @@
  <p>This does not fire any events.
  *
  * @function UiApp.Tree#setSelectedItem
+ * @deprecated
  *
  * @param {TreeItem} item - the item to select.
  *
@@ -28696,6 +30301,7 @@
  * Selects the given item and optionally fire events.
  *
  * @function UiApp.Tree#setSelectedItem
+ * @deprecated
  *
  * @param {TreeItem} item - the item to select.
  * @param {Boolean} fireEvents - whether to fire events.
@@ -28707,6 +30313,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code>.
  *
  * @function UiApp.Tree#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -28726,6 +30333,7 @@
  </code></pre>
  *
  * @function UiApp.Tree#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -28746,6 +30354,7 @@
  </code></pre>
  *
  * @function UiApp.Tree#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -28760,6 +30369,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Tree#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -28773,6 +30383,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.Tree#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -28787,8 +30398,9 @@
  order.
  *
  * @function UiApp.Tree#setTabIndex
+ * @deprecated
  *
- * @param {number} index - the new tab index.
+ * @param {IntegerNum} index - the new tab index.
  *
  * @return {UiApp.Tree} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code> itself, useful for chaining.
  */
@@ -28797,6 +30409,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code>.
  *
  * @function UiApp.Tree#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -28809,6 +30422,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.Tree#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -28819,6 +30433,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code> is visible.
  *
  * @function UiApp.Tree#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code> should be visible or not.
  *
@@ -28829,11 +30444,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code>.
  *
  * @function UiApp.Tree#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.Tree} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.TreeItem
@@ -28843,6 +30460,7 @@
  * Adds a new child tree item containing the specified HTML.
  *
  * @function UiApp.TreeItem#addItem
+ * @deprecated
  *
  * @param {String} text - the new item's text, treated as HTML.
  *
@@ -28853,6 +30471,7 @@
  * Adds a TreeItem as a child to this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code>.
  *
  * @function UiApp.TreeItem#addItem
+ * @deprecated
  *
  * @param {TreeItem} item - the child item.
  *
@@ -28863,6 +30482,7 @@
  * Adds a new child tree item containing the specified widget.
  *
  * @function UiApp.TreeItem#addItem
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to put inside the new item.
  *
@@ -28876,6 +30496,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.TreeItem#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -28889,6 +30510,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.TreeItem#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -28899,6 +30521,7 @@
  * Removes all children.
  *
  * @function UiApp.TreeItem#clear
+ * @deprecated
  *
  * @return {UiApp.TreeItem} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code> itself, useful for chaining.
  */
@@ -28910,6 +30533,7 @@
  object.
  *
  * @function UiApp.TreeItem#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -28918,6 +30542,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code>.
  *
  * @function UiApp.TreeItem#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -28926,6 +30551,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.TreeItem#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -28934,6 +30560,7 @@
  * Sets the HTML content of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code>.
  *
  * @function UiApp.TreeItem#setHTML
+ * @deprecated
  *
  * @param {String} html - the new HTML
  *
@@ -28944,6 +30571,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code>.
  *
  * @function UiApp.TreeItem#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -28954,6 +30582,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code>.
  *
  * @function UiApp.TreeItem#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code> from
      app.getElementById(id).
@@ -28965,9 +30594,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code> in pixels.
  *
  * @function UiApp.TreeItem#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.TreeItem} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code> itself, useful for chaining.
  */
@@ -28976,6 +30606,7 @@
  * Set whether this item is selected.
  *
  * @function UiApp.TreeItem#setSelected
+ * @deprecated
  *
  * @param {Boolean} selected - whether this item is selected.
  *
@@ -28986,6 +30617,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code>.
  *
  * @function UiApp.TreeItem#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -28999,6 +30631,7 @@
  <p>This does not fire events if the state changes.
  *
  * @function UiApp.TreeItem#setState
+ * @deprecated
  *
  * @param {Boolean} open - whether it's open or closed.
  *
@@ -29011,6 +30644,7 @@
  <p>This does not fire events if the state changes.
  *
  * @function UiApp.TreeItem#setState
+ * @deprecated
  *
  * @param {Boolean} open - whether it's open or closed.
  * @param {Boolean} fireEvents - whether to fire events if the state changes.
@@ -29030,6 +30664,7 @@
  </code></pre>
  *
  * @function UiApp.TreeItem#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -29050,6 +30685,7 @@
  </code></pre>
  *
  * @function UiApp.TreeItem#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -29064,6 +30700,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.TreeItem#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -29077,6 +30714,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.TreeItem#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -29087,6 +30725,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code>.
  *
  * @function UiApp.TreeItem#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -29097,6 +30736,7 @@
  * Set the display text of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code>.
  *
  * @function UiApp.TreeItem#setText
+ * @deprecated
  *
  * @param {String} text - the new text.
  *
@@ -29109,6 +30749,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.TreeItem#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -29119,8 +30760,9 @@
  * A deprecated function that has no effect.
  *
  * @function UiApp.TreeItem#setUserObject
+ * @deprecated
  *
- * @param {Object} a - 
+ * @param {Object} a
  *
  * @return {UiApp.TreeItem} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code> itself, useful for chaining.
  */
@@ -29129,6 +30771,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code> is visible.
  *
  * @function UiApp.TreeItem#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code> should be visible or not.
  *
@@ -29139,6 +30782,7 @@
  * Sets the widget to be shown inside this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code>.
  *
  * @function UiApp.TreeItem#setWidget
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to put inside this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code>.
  *
@@ -29149,11 +30793,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code>.
  *
  * @function UiApp.TreeItem#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.TreeItem} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.UiInstance
@@ -29166,6 +30812,7 @@
  added to the end of the list of widgets currently in the application.
  *
  * @function UiApp.UiInstance#add
+ * @deprecated
  *
  * @param {UiApp.Widget} child - the new widget to add to the application.
  *
@@ -29179,6 +30826,7 @@
  It will have no effect when called on an app that is published as a standalone service.
  *
  * @function UiApp.UiInstance#close
+ * @deprecated
  *
  * @return {UiApp.UiInstance} the application itself, useful for chaining.
  */
@@ -29187,6 +30835,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/absolute-panel.html'>AbsolutePanel</a></s></code>.
  *
  * @function UiApp.UiInstance#createAbsolutePanel
+ * @deprecated
  *
  * @return {UiApp.AbsolutePanel} the new AbsolutePanel.
  */
@@ -29198,6 +30847,7 @@
  on GWT's anchor class.
  *
  * @function UiApp.UiInstance#createAnchor
+ * @deprecated
  *
  * @param {String} text - the text to display to the user as the anchor's text.
  * @param {Boolean} asHtml - whether to render that text as HTML.
@@ -29213,6 +30863,7 @@
  on GWT's anchor class.
  *
  * @function UiApp.UiInstance#createAnchor
+ * @deprecated
  *
  * @param {String} text - the text to display to the user as the anchor's text.
  * @param {String} href - the address to go to when the anchor is clicked.
@@ -29224,6 +30875,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code>.
  *
  * @function UiApp.UiInstance#createButton
+ * @deprecated
  *
  * @return {UiApp.Button} the new Button.
  */
@@ -29232,6 +30884,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code>.
  *
  * @function UiApp.UiInstance#createButton
+ * @deprecated
  *
  * @param {String} html - the new Button's text, rendered as HTML.
  *
@@ -29242,6 +30895,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/button.html'>Button</a></s></code>.
  *
  * @function UiApp.UiInstance#createButton
+ * @deprecated
  *
  * @param {String} html - the new Button's text, rendered as HTML.
  * @param {UiApp.Handler} clickHandler - a click handler for the new button. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or
@@ -29254,6 +30908,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code>.
  *
  * @function UiApp.UiInstance#createCaptionPanel
+ * @deprecated
  *
  * @return {UiApp.CaptionPanel} the new CaptionPanel.
  */
@@ -29262,6 +30917,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code>.
  *
  * @function UiApp.UiInstance#createCaptionPanel
+ * @deprecated
  *
  * @param {String} caption - the CaptionPanel's caption text, not rendered as HTML.
  *
@@ -29272,6 +30928,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/caption-panel.html'>CaptionPanel</a></s></code>.
  *
  * @function UiApp.UiInstance#createCaptionPanel
+ * @deprecated
  *
  * @param {String} caption - the CaptionPanel's caption text.
  * @param {Boolean} asHtml - whether to render the caption text as HTML.
@@ -29283,6 +30940,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code>.
  *
  * @function UiApp.UiInstance#createCheckBox
+ * @deprecated
  *
  * @return {UiApp.CheckBox} the new CheckBox.
  */
@@ -29291,6 +30949,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code>.
  *
  * @function UiApp.UiInstance#createCheckBox
+ * @deprecated
  *
  * @param {String} label - the CheckBox's label text, not rendered as HTML.
  *
@@ -29301,6 +30960,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/check-box.html'>CheckBox</a></s></code>.
  *
  * @function UiApp.UiInstance#createCheckBox
+ * @deprecated
  *
  * @param {String} label - the CheckBox's label text.
  * @param {Boolean} asHtml - whether to render the label text as HTML.
@@ -29315,6 +30975,7 @@
  response to an event.
  *
  * @function UiApp.UiInstance#createClientHandler
+ * @deprecated
  *
  * @return {UiApp.ClientHandler} the new ClientHandler.
  */
@@ -29323,6 +30984,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code>.
  *
  * @function UiApp.UiInstance#createDateBox
+ * @deprecated
  *
  * @return {UiApp.DateBox} the new DateBox.
  */
@@ -29331,6 +30993,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-picker.html'>DatePicker</a></s></code>.
  *
  * @function UiApp.UiInstance#createDatePicker
+ * @deprecated
  *
  * @return {UiApp.DatePicker} the new DatePicker.
  */
@@ -29339,6 +31002,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-stack-panel.html'>DecoratedStackPanel</a></s></code>.
  *
  * @function UiApp.UiInstance#createDecoratedStackPanel
+ * @deprecated
  *
  * @return {UiApp.DecoratedStackPanel} the new DecoratedStackPanel.
  */
@@ -29347,6 +31011,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-bar.html'>DecoratedTabBar</a></s></code>.
  *
  * @function UiApp.UiInstance#createDecoratedTabBar
+ * @deprecated
  *
  * @return {UiApp.DecoratedTabBar} the new DecoratedTabBar.
  */
@@ -29355,6 +31020,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorated-tab-panel.html'>DecoratedTabPanel</a></s></code>.
  *
  * @function UiApp.UiInstance#createDecoratedTabPanel
+ * @deprecated
  *
  * @return {UiApp.DecoratedTabPanel} the new DecoratedTabPanel.
  */
@@ -29363,6 +31029,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/decorator-panel.html'>DecoratorPanel</a></s></code>.
  *
  * @function UiApp.UiInstance#createDecoratorPanel
+ * @deprecated
  *
  * @return {UiApp.DecoratorPanel} the new DecoratorPanel.
  */
@@ -29373,6 +31040,7 @@
  <p>The dialog will not auto-hide and is not modal.
  *
  * @function UiApp.UiInstance#createDialogBox
+ * @deprecated
  *
  * @return {UiApp.DialogBox} the new DialogBox.
  */
@@ -29383,6 +31051,7 @@
  <p>The dialog is not modal.
  *
  * @function UiApp.UiInstance#createDialogBox
+ * @deprecated
  *
  * @param {Boolean} autoHide - whether the dialog should auto-hide when the user clicks outside of it.
  *
@@ -29393,6 +31062,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/dialog-box.html'>DialogBox</a></s></code>.
  *
  * @function UiApp.UiInstance#createDialogBox
+ * @deprecated
  *
  * @param {Boolean} autoHide - whether the dialog should auto-hide when the user clicks outside of it.
  * @param {Boolean} modal - whether the dialog is modal, meaning that keyboard or mouse events that do not
@@ -29405,6 +31075,7 @@
  * Create a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/docs-list-dialog.html'>DocsListDialog</a></s></code>.
  *
  * @function UiApp.UiInstance#createDocsListDialog
+ * @deprecated
  *
  * @return {UiApp.DocsListDialog} the new DocsListDialog.
  */
@@ -29413,6 +31084,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/file-upload.html'>FileUpload</a></s></code>.
  *
  * @function UiApp.UiInstance#createFileUpload
+ * @deprecated
  *
  * @return {UiApp.FileUpload} the new FileUpload.
  */
@@ -29421,6 +31093,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flex-table.html'>FlexTable</a></s></code>.
  *
  * @function UiApp.UiInstance#createFlexTable
+ * @deprecated
  *
  * @return {UiApp.FlexTable} the new FlexTable.
  */
@@ -29429,6 +31102,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/flow-panel.html'>FlowPanel</a></s></code>.
  *
  * @function UiApp.UiInstance#createFlowPanel
+ * @deprecated
  *
  * @return {UiApp.FlowPanel} the new FlowPanel.
  */
@@ -29437,6 +31111,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code>.
  *
  * @function UiApp.UiInstance#createFocusPanel
+ * @deprecated
  *
  * @return {UiApp.FocusPanel} the new FocusPanel.
  */
@@ -29445,6 +31120,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/focus-panel.html'>FocusPanel</a></s></code> with a specified child <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/widget.html'>Widget</a></s></code>.
  *
  * @function UiApp.UiInstance#createFocusPanel
+ * @deprecated
  *
  * @param {UiApp.Widget} child - the child widget.
  *
@@ -29455,6 +31131,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/form-panel.html'>FormPanel</a></s></code>.
  *
  * @function UiApp.UiInstance#createFormPanel
+ * @deprecated
  *
  * @return {UiApp.FormPanel} the new FormPanel.
  */
@@ -29465,6 +31142,7 @@
  <p>Until the Grid is explicitly resized, no widgets can't be added to it.
  *
  * @function UiApp.UiInstance#createGrid
+ * @deprecated
  *
  * @return {UiApp.Grid} the new Grid.
  */
@@ -29473,9 +31151,10 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/grid.html'>Grid</a></s></code> with a specified size.
  *
  * @function UiApp.UiInstance#createGrid
+ * @deprecated
  *
- * @param {number} rows - the number of rows
- * @param {number} columns - the number of columns
+ * @param {IntegerNum} rows - the number of rows
+ * @param {IntegerNum} columns - the number of columns
  *
  * @return {UiApp.Grid} the new Grid.
  */
@@ -29484,6 +31163,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/html.html'>HTML</a></s></code> with no text.
  *
  * @function UiApp.UiInstance#createHTML
+ * @deprecated
  *
  * @return {UiApp.HTML} the new HTML.
  */
@@ -29492,6 +31172,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/html.html'>HTML</a></s></code> with the specified text.
  *
  * @function UiApp.UiInstance#createHTML
+ * @deprecated
  *
  * @param {String} html - the HTML's text, rendered as HTML.
  *
@@ -29502,6 +31183,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/html.html'>HTML</a></s></code> with the specified text.
  *
  * @function UiApp.UiInstance#createHTML
+ * @deprecated
  *
  * @param {String} html - the HTML's text, rendered as HTML.
  * @param {Boolean} wordWrap - whether to allow the text to wrap.
@@ -29513,6 +31195,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code>.
  *
  * @function UiApp.UiInstance#createHidden
+ * @deprecated
  *
  * @return {UiApp.Hidden} the new Hidden.
  */
@@ -29521,6 +31204,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code> with a specified name.
  *
  * @function UiApp.UiInstance#createHidden
+ * @deprecated
  *
  * @param {String} name - the hidden field's name.
  *
@@ -29531,6 +31215,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/hidden.html'>Hidden</a></s></code> with a specified name and value.
  *
  * @function UiApp.UiInstance#createHidden
+ * @deprecated
  *
  * @param {String} name - the hidden field's name.
  * @param {String} value - the hidden field's value.
@@ -29542,6 +31227,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/horizontal-panel.html'>HorizontalPanel</a></s></code>.
  *
  * @function UiApp.UiInstance#createHorizontalPanel
+ * @deprecated
  *
  * @return {UiApp.HorizontalPanel} the new HorizontalPanel.
  */
@@ -29550,6 +31236,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/image.html'>Image</a></s></code>.
  *
  * @function UiApp.UiInstance#createImage
+ * @deprecated
  *
  * @return {UiApp.Image} the new Image.
  */
@@ -29558,6 +31245,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/image.html'>Image</a></s></code> with the specified URL.
  *
  * @function UiApp.UiInstance#createImage
+ * @deprecated
  *
  * @param {String} url - the URL of the image.
  *
@@ -29568,12 +31256,13 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/image.html'>Image</a></s></code> with the specified URL and clipping rectangle.
  *
  * @function UiApp.UiInstance#createImage
+ * @deprecated
  *
  * @param {String} url - the URL of the image.
- * @param {number} left - the left of the clipping rectangle, in pixels.
- * @param {number} top - the top of the clipping rectangle, in pixels.
- * @param {number} width - the width of the clipping rectangle, in pixels.
- * @param {number} height - the height of the clipping rectangle, in pixels.
+ * @param {IntegerNum} left - the left of the clipping rectangle, in pixels.
+ * @param {IntegerNum} top - the top of the clipping rectangle, in pixels.
+ * @param {IntegerNum} width - the width of the clipping rectangle, in pixels.
+ * @param {IntegerNum} height - the height of the clipping rectangle, in pixels.
  *
  * @return {UiApp.Image} the new Image.
  */
@@ -29582,6 +31271,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/inline-label.html'>InlineLabel</a></s></code> with no text.
  *
  * @function UiApp.UiInstance#createInlineLabel
+ * @deprecated
  *
  * @return {UiApp.InlineLabel} the new InlineLabel.
  */
@@ -29590,6 +31280,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/inline-label.html'>InlineLabel</a></s></code> with the specified text.
  *
  * @function UiApp.UiInstance#createInlineLabel
+ * @deprecated
  *
  * @param {String} text - the label's text, not rendered as HTML.
  *
@@ -29600,6 +31291,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/label.html'>Label</a></s></code> with no text.
  *
  * @function UiApp.UiInstance#createLabel
+ * @deprecated
  *
  * @return {UiApp.Label} the new Label.
  */
@@ -29608,6 +31300,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/label.html'>Label</a></s></code> with the specified text.
  *
  * @function UiApp.UiInstance#createLabel
+ * @deprecated
  *
  * @param {String} text - the label's text, not rendered as HTML.
  *
@@ -29618,6 +31311,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/label.html'>Label</a></s></code> with the specified text.
  *
  * @function UiApp.UiInstance#createLabel
+ * @deprecated
  *
  * @param {String} text - the label's text, not rendered as HTML.
  * @param {Boolean} wordWrap - whether to allow the text to wrap.
@@ -29631,6 +31325,7 @@
  <p>The ListBox will not allow multiple selections.
  *
  * @function UiApp.UiInstance#createListBox
+ * @deprecated
  *
  * @return {UiApp.ListBox} the new ListBox.
  */
@@ -29639,6 +31334,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/list-box.html'>ListBox</a></s></code>.
  *
  * @function UiApp.UiInstance#createListBox
+ * @deprecated
  *
  * @param {Boolean} isMultipleSelect - whether the ListBox should allow multiple selections.
  *
@@ -29651,6 +31347,7 @@
  <p>The MenuBar will display itself horizontally.
  *
  * @function UiApp.UiInstance#createMenuBar
+ * @deprecated
  *
  * @return {UiApp.MenuBar} the new MenuBar.
  */
@@ -29659,6 +31356,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-bar.html'>MenuBar</a></s></code>.
  *
  * @function UiApp.UiInstance#createMenuBar
+ * @deprecated
  *
  * @param {Boolean} vertical - whether the MenuBar should display itself vertically.
  *
@@ -29669,6 +31367,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item.html'>MenuItem</a></s></code>.
  *
  * @function UiApp.UiInstance#createMenuItem
+ * @deprecated
  *
  * @param {String} text - the text to display for this item.
  * @param {Boolean} asHtml - whether to render that text as HTML.
@@ -29682,6 +31381,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item.html'>MenuItem</a></s></code>.
  *
  * @function UiApp.UiInstance#createMenuItem
+ * @deprecated
  *
  * @param {String} text - the text to display for this item.
  * @param {UiApp.Handler} command - the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code> to invoke when this item is
@@ -29694,6 +31394,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/menu-item-separator.html'>MenuItemSeparator</a></s></code>.
  *
  * @function UiApp.UiInstance#createMenuItemSeparator
+ * @deprecated
  *
  * @return {UiApp.MenuItemSeparator} the new MenuItemSeparator.
  */
@@ -29702,6 +31403,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/password-text-box.html'>PasswordTextBox</a></s></code>.
  *
  * @function UiApp.UiInstance#createPasswordTextBox
+ * @deprecated
  *
  * @return {UiApp.PasswordTextBox} the new PasswordTextBox.
  */
@@ -29712,6 +31414,7 @@
  <p>The panel will not auto-hide and is not modal.
  *
  * @function UiApp.UiInstance#createPopupPanel
+ * @deprecated
  *
  * @return {UiApp.PopupPanel} the new PopupPanel.
  */
@@ -29722,6 +31425,7 @@
  <p>The panel is not modal.
  *
  * @function UiApp.UiInstance#createPopupPanel
+ * @deprecated
  *
  * @param {Boolean} autoHide - whether the panel should auto-hide when the user clicks outside of it.
  *
@@ -29732,6 +31436,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/popup-panel.html'>PopupPanel</a></s></code>.
  *
  * @function UiApp.UiInstance#createPopupPanel
+ * @deprecated
  *
  * @param {Boolean} autoHide - whether the panel should auto-hide when the user clicks outside of it.
  * @param {Boolean} modal - whether the panel is modal, meaning that keyboard or mouse events that do not
@@ -29744,6 +31449,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code>.
  *
  * @function UiApp.UiInstance#createPushButton
+ * @deprecated
  *
  * @return {UiApp.PushButton} the new PushButton.
  */
@@ -29752,6 +31458,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code>.
  *
  * @function UiApp.UiInstance#createPushButton
+ * @deprecated
  *
  * @param {String} upText - the up text
  *
@@ -29762,6 +31469,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code>.
  *
  * @function UiApp.UiInstance#createPushButton
+ * @deprecated
  *
  * @param {String} upText - the up text
  * @param {String} downText - the down text.
@@ -29773,6 +31481,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code>.
  *
  * @function UiApp.UiInstance#createPushButton
+ * @deprecated
  *
  * @param {String} upText - the up text
  * @param {String} downText - the down text.
@@ -29786,6 +31495,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/push-button.html'>PushButton</a></s></code>.
  *
  * @function UiApp.UiInstance#createPushButton
+ * @deprecated
  *
  * @param {String} upText - the up text
  * @param {UiApp.Handler} clickHandler - a click handler for the new button. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or
@@ -29798,6 +31508,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code>.
  *
  * @function UiApp.UiInstance#createRadioButton
+ * @deprecated
  *
  * @param {String} name - the RadioButton's name. Names are used for grouping RadioButtons; see the
      documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code> for more details.
@@ -29809,6 +31520,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code>.
  *
  * @function UiApp.UiInstance#createRadioButton
+ * @deprecated
  *
  * @param {String} name - the RadioButton's name. Names are used for grouping RadioButtons; see the
      documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code> for more details.
@@ -29821,6 +31533,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code>.
  *
  * @function UiApp.UiInstance#createRadioButton
+ * @deprecated
  *
  * @param {String} name - the RadioButton's name. Names are used for grouping RadioButtons; see the
      documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/radio-button.html'>RadioButton</a></s></code> for more details.
@@ -29834,6 +31547,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code>.
  *
  * @function UiApp.UiInstance#createResetButton
+ * @deprecated
  *
  * @return {UiApp.ResetButton} the new ResetButton.
  */
@@ -29842,6 +31556,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code>.
  *
  * @function UiApp.UiInstance#createResetButton
+ * @deprecated
  *
  * @param {String} html - the text to show on the button, rendered as HTML.
  *
@@ -29852,6 +31567,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/reset-button.html'>ResetButton</a></s></code>.
  *
  * @function UiApp.UiInstance#createResetButton
+ * @deprecated
  *
  * @param {String} html - the text to show on the button, rendered as HTML.
  * @param {UiApp.Handler} clickHandler - a click handler for the new button. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or
@@ -29864,6 +31580,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code>.
  *
  * @function UiApp.UiInstance#createScrollPanel
+ * @deprecated
  *
  * @return {UiApp.ScrollPanel} the new ScrollPanel.
  */
@@ -29872,6 +31589,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/scroll-panel.html'>ScrollPanel</a></s></code> with a specified child <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/widget.html'>Widget</a></s></code>.
  *
  * @function UiApp.UiInstance#createScrollPanel
+ * @deprecated
  *
  * @param {UiApp.Widget} child - the child widget.
  *
@@ -29882,6 +31600,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerBlurHandler
+ * @deprecated
  *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
@@ -29890,6 +31609,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerBlurHandler
+ * @deprecated
  *
  * @param {String} functionName - a script function that will be executed when this handler is invoked.
  *
@@ -29900,6 +31620,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerChangeHandler
+ * @deprecated
  *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
@@ -29908,6 +31629,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerChangeHandler
+ * @deprecated
  *
  * @param {String} functionName - a script function that will be executed when this handler is invoked.
  *
@@ -29918,6 +31640,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerClickHandler
+ * @deprecated
  *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
@@ -29926,6 +31649,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerClickHandler
+ * @deprecated
  *
  * @param {String} functionName - a script function that will be executed when this handler is invoked.
  *
@@ -29936,6 +31660,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerCloseHandler
+ * @deprecated
  *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
@@ -29944,6 +31669,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerCloseHandler
+ * @deprecated
  *
  * @param {String} functionName - a script function that will be executed when this handler is invoked.
  *
@@ -29954,6 +31680,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerCommand
+ * @deprecated
  *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
@@ -29962,6 +31689,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerCommand
+ * @deprecated
  *
  * @param {String} functionName - a script function that will be executed when this handler is invoked.
  *
@@ -29972,6 +31700,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerErrorHandler
+ * @deprecated
  *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
@@ -29980,6 +31709,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerErrorHandler
+ * @deprecated
  *
  * @param {String} functionName - a script function that will be executed when this handler is invoked.
  *
@@ -29990,6 +31720,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerFocusHandler
+ * @deprecated
  *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
@@ -29998,6 +31729,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerFocusHandler
+ * @deprecated
  *
  * @param {String} functionName - a script function that will be executed when this handler is invoked.
  *
@@ -30011,6 +31743,7 @@
  application. For example, a server handler can be added to a <code>Button</code> with the <code>addClickHandler</code> method so that the handler will be invoked when the button is clicked.
  *
  * @function UiApp.UiInstance#createServerHandler
+ * @deprecated
  *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
@@ -30022,6 +31755,7 @@
  application. For example, a server handler can be added to a <code>Button</code> with the <code>addClickHandler</code> method so that the handler will be invoked when the button is clicked.
  *
  * @function UiApp.UiInstance#createServerHandler
+ * @deprecated
  *
  * @param {String} functionName - a script function that will be executed when this handler is invoked.
  *
@@ -30032,6 +31766,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerInitializeHandler
+ * @deprecated
  *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
@@ -30040,6 +31775,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerInitializeHandler
+ * @deprecated
  *
  * @param {String} functionName - a script function that will be executed when this handler is invoked.
  *
@@ -30050,6 +31786,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerKeyHandler
+ * @deprecated
  *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
@@ -30058,6 +31795,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerKeyHandler
+ * @deprecated
  *
  * @param {String} functionName - a script function that will be executed when this handler is invoked.
  *
@@ -30068,6 +31806,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerLoadHandler
+ * @deprecated
  *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
@@ -30076,6 +31815,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerLoadHandler
+ * @deprecated
  *
  * @param {String} functionName - a script function that will be executed when this handler is invoked.
  *
@@ -30086,6 +31826,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerMouseHandler
+ * @deprecated
  *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
@@ -30094,6 +31835,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerMouseHandler
+ * @deprecated
  *
  * @param {String} functionName - a script function that will be executed when this handler is invoked.
  *
@@ -30104,6 +31846,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerScrollHandler
+ * @deprecated
  *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
@@ -30112,6 +31855,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerScrollHandler
+ * @deprecated
  *
  * @param {String} functionName - a script function that will be executed when this handler is invoked.
  *
@@ -30122,6 +31866,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerSelectionHandler
+ * @deprecated
  *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
@@ -30130,6 +31875,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerSelectionHandler
+ * @deprecated
  *
  * @param {String} functionName - a script function that will be executed when this handler is invoked.
  *
@@ -30140,6 +31886,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerSubmitHandler
+ * @deprecated
  *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
@@ -30148,6 +31895,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerSubmitHandler
+ * @deprecated
  *
  * @param {String} functionName - a script function that will be executed when this handler is invoked.
  *
@@ -30158,6 +31906,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerValueChangeHandler
+ * @deprecated
  *
  * @return {UiApp.ServerHandler} a new ServerHandler object.
  */
@@ -30166,6 +31915,7 @@
  * Deprecated in favor of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/server-handler.html'>ServerHandler</a></s></code>.
  *
  * @function UiApp.UiInstance#createServerValueChangeHandler
+ * @deprecated
  *
  * @param {String} functionName - a script function that will be executed when this handler is invoked.
  *
@@ -30176,6 +31926,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-check-box.html'>SimpleCheckBox</a></s></code>.
  *
  * @function UiApp.UiInstance#createSimpleCheckBox
+ * @deprecated
  *
  * @return {UiApp.SimpleCheckBox} the new SimpleCheckBox.
  */
@@ -30184,6 +31935,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-panel.html'>SimplePanel</a></s></code>.
  *
  * @function UiApp.UiInstance#createSimplePanel
+ * @deprecated
  *
  * @return {UiApp.SimplePanel} the new SimplePanel.
  */
@@ -30192,6 +31944,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-radio-button.html'>SimpleRadioButton</a></s></code>.
  *
  * @function UiApp.UiInstance#createSimpleRadioButton
+ * @deprecated
  *
  * @param {String} name - the SimpleRadioButton's name. Names are used for grouping RadioButtons; see the
      documentation of <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/simple-radio-button.html'>SimpleRadioButton</a></s></code> for more details.
@@ -30203,6 +31956,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/split-layout-panel.html'>SplitLayoutPanel</a></s></code>.
  *
  * @function UiApp.UiInstance#createSplitLayoutPanel
+ * @deprecated
  *
  * @return {UiApp.SplitLayoutPanel} the new SplitLayoutPanel.
  */
@@ -30211,6 +31965,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/stack-panel.html'>StackPanel</a></s></code>.
  *
  * @function UiApp.UiInstance#createStackPanel
+ * @deprecated
  *
  * @return {UiApp.StackPanel} the new StackPanel.
  */
@@ -30219,6 +31974,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/submit-button.html'>SubmitButton</a></s></code>.
  *
  * @function UiApp.UiInstance#createSubmitButton
+ * @deprecated
  *
  * @return {UiApp.SubmitButton} the new SubmitButton.
  */
@@ -30227,6 +31983,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/submit-button.html'>SubmitButton</a></s></code>.
  *
  * @function UiApp.UiInstance#createSubmitButton
+ * @deprecated
  *
  * @param {String} html - the text to show on the button, rendered as HTML.
  *
@@ -30237,6 +31994,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/suggest-box.html'>SuggestBox</a></s></code>.
  *
  * @function UiApp.UiInstance#createSuggestBox
+ * @deprecated
  *
  * @return {UiApp.SuggestBox} the new SuggestBox.
  */
@@ -30245,6 +32003,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-bar.html'>TabBar</a></s></code>.
  *
  * @function UiApp.UiInstance#createTabBar
+ * @deprecated
  *
  * @return {UiApp.TabBar} the new TabBar.
  */
@@ -30253,6 +32012,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tab-panel.html'>TabPanel</a></s></code>.
  *
  * @function UiApp.UiInstance#createTabPanel
+ * @deprecated
  *
  * @return {UiApp.TabPanel} the new TabPanel.
  */
@@ -30261,6 +32021,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-area.html'>TextArea</a></s></code>.
  *
  * @function UiApp.UiInstance#createTextArea
+ * @deprecated
  *
  * @return {UiApp.TextArea} the new TextArea.
  */
@@ -30269,6 +32030,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/text-box.html'>TextBox</a></s></code>.
  *
  * @function UiApp.UiInstance#createTextBox
+ * @deprecated
  *
  * @return {UiApp.TextBox} the new TextBox.
  */
@@ -30277,6 +32039,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code>.
  *
  * @function UiApp.UiInstance#createToggleButton
+ * @deprecated
  *
  * @return {UiApp.ToggleButton} the new ToggleButton.
  */
@@ -30285,6 +32048,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code>.
  *
  * @function UiApp.UiInstance#createToggleButton
+ * @deprecated
  *
  * @param {String} upText - the up text
  *
@@ -30295,6 +32059,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code>.
  *
  * @function UiApp.UiInstance#createToggleButton
+ * @deprecated
  *
  * @param {String} upText - the up text
  * @param {String} downText - the down text.
@@ -30306,6 +32071,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/toggle-button.html'>ToggleButton</a></s></code>.
  *
  * @function UiApp.UiInstance#createToggleButton
+ * @deprecated
  *
  * @param {String} upText - the up text
  * @param {UiApp.Handler} clickHandler - a click handler for the new button. This can be a <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/client-handler.html'>ClientHandler</a></s></code> or
@@ -30318,6 +32084,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree.html'>Tree</a></s></code>.
  *
  * @function UiApp.UiInstance#createTree
+ * @deprecated
  *
  * @return {UiApp.Tree} the new Tree.
  */
@@ -30326,6 +32093,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code>.
  *
  * @function UiApp.UiInstance#createTreeItem
+ * @deprecated
  *
  * @return {UiApp.TreeItem} the new TreeItem.
  */
@@ -30334,6 +32102,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code> with the given text.
  *
  * @function UiApp.UiInstance#createTreeItem
+ * @deprecated
  *
  * @param {String} text - the tree item's text, not rendered as HTML.
  *
@@ -30344,6 +32113,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/tree-item.html'>TreeItem</a></s></code> with the given widget.
  *
  * @function UiApp.UiInstance#createTreeItem
+ * @deprecated
  *
  * @param {UiApp.Widget} child - the widget to display on the item.
  *
@@ -30354,6 +32124,7 @@
  * Creates a new <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code>.
  *
  * @function UiApp.UiInstance#createVerticalPanel
+ * @deprecated
  *
  * @return {UiApp.VerticalPanel} the new VerticalPanel.
  */
@@ -30392,6 +32163,7 @@
  </code></pre>
  *
  * @function UiApp.UiInstance#getElementById
+ * @deprecated
  *
  * @param {String} id - the id of the requested widget.
  *
@@ -30405,6 +32177,7 @@
  object.
  *
  * @function UiApp.UiInstance#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -30413,6 +32186,7 @@
  * Gets whether the UiApp displays in HTML 'standards' mode or in 'quirks' mode.
  *
  * @function UiApp.UiInstance#isStandardsMode
+ * @deprecated
  *
  * @return {Boolean} whether the UiApp displays in HTML 'standards' mode or in 'quirks' mode
  */
@@ -30421,6 +32195,7 @@
  * Load a GUI Builder component into UiApp, by name.
  *
  * @function UiApp.UiInstance#loadComponent
+ * @deprecated
  *
  * @param {String} componentName - the name of the component to load
  *
@@ -30431,6 +32206,7 @@
  * Load a GUI Builder component into UiApp, by name.
  *
  * @function UiApp.UiInstance#loadComponent
+ * @deprecated
  *
  * @param {String} componentName - the name of the component to load
  * @param {Object} optAdvancedArgs - an object with advanced settings such as 'prefix', which gets added to
@@ -30445,8 +32221,9 @@
  fail if the index is greater than or equal to the number of elements in the application.
  *
  * @function UiApp.UiInstance#remove
+ * @deprecated
  *
- * @param {number} index - the index of the widget to remove.
+ * @param {IntegerNum} index - the index of the widget to remove.
  *
  * @return {UiApp.UiInstance} the application itself, useful for chaining.
  */
@@ -30456,6 +32233,7 @@
  child of the application.
  *
  * @function UiApp.UiInstance#remove
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to remove.
  *
@@ -30469,8 +32247,9 @@
  when an application is shown inside a spreadsheet.
  *
  * @function UiApp.UiInstance#setHeight
+ * @deprecated
  *
- * @param {number} height - the new height value in pixels.
+ * @param {IntegerNum} height - the new height value in pixels.
  *
  * @return {UiApp.UiInstance} the application itself, useful for chaining.
  */
@@ -30482,6 +32261,7 @@
  loadComponent, in which case it defaults to 'standards'.
  *
  * @function UiApp.UiInstance#setStandardsMode
+ * @deprecated
  *
  * @param {Boolean} standardsMode - whether to use standards mode
  *
@@ -30515,6 +32295,7 @@
  </code></pre>
  *
  * @function UiApp.UiInstance#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camelCase. ("fontSize", not "font-size").
  * @param {String} value - the CSS value
@@ -30530,6 +32311,7 @@
  title of the dialog's window.
  *
  * @function UiApp.UiInstance#setTitle
+ * @deprecated
  *
  * @param {String} title - the string to be used as the application's title.
  *
@@ -30543,11 +32325,36 @@
  when an application is shown inside a spreadsheet.
  *
  * @function UiApp.UiInstance#setWidth
+ * @deprecated
  *
- * @param {number} width - the new width value in pixels.
+ * @param {IntegerNum} width - the new width value in pixels.
  *
  * @return {UiApp.UiInstance} the application itself, useful for chaining.
  */
+
+
+/**
+ * @class UiApp.VerticalAlignment
+ */
+
+/**
+ * Position at the bottom
+ *
+ * @typedef {UiApp.VerticalAlignment} UiApp.VerticalAlignment.BOTTOM
+ */
+
+/**
+ * Position at the middle
+ *
+ * @typedef {UiApp.VerticalAlignment} UiApp.VerticalAlignment.MIDDLE
+ */
+
+/**
+ * Position at the top
+ *
+ * @typedef {UiApp.VerticalAlignment} UiApp.VerticalAlignment.TOP
+ */
+
 
 /**
  * @class UiApp.VerticalPanel
@@ -30557,6 +32364,7 @@
  * Add a widget to the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code>.
  *
  * @function UiApp.VerticalPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add.
  *
@@ -30570,6 +32378,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.VerticalPanel#addStyleDependentName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -30583,6 +32392,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.VerticalPanel#addStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -30593,6 +32403,7 @@
  * Remove all widgets from the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code>.
  *
  * @function UiApp.VerticalPanel#clear
+ * @deprecated
  *
  * @return {UiApp.VerticalPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code> itself, useful for chaining.
  */
@@ -30604,6 +32415,7 @@
  object.
  *
  * @function UiApp.VerticalPanel#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -30612,6 +32424,7 @@
  * Gets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code>.
  *
  * @function UiApp.VerticalPanel#getTag
+ * @deprecated
  *
  * @return {String} the text tag.
  */
@@ -30620,6 +32433,7 @@
  * Gets the type of this object.
  *
  * @function UiApp.VerticalPanel#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
@@ -30629,8 +32443,9 @@
  This will fail if the index is greater than or equal to the number of elements in the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code>.
  *
  * @function UiApp.VerticalPanel#remove
+ * @deprecated
  *
- * @param {number} index - the index of the widget to remove.
+ * @param {IntegerNum} index - the index of the widget to remove.
  *
  * @return {UiApp.VerticalPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code> itself, useful for chaining.
  */
@@ -30640,6 +32455,7 @@
  actually a child of the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code>.
  *
  * @function UiApp.VerticalPanel#remove
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to remove.
  *
@@ -30653,8 +32469,9 @@
  the cells that contain this panel's children.
  *
  * @function UiApp.VerticalPanel#setBorderWidth
+ * @deprecated
  *
- * @param {number} width - the new border width, in pixels.
+ * @param {IntegerNum} width - the new border width, in pixels.
  *
  * @return {UiApp.VerticalPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code> itself, useful for chaining.
  */
@@ -30665,6 +32482,7 @@
  <p>This will cause an error if used with a widget that is not currently a child of the panel.
  *
  * @function UiApp.VerticalPanel#setCellHeight
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to use in identifying the cell.
  * @param {String} height - the height in any valid CSS unit, such as "10px" or "15cm".
@@ -30678,6 +32496,7 @@
  <p>This will cause an error if used with a widget that is not currently a child of the panel.
  *
  * @function UiApp.VerticalPanel#setCellHorizontalAlignment
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to align.
  * @param {UiApp.HorizontalAlignment} horizontalAlignment - the desired alignment, such as UiApp.HorizontalAlignment.CENTER.
@@ -30691,6 +32510,7 @@
  <p>This will cause an error if used with a widget that is not currently a child of the panel.
  *
  * @function UiApp.VerticalPanel#setCellVerticalAlignment
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to align.
  * @param {UiApp.VerticalAlignment} verticalAlignment - the desired alignment, such as UiApp.VerticalAlignment.MIDDLE.
@@ -30704,6 +32524,7 @@
  <p>This will cause an error if used with a widget that is not currently a child of the panel.
  *
  * @function UiApp.VerticalPanel#setCellWidth
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to use in identifying the cell.
  * @param {String} width - the width in any valid CSS unit, such as "10px" or "15cm".
@@ -30715,6 +32536,7 @@
  * Sets the height of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code>.
  *
  * @function UiApp.VerticalPanel#setHeight
+ * @deprecated
  *
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
  *
@@ -30725,6 +32547,7 @@
  * Set the horizontal alignment of widgets added to this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code>.
  *
  * @function UiApp.VerticalPanel#setHorizontalAlignment
+ * @deprecated
  *
  * @param {UiApp.HorizontalAlignment} horizontalAlignment - the desired alignment, such as UiApp.HorizontalAlignment.CENTER.
  *
@@ -30735,6 +32558,7 @@
  * Sets the id of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code>.
  *
  * @function UiApp.VerticalPanel#setId
+ * @deprecated
  *
  * @param {String} id - the new id, which can be used to retrieve the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code> from
      app.getElementById(id).
@@ -30748,8 +32572,9 @@
  <p>This is not currently functional.
  *
  * @function UiApp.VerticalPanel#setLayoutData
+ * @deprecated
  *
- * @param {Object} layout - 
+ * @param {Object} layout
  *
  * @return {UiApp.VerticalPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code> itself, useful for chaining.
  */
@@ -30758,9 +32583,10 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code> in pixels.
  *
  * @function UiApp.VerticalPanel#setPixelSize
+ * @deprecated
  *
- * @param {number} width - the new width in pixels.
- * @param {number} height - the new height in pixels.
+ * @param {IntegerNum} width - the new width in pixels.
+ * @param {IntegerNum} height - the new height in pixels.
  *
  * @return {UiApp.VerticalPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code> itself, useful for chaining.
  */
@@ -30769,6 +32595,7 @@
  * Sets the size of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code>.
  *
  * @function UiApp.VerticalPanel#setSize
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  * @param {String} height - the new height in any CSS unit such as "10px" or "50%".
@@ -30780,8 +32607,9 @@
  * Sets the amount of spacing between this panel's cells.
  *
  * @function UiApp.VerticalPanel#setSpacing
+ * @deprecated
  *
- * @param {number} spacing - the spacing, in pixels.
+ * @param {IntegerNum} spacing - the spacing, in pixels.
  *
  * @return {UiApp.VerticalPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code> itself, useful for chaining.
  */
@@ -30798,6 +32626,7 @@
  </code></pre>
  *
  * @function UiApp.VerticalPanel#setStyleAttribute
+ * @deprecated
  *
  * @param {String} attribute - the CSS attribute, in camel-case ("fontSize", not "font-size"), <a
      href="/apps-script/ui_supportedstyles">as listed here</a>
@@ -30818,6 +32647,7 @@
  </code></pre>
  *
  * @function UiApp.VerticalPanel#setStyleAttributes
+ * @deprecated
  *
  * @param {Object} attributes - an object of key/value pairs for the CSS attributes and values to set; valid
      attributes are <a href="/apps-script/ui_supportedstyles">listed here</a>
@@ -30832,6 +32662,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.VerticalPanel#setStyleName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -30845,6 +32676,7 @@
  custom stylesheets in UiApp.
  *
  * @function UiApp.VerticalPanel#setStylePrimaryName
+ * @deprecated
  *
  * @param {String} styleName - the new style name.
  *
@@ -30855,6 +32687,7 @@
  * Sets the text tag of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code>.
  *
  * @function UiApp.VerticalPanel#setTag
+ * @deprecated
  *
  * @param {String} tag - the new text tag, which can be anything you wish to store with the widget.
  *
@@ -30867,6 +32700,7 @@
  <p>Not all browsers will show this.
  *
  * @function UiApp.VerticalPanel#setTitle
+ * @deprecated
  *
  * @param {String} title - the hover title.
  *
@@ -30877,6 +32711,7 @@
  * Set the vertical alignment of widgets added to this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code>.
  *
  * @function UiApp.VerticalPanel#setVerticalAlignment
+ * @deprecated
  *
  * @param {UiApp.VerticalAlignment} verticalAlignment - the desired alignment, such as UiApp.VerticalAlignment.MIDDLE.
  *
@@ -30887,6 +32722,7 @@
  * Sets whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code> is visible.
  *
  * @function UiApp.VerticalPanel#setVisible
+ * @deprecated
  *
  * @param {Boolean} visible - whether this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code> should be visible or not.
  *
@@ -30897,11 +32733,13 @@
  * Sets the width of this <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code>.
  *
  * @function UiApp.VerticalPanel#setWidth
+ * @deprecated
  *
  * @param {String} width - the new width in any CSS unit such as "10px" or "50%".
  *
  * @return {UiApp.VerticalPanel} the <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/vertical-panel.html'>VerticalPanel</a></s></code> itself, useful for chaining.
  */
+
 
 /**
  * @class UiApp.Widget
@@ -30914,6 +32752,7 @@
  object.
  *
  * @function UiApp.Widget#getId
+ * @deprecated
  *
  * @return {String} the id that has been assigned to this object
  */
@@ -30922,7 +32761,9 @@
  * Gets the type of this object.
  *
  * @function UiApp.Widget#getType
+ * @deprecated
  *
  * @return {String} the object type
  */
+
 

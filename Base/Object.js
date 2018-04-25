@@ -2,11 +2,10 @@
  * @namespace Object
  ***********************************************/
 
-
 /**
  * @function Object.create
  *
- * @param {Object} proto - undefined
+ * @param {Object} proto
  *
  * @return {Object}
  */
@@ -14,8 +13,8 @@
 /**
  * @function Object.create
  *
- * @param {Object} proto - undefined
- * @param {Object} propertiesObject - undefined
+ * @param {Object} proto
+ * @param {Object} propertiesObject
  *
  * @return {Object}
  */
@@ -23,8 +22,8 @@
 /**
  * @function Object.defineProperties
  *
- * @param {Object} obj - undefined
- * @param {Object} props - undefined
+ * @param {Object} obj
+ * @param {Object} props
  *
  * @return void
  */
@@ -32,9 +31,9 @@
 /**
  * @function Object.defineProperty
  *
- * @param {Object} obj - undefined
- * @param {String} prop - undefined
- * @param {Object} descriptor - undefined
+ * @param {Object} obj
+ * @param {String} prop
+ * @param {Object} descriptor
  *
  * @return void
  */
@@ -42,7 +41,7 @@
 /**
  * @function Object.freeze
  *
- * @param {Object} obj - undefined
+ * @param {Object} obj
  *
  * @return void
  */
@@ -50,8 +49,8 @@
 /**
  * @function Object.getOwnPropertyDescriptor
  *
- * @param {Object} obj - undefined
- * @param {String} prop - undefined
+ * @param {Object} obj
+ * @param {String} prop
  *
  * @return {Object}
  */
@@ -59,7 +58,7 @@
 /**
  * @function Object.getOwnPropertyNames
  *
- * @param {Object} obj - undefined
+ * @param {Object} obj
  *
  * @return {String[]}
  */
@@ -67,7 +66,7 @@
 /**
  * @function Object.getPrototypeOf
  *
- * @param {Object} obj - undefined
+ * @param {Object} obj
  *
  * @return {Object}
  */
@@ -75,7 +74,7 @@
 /**
  * @function Object.isExtensible
  *
- * @param {Object} obj - undefined
+ * @param {Object} obj
  *
  * @return {Boolean}
  */
@@ -83,7 +82,7 @@
 /**
  * @function Object.isFrozen
  *
- * @param {Object} obj - undefined
+ * @param {Object} obj
  *
  * @return {Boolean}
  */
@@ -91,7 +90,7 @@
 /**
  * @function Object.isSealed
  *
- * @param {Object} obj - undefined
+ * @param {Object} obj
  *
  * @return {Boolean}
  */
@@ -99,7 +98,7 @@
 /**
  * @function Object.keys
  *
- * @param {Object} obj - undefined
+ * @param {Object} obj
  *
  * @return {String[]}
  */
@@ -107,7 +106,7 @@
 /**
  * @function Object.preventExtensions
  *
- * @param {Object} obj - undefined
+ * @param {Object} obj
  *
  * @return void
  */
@@ -115,8 +114,9 @@
 /**
  * @function Object.seal
  *
- * @param {Object} obj - undefined
+ * @param {Object} obj
  *
  * @return void
  */
+
 

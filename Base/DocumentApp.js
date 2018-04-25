@@ -2,813 +2,58 @@
  * @namespace DocumentApp
  ***********************************************/
 
-
 /**
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/attribute.html'>Attribute</a></code> enumeration.
  *
- * @class DocumentApp.Attribute
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.BACKGROUND_COLOR
- * 
- * The background color of an element (Paragraph, Table, etc) or document.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.BOLD
- * 
- * The font weight setting, for rich text.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.BORDER_COLOR
- * 
- * The border color, for table elements.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.BORDER_WIDTH
- * 
- * The border width in points, for table elements.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.CODE
- * 
- * The code contents, for equation elements.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.FONT_FAMILY
- * 
- * The font family setting, for rich text.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.FONT_SIZE
- * 
- * The font size setting in points, for rich text.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.FOREGROUND_COLOR
- * 
- * The foreground color setting, for rich text.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.GLYPH_TYPE
- * 
- * The glyph type, for list item elements.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.HEADING
- * 
- * The heading type, for paragraph elements (for example, <code>DocumentApp.ParagraphHeading.HEADING1</code>).
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.HEIGHT
- * 
- * The height setting, for image elements.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.HORIZONTAL_ALIGNMENT
- * 
- * The horizontal alignment, for paragraph elements (for example, <code>DocumentApp.HorizontalAlignment.CENTER</code>).
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.INDENT_END
- * 
- * The end indentation setting in points, for paragraph elements.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.INDENT_FIRST_LINE
- * 
- * The first line indentation setting in points, for paragraph elements.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.INDENT_START
- * 
- * The start indentation setting in points, for paragraph elements.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.ITALIC
- * 
- * The font style setting, for rich text.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.LEFT_TO_RIGHT
- * 
- * The text direction setting, for rich text.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.LINE_SPACING
- * 
- * The line spacing setting as a multiplier, for paragraph elements.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.LINK_URL
- * 
- * The link URL, for rich text. The default link style (foreground color, underline) is
- automatically applied.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.LIST_ID
- * 
- * The ID of the encompassing list, for list item elements.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.MARGIN_BOTTOM
- * 
- * The bottom margin setting in points, for paragraph elements.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.MARGIN_LEFT
- * 
- * The left margin setting in points, for paragraph elements.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.MARGIN_RIGHT
- * 
- * The right margin setting in points, for paragraph elements.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.MARGIN_TOP
- * 
- * The top margin setting in points, for paragraph elements.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.MINIMUM_HEIGHT
- * 
- * The minimum height setting in points, for table row elements.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.NESTING_LEVEL
- * 
- * The item nesting level, for list item elements.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.PADDING_BOTTOM
- * 
- * The bottom padding setting in points, for table cell elements.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.PADDING_LEFT
- * 
- * The left padding setting in points, for table cell elements.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.PADDING_RIGHT
- * 
- * The right padding setting in points, for table cell elements.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.PADDING_TOP
- * 
- * The top padding setting in points, for table cell elements.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.PAGE_HEIGHT
- * 
- * The page height setting in points, for documents.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.PAGE_WIDTH
- * 
- * The page width setting in points, for documents.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.SPACING_AFTER
- * 
- * The bottom spacing setting in points, for paragraph elements.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.SPACING_BEFORE
- * 
- * The top spacing setting in points, for paragraph elements.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.STRIKETHROUGH
- * 
- * The strike-through setting, for rich text.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.UNDERLINE
- * 
- * The underline setting, for rich text.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.VERTICAL_ALIGNMENT
- * 
- * The vertical alignment setting, for table cell elements.
- */
-
-/**
- * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.WIDTH
- * 
- * The width setting, for table cell and image elements.
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute
  */
 
 /**
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/element-type.html'>ElementType</a></code> enumeration.
  *
- * @class DocumentApp.ElementType
- */
-
-/**
- * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.BODY_SECTION
- * 
- * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/body.html'>Body</a></code> element.
- */
-
-/**
- * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.COMMENT_SECTION
- * 
- * The type corresponding to the <code><s>CommentSection</s></code> element.
- */
-
-/**
- * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.DOCUMENT
- * 
- * The type that corresponds to the root of the document.
- */
-
-/**
- * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.EQUATION
- * 
- * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/equation.html'>Equation</a></code> element.
- */
-
-/**
- * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.EQUATION_FUNCTION
- * 
- * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/equation-function.html'>EquationFunction</a></code> element.
- */
-
-/**
- * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.EQUATION_FUNCTION_ARGUMENT_SEPARATOR
- * 
- * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/equation-function-argument-separator.html'>EquationFunctionArgumentSeparator</a></code>
- element.
- */
-
-/**
- * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.EQUATION_SYMBOL
- * 
- * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/equation-symbol.html'>EquationSymbol</a></code> element.
- */
-
-/**
- * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.FOOTER_SECTION
- * 
- * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/footer-section.html'>FooterSection</a></code> element.
- */
-
-/**
- * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.FOOTNOTE
- * 
- * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/footnote.html'>Footnote</a></code> element.
- */
-
-/**
- * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.FOOTNOTE_SECTION
- * 
- * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/footnote-section.html'>FootnoteSection</a></code> element.
- */
-
-/**
- * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.HEADER_SECTION
- * 
- * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/header-section.html'>HeaderSection</a></code> element.
- */
-
-/**
- * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.HORIZONTAL_RULE
- * 
- * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/horizontal-rule.html'>HorizontalRule</a></code> element.
- */
-
-/**
- * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.INLINE_DRAWING
- * 
- * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/inline-drawing.html'>InlineDrawing</a></code> element.
- */
-
-/**
- * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.INLINE_IMAGE
- * 
- * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/inline-image.html'>InlineImage</a></code> element.
- */
-
-/**
- * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.LIST_ITEM
- * 
- * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/list-item.html'>ListItem</a></code> element.
- */
-
-/**
- * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.PAGE_BREAK
- * 
- * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreak</a></code> element.
- */
-
-/**
- * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.PARAGRAPH
- * 
- * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code> element.
- */
-
-/**
- * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.TABLE
- * 
- * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table.html'>Table</a></code> element.
- */
-
-/**
- * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.TABLE_CELL
- * 
- * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table-cell.html'>TableCell</a></code> element.
- */
-
-/**
- * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.TABLE_OF_CONTENTS
- * 
- * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table-of-contents.html'>TableOfContents</a></code> element.
- */
-
-/**
- * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.TABLE_ROW
- * 
- * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table-row.html'>TableRow</a></code> element.
- */
-
-/**
- * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.TEXT
- * 
- * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/text.html'>Text</a></code>
- element.
- */
-
-/**
- * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.UNSUPPORTED
- * 
- * The type corresponding to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/unsupported-element.html'>UnsupportedElement</a></code>. Unsupported elements
- represent document portions that do not support scripting.
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType
  */
 
 /**
  * The <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/document/font-family.html'>FontFamily</a></s></code> enumeration.
  *
- * @class DocumentApp.FontFamily
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.AMARANTH
- * 
- * The Amaranth font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.ARIAL
- * 
- * The Arial font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.ARIAL_BLACK
- * 
- * The Arial Black font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.ARIAL_NARROW
- * 
- * The Arial Narrow font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.ARVO
- * 
- * The Arvo font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.CALIBRI
- * 
- * The Calibri font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.CAMBRIA
- * 
- * The Cambria font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.COMIC_SANS_MS
- * 
- * The Comic Sans MS font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.CONSOLAS
- * 
- * The Consolas font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.CORSIVA
- * 
- * The Corsiva font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.COURIER_NEW
- * 
- * The Courier New font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.DANCING_SCRIPT
- * 
- * The Dancing Script font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.DROID_SANS
- * 
- * The Droid Sans font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.DROID_SERIF
- * 
- * The Droid Serif font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.GARAMOND
- * 
- * The Garamond font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.GEORGIA
- * 
- * The Georgia font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.GLORIA_HALLELUJAH
- * 
- * The Gloria Hallelujah font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.GREAT_VIBES
- * 
- * The Great Vibes font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.LOBSTER
- * 
- * The Lobster font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.MERRIWEATHER
- * 
- * The Merriweather font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.PACIFICO
- * 
- * The Pacifico font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.PHILOSOPHER
- * 
- * The Philosopher font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.POIRET_ONE
- * 
- * The Poiret One font family
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.QUATTROCENTO
- * 
- * The Quattrocento font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.ROBOTO
- * 
- * The Roboto font family
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.SHADOWS_INTO_LIGHT
- * 
- * The Shadows Into Light font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.SYNCOPATE
- * 
- * The Syncopate font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.TAHOMA
- * 
- * The Tahoma font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.TIMES_NEW_ROMAN
- * 
- * The Times New Roman font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.TREBUCHET_MS
- * 
- * The Trebuchet MS font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.UBUNTU
- * 
- * The Ubuntu font family.
- */
-
-/**
- * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.VERDANA
- * 
- * The Verdana font family.
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily
  */
 
 /**
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/glyph-type.html'>GlyphType</a></code> enumeration.
  *
- * @class DocumentApp.GlyphType
- */
-
-/**
- * @typedef {DocumentApp.GlyphType} DocumentApp.GlyphType.BULLET
- * 
- * The default bullet, circular and filled.
- */
-
-/**
- * @typedef {DocumentApp.GlyphType} DocumentApp.GlyphType.HOLLOW_BULLET
- * 
- * A hollow bullet.
- */
-
-/**
- * @typedef {DocumentApp.GlyphType} DocumentApp.GlyphType.LATIN_LOWER
- * 
- * A latin, lowercase bullet.
- */
-
-/**
- * @typedef {DocumentApp.GlyphType} DocumentApp.GlyphType.LATIN_UPPER
- * 
- * A latin, uppercase bullet.
- */
-
-/**
- * @typedef {DocumentApp.GlyphType} DocumentApp.GlyphType.NUMBER
- * 
- * A number based bullet.
- */
-
-/**
- * @typedef {DocumentApp.GlyphType} DocumentApp.GlyphType.ROMAN_LOWER
- * 
- * A roman numeral, lowercase bullet.
- */
-
-/**
- * @typedef {DocumentApp.GlyphType} DocumentApp.GlyphType.ROMAN_UPPER
- * 
- * A roman numeral, uppercase bullet.
- */
-
-/**
- * @typedef {DocumentApp.GlyphType} DocumentApp.GlyphType.SQUARE_BULLET
- * 
- * A square bullet.
+ * @typedef {DocumentApp.GlyphType} DocumentApp.GlyphType
  */
 
 /**
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/horizontal-alignment.html'>HorizontalAlignment</a></code> enumeration.
  *
- * @class DocumentApp.HorizontalAlignment
- */
-
-/**
- * @typedef {DocumentApp.HorizontalAlignment} DocumentApp.HorizontalAlignment.CENTER
- * 
- * The center-alignment option.
- */
-
-/**
- * @typedef {DocumentApp.HorizontalAlignment} DocumentApp.HorizontalAlignment.JUSTIFY
- * 
- * The justify-alignment option.
- */
-
-/**
- * @typedef {DocumentApp.HorizontalAlignment} DocumentApp.HorizontalAlignment.LEFT
- * 
- * The left-alignment option.
- */
-
-/**
- * @typedef {DocumentApp.HorizontalAlignment} DocumentApp.HorizontalAlignment.RIGHT
- * 
- * The right-alignment option.
+ * @typedef {DocumentApp.HorizontalAlignment} DocumentApp.HorizontalAlignment
  */
 
 /**
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph-heading.html'>ParagraphHeading</a></code> enumeration.
  *
- * @class DocumentApp.ParagraphHeading
- */
-
-/**
- * @typedef {DocumentApp.ParagraphHeading} DocumentApp.ParagraphHeading.HEADING1
- * 
- * The highest heading option.
- */
-
-/**
- * @typedef {DocumentApp.ParagraphHeading} DocumentApp.ParagraphHeading.HEADING2
- * 
- * The second heading option.
- */
-
-/**
- * @typedef {DocumentApp.ParagraphHeading} DocumentApp.ParagraphHeading.HEADING3
- * 
- * The third heading option
- */
-
-/**
- * @typedef {DocumentApp.ParagraphHeading} DocumentApp.ParagraphHeading.HEADING4
- * 
- * The fourth heading option.
- */
-
-/**
- * @typedef {DocumentApp.ParagraphHeading} DocumentApp.ParagraphHeading.HEADING5
- * 
- * The fifth heading option.
- */
-
-/**
- * @typedef {DocumentApp.ParagraphHeading} DocumentApp.ParagraphHeading.HEADING6
- * 
- * The lowest heading option.
- */
-
-/**
- * @typedef {DocumentApp.ParagraphHeading} DocumentApp.ParagraphHeading.NORMAL
- * 
- * The heading option for normal text.
- */
-
-/**
- * @typedef {DocumentApp.ParagraphHeading} DocumentApp.ParagraphHeading.SUBTITLE
- * 
- * The subtitle heading option.
- */
-
-/**
- * @typedef {DocumentApp.ParagraphHeading} DocumentApp.ParagraphHeading.TITLE
- * 
- * The title heading option.
+ * @typedef {DocumentApp.ParagraphHeading} DocumentApp.ParagraphHeading
  */
 
 /**
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/positioned-layout.html'>PositionedLayout</a></code> enumeration.
  *
- * @class DocumentApp.PositionedLayout
- */
-
-/**
- * @typedef {DocumentApp.PositionedLayout} DocumentApp.PositionedLayout.ABOVE_TEXT
- * 
- * The image is positioned above the text.
- */
-
-/**
- * @typedef {DocumentApp.PositionedLayout} DocumentApp.PositionedLayout.BREAK_BOTH
- * 
- * The image breaks the text on the left and right.
- */
-
-/**
- * @typedef {DocumentApp.PositionedLayout} DocumentApp.PositionedLayout.BREAK_LEFT
- * 
- * The image breaks the text on the left.
- */
-
-/**
- * @typedef {DocumentApp.PositionedLayout} DocumentApp.PositionedLayout.BREAK_RIGHT
- * 
- * The image breaks the text on the right.
- */
-
-/**
- * @typedef {DocumentApp.PositionedLayout} DocumentApp.PositionedLayout.WRAP_TEXT
- * 
- * The image is wrapped by text.
+ * @typedef {DocumentApp.PositionedLayout} DocumentApp.PositionedLayout
  */
 
 /**
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/text-alignment.html'>TextAlignment</a></code> enumeration.
  *
- * @class DocumentApp.TextAlignment
- */
-
-/**
- * @typedef {DocumentApp.TextAlignment} DocumentApp.TextAlignment.NORMAL
- * 
- * The normal text alignment.
- */
-
-/**
- * @typedef {DocumentApp.TextAlignment} DocumentApp.TextAlignment.SUBSCRIPT
- * 
- * The subscript text alignment.
- */
-
-/**
- * @typedef {DocumentApp.TextAlignment} DocumentApp.TextAlignment.SUPERSCRIPT
- * 
- * The superscript text alignment.
+ * @typedef {DocumentApp.TextAlignment} DocumentApp.TextAlignment
  */
 
 /**
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/vertical-alignment.html'>VerticalAlignment</a></code> enumeration.
  *
- * @class DocumentApp.VerticalAlignment
- */
-
-/**
- * @typedef {DocumentApp.VerticalAlignment} DocumentApp.VerticalAlignment.BOTTOM
- * 
- * The bottom-alignment option.
- */
-
-/**
- * @typedef {DocumentApp.VerticalAlignment} DocumentApp.VerticalAlignment.CENTER
- * 
- * The center-alignment option.
- */
-
-/**
- * @typedef {DocumentApp.VerticalAlignment} DocumentApp.VerticalAlignment.TOP
- * 
- * The top-alignment option.
+ * @typedef {DocumentApp.VerticalAlignment} DocumentApp.VerticalAlignment
  */
 
 /**
@@ -901,6 +146,241 @@
  *
  * @return {DocumentApp.Document} the document instance
  */
+
+
+/**
+ * @class DocumentApp.Attribute
+ */
+
+/**
+ * The background color of an element (Paragraph, Table, etc) or document.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.BACKGROUND_COLOR
+ */
+
+/**
+ * The font weight setting, for rich text.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.BOLD
+ */
+
+/**
+ * The border color, for table elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.BORDER_COLOR
+ */
+
+/**
+ * The border width in points, for table elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.BORDER_WIDTH
+ */
+
+/**
+ * The code contents, for equation elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.CODE
+ */
+
+/**
+ * The font family setting, for rich text.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.FONT_FAMILY
+ */
+
+/**
+ * The font size setting in points, for rich text.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.FONT_SIZE
+ */
+
+/**
+ * The foreground color setting, for rich text.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.FOREGROUND_COLOR
+ */
+
+/**
+ * The glyph type, for list item elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.GLYPH_TYPE
+ */
+
+/**
+ * The heading type, for paragraph elements (for example, <code>DocumentApp.ParagraphHeading.HEADING1</code>).
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.HEADING
+ */
+
+/**
+ * The height setting, for image elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.HEIGHT
+ */
+
+/**
+ * The horizontal alignment, for paragraph elements (for example, <code>DocumentApp.HorizontalAlignment.CENTER</code>).
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.HORIZONTAL_ALIGNMENT
+ */
+
+/**
+ * The end indentation setting in points, for paragraph elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.INDENT_END
+ */
+
+/**
+ * The first line indentation setting in points, for paragraph elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.INDENT_FIRST_LINE
+ */
+
+/**
+ * The start indentation setting in points, for paragraph elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.INDENT_START
+ */
+
+/**
+ * The font style setting, for rich text.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.ITALIC
+ */
+
+/**
+ * The text direction setting, for rich text.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.LEFT_TO_RIGHT
+ */
+
+/**
+ * The line spacing setting as a multiplier, for paragraph elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.LINE_SPACING
+ */
+
+/**
+ * The link URL, for rich text. The default link style (foreground color, underline) is
+ automatically applied.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.LINK_URL
+ */
+
+/**
+ * The ID of the encompassing list, for list item elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.LIST_ID
+ */
+
+/**
+ * The bottom margin setting in points, for paragraph elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.MARGIN_BOTTOM
+ */
+
+/**
+ * The left margin setting in points, for paragraph elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.MARGIN_LEFT
+ */
+
+/**
+ * The right margin setting in points, for paragraph elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.MARGIN_RIGHT
+ */
+
+/**
+ * The top margin setting in points, for paragraph elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.MARGIN_TOP
+ */
+
+/**
+ * The minimum height setting in points, for table row elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.MINIMUM_HEIGHT
+ */
+
+/**
+ * The item nesting level, for list item elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.NESTING_LEVEL
+ */
+
+/**
+ * The bottom padding setting in points, for table cell elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.PADDING_BOTTOM
+ */
+
+/**
+ * The left padding setting in points, for table cell elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.PADDING_LEFT
+ */
+
+/**
+ * The right padding setting in points, for table cell elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.PADDING_RIGHT
+ */
+
+/**
+ * The top padding setting in points, for table cell elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.PADDING_TOP
+ */
+
+/**
+ * The page height setting in points, for documents.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.PAGE_HEIGHT
+ */
+
+/**
+ * The page width setting in points, for documents.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.PAGE_WIDTH
+ */
+
+/**
+ * The bottom spacing setting in points, for paragraph elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.SPACING_AFTER
+ */
+
+/**
+ * The top spacing setting in points, for paragraph elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.SPACING_BEFORE
+ */
+
+/**
+ * The strike-through setting, for rich text.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.STRIKETHROUGH
+ */
+
+/**
+ * The underline setting, for rich text.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.UNDERLINE
+ */
+
+/**
+ * The vertical alignment setting, for table cell elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.VERTICAL_ALIGNMENT
+ */
+
+/**
+ * The width setting, for table cell and image elements.
+ *
+ * @typedef {DocumentApp.Attribute} DocumentApp.Attribute.WIDTH
+ */
+
 
 /**
  * @class DocumentApp.Body
@@ -1218,7 +698,7 @@
  *
  * @function DocumentApp.Body#getChild
  *
- * @param {number} childIndex - the index of the child element to retrieve
+ * @param {IntegerNum} childIndex - the index of the child element to retrieve
  *
  * @return {DocumentApp.Element} the child element at the specified index
  */
@@ -1230,13 +710,14 @@
  *
  * @param {DocumentApp.Element} child - the child element for which to retrieve the index
  *
- * @return {number} the child index
+ * @return {IntegerNum} the child index
  */
 
 /**
  * Retrieves all the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/footnote.html'>Footnotes</a></code> contained in the section.
  *
  * @function DocumentApp.Body#getFootnotes
+ * @deprecated
  *
  * @return {DocumentApp.Footnote[]} the section footnotes
  */
@@ -1263,6 +744,7 @@
  * Retrieves the link url.
  *
  * @function DocumentApp.Body#getLinkUrl
+ * @deprecated
  *
  * @return {String} the link url, or null if the element contains multiple values for this attribute
  */
@@ -1313,6 +795,7 @@
  <p>The next sibling has the same parent and follows the current element.
  *
  * @function DocumentApp.Body#getNextSibling
+ * @deprecated
  *
  * @return {DocumentApp.Element} the next sibling element
  */
@@ -1331,7 +814,7 @@
  *
  * @function DocumentApp.Body#getNumChildren
  *
- * @return {number} the number of children
+ * @return {IntegerNum} the number of children
  */
 
 /**
@@ -1374,6 +857,7 @@
  <p>The previous sibling has the same parent and precedes the current element.
  *
  * @function DocumentApp.Body#getPreviousSibling
+ * @deprecated
  *
  * @return {DocumentApp.Element} the previous sibling element
  */
@@ -1435,7 +919,7 @@
  *
  * @function DocumentApp.Body#insertHorizontalRule
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  *
  * @return {DocumentApp.HorizontalRule} the new horizontal rule
  */
@@ -1446,7 +930,7 @@
  *
  * @function DocumentApp.Body#insertImage
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {BlobSource} image - the image data
  *
  * @return {DocumentApp.InlineImage} the inserted inline image
@@ -1459,7 +943,7 @@
  *
  * @function DocumentApp.Body#insertImage
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {DocumentApp.InlineImage} image - the image to insert
  *
  * @return {DocumentApp.InlineImage} the inserted inline image
@@ -1470,7 +954,7 @@
  *
  * @function DocumentApp.Body#insertListItem
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  * @param {DocumentApp.ListItem} listItem - the list item to insert
  *
  * @return {DocumentApp.ListItem} the inserted list item
@@ -1482,7 +966,7 @@
  *
  * @function DocumentApp.Body#insertListItem
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  * @param {String} text - the list item's text contents
  *
  * @return {DocumentApp.ListItem} the new list item
@@ -1495,7 +979,7 @@
  *
  * @function DocumentApp.Body#insertPageBreak
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  *
  * @return {DocumentApp.PageBreak} the new page break
  */
@@ -1507,7 +991,7 @@
  *
  * @function DocumentApp.Body#insertPageBreak
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {DocumentApp.PageBreak} pageBreak - the p[age break to insert
  *
  * @return {DocumentApp.PageBreak} the inserted page break
@@ -1518,7 +1002,7 @@
  *
  * @function DocumentApp.Body#insertParagraph
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  * @param {DocumentApp.Paragraph} paragraph - the paragraph to insert
  *
  * @return {DocumentApp.Paragraph} the inserted paragraph
@@ -1530,7 +1014,7 @@
  *
  * @function DocumentApp.Body#insertParagraph
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  * @param {String} text - the paragraph's text contents
  *
  * @return {DocumentApp.Paragraph} the new paragraph
@@ -1541,7 +1025,7 @@
  *
  * @function DocumentApp.Body#insertTable
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  *
  * @return {DocumentApp.Table} the new table
  */
@@ -1551,7 +1035,7 @@
  *
  * @function DocumentApp.Body#insertTable
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  * @param {DocumentApp.Table} table - the table to insert
  *
  * @return {DocumentApp.Table} the inserted table
@@ -1562,7 +1046,7 @@
  *
  * @function DocumentApp.Body#insertTable
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  * @param {String[][]} cells - the text contents of the table cells to add to the new table
  *
  * @return {DocumentApp.Table} the new table
@@ -1572,6 +1056,7 @@
  * Determines whether the element is at the end of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>.
  *
  * @function DocumentApp.Body#isAtDocumentEnd
+ * @deprecated
  *
  * @return {Boolean} whether the element is at the end of the document
  */
@@ -1662,6 +1147,7 @@
  * Sets the link url.
  *
  * @function DocumentApp.Body#setLinkUrl
+ * @deprecated
  *
  * @param {String} url - the link url
  *
@@ -1756,6 +1242,7 @@
  * @return {DocumentApp.Body} the current element
  */
 
+
 /**
  * @class DocumentApp.Bookmark
  */
@@ -1785,6 +1272,7 @@
  *
  * @return void
  */
+
 
 /**
  * @class DocumentApp.ContainerElement
@@ -2079,7 +1567,7 @@
  *
  * @function DocumentApp.ContainerElement#getChild
  *
- * @param {number} childIndex - the index of the child element to retrieve
+ * @param {IntegerNum} childIndex - the index of the child element to retrieve
  *
  * @return {DocumentApp.Element} the child element at the specified index
  */
@@ -2091,7 +1579,7 @@
  *
  * @param {DocumentApp.Element} child - the child element for which to retrieve the index
  *
- * @return {number} the child index
+ * @return {IntegerNum} the child index
  */
 
 /**
@@ -2126,7 +1614,7 @@
  *
  * @function DocumentApp.ContainerElement#getNumChildren
  *
- * @return {number} the number of children
+ * @return {IntegerNum} the number of children
  */
 
 /**
@@ -2327,6 +1815,7 @@
  *
  * @return {DocumentApp.ContainerElement} the current element
  */
+
 
 /**
  * @class DocumentApp.Document
@@ -2687,7 +2176,7 @@
  *
  * @param {DocumentApp.Element} element - the element that will contain the new <code>Position</code>; this must be either a
      <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/text.html'>Text</a></code> element or a container element like <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code>
- * @param {number} offset - for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/text.html'>Text</a></code> elements, the number of characters before the <code>Position</code>;
+ * @param {IntegerNum} offset - for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/text.html'>Text</a></code> elements, the number of characters before the <code>Position</code>;
      for other elements, the number of child elements before the <code>Position</code> within the
      same container element
  *
@@ -2830,6 +2319,7 @@
  *
  * @return {DocumentApp.Document} this <code>Document</code>, for chaining
  */
+
 
 /**
  * @class DocumentApp.Element
@@ -3231,6 +2721,153 @@
  * @return {DocumentApp.Element} the current element
  */
 
+
+/**
+ * @class DocumentApp.ElementType
+ */
+
+/**
+ * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/body.html'>Body</a></code> element.
+ *
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.BODY_SECTION
+ */
+
+/**
+ * The type corresponding to the <code><s>CommentSection</s></code> element.
+ *
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.COMMENT_SECTION
+ */
+
+/**
+ * The type that corresponds to the root of the document.
+ *
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.DOCUMENT
+ */
+
+/**
+ * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/equation.html'>Equation</a></code> element.
+ *
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.EQUATION
+ */
+
+/**
+ * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/equation-function.html'>EquationFunction</a></code> element.
+ *
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.EQUATION_FUNCTION
+ */
+
+/**
+ * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/equation-function-argument-separator.html'>EquationFunctionArgumentSeparator</a></code>
+ element.
+ *
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.EQUATION_FUNCTION_ARGUMENT_SEPARATOR
+ */
+
+/**
+ * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/equation-symbol.html'>EquationSymbol</a></code> element.
+ *
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.EQUATION_SYMBOL
+ */
+
+/**
+ * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/footer-section.html'>FooterSection</a></code> element.
+ *
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.FOOTER_SECTION
+ */
+
+/**
+ * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/footnote.html'>Footnote</a></code> element.
+ *
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.FOOTNOTE
+ */
+
+/**
+ * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/footnote-section.html'>FootnoteSection</a></code> element.
+ *
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.FOOTNOTE_SECTION
+ */
+
+/**
+ * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/header-section.html'>HeaderSection</a></code> element.
+ *
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.HEADER_SECTION
+ */
+
+/**
+ * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/horizontal-rule.html'>HorizontalRule</a></code> element.
+ *
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.HORIZONTAL_RULE
+ */
+
+/**
+ * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/inline-drawing.html'>InlineDrawing</a></code> element.
+ *
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.INLINE_DRAWING
+ */
+
+/**
+ * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/inline-image.html'>InlineImage</a></code> element.
+ *
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.INLINE_IMAGE
+ */
+
+/**
+ * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/list-item.html'>ListItem</a></code> element.
+ *
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.LIST_ITEM
+ */
+
+/**
+ * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/page-break.html'>PageBreak</a></code> element.
+ *
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.PAGE_BREAK
+ */
+
+/**
+ * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code> element.
+ *
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.PARAGRAPH
+ */
+
+/**
+ * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table.html'>Table</a></code> element.
+ *
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.TABLE
+ */
+
+/**
+ * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table-cell.html'>TableCell</a></code> element.
+ *
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.TABLE_CELL
+ */
+
+/**
+ * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table-of-contents.html'>TableOfContents</a></code> element.
+ *
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.TABLE_OF_CONTENTS
+ */
+
+/**
+ * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/table-row.html'>TableRow</a></code> element.
+ *
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.TABLE_ROW
+ */
+
+/**
+ * The type corresponding to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/text.html'>Text</a></code>
+ element.
+ *
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.TEXT
+ */
+
+/**
+ * The type corresponding to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/unsupported-element.html'>UnsupportedElement</a></code>. Unsupported elements
+ represent document portions that do not support scripting.
+ *
+ * @typedef {DocumentApp.ElementType} DocumentApp.ElementType.UNSUPPORTED
+ */
+
+
 /**
  * @class DocumentApp.Equation
  */
@@ -3403,7 +3040,7 @@
  *
  * @function DocumentApp.Equation#getChild
  *
- * @param {number} childIndex - the index of the child element to retrieve
+ * @param {IntegerNum} childIndex - the index of the child element to retrieve
  *
  * @return {DocumentApp.Element} the child element at the specified index
  */
@@ -3415,7 +3052,7 @@
  *
  * @param {DocumentApp.Element} child - the child element for which to retrieve the index
  *
- * @return {number} the child index
+ * @return {IntegerNum} the child index
  */
 
 /**
@@ -3450,7 +3087,7 @@
  *
  * @function DocumentApp.Equation#getNumChildren
  *
- * @return {number} the number of children
+ * @return {IntegerNum} the number of children
  */
 
 /**
@@ -3652,6 +3289,7 @@
  * @return {DocumentApp.Equation} the current element
  */
 
+
 /**
  * @class DocumentApp.EquationFunction
  */
@@ -3824,7 +3462,7 @@
  *
  * @function DocumentApp.EquationFunction#getChild
  *
- * @param {number} childIndex - the index of the child element to retrieve
+ * @param {IntegerNum} childIndex - the index of the child element to retrieve
  *
  * @return {DocumentApp.Element} the child element at the specified index
  */
@@ -3836,7 +3474,7 @@
  *
  * @param {DocumentApp.Element} child - the child element for which to retrieve the index
  *
- * @return {number} the child index
+ * @return {IntegerNum} the child index
  */
 
 /**
@@ -3879,7 +3517,7 @@
  *
  * @function DocumentApp.EquationFunction#getNumChildren
  *
- * @return {number} the number of children
+ * @return {IntegerNum} the number of children
  */
 
 /**
@@ -4081,6 +3719,7 @@
  * @return {DocumentApp.EquationFunction} the current element
  */
 
+
 /**
  * @class DocumentApp.EquationFunctionArgumentSeparator
  */
@@ -4260,6 +3899,7 @@
  *
  * @return {DocumentApp.EquationFunctionArgumentSeparator} the current element
  */
+
 
 /**
  * @class DocumentApp.EquationSymbol
@@ -4448,6 +4088,204 @@
  *
  * @return {DocumentApp.EquationSymbol} the current element
  */
+
+
+/**
+ * @class DocumentApp.FontFamily
+ */
+
+/**
+ * The Amaranth font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.AMARANTH
+ */
+
+/**
+ * The Arial font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.ARIAL
+ */
+
+/**
+ * The Arial Black font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.ARIAL_BLACK
+ */
+
+/**
+ * The Arial Narrow font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.ARIAL_NARROW
+ */
+
+/**
+ * The Arvo font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.ARVO
+ */
+
+/**
+ * The Calibri font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.CALIBRI
+ */
+
+/**
+ * The Cambria font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.CAMBRIA
+ */
+
+/**
+ * The Comic Sans MS font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.COMIC_SANS_MS
+ */
+
+/**
+ * The Consolas font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.CONSOLAS
+ */
+
+/**
+ * The Corsiva font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.CORSIVA
+ */
+
+/**
+ * The Courier New font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.COURIER_NEW
+ */
+
+/**
+ * The Dancing Script font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.DANCING_SCRIPT
+ */
+
+/**
+ * The Droid Sans font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.DROID_SANS
+ */
+
+/**
+ * The Droid Serif font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.DROID_SERIF
+ */
+
+/**
+ * The Garamond font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.GARAMOND
+ */
+
+/**
+ * The Georgia font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.GEORGIA
+ */
+
+/**
+ * The Gloria Hallelujah font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.GLORIA_HALLELUJAH
+ */
+
+/**
+ * The Great Vibes font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.GREAT_VIBES
+ */
+
+/**
+ * The Lobster font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.LOBSTER
+ */
+
+/**
+ * The Merriweather font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.MERRIWEATHER
+ */
+
+/**
+ * The Pacifico font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.PACIFICO
+ */
+
+/**
+ * The Philosopher font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.PHILOSOPHER
+ */
+
+/**
+ * The Poiret One font family
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.POIRET_ONE
+ */
+
+/**
+ * The Quattrocento font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.QUATTROCENTO
+ */
+
+/**
+ * The Roboto font family
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.ROBOTO
+ */
+
+/**
+ * The Shadows Into Light font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.SHADOWS_INTO_LIGHT
+ */
+
+/**
+ * The Syncopate font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.SYNCOPATE
+ */
+
+/**
+ * The Tahoma font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.TAHOMA
+ */
+
+/**
+ * The Times New Roman font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.TIMES_NEW_ROMAN
+ */
+
+/**
+ * The Trebuchet MS font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.TREBUCHET_MS
+ */
+
+/**
+ * The Ubuntu font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.UBUNTU
+ */
+
+/**
+ * The Verdana font family.
+ *
+ * @typedef {DocumentApp.FontFamily} DocumentApp.FontFamily.VERDANA
+ */
+
 
 /**
  * @class DocumentApp.FooterSection
@@ -4741,7 +4579,7 @@
  *
  * @function DocumentApp.FooterSection#getChild
  *
- * @param {number} childIndex - the index of the child element to retrieve
+ * @param {IntegerNum} childIndex - the index of the child element to retrieve
  *
  * @return {DocumentApp.Element} the child element at the specified index
  */
@@ -4753,13 +4591,14 @@
  *
  * @param {DocumentApp.Element} child - the child element for which to retrieve the index
  *
- * @return {number} the child index
+ * @return {IntegerNum} the child index
  */
 
 /**
  * Retrieves all the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/footnote.html'>Footnotes</a></code> contained in the section.
  *
  * @function DocumentApp.FooterSection#getFootnotes
+ * @deprecated
  *
  * @return {DocumentApp.Footnote[]} the section footnotes
  */
@@ -4776,6 +4615,7 @@
  * Retrieves the link url.
  *
  * @function DocumentApp.FooterSection#getLinkUrl
+ * @deprecated
  *
  * @return {String} the link url, or null if the element contains multiple values for this attribute
  */
@@ -4794,6 +4634,7 @@
  <p>The next sibling has the same parent and follows the current element.
  *
  * @function DocumentApp.FooterSection#getNextSibling
+ * @deprecated
  *
  * @return {DocumentApp.Element} the next sibling element
  */
@@ -4812,7 +4653,7 @@
  *
  * @function DocumentApp.FooterSection#getNumChildren
  *
- * @return {number} the number of children
+ * @return {IntegerNum} the number of children
  */
 
 /**
@@ -4839,6 +4680,7 @@
  <p>The previous sibling has the same parent and precedes the current element.
  *
  * @function DocumentApp.FooterSection#getPreviousSibling
+ * @deprecated
  *
  * @return {DocumentApp.Element} the previous sibling element
  */
@@ -4900,7 +4742,7 @@
  *
  * @function DocumentApp.FooterSection#insertHorizontalRule
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  *
  * @return {DocumentApp.HorizontalRule} the new horizontal rule
  */
@@ -4911,7 +4753,7 @@
  *
  * @function DocumentApp.FooterSection#insertImage
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {BlobSource} image - the image data
  *
  * @return {DocumentApp.InlineImage} the inserted inline image
@@ -4924,7 +4766,7 @@
  *
  * @function DocumentApp.FooterSection#insertImage
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {DocumentApp.InlineImage} image - the image to insert
  *
  * @return {DocumentApp.InlineImage} the inserted inline image
@@ -4935,7 +4777,7 @@
  *
  * @function DocumentApp.FooterSection#insertListItem
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  * @param {DocumentApp.ListItem} listItem - the list item to insert
  *
  * @return {DocumentApp.ListItem} the inserted list item
@@ -4947,7 +4789,7 @@
  *
  * @function DocumentApp.FooterSection#insertListItem
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  * @param {String} text - the list item's text contents
  *
  * @return {DocumentApp.ListItem} the new list item
@@ -4958,7 +4800,7 @@
  *
  * @function DocumentApp.FooterSection#insertParagraph
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  * @param {DocumentApp.Paragraph} paragraph - the paragraph to insert
  *
  * @return {DocumentApp.Paragraph} the inserted paragraph
@@ -4970,7 +4812,7 @@
  *
  * @function DocumentApp.FooterSection#insertParagraph
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  * @param {String} text - the paragraph's text contents
  *
  * @return {DocumentApp.Paragraph} the new paragraph
@@ -4981,7 +4823,7 @@
  *
  * @function DocumentApp.FooterSection#insertTable
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  *
  * @return {DocumentApp.Table} the new table
  */
@@ -4991,7 +4833,7 @@
  *
  * @function DocumentApp.FooterSection#insertTable
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  * @param {DocumentApp.Table} table - the table to insert
  *
  * @return {DocumentApp.Table} the inserted table
@@ -5002,7 +4844,7 @@
  *
  * @function DocumentApp.FooterSection#insertTable
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  * @param {String[][]} cells - the text contents of the table cells to add to the new table
  *
  * @return {DocumentApp.Table} the new table
@@ -5012,6 +4854,7 @@
  * Determines whether the element is at the end of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>.
  *
  * @function DocumentApp.FooterSection#isAtDocumentEnd
+ * @deprecated
  *
  * @return {Boolean} whether the element is at the end of the document
  */
@@ -5109,6 +4952,7 @@
  * Sets the link url.
  *
  * @function DocumentApp.FooterSection#setLinkUrl
+ * @deprecated
  *
  * @param {String} url - the link url
  *
@@ -5142,6 +4986,7 @@
  *
  * @return {DocumentApp.FooterSection} the current element
  */
+
 
 /**
  * @class DocumentApp.Footnote
@@ -5306,6 +5151,7 @@
  *
  * @return {DocumentApp.Footnote} the current element
  */
+
 
 /**
  * @class DocumentApp.FootnoteSection
@@ -5501,7 +5347,7 @@
  *
  * @function DocumentApp.FootnoteSection#getChild
  *
- * @param {number} childIndex - the index of the child element to retrieve
+ * @param {IntegerNum} childIndex - the index of the child element to retrieve
  *
  * @return {DocumentApp.Element} the child element at the specified index
  */
@@ -5513,13 +5359,14 @@
  *
  * @param {DocumentApp.Element} child - the child element for which to retrieve the index
  *
- * @return {number} the child index
+ * @return {IntegerNum} the child index
  */
 
 /**
  * Retrieves all the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/footnote.html'>Footnotes</a></code> contained in the section.
  *
  * @function DocumentApp.FootnoteSection#getFootnotes
+ * @deprecated
  *
  * @return {DocumentApp.Footnote[]} the section footnotes
  */
@@ -5528,6 +5375,7 @@
  * Retrieves the link url.
  *
  * @function DocumentApp.FootnoteSection#getLinkUrl
+ * @deprecated
  *
  * @return {String} the link url, or null if the element contains multiple values for this attribute
  */
@@ -5556,7 +5404,7 @@
  *
  * @function DocumentApp.FootnoteSection#getNumChildren
  *
- * @return {number} the number of children
+ * @return {IntegerNum} the number of children
  */
 
 /**
@@ -5634,7 +5482,7 @@
  *
  * @function DocumentApp.FootnoteSection#insertParagraph
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  * @param {DocumentApp.Paragraph} paragraph - the paragraph to insert
  *
  * @return {DocumentApp.Paragraph} the inserted paragraph
@@ -5646,7 +5494,7 @@
  *
  * @function DocumentApp.FootnoteSection#insertParagraph
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  * @param {String} text - the paragraph's text contents
  *
  * @return {DocumentApp.Paragraph} the new paragraph
@@ -5656,6 +5504,7 @@
  * Determines whether the element is at the end of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>.
  *
  * @function DocumentApp.FootnoteSection#isAtDocumentEnd
+ * @deprecated
  *
  * @return {Boolean} whether the element is at the end of the document
  */
@@ -5753,6 +5602,7 @@
  * Sets the link url.
  *
  * @function DocumentApp.FootnoteSection#setLinkUrl
+ * @deprecated
  *
  * @param {String} url - the link url
  *
@@ -5786,6 +5636,60 @@
  *
  * @return {DocumentApp.FootnoteSection} the current element
  */
+
+
+/**
+ * @class DocumentApp.GlyphType
+ */
+
+/**
+ * The default bullet, circular and filled.
+ *
+ * @typedef {DocumentApp.GlyphType} DocumentApp.GlyphType.BULLET
+ */
+
+/**
+ * A hollow bullet.
+ *
+ * @typedef {DocumentApp.GlyphType} DocumentApp.GlyphType.HOLLOW_BULLET
+ */
+
+/**
+ * A latin, lowercase bullet.
+ *
+ * @typedef {DocumentApp.GlyphType} DocumentApp.GlyphType.LATIN_LOWER
+ */
+
+/**
+ * A latin, uppercase bullet.
+ *
+ * @typedef {DocumentApp.GlyphType} DocumentApp.GlyphType.LATIN_UPPER
+ */
+
+/**
+ * A number based bullet.
+ *
+ * @typedef {DocumentApp.GlyphType} DocumentApp.GlyphType.NUMBER
+ */
+
+/**
+ * A roman numeral, lowercase bullet.
+ *
+ * @typedef {DocumentApp.GlyphType} DocumentApp.GlyphType.ROMAN_LOWER
+ */
+
+/**
+ * A roman numeral, uppercase bullet.
+ *
+ * @typedef {DocumentApp.GlyphType} DocumentApp.GlyphType.ROMAN_UPPER
+ */
+
+/**
+ * A square bullet.
+ *
+ * @typedef {DocumentApp.GlyphType} DocumentApp.GlyphType.SQUARE_BULLET
+ */
+
 
 /**
  * @class DocumentApp.HeaderSection
@@ -6079,7 +5983,7 @@
  *
  * @function DocumentApp.HeaderSection#getChild
  *
- * @param {number} childIndex - the index of the child element to retrieve
+ * @param {IntegerNum} childIndex - the index of the child element to retrieve
  *
  * @return {DocumentApp.Element} the child element at the specified index
  */
@@ -6091,13 +5995,14 @@
  *
  * @param {DocumentApp.Element} child - the child element for which to retrieve the index
  *
- * @return {number} the child index
+ * @return {IntegerNum} the child index
  */
 
 /**
  * Retrieves all the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/footnote.html'>Footnotes</a></code> contained in the section.
  *
  * @function DocumentApp.HeaderSection#getFootnotes
+ * @deprecated
  *
  * @return {DocumentApp.Footnote[]} the section footnotes
  */
@@ -6114,6 +6019,7 @@
  * Retrieves the link url.
  *
  * @function DocumentApp.HeaderSection#getLinkUrl
+ * @deprecated
  *
  * @return {String} the link url, or null if the element contains multiple values for this attribute
  */
@@ -6132,6 +6038,7 @@
  <p>The next sibling has the same parent and follows the current element.
  *
  * @function DocumentApp.HeaderSection#getNextSibling
+ * @deprecated
  *
  * @return {DocumentApp.Element} the next sibling element
  */
@@ -6150,7 +6057,7 @@
  *
  * @function DocumentApp.HeaderSection#getNumChildren
  *
- * @return {number} the number of children
+ * @return {IntegerNum} the number of children
  */
 
 /**
@@ -6177,6 +6084,7 @@
  <p>The previous sibling has the same parent and precedes the current element.
  *
  * @function DocumentApp.HeaderSection#getPreviousSibling
+ * @deprecated
  *
  * @return {DocumentApp.Element} the previous sibling element
  */
@@ -6238,7 +6146,7 @@
  *
  * @function DocumentApp.HeaderSection#insertHorizontalRule
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  *
  * @return {DocumentApp.HorizontalRule} the new horizontal rule
  */
@@ -6249,7 +6157,7 @@
  *
  * @function DocumentApp.HeaderSection#insertImage
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {BlobSource} image - the image data
  *
  * @return {DocumentApp.InlineImage} the inserted inline image
@@ -6262,7 +6170,7 @@
  *
  * @function DocumentApp.HeaderSection#insertImage
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {DocumentApp.InlineImage} image - the image to insert
  *
  * @return {DocumentApp.InlineImage} the inserted inline image
@@ -6273,7 +6181,7 @@
  *
  * @function DocumentApp.HeaderSection#insertListItem
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  * @param {DocumentApp.ListItem} listItem - the list item to insert
  *
  * @return {DocumentApp.ListItem} the inserted list item
@@ -6285,7 +6193,7 @@
  *
  * @function DocumentApp.HeaderSection#insertListItem
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  * @param {String} text - the list item's text contents
  *
  * @return {DocumentApp.ListItem} the new list item
@@ -6296,7 +6204,7 @@
  *
  * @function DocumentApp.HeaderSection#insertParagraph
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  * @param {DocumentApp.Paragraph} paragraph - the paragraph to insert
  *
  * @return {DocumentApp.Paragraph} the inserted paragraph
@@ -6308,7 +6216,7 @@
  *
  * @function DocumentApp.HeaderSection#insertParagraph
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  * @param {String} text - the paragraph's text contents
  *
  * @return {DocumentApp.Paragraph} the new paragraph
@@ -6319,7 +6227,7 @@
  *
  * @function DocumentApp.HeaderSection#insertTable
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  *
  * @return {DocumentApp.Table} the new table
  */
@@ -6329,7 +6237,7 @@
  *
  * @function DocumentApp.HeaderSection#insertTable
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  * @param {DocumentApp.Table} table - the table to insert
  *
  * @return {DocumentApp.Table} the inserted table
@@ -6340,7 +6248,7 @@
  *
  * @function DocumentApp.HeaderSection#insertTable
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  * @param {String[][]} cells - the text contents of the table cells to add to the new table
  *
  * @return {DocumentApp.Table} the new table
@@ -6350,6 +6258,7 @@
  * Determines whether the element is at the end of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>.
  *
  * @function DocumentApp.HeaderSection#isAtDocumentEnd
+ * @deprecated
  *
  * @return {Boolean} whether the element is at the end of the document
  */
@@ -6447,6 +6356,7 @@
  * Sets the link url.
  *
  * @function DocumentApp.HeaderSection#setLinkUrl
+ * @deprecated
  *
  * @param {String} url - the link url
  *
@@ -6480,6 +6390,36 @@
  *
  * @return {DocumentApp.HeaderSection} the current element
  */
+
+
+/**
+ * @class DocumentApp.HorizontalAlignment
+ */
+
+/**
+ * The center-alignment option.
+ *
+ * @typedef {DocumentApp.HorizontalAlignment} DocumentApp.HorizontalAlignment.CENTER
+ */
+
+/**
+ * The justify-alignment option.
+ *
+ * @typedef {DocumentApp.HorizontalAlignment} DocumentApp.HorizontalAlignment.JUSTIFY
+ */
+
+/**
+ * The left-alignment option.
+ *
+ * @typedef {DocumentApp.HorizontalAlignment} DocumentApp.HorizontalAlignment.LEFT
+ */
+
+/**
+ * The right-alignment option.
+ *
+ * @typedef {DocumentApp.HorizontalAlignment} DocumentApp.HorizontalAlignment.RIGHT
+ */
+
 
 /**
  * @class DocumentApp.HorizontalRule
@@ -6636,6 +6576,7 @@
  *
  * @return {DocumentApp.HorizontalRule} the current element
  */
+
 
 /**
  * @class DocumentApp.InlineDrawing
@@ -6855,6 +6796,7 @@
  * @return {DocumentApp.InlineDrawing} the current element
  */
 
+
 /**
  * @class DocumentApp.InlineImage
  */
@@ -6943,7 +6885,7 @@
  *
  * @function DocumentApp.InlineImage#getHeight
  *
- * @return {number} the image's height, in pixels
+ * @return {IntegerNum} the image's height, in pixels
  */
 
 /**
@@ -7015,7 +6957,7 @@
  *
  * @function DocumentApp.InlineImage#getWidth
  *
- * @return {number} the image's width, in pixels
+ * @return {IntegerNum} the image's width, in pixels
  */
 
 /**
@@ -7127,7 +7069,7 @@
  *
  * @function DocumentApp.InlineImage#setHeight
  *
- * @param {number} height - the image's height, in pixels
+ * @param {IntegerNum} height - the image's height, in pixels
  *
  * @return {DocumentApp.InlineImage} the current object
  */
@@ -7148,10 +7090,11 @@
  *
  * @function DocumentApp.InlineImage#setWidth
  *
- * @param {number} width - the image's width, in pixels
+ * @param {IntegerNum} width - the image's width, in pixels
  *
  * @return {DocumentApp.InlineImage} the current object
  */
+
 
 /**
  * @class DocumentApp.ListItem
@@ -7415,7 +7358,7 @@
  *
  * @function DocumentApp.ListItem#getChild
  *
- * @param {number} childIndex - the index of the child element to retrieve
+ * @param {IntegerNum} childIndex - the index of the child element to retrieve
  *
  * @return {DocumentApp.Element} the child element at the specified index
  */
@@ -7427,7 +7370,7 @@
  *
  * @param {DocumentApp.Element} child - the child element for which to retrieve the index
  *
- * @return {number} the child index
+ * @return {IntegerNum} the child index
  */
 
 /**
@@ -7502,7 +7445,7 @@
  *
  * @function DocumentApp.ListItem#getNestingLevel
  *
- * @return {number} the nesting level
+ * @return {IntegerNum} the nesting level
  */
 
 /**
@@ -7529,7 +7472,7 @@
  *
  * @function DocumentApp.ListItem#getNumChildren
  *
- * @return {number} the number of children
+ * @return {IntegerNum} the number of children
  */
 
 /**
@@ -7633,7 +7576,7 @@
  *
  * @function DocumentApp.ListItem#insertHorizontalRule
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  *
  * @return {DocumentApp.HorizontalRule} the new horizontal rule element
  */
@@ -7644,7 +7587,7 @@
  *
  * @function DocumentApp.ListItem#insertInlineImage
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {BlobSource} image - the image data
  *
  * @return {DocumentApp.InlineImage} the inserted inline image element
@@ -7655,7 +7598,7 @@
  *
  * @function DocumentApp.ListItem#insertInlineImage
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {DocumentApp.InlineImage} image - the image data
  *
  * @return {DocumentApp.InlineImage} the inserted inline image element
@@ -7669,7 +7612,7 @@
  *
  * @function DocumentApp.ListItem#insertPageBreak
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  *
  * @return {DocumentApp.PageBreak} the new page break element
  */
@@ -7682,7 +7625,7 @@
  *
  * @function DocumentApp.ListItem#insertPageBreak
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {DocumentApp.PageBreak} pageBreak - the p[age break to insert
  *
  * @return {DocumentApp.PageBreak} the inserted page break element
@@ -7694,7 +7637,7 @@
  *
  * @function DocumentApp.ListItem#insertText
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {DocumentApp.Text} text - the text element to insert
  *
  * @return {DocumentApp.Text} the inserted text element
@@ -7705,7 +7648,7 @@
  *
  * @function DocumentApp.ListItem#insertText
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {String} text - the text contents
  *
  * @return {DocumentApp.Text} the new text element
@@ -7784,7 +7727,7 @@
  *
  * @function DocumentApp.ListItem#removePositionedImage
  *
- * @param {String} id - 
+ * @param {String} id
  *
  * @return {Boolean} whether or not the specified image was removed
  */
@@ -7960,7 +7903,7 @@
  *
  * @function DocumentApp.ListItem#setNestingLevel
  *
- * @param {number} nestingLevel - the nesting level
+ * @param {IntegerNum} nestingLevel - the nesting level
  *
  * @return {DocumentApp.ListItem} the current element
  */
@@ -8013,6 +7956,7 @@
  * @return {DocumentApp.ListItem} the current element
  */
 
+
 /**
  * @class DocumentApp.NamedRange
  */
@@ -8050,6 +7994,7 @@
  *
  * @return void
  */
+
 
 /**
  * @class DocumentApp.PageBreak
@@ -8206,6 +8151,7 @@
  *
  * @return {DocumentApp.PageBreak} the current element
  */
+
 
 /**
  * @class DocumentApp.Paragraph
@@ -8469,7 +8415,7 @@
  *
  * @function DocumentApp.Paragraph#getChild
  *
- * @param {number} childIndex - the index of the child element to retrieve
+ * @param {IntegerNum} childIndex - the index of the child element to retrieve
  *
  * @return {DocumentApp.Element} the child element at the specified index
  */
@@ -8481,7 +8427,7 @@
  *
  * @param {DocumentApp.Element} child - the child element for which to retrieve the index
  *
- * @return {number} the child index
+ * @return {IntegerNum} the child index
  */
 
 /**
@@ -8556,7 +8502,7 @@
  *
  * @function DocumentApp.Paragraph#getNumChildren
  *
- * @return {number} the number of children
+ * @return {IntegerNum} the number of children
  */
 
 /**
@@ -8660,7 +8606,7 @@
  *
  * @function DocumentApp.Paragraph#insertHorizontalRule
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  *
  * @return {DocumentApp.HorizontalRule} the new horizontal rule element
  */
@@ -8671,7 +8617,7 @@
  *
  * @function DocumentApp.Paragraph#insertInlineImage
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {BlobSource} image - the image data
  *
  * @return {DocumentApp.InlineImage} the inserted inline image element
@@ -8682,7 +8628,7 @@
  *
  * @function DocumentApp.Paragraph#insertInlineImage
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {DocumentApp.InlineImage} image - the image data
  *
  * @return {DocumentApp.InlineImage} the inserted inline image element
@@ -8696,7 +8642,7 @@
  *
  * @function DocumentApp.Paragraph#insertPageBreak
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  *
  * @return {DocumentApp.PageBreak} the new page break element
  */
@@ -8709,7 +8655,7 @@
  *
  * @function DocumentApp.Paragraph#insertPageBreak
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {DocumentApp.PageBreak} pageBreak - the p[age break to insert
  *
  * @return {DocumentApp.PageBreak} the inserted page break element
@@ -8721,7 +8667,7 @@
  *
  * @function DocumentApp.Paragraph#insertText
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {DocumentApp.Text} text - the text element to insert
  *
  * @return {DocumentApp.Text} the inserted text element
@@ -8732,7 +8678,7 @@
  *
  * @function DocumentApp.Paragraph#insertText
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {String} text - the text contents
  *
  * @return {DocumentApp.Text} the new text element
@@ -9005,6 +8951,66 @@
  * @return {DocumentApp.Paragraph} the current element
  */
 
+
+/**
+ * @class DocumentApp.ParagraphHeading
+ */
+
+/**
+ * The highest heading option.
+ *
+ * @typedef {DocumentApp.ParagraphHeading} DocumentApp.ParagraphHeading.HEADING1
+ */
+
+/**
+ * The second heading option.
+ *
+ * @typedef {DocumentApp.ParagraphHeading} DocumentApp.ParagraphHeading.HEADING2
+ */
+
+/**
+ * The third heading option
+ *
+ * @typedef {DocumentApp.ParagraphHeading} DocumentApp.ParagraphHeading.HEADING3
+ */
+
+/**
+ * The fourth heading option.
+ *
+ * @typedef {DocumentApp.ParagraphHeading} DocumentApp.ParagraphHeading.HEADING4
+ */
+
+/**
+ * The fifth heading option.
+ *
+ * @typedef {DocumentApp.ParagraphHeading} DocumentApp.ParagraphHeading.HEADING5
+ */
+
+/**
+ * The lowest heading option.
+ *
+ * @typedef {DocumentApp.ParagraphHeading} DocumentApp.ParagraphHeading.HEADING6
+ */
+
+/**
+ * The heading option for normal text.
+ *
+ * @typedef {DocumentApp.ParagraphHeading} DocumentApp.ParagraphHeading.NORMAL
+ */
+
+/**
+ * The subtitle heading option.
+ *
+ * @typedef {DocumentApp.ParagraphHeading} DocumentApp.ParagraphHeading.SUBTITLE
+ */
+
+/**
+ * The title heading option.
+ *
+ * @typedef {DocumentApp.ParagraphHeading} DocumentApp.ParagraphHeading.TITLE
+ */
+
+
 /**
  * @class DocumentApp.Position
  */
@@ -9027,7 +9033,7 @@
  *
  * @function DocumentApp.Position#getOffset
  *
- * @return {number} for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/text.html'>Text</a></code> elements, the number of characters before this <code>Position</code>; for
+ * @return {IntegerNum} for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/text.html'>Text</a></code> elements, the number of characters before this <code>Position</code>; for
      other elements, the number of child elements before this <code>Position</code> within the same
      container element
  */
@@ -9048,7 +9054,7 @@
  *
  * @function DocumentApp.Position#getSurroundingTextOffset
  *
- * @return {number} the number of characters before this <code>Position</code> in the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code> or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/list-item.html'>ListItem</a></code> that contains the <code>Position</code>, either directly or through a chain of child elements
+ * @return {IntegerNum} the number of characters before this <code>Position</code> in the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/paragraph.html'>Paragraph</a></code> or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/list-item.html'>ListItem</a></code> that contains the <code>Position</code>, either directly or through a chain of child elements
  */
 
 /**
@@ -9084,6 +9090,7 @@
      located does not allow text to be inserted
  */
 
+
 /**
  * @class DocumentApp.PositionedImage
  */
@@ -9117,7 +9124,7 @@
  *
  * @function DocumentApp.PositionedImage#getHeight
  *
- * @return {number} the image's height, in pixels
+ * @return {IntegerNum} the image's height, in pixels
  */
 
 /**
@@ -9165,7 +9172,7 @@
  *
  * @function DocumentApp.PositionedImage#getWidth
  *
- * @return {number} the image's width, in pixels
+ * @return {IntegerNum} the image's width, in pixels
  */
 
 /**
@@ -9173,7 +9180,7 @@
  *
  * @function DocumentApp.PositionedImage#setHeight
  *
- * @param {number} height - the image's height, in pixels
+ * @param {IntegerNum} height - the image's height, in pixels
  *
  * @return {DocumentApp.PositionedImage} the current object
  */
@@ -9213,10 +9220,46 @@
  *
  * @function DocumentApp.PositionedImage#setWidth
  *
- * @param {number} width - the image's width, in pixels
+ * @param {IntegerNum} width - the image's width, in pixels
  *
  * @return {DocumentApp.PositionedImage} the current object
  */
+
+
+/**
+ * @class DocumentApp.PositionedLayout
+ */
+
+/**
+ * The image is positioned above the text.
+ *
+ * @typedef {DocumentApp.PositionedLayout} DocumentApp.PositionedLayout.ABOVE_TEXT
+ */
+
+/**
+ * The image breaks the text on the left and right.
+ *
+ * @typedef {DocumentApp.PositionedLayout} DocumentApp.PositionedLayout.BREAK_BOTH
+ */
+
+/**
+ * The image breaks the text on the left.
+ *
+ * @typedef {DocumentApp.PositionedLayout} DocumentApp.PositionedLayout.BREAK_LEFT
+ */
+
+/**
+ * The image breaks the text on the right.
+ *
+ * @typedef {DocumentApp.PositionedLayout} DocumentApp.PositionedLayout.BREAK_RIGHT
+ */
+
+/**
+ * The image is wrapped by text.
+ *
+ * @typedef {DocumentApp.PositionedLayout} DocumentApp.PositionedLayout.WRAP_TEXT
+ */
+
 
 /**
  * @class DocumentApp.Range
@@ -9238,10 +9281,12 @@
  elements.
  *
  * @function DocumentApp.Range#getSelectedElements
+ * @deprecated
  *
  * @return {DocumentApp.RangeElement[]} an array of selected or partially selected elements, in the order they appear in the
      document
  */
+
 
 /**
  * @class DocumentApp.RangeBuilder
@@ -9263,9 +9308,9 @@
  * @function DocumentApp.RangeBuilder#addElement
  *
  * @param {DocumentApp.Text} textElement - the text element to be partially added
- * @param {number} startOffset - the number of characters before the first character to be included (that is,
+ * @param {IntegerNum} startOffset - the number of characters before the first character to be included (that is,
      the index of the first character in the range)
- * @param {number} endOffsetInclusive - the number of characters before the last character to be included
+ * @param {IntegerNum} endOffsetInclusive - the number of characters before the last character to be included
      (that is, the index of the last character in the range)
  *
  * @return {DocumentApp.RangeBuilder} this builder, for chaining
@@ -9288,9 +9333,9 @@
  * @function DocumentApp.RangeBuilder#addElementsBetween
  *
  * @param {DocumentApp.Text} startTextElement - the first text element to be partially added
- * @param {number} startOffset - the number of characters before the first character of <code>startTextElement</code> to be included (that is, the index of the first character in the range)
+ * @param {IntegerNum} startOffset - the number of characters before the first character of <code>startTextElement</code> to be included (that is, the index of the first character in the range)
  * @param {DocumentApp.Text} endTextElementInclusive - the last text element to be partially added
- * @param {number} endOffsetInclusive - the number of characters before the last character of <code>endTextElementInclusive</code> to be included (that is, the index of the last character in the
+ * @param {IntegerNum} endOffsetInclusive - the number of characters before the last character of <code>endTextElementInclusive</code> to be included (that is, the index of the last character in the
      range)
  *
  * @return {DocumentApp.RangeBuilder} this builder, for chaining
@@ -9330,10 +9375,12 @@
  elements.
  *
  * @function DocumentApp.RangeBuilder#getSelectedElements
+ * @deprecated
  *
  * @return {DocumentApp.RangeElement[]} an array of selected or partially selected elements, in the order they appear in the
      document
  */
+
 
 /**
  * @class DocumentApp.RangeElement
@@ -9366,7 +9413,7 @@
  *
  * @function DocumentApp.RangeElement#getEndOffsetInclusive
  *
- * @return {number} for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/text.html'>Text</a></code> elements, the
+ * @return {IntegerNum} for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/text.html'>Text</a></code> elements, the
      number of character before the last character in the range; for other elements, <code>-1</code>
  */
 
@@ -9378,7 +9425,7 @@
  *
  * @function DocumentApp.RangeElement#getStartOffset
  *
- * @return {number} for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/text.html'>Text</a></code> elements, the
+ * @return {IntegerNum} for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/text.html'>Text</a></code> elements, the
      number of characters before the start of the range; for other elements, <code>-1</code>
  */
 
@@ -9391,6 +9438,7 @@
  *
  * @return {Boolean} <code>true</code> if the element is partially included; <code>false</code> if not
  */
+
 
 /**
  * @class DocumentApp.Table
@@ -9585,8 +9633,8 @@
  *
  * @function DocumentApp.Table#getCell
  *
- * @param {number} rowIndex - the index of the row containing the cell to retrieve
- * @param {number} cellIndex - the index of the cell to retrieve
+ * @param {IntegerNum} rowIndex - the index of the row containing the cell to retrieve
+ * @param {IntegerNum} cellIndex - the index of the cell to retrieve
  *
  * @return {DocumentApp.TableCell} the table cell
  */
@@ -9609,7 +9657,7 @@
  *
  * @function DocumentApp.Table#getChild
  *
- * @param {number} childIndex - the index of the child element to retrieve
+ * @param {IntegerNum} childIndex - the index of the child element to retrieve
  *
  * @return {DocumentApp.Element} the child element at the specified index
  */
@@ -9621,7 +9669,7 @@
  *
  * @param {DocumentApp.Element} child - the child element for which to retrieve the index
  *
- * @return {number} the child index
+ * @return {IntegerNum} the child index
  */
 
 /**
@@ -9629,7 +9677,7 @@
  *
  * @function DocumentApp.Table#getColumnWidth
  *
- * @param {number} columnIndex - the column index
+ * @param {IntegerNum} columnIndex - the column index
  *
  * @return {Number} the column width, in points
  */
@@ -9666,7 +9714,7 @@
  *
  * @function DocumentApp.Table#getNumChildren
  *
- * @return {number} the number of children
+ * @return {IntegerNum} the number of children
  */
 
 /**
@@ -9674,7 +9722,7 @@
  *
  * @function DocumentApp.Table#getNumRows
  *
- * @return {number} the number of table rows
+ * @return {IntegerNum} the number of table rows
  */
 
 /**
@@ -9702,7 +9750,7 @@
  *
  * @function DocumentApp.Table#getRow
  *
- * @param {number} rowIndex - the index of the row to retrieve
+ * @param {IntegerNum} rowIndex - the index of the row to retrieve
  *
  * @return {DocumentApp.TableRow} the table row
  */
@@ -9754,7 +9802,7 @@
  *
  * @function DocumentApp.Table#insertTableRow
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  *
  * @return {DocumentApp.TableRow} the current element
  */
@@ -9764,7 +9812,7 @@
  *
  * @function DocumentApp.Table#insertTableRow
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {DocumentApp.TableRow} tableRow - the table row to insert
  *
  * @return {DocumentApp.TableRow} the inserted table row element
@@ -9811,7 +9859,7 @@
  *
  * @function DocumentApp.Table#removeRow
  *
- * @param {number} rowIndex - the index of the row to remove
+ * @param {IntegerNum} rowIndex - the index of the row to remove
  *
  * @return {DocumentApp.TableRow} the removed row
  */
@@ -9902,7 +9950,7 @@
  *
  * @function DocumentApp.Table#setColumnWidth
  *
- * @param {number} columnIndex - the column index
+ * @param {IntegerNum} columnIndex - the column index
  * @param {Number} width - the border width, in points
  *
  * @return {DocumentApp.Table} the current element
@@ -9933,6 +9981,7 @@
  *
  * @return {DocumentApp.Table} the current element
  */
+
 
 /**
  * @class DocumentApp.TableCell
@@ -10216,7 +10265,7 @@
  *
  * @function DocumentApp.TableCell#getChild
  *
- * @param {number} childIndex - the index of the child element to retrieve
+ * @param {IntegerNum} childIndex - the index of the child element to retrieve
  *
  * @return {DocumentApp.Element} the child element at the specified index
  */
@@ -10228,7 +10277,7 @@
  *
  * @param {DocumentApp.Element} child - the child element for which to retrieve the index
  *
- * @return {number} the child index
+ * @return {IntegerNum} the child index
  */
 
 /**
@@ -10237,7 +10286,7 @@
  *
  * @function DocumentApp.TableCell#getColSpan
  *
- * @return {number} the column span or 0 for a cell which is merged over by another cell
+ * @return {IntegerNum} the column span or 0 for a cell which is merged over by another cell
  */
 
 /**
@@ -10272,7 +10321,7 @@
  *
  * @function DocumentApp.TableCell#getNumChildren
  *
- * @return {number} the number of children
+ * @return {IntegerNum} the number of children
  */
 
 /**
@@ -10349,7 +10398,7 @@
  *
  * @function DocumentApp.TableCell#getRowSpan
  *
- * @return {number} the row span or 0 for a cell which is merged over by another cell
+ * @return {IntegerNum} the row span or 0 for a cell which is merged over by another cell
  */
 
 /**
@@ -10417,7 +10466,7 @@
  *
  * @function DocumentApp.TableCell#insertHorizontalRule
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  *
  * @return {DocumentApp.HorizontalRule} the new horizontal rule
  */
@@ -10430,7 +10479,7 @@
  *
  * @function DocumentApp.TableCell#insertImage
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {BlobSource} image - the image data
  *
  * @return {DocumentApp.InlineImage} the inserted inline image
@@ -10443,7 +10492,7 @@
  *
  * @function DocumentApp.TableCell#insertImage
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {DocumentApp.InlineImage} image - the image to insert
  *
  * @return {DocumentApp.InlineImage} the inserted inline image
@@ -10454,7 +10503,7 @@
  *
  * @function DocumentApp.TableCell#insertListItem
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {DocumentApp.ListItem} listItem - the list item to insert
  *
  * @return {DocumentApp.ListItem} inserted new list item
@@ -10465,7 +10514,7 @@
  *
  * @function DocumentApp.TableCell#insertListItem
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {String} text - the text contents
  *
  * @return {DocumentApp.ListItem} the new list item
@@ -10476,7 +10525,7 @@
  *
  * @function DocumentApp.TableCell#insertParagraph
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {DocumentApp.Paragraph} paragraph - the paragraph to insert
  *
  * @return {DocumentApp.Paragraph} the inserted paragraph
@@ -10487,7 +10536,7 @@
  *
  * @function DocumentApp.TableCell#insertParagraph
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {String} text - the text contents
  *
  * @return {DocumentApp.Paragraph} the new paragraph
@@ -10498,7 +10547,7 @@
  *
  * @function DocumentApp.TableCell#insertTable
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  *
  * @return {DocumentApp.Table} the new table
  */
@@ -10508,7 +10557,7 @@
  *
  * @function DocumentApp.TableCell#insertTable
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {DocumentApp.Table} table - the table to insert
  *
  * @return {DocumentApp.Table} the inserted table
@@ -10519,7 +10568,7 @@
  *
  * @function DocumentApp.TableCell#insertTable
  *
- * @param {number} childIndex - the index at which to insert
+ * @param {IntegerNum} childIndex - the index at which to insert
  * @param {String[][]} cells - the text contents of the table cells to add to the new table
  *
  * @return {DocumentApp.Table} the new table
@@ -10754,6 +10803,7 @@
  * @return {DocumentApp.TableCell} the current element
  */
 
+
 /**
  * @class DocumentApp.TableOfContents
  */
@@ -10926,7 +10976,7 @@
  *
  * @function DocumentApp.TableOfContents#getChild
  *
- * @param {number} childIndex - the index of the child element to retrieve
+ * @param {IntegerNum} childIndex - the index of the child element to retrieve
  *
  * @return {DocumentApp.Element} the child element at the specified index
  */
@@ -10938,7 +10988,7 @@
  *
  * @param {DocumentApp.Element} child - the child element for which to retrieve the index
  *
- * @return {number} the child index
+ * @return {IntegerNum} the child index
  */
 
 /**
@@ -10973,7 +11023,7 @@
  *
  * @function DocumentApp.TableOfContents#getNumChildren
  *
- * @return {number} the number of children
+ * @return {IntegerNum} the number of children
  */
 
 /**
@@ -11150,6 +11200,7 @@
  *
  * @return {DocumentApp.TableOfContents} the current element
  */
+
 
 /**
  * @class DocumentApp.TableRow
@@ -11338,7 +11389,7 @@
  *
  * @function DocumentApp.TableRow#getCell
  *
- * @param {number} cellIndex - the index of the cell to retrieve
+ * @param {IntegerNum} cellIndex - the index of the cell to retrieve
  *
  * @return {DocumentApp.TableCell} the table cell
  */
@@ -11361,7 +11412,7 @@
  *
  * @function DocumentApp.TableRow#getChild
  *
- * @param {number} childIndex - the index of the child element to retrieve
+ * @param {IntegerNum} childIndex - the index of the child element to retrieve
  *
  * @return {DocumentApp.Element} the child element at the specified index
  */
@@ -11373,7 +11424,7 @@
  *
  * @param {DocumentApp.Element} child - the child element for which to retrieve the index
  *
- * @return {number} the child index
+ * @return {IntegerNum} the child index
  */
 
 /**
@@ -11389,7 +11440,7 @@
  *
  * @function DocumentApp.TableRow#getMinimumHeight
  *
- * @return {number} the minimum height, in points
+ * @return {IntegerNum} the minimum height, in points
  */
 
 /**
@@ -11407,7 +11458,7 @@
  *
  * @function DocumentApp.TableRow#getNumCells
  *
- * @return {number} the number of cells
+ * @return {IntegerNum} the number of cells
  */
 
 /**
@@ -11424,7 +11475,7 @@
  *
  * @function DocumentApp.TableRow#getNumChildren
  *
- * @return {number} the number of children
+ * @return {IntegerNum} the number of children
  */
 
 /**
@@ -11502,7 +11553,7 @@
  *
  * @function DocumentApp.TableRow#insertTableCell
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  *
  * @return {DocumentApp.TableCell} the new table cell
  */
@@ -11512,7 +11563,7 @@
  *
  * @function DocumentApp.TableRow#insertTableCell
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {DocumentApp.TableCell} tableCell - the table cell to insert
  *
  * @return {DocumentApp.TableCell} the inserted table cell
@@ -11523,7 +11574,7 @@
  *
  * @function DocumentApp.TableRow#insertTableCell
  *
- * @param {number} childIndex - the index at which to insert the element
+ * @param {IntegerNum} childIndex - the index at which to insert the element
  * @param {String} textContents - the cell's text contents
  *
  * @return {DocumentApp.TableCell} the inserted table cell
@@ -11566,7 +11617,7 @@
  *
  * @function DocumentApp.TableRow#removeCell
  *
- * @param {number} cellIndex - the index of the cell to remove
+ * @param {IntegerNum} cellIndex - the index of the cell to remove
  *
  * @return {DocumentApp.TableCell} the removed cell
  */
@@ -11675,7 +11726,7 @@
  *
  * @function DocumentApp.TableRow#setMinimumHeight
  *
- * @param {number} minHeight - the minimum height, in points
+ * @param {IntegerNum} minHeight - the minimum height, in points
  *
  * @return {DocumentApp.TableRow} the current element
  */
@@ -11695,6 +11746,7 @@
  *
  * @return {DocumentApp.TableRow} the current element
  */
+
 
 /**
  * @class DocumentApp.Text
@@ -11726,8 +11778,8 @@
  *
  * @function DocumentApp.Text#deleteText
  *
- * @param {number} startOffset - the character offset of the first character to delete
- * @param {number} endOffsetInclusive - the character offset of the last character to delete
+ * @param {IntegerNum} startOffset - the character offset of the first character to delete
+ * @param {IntegerNum} endOffsetInclusive - the character offset of the last character to delete
  *
  * @return {DocumentApp.Text} the current element
  */
@@ -11829,7 +11881,7 @@
  *
  * @function DocumentApp.Text#getAttributes
  *
- * @param {number} offset - the character offset
+ * @param {IntegerNum} offset - the character offset
  *
  * @return {Object} the element's attributes
  */
@@ -11848,7 +11900,7 @@
  *
  * @function DocumentApp.Text#getBackgroundColor
  *
- * @param {number} offset - the character offset
+ * @param {IntegerNum} offset - the character offset
  *
  * @return {String} the background color, formatted in CSS notation (like <code>'#ffffff'</code>)
  */
@@ -11873,7 +11925,7 @@
  *
  * @function DocumentApp.Text#getFontFamily
  *
- * @param {number} offset - the character offset
+ * @param {IntegerNum} offset - the character offset
  *
  * @return {String} the font family
  */
@@ -11883,7 +11935,7 @@
  *
  * @function DocumentApp.Text#getFontSize
  *
- * @return {number} the font size, or null if the element contains multiple values for this attribute
+ * @return {IntegerNum} the font size, or null if the element contains multiple values for this attribute
  */
 
 /**
@@ -11891,9 +11943,9 @@
  *
  * @function DocumentApp.Text#getFontSize
  *
- * @param {number} offset - the character offset
+ * @param {IntegerNum} offset - the character offset
  *
- * @return {number} the font size
+ * @return {IntegerNum} the font size
  */
 
 /**
@@ -11910,7 +11962,7 @@
  *
  * @function DocumentApp.Text#getForegroundColor
  *
- * @param {number} offset - the character offset
+ * @param {IntegerNum} offset - the character offset
  *
  * @return {String} the foreground color, formatted in CSS notation (like <code>'#ffffff'</code>)
  */
@@ -11928,7 +11980,7 @@
  *
  * @function DocumentApp.Text#getLinkUrl
  *
- * @param {number} offset - the character offset
+ * @param {IntegerNum} offset - the character offset
  *
  * @return {String} the link url
  */
@@ -11985,7 +12037,7 @@
  *
  * @function DocumentApp.Text#getTextAlignment
  *
- * @param {number} offset - the offset of the character
+ * @param {IntegerNum} offset - the offset of the character
  *
  * @return {DocumentApp.TextAlignment} the type of text alignment, or <code>null</code> if the text alignment has never been set
  */
@@ -11996,7 +12048,7 @@
  *
  * @function DocumentApp.Text#getTextAttributeIndices
  *
- * @return {Integer[]} the set of text indices at which text formatting changes
+ * @return {IntegerNum[]} the set of text indices at which text formatting changes
  */
 
 /**
@@ -12029,7 +12081,7 @@
  *
  * @function DocumentApp.Text#insertText
  *
- * @param {number} offset - the character offset at which to insert
+ * @param {IntegerNum} offset - the character offset at which to insert
  * @param {String} text - the text to insert
  *
  * @return {DocumentApp.Text} the current element
@@ -12057,7 +12109,7 @@
  *
  * @function DocumentApp.Text#isBold
  *
- * @param {number} offset - the character offset
+ * @param {IntegerNum} offset - the character offset
  *
  * @return {Boolean} the bold setting
  */
@@ -12076,7 +12128,7 @@
  *
  * @function DocumentApp.Text#isItalic
  *
- * @param {number} offset - the character offset
+ * @param {IntegerNum} offset - the character offset
  *
  * @return {Boolean} the italic setting
  */
@@ -12095,7 +12147,7 @@
  *
  * @function DocumentApp.Text#isStrikethrough
  *
- * @param {number} offset - the character offset
+ * @param {IntegerNum} offset - the character offset
  *
  * @return {Boolean} the strikethrough setting
  */
@@ -12114,7 +12166,7 @@
  *
  * @function DocumentApp.Text#isUnderline
  *
- * @param {number} offset - the character offset
+ * @param {IntegerNum} offset - the character offset
  *
  * @return {Boolean} the underline setting
  */
@@ -12199,8 +12251,8 @@
  *
  * @function DocumentApp.Text#setAttributes
  *
- * @param {number} startOffset - the text range's start offset
- * @param {number} endOffsetInclusive - the text range's end offset
+ * @param {IntegerNum} startOffset - the text range's start offset
+ * @param {IntegerNum} endOffsetInclusive - the text range's end offset
  * @param {Object} attributes - the element's attributes
  *
  * @return {DocumentApp.Text} the current element
@@ -12243,8 +12295,8 @@
  *
  * @function DocumentApp.Text#setBackgroundColor
  *
- * @param {number} startOffset - the text range's start offset
- * @param {number} endOffsetInclusive - the text range's end offset
+ * @param {IntegerNum} startOffset - the text range's start offset
+ * @param {IntegerNum} endOffsetInclusive - the text range's end offset
  * @param {String} color - the background color, formatted in CSS notation (like <code>'#ffffff'</code>)
  *
  * @return {DocumentApp.Text} the current element
@@ -12275,8 +12327,8 @@
  *
  * @function DocumentApp.Text#setBold
  *
- * @param {number} startOffset - the text range's start offset
- * @param {number} endOffsetInclusive - the text range's end offset
+ * @param {IntegerNum} startOffset - the text range's start offset
+ * @param {IntegerNum} endOffsetInclusive - the text range's end offset
  * @param {Boolean} bold - the bold setting
  *
  * @return {DocumentApp.Text} the current element
@@ -12291,8 +12343,8 @@
  *
  * @function DocumentApp.Text#setFontFamily
  *
- * @param {number} startOffset - the text range's start offset
- * @param {number} endOffsetInclusive - the text range's end offset
+ * @param {IntegerNum} startOffset - the text range's start offset
+ * @param {IntegerNum} endOffsetInclusive - the text range's end offset
  * @param {String} fontFamilyName - the name of the font family, from the Font menu in Docs or Google Fonts
  *
  * @return {DocumentApp.Text} the current element
@@ -12316,7 +12368,7 @@
  *
  * @function DocumentApp.Text#setFontSize
  *
- * @param {number} size - the font size
+ * @param {IntegerNum} size - the font size
  *
  * @return {DocumentApp.Text} the current element
  */
@@ -12326,9 +12378,9 @@
  *
  * @function DocumentApp.Text#setFontSize
  *
- * @param {number} startOffset - the text range's start offset
- * @param {number} endOffsetInclusive - the text range's end offset
- * @param {number} size - the font size
+ * @param {IntegerNum} startOffset - the text range's start offset
+ * @param {IntegerNum} endOffsetInclusive - the text range's end offset
+ * @param {IntegerNum} size - the font size
  *
  * @return {DocumentApp.Text} the current element
  */
@@ -12338,8 +12390,8 @@
  *
  * @function DocumentApp.Text#setForegroundColor
  *
- * @param {number} startOffset - the text range's start offset
- * @param {number} endOffsetInclusive - the text range's end offset
+ * @param {IntegerNum} startOffset - the text range's start offset
+ * @param {IntegerNum} endOffsetInclusive - the text range's end offset
  * @param {String} color - the foreground color, formatted in CSS notation (like <code>'#ffffff'</code>)
  *
  * @return {DocumentApp.Text} the current element
@@ -12370,8 +12422,8 @@
  *
  * @function DocumentApp.Text#setItalic
  *
- * @param {number} startOffset - the text range's start offset
- * @param {number} endOffsetInclusive - the text range's end offset
+ * @param {IntegerNum} startOffset - the text range's start offset
+ * @param {IntegerNum} endOffsetInclusive - the text range's end offset
  * @param {Boolean} italic - the italic setting
  *
  * @return {DocumentApp.Text} the current element
@@ -12382,8 +12434,8 @@
  *
  * @function DocumentApp.Text#setLinkUrl
  *
- * @param {number} startOffset - the text range's start offset
- * @param {number} endOffsetInclusive - the text range's end offset
+ * @param {IntegerNum} startOffset - the text range's start offset
+ * @param {IntegerNum} endOffsetInclusive - the text range's end offset
  * @param {String} url - the link url
  *
  * @return {DocumentApp.Text} the current element
@@ -12414,8 +12466,8 @@
  *
  * @function DocumentApp.Text#setStrikethrough
  *
- * @param {number} startOffset - the text range's start offset
- * @param {number} endOffsetInclusive - the text range's end offset
+ * @param {IntegerNum} startOffset - the text range's start offset
+ * @param {IntegerNum} endOffsetInclusive - the text range's end offset
  * @param {Boolean} strikethrough - the strikethrough setting
  *
  * @return {DocumentApp.Text} the current element
@@ -12460,8 +12512,8 @@
  *
  * @function DocumentApp.Text#setTextAlignment
  *
- * @param {number} startOffset - the start offset of the character range
- * @param {number} endOffsetInclusive - the end offset of the character range (inclusive)
+ * @param {IntegerNum} startOffset - the start offset of the character range
+ * @param {IntegerNum} endOffsetInclusive - the end offset of the character range (inclusive)
  * @param {DocumentApp.TextAlignment} textAlignment - the type of text alignment to apply
  *
  * @return {DocumentApp.Text} the current element
@@ -12482,12 +12534,36 @@
  *
  * @function DocumentApp.Text#setUnderline
  *
- * @param {number} startOffset - the text range's start offset
- * @param {number} endOffsetInclusive - the text range's end offset
+ * @param {IntegerNum} startOffset - the text range's start offset
+ * @param {IntegerNum} endOffsetInclusive - the text range's end offset
  * @param {Boolean} underline - the underline setting
  *
  * @return {DocumentApp.Text} the current element
  */
+
+
+/**
+ * @class DocumentApp.TextAlignment
+ */
+
+/**
+ * The normal text alignment.
+ *
+ * @typedef {DocumentApp.TextAlignment} DocumentApp.TextAlignment.NORMAL
+ */
+
+/**
+ * The subscript text alignment.
+ *
+ * @typedef {DocumentApp.TextAlignment} DocumentApp.TextAlignment.SUBSCRIPT
+ */
+
+/**
+ * The superscript text alignment.
+ *
+ * @typedef {DocumentApp.TextAlignment} DocumentApp.TextAlignment.SUPERSCRIPT
+ */
+
 
 /**
  * @class DocumentApp.UnsupportedElement
@@ -12668,4 +12744,28 @@
  *
  * @return {DocumentApp.UnsupportedElement} the current element
  */
+
+
+/**
+ * @class DocumentApp.VerticalAlignment
+ */
+
+/**
+ * The bottom-alignment option.
+ *
+ * @typedef {DocumentApp.VerticalAlignment} DocumentApp.VerticalAlignment.BOTTOM
+ */
+
+/**
+ * The center-alignment option.
+ *
+ * @typedef {DocumentApp.VerticalAlignment} DocumentApp.VerticalAlignment.CENTER
+ */
+
+/**
+ * The top-alignment option.
+ *
+ * @typedef {DocumentApp.VerticalAlignment} DocumentApp.VerticalAlignment.TOP
+ */
+
 

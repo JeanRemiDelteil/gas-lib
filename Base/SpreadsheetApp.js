@@ -2,782 +2,95 @@
  * @namespace SpreadsheetApp
  ***********************************************/
 
-
 /**
  * An enumeration of the types of series used to calculate auto-filled values.
  *
- * @class SpreadsheetApp.AutoFillSeries
- */
-
-/**
- * @typedef {SpreadsheetApp.AutoFillSeries} SpreadsheetApp.AutoFillSeries.ALTERNATE_SERIES
- * 
- * 
- */
-
-/**
- * @typedef {SpreadsheetApp.AutoFillSeries} SpreadsheetApp.AutoFillSeries.DEFAULT_SERIES
- * 
- * 
+ * @typedef {SpreadsheetApp.AutoFillSeries} SpreadsheetApp.AutoFillSeries
  */
 
 /**
  * An enumeration of the possible banding themes.
  *
- * @class SpreadsheetApp.BandingTheme
- */
-
-/**
- * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.BLUE
- * 
- * A blue banding theme.
- */
-
-/**
- * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.BROWN
- * 
- * A brown banding theme.
- */
-
-/**
- * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.CYAN
- * 
- * A cyan banding theme.
- */
-
-/**
- * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.GREEN
- * 
- * A green banding theme.
- */
-
-/**
- * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.GREY
- * 
- * A grey banding theme.
- */
-
-/**
- * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.INDIGO
- * 
- * A indigo banding theme.
- */
-
-/**
- * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.LIGHT_GREEN
- * 
- * A light green banding theme.
- */
-
-/**
- * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.LIGHT_GREY
- * 
- * A light grey banding theme.
- */
-
-/**
- * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.ORANGE
- * 
- * An orange banding theme.
- */
-
-/**
- * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.PINK
- * 
- * A pink banding theme.
- */
-
-/**
- * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.TEAL
- * 
- * A teal banding theme.
- */
-
-/**
- * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.YELLOW
- * 
- * A yellow banding theme.
+ * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme
  */
 
 /**
  * An enumeration of conditional formatting boolean criteria.
  *
- * @class SpreadsheetApp.BooleanCriteria
- */
-
-/**
- * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.CELL_EMPTY
- * 
- * The criteria is met when a cell is empty
- */
-
-/**
- * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.CELL_NOT_EMPTY
- * 
- * The criteria is met when a cell is not empty
- */
-
-/**
- * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.CUSTOM_FORMULA
- * 
- * The criteria is met when that the input makes the given formula evaluate to <code>true</code>.
- */
-
-/**
- * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.DATE_AFTER
- * 
- * The criteria is met when a date is after the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.DATE_AFTER_RELATIVE
- * 
- * The criteria is met when a date is after the relative date value.
- */
-
-/**
- * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.DATE_BEFORE
- * 
- * The criteria is met when a date is before the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.DATE_BEFORE_RELATIVE
- * 
- * The criteria is met when a date is before the relative date value.
- */
-
-/**
- * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.DATE_EQUAL_TO
- * 
- * The criteria is met when a date is equal to the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.DATE_EQUAL_TO_RELATIVE
- * 
- * The criteria is met when a date is equal to the relative date value.
- */
-
-/**
- * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.NUMBER_BETWEEN
- * 
- * The criteria is met when a number that is between the given values.
- */
-
-/**
- * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.NUMBER_EQUAL_TO
- * 
- * The criteria is met when a number that is equal to the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.NUMBER_GREATER_THAN
- * 
- * Require a number that is greater than the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.NUMBER_GREATER_THAN_OR_EQUAL_TO
- * 
- * The criteria is met when a number that is greater than or equal to the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.NUMBER_LESS_THAN
- * 
- * The criteria is met when a number that is less than the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.NUMBER_LESS_THAN_OR_EQUAL_TO
- * 
- * The criteria is met when a number that is less than or equal to the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.NUMBER_NOT_BETWEEN
- * 
- * The criteria is met when a number that is not between the given values.
- */
-
-/**
- * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.NUMBER_NOT_EQUAL_TO
- * 
- * The criteria is met when a number that is not equal to the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.TEXT_CONTAINS
- * 
- * The criteria is met when that the input contains the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.TEXT_DOES_NOT_CONTAIN
- * 
- * The criteria is met when that the input does not contain the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.TEXT_ENDS_WITH
- * 
- * The criteria is met when that the input ends with the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.TEXT_EQUAL_TO
- * 
- * The criteria is met when that the input is equal to the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.TEXT_STARTS_WITH
- * 
- * The criteria is met when that the input begins with the given value.
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria
  */
 
 /**
  * An enumeration of the valid styles for setting borders on a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/range.html'>Range</a></code>.
  *
- * @class SpreadsheetApp.BorderStyle
- */
-
-/**
- * @typedef {SpreadsheetApp.BorderStyle} SpreadsheetApp.BorderStyle.DASHED
- * 
- * Dashed line borders.
- */
-
-/**
- * @typedef {SpreadsheetApp.BorderStyle} SpreadsheetApp.BorderStyle.DOTTED
- * 
- * Dotted line borders.
- */
-
-/**
- * @typedef {SpreadsheetApp.BorderStyle} SpreadsheetApp.BorderStyle.DOUBLE
- * 
- * Two solid line borders.
- */
-
-/**
- * @typedef {SpreadsheetApp.BorderStyle} SpreadsheetApp.BorderStyle.SOLID
- * 
- * Thin solid line borders.
- */
-
-/**
- * @typedef {SpreadsheetApp.BorderStyle} SpreadsheetApp.BorderStyle.SOLID_MEDIUM
- * 
- * Medium solid line borders.
- */
-
-/**
- * @typedef {SpreadsheetApp.BorderStyle} SpreadsheetApp.BorderStyle.SOLID_THICK
- * 
- * Thick solid line borders.
+ * @typedef {SpreadsheetApp.BorderStyle} SpreadsheetApp.BorderStyle
  */
 
 /**
  * An enumeration of the possible paste types.
  *
- * @class SpreadsheetApp.CopyPasteType
- */
-
-/**
- * @typedef {SpreadsheetApp.CopyPasteType} SpreadsheetApp.CopyPasteType.PASTE_COLUMN_WIDTHS
- * 
- * Paste the column widths only.
- */
-
-/**
- * @typedef {SpreadsheetApp.CopyPasteType} SpreadsheetApp.CopyPasteType.PASTE_CONDITIONAL_FORMATTING
- * 
- * Paste the color rules only.
- */
-
-/**
- * @typedef {SpreadsheetApp.CopyPasteType} SpreadsheetApp.CopyPasteType.PASTE_DATA_VALIDATION
- * 
- * Paste the data validation only.
- */
-
-/**
- * @typedef {SpreadsheetApp.CopyPasteType} SpreadsheetApp.CopyPasteType.PASTE_FORMAT
- * 
- * Paste the format and data validation only.
- */
-
-/**
- * @typedef {SpreadsheetApp.CopyPasteType} SpreadsheetApp.CopyPasteType.PASTE_FORMULA
- * 
- * Paste the formulas only.
- */
-
-/**
- * @typedef {SpreadsheetApp.CopyPasteType} SpreadsheetApp.CopyPasteType.PASTE_NORMAL
- * 
- * Paste values, formulas, formats and merges.
- */
-
-/**
- * @typedef {SpreadsheetApp.CopyPasteType} SpreadsheetApp.CopyPasteType.PASTE_NO_BORDERS
- * 
- * Paste values, formulas, formats and merges but without borders.
- */
-
-/**
- * @typedef {SpreadsheetApp.CopyPasteType} SpreadsheetApp.CopyPasteType.PASTE_VALUES
- * 
- * Paste the values ONLY without formats, formulas or merges.
+ * @typedef {SpreadsheetApp.CopyPasteType} SpreadsheetApp.CopyPasteType
  */
 
 /**
  * An enumeration representing the data-validation criteria that can be set on a range.
  *
- * @class SpreadsheetApp.DataValidationCriteria
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.CUSTOM_FORMULA
- * 
- * Requires that the input makes the given formula evaluate to <code>true</code>.
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_AFTER
- * 
- * Requires a date that is after the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_BEFORE
- * 
- * Requires a date that is before the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_BETWEEN
- * 
- * Requires a date that is between the given values.
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_EQUAL_TO
- * 
- * Requires a date that is equal to the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_IS_VALID_DATE
- * 
- * Requires a date.
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_NOT_BETWEEN
- * 
- * Requires a date that is not between the given values.
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_ON_OR_AFTER
- * 
- * Require a date that is on or after the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_ON_OR_BEFORE
- * 
- * Requires a date that is on or before the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_BETWEEN
- * 
- * Requires a number that is between the given values.
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_EQUAL_TO
- * 
- * Requires a number that is equal to the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_GREATER_THAN
- * 
- * Require a number that is greater than the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_GREATER_THAN_OR_EQUAL_TO
- * 
- * Requires a number that is greater than or equal to the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_LESS_THAN
- * 
- * Requires a number that is less than the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_LESS_THAN_OR_EQUAL_TO
- * 
- * Requires a number that is less than or equal to the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_NOT_BETWEEN
- * 
- * Requires a number that is not between the given values.
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_NOT_EQUAL_TO
- * 
- * Requires a number that is not equal to the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.TEXT_CONTAINS
- * 
- * Requires that the input contains the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.TEXT_DOES_NOT_CONTAIN
- * 
- * Requires that the input does not contain the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.TEXT_EQUAL_TO
- * 
- * Requires that the input is equal to the given value.
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.TEXT_IS_VALID_EMAIL
- * 
- * Requires that the input is in the form of an email address.
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.TEXT_IS_VALID_URL
- * 
- * Requires that the input is in the form of a URL.
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.VALUE_IN_LIST
- * 
- * Requires that the input is equal to one of the given values.
- */
-
-/**
- * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.VALUE_IN_RANGE
- * 
- * Requires that the input is equal to a value in the given range.
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria
  */
 
 /**
  * An enumeration of the possible dimensions of a spreadsheet.
  *
- * @class SpreadsheetApp.Dimension
- */
-
-/**
- * @typedef {SpreadsheetApp.Dimension} SpreadsheetApp.Dimension.COLUMNS
- * 
- * The column (vertical) dimension.
- */
-
-/**
- * @typedef {SpreadsheetApp.Dimension} SpreadsheetApp.Dimension.ROWS
- * 
- * The row (horizontal) dimension.
+ * @typedef {SpreadsheetApp.Dimension} SpreadsheetApp.Dimension
  */
 
 /**
  * A enumeration of the possible directions that one can move within a spreadsheet using the arrow
  keys.
  *
- * @class SpreadsheetApp.Direction
- */
-
-/**
- * @typedef {SpreadsheetApp.Direction} SpreadsheetApp.Direction.DOWN
- * 
- * The direction of increasing row indices.
- */
-
-/**
- * @typedef {SpreadsheetApp.Direction} SpreadsheetApp.Direction.NEXT
- * 
- * The direction of increasing column indices.
- */
-
-/**
- * @typedef {SpreadsheetApp.Direction} SpreadsheetApp.Direction.PREVIOUS
- * 
- * The direction of decreasing column indices.
- */
-
-/**
- * @typedef {SpreadsheetApp.Direction} SpreadsheetApp.Direction.UP
- * 
- * The direction of decreasing row indices.
+ * @typedef {SpreadsheetApp.Direction} SpreadsheetApp.Direction
  */
 
 /**
  * An enumeration of conditional format gradient interpolation types.
  *
- * @class SpreadsheetApp.InterpolationType
- */
-
-/**
- * @typedef {SpreadsheetApp.InterpolationType} SpreadsheetApp.InterpolationType.MAX
- * 
- * Infer the maximum number as a specific interpolation point for a gradient condition.
- */
-
-/**
- * @typedef {SpreadsheetApp.InterpolationType} SpreadsheetApp.InterpolationType.MIN
- * 
- * Infer the minimum number as a specific interpolation point for a gradient condition.
- */
-
-/**
- * @typedef {SpreadsheetApp.InterpolationType} SpreadsheetApp.InterpolationType.NUMBER
- * 
- * Use the number as as specific interpolation point for a gradient condition.
- */
-
-/**
- * @typedef {SpreadsheetApp.InterpolationType} SpreadsheetApp.InterpolationType.PERCENT
- * 
- * Use the number as a percentage interpolation point for a gradient condition.
- */
-
-/**
- * @typedef {SpreadsheetApp.InterpolationType} SpreadsheetApp.InterpolationType.PERCENTILE
- * 
- * Use the number as a percentile interpolation point for a gradient condition.
+ * @typedef {SpreadsheetApp.InterpolationType} SpreadsheetApp.InterpolationType
  */
 
 /**
  * An enumeration of the functions that may be used to summarize values in a pivot table.
  *
- * @class SpreadsheetApp.PivotTableSummarizeFunction
- */
-
-/**
- * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.AVERAGE
- * 
- * The <a href="https://support.google.com/docs/answer/3093615">AVERAGE</a> function
- */
-
-/**
- * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.COUNT
- * 
- * The <a href="https://support.google.com/docs/answer/3093620">COUNT</a> function
- */
-
-/**
- * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.COUNTA
- * 
- * The <a href="https://support.google.com/docs/answer/3093991">COUNTA</a> function
- */
-
-/**
- * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.COUNTUNIQUE
- * 
- * The <a href="https://support.google.com/docs/answer/3093405">COUNTUNIQUE</a> function
- */
-
-/**
- * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.CUSTOM
- * 
- * A custom fuction, this value is only valid for calcuated fields.
- */
-
-/**
- * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.MAX
- * 
- * The <a href="https://support.google.com/docs/answer/3094013">MAX</a> function
- */
-
-/**
- * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.MEDIAN
- * 
- * The <a href="https://support.google.com/docs/answer/3094025">MEDIAN</a> function
- */
-
-/**
- * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.MIN
- * 
- * The <a href="https://support.google.com/docs/answer/3094017">MIN</a> function
- */
-
-/**
- * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.PRODUCT
- * 
- * The <a href="https://support.google.com/docs/answer/3093502">PRODUCT</a> function
- */
-
-/**
- * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.STDEV
- * 
- * The <a href="https://support.google.com/docs/answer/3094054">STDEV</a> function
- */
-
-/**
- * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.STDEVP
- * 
- * The <a href="https://support.google.com/docs/answer/3094105">STDEVP</a> function
- */
-
-/**
- * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.SUM
- * 
- * The <a href="https://support.google.com/docs/answer/3093669">SUM</a> function
- */
-
-/**
- * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.VAR
- * 
- * The <a href="https://support.google.com/docs/answer/3094063">VAR</a> function
- */
-
-/**
- * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.VARP
- * 
- * The <a href="https://support.google.com/docs/answer/3094113">VARP</a> function
+ * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction
  */
 
 /**
  * An enumeration of the ways that a pivot value may be displayed.
  *
- * @class SpreadsheetApp.PivotValueDisplayType
- */
-
-/**
- * @typedef {SpreadsheetApp.PivotValueDisplayType} SpreadsheetApp.PivotValueDisplayType.DEFAULT
- * 
- * 
- */
-
-/**
- * @typedef {SpreadsheetApp.PivotValueDisplayType} SpreadsheetApp.PivotValueDisplayType.PERCENT_OF_COLUMN_TOTAL
- * 
- * 
- */
-
-/**
- * @typedef {SpreadsheetApp.PivotValueDisplayType} SpreadsheetApp.PivotValueDisplayType.PERCENT_OF_GRAND_TOTAL
- * 
- * 
- */
-
-/**
- * @typedef {SpreadsheetApp.PivotValueDisplayType} SpreadsheetApp.PivotValueDisplayType.PERCENT_OF_ROW_TOTAL
- * 
- * 
+ * @typedef {SpreadsheetApp.PivotValueDisplayType} SpreadsheetApp.PivotValueDisplayType
  */
 
 /**
  * An enumeration representing the parts of a spreadsheet that can be protected from edits.
  *
- * @class SpreadsheetApp.ProtectionType
- */
-
-/**
- * @typedef {SpreadsheetApp.ProtectionType} SpreadsheetApp.ProtectionType.RANGE
- * 
- * Protection for a range.
- */
-
-/**
- * @typedef {SpreadsheetApp.ProtectionType} SpreadsheetApp.ProtectionType.SHEET
- * 
- * Protection for a sheet.
+ * @typedef {SpreadsheetApp.ProtectionType} SpreadsheetApp.ProtectionType
  */
 
 /**
  * An enumeration of valid text directions.
  *
- * @class SpreadsheetApp.TextDirection
- */
-
-/**
- * @typedef {SpreadsheetApp.TextDirection} SpreadsheetApp.TextDirection.LEFT_TO_RIGHT
- * 
- * Left-to-right text direction.
- */
-
-/**
- * @typedef {SpreadsheetApp.TextDirection} SpreadsheetApp.TextDirection.RIGHT_TO_LEFT
- * 
- * Right-to-left text direction.
+ * @typedef {SpreadsheetApp.TextDirection} SpreadsheetApp.TextDirection
  */
 
 /**
  * An enumeration of the preset delimiters for split text to columns.
  *
- * @class SpreadsheetApp.TextToColumnsDelimiter
- */
-
-/**
- * @typedef {SpreadsheetApp.TextToColumnsDelimiter} SpreadsheetApp.TextToColumnsDelimiter.COMMA
- * 
- * 
- */
-
-/**
- * @typedef {SpreadsheetApp.TextToColumnsDelimiter} SpreadsheetApp.TextToColumnsDelimiter.PERIOD
- * 
- * 
- */
-
-/**
- * @typedef {SpreadsheetApp.TextToColumnsDelimiter} SpreadsheetApp.TextToColumnsDelimiter.SEMICOLON
- * 
- * 
- */
-
-/**
- * @typedef {SpreadsheetApp.TextToColumnsDelimiter} SpreadsheetApp.TextToColumnsDelimiter.SPACE
- * 
- * 
+ * @typedef {SpreadsheetApp.TextToColumnsDelimiter} SpreadsheetApp.TextToColumnsDelimiter
  */
 
 /**
  * An enumeration of the strategies used for wrapping cells.
  *
- * @class SpreadsheetApp.WrapStrategy
- */
-
-/**
- * @typedef {SpreadsheetApp.WrapStrategy} SpreadsheetApp.WrapStrategy.CLIP
- * 
- * Clip lines that are longer than the cell width.
- */
-
-/**
- * @typedef {SpreadsheetApp.WrapStrategy} SpreadsheetApp.WrapStrategy.OVERFLOW
- * 
- * Overflow lines into the next cell, so long as that cell is empty. If the next cell over is
- non-empty, this behaves the same as CLIP.
- */
-
-/**
- * @typedef {SpreadsheetApp.WrapStrategy} SpreadsheetApp.WrapStrategy.WRAP
- * 
- * Wrap lines that are longer than the cell width onto a new line. Single words that are longer
- than a line are wrapped at the character level.
+ * @typedef {SpreadsheetApp.WrapStrategy} SpreadsheetApp.WrapStrategy
  */
 
 /**
@@ -809,8 +122,8 @@
  * @function SpreadsheetApp.create
  *
  * @param {String} name - the name for the spreadsheet
- * @param {number} rows - the number of rows for the spreadsheet
- * @param {number} columns - the number of columns for the spreadsheet
+ * @param {IntegerNum} rows - the number of rows for the spreadsheet
+ * @param {IntegerNum} columns - the number of columns for the spreadsheet
  *
  * @return {SpreadsheetApp.Spreadsheet} a new spreadsheet
  */
@@ -1242,6 +555,20 @@
  * @return {SpreadsheetApp.Range} the newly set current cell
  */
 
+
+/**
+ * @class SpreadsheetApp.AutoFillSeries
+ */
+
+/**
+ * @typedef {SpreadsheetApp.AutoFillSeries} SpreadsheetApp.AutoFillSeries.ALTERNATE_SERIES
+ */
+
+/**
+ * @typedef {SpreadsheetApp.AutoFillSeries} SpreadsheetApp.AutoFillSeries.DEFAULT_SERIES
+ */
+
+
 /**
  * @class SpreadsheetApp.Banding
  */
@@ -1251,7 +578,7 @@
  *
  * @function SpreadsheetApp.Banding#copyTo
  *
- * @param {SpreadsheetApp.Range} range - 
+ * @param {SpreadsheetApp.Range} range
  *
  * @return {SpreadsheetApp.Banding} the new banding
  */
@@ -1426,6 +753,84 @@
  * @return {SpreadsheetApp.Banding} this banding
  */
 
+
+/**
+ * @class SpreadsheetApp.BandingTheme
+ */
+
+/**
+ * A blue banding theme.
+ *
+ * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.BLUE
+ */
+
+/**
+ * A brown banding theme.
+ *
+ * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.BROWN
+ */
+
+/**
+ * A cyan banding theme.
+ *
+ * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.CYAN
+ */
+
+/**
+ * A green banding theme.
+ *
+ * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.GREEN
+ */
+
+/**
+ * A grey banding theme.
+ *
+ * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.GREY
+ */
+
+/**
+ * A indigo banding theme.
+ *
+ * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.INDIGO
+ */
+
+/**
+ * A light green banding theme.
+ *
+ * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.LIGHT_GREEN
+ */
+
+/**
+ * A light grey banding theme.
+ *
+ * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.LIGHT_GREY
+ */
+
+/**
+ * An orange banding theme.
+ *
+ * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.ORANGE
+ */
+
+/**
+ * A pink banding theme.
+ *
+ * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.PINK
+ */
+
+/**
+ * A teal banding theme.
+ *
+ * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.TEAL
+ */
+
+/**
+ * A yellow banding theme.
+ *
+ * @typedef {SpreadsheetApp.BandingTheme} SpreadsheetApp.BandingTheme.YELLOW
+ */
+
+
 /**
  * @class SpreadsheetApp.BooleanCondition
  */
@@ -1594,6 +999,185 @@
  * @return {Boolean} whether or not the boolean condition underlines the text
  */
 
+
+/**
+ * @class SpreadsheetApp.BooleanCriteria
+ */
+
+/**
+ * The criteria is met when a cell is empty
+ *
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.CELL_EMPTY
+ */
+
+/**
+ * The criteria is met when a cell is not empty
+ *
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.CELL_NOT_EMPTY
+ */
+
+/**
+ * The criteria is met when that the input makes the given formula evaluate to <code>true</code>.
+ *
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.CUSTOM_FORMULA
+ */
+
+/**
+ * The criteria is met when a date is after the given value.
+ *
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.DATE_AFTER
+ */
+
+/**
+ * The criteria is met when a date is after the relative date value.
+ *
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.DATE_AFTER_RELATIVE
+ */
+
+/**
+ * The criteria is met when a date is before the given value.
+ *
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.DATE_BEFORE
+ */
+
+/**
+ * The criteria is met when a date is before the relative date value.
+ *
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.DATE_BEFORE_RELATIVE
+ */
+
+/**
+ * The criteria is met when a date is equal to the given value.
+ *
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.DATE_EQUAL_TO
+ */
+
+/**
+ * The criteria is met when a date is equal to the relative date value.
+ *
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.DATE_EQUAL_TO_RELATIVE
+ */
+
+/**
+ * The criteria is met when a number that is between the given values.
+ *
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.NUMBER_BETWEEN
+ */
+
+/**
+ * The criteria is met when a number that is equal to the given value.
+ *
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.NUMBER_EQUAL_TO
+ */
+
+/**
+ * Require a number that is greater than the given value.
+ *
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.NUMBER_GREATER_THAN
+ */
+
+/**
+ * The criteria is met when a number that is greater than or equal to the given value.
+ *
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.NUMBER_GREATER_THAN_OR_EQUAL_TO
+ */
+
+/**
+ * The criteria is met when a number that is less than the given value.
+ *
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.NUMBER_LESS_THAN
+ */
+
+/**
+ * The criteria is met when a number that is less than or equal to the given value.
+ *
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.NUMBER_LESS_THAN_OR_EQUAL_TO
+ */
+
+/**
+ * The criteria is met when a number that is not between the given values.
+ *
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.NUMBER_NOT_BETWEEN
+ */
+
+/**
+ * The criteria is met when a number that is not equal to the given value.
+ *
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.NUMBER_NOT_EQUAL_TO
+ */
+
+/**
+ * The criteria is met when that the input contains the given value.
+ *
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.TEXT_CONTAINS
+ */
+
+/**
+ * The criteria is met when that the input does not contain the given value.
+ *
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.TEXT_DOES_NOT_CONTAIN
+ */
+
+/**
+ * The criteria is met when that the input ends with the given value.
+ *
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.TEXT_ENDS_WITH
+ */
+
+/**
+ * The criteria is met when that the input is equal to the given value.
+ *
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.TEXT_EQUAL_TO
+ */
+
+/**
+ * The criteria is met when that the input begins with the given value.
+ *
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.TEXT_STARTS_WITH
+ */
+
+
+/**
+ * @class SpreadsheetApp.BorderStyle
+ */
+
+/**
+ * Dashed line borders.
+ *
+ * @typedef {SpreadsheetApp.BorderStyle} SpreadsheetApp.BorderStyle.DASHED
+ */
+
+/**
+ * Dotted line borders.
+ *
+ * @typedef {SpreadsheetApp.BorderStyle} SpreadsheetApp.BorderStyle.DOTTED
+ */
+
+/**
+ * Two solid line borders.
+ *
+ * @typedef {SpreadsheetApp.BorderStyle} SpreadsheetApp.BorderStyle.DOUBLE
+ */
+
+/**
+ * Thin solid line borders.
+ *
+ * @typedef {SpreadsheetApp.BorderStyle} SpreadsheetApp.BorderStyle.SOLID
+ */
+
+/**
+ * Medium solid line borders.
+ *
+ * @typedef {SpreadsheetApp.BorderStyle} SpreadsheetApp.BorderStyle.SOLID_MEDIUM
+ */
+
+/**
+ * Thick solid line borders.
+ *
+ * @typedef {SpreadsheetApp.BorderStyle} SpreadsheetApp.BorderStyle.SOLID_THICK
+ */
+
+
 /**
  * @class SpreadsheetApp.ConditionalFormatRule
  */
@@ -1654,6 +1238,7 @@
  *
  * @return {SpreadsheetApp.Range[]} the ranges to which this conditional format rule is applied.
  */
+
 
 /**
  * @class SpreadsheetApp.ConditionalFormatRuleBuilder
@@ -2518,6 +2103,7 @@
  * @return {SpreadsheetApp.ConditionalFormatRuleBuilder} the builder, for chaining
  */
 
+
 /**
  * @class SpreadsheetApp.ContainerInfo
  */
@@ -2527,7 +2113,7 @@
  *
  * @function SpreadsheetApp.ContainerInfo#getAnchorColumn
  *
- * @return {number} 1-indexed column (i.e. column C will be 3)
+ * @return {IntegerNum} 1-indexed column (i.e. column C will be 3)
  */
 
 /**
@@ -2535,7 +2121,7 @@
  *
  * @function SpreadsheetApp.ContainerInfo#getAnchorRow
  *
- * @return {number} 1-indexed row (i.e. row 5 will return 5)
+ * @return {IntegerNum} 1-indexed row (i.e. row 5 will return 5)
  */
 
 /**
@@ -2543,7 +2129,7 @@
  *
  * @function SpreadsheetApp.ContainerInfo#getOffsetX
  *
- * @return {number} the horizontal offset in pixels for the upper left hand corner of the chart
+ * @return {IntegerNum} the horizontal offset in pixels for the upper left hand corner of the chart
  */
 
 /**
@@ -2551,8 +2137,62 @@
  *
  * @function SpreadsheetApp.ContainerInfo#getOffsetY
  *
- * @return {number} the vertical offset in pixels for the upper left hand corner of the chart
+ * @return {IntegerNum} the vertical offset in pixels for the upper left hand corner of the chart
  */
+
+
+/**
+ * @class SpreadsheetApp.CopyPasteType
+ */
+
+/**
+ * Paste the column widths only.
+ *
+ * @typedef {SpreadsheetApp.CopyPasteType} SpreadsheetApp.CopyPasteType.PASTE_COLUMN_WIDTHS
+ */
+
+/**
+ * Paste the color rules only.
+ *
+ * @typedef {SpreadsheetApp.CopyPasteType} SpreadsheetApp.CopyPasteType.PASTE_CONDITIONAL_FORMATTING
+ */
+
+/**
+ * Paste the data validation only.
+ *
+ * @typedef {SpreadsheetApp.CopyPasteType} SpreadsheetApp.CopyPasteType.PASTE_DATA_VALIDATION
+ */
+
+/**
+ * Paste the format and data validation only.
+ *
+ * @typedef {SpreadsheetApp.CopyPasteType} SpreadsheetApp.CopyPasteType.PASTE_FORMAT
+ */
+
+/**
+ * Paste the formulas only.
+ *
+ * @typedef {SpreadsheetApp.CopyPasteType} SpreadsheetApp.CopyPasteType.PASTE_FORMULA
+ */
+
+/**
+ * Paste values, formulas, formats and merges.
+ *
+ * @typedef {SpreadsheetApp.CopyPasteType} SpreadsheetApp.CopyPasteType.PASTE_NORMAL
+ */
+
+/**
+ * Paste values, formulas, formats and merges but without borders.
+ *
+ * @typedef {SpreadsheetApp.CopyPasteType} SpreadsheetApp.CopyPasteType.PASTE_NO_BORDERS
+ */
+
+/**
+ * Paste the values ONLY without formats, formulas or merges.
+ *
+ * @typedef {SpreadsheetApp.CopyPasteType} SpreadsheetApp.CopyPasteType.PASTE_VALUES
+ */
+
 
 /**
  * @class SpreadsheetApp.DataValidation
@@ -2654,6 +2294,7 @@
  *
  * @return {String} the rule's help text, or <code>null</code> if no help text is set
  */
+
 
 /**
  * @class SpreadsheetApp.DataValidationBuilder
@@ -3295,6 +2936,202 @@
  * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
  */
 
+
+/**
+ * @class SpreadsheetApp.DataValidationCriteria
+ */
+
+/**
+ * Requires that the input makes the given formula evaluate to <code>true</code>.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.CUSTOM_FORMULA
+ */
+
+/**
+ * Requires a date that is after the given value.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_AFTER
+ */
+
+/**
+ * Requires a date that is before the given value.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_BEFORE
+ */
+
+/**
+ * Requires a date that is between the given values.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_BETWEEN
+ */
+
+/**
+ * Requires a date that is equal to the given value.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_EQUAL_TO
+ */
+
+/**
+ * Requires a date.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_IS_VALID_DATE
+ */
+
+/**
+ * Requires a date that is not between the given values.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_NOT_BETWEEN
+ */
+
+/**
+ * Require a date that is on or after the given value.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_ON_OR_AFTER
+ */
+
+/**
+ * Requires a date that is on or before the given value.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.DATE_ON_OR_BEFORE
+ */
+
+/**
+ * Requires a number that is between the given values.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_BETWEEN
+ */
+
+/**
+ * Requires a number that is equal to the given value.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_EQUAL_TO
+ */
+
+/**
+ * Require a number that is greater than the given value.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_GREATER_THAN
+ */
+
+/**
+ * Requires a number that is greater than or equal to the given value.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_GREATER_THAN_OR_EQUAL_TO
+ */
+
+/**
+ * Requires a number that is less than the given value.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_LESS_THAN
+ */
+
+/**
+ * Requires a number that is less than or equal to the given value.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_LESS_THAN_OR_EQUAL_TO
+ */
+
+/**
+ * Requires a number that is not between the given values.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_NOT_BETWEEN
+ */
+
+/**
+ * Requires a number that is not equal to the given value.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.NUMBER_NOT_EQUAL_TO
+ */
+
+/**
+ * Requires that the input contains the given value.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.TEXT_CONTAINS
+ */
+
+/**
+ * Requires that the input does not contain the given value.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.TEXT_DOES_NOT_CONTAIN
+ */
+
+/**
+ * Requires that the input is equal to the given value.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.TEXT_EQUAL_TO
+ */
+
+/**
+ * Requires that the input is in the form of an email address.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.TEXT_IS_VALID_EMAIL
+ */
+
+/**
+ * Requires that the input is in the form of a URL.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.TEXT_IS_VALID_URL
+ */
+
+/**
+ * Requires that the input is equal to one of the given values.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.VALUE_IN_LIST
+ */
+
+/**
+ * Requires that the input is equal to a value in the given range.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.VALUE_IN_RANGE
+ */
+
+
+/**
+ * @class SpreadsheetApp.Dimension
+ */
+
+/**
+ * The column (vertical) dimension.
+ *
+ * @typedef {SpreadsheetApp.Dimension} SpreadsheetApp.Dimension.COLUMNS
+ */
+
+/**
+ * The row (horizontal) dimension.
+ *
+ * @typedef {SpreadsheetApp.Dimension} SpreadsheetApp.Dimension.ROWS
+ */
+
+
+/**
+ * @class SpreadsheetApp.Direction
+ */
+
+/**
+ * The direction of increasing row indices.
+ *
+ * @typedef {SpreadsheetApp.Direction} SpreadsheetApp.Direction.DOWN
+ */
+
+/**
+ * The direction of increasing column indices.
+ *
+ * @typedef {SpreadsheetApp.Direction} SpreadsheetApp.Direction.NEXT
+ */
+
+/**
+ * The direction of decreasing column indices.
+ *
+ * @typedef {SpreadsheetApp.Direction} SpreadsheetApp.Direction.PREVIOUS
+ */
+
+/**
+ * The direction of decreasing row indices.
+ *
+ * @typedef {SpreadsheetApp.Direction} SpreadsheetApp.Direction.UP
+ */
+
+
 /**
  * @class SpreadsheetApp.EmbeddedAreaChartBuilder
  */
@@ -3706,7 +3543,7 @@
  *
  * @function SpreadsheetApp.EmbeddedAreaChartBuilder#setNumHeaders
  *
- * @param {number} headers - The number of rows or columns to treat as headers. Negative values cause headers
+ * @param {IntegerNum} headers - The number of rows or columns to treat as headers. Negative values cause headers
      to be auto-detected.
  *
  * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
@@ -3776,10 +3613,10 @@
  *
  * @function SpreadsheetApp.EmbeddedAreaChartBuilder#setPosition
  *
- * @param {number} anchorRowPos - the chart's top side will be anchored in this row
- * @param {number} anchorColPos - the chart's left side will be anchored in this column
- * @param {number} offsetX - the chart's upper right-hand corner will be offset by this many pixels
- * @param {number} offsetY - the chart's lower left-hand corner will be offset by this many pixels
+ * @param {IntegerNum} anchorRowPos - the chart's top side will be anchored in this row
+ * @param {IntegerNum} anchorColPos - the chart's left side will be anchored in this column
+ * @param {IntegerNum} offsetX - the chart's upper right-hand corner will be offset by this many pixels
+ * @param {IntegerNum} offsetY - the chart's lower left-hand corner will be offset by this many pixels
  *
  * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
  */
@@ -3984,6 +3821,7 @@
  *
  * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} this builder, useful for chaining
  */
+
 
 /**
  * @class SpreadsheetApp.EmbeddedBarChartBuilder
@@ -4405,7 +4243,7 @@
  *
  * @function SpreadsheetApp.EmbeddedBarChartBuilder#setNumHeaders
  *
- * @param {number} headers - The number of rows or columns to treat as headers. Negative values cause headers
+ * @param {IntegerNum} headers - The number of rows or columns to treat as headers. Negative values cause headers
      to be auto-detected.
  *
  * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
@@ -4458,10 +4296,10 @@
  *
  * @function SpreadsheetApp.EmbeddedBarChartBuilder#setPosition
  *
- * @param {number} anchorRowPos - the chart's top side will be anchored in this row
- * @param {number} anchorColPos - the chart's left side will be anchored in this column
- * @param {number} offsetX - the chart's upper right-hand corner will be offset by this many pixels
- * @param {number} offsetY - the chart's lower left-hand corner will be offset by this many pixels
+ * @param {IntegerNum} anchorRowPos - the chart's top side will be anchored in this row
+ * @param {IntegerNum} anchorColPos - the chart's left side will be anchored in this column
+ * @param {IntegerNum} offsetX - the chart's upper right-hand corner will be offset by this many pixels
+ * @param {IntegerNum} offsetY - the chart's lower left-hand corner will be offset by this many pixels
  *
  * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
  */
@@ -4667,6 +4505,7 @@
  * @return {SpreadsheetApp.EmbeddedBarChartBuilder} this builder, useful for chaining
  */
 
+
 /**
  * @class SpreadsheetApp.EmbeddedChart
  */
@@ -4808,7 +4647,7 @@
  *
  * @function SpreadsheetApp.EmbeddedChart#getNumHeaders
  *
- * @return {number} The number of rows or columns treated as headers. Negative values indicate the headers
+ * @return {IntegerNum} The number of rows or columns treated as headers. Negative values indicate the headers
      are auto-detected.
  */
 
@@ -4913,6 +4752,7 @@
  *
  * @return {Charts.Chart} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-chart.html'>EmbeddedChart</a></code> itself, useful for chaining.
  */
+
 
 /**
  * @class SpreadsheetApp.EmbeddedChartBuilder
@@ -5240,7 +5080,7 @@
  *
  * @function SpreadsheetApp.EmbeddedChartBuilder#setNumHeaders
  *
- * @param {number} headers - The number of rows or columns to treat as headers. Negative values cause headers
+ * @param {IntegerNum} headers - The number of rows or columns to treat as headers. Negative values cause headers
      to be auto-detected.
  *
  * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
@@ -5293,10 +5133,10 @@
  *
  * @function SpreadsheetApp.EmbeddedChartBuilder#setPosition
  *
- * @param {number} anchorRowPos - the chart's top side will be anchored in this row
- * @param {number} anchorColPos - the chart's left side will be anchored in this column
- * @param {number} offsetX - the chart's upper right-hand corner will be offset by this many pixels
- * @param {number} offsetY - the chart's lower left-hand corner will be offset by this many pixels
+ * @param {IntegerNum} anchorRowPos - the chart's top side will be anchored in this row
+ * @param {IntegerNum} anchorColPos - the chart's left side will be anchored in this column
+ * @param {IntegerNum} offsetX - the chart's upper right-hand corner will be offset by this many pixels
+ * @param {IntegerNum} offsetY - the chart's lower left-hand corner will be offset by this many pixels
  *
  * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
  */
@@ -5327,6 +5167,7 @@
  *
  * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
  */
+
 
 /**
  * @class SpreadsheetApp.EmbeddedColumnChartBuilder
@@ -5739,7 +5580,7 @@
  *
  * @function SpreadsheetApp.EmbeddedColumnChartBuilder#setNumHeaders
  *
- * @param {number} headers - The number of rows or columns to treat as headers. Negative values cause headers
+ * @param {IntegerNum} headers - The number of rows or columns to treat as headers. Negative values cause headers
      to be auto-detected.
  *
  * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
@@ -5792,10 +5633,10 @@
  *
  * @function SpreadsheetApp.EmbeddedColumnChartBuilder#setPosition
  *
- * @param {number} anchorRowPos - the chart's top side will be anchored in this row
- * @param {number} anchorColPos - the chart's left side will be anchored in this column
- * @param {number} offsetX - the chart's upper right-hand corner will be offset by this many pixels
- * @param {number} offsetY - the chart's lower left-hand corner will be offset by this many pixels
+ * @param {IntegerNum} anchorRowPos - the chart's top side will be anchored in this row
+ * @param {IntegerNum} anchorColPos - the chart's left side will be anchored in this column
+ * @param {IntegerNum} offsetX - the chart's upper right-hand corner will be offset by this many pixels
+ * @param {IntegerNum} offsetY - the chart's lower left-hand corner will be offset by this many pixels
  *
  * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
  */
@@ -6000,6 +5841,7 @@
  *
  * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} this builder, useful for chaining
  */
+
 
 /**
  * @class SpreadsheetApp.EmbeddedComboChartBuilder
@@ -6412,7 +6254,7 @@
  *
  * @function SpreadsheetApp.EmbeddedComboChartBuilder#setNumHeaders
  *
- * @param {number} headers - The number of rows or columns to treat as headers. Negative values cause headers
+ * @param {IntegerNum} headers - The number of rows or columns to treat as headers. Negative values cause headers
      to be auto-detected.
  *
  * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
@@ -6465,10 +6307,10 @@
  *
  * @function SpreadsheetApp.EmbeddedComboChartBuilder#setPosition
  *
- * @param {number} anchorRowPos - the chart's top side will be anchored in this row
- * @param {number} anchorColPos - the chart's left side will be anchored in this column
- * @param {number} offsetX - the chart's upper right-hand corner will be offset by this many pixels
- * @param {number} offsetY - the chart's lower left-hand corner will be offset by this many pixels
+ * @param {IntegerNum} anchorRowPos - the chart's top side will be anchored in this row
+ * @param {IntegerNum} anchorColPos - the chart's left side will be anchored in this column
+ * @param {IntegerNum} offsetX - the chart's upper right-hand corner will be offset by this many pixels
+ * @param {IntegerNum} offsetY - the chart's lower left-hand corner will be offset by this many pixels
  *
  * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
  */
@@ -6673,6 +6515,7 @@
  *
  * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
  */
+
 
 /**
  * @class SpreadsheetApp.EmbeddedHistogramChartBuilder
@@ -7085,7 +6928,7 @@
  *
  * @function SpreadsheetApp.EmbeddedHistogramChartBuilder#setNumHeaders
  *
- * @param {number} headers - The number of rows or columns to treat as headers. Negative values cause headers
+ * @param {IntegerNum} headers - The number of rows or columns to treat as headers. Negative values cause headers
      to be auto-detected.
  *
  * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
@@ -7138,10 +6981,10 @@
  *
  * @function SpreadsheetApp.EmbeddedHistogramChartBuilder#setPosition
  *
- * @param {number} anchorRowPos - the chart's top side will be anchored in this row
- * @param {number} anchorColPos - the chart's left side will be anchored in this column
- * @param {number} offsetX - the chart's upper right-hand corner will be offset by this many pixels
- * @param {number} offsetY - the chart's lower left-hand corner will be offset by this many pixels
+ * @param {IntegerNum} anchorRowPos - the chart's top side will be anchored in this row
+ * @param {IntegerNum} anchorColPos - the chart's left side will be anchored in this column
+ * @param {IntegerNum} offsetX - the chart's upper right-hand corner will be offset by this many pixels
+ * @param {IntegerNum} offsetY - the chart's lower left-hand corner will be offset by this many pixels
  *
  * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
  */
@@ -7346,6 +7189,7 @@
  *
  * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
  */
+
 
 /**
  * @class SpreadsheetApp.EmbeddedLineChartBuilder
@@ -7775,7 +7619,7 @@
  *
  * @function SpreadsheetApp.EmbeddedLineChartBuilder#setNumHeaders
  *
- * @param {number} headers - The number of rows or columns to treat as headers. Negative values cause headers
+ * @param {IntegerNum} headers - The number of rows or columns to treat as headers. Negative values cause headers
      to be auto-detected.
  *
  * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
@@ -7845,10 +7689,10 @@
  *
  * @function SpreadsheetApp.EmbeddedLineChartBuilder#setPosition
  *
- * @param {number} anchorRowPos - the chart's top side will be anchored in this row
- * @param {number} anchorColPos - the chart's left side will be anchored in this column
- * @param {number} offsetX - the chart's upper right-hand corner will be offset by this many pixels
- * @param {number} offsetY - the chart's lower left-hand corner will be offset by this many pixels
+ * @param {IntegerNum} anchorRowPos - the chart's top side will be anchored in this row
+ * @param {IntegerNum} anchorColPos - the chart's left side will be anchored in this column
+ * @param {IntegerNum} offsetX - the chart's upper right-hand corner will be offset by this many pixels
+ * @param {IntegerNum} offsetY - the chart's lower left-hand corner will be offset by this many pixels
  *
  * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
  */
@@ -8044,6 +7888,7 @@
  *
  * @return {SpreadsheetApp.EmbeddedLineChartBuilder} this builder, useful for chaining
  */
+
 
 /**
  * @class SpreadsheetApp.EmbeddedPieChartBuilder
@@ -8464,7 +8309,7 @@
  *
  * @function SpreadsheetApp.EmbeddedPieChartBuilder#setNumHeaders
  *
- * @param {number} headers - The number of rows or columns to treat as headers. Negative values cause headers
+ * @param {IntegerNum} headers - The number of rows or columns to treat as headers. Negative values cause headers
      to be auto-detected.
  *
  * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
@@ -8517,10 +8362,10 @@
  *
  * @function SpreadsheetApp.EmbeddedPieChartBuilder#setPosition
  *
- * @param {number} anchorRowPos - the chart's top side will be anchored in this row
- * @param {number} anchorColPos - the chart's left side will be anchored in this column
- * @param {number} offsetX - the chart's upper right-hand corner will be offset by this many pixels
- * @param {number} offsetY - the chart's lower left-hand corner will be offset by this many pixels
+ * @param {IntegerNum} anchorRowPos - the chart's top side will be anchored in this row
+ * @param {IntegerNum} anchorColPos - the chart's left side will be anchored in this column
+ * @param {IntegerNum} offsetX - the chart's upper right-hand corner will be offset by this many pixels
+ * @param {IntegerNum} offsetY - the chart's lower left-hand corner will be offset by this many pixels
  *
  * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
  */
@@ -8586,6 +8431,7 @@
  *
  * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
  */
+
 
 /**
  * @class SpreadsheetApp.EmbeddedScatterChartBuilder
@@ -8981,7 +8827,7 @@
  *
  * @function SpreadsheetApp.EmbeddedScatterChartBuilder#setNumHeaders
  *
- * @param {number} headers - The number of rows or columns to treat as headers. Negative values cause headers
+ * @param {IntegerNum} headers - The number of rows or columns to treat as headers. Negative values cause headers
      to be auto-detected.
  *
  * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
@@ -9051,10 +8897,10 @@
  *
  * @function SpreadsheetApp.EmbeddedScatterChartBuilder#setPosition
  *
- * @param {number} anchorRowPos - the chart's top side will be anchored in this row
- * @param {number} anchorColPos - the chart's left side will be anchored in this column
- * @param {number} offsetX - the chart's upper right-hand corner will be offset by this many pixels
- * @param {number} offsetY - the chart's lower left-hand corner will be offset by this many pixels
+ * @param {IntegerNum} anchorRowPos - the chart's top side will be anchored in this row
+ * @param {IntegerNum} anchorColPos - the chart's left side will be anchored in this column
+ * @param {IntegerNum} offsetX - the chart's upper right-hand corner will be offset by this many pixels
+ * @param {IntegerNum} offsetY - the chart's lower left-hand corner will be offset by this many pixels
  *
  * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
  */
@@ -9281,6 +9127,7 @@
  * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} this builder, useful for chaining
  */
 
+
 /**
  * @class SpreadsheetApp.EmbeddedTableChartBuilder
  */
@@ -9432,7 +9279,7 @@
  *
  * @function SpreadsheetApp.EmbeddedTableChartBuilder#enablePaging
  *
- * @param {number} pageSize - the number of rows in each page of the table
+ * @param {IntegerNum} pageSize - the number of rows in each page of the table
  *
  * @return {SpreadsheetApp.EmbeddedTableChartBuilder} this builder, useful for chaining
  */
@@ -9452,8 +9299,8 @@
  *
  * @function SpreadsheetApp.EmbeddedTableChartBuilder#enablePaging
  *
- * @param {number} pageSize - the number of rows in each page of the table
- * @param {number} startPage - the first table page to display (page numbers are zero based)
+ * @param {IntegerNum} pageSize - the number of rows in each page of the table
+ * @param {IntegerNum} startPage - the first table page to display (page numbers are zero based)
  *
  * @return {SpreadsheetApp.EmbeddedTableChartBuilder} this builder, useful for chaining
  */
@@ -9630,7 +9477,7 @@
  *
  * @function SpreadsheetApp.EmbeddedTableChartBuilder#setFirstRowNumber
  *
- * @param {number} number - the row number for the first row in the data table
+ * @param {IntegerNum} number - the row number for the first row in the data table
  *
  * @return {SpreadsheetApp.EmbeddedTableChartBuilder} this builder, useful for chaining
  */
@@ -9675,7 +9522,7 @@
  *
  * @function SpreadsheetApp.EmbeddedTableChartBuilder#setInitialSortingAscending
  *
- * @param {number} column - the number of the column according to which the table should be initially sorted
+ * @param {IntegerNum} column - the number of the column according to which the table should be initially sorted
  *
  * @return {SpreadsheetApp.EmbeddedTableChartBuilder} this builder, useful for chaining
  */
@@ -9695,7 +9542,7 @@
  *
  * @function SpreadsheetApp.EmbeddedTableChartBuilder#setInitialSortingDescending
  *
- * @param {number} column - the number of the column according to which the table should be initially sorted
+ * @param {IntegerNum} column - the number of the column according to which the table should be initially sorted
  *
  * @return {SpreadsheetApp.EmbeddedTableChartBuilder} this builder, useful for chaining
  */
@@ -9747,7 +9594,7 @@
  *
  * @function SpreadsheetApp.EmbeddedTableChartBuilder#setNumHeaders
  *
- * @param {number} headers - The number of rows or columns to treat as headers. Negative values cause headers
+ * @param {IntegerNum} headers - The number of rows or columns to treat as headers. Negative values cause headers
      to be auto-detected.
  *
  * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
@@ -9800,10 +9647,10 @@
  *
  * @function SpreadsheetApp.EmbeddedTableChartBuilder#setPosition
  *
- * @param {number} anchorRowPos - the chart's top side will be anchored in this row
- * @param {number} anchorColPos - the chart's left side will be anchored in this column
- * @param {number} offsetX - the chart's upper right-hand corner will be offset by this many pixels
- * @param {number} offsetY - the chart's lower left-hand corner will be offset by this many pixels
+ * @param {IntegerNum} anchorRowPos - the chart's top side will be anchored in this row
+ * @param {IntegerNum} anchorColPos - the chart's left side will be anchored in this column
+ * @param {IntegerNum} offsetX - the chart's upper right-hand corner will be offset by this many pixels
+ * @param {IntegerNum} offsetY - the chart's lower left-hand corner will be offset by this many pixels
  *
  * @return {SpreadsheetApp.EmbeddedChartBuilder} the builder for method chaining
  */
@@ -9860,6 +9707,7 @@
  * @return {SpreadsheetApp.EmbeddedTableChartBuilder} this builder, useful for chaining
  */
 
+
 /**
  * @class SpreadsheetApp.Filter
  */
@@ -9869,7 +9717,7 @@
  *
  * @function SpreadsheetApp.Filter#getColumnFilterCriteria
  *
- * @param {number} columnPosition - the position of the column
+ * @param {IntegerNum} columnPosition - the position of the column
  *
  * @return {SpreadsheetApp.FilterCriteria} the filter criteria
  */
@@ -9895,7 +9743,7 @@
  *
  * @function SpreadsheetApp.Filter#removeColumnFilterCriteria
  *
- * @param {number} columnPosition - the position of the column
+ * @param {IntegerNum} columnPosition - the position of the column
  *
  * @return {SpreadsheetApp.Filter} the filter, for chaining
  */
@@ -9905,7 +9753,7 @@
  *
  * @function SpreadsheetApp.Filter#setColumnFilterCriteria
  *
- * @param {number} columnPosition - the position of the column
+ * @param {IntegerNum} columnPosition - the position of the column
  * @param {SpreadsheetApp.FilterCriteria} filterCriteria - the filter criteria to set. If <code>null</code>, remove filter criteria from
      the specified column; alternatively, use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/filter.html#removeColumnFilterCriteria(Integer)'>removeColumnFilterCriteria(columnPosition)</a></code>.
  *
@@ -9917,12 +9765,13 @@
  *
  * @function SpreadsheetApp.Filter#sort
  *
- * @param {number} columnPosition - the position of the column
+ * @param {IntegerNum} columnPosition - the position of the column
  * @param {Boolean} ascending - if <code>true</code>, sort the column in ascending order; if <code>false</code>, sort
      the column in descending order
  *
  * @return {SpreadsheetApp.Filter} the filter, for chaining
  */
+
 
 /**
  * @class SpreadsheetApp.FilterCriteria
@@ -9971,6 +9820,7 @@
  *
  * @return {String[]} an array of values to show
  */
+
 
 /**
  * @class SpreadsheetApp.FilterCriteriaBuilder
@@ -10239,6 +10089,7 @@
  * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
  */
 
+
 /**
  * @class SpreadsheetApp.GradientCondition
  */
@@ -10324,6 +10175,42 @@
  * @return {String} the minimum value if specified, or empty string
  */
 
+
+/**
+ * @class SpreadsheetApp.InterpolationType
+ */
+
+/**
+ * Infer the maximum number as a specific interpolation point for a gradient condition.
+ *
+ * @typedef {SpreadsheetApp.InterpolationType} SpreadsheetApp.InterpolationType.MAX
+ */
+
+/**
+ * Infer the minimum number as a specific interpolation point for a gradient condition.
+ *
+ * @typedef {SpreadsheetApp.InterpolationType} SpreadsheetApp.InterpolationType.MIN
+ */
+
+/**
+ * Use the number as as specific interpolation point for a gradient condition.
+ *
+ * @typedef {SpreadsheetApp.InterpolationType} SpreadsheetApp.InterpolationType.NUMBER
+ */
+
+/**
+ * Use the number as a percentage interpolation point for a gradient condition.
+ *
+ * @typedef {SpreadsheetApp.InterpolationType} SpreadsheetApp.InterpolationType.PERCENT
+ */
+
+/**
+ * Use the number as a percentile interpolation point for a gradient condition.
+ *
+ * @typedef {SpreadsheetApp.InterpolationType} SpreadsheetApp.InterpolationType.PERCENTILE
+ */
+
+
 /**
  * @class SpreadsheetApp.NamedRange
  */
@@ -10388,6 +10275,7 @@
  * @return {SpreadsheetApp.NamedRange} the named range for which the spreadsheet range was set
  */
 
+
 /**
  * @class SpreadsheetApp.PageProtection
  */
@@ -10405,6 +10293,7 @@
  </code></pre>
  *
  * @function SpreadsheetApp.PageProtection#addUser
+ * @deprecated
  *
  * @param {String} email - the email of the user to add
  *
@@ -10417,6 +10306,7 @@
  <p>If sheet protection is disabled, the value returned by this call is meaningless.
  *
  * @function SpreadsheetApp.PageProtection#getUsers
+ * @deprecated
  *
  * @return {String[]} an array of email addresses of users who can edit this sheet
  */
@@ -10432,6 +10322,7 @@
  </code></pre>
  *
  * @function SpreadsheetApp.PageProtection#isProtected
+ * @deprecated
  *
  * @return {Boolean} whether the sheet has sheet protection enabled or not
  */
@@ -10449,6 +10340,7 @@
  </code></pre>
  *
  * @function SpreadsheetApp.PageProtection#removeUser
+ * @deprecated
  *
  * @param {String} user - the email address of the user to remove
  *
@@ -10467,11 +10359,13 @@
  </code></pre>
  *
  * @function SpreadsheetApp.PageProtection#setProtected
+ * @deprecated
  *
  * @param {Boolean} protection - true to enable sheet protection, false to disable sheet protection
  *
  * @return void
  */
+
 
 /**
  * @class SpreadsheetApp.PivotFilter
@@ -10500,7 +10394,7 @@
  *
  * @function SpreadsheetApp.PivotFilter#getSourceDataColumn
  *
- * @return {number} the number of the source data column this filter applies to
+ * @return {IntegerNum} the number of the source data column this filter applies to
  */
 
 /**
@@ -10520,6 +10414,7 @@
  *
  * @return {SpreadsheetApp.PivotFilter} the pivot filter for chaining
  */
+
 
 /**
  * @class SpreadsheetApp.PivotGroup
@@ -10573,7 +10468,7 @@
  *
  * @function SpreadsheetApp.PivotGroup#getIndex
  *
- * @return {number} the pivot group's index
+ * @return {IntegerNum} the pivot group's index
  */
 
 /**
@@ -10590,7 +10485,7 @@
  *
  * @function SpreadsheetApp.PivotGroup#getSourceDataColumn
  *
- * @return {number} the source data column number
+ * @return {IntegerNum} the source data column number
  */
 
 /**
@@ -10619,7 +10514,7 @@
  *
  * @function SpreadsheetApp.PivotGroup#moveToIndex
  *
- * @param {number} index - the index to move this grouping to
+ * @param {IntegerNum} index - the index to move this grouping to
  *
  * @return {SpreadsheetApp.PivotGroup} the pivot group for chaining.
  */
@@ -10667,11 +10562,11 @@
  *
  * @function SpreadsheetApp.PivotGroup#setHistogramGroupingRule
  *
- * @param {number} minValue - the minimum value for items to be placed into buckets. Values less than this
+ * @param {IntegerNum} minValue - the minimum value for items to be placed into buckets. Values less than this
      are combined into a single bucket
- * @param {number} maxValue - The maximum value for items to be placed into buckets. Values greater than this
+ * @param {IntegerNum} maxValue - The maximum value for items to be placed into buckets. Values greater than this
      are combined into a single bucket
- * @param {number} intervalSize - 
+ * @param {IntegerNum} intervalSize
  *
  * @return {SpreadsheetApp.PivotGroup} the pivot group for chaining.
  */
@@ -10744,6 +10639,7 @@
      <code>false</code>.
  */
 
+
 /**
  * @class SpreadsheetApp.PivotTable
  */
@@ -10766,7 +10662,7 @@
  *
  * @function SpreadsheetApp.PivotTable#addColumnGroup
  *
- * @param {number} sourceDataColumn - the number of the column this group summarizes. This index represents
+ * @param {IntegerNum} sourceDataColumn - the number of the column this group summarizes. This index represents
      the absolute number of the column in the spreadsheet; <code>1</code> representing column "A,"
      <code>2</code> representing column B, etc.
  *
@@ -10779,7 +10675,7 @@
  *
  * @function SpreadsheetApp.PivotTable#addFilter
  *
- * @param {number} sourceDataColumn - the number of the column this group summarizes. This index represents
+ * @param {IntegerNum} sourceDataColumn - the number of the column this group summarizes. This index represents
      the absolute number of the column in the spreadsheet; <code>1</code> representing column "A,"
      <code>2</code> representing column B, etc.
  * @param {SpreadsheetApp.FilterCriteria} filterCriteria - the filter criteria used to perform the filtering
@@ -10794,10 +10690,10 @@
  *
  * @function SpreadsheetApp.PivotTable#addPivotValue
  *
- * @param {number} sourceDataColumn - the number of the column this group summarizes. This index represents
+ * @param {IntegerNum} sourceDataColumn - the number of the column this group summarizes. This index represents
      the absolute number of the column in the spreadsheet; <code>1</code> representing column "A,"
      <code>2</code> representing column B, etc.
- * @param {SpreadsheetApp.PivotTableSummarizeFunction} summarizeFunction - 
+ * @param {SpreadsheetApp.PivotTableSummarizeFunction} summarizeFunction
  *
  * @return {SpreadsheetApp.PivotValue} the newly created <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/pivot-value.html'>PivotValue</a></code>
  */
@@ -10808,7 +10704,7 @@
  *
  * @function SpreadsheetApp.PivotTable#addRowGroup
  *
- * @param {number} sourceDataColumn - the number of the column this group summarizes. This index represents
+ * @param {IntegerNum} sourceDataColumn - the number of the column this group summarizes. This index represents
      the absolute number of the column in the spreadsheet; <code>1</code> representing column "A,"
      <code>2</code> representing column B, etc.
  *
@@ -10880,6 +10776,96 @@
  *
  * @return {SpreadsheetApp.PivotTable} the pivot table for chaining
  */
+
+
+/**
+ * @class SpreadsheetApp.PivotTableSummarizeFunction
+ */
+
+/**
+ * The <a href="https://support.google.com/docs/answer/3093615">AVERAGE</a> function
+ *
+ * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.AVERAGE
+ */
+
+/**
+ * The <a href="https://support.google.com/docs/answer/3093620">COUNT</a> function
+ *
+ * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.COUNT
+ */
+
+/**
+ * The <a href="https://support.google.com/docs/answer/3093991">COUNTA</a> function
+ *
+ * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.COUNTA
+ */
+
+/**
+ * The <a href="https://support.google.com/docs/answer/3093405">COUNTUNIQUE</a> function
+ *
+ * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.COUNTUNIQUE
+ */
+
+/**
+ * A custom fuction, this value is only valid for calcuated fields.
+ *
+ * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.CUSTOM
+ */
+
+/**
+ * The <a href="https://support.google.com/docs/answer/3094013">MAX</a> function
+ *
+ * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.MAX
+ */
+
+/**
+ * The <a href="https://support.google.com/docs/answer/3094025">MEDIAN</a> function
+ *
+ * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.MEDIAN
+ */
+
+/**
+ * The <a href="https://support.google.com/docs/answer/3094017">MIN</a> function
+ *
+ * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.MIN
+ */
+
+/**
+ * The <a href="https://support.google.com/docs/answer/3093502">PRODUCT</a> function
+ *
+ * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.PRODUCT
+ */
+
+/**
+ * The <a href="https://support.google.com/docs/answer/3094054">STDEV</a> function
+ *
+ * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.STDEV
+ */
+
+/**
+ * The <a href="https://support.google.com/docs/answer/3094105">STDEVP</a> function
+ *
+ * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.STDEVP
+ */
+
+/**
+ * The <a href="https://support.google.com/docs/answer/3093669">SUM</a> function
+ *
+ * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.SUM
+ */
+
+/**
+ * The <a href="https://support.google.com/docs/answer/3094063">VAR</a> function
+ *
+ * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.VAR
+ */
+
+/**
+ * The <a href="https://support.google.com/docs/answer/3094113">VARP</a> function
+ *
+ * @typedef {SpreadsheetApp.PivotTableSummarizeFunction} SpreadsheetApp.PivotTableSummarizeFunction.VARP
+ */
+
 
 /**
  * @class SpreadsheetApp.PivotValue
@@ -10959,6 +10945,28 @@
  *
  * @return {SpreadsheetApp.PivotValue} the pivot value for chaining
  */
+
+
+/**
+ * @class SpreadsheetApp.PivotValueDisplayType
+ */
+
+/**
+ * @typedef {SpreadsheetApp.PivotValueDisplayType} SpreadsheetApp.PivotValueDisplayType.DEFAULT
+ */
+
+/**
+ * @typedef {SpreadsheetApp.PivotValueDisplayType} SpreadsheetApp.PivotValueDisplayType.PERCENT_OF_COLUMN_TOTAL
+ */
+
+/**
+ * @typedef {SpreadsheetApp.PivotValueDisplayType} SpreadsheetApp.PivotValueDisplayType.PERCENT_OF_GRAND_TOTAL
+ */
+
+/**
+ * @typedef {SpreadsheetApp.PivotValueDisplayType} SpreadsheetApp.PivotValueDisplayType.PERCENT_OF_ROW_TOTAL
+ */
+
 
 /**
  * @class SpreadsheetApp.Protection
@@ -11340,10 +11348,28 @@
  *
  * @function SpreadsheetApp.Protection#setWarningOnly
  *
- * @param {Boolean} warningOnly - 
+ * @param {Boolean} warningOnly
  *
  * @return {SpreadsheetApp.Protection} the object representing the protection settings, for chaining.
  */
+
+
+/**
+ * @class SpreadsheetApp.ProtectionType
+ */
+
+/**
+ * Protection for a range.
+ *
+ * @typedef {SpreadsheetApp.ProtectionType} SpreadsheetApp.ProtectionType.RANGE
+ */
+
+/**
+ * Protection for a sheet.
+ *
+ * @typedef {SpreadsheetApp.ProtectionType} SpreadsheetApp.ProtectionType.SHEET
+ */
+
 
 /**
  * @class SpreadsheetApp.Range
@@ -11412,7 +11438,7 @@
  *
  * @function SpreadsheetApp.Range#applyColumnBanding
  *
- * @param {SpreadsheetApp.BandingTheme} bandingTheme - 
+ * @param {SpreadsheetApp.BandingTheme} bandingTheme
  *
  * @return {SpreadsheetApp.Banding} the new banding
  */
@@ -11423,9 +11449,9 @@
  *
  * @function SpreadsheetApp.Range#applyColumnBanding
  *
- * @param {SpreadsheetApp.BandingTheme} bandingTheme - 
- * @param {Boolean} showHeader - 
- * @param {Boolean} showFoote - 
+ * @param {SpreadsheetApp.BandingTheme} bandingTheme
+ * @param {Boolean} showHeader
+ * @param {Boolean} showFoote
  *
  * @return {SpreadsheetApp.Banding} the new banding
  */
@@ -11445,7 +11471,7 @@
  *
  * @function SpreadsheetApp.Range#applyRowBanding
  *
- * @param {SpreadsheetApp.BandingTheme} bandingTheme - 
+ * @param {SpreadsheetApp.BandingTheme} bandingTheme
  *
  * @return {SpreadsheetApp.Banding} the new banding
  */
@@ -11455,9 +11481,9 @@
  *
  * @function SpreadsheetApp.Range#applyRowBanding
  *
- * @param {SpreadsheetApp.BandingTheme} bandingTheme - 
- * @param {Boolean} showHeader - 
- * @param {Boolean} showFoote - 
+ * @param {SpreadsheetApp.BandingTheme} bandingTheme
+ * @param {Boolean} showHeader
+ * @param {Boolean} showFoote
  *
  * @return {SpreadsheetApp.Banding} the new banding
  */
@@ -11665,11 +11691,11 @@
  *
  * @function SpreadsheetApp.Range#copyFormatToRange
  *
- * @param {number} gridId - the unique ID of the sheet within the spreadsheet, irrespective of position
- * @param {number} column - the first column of the target range
- * @param {number} columnEnd - the end column of the target range
- * @param {number} row - the start row of the target range
- * @param {number} rowEnd - the end row of the target range
+ * @param {IntegerNum} gridId - the unique ID of the sheet within the spreadsheet, irrespective of position
+ * @param {IntegerNum} column - the first column of the target range
+ * @param {IntegerNum} columnEnd - the end column of the target range
+ * @param {IntegerNum} row - the start row of the target range
+ * @param {IntegerNum} rowEnd - the end row of the target range
  *
  * @return void
  */
@@ -11694,10 +11720,10 @@
  * @function SpreadsheetApp.Range#copyFormatToRange
  *
  * @param {SpreadsheetApp.Sheet} sheet - the target sheet
- * @param {number} column - the first column of the target range
- * @param {number} columnEnd - the end column of the target range
- * @param {number} row - the start row of the target range
- * @param {number} rowEnd - the end row of the target range
+ * @param {IntegerNum} column - the first column of the target range
+ * @param {IntegerNum} columnEnd - the end column of the target range
+ * @param {IntegerNum} row - the start row of the target range
+ * @param {IntegerNum} rowEnd - the end row of the target range
  *
  * @return void
  */
@@ -11776,11 +11802,11 @@
  *
  * @function SpreadsheetApp.Range#copyValuesToRange
  *
- * @param {number} gridId - the unique ID of the sheet within the spreadsheet, irrespective of position
- * @param {number} column - the first column of the target range
- * @param {number} columnEnd - the end column of the target range
- * @param {number} row - the start row of the target range
- * @param {number} rowEnd - the end row of the target range
+ * @param {IntegerNum} gridId - the unique ID of the sheet within the spreadsheet, irrespective of position
+ * @param {IntegerNum} column - the first column of the target range
+ * @param {IntegerNum} columnEnd - the end column of the target range
+ * @param {IntegerNum} row - the start row of the target range
+ * @param {IntegerNum} rowEnd - the end row of the target range
  *
  * @return void
  */
@@ -11804,10 +11830,10 @@
  * @function SpreadsheetApp.Range#copyValuesToRange
  *
  * @param {SpreadsheetApp.Sheet} sheet - the target sheet
- * @param {number} column - the first column of the target range
- * @param {number} columnEnd - the end column of the target range
- * @param {number} row - the start row of the target range
- * @param {number} rowEnd - the end row of the target range
+ * @param {IntegerNum} column - the first column of the target range
+ * @param {IntegerNum} columnEnd - the end column of the target range
+ * @param {IntegerNum} row - the start row of the target range
+ * @param {IntegerNum} rowEnd - the end row of the target range
  *
  * @return void
  */
@@ -11826,7 +11852,7 @@
  *
  * @function SpreadsheetApp.Range#createPivotTable
  *
- * @param {SpreadsheetApp.Range} sourceData - 
+ * @param {SpreadsheetApp.Range} sourceData
  *
  * @return {SpreadsheetApp.PivotTable} the newly created <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/pivot-table.html'>PivotTable</a></code>
  */
@@ -11929,8 +11955,8 @@
  *
  * @function SpreadsheetApp.Range#getCell
  *
- * @param {number} row - the row of the cell relative to the range
- * @param {number} column - the column of the cell relative to the range
+ * @param {IntegerNum} row - the row of the cell relative to the range
+ * @param {IntegerNum} column - the column of the cell relative to the range
  *
  * @return {SpreadsheetApp.Range} a range containing a single cell at the specified coordinates
  */
@@ -11949,7 +11975,7 @@
  *
  * @function SpreadsheetApp.Range#getColumn
  *
- * @return {number} the range's starting column position in the spreadsheet
+ * @return {IntegerNum} the range's starting column position in the spreadsheet
  */
 
 /**
@@ -12249,7 +12275,7 @@
  *
  * @function SpreadsheetApp.Range#getFontSize
  *
- * @return {number} the font size in point size
+ * @return {IntegerNum} the font size in point size
  */
 
 /**
@@ -12271,7 +12297,7 @@
  *
  * @function SpreadsheetApp.Range#getFontSizes
  *
- * @return {Integer[][]} a two-dimensional array of font sizes of text associated with cells in the range
+ * @return {IntegerNum[][]} a two-dimensional array of font sizes of text associated with cells in the range
  */
 
 /**
@@ -12453,7 +12479,7 @@
  *
  * @function SpreadsheetApp.Range#getGridId
  *
- * @return {number} the grid ID of the parent sheet
+ * @return {IntegerNum} the grid ID of the parent sheet
  */
 
 /**
@@ -12470,7 +12496,7 @@
  *
  * @function SpreadsheetApp.Range#getHeight
  *
- * @return {number} the height of the range
+ * @return {IntegerNum} the height of the range
  */
 
 /**
@@ -12527,7 +12553,7 @@
  *
  * @function SpreadsheetApp.Range#getLastColumn
  *
- * @return {number} the range's ending column position in the spreadsheet
+ * @return {IntegerNum} the range's ending column position in the spreadsheet
  */
 
 /**
@@ -12544,7 +12570,7 @@
  *
  * @function SpreadsheetApp.Range#getLastRow
  *
- * @return {number} the range's ending row position in the spreadsheet
+ * @return {IntegerNum} the range's ending row position in the spreadsheet
  */
 
 /**
@@ -12643,7 +12669,7 @@
  *
  * @function SpreadsheetApp.Range#getNumColumns
  *
- * @return {number} the number of columns in this range
+ * @return {IntegerNum} the number of columns in this range
  */
 
 /**
@@ -12659,7 +12685,7 @@
  *
  * @function SpreadsheetApp.Range#getNumRows
  *
- * @return {number} the number of rows in this range
+ * @return {IntegerNum} the number of rows in this range
  */
 
 /**
@@ -12716,7 +12742,7 @@
  *
  * @function SpreadsheetApp.Range#getRow
  *
- * @return {number} the row position of the range
+ * @return {IntegerNum} the row position of the range
  */
 
 /**
@@ -12733,7 +12759,7 @@
  *
  * @function SpreadsheetApp.Range#getRowIndex
  *
- * @return {number} the row position of the range
+ * @return {IntegerNum} the row position of the range
  */
 
 /**
@@ -12895,7 +12921,7 @@
  *
  * @function SpreadsheetApp.Range#getWidth
  *
- * @return {number} the number of columns in the range
+ * @return {IntegerNum} the number of columns in the range
  */
 
 /**
@@ -13164,9 +13190,9 @@
  *
  * @function SpreadsheetApp.Range#offset
  *
- * @param {number} rowOffset - number of rows down from the range's top-left cell; negative values represent
+ * @param {IntegerNum} rowOffset - number of rows down from the range's top-left cell; negative values represent
      rows up from the range's top-left cell
- * @param {number} columnOffset - number of columns right from the range's top-left cell; negative values
+ * @param {IntegerNum} columnOffset - number of columns right from the range's top-left cell; negative values
      represent columns left from the range's top-left cell
  *
  * @return {SpreadsheetApp.Range} the range for chaining
@@ -13188,11 +13214,11 @@
  *
  * @function SpreadsheetApp.Range#offset
  *
- * @param {number} rowOffset - number of rows down from the range's top-left cell; negative values represent
+ * @param {IntegerNum} rowOffset - number of rows down from the range's top-left cell; negative values represent
      rows up from the range's top-left cell
- * @param {number} columnOffset - number of columns right from the range's top-left cell; negative values
+ * @param {IntegerNum} columnOffset - number of columns right from the range's top-left cell; negative values
      represent columns left from the range's top-left cell
- * @param {number} numRows - the height in rows of the new range
+ * @param {IntegerNum} numRows - the height in rows of the new range
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
@@ -13214,12 +13240,12 @@
  *
  * @function SpreadsheetApp.Range#offset
  *
- * @param {number} rowOffset - number of rows down from the range's top-left cell; negative values represent
+ * @param {IntegerNum} rowOffset - number of rows down from the range's top-left cell; negative values represent
      rows up from the range's top-left cell
- * @param {number} columnOffset - number of columns right from the range's top-left cell; negative values
+ * @param {IntegerNum} columnOffset - number of columns right from the range's top-left cell; negative values
      represent columns left from the range's top-left cell
- * @param {number} numRows - the height in rows of the new range
- * @param {number} numColumns - the width in columns of the new range
+ * @param {IntegerNum} numRows - the height in rows of the new range
+ * @param {IntegerNum} numColumns - the width in columns of the new range
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
@@ -13310,9 +13336,9 @@
  *
  * @function SpreadsheetApp.Range#setBackgroundRGB
  *
- * @param {number} red - the red value in RGB notation
- * @param {number} green - the green value in RGB notation
- * @param {number} blue - the blue value in RGB notation
+ * @param {IntegerNum} red - the red value in RGB notation
+ * @param {IntegerNum} green - the green value in RGB notation
+ * @param {IntegerNum} blue - the blue value in RGB notation
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
@@ -13582,7 +13608,7 @@
  *
  * @function SpreadsheetApp.Range#setFontSize
  *
- * @param {number} size - a font size in point size
+ * @param {IntegerNum} size - a font size in point size
  *
  * @return {SpreadsheetApp.Range} the range for chaining
  */
@@ -13986,7 +14012,7 @@
  *
  * @function SpreadsheetApp.Range#setTextRotation
  *
- * @param {number} degrees - The desired angle between the standard orientation and the desired orientation.
+ * @param {IntegerNum} degrees - The desired angle between the standard orientation and the desired orientation.
      For left to right text, positive angles are in the counterclockwise direction.
  *
  * @return {SpreadsheetApp.Range} the range for chaining
@@ -14340,6 +14366,7 @@
  * @return void
  */
 
+
 /**
  * @class SpreadsheetApp.RangeList
  */
@@ -14515,9 +14542,9 @@
  *
  * @function SpreadsheetApp.RangeList#setBackgroundRGB
  *
- * @param {number} red - the red value in RGB notation
- * @param {number} green - the green value in RGB notation
- * @param {number} blue - the blue value in RGB notation
+ * @param {IntegerNum} red - the red value in RGB notation
+ * @param {IntegerNum} green - the green value in RGB notation
+ * @param {IntegerNum} blue - the blue value in RGB notation
  *
  * @return {SpreadsheetApp.RangeList} the list of ranges for chaining
  */
@@ -14637,7 +14664,7 @@
  *
  * @function SpreadsheetApp.RangeList#setFontSize
  *
- * @param {number} size - a font point size
+ * @param {IntegerNum} size - a font point size
  *
  * @return {SpreadsheetApp.RangeList} the list of ranges for chaining
  */
@@ -14801,7 +14828,7 @@
  *
  * @function SpreadsheetApp.RangeList#setTextRotation
  *
- * @param {number} degrees - The desired angle between the standard orientation and the desired orientation.
+ * @param {IntegerNum} degrees - The desired angle between the standard orientation and the desired orientation.
      For left to right text, positive angles are in the counterclockwise direction.
  *
  * @return {SpreadsheetApp.RangeList} the list of ranges for chaining
@@ -14898,6 +14925,7 @@
  * @return {SpreadsheetApp.RangeList} the list of ranges for chaining
  */
 
+
 /**
  * @class SpreadsheetApp.Selection
  */
@@ -14988,6 +15016,7 @@
      selection
  */
 
+
 /**
  * @class SpreadsheetApp.Sheet
  */
@@ -15044,7 +15073,7 @@
  *
  * @function SpreadsheetApp.Sheet#autoResizeColumn
  *
- * @param {number} columnPosition - the position of the given column to resize
+ * @param {IntegerNum} columnPosition - the position of the given column to resize
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -15062,8 +15091,8 @@
  *
  * @function SpreadsheetApp.Sheet#autoResizeColumns
  *
- * @param {number} startColumn - the starting column to auto-resize
- * @param {number} numColumns - the number of columns to auto-resize
+ * @param {IntegerNum} startColumn - the starting column to auto-resize
+ * @param {IntegerNum} numColumns - the number of columns to auto-resize
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -15081,8 +15110,8 @@
  *
  * @function SpreadsheetApp.Sheet#autoResizeRows
  *
- * @param {number} startRow - the starting row to auto-resize
- * @param {number} numRows - the number of rows to auto-resize
+ * @param {IntegerNum} startRow - the starting row to auto-resize
+ * @param {IntegerNum} numRows - the number of rows to auto-resize
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -15219,7 +15248,7 @@
  *
  * @function SpreadsheetApp.Sheet#deleteColumn
  *
- * @param {number} columnPosition - the position of the column, starting at 1 for the first column
+ * @param {IntegerNum} columnPosition - the position of the column, starting at 1 for the first column
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -15236,8 +15265,8 @@
  *
  * @function SpreadsheetApp.Sheet#deleteColumns
  *
- * @param {number} columnPosition - the position of the first column to delete
- * @param {number} howMany - the number of columns to delete
+ * @param {IntegerNum} columnPosition - the position of the first column to delete
+ * @param {IntegerNum} howMany - the number of columns to delete
  *
  * @return void
  */
@@ -15254,7 +15283,7 @@
  *
  * @function SpreadsheetApp.Sheet#deleteRow
  *
- * @param {number} rowPosition - the position of the row, starting at 1 for the first row
+ * @param {IntegerNum} rowPosition - the position of the row, starting at 1 for the first row
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -15271,8 +15300,8 @@
  *
  * @function SpreadsheetApp.Sheet#deleteRows
  *
- * @param {number} rowPosition - the position of the first row to delete
- * @param {number} howMany - the number of rows to delete
+ * @param {IntegerNum} rowPosition - the position of the first row to delete
+ * @param {IntegerNum} howMany - the number of rows to delete
  *
  * @return void
  */
@@ -15371,9 +15400,9 @@
  *
  * @function SpreadsheetApp.Sheet#getColumnWidth
  *
- * @param {number} columnPosition - the position of the column to examine
+ * @param {IntegerNum} columnPosition - the position of the column to examine
  *
- * @return {number} column width in pixels
+ * @return {IntegerNum} column width in pixels
  */
 
 /**
@@ -15474,7 +15503,7 @@
  *
  * @function SpreadsheetApp.Sheet#getFrozenColumns
  *
- * @return {number} the number of frozen columns
+ * @return {IntegerNum} the number of frozen columns
  */
 
 /**
@@ -15489,7 +15518,7 @@
  *
  * @function SpreadsheetApp.Sheet#getFrozenRows
  *
- * @return {number} the number of frozen rows
+ * @return {IntegerNum} the number of frozen rows
  */
 
 /**
@@ -15505,7 +15534,7 @@
  *
  * @function SpreadsheetApp.Sheet#getIndex
  *
- * @return {number} the position of the sheet in its parent spreadsheet
+ * @return {IntegerNum} the position of the sheet in its parent spreadsheet
  */
 
 /**
@@ -15524,7 +15553,7 @@
  *
  * @function SpreadsheetApp.Sheet#getLastColumn
  *
- * @return {number} the last column of the sheet that contains content
+ * @return {IntegerNum} the last column of the sheet that contains content
  */
 
 /**
@@ -15543,7 +15572,7 @@
  *
  * @function SpreadsheetApp.Sheet#getLastRow
  *
- * @return {number} the last row of the sheet that contains content
+ * @return {IntegerNum} the last row of the sheet that contains content
  */
 
 /**
@@ -15558,7 +15587,7 @@
  *
  * @function SpreadsheetApp.Sheet#getMaxColumns
  *
- * @return {number} the maximum width of the sheet
+ * @return {IntegerNum} the maximum width of the sheet
  */
 
 /**
@@ -15573,7 +15602,7 @@
  *
  * @function SpreadsheetApp.Sheet#getMaxRows
  *
- * @return {number} the maximum height of the sheet
+ * @return {IntegerNum} the maximum height of the sheet
  */
 
 /**
@@ -15677,8 +15706,8 @@
  *
  * @function SpreadsheetApp.Sheet#getRange
  *
- * @param {number} row - the row of the cell to return
- * @param {number} column - the column of the cell to return
+ * @param {IntegerNum} row - the row of the cell to return
+ * @param {IntegerNum} column - the column of the cell to return
  *
  * @return {SpreadsheetApp.Range} a Range containing only this cell
  */
@@ -15704,9 +15733,9 @@
  *
  * @function SpreadsheetApp.Sheet#getRange
  *
- * @param {number} row - the starting row of the range
- * @param {number} column - the column of the range
- * @param {number} numRows - the number of rows to return
+ * @param {IntegerNum} row - the starting row of the range
+ * @param {IntegerNum} column - the column of the range
+ * @param {IntegerNum} numRows - the number of rows to return
  *
  * @return {SpreadsheetApp.Range} a Range containing a single column of data with the number of rows specified
  */
@@ -15731,10 +15760,10 @@
  *
  * @function SpreadsheetApp.Sheet#getRange
  *
- * @param {number} row - the starting row of the range
- * @param {number} column - the starting column of the range
- * @param {number} numRows - the number of rows to return
- * @param {number} numColumns - the number of columns to return
+ * @param {IntegerNum} row - the starting row of the range
+ * @param {IntegerNum} column - the starting column of the range
+ * @param {IntegerNum} numRows - the number of rows to return
+ * @param {IntegerNum} numColumns - the number of columns to return
  *
  * @return {SpreadsheetApp.Range} a Range corresponding to the area specified
  */
@@ -15789,9 +15818,9 @@
  *
  * @function SpreadsheetApp.Sheet#getRowHeight
  *
- * @param {number} rowPosition - the *position* of the row to examine
+ * @param {IntegerNum} rowPosition - the *position* of the row to examine
  *
- * @return {number} row height in pixels
+ * @return {IntegerNum} row height in pixels
  */
 
 /**
@@ -15823,7 +15852,7 @@
  *
  * @function SpreadsheetApp.Sheet#getSheetId
  *
- * @return {number} an ID for the sheet unique to the spreadsheet
+ * @return {IntegerNum} an ID for the sheet unique to the spreadsheet
  */
 
 /**
@@ -15861,6 +15890,7 @@
  </code></pre>
  *
  * @function SpreadsheetApp.Sheet#getSheetProtection
+ * @deprecated
  *
  * @return {SpreadsheetApp.PageProtection} an object describing sheet access permissions
  */
@@ -15885,10 +15915,10 @@
  *
  * @function SpreadsheetApp.Sheet#getSheetValues
  *
- * @param {number} startRow - the position of the starting row
- * @param {number} startColumn - the position of the starting column
- * @param {number} numRows - the number of rows to return values for
- * @param {number} numColumns - the number of columns to return values for
+ * @param {IntegerNum} startRow - the position of the starting row
+ * @param {IntegerNum} startColumn - the position of the starting column
+ * @param {IntegerNum} numRows - the number of rows to return values for
+ * @param {IntegerNum} numColumns - the number of columns to return values for
  *
  * @return {Object[][]} a two dimension array of values
  */
@@ -15948,7 +15978,7 @@
  *
  * @function SpreadsheetApp.Sheet#hideColumns
  *
- * @param {number} columnIndex - the index of the column to hide
+ * @param {IntegerNum} columnIndex - the index of the column to hide
  *
  * @return void
  */
@@ -15965,8 +15995,8 @@
  *
  * @function SpreadsheetApp.Sheet#hideColumns
  *
- * @param {number} columnIndex - the starting index of the columns to hide
- * @param {number} numColumns - the number of columns to hide
+ * @param {IntegerNum} columnIndex - the starting index of the columns to hide
+ * @param {IntegerNum} numColumns - the number of columns to hide
  *
  * @return void
  */
@@ -16002,7 +16032,7 @@
  *
  * @function SpreadsheetApp.Sheet#hideRows
  *
- * @param {number} rowIndex - the index of the row to hide
+ * @param {IntegerNum} rowIndex - the index of the row to hide
  *
  * @return void
  */
@@ -16019,8 +16049,8 @@
  *
  * @function SpreadsheetApp.Sheet#hideRows
  *
- * @param {number} rowIndex - the starting index of the rows to hide
- * @param {number} numRows - the number of rows to hide
+ * @param {IntegerNum} rowIndex - the starting index of the rows to hide
+ * @param {IntegerNum} numRows - the number of rows to hide
  *
  * @return void
  */
@@ -16077,7 +16107,7 @@
  *
  * @function SpreadsheetApp.Sheet#insertColumnAfter
  *
- * @param {number} afterPosition - the column after which the new column should be added
+ * @param {IntegerNum} afterPosition - the column after which the new column should be added
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -16095,7 +16125,7 @@
  *
  * @function SpreadsheetApp.Sheet#insertColumnBefore
  *
- * @param {number} beforePosition - the column before which the new column should be added
+ * @param {IntegerNum} beforePosition - the column before which the new column should be added
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -16112,7 +16142,7 @@
  *
  * @function SpreadsheetApp.Sheet#insertColumns
  *
- * @param {number} columnIndex - the index to insert a column
+ * @param {IntegerNum} columnIndex - the index to insert a column
  *
  * @return void
  */
@@ -16129,8 +16159,8 @@
  *
  * @function SpreadsheetApp.Sheet#insertColumns
  *
- * @param {number} columnIndex - the index to insert a column
- * @param {number} numColumns - the number of columns to insert
+ * @param {IntegerNum} columnIndex - the index to insert a column
+ * @param {IntegerNum} numColumns - the number of columns to insert
  *
  * @return void
  */
@@ -16148,8 +16178,8 @@
  *
  * @function SpreadsheetApp.Sheet#insertColumnsAfter
  *
- * @param {number} afterPosition - the column after which the new column should be added
- * @param {number} howMany - the number of columns to insert
+ * @param {IntegerNum} afterPosition - the column after which the new column should be added
+ * @param {IntegerNum} howMany - the number of columns to insert
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -16167,8 +16197,8 @@
  *
  * @function SpreadsheetApp.Sheet#insertColumnsBefore
  *
- * @param {number} beforePosition - the column before which the new column should be added
- * @param {number} howMany - the number of columns to insert
+ * @param {IntegerNum} beforePosition - the column before which the new column should be added
+ * @param {IntegerNum} howMany - the number of columns to insert
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -16188,8 +16218,8 @@
  * @function SpreadsheetApp.Sheet#insertImage
  *
  * @param {Blob} blob - blob containing the image contents, MIME type and, optionally, a name
- * @param {number} column - the column position
- * @param {number} row - the row position
+ * @param {IntegerNum} column - the column position
+ * @param {IntegerNum} row - the row position
  *
  * @return void
  */
@@ -16209,10 +16239,10 @@
  * @function SpreadsheetApp.Sheet#insertImage
  *
  * @param {Blob} blob - blob containing the image contents, MIME type and, optionally, a name
- * @param {number} column - the column position
- * @param {number} row - the row position
- * @param {number} offsetX - horizontal offset from cell corner in pixels
- * @param {number} offsetY - vertical offset from cell corner in pixels
+ * @param {IntegerNum} column - the column position
+ * @param {IntegerNum} row - the row position
+ * @param {IntegerNum} offsetX - horizontal offset from cell corner in pixels
+ * @param {IntegerNum} offsetY - vertical offset from cell corner in pixels
  *
  * @return void
  */
@@ -16230,8 +16260,8 @@
  * @function SpreadsheetApp.Sheet#insertImage
  *
  * @param {String} url - the url of the image
- * @param {number} column - the grid column position
- * @param {number} row - the grid row position
+ * @param {IntegerNum} column - the grid column position
+ * @param {IntegerNum} row - the grid row position
  *
  * @return void
  */
@@ -16249,10 +16279,10 @@
  * @function SpreadsheetApp.Sheet#insertImage
  *
  * @param {String} url - the url for the image
- * @param {number} column - the column position
- * @param {number} row - the row position
- * @param {number} offsetX - horizontal offset from cell corner in pixels
- * @param {number} offsetY - vertical offset from cell corner in pixels
+ * @param {IntegerNum} column - the column position
+ * @param {IntegerNum} row - the row position
+ * @param {IntegerNum} offsetX - horizontal offset from cell corner in pixels
+ * @param {IntegerNum} offsetY - vertical offset from cell corner in pixels
  *
  * @return void
  */
@@ -16270,7 +16300,7 @@
  *
  * @function SpreadsheetApp.Sheet#insertRowAfter
  *
- * @param {number} afterPosition - the row after which the new row should be added
+ * @param {IntegerNum} afterPosition - the row after which the new row should be added
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -16288,7 +16318,7 @@
  *
  * @function SpreadsheetApp.Sheet#insertRowBefore
  *
- * @param {number} beforePosition - the row before which the new row should be added
+ * @param {IntegerNum} beforePosition - the row before which the new row should be added
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -16305,7 +16335,7 @@
  *
  * @function SpreadsheetApp.Sheet#insertRows
  *
- * @param {number} rowIndex - the index to insert a row
+ * @param {IntegerNum} rowIndex - the index to insert a row
  *
  * @return void
  */
@@ -16322,8 +16352,8 @@
  *
  * @function SpreadsheetApp.Sheet#insertRows
  *
- * @param {number} rowIndex - the index to insert a row
- * @param {number} numRows - the number of rows to insert
+ * @param {IntegerNum} rowIndex - the index to insert a row
+ * @param {IntegerNum} numRows - the number of rows to insert
  *
  * @return void
  */
@@ -16341,8 +16371,8 @@
  *
  * @function SpreadsheetApp.Sheet#insertRowsAfter
  *
- * @param {number} afterPosition - the row after which the new rows should be added
- * @param {number} howMany - the number of rows to insert
+ * @param {IntegerNum} afterPosition - the row after which the new rows should be added
+ * @param {IntegerNum} howMany - the number of rows to insert
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -16360,8 +16390,8 @@
  *
  * @function SpreadsheetApp.Sheet#insertRowsBefore
  *
- * @param {number} beforePosition - the row before which the new rows should be added
- * @param {number} howMany - the number of rows to insert
+ * @param {IntegerNum} beforePosition - the row before which the new rows should be added
+ * @param {IntegerNum} howMany - the number of rows to insert
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -16406,7 +16436,7 @@
  * @function SpreadsheetApp.Sheet#moveColumns
  *
  * @param {SpreadsheetApp.Range} columnSpec - A range spanning the columns that should be moved.
- * @param {number} destinationIndex - The index that the columns should be moved to. Note that this index is
+ * @param {IntegerNum} destinationIndex - The index that the columns should be moved to. Note that this index is
      based on the coordinates before the columns are moved. Existing data is shifted right to
      make room for the moved columns while the source columns are removed from the grid.
      Therefore, the data may end up at a different index than originally specified.
@@ -16430,7 +16460,7 @@
  * @function SpreadsheetApp.Sheet#moveRows
  *
  * @param {SpreadsheetApp.Range} rowSpec - A range spanning the rows that should be moved.
- * @param {number} destinationIndex - The index that the rows should be moved to. Note that this index is
+ * @param {IntegerNum} destinationIndex - The index that the rows should be moved to. Note that this index is
      based on the coordinates before the rows are moved. Existing data is shifted down to make
      room for the moved rows while the source rows are removed from the grid. Therefore, the
      data may end up at a different index than originally specified.
@@ -16605,8 +16635,8 @@
  *
  * @function SpreadsheetApp.Sheet#setColumnWidth
  *
- * @param {number} columnPosition - the position of the given column to set
- * @param {number} width - the width in pixels to set it to
+ * @param {IntegerNum} columnPosition - the position of the given column to set
+ * @param {IntegerNum} width - the width in pixels to set it to
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -16624,9 +16654,9 @@
  *
  * @function SpreadsheetApp.Sheet#setColumnWidths
  *
- * @param {number} startColumn - the starting column position to change
- * @param {number} numColumns - the number of columns to change
- * @param {number} width - width in pixels to set it to
+ * @param {IntegerNum} startColumn - the starting column position to change
+ * @param {IntegerNum} numColumns - the number of columns to change
+ * @param {IntegerNum} width - width in pixels to set it to
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -16692,7 +16722,7 @@
  *
  * @function SpreadsheetApp.Sheet#setFrozenColumns
  *
- * @param {number} columns - the number of columns to freeze
+ * @param {IntegerNum} columns - the number of columns to freeze
  *
  * @return void
  */
@@ -16710,7 +16740,7 @@
  *
  * @function SpreadsheetApp.Sheet#setFrozenRows
  *
- * @param {number} rows - the number of rows to freeze
+ * @param {IntegerNum} rows - the number of rows to freeze
  *
  * @return void
  */
@@ -16768,8 +16798,8 @@
  *
  * @function SpreadsheetApp.Sheet#setRowHeight
  *
- * @param {number} rowPosition - the row position to change
- * @param {number} height - height in pixels to set it to
+ * @param {IntegerNum} rowPosition - the row position to change
+ * @param {IntegerNum} height - height in pixels to set it to
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -16787,9 +16817,9 @@
  *
  * @function SpreadsheetApp.Sheet#setRowHeights
  *
- * @param {number} startRow - the starting row position to change
- * @param {number} numRows - the number of rows to change
- * @param {number} height - height in pixels to set it to
+ * @param {IntegerNum} startRow - the starting row position to change
+ * @param {IntegerNum} numRows - the number of rows to change
+ * @param {IntegerNum} height - height in pixels to set it to
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -16809,6 +16839,7 @@
  </code></pre>
  *
  * @function SpreadsheetApp.Sheet#setSheetProtection
+ * @deprecated
  *
  * @param {SpreadsheetApp.PageProtection} permissions - the access permissions object to set on this sheet
  *
@@ -16845,7 +16876,7 @@
  *
  * @function SpreadsheetApp.Sheet#showColumns
  *
- * @param {number} columnIndex - the index of the column to unhide
+ * @param {IntegerNum} columnIndex - the index of the column to unhide
  *
  * @return void
  */
@@ -16862,8 +16893,8 @@
  *
  * @function SpreadsheetApp.Sheet#showColumns
  *
- * @param {number} columnIndex - the starting index of the columns to unhide
- * @param {number} numColumns - the number of columns to unhide
+ * @param {IntegerNum} columnIndex - the starting index of the columns to unhide
+ * @param {IntegerNum} numColumns - the number of columns to unhide
  *
  * @return void
  */
@@ -16880,7 +16911,7 @@
  *
  * @function SpreadsheetApp.Sheet#showRows
  *
- * @param {number} rowIndex - the index of the row to unhide
+ * @param {IntegerNum} rowIndex - the index of the row to unhide
  *
  * @return void
  */
@@ -16897,8 +16928,8 @@
  *
  * @function SpreadsheetApp.Sheet#showRows
  *
- * @param {number} rowIndex - the starting index of the rows to unhide
- * @param {number} numRows - the number of rows to unhide
+ * @param {IntegerNum} rowIndex - the starting index of the rows to unhide
+ * @param {IntegerNum} numRows - the number of rows to unhide
  *
  * @return void
  */
@@ -16929,7 +16960,7 @@
  *
  * @function SpreadsheetApp.Sheet#sort
  *
- * @param {number} columnPosition - the column to sort by
+ * @param {IntegerNum} columnPosition - the column to sort by
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -16947,7 +16978,7 @@
  *
  * @function SpreadsheetApp.Sheet#sort
  *
- * @param {number} columnPosition - the column to sort by
+ * @param {IntegerNum} columnPosition - the column to sort by
  * @param {Boolean} ascending - <code>true</code> for ascending, <code>false</code> for descending
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
@@ -17017,6 +17048,7 @@
  *
  * @return void
  */
+
 
 /**
  * @class SpreadsheetApp.Spreadsheet
@@ -17154,7 +17186,7 @@
  *
  * @function SpreadsheetApp.Spreadsheet#autoResizeColumn
  *
- * @param {number} columnPosition - the position of the given column to resize
+ * @param {IntegerNum} columnPosition - the position of the given column to resize
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -17170,7 +17202,7 @@
  *
  * @function SpreadsheetApp.Spreadsheet#copy
  *
- * @param {String} name - 
+ * @param {String} name
  *
  * @return {SpreadsheetApp.Spreadsheet} the spreadsheet for chaining
  */
@@ -17201,7 +17233,7 @@
  *
  * @function SpreadsheetApp.Spreadsheet#deleteColumn
  *
- * @param {number} columnPosition - the position of the column, starting at 1 for the first column
+ * @param {IntegerNum} columnPosition - the position of the column, starting at 1 for the first column
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -17218,8 +17250,8 @@
  *
  * @function SpreadsheetApp.Spreadsheet#deleteColumns
  *
- * @param {number} columnPosition - the position of the first column to delete
- * @param {number} howMany - the number of columns to delete
+ * @param {IntegerNum} columnPosition - the position of the first column to delete
+ * @param {IntegerNum} howMany - the number of columns to delete
  *
  * @return void
  */
@@ -17236,7 +17268,7 @@
  *
  * @function SpreadsheetApp.Spreadsheet#deleteRow
  *
- * @param {number} rowPosition - the position of the row, starting at 1 for the first row
+ * @param {IntegerNum} rowPosition - the position of the row, starting at 1 for the first row
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -17253,8 +17285,8 @@
  *
  * @function SpreadsheetApp.Spreadsheet#deleteRows
  *
- * @param {number} rowPosition - the position of the first row to delete
- * @param {number} howMany - the number of rows to delete
+ * @param {IntegerNum} rowPosition - the position of the first row to delete
+ * @param {IntegerNum} howMany - the number of rows to delete
  *
  * @return void
  */
@@ -17403,9 +17435,9 @@
  *
  * @function SpreadsheetApp.Spreadsheet#getColumnWidth
  *
- * @param {number} columnPosition - the position of the column to examine
+ * @param {IntegerNum} columnPosition - the position of the column to examine
  *
- * @return {number} column width in pixels
+ * @return {IntegerNum} column width in pixels
  */
 
 /**
@@ -17487,7 +17519,7 @@
  *
  * @function SpreadsheetApp.Spreadsheet#getFrozenColumns
  *
- * @return {number} the number of frozen columns
+ * @return {IntegerNum} the number of frozen columns
  */
 
 /**
@@ -17502,7 +17534,7 @@
  *
  * @function SpreadsheetApp.Spreadsheet#getFrozenRows
  *
- * @return {number} the number of frozen rows
+ * @return {IntegerNum} the number of frozen rows
  */
 
 /**
@@ -17536,7 +17568,7 @@
  *
  * @function SpreadsheetApp.Spreadsheet#getLastColumn
  *
- * @return {number} the last column of the sheet that contains content
+ * @return {IntegerNum} the last column of the sheet that contains content
  */
 
 /**
@@ -17555,7 +17587,7 @@
  *
  * @function SpreadsheetApp.Spreadsheet#getLastRow
  *
- * @return {number} the last row of the sheet that contains content
+ * @return {IntegerNum} the last row of the sheet that contains content
  */
 
 /**
@@ -17597,7 +17629,7 @@
  *
  * @function SpreadsheetApp.Spreadsheet#getNumSheets
  *
- * @return {number} the number of sheets in the spreadsheet
+ * @return {IntegerNum} the number of sheets in the spreadsheet
  */
 
 /**
@@ -17721,9 +17753,9 @@
  *
  * @function SpreadsheetApp.Spreadsheet#getRowHeight
  *
- * @param {number} rowPosition - the *position* of the row to examine
+ * @param {IntegerNum} rowPosition - the *position* of the row to examine
  *
- * @return {number} row height in pixels
+ * @return {IntegerNum} row height in pixels
  */
 
 /**
@@ -17776,7 +17808,7 @@
  *
  * @function SpreadsheetApp.Spreadsheet#getSheetId
  *
- * @return {number} an ID for the sheet unique to the spreadsheet
+ * @return {IntegerNum} an ID for the sheet unique to the spreadsheet
  */
 
 /**
@@ -17814,6 +17846,7 @@
  </code></pre>
  *
  * @function SpreadsheetApp.Spreadsheet#getSheetProtection
+ * @deprecated
  *
  * @return {SpreadsheetApp.PageProtection} an object describing sheet access permissions
  */
@@ -17838,10 +17871,10 @@
  *
  * @function SpreadsheetApp.Spreadsheet#getSheetValues
  *
- * @param {number} startRow - the position of the starting row
- * @param {number} startColumn - the position of the starting column
- * @param {number} numRows - the number of rows to return values for
- * @param {number} numColumns - the number of columns to return values for
+ * @param {IntegerNum} startRow - the position of the starting row
+ * @param {IntegerNum} startColumn - the position of the starting column
+ * @param {IntegerNum} numRows - the number of rows to return values for
+ * @param {IntegerNum} numColumns - the number of columns to return values for
  *
  * @return {Object[][]} a two dimension array of values
  */
@@ -17952,7 +17985,7 @@
  *
  * @function SpreadsheetApp.Spreadsheet#insertColumnAfter
  *
- * @param {number} afterPosition - the column after which the new column should be added
+ * @param {IntegerNum} afterPosition - the column after which the new column should be added
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -17970,7 +18003,7 @@
  *
  * @function SpreadsheetApp.Spreadsheet#insertColumnBefore
  *
- * @param {number} beforePosition - the column before which the new column should be added
+ * @param {IntegerNum} beforePosition - the column before which the new column should be added
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -17988,8 +18021,8 @@
  *
  * @function SpreadsheetApp.Spreadsheet#insertColumnsAfter
  *
- * @param {number} afterPosition - the column after which the new column should be added
- * @param {number} howMany - the number of columns to insert
+ * @param {IntegerNum} afterPosition - the column after which the new column should be added
+ * @param {IntegerNum} howMany - the number of columns to insert
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -18007,8 +18040,8 @@
  *
  * @function SpreadsheetApp.Spreadsheet#insertColumnsBefore
  *
- * @param {number} beforePosition - the column before which the new column should be added
- * @param {number} howMany - the number of columns to insert
+ * @param {IntegerNum} beforePosition - the column before which the new column should be added
+ * @param {IntegerNum} howMany - the number of columns to insert
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -18028,8 +18061,8 @@
  * @function SpreadsheetApp.Spreadsheet#insertImage
  *
  * @param {Blob} blob - blob containing the image contents, MIME type and, optionally, a name
- * @param {number} column - the column position
- * @param {number} row - the row position
+ * @param {IntegerNum} column - the column position
+ * @param {IntegerNum} row - the row position
  *
  * @return void
  */
@@ -18049,10 +18082,10 @@
  * @function SpreadsheetApp.Spreadsheet#insertImage
  *
  * @param {Blob} blob - blob containing the image contents, MIME type and, optionally, a name
- * @param {number} column - the column position
- * @param {number} row - the row position
- * @param {number} offsetX - horizontal offset from cell corner in pixels
- * @param {number} offsetY - vertical offset from cell corner in pixels
+ * @param {IntegerNum} column - the column position
+ * @param {IntegerNum} row - the row position
+ * @param {IntegerNum} offsetX - horizontal offset from cell corner in pixels
+ * @param {IntegerNum} offsetY - vertical offset from cell corner in pixels
  *
  * @return void
  */
@@ -18070,8 +18103,8 @@
  * @function SpreadsheetApp.Spreadsheet#insertImage
  *
  * @param {String} url - the url of the image
- * @param {number} column - the grid column position
- * @param {number} row - the grid row position
+ * @param {IntegerNum} column - the grid column position
+ * @param {IntegerNum} row - the grid row position
  *
  * @return void
  */
@@ -18089,10 +18122,10 @@
  * @function SpreadsheetApp.Spreadsheet#insertImage
  *
  * @param {String} url - the url for the image
- * @param {number} column - the column position
- * @param {number} row - the row position
- * @param {number} offsetX - horizontal offset from cell corner in pixels
- * @param {number} offsetY - vertical offset from cell corner in pixels
+ * @param {IntegerNum} column - the column position
+ * @param {IntegerNum} row - the row position
+ * @param {IntegerNum} offsetX - horizontal offset from cell corner in pixels
+ * @param {IntegerNum} offsetY - vertical offset from cell corner in pixels
  *
  * @return void
  */
@@ -18110,7 +18143,7 @@
  *
  * @function SpreadsheetApp.Spreadsheet#insertRowAfter
  *
- * @param {number} afterPosition - the row after which the new row should be added
+ * @param {IntegerNum} afterPosition - the row after which the new row should be added
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -18128,7 +18161,7 @@
  *
  * @function SpreadsheetApp.Spreadsheet#insertRowBefore
  *
- * @param {number} beforePosition - the row before which the new row should be added
+ * @param {IntegerNum} beforePosition - the row before which the new row should be added
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -18146,8 +18179,8 @@
  *
  * @function SpreadsheetApp.Spreadsheet#insertRowsAfter
  *
- * @param {number} afterPosition - the row after which the new rows should be added
- * @param {number} howMany - the number of rows to insert
+ * @param {IntegerNum} afterPosition - the row after which the new rows should be added
+ * @param {IntegerNum} howMany - the number of rows to insert
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -18165,8 +18198,8 @@
  *
  * @function SpreadsheetApp.Spreadsheet#insertRowsBefore
  *
- * @param {number} beforePosition - the row before which the new rows should be added
- * @param {number} howMany - the number of rows to insert
+ * @param {IntegerNum} beforePosition - the row before which the new rows should be added
+ * @param {IntegerNum} howMany - the number of rows to insert
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -18198,7 +18231,7 @@
  *
  * @function SpreadsheetApp.Spreadsheet#insertSheet
  *
- * @param {number} sheetIndex - the index of the newly created sheet. To insert a sheet as the first one in
+ * @param {IntegerNum} sheetIndex - the index of the newly created sheet. To insert a sheet as the first one in
      the spreadsheet, set it to 0.
  *
  * @return {SpreadsheetApp.Sheet} the new sheet
@@ -18217,7 +18250,7 @@
  *
  * @function SpreadsheetApp.Spreadsheet#insertSheet
  *
- * @param {number} sheetIndex - index of the newly created sheet. To insert a sheet as the first one in the
+ * @param {IntegerNum} sheetIndex - index of the newly created sheet. To insert a sheet as the first one in the
      spreadsheet, set it to 0.
  * @param {Object} options - optional JavaScript advanced arguments
  *
@@ -18273,7 +18306,7 @@
  * @function SpreadsheetApp.Spreadsheet#insertSheet
  *
  * @param {String} sheetName - the name of the new sheet
- * @param {number} sheetIndex - the index of the newly created sheet. To insert a sheet as the first one in
+ * @param {IntegerNum} sheetIndex - the index of the newly created sheet. To insert a sheet as the first one in
      the spreadsheet, set it to 0.
  *
  * @return {SpreadsheetApp.Sheet} the new sheet
@@ -18294,7 +18327,7 @@
  * @function SpreadsheetApp.Spreadsheet#insertSheet
  *
  * @param {String} sheetName - the name of the new sheet
- * @param {number} sheetIndex - index of the newly inserted sheet. To insert a sheet as the first one in a
+ * @param {IntegerNum} sheetIndex - index of the newly inserted sheet. To insert a sheet as the first one in a
      spreadsheet, set it to 0.
  * @param {Object} options - optional JavaScript advanced arguments
  *
@@ -18338,6 +18371,7 @@
  </code></pre>
  *
  * @function SpreadsheetApp.Spreadsheet#isAnonymousView
+ * @deprecated
  *
  * @return {Boolean} true if the document allows anonymous viewing, false otherwise
  */
@@ -18359,6 +18393,7 @@
  </code></pre>
  *
  * @function SpreadsheetApp.Spreadsheet#isAnonymousWrite
+ * @deprecated
  *
  * @return {Boolean} true if the document allows anonymous editing, false otherwise
  */
@@ -18385,7 +18420,7 @@
  *
  * @function SpreadsheetApp.Spreadsheet#moveActiveSheet
  *
- * @param {number} pos - a position to move the active sheet to in the list of sheets
+ * @param {IntegerNum} pos - a position to move the active sheet to in the list of sheets
  *
  * @return void
  */
@@ -18669,6 +18704,7 @@
  </code></pre>
  *
  * @function SpreadsheetApp.Spreadsheet#setAnonymousAccess
+ * @deprecated
  *
  * @param {Boolean} anonymousReadAllowed - true to allow anonymous reads, false otherwise
  * @param {Boolean} anonymousWriteAllowed - true to allow anonymous reads, false otherwise
@@ -18689,8 +18725,8 @@
  *
  * @function SpreadsheetApp.Spreadsheet#setColumnWidth
  *
- * @param {number} columnPosition - the position of the given column to set
- * @param {number} width - the width in pixels to set it to
+ * @param {IntegerNum} columnPosition - the position of the given column to set
+ * @param {IntegerNum} width - the width in pixels to set it to
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -18737,7 +18773,7 @@
  *
  * @function SpreadsheetApp.Spreadsheet#setFrozenColumns
  *
- * @param {number} columns - the number of columns to freeze
+ * @param {IntegerNum} columns - the number of columns to freeze
  *
  * @return void
  */
@@ -18755,7 +18791,7 @@
  *
  * @function SpreadsheetApp.Spreadsheet#setFrozenRows
  *
- * @param {number} rows - the number of rows to freeze
+ * @param {IntegerNum} rows - the number of rows to freeze
  *
  * @return void
  */
@@ -18790,8 +18826,8 @@
  *
  * @function SpreadsheetApp.Spreadsheet#setRowHeight
  *
- * @param {number} rowPosition - the row position to change
- * @param {number} height - height in pixels to set it to
+ * @param {IntegerNum} rowPosition - the row position to change
+ * @param {IntegerNum} height - height in pixels to set it to
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -18811,6 +18847,7 @@
  </code></pre>
  *
  * @function SpreadsheetApp.Spreadsheet#setSheetProtection
+ * @deprecated
  *
  * @param {SpreadsheetApp.PageProtection} permissions - the access permissions object to set on this sheet
  *
@@ -18898,7 +18935,7 @@
  *
  * @function SpreadsheetApp.Spreadsheet#sort
  *
- * @param {number} columnPosition - the column to sort by
+ * @param {IntegerNum} columnPosition - the column to sort by
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
  */
@@ -18916,7 +18953,7 @@
  *
  * @function SpreadsheetApp.Spreadsheet#sort
  *
- * @param {number} columnPosition - the column to sort by
+ * @param {IntegerNum} columnPosition - the column to sort by
  * @param {Boolean} ascending - <code>true</code> for ascending, <code>false</code> for descending
  *
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
@@ -19030,6 +19067,24 @@
  * @return void
  */
 
+
+/**
+ * @class SpreadsheetApp.TextDirection
+ */
+
+/**
+ * Left-to-right text direction.
+ *
+ * @typedef {SpreadsheetApp.TextDirection} SpreadsheetApp.TextDirection.LEFT_TO_RIGHT
+ */
+
+/**
+ * Right-to-left text direction.
+ *
+ * @typedef {SpreadsheetApp.TextDirection} SpreadsheetApp.TextDirection.RIGHT_TO_LEFT
+ */
+
+
 /**
  * @class SpreadsheetApp.TextRotation
  */
@@ -19041,7 +19096,7 @@
  *
  * @function SpreadsheetApp.TextRotation#getDegrees
  *
- * @return {number} The degrees between standard text rotation and the current text rotation.
+ * @return {IntegerNum} The degrees between standard text rotation and the current text rotation.
  */
 
 /**
@@ -19051,4 +19106,51 @@
  *
  * @return {Boolean} Whether or not the text is stacked vertically.
  */
+
+
+/**
+ * @class SpreadsheetApp.TextToColumnsDelimiter
+ */
+
+/**
+ * @typedef {SpreadsheetApp.TextToColumnsDelimiter} SpreadsheetApp.TextToColumnsDelimiter.COMMA
+ */
+
+/**
+ * @typedef {SpreadsheetApp.TextToColumnsDelimiter} SpreadsheetApp.TextToColumnsDelimiter.PERIOD
+ */
+
+/**
+ * @typedef {SpreadsheetApp.TextToColumnsDelimiter} SpreadsheetApp.TextToColumnsDelimiter.SEMICOLON
+ */
+
+/**
+ * @typedef {SpreadsheetApp.TextToColumnsDelimiter} SpreadsheetApp.TextToColumnsDelimiter.SPACE
+ */
+
+
+/**
+ * @class SpreadsheetApp.WrapStrategy
+ */
+
+/**
+ * Clip lines that are longer than the cell width.
+ *
+ * @typedef {SpreadsheetApp.WrapStrategy} SpreadsheetApp.WrapStrategy.CLIP
+ */
+
+/**
+ * Overflow lines into the next cell, so long as that cell is empty. If the next cell over is
+ non-empty, this behaves the same as CLIP.
+ *
+ * @typedef {SpreadsheetApp.WrapStrategy} SpreadsheetApp.WrapStrategy.OVERFLOW
+ */
+
+/**
+ * Wrap lines that are longer than the cell width onto a new line. Single words that are longer
+ than a line are wrapped at the character level.
+ *
+ * @typedef {SpreadsheetApp.WrapStrategy} SpreadsheetApp.WrapStrategy.WRAP
+ */
+
 

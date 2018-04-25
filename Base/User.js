@@ -1,3 +1,7 @@
+/**********************************************
+ * @namespace User
+ ***********************************************/
+
 /**
  * @class User
  */
@@ -16,7 +20,7 @@
  Logger.log(Session.getActiveUser().getEmail());
  </pre>
  *
- * @function User.getEmail
+ * @function User#getEmail
  *
  * @return {String} the user's email's address, or a blank string if security policies do not allow access
      to the user's email address
@@ -30,8 +34,10 @@
  Logger.log(Session.getActiveUser().getUserLoginId());
  </pre>
  *
- * @function User.getUserLoginId
+ * @function User#getUserLoginId
+ * @deprecated
  *
  * @return {String} the user's email's address
  */
+
 

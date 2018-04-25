@@ -2,7 +2,6 @@
  * @namespace BigNumber
  ***********************************************/
 
-
 /**
  * @function BigNumber.abs
  *
@@ -12,7 +11,7 @@
 /**
  * @function BigNumber.add
  *
- * @param {BigNumber} augend - undefined
+ * @param {BigNumber} augend
  *
  * @return {BigNumber}
  */
@@ -20,7 +19,7 @@
 /**
  * @function BigNumber.add
  *
- * @param {Number} augend - undefined
+ * @param {Number} augend
  *
  * @return {BigNumber}
  */
@@ -28,23 +27,23 @@
 /**
  * @function BigNumber.compareTo
  *
- * @param {BigNumber} value - undefined
+ * @param {BigNumber} value
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
  * @function BigNumber.compareTo
  *
- * @param {Number} value - undefined
+ * @param {Number} value
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
  * @function BigNumber.divide
  *
- * @param {BigNumber} divisor - undefined
+ * @param {BigNumber} divisor
  *
  * @return {BigNumber}
  */
@@ -52,7 +51,7 @@
 /**
  * @function BigNumber.divide
  *
- * @param {Number} divisor - undefined
+ * @param {Number} divisor
  *
  * @return {BigNumber}
  */
@@ -60,7 +59,7 @@
 /**
  * @function BigNumber.divideAndRemainder
  *
- * @param {BigNumber} divisor - undefined
+ * @param {BigNumber} divisor
  *
  * @return {BigNumber[]}
  */
@@ -68,7 +67,7 @@
 /**
  * @function BigNumber.divideAndRemainder
  *
- * @param {Number} divisor - undefined
+ * @param {Number} divisor
  *
  * @return {BigNumber[]}
  */
@@ -76,7 +75,7 @@
 /**
  * @function BigNumber.divideToIntegralValue
  *
- * @param {BigNumber} divisor - undefined
+ * @param {BigNumber} divisor
  *
  * @return {BigNumber}
  */
@@ -84,7 +83,7 @@
 /**
  * @function BigNumber.divideToIntegralValue
  *
- * @param {Number} divisor - undefined
+ * @param {Number} divisor
  *
  * @return {BigNumber}
  */
@@ -92,7 +91,7 @@
 /**
  * @function BigNumber.max
  *
- * @param {BigNumber} value - undefined
+ * @param {BigNumber} value
  *
  * @return {BigNumber}
  */
@@ -100,7 +99,7 @@
 /**
  * @function BigNumber.max
  *
- * @param {Number} value - undefined
+ * @param {Number} value
  *
  * @return {BigNumber}
  */
@@ -108,7 +107,7 @@
 /**
  * @function BigNumber.min
  *
- * @param {BigNumber} value - undefined
+ * @param {BigNumber} value
  *
  * @return {BigNumber}
  */
@@ -116,7 +115,7 @@
 /**
  * @function BigNumber.min
  *
- * @param {Number} value - undefined
+ * @param {Number} value
  *
  * @return {BigNumber}
  */
@@ -124,7 +123,7 @@
 /**
  * @function BigNumber.movePointLeft
  *
- * @param {number} shift - undefined
+ * @param {IntegerNum} shift
  *
  * @return {BigNumber}
  */
@@ -132,7 +131,7 @@
 /**
  * @function BigNumber.movePointRight
  *
- * @param {number} shift - undefined
+ * @param {IntegerNum} shift
  *
  * @return {BigNumber}
  */
@@ -140,7 +139,7 @@
 /**
  * @function BigNumber.multiply
  *
- * @param {BigNumber} multiplicand - undefined
+ * @param {BigNumber} multiplicand
  *
  * @return {BigNumber}
  */
@@ -148,7 +147,7 @@
 /**
  * @function BigNumber.multiply
  *
- * @param {Number} multiplicand - undefined
+ * @param {Number} multiplicand
  *
  * @return {BigNumber}
  */
@@ -168,7 +167,7 @@
 /**
  * @function BigNumber.parse
  *
- * @param {String} value - undefined
+ * @param {String} value
  *
  * @return {BigNumber}
  */
@@ -176,8 +175,8 @@
 /**
  * @function BigNumber.parse
  *
- * @param {String} value - undefined
- * @param {number} radix - undefined
+ * @param {String} value
+ * @param {IntegerNum} radix
  *
  * @return {BigNumber}
  */
@@ -191,7 +190,7 @@
 /**
  * @function BigNumber.pow
  *
- * @param {number} exponent - undefined
+ * @param {IntegerNum} exponent
  *
  * @return {BigNumber}
  */
@@ -199,13 +198,13 @@
 /**
  * @function BigNumber.precision
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
  * @function BigNumber.remainder
  *
- * @param {BigNumber} divisor - undefined
+ * @param {BigNumber} divisor
  *
  * @return {BigNumber}
  */
@@ -213,7 +212,7 @@
 /**
  * @function BigNumber.remainder
  *
- * @param {Number} divisor - undefined
+ * @param {Number} divisor
  *
  * @return {BigNumber}
  */
@@ -221,13 +220,13 @@
 /**
  * @function BigNumber.sign
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
  * @function BigNumber.subtract
  *
- * @param {BigNumber} subtrahend - undefined
+ * @param {BigNumber} subtrahend
  *
  * @return {BigNumber}
  */
@@ -235,7 +234,7 @@
 /**
  * @function BigNumber.subtract
  *
- * @param {Number} subtrahend - undefined
+ * @param {Number} subtrahend
  *
  * @return {BigNumber}
  */
@@ -259,8 +258,29 @@
  */
 
 /**
+ * @function BigNumber.toString
+ *
+ * @return {String}
+ */
+
+/**
  * @function BigNumber.unitInTheLastPlaces
  *
  * @return {BigNumber}
  */
+
+/**
+ * @function BigNumber.valueOf
+ *
+ * @return {Number}
+ */
+
+/**
+ * @function BigNumber.valueOf
+ *
+ * @param {Number} value
+ *
+ * @return {BigNumber}
+ */
+
 

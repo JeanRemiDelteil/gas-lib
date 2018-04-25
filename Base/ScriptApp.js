@@ -2,175 +2,35 @@
  * @namespace ScriptApp
  ***********************************************/
 
-
 /**
  * An enumeration that identifies which categories of authorized services Apps Script is able to
  execute through a triggered function.
  *
- * @class ScriptApp.AuthMode
- */
-
-/**
- * @typedef {ScriptApp.AuthMode} ScriptApp.AuthMode.CUSTOM_FUNCTION
- * 
- * A mode that allows access to a limited subset of services for use in custom spreadsheet
- functions. Some of these services — including read-only access to Spreadsheet service —
- normally require authorization, but are permitted without authorization when used in a custom
- function. Because custom functions do not include an event parameter, this value is never
- returned; it is documented only to demonstrate that custom functions run in their own
- authorization mode.
- */
-
-/**
- * @typedef {ScriptApp.AuthMode} ScriptApp.AuthMode.FULL
- * 
- * A mode that allows access to all services that require authorization. This mode occurs when an
- add-on or a script executes as the result of any trigger other than the cases described for
- <code>LIMITED</code> or <code>NONE</code>.
- */
-
-/**
- * @typedef {ScriptApp.AuthMode} ScriptApp.AuthMode.LIMITED
- * 
- * A mode that allows access to a limited subset of services. This mode occurs when an add-on or a
- script <a href="/apps-script/scripts_containers">bound</a> to a document executes an <code>onOpen(e)</code> or <code>onEdit(e)</code> simple trigger, except in the case described for <code>NONE</code>.
- */
-
-/**
- * @typedef {ScriptApp.AuthMode} ScriptApp.AuthMode.NONE
- * 
- * A mode that does not allow access to any services that require authorization. This mode occurs
- when an add-on executes an <code>onOpen(e)</code> simple trigger, and the user has installed an
- add-on in a different document but the add-on has not been used in the current document.
+ * @typedef {ScriptApp.AuthMode} ScriptApp.AuthMode
  */
 
 /**
  * An enumeration denoting the authorization status of a script.
  *
- * @class ScriptApp.AuthorizationStatus
- */
-
-/**
- * @typedef {ScriptApp.AuthorizationStatus} ScriptApp.AuthorizationStatus.NOT_REQUIRED
- * 
- * The user has granted this script all the authorization it currently requires.
- */
-
-/**
- * @typedef {ScriptApp.AuthorizationStatus} ScriptApp.AuthorizationStatus.REQUIRED
- * 
- * The user needs to authorize this script to use one or more services. In most cases, the script
- will prompt the user for authorization the next time it runs; however, if the script is
- published as an <a href="/apps-script/add-ons">add-on</a> that uses <a
- href="/apps-script/understanding_triggers">installable triggers</a>, the trigger will run the
- script without prompting for authorization but will throw an exception if the script attempts
- to call the unauthorized service.
+ * @typedef {ScriptApp.AuthorizationStatus} ScriptApp.AuthorizationStatus
  */
 
 /**
  * An enumeration denoting the type of triggered event.
  *
- * @class ScriptApp.EventType
- */
-
-/**
- * @typedef {ScriptApp.EventType} ScriptApp.EventType.CLOCK
- * 
- * The trigger fires once the time-driven event reaches a specific time.
- */
-
-/**
- * @typedef {ScriptApp.EventType} ScriptApp.EventType.ON_CHANGE
- * 
- * The trigger fires once the user changes the Google Sheets file (for example, by adding a row,
- which counts as a change instead of an edit).
- */
-
-/**
- * @typedef {ScriptApp.EventType} ScriptApp.EventType.ON_EDIT
- * 
- * The trigger fires once the user edits the Google Sheets file (for example, by entering a new
- value into a cell, which counts as an edit instead of a change).
- */
-
-/**
- * @typedef {ScriptApp.EventType} ScriptApp.EventType.ON_EVENT_UPDATED
- * 
- * The trigger fires once an event gets created, updated, or deleted on the specified Google
- Calendar.
- */
-
-/**
- * @typedef {ScriptApp.EventType} ScriptApp.EventType.ON_FORM_SUBMIT
- * 
- * The trigger fires once the user responds to a Google Form. This trigger is available either in
- the Google Form itself or in the Google Sheets file that the form sends its responses to.
- */
-
-/**
- * @typedef {ScriptApp.EventType} ScriptApp.EventType.ON_OPEN
- * 
- * The trigger fires once the user opens the Google Docs, Sheets, or Forms file.
+ * @typedef {ScriptApp.EventType} ScriptApp.EventType
  */
 
 /**
  * An enumeration denoting how the script was installed to the user as an add-on.
  *
- * @class ScriptApp.InstallationSource
- */
-
-/**
- * @typedef {ScriptApp.InstallationSource} ScriptApp.InstallationSource.APPS_MARKETPLACE_DOMAIN_ADD_ON
- * 
- * Add-on was installed by the administrator for the user's domain.
- */
-
-/**
- * @typedef {ScriptApp.InstallationSource} ScriptApp.InstallationSource.NONE
- * 
- * Script is not running as an add-on.
- */
-
-/**
- * @typedef {ScriptApp.InstallationSource} ScriptApp.InstallationSource.WEB_STORE_ADD_ON
- * 
- * Add-on was installed by the user from the Chrome Web Store.
+ * @typedef {ScriptApp.InstallationSource} ScriptApp.InstallationSource
  */
 
 /**
  * An enumeration denoting the source of the event that causes the trigger to fire.
  *
- * @class ScriptApp.TriggerSource
- */
-
-/**
- * @typedef {ScriptApp.TriggerSource} ScriptApp.TriggerSource.CALENDAR
- * 
- * Google Calendar causes the trigger to fire.
- */
-
-/**
- * @typedef {ScriptApp.TriggerSource} ScriptApp.TriggerSource.CLOCK
- * 
- * A time-driven event causes the trigger to fire.
- */
-
-/**
- * @typedef {ScriptApp.TriggerSource} ScriptApp.TriggerSource.DOCUMENTS
- * 
- * Google Docs causes the trigger to fire.
- */
-
-/**
- * @typedef {ScriptApp.TriggerSource} ScriptApp.TriggerSource.FORMS
- * 
- * Google Forms causes the trigger to fire.
- */
-
-/**
- * @typedef {ScriptApp.TriggerSource} ScriptApp.TriggerSource.SPREADSHEETS
- * 
- * Google Sheets causes the trigger to fire.
+ * @typedef {ScriptApp.TriggerSource} ScriptApp.TriggerSource
  */
 
 /**
@@ -254,6 +114,7 @@
  project key of the outer-most script being executed.
  *
  * @function ScriptApp.getProjectKey
+ * @deprecated
  *
  * @return {String} the project key of the current script
  */
@@ -288,6 +149,7 @@
  </code></pre>
  *
  * @function ScriptApp.getScriptTriggers
+ * @deprecated
  *
  * @return {ScriptApp.Trigger[]} an array of triggers associated with this script
  */
@@ -434,6 +296,46 @@
  * @return {ScriptApp.TriggerBuilder} an object used to continue the trigger-building process
  */
 
+
+/**
+ * @class ScriptApp.AuthMode
+ */
+
+/**
+ * A mode that allows access to a limited subset of services for use in custom spreadsheet
+ functions. Some of these services — including read-only access to Spreadsheet service —
+ normally require authorization, but are permitted without authorization when used in a custom
+ function. Because custom functions do not include an event parameter, this value is never
+ returned; it is documented only to demonstrate that custom functions run in their own
+ authorization mode.
+ *
+ * @typedef {ScriptApp.AuthMode} ScriptApp.AuthMode.CUSTOM_FUNCTION
+ */
+
+/**
+ * A mode that allows access to all services that require authorization. This mode occurs when an
+ add-on or a script executes as the result of any trigger other than the cases described for
+ <code>LIMITED</code> or <code>NONE</code>.
+ *
+ * @typedef {ScriptApp.AuthMode} ScriptApp.AuthMode.FULL
+ */
+
+/**
+ * A mode that allows access to a limited subset of services. This mode occurs when an add-on or a
+ script <a href="/apps-script/scripts_containers">bound</a> to a document executes an <code>onOpen(e)</code> or <code>onEdit(e)</code> simple trigger, except in the case described for <code>NONE</code>.
+ *
+ * @typedef {ScriptApp.AuthMode} ScriptApp.AuthMode.LIMITED
+ */
+
+/**
+ * A mode that does not allow access to any services that require authorization. This mode occurs
+ when an add-on executes an <code>onOpen(e)</code> simple trigger, and the user has installed an
+ add-on in a different document but the add-on has not been used in the current document.
+ *
+ * @typedef {ScriptApp.AuthMode} ScriptApp.AuthMode.NONE
+ */
+
+
 /**
  * @class ScriptApp.AuthorizationInfo
  */
@@ -469,6 +371,29 @@
  * @return {String} a URL that can be used to authorize the script
  */
 
+
+/**
+ * @class ScriptApp.AuthorizationStatus
+ */
+
+/**
+ * The user has granted this script all the authorization it currently requires.
+ *
+ * @typedef {ScriptApp.AuthorizationStatus} ScriptApp.AuthorizationStatus.NOT_REQUIRED
+ */
+
+/**
+ * The user needs to authorize this script to use one or more services. In most cases, the script
+ will prompt the user for authorization the next time it runs; however, if the script is
+ published as an <a href="/apps-script/add-ons">add-on</a> that uses <a
+ href="/apps-script/understanding_triggers">installable triggers</a>, the trigger will run the
+ script without prompting for authorization but will throw an exception if the script attempts
+ to call the unauthorized service.
+ *
+ * @typedef {ScriptApp.AuthorizationStatus} ScriptApp.AuthorizationStatus.REQUIRED
+ */
+
+
 /**
  * @class ScriptApp.CalendarTriggerBuilder
  */
@@ -489,6 +414,7 @@
  * @return {ScriptApp.CalendarTriggerBuilder}
  */
 
+
 /**
  * @class ScriptApp.ClockTriggerBuilder
  */
@@ -507,7 +433,7 @@
  *
  * @function ScriptApp.ClockTriggerBuilder#after
  *
- * @param {number} durationMilliseconds - the duration (in milliseconds) after the current time when the
+ * @param {IntegerNum} durationMilliseconds - the duration (in milliseconds) after the current time when the
      trigger should run
  *
  * @return {ScriptApp.ClockTriggerBuilder} the builder for chaining
@@ -545,10 +471,10 @@
  *
  * @function ScriptApp.ClockTriggerBuilder#atDate
  *
- * @param {number} year - the calendar year to schedule the trigger
- * @param {number} month - the calendar month to schedule the trigger (should be a number between 1 and 12,
+ * @param {IntegerNum} year - the calendar year to schedule the trigger
+ * @param {IntegerNum} month - the calendar month to schedule the trigger (should be a number between 1 and 12,
      inclusive)
- * @param {number} day - the calendar day to schedule the trigger (should be a number between 1 and 31,
+ * @param {IntegerNum} day - the calendar day to schedule the trigger (should be a number between 1 and 31,
      inclusive)
  *
  * @return {ScriptApp.ClockTriggerBuilder} the builder for chaining
@@ -568,7 +494,7 @@
  *
  * @function ScriptApp.ClockTriggerBuilder#atHour
  *
- * @param {number} hour - the hour at which to fire
+ * @param {IntegerNum} hour - the hour at which to fire
  *
  * @return {ScriptApp.ClockTriggerBuilder} the builder for chaining
  */
@@ -593,7 +519,7 @@
  *
  * @function ScriptApp.ClockTriggerBuilder#everyDays
  *
- * @param {number} n - the number of days between executions
+ * @param {IntegerNum} n - the number of days between executions
  *
  * @return {ScriptApp.ClockTriggerBuilder} the builder for chaining
  */
@@ -610,7 +536,7 @@
  *
  * @function ScriptApp.ClockTriggerBuilder#everyHours
  *
- * @param {number} n - the number of hours between executions
+ * @param {IntegerNum} n - the number of hours between executions
  *
  * @return {ScriptApp.ClockTriggerBuilder} the builder for chaining
  */
@@ -627,7 +553,7 @@
  *
  * @function ScriptApp.ClockTriggerBuilder#everyMinutes
  *
- * @param {number} n - the number of minutes between executions
+ * @param {IntegerNum} n - the number of minutes between executions
  *
  * @return {ScriptApp.ClockTriggerBuilder} the builder for chaining
  */
@@ -644,7 +570,7 @@
  *
  * @function ScriptApp.ClockTriggerBuilder#everyWeeks
  *
- * @param {number} n - the number of weeks between executions
+ * @param {IntegerNum} n - the number of weeks between executions
  *
  * @return {ScriptApp.ClockTriggerBuilder} the builder for chaining
  */
@@ -689,7 +615,7 @@
  *
  * @function ScriptApp.ClockTriggerBuilder#nearMinute
  *
- * @param {number} minute - the minute at which to fire
+ * @param {IntegerNum} minute - the minute at which to fire
  *
  * @return {ScriptApp.ClockTriggerBuilder} the builder for chaining
  */
@@ -707,7 +633,7 @@
  *
  * @function ScriptApp.ClockTriggerBuilder#onMonthDay
  *
- * @param {number} day - the day of the month the trigger should be scheduled for
+ * @param {IntegerNum} day - the day of the month the trigger should be scheduled for
  *
  * @return {ScriptApp.ClockTriggerBuilder} the builder for chaining
  */
@@ -728,6 +654,7 @@
  *
  * @return {ScriptApp.ClockTriggerBuilder} the builder for chaining
  */
+
 
 /**
  * @class ScriptApp.DocumentTriggerBuilder
@@ -756,6 +683,52 @@
  *
  * @return {ScriptApp.DocumentTriggerBuilder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/document-trigger-builder.html'>DocumentTriggerBuilder</a></code>, for chaining
  */
+
+
+/**
+ * @class ScriptApp.EventType
+ */
+
+/**
+ * The trigger fires once the time-driven event reaches a specific time.
+ *
+ * @typedef {ScriptApp.EventType} ScriptApp.EventType.CLOCK
+ */
+
+/**
+ * The trigger fires once the user changes the Google Sheets file (for example, by adding a row,
+ which counts as a change instead of an edit).
+ *
+ * @typedef {ScriptApp.EventType} ScriptApp.EventType.ON_CHANGE
+ */
+
+/**
+ * The trigger fires once the user edits the Google Sheets file (for example, by entering a new
+ value into a cell, which counts as an edit instead of a change).
+ *
+ * @typedef {ScriptApp.EventType} ScriptApp.EventType.ON_EDIT
+ */
+
+/**
+ * The trigger fires once an event gets created, updated, or deleted on the specified Google
+ Calendar.
+ *
+ * @typedef {ScriptApp.EventType} ScriptApp.EventType.ON_EVENT_UPDATED
+ */
+
+/**
+ * The trigger fires once the user responds to a Google Form. This trigger is available either in
+ the Google Form itself or in the Google Sheets file that the form sends its responses to.
+ *
+ * @typedef {ScriptApp.EventType} ScriptApp.EventType.ON_FORM_SUBMIT
+ */
+
+/**
+ * The trigger fires once the user opens the Google Docs, Sheets, or Forms file.
+ *
+ * @typedef {ScriptApp.EventType} ScriptApp.EventType.ON_OPEN
+ */
+
 
 /**
  * @class ScriptApp.FormTriggerBuilder
@@ -800,6 +773,30 @@
  *
  * @return {ScriptApp.FormTriggerBuilder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/form-trigger-builder.html'>FormTriggerBuilder</a></code>, for chaining
  */
+
+
+/**
+ * @class ScriptApp.InstallationSource
+ */
+
+/**
+ * Add-on was installed by the administrator for the user's domain.
+ *
+ * @typedef {ScriptApp.InstallationSource} ScriptApp.InstallationSource.APPS_MARKETPLACE_DOMAIN_ADD_ON
+ */
+
+/**
+ * Script is not running as an add-on.
+ *
+ * @typedef {ScriptApp.InstallationSource} ScriptApp.InstallationSource.NONE
+ */
+
+/**
+ * Add-on was installed by the user from the Chrome Web Store.
+ *
+ * @typedef {ScriptApp.InstallationSource} ScriptApp.InstallationSource.WEB_STORE_ADD_ON
+ */
+
 
 /**
  * @class ScriptApp.Service
@@ -847,6 +844,7 @@
  *
  * @return {Boolean} <code>true</code> if the script is published as a web app; <code>false</code> if not
  */
+
 
 /**
  * @class ScriptApp.SpreadsheetTriggerBuilder
@@ -924,6 +922,7 @@
  * @return {ScriptApp.SpreadsheetTriggerBuilder} a builder for chaining
  */
 
+
 /**
  * @class ScriptApp.StateTokenBuilder
  */
@@ -980,10 +979,11 @@
  *
  * @function ScriptApp.StateTokenBuilder#withTimeout
  *
- * @param {number} seconds - the duration for which the token is valid; the maximum value is <code>3600</code>
+ * @param {IntegerNum} seconds - the duration for which the token is valid; the maximum value is <code>3600</code>
  *
  * @return {ScriptApp.StateTokenBuilder} the state token builder, for chaining
  */
+
 
 /**
  * @class ScriptApp.Trigger
@@ -1063,6 +1063,7 @@
  *
  * @return {String} the unique identifier of the trigger
  */
+
 
 /**
  * @class ScriptApp.TriggerBuilder
@@ -1195,4 +1196,40 @@
  *
  * @return {ScriptApp.ClockTriggerBuilder} the new ClockTriggerBuilder
  */
+
+
+/**
+ * @class ScriptApp.TriggerSource
+ */
+
+/**
+ * Google Calendar causes the trigger to fire.
+ *
+ * @typedef {ScriptApp.TriggerSource} ScriptApp.TriggerSource.CALENDAR
+ */
+
+/**
+ * A time-driven event causes the trigger to fire.
+ *
+ * @typedef {ScriptApp.TriggerSource} ScriptApp.TriggerSource.CLOCK
+ */
+
+/**
+ * Google Docs causes the trigger to fire.
+ *
+ * @typedef {ScriptApp.TriggerSource} ScriptApp.TriggerSource.DOCUMENTS
+ */
+
+/**
+ * Google Forms causes the trigger to fire.
+ *
+ * @typedef {ScriptApp.TriggerSource} ScriptApp.TriggerSource.FORMS
+ */
+
+/**
+ * Google Sheets causes the trigger to fire.
+ *
+ * @typedef {ScriptApp.TriggerSource} ScriptApp.TriggerSource.SPREADSHEETS
+ */
+
 

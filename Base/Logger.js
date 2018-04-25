@@ -2,7 +2,6 @@
  * @namespace Logger
  ***********************************************/
 
-
 /**
  * Clears the log.
  *
@@ -62,4 +61,5 @@
  *
  * @return {Logger} the Logger, for chaining
  */
+
 

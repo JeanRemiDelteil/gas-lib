@@ -2,277 +2,22 @@
  * @namespace CalendarApp
  ***********************************************/
 
-
 /**
  * An enum representing the named colors available in the Calendar service.
  *
- * @class CalendarApp.Color
- */
-
-/**
- * @typedef {String} String.BLUE
- * 
- * <div style="background-color: #2952A3; display: inline-block; height: 10px; width: 10px;">
- </div> Blue (<code>#2952A3</code>).
- */
-
-/**
- * @typedef {String} String.BROWN
- * 
- * <div style="background-color: #8D6F47; display: inline-block; height: 10px; width: 10px;">
- </div> Brown (<code>#8D6F47</code>).
- */
-
-/**
- * @typedef {String} String.CHARCOAL
- * 
- * <div style="background-color: #4E5D6C; display: inline-block; height: 10px; width: 10px;">
- </div> Charcoal (<code>#4E5D6C</code>).
- */
-
-/**
- * @typedef {String} String.CHESTNUT
- * 
- * <div style="background-color: #865A5A; display: inline-block; height: 10px; width: 10px;">
- </div> Chestnut (<code>#865A5A</code>).
- */
-
-/**
- * @typedef {String} String.GRAY
- * 
- * <div style="background-color: #5A6986; display: inline-block; height: 10px; width: 10px;">
- </div> Gray (<code>#5A6986</code>).
- */
-
-/**
- * @typedef {String} String.GREEN
- * 
- * <div style="background-color: #0D7813; display: inline-block; height: 10px; width: 10px;">
- </div> Green (<code>#0D7813</code>).
- */
-
-/**
- * @typedef {String} String.INDIGO
- * 
- * <div style="background-color: #5229A3; display: inline-block; height: 10px; width: 10px;">
- </div> Indigo (<code>#5229A3</code>).
- */
-
-/**
- * @typedef {String} String.LIME
- * 
- * <div style="background-color: #528800; display: inline-block; height: 10px; width: 10px;">
- </div> Lime (<code>#528800</code>).
- */
-
-/**
- * @typedef {String} String.MUSTARD
- * 
- * <div style="background-color: #88880E; display: inline-block; height: 10px; width: 10px;">
- </div> Mustard (<code>#88880E</code>).
- */
-
-/**
- * @typedef {String} String.OLIVE
- * 
- * <div style="background-color: #6E6E41; display: inline-block; height: 10px; width: 10px;">
- </div> Olive (<code>#6E6E41</code>).
- */
-
-/**
- * @typedef {String} String.ORANGE
- * 
- * <div style="background-color: #BE6D00; display: inline-block; height: 10px; width: 10px;">
- </div> Orange (<code>#BE6D00</code>).
- */
-
-/**
- * @typedef {String} String.PINK
- * 
- * <div style="background-color: #B1365F; display: inline-block; height: 10px; width: 10px;">
- </div> Pink (<code>#B1365F</code>).
- */
-
-/**
- * @typedef {String} String.PLUM
- * 
- * <div style="background-color: #705770; display: inline-block; height: 10px; width: 10px;">
- </div> Plum (<code>#705770</code>).
- */
-
-/**
- * @typedef {String} String.PURPLE
- * 
- * <div style="background-color: #7A367A; display: inline-block; height: 10px; width: 10px;">
- </div> Purple (<code>#7A367A</code>).
- */
-
-/**
- * @typedef {String} String.RED
- * 
- * <div style="background-color: #A32929; display: inline-block; height: 10px; width: 10px;">
- </div> Red (<code>#A32929</code>).
- */
-
-/**
- * @typedef {String} String.RED_ORANGE
- * 
- * <div style="background-color: #B1440E; display: inline-block; height: 10px; width: 10px;">
- </div> Red-Orange (<code>#B1440E</code>).
- */
-
-/**
- * @typedef {String} String.SEA_BLUE
- * 
- * <div style="background-color: #29527A; display: inline-block; height: 10px; width: 10px;">
- </div> Sea Blue (<code>#29527A</code>).
- */
-
-/**
- * @typedef {String} String.SLATE
- * 
- * <div style="background-color: #4A716C; display: inline-block; height: 10px; width: 10px;">
- </div> Slate (<code>#4A716C</code>).
- */
-
-/**
- * @typedef {String} String.TEAL
- * 
- * <div style="background-color: #28754E; display: inline-block; height: 10px; width: 10px;">
- </div> Teal (<code>#28754E</code>).
- */
-
-/**
- * @typedef {String} String.TURQOISE
- * 
- * <div style="background-color: #1B887A; display: inline-block; height: 10px; width: 10px;">
- </div> Turquoise (<code>#1B887A</code>).
- */
-
-/**
- * @typedef {String} String.YELLOW
- * 
- * <div style="background-color: #AB8B00; display: inline-block; height: 10px; width: 10px;">
- </div> Yellow (<code>#AB8B00</code>).
+ * @typedef {CalendarApp.Color} CalendarApp.Color
  */
 
 /**
  * An enum representing the named event colors available in the Calendar service.
  *
- * @class CalendarApp.EventColor
- */
-
-/**
- * @typedef {String} String.BLUE
- * 
- * <div style="background-color: #5484ED; display: inline-block; height: 10px; width: 10px;">
- </div> Blue (<code>&quot;9&quot;</code>).
- */
-
-/**
- * @typedef {String} String.CYAN
- * 
- * <div style="background-color: #46D6DB; display: inline-block; height: 10px; width: 10px;">
- </div> Cyan (<code>&quot;7&quot;</code>).
- */
-
-/**
- * @typedef {String} String.GRAY
- * 
- * <div style="background-color: #E1E1E1; display: inline-block; height: 10px; width: 10px;">
- </div> Gray (<code>&quot;8&quot;</code>).
- */
-
-/**
- * @typedef {String} String.GREEN
- * 
- * <div style="background-color: #51B749; display: inline-block; height: 10px; width: 10px;">
- </div> Green (<code>&quot;10&quot;</code>).
- */
-
-/**
- * @typedef {String} String.MAUVE
- * 
- * <div style="background-color: #BDADFF; display: inline-block; height: 10px; width: 10px;">
- </div> Mauve (<code>&quot;3&quot;</code>).
- */
-
-/**
- * @typedef {String} String.ORANGE
- * 
- * <div style="background-color: #FFB878; display: inline-block; height: 10px; width: 10px;">
- </div> Orange (<code>&quot;6&quot;</code>).
- */
-
-/**
- * @typedef {String} String.PALE_BLUE
- * 
- * <div style="background-color: #a4bdfc; display: inline-block; height: 10px; width: 10px;">
- </div> Pale Blue (<code>&quot;1&quot;</code>).
- */
-
-/**
- * @typedef {String} String.PALE_GREEN
- * 
- * <div style="background-color: #7AE7BF; display: inline-block; height: 10px; width: 10px;">
- </div> Pale Green (<code>&quot;2&quot;</code>).
- */
-
-/**
- * @typedef {String} String.PALE_RED
- * 
- * <div style="background-color: #FF887C; display: inline-block; height: 10px; width: 10px;">
- </div> Pale Red (<code>&quot;4&quot;</code>).
- */
-
-/**
- * @typedef {String} String.RED
- * 
- * <div style="background-color: #DC2127; display: inline-block; height: 10px; width: 10px;">
- </div> Red (<code>&quot;11&quot;</code>).
- */
-
-/**
- * @typedef {String} String.YELLOW
- * 
- * <div style="background-color: #FBD75B; display: inline-block; height: 10px; width: 10px;">
- </div> Yellow (<code>&quot;5&quot;</code>).
+ * @typedef {CalendarApp.EventColor} CalendarApp.EventColor
  */
 
 /**
  * An enum representing the statuses a guest can have for an event.
  *
- * @class CalendarApp.GuestStatus
- */
-
-/**
- * @typedef {CalendarApp.GuestStatus} CalendarApp.GuestStatus.INVITED
- * 
- * The guest has been invited, but has not indicated whether he or she is attending.
- */
-
-/**
- * @typedef {CalendarApp.GuestStatus} CalendarApp.GuestStatus.MAYBE
- * 
- * The guest has indicated he or she might attend.
- */
-
-/**
- * @typedef {CalendarApp.GuestStatus} CalendarApp.GuestStatus.NO
- * 
- * The guest has indicated he or she is not attending.
- */
-
-/**
- * @typedef {CalendarApp.GuestStatus} CalendarApp.GuestStatus.OWNER
- * 
- * The guest is the owner of the event.
- */
-
-/**
- * @typedef {CalendarApp.GuestStatus} CalendarApp.GuestStatus.YES
- * 
- * The guest has indicated he or she is attending.
+ * @typedef {CalendarApp.GuestStatus} CalendarApp.GuestStatus
  */
 
 /**
@@ -284,31 +29,7 @@
 /**
  * An enum representing the visibility of an event.
  *
- * @class CalendarApp.Visibility
- */
-
-/**
- * @typedef {CalendarApp.Visibility} CalendarApp.Visibility.CONFIDENTIAL
- * 
- * The event is private. This value is provided for compatibility reasons.
- */
-
-/**
- * @typedef {CalendarApp.Visibility} CalendarApp.Visibility.DEFAULT
- * 
- * Uses the default visibility for events on the calendar.
- */
-
-/**
- * @typedef {CalendarApp.Visibility} CalendarApp.Visibility.PRIVATE
- * 
- * The event is private and only event attendees may view event details.
- */
-
-/**
- * @typedef {CalendarApp.Visibility} CalendarApp.Visibility.PUBLIC
- * 
- * The event is public and event details are visible to all readers of the calendar.
+ * @typedef {CalendarApp.Visibility} CalendarApp.Visibility
  */
 
 /**
@@ -1047,6 +768,7 @@
  * @return {CalendarApp.Calendar} the newly subscribed calendar
  */
 
+
 /**
  * @class CalendarApp.Calendar
  */
@@ -1587,6 +1309,7 @@
  * @return void
  */
 
+
 /**
  * @class CalendarApp.CalendarEvent
  */
@@ -1597,7 +1320,7 @@
  *
  * @function CalendarApp.CalendarEvent#addEmailReminder
  *
- * @param {number} minutesBefore - the number of minutes before the event
+ * @param {IntegerNum} minutesBefore - the number of minutes before the event
  *
  * @return {CalendarApp.CalendarEvent} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-event.html'>CalendarEvent</a></code> for chaining
  */
@@ -1618,7 +1341,7 @@
  *
  * @function CalendarApp.CalendarEvent#addPopupReminder
  *
- * @param {number} minutesBefore - the number of minutes before the event
+ * @param {IntegerNum} minutesBefore - the number of minutes before the event
  *
  * @return {CalendarApp.CalendarEvent} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-event.html'>CalendarEvent</a></code> for chaining
  */
@@ -1629,7 +1352,7 @@
  *
  * @function CalendarApp.CalendarEvent#addSmsReminder
  *
- * @param {number} minutesBefore - the number of minutes before the event
+ * @param {IntegerNum} minutesBefore - the number of minutes before the event
  *
  * @return {CalendarApp.CalendarEvent} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-event.html'>CalendarEvent</a></code> for chaining
  */
@@ -1727,7 +1450,7 @@
  *
  * @function CalendarApp.CalendarEvent#getEmailReminders
  *
- * @return {Integer[]} an array in which each value corresponds to the number of minutes before the event that
+ * @return {IntegerNum[]} an array in which each value corresponds to the number of minutes before the event that
      a reminder triggers
  */
 
@@ -1831,7 +1554,7 @@
  *
  * @function CalendarApp.CalendarEvent#getPopupReminders
  *
- * @return {Integer[]} an array in which each value corresponds to the number of minutes before the event that
+ * @return {IntegerNum[]} an array in which each value corresponds to the number of minutes before the event that
      a reminder triggers
  */
 
@@ -1840,7 +1563,7 @@
  *
  * @function CalendarApp.CalendarEvent#getSmsReminders
  *
- * @return {Integer[]} an array in which each value corresponds to the number of minutes before the event that
+ * @return {IntegerNum[]} an array in which each value corresponds to the number of minutes before the event that
      a reminder triggers
  */
 
@@ -2100,10 +1823,11 @@
  *
  * @function CalendarApp.CalendarEvent#setVisibility
  *
- * @param {CalendarApp.Visibility} visibility - 
+ * @param {CalendarApp.Visibility} visibility
  *
  * @return {CalendarApp.CalendarEvent} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-event.html'>CalendarEvent</a></code> for chaining
  */
+
 
 /**
  * @class CalendarApp.CalendarEventSeries
@@ -2115,7 +1839,7 @@
  *
  * @function CalendarApp.CalendarEventSeries#addEmailReminder
  *
- * @param {number} minutesBefore - the number of minutes before the event
+ * @param {IntegerNum} minutesBefore - the number of minutes before the event
  *
  * @return {CalendarApp.CalendarEventSeries} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-event-series.html'>CalendarEventSeries</a></code> for chaining
  */
@@ -2136,7 +1860,7 @@
  *
  * @function CalendarApp.CalendarEventSeries#addPopupReminder
  *
- * @param {number} minutesBefore - the number of minutes before the event
+ * @param {IntegerNum} minutesBefore - the number of minutes before the event
  *
  * @return {CalendarApp.CalendarEventSeries} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-event-series.html'>CalendarEventSeries</a></code> for chaining
  */
@@ -2147,7 +1871,7 @@
  *
  * @function CalendarApp.CalendarEventSeries#addSmsReminder
  *
- * @param {number} minutesBefore - the number of minutes before the event
+ * @param {IntegerNum} minutesBefore - the number of minutes before the event
  *
  * @return {CalendarApp.CalendarEventSeries} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-event-series.html'>CalendarEventSeries</a></code> for chaining
  */
@@ -2223,7 +1947,7 @@
  *
  * @function CalendarApp.CalendarEventSeries#getEmailReminders
  *
- * @return {Integer[]} an array in which each value corresponds to the number of minutes before the event that
+ * @return {IntegerNum[]} an array in which each value corresponds to the number of minutes before the event that
      a reminder triggers
  */
 
@@ -2300,7 +2024,7 @@
  *
  * @function CalendarApp.CalendarEventSeries#getPopupReminders
  *
- * @return {Integer[]} an array in which each value corresponds to the number of minutes before the event that
+ * @return {IntegerNum[]} an array in which each value corresponds to the number of minutes before the event that
      a reminder triggers
  */
 
@@ -2309,7 +2033,7 @@
  *
  * @function CalendarApp.CalendarEventSeries#getSmsReminders
  *
- * @return {Integer[]} an array in which each value corresponds to the number of minutes before the event that
+ * @return {IntegerNum[]} an array in which each value corresponds to the number of minutes before the event that
      a reminder triggers
  */
 
@@ -2551,10 +2275,245 @@
  *
  * @function CalendarApp.CalendarEventSeries#setVisibility
  *
- * @param {CalendarApp.Visibility} visibility - 
+ * @param {CalendarApp.Visibility} visibility
  *
  * @return {CalendarApp.CalendarEventSeries} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/calendar/calendar-event-series.html'>CalendarEventSeries</a></code> for chaining
  */
+
+
+/**
+ * @class CalendarApp.Color
+ */
+
+/**
+ * <div style="background-color: #2952A3; display: inline-block; height: 10px; width: 10px;">
+ </div> Blue (<code>#2952A3</code>).
+ *
+ * @typedef {String} CalendarApp.Color.BLUE
+ */
+
+/**
+ * <div style="background-color: #8D6F47; display: inline-block; height: 10px; width: 10px;">
+ </div> Brown (<code>#8D6F47</code>).
+ *
+ * @typedef {String} CalendarApp.Color.BROWN
+ */
+
+/**
+ * <div style="background-color: #4E5D6C; display: inline-block; height: 10px; width: 10px;">
+ </div> Charcoal (<code>#4E5D6C</code>).
+ *
+ * @typedef {String} CalendarApp.Color.CHARCOAL
+ */
+
+/**
+ * <div style="background-color: #865A5A; display: inline-block; height: 10px; width: 10px;">
+ </div> Chestnut (<code>#865A5A</code>).
+ *
+ * @typedef {String} CalendarApp.Color.CHESTNUT
+ */
+
+/**
+ * <div style="background-color: #5A6986; display: inline-block; height: 10px; width: 10px;">
+ </div> Gray (<code>#5A6986</code>).
+ *
+ * @typedef {String} CalendarApp.Color.GRAY
+ */
+
+/**
+ * <div style="background-color: #0D7813; display: inline-block; height: 10px; width: 10px;">
+ </div> Green (<code>#0D7813</code>).
+ *
+ * @typedef {String} CalendarApp.Color.GREEN
+ */
+
+/**
+ * <div style="background-color: #5229A3; display: inline-block; height: 10px; width: 10px;">
+ </div> Indigo (<code>#5229A3</code>).
+ *
+ * @typedef {String} CalendarApp.Color.INDIGO
+ */
+
+/**
+ * <div style="background-color: #528800; display: inline-block; height: 10px; width: 10px;">
+ </div> Lime (<code>#528800</code>).
+ *
+ * @typedef {String} CalendarApp.Color.LIME
+ */
+
+/**
+ * <div style="background-color: #88880E; display: inline-block; height: 10px; width: 10px;">
+ </div> Mustard (<code>#88880E</code>).
+ *
+ * @typedef {String} CalendarApp.Color.MUSTARD
+ */
+
+/**
+ * <div style="background-color: #6E6E41; display: inline-block; height: 10px; width: 10px;">
+ </div> Olive (<code>#6E6E41</code>).
+ *
+ * @typedef {String} CalendarApp.Color.OLIVE
+ */
+
+/**
+ * <div style="background-color: #BE6D00; display: inline-block; height: 10px; width: 10px;">
+ </div> Orange (<code>#BE6D00</code>).
+ *
+ * @typedef {String} CalendarApp.Color.ORANGE
+ */
+
+/**
+ * <div style="background-color: #B1365F; display: inline-block; height: 10px; width: 10px;">
+ </div> Pink (<code>#B1365F</code>).
+ *
+ * @typedef {String} CalendarApp.Color.PINK
+ */
+
+/**
+ * <div style="background-color: #705770; display: inline-block; height: 10px; width: 10px;">
+ </div> Plum (<code>#705770</code>).
+ *
+ * @typedef {String} CalendarApp.Color.PLUM
+ */
+
+/**
+ * <div style="background-color: #7A367A; display: inline-block; height: 10px; width: 10px;">
+ </div> Purple (<code>#7A367A</code>).
+ *
+ * @typedef {String} CalendarApp.Color.PURPLE
+ */
+
+/**
+ * <div style="background-color: #A32929; display: inline-block; height: 10px; width: 10px;">
+ </div> Red (<code>#A32929</code>).
+ *
+ * @typedef {String} CalendarApp.Color.RED
+ */
+
+/**
+ * <div style="background-color: #B1440E; display: inline-block; height: 10px; width: 10px;">
+ </div> Red-Orange (<code>#B1440E</code>).
+ *
+ * @typedef {String} CalendarApp.Color.RED_ORANGE
+ */
+
+/**
+ * <div style="background-color: #29527A; display: inline-block; height: 10px; width: 10px;">
+ </div> Sea Blue (<code>#29527A</code>).
+ *
+ * @typedef {String} CalendarApp.Color.SEA_BLUE
+ */
+
+/**
+ * <div style="background-color: #4A716C; display: inline-block; height: 10px; width: 10px;">
+ </div> Slate (<code>#4A716C</code>).
+ *
+ * @typedef {String} CalendarApp.Color.SLATE
+ */
+
+/**
+ * <div style="background-color: #28754E; display: inline-block; height: 10px; width: 10px;">
+ </div> Teal (<code>#28754E</code>).
+ *
+ * @typedef {String} CalendarApp.Color.TEAL
+ */
+
+/**
+ * <div style="background-color: #1B887A; display: inline-block; height: 10px; width: 10px;">
+ </div> Turquoise (<code>#1B887A</code>).
+ *
+ * @typedef {String} CalendarApp.Color.TURQOISE
+ */
+
+/**
+ * <div style="background-color: #AB8B00; display: inline-block; height: 10px; width: 10px;">
+ </div> Yellow (<code>#AB8B00</code>).
+ *
+ * @typedef {String} CalendarApp.Color.YELLOW
+ */
+
+
+/**
+ * @class CalendarApp.EventColor
+ */
+
+/**
+ * <div style="background-color: #5484ED; display: inline-block; height: 10px; width: 10px;">
+ </div> Blue (<code>&quot;9&quot;</code>).
+ *
+ * @typedef {String} CalendarApp.EventColor.BLUE
+ */
+
+/**
+ * <div style="background-color: #46D6DB; display: inline-block; height: 10px; width: 10px;">
+ </div> Cyan (<code>&quot;7&quot;</code>).
+ *
+ * @typedef {String} CalendarApp.EventColor.CYAN
+ */
+
+/**
+ * <div style="background-color: #E1E1E1; display: inline-block; height: 10px; width: 10px;">
+ </div> Gray (<code>&quot;8&quot;</code>).
+ *
+ * @typedef {String} CalendarApp.EventColor.GRAY
+ */
+
+/**
+ * <div style="background-color: #51B749; display: inline-block; height: 10px; width: 10px;">
+ </div> Green (<code>&quot;10&quot;</code>).
+ *
+ * @typedef {String} CalendarApp.EventColor.GREEN
+ */
+
+/**
+ * <div style="background-color: #BDADFF; display: inline-block; height: 10px; width: 10px;">
+ </div> Mauve (<code>&quot;3&quot;</code>).
+ *
+ * @typedef {String} CalendarApp.EventColor.MAUVE
+ */
+
+/**
+ * <div style="background-color: #FFB878; display: inline-block; height: 10px; width: 10px;">
+ </div> Orange (<code>&quot;6&quot;</code>).
+ *
+ * @typedef {String} CalendarApp.EventColor.ORANGE
+ */
+
+/**
+ * <div style="background-color: #a4bdfc; display: inline-block; height: 10px; width: 10px;">
+ </div> Pale Blue (<code>&quot;1&quot;</code>).
+ *
+ * @typedef {String} CalendarApp.EventColor.PALE_BLUE
+ */
+
+/**
+ * <div style="background-color: #7AE7BF; display: inline-block; height: 10px; width: 10px;">
+ </div> Pale Green (<code>&quot;2&quot;</code>).
+ *
+ * @typedef {String} CalendarApp.EventColor.PALE_GREEN
+ */
+
+/**
+ * <div style="background-color: #FF887C; display: inline-block; height: 10px; width: 10px;">
+ </div> Pale Red (<code>&quot;4&quot;</code>).
+ *
+ * @typedef {String} CalendarApp.EventColor.PALE_RED
+ */
+
+/**
+ * <div style="background-color: #DC2127; display: inline-block; height: 10px; width: 10px;">
+ </div> Red (<code>&quot;11&quot;</code>).
+ *
+ * @typedef {String} CalendarApp.EventColor.RED
+ */
+
+/**
+ * <div style="background-color: #FBD75B; display: inline-block; height: 10px; width: 10px;">
+ </div> Yellow (<code>&quot;5&quot;</code>).
+ *
+ * @typedef {String} CalendarApp.EventColor.YELLOW
+ */
+
 
 /**
  * @class CalendarApp.EventGuest
@@ -2565,7 +2524,7 @@
  *
  * @function CalendarApp.EventGuest#getAdditionalGuests
  *
- * @return {number} the number of additional people this guest has said are attending
+ * @return {IntegerNum} the number of additional people this guest has said are attending
  */
 
 /**
@@ -2597,9 +2556,11 @@
  * Gets the status of the guest for the event.
  *
  * @function CalendarApp.EventGuest#getStatus
+ * @deprecated
  *
  * @return {String} the status of this guest
  */
+
 
 /**
  * @class CalendarApp.EventRecurrence
@@ -2636,7 +2597,7 @@
  *
  * @function CalendarApp.EventRecurrence#addDate
  *
- * @param {Date} date - 
+ * @param {Date} date
  *
  * @return {CalendarApp.EventRecurrence} this EventRecurrence for chaining
  */
@@ -2646,7 +2607,7 @@
  *
  * @function CalendarApp.EventRecurrence#addDateExclusion
  *
- * @param {Date} date - 
+ * @param {Date} date
  *
  * @return {CalendarApp.EventRecurrence} this EventRecurrence for chaining
  */
@@ -2745,6 +2706,42 @@
  * @return {CalendarApp.EventRecurrence} this EventRecurrence for chaining
  */
 
+
+/**
+ * @class CalendarApp.GuestStatus
+ */
+
+/**
+ * The guest has been invited, but has not indicated whether he or she is attending.
+ *
+ * @typedef {CalendarApp.GuestStatus} CalendarApp.GuestStatus.INVITED
+ */
+
+/**
+ * The guest has indicated he or she might attend.
+ *
+ * @typedef {CalendarApp.GuestStatus} CalendarApp.GuestStatus.MAYBE
+ */
+
+/**
+ * The guest has indicated he or she is not attending.
+ *
+ * @typedef {CalendarApp.GuestStatus} CalendarApp.GuestStatus.NO
+ */
+
+/**
+ * The guest is the owner of the event.
+ *
+ * @typedef {CalendarApp.GuestStatus} CalendarApp.GuestStatus.OWNER
+ */
+
+/**
+ * The guest has indicated he or she is attending.
+ *
+ * @typedef {CalendarApp.GuestStatus} CalendarApp.GuestStatus.YES
+ */
+
+
 /**
  * @class CalendarApp.RecurrenceRule
  */
@@ -2780,7 +2777,7 @@
  *
  * @function CalendarApp.RecurrenceRule#addDate
  *
- * @param {Date} date - 
+ * @param {Date} date
  *
  * @return {CalendarApp.EventRecurrence} this EventRecurrence for chaining
  */
@@ -2790,7 +2787,7 @@
  *
  * @function CalendarApp.RecurrenceRule#addDateExclusion
  *
- * @param {Date} date - 
+ * @param {Date} date
  *
  * @return {CalendarApp.EventRecurrence} this EventRecurrence for chaining
  */
@@ -2887,7 +2884,7 @@
  *
  * @function CalendarApp.RecurrenceRule#interval
  *
- * @param {number} interval - the interval in the rule's time unit
+ * @param {IntegerNum} interval - the interval in the rule's time unit
  *
  * @return {CalendarApp.RecurrenceRule} this RecurrenceRule for chaining
  */
@@ -2934,7 +2931,7 @@
  *
  * @function CalendarApp.RecurrenceRule#onlyOnMonthDay
  *
- * @param {number} day - the day of the month
+ * @param {IntegerNum} day - the day of the month
  *
  * @return {CalendarApp.RecurrenceRule} this RecurrenceRule for chaining
  */
@@ -2949,7 +2946,7 @@
  *
  * @function CalendarApp.RecurrenceRule#onlyOnMonthDays
  *
- * @param {Integer[]} days - the days of the month
+ * @param {IntegerNum[]} days - the days of the month
  *
  * @return {CalendarApp.RecurrenceRule} this RecurrenceRule for chaining
  */
@@ -2964,7 +2961,7 @@
  *
  * @function CalendarApp.RecurrenceRule#onlyOnWeek
  *
- * @param {number} week - the week
+ * @param {IntegerNum} week - the week
  *
  * @return {CalendarApp.RecurrenceRule} this RecurrenceRule for chaining
  */
@@ -3012,7 +3009,7 @@
  *
  * @function CalendarApp.RecurrenceRule#onlyOnWeeks
  *
- * @param {Integer[]} weeks - the weeks
+ * @param {IntegerNum[]} weeks - the weeks
  *
  * @return {CalendarApp.RecurrenceRule} this RecurrenceRule for chaining
  */
@@ -3027,7 +3024,7 @@
  *
  * @function CalendarApp.RecurrenceRule#onlyOnYearDay
  *
- * @param {number} day - the day of the year
+ * @param {IntegerNum} day - the day of the year
  *
  * @return {CalendarApp.RecurrenceRule} this RecurrenceRule for chaining
  */
@@ -3042,7 +3039,7 @@
  *
  * @function CalendarApp.RecurrenceRule#onlyOnYearDays
  *
- * @param {Integer[]} days - the days of the year
+ * @param {IntegerNum[]} days - the days of the year
  *
  * @return {CalendarApp.RecurrenceRule} this RecurrenceRule for chaining
  */
@@ -3069,7 +3066,7 @@
  *
  * @function CalendarApp.RecurrenceRule#times
  *
- * @param {number} times - the number of times to recur
+ * @param {IntegerNum} times - the number of times to recur
  *
  * @return {CalendarApp.RecurrenceRule} this RecurrenceRule for chaining
  */
@@ -3085,7 +3082,7 @@
  *
  * @function CalendarApp.RecurrenceRule#until
  *
- * @param {Date} endDate - 
+ * @param {Date} endDate
  *
  * @return {CalendarApp.RecurrenceRule} this RecurrenceRule for chaining
  */
@@ -3105,4 +3102,34 @@
  *
  * @return {CalendarApp.RecurrenceRule} this RecurrenceRule for chaining
  */
+
+
+/**
+ * @class CalendarApp.Visibility
+ */
+
+/**
+ * The event is private. This value is provided for compatibility reasons.
+ *
+ * @typedef {CalendarApp.Visibility} CalendarApp.Visibility.CONFIDENTIAL
+ */
+
+/**
+ * Uses the default visibility for events on the calendar.
+ *
+ * @typedef {CalendarApp.Visibility} CalendarApp.Visibility.DEFAULT
+ */
+
+/**
+ * The event is private and only event attendees may view event details.
+ *
+ * @typedef {CalendarApp.Visibility} CalendarApp.Visibility.PRIVATE
+ */
+
+/**
+ * The event is public and event details are visible to all readers of the calendar.
+ *
+ * @typedef {CalendarApp.Visibility} CalendarApp.Visibility.PUBLIC
+ */
+
 

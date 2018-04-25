@@ -1,7 +1,7 @@
 /**********************************************
  * @namespace ScriptProperties
+ * @deprecated
  ***********************************************/
-
 
 /**
  * Deletes all properties.
@@ -11,6 +11,7 @@
  </code></pre>
  *
  * @function ScriptProperties.deleteAllProperties
+ * @deprecated
  *
  * @return {ScriptProperties} this object, for chaining
  */
@@ -23,6 +24,7 @@
  </code></pre>
  *
  * @function ScriptProperties.deleteProperty
+ * @deprecated
  *
  * @param {String} key - key for property to delete
  *
@@ -33,6 +35,7 @@
  * Get all of the available keys.
  *
  * @function ScriptProperties.getKeys
+ * @deprecated
  *
  * @return {String[]}
  */
@@ -67,6 +70,7 @@
  </code></pre>
  *
  * @function ScriptProperties.getProperties
+ * @deprecated
  *
  * @return {Object} a copy of the properties containing key-value pairs
  */
@@ -79,6 +83,7 @@
  </code></pre>
  *
  * @function ScriptProperties.getProperty
+ * @deprecated
  *
  * @param {String} key - key for the value to retrieve
  *
@@ -93,6 +98,7 @@
  </code></pre>
  *
  * @function ScriptProperties.setProperties
+ * @deprecated
  *
  * @param {Object} properties - an object containing the properties to set.
  *
@@ -108,6 +114,7 @@
  </code></pre>
  *
  * @function ScriptProperties.setProperties
+ * @deprecated
  *
  * @param {Object} properties - an object containing the properties to set.
  * @param {Boolean} deleteAllOthers - whether to delete all existing properties.
@@ -124,10 +131,12 @@
  </code></pre>
  *
  * @function ScriptProperties.setProperty
+ * @deprecated
  *
  * @param {String} key - key for property
  * @param {String} value - value to associate with the key
  *
  * @return {ScriptProperties} this object, for chaining
  */
+
 

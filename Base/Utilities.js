@@ -2,21 +2,8 @@
  * @namespace Utilities
  ***********************************************/
 
-
 /**
- * @class Utilities.Charset
- */
-
-/**
- * @typedef {Utilities.Charset} Utilities.Charset.US_ASCII
- * 
- * 
- */
-
-/**
- * @typedef {Utilities.Charset} Utilities.Charset.UTF_8
- * 
- * 
+ * @typedef {Utilities.Charset} Utilities.Charset
  */
 
 /**
@@ -24,37 +11,7 @@
  */
 
 /**
- * @class Utilities.MacAlgorithm
- */
-
-/**
- * @typedef {Utilities.MacAlgorithm} Utilities.MacAlgorithm.HMAC_MD5
- * 
- * 
- */
-
-/**
- * @typedef {Utilities.MacAlgorithm} Utilities.MacAlgorithm.HMAC_SHA_1
- * 
- * 
- */
-
-/**
- * @typedef {Utilities.MacAlgorithm} Utilities.MacAlgorithm.HMAC_SHA_256
- * 
- * 
- */
-
-/**
- * @typedef {Utilities.MacAlgorithm} Utilities.MacAlgorithm.HMAC_SHA_384
- * 
- * 
- */
-
-/**
- * @typedef {Utilities.MacAlgorithm} Utilities.MacAlgorithm.HMAC_SHA_512
- * 
- * 
+ * @typedef {Utilities.MacAlgorithm} Utilities.MacAlgorithm
  */
 
 /**
@@ -548,6 +505,7 @@
  </code></pre>
  *
  * @function Utilities.jsonParse
+ * @deprecated
  *
  * @param {String} jsonString - a String representation of a JavaScript object to deserialize
  *
@@ -565,6 +523,7 @@
  </code></pre>
  *
  * @function Utilities.jsonStringify
+ * @deprecated
  *
  * @param {Object} obj - the JavaScript object to serialize to JSON
  *
@@ -682,7 +641,7 @@
  *
  * @function Utilities.sleep
  *
- * @param {number} milliseconds - The number of milliseconds to sleep.
+ * @param {IntegerNum} milliseconds - The number of milliseconds to sleep.
  *
  * @return void
  */
@@ -778,4 +737,43 @@
  *
  * @return {Blob} a new blob containing the inputs as an archive
  */
+
+
+/**
+ * @class Utilities.Charset
+ */
+
+/**
+ * @typedef {Utilities.Charset} Utilities.Charset.US_ASCII
+ */
+
+/**
+ * @typedef {Utilities.Charset} Utilities.Charset.UTF_8
+ */
+
+
+/**
+ * @class Utilities.MacAlgorithm
+ */
+
+/**
+ * @typedef {Utilities.MacAlgorithm} Utilities.MacAlgorithm.HMAC_MD5
+ */
+
+/**
+ * @typedef {Utilities.MacAlgorithm} Utilities.MacAlgorithm.HMAC_SHA_1
+ */
+
+/**
+ * @typedef {Utilities.MacAlgorithm} Utilities.MacAlgorithm.HMAC_SHA_256
+ */
+
+/**
+ * @typedef {Utilities.MacAlgorithm} Utilities.MacAlgorithm.HMAC_SHA_384
+ */
+
+/**
+ * @typedef {Utilities.MacAlgorithm} Utilities.MacAlgorithm.HMAC_SHA_512
+ */
+
 

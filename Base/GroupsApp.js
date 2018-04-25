@@ -2,41 +2,8 @@
  * @namespace GroupsApp
  ***********************************************/
 
-
 /**
- * @class GroupsApp.Role
- */
-
-/**
- * @typedef {GroupsApp.Role} GroupsApp.Role.INVITED
- * 
- * A user who has been invited to join a group by an owner or manager of the group but who has not
- yet accepted the invitation.
- */
-
-/**
- * @typedef {GroupsApp.Role} GroupsApp.Role.MANAGER
- * 
- * The manager of a group.
- */
-
-/**
- * @typedef {GroupsApp.Role} GroupsApp.Role.MEMBER
- * 
- * A user who is a member of this group but is neither an owner nor a manager.
- */
-
-/**
- * @typedef {GroupsApp.Role} GroupsApp.Role.OWNER
- * 
- * The owner of a group.
- */
-
-/**
- * @typedef {GroupsApp.Role} GroupsApp.Role.PENDING
- * 
- * A user who has requested to join a group but who has not yet been approved by an owner or
- manager.
+ * @typedef {GroupsApp.Role} GroupsApp.Role
  */
 
 /**
@@ -91,6 +58,7 @@
  *
  * @return {GroupsApp.Group[]} the list of groups of which the user is a direct member
  */
+
 
 /**
  * @class GroupsApp.Group
@@ -311,4 +279,42 @@
  *
  * @return {Boolean} true if that user is a member of the group
  */
+
+
+/**
+ * @class GroupsApp.Role
+ */
+
+/**
+ * A user who has been invited to join a group by an owner or manager of the group but who has not
+ yet accepted the invitation.
+ *
+ * @typedef {GroupsApp.Role} GroupsApp.Role.INVITED
+ */
+
+/**
+ * The manager of a group.
+ *
+ * @typedef {GroupsApp.Role} GroupsApp.Role.MANAGER
+ */
+
+/**
+ * A user who is a member of this group but is neither an owner nor a manager.
+ *
+ * @typedef {GroupsApp.Role} GroupsApp.Role.MEMBER
+ */
+
+/**
+ * The owner of a group.
+ *
+ * @typedef {GroupsApp.Role} GroupsApp.Role.OWNER
+ */
+
+/**
+ * A user who has requested to join a group but who has not yet been approved by an owner or
+ manager.
+ *
+ * @typedef {GroupsApp.Role} GroupsApp.Role.PENDING
+ */
+
 

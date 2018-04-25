@@ -2,62 +2,17 @@
  * @namespace HtmlService
  ***********************************************/
 
-
 /**
  * An enum representing the sandbox modes that can be used for client-side <code>HtmlService</code>
  scripts.
  *
- * @class HtmlService.SandboxMode
- */
-
-/**
- * @typedef {HtmlService.SandboxMode} HtmlService.SandboxMode.EMULATED
- * 
- * A legacy sandbox mode that emulates ECMAScript 5 strict mode using only the features available
- in ECMAScript 3. This mode was the default prior to February 2014.
-
- <p><code>EMULATED</code> was <a href="/apps-script/guides/support/sunset">sunset as of December 10,
- 2015</a>. All scripts attempting use <code>EMULATED</code> will now use <code>IFRAME</code> instead.
- */
-
-/**
- * @typedef {HtmlService.SandboxMode} HtmlService.SandboxMode.IFRAME
- * 
- * A sandbox mode that uses iframe sandboxing instead of the Caja sandbox technology used by the
- <code>EMULATED</code> and <code>NATIVE</code> modes. This mode is the default for new scripts as of
- November 12, 2015 and for all scripts as of July 6, 2016.
-
- <p>This mode imposes many fewer restrictions than the other sandbox modes and runs fastest, but
- does not work at all in certain older browsers, including Internet Explorer 9.
- */
-
-/**
- * @typedef {HtmlService.SandboxMode} HtmlService.SandboxMode.NATIVE
- * 
- * A sandbox mode that is built on top of ECMAScript 5 strict mode. A sandbox mode built on top of
- ECMAScript 5 strict mode. This mode was <a href="/apps-script/guides/support/sunset">sunset as
- of July 6, 2016</a>. All scripts now use <code>IFRAME</code> mode.
+ * @typedef {HtmlService.SandboxMode} HtmlService.SandboxMode
  */
 
 /**
  * An enum representing the <code>X-Frame-Options</code> modes that can be used for client-side <code>HtmlService</code> scripts.
  *
- * @class HtmlService.XFrameOptionsMode
- */
-
-/**
- * @typedef {HtmlService.XFrameOptionsMode} HtmlService.XFrameOptionsMode.ALLOWALL
- * 
- * No <code>X-Frame-Options</code> header will be set. This will let any site iframe the page, so the
- developer should implement their own protection against clickjacking.
- */
-
-/**
- * @typedef {HtmlService.XFrameOptionsMode} HtmlService.XFrameOptionsMode.DEFAULT
- * 
- * Sets the default value for the <code>X-Frame-Options</code> header, which preserves normal security
- assumptions. If a script does not set an <code>X-Frame-Options</code> mode, Apps Script uses this
- mode as the default.
+ * @typedef {HtmlService.XFrameOptionsMode} HtmlService.XFrameOptionsMode
  */
 
 /**
@@ -169,6 +124,7 @@
  *
  * @return {String} the user-agent string
  */
+
 
 /**
  * @class HtmlService.HtmlOutput
@@ -335,7 +291,7 @@
  *
  * @function HtmlService.HtmlOutput#getHeight
  *
- * @return {number} the height, in pixels
+ * @return {IntegerNum} the height, in pixels
  */
 
 /**
@@ -384,7 +340,7 @@
  *
  * @function HtmlService.HtmlOutput#getWidth
  *
- * @return {number} the width in pixels
+ * @return {IntegerNum} the width in pixels
  */
 
 /**
@@ -433,7 +389,7 @@
  *
  * @function HtmlService.HtmlOutput#setHeight
  *
- * @param {number} height - the new height in pixels; <code>null</code> results in a default value
+ * @param {IntegerNum} height - the new height in pixels; <code>null</code> results in a default value
  *
  * @return {HtmlService.HtmlOutput} this <code>HtmlOutput</code> itself, useful for chaining
  */
@@ -498,7 +454,7 @@
  *
  * @function HtmlService.HtmlOutput#setWidth
  *
- * @param {number} width - the new width in pixels; <code>null</code> results in a default value
+ * @param {IntegerNum} width - the new width in pixels; <code>null</code> results in a default value
  *
  * @return {HtmlService.HtmlOutput} this <code>HtmlOutput</code> itself, useful for chaining
  */
@@ -520,10 +476,11 @@
  *
  * @function HtmlService.HtmlOutput#setXFrameOptionsMode
  *
- * @param {HtmlService.XFrameOptionsMode} mode - 
+ * @param {HtmlService.XFrameOptionsMode} mode
  *
  * @return {HtmlService.HtmlOutput} this <code>HtmlOutput</code> itself, useful for chaining
  */
+
 
 /**
  * @class HtmlService.HtmlOutputMetaTag
@@ -544,6 +501,7 @@
  *
  * @return {String} the name of this meta tag.
  */
+
 
 /**
  * @class HtmlService.HtmlTemplate
@@ -620,4 +578,59 @@
  *
  * @return {String} the template's raw content
  */
+
+
+/**
+ * @class HtmlService.SandboxMode
+ */
+
+/**
+ * A legacy sandbox mode that emulates ECMAScript 5 strict mode using only the features available
+ in ECMAScript 3. This mode was the default prior to February 2014.
+
+ <p><code>EMULATED</code> was <a href="/apps-script/guides/support/sunset">sunset as of December 10,
+ 2015</a>. All scripts attempting use <code>EMULATED</code> will now use <code>IFRAME</code> instead.
+ *
+ * @typedef {HtmlService.SandboxMode} HtmlService.SandboxMode.EMULATED
+ */
+
+/**
+ * A sandbox mode that uses iframe sandboxing instead of the Caja sandbox technology used by the
+ <code>EMULATED</code> and <code>NATIVE</code> modes. This mode is the default for new scripts as of
+ November 12, 2015 and for all scripts as of July 6, 2016.
+
+ <p>This mode imposes many fewer restrictions than the other sandbox modes and runs fastest, but
+ does not work at all in certain older browsers, including Internet Explorer 9.
+ *
+ * @typedef {HtmlService.SandboxMode} HtmlService.SandboxMode.IFRAME
+ */
+
+/**
+ * A sandbox mode that is built on top of ECMAScript 5 strict mode. A sandbox mode built on top of
+ ECMAScript 5 strict mode. This mode was <a href="/apps-script/guides/support/sunset">sunset as
+ of July 6, 2016</a>. All scripts now use <code>IFRAME</code> mode.
+ *
+ * @typedef {HtmlService.SandboxMode} HtmlService.SandboxMode.NATIVE
+ */
+
+
+/**
+ * @class HtmlService.XFrameOptionsMode
+ */
+
+/**
+ * No <code>X-Frame-Options</code> header will be set. This will let any site iframe the page, so the
+ developer should implement their own protection against clickjacking.
+ *
+ * @typedef {HtmlService.XFrameOptionsMode} HtmlService.XFrameOptionsMode.ALLOWALL
+ */
+
+/**
+ * Sets the default value for the <code>X-Frame-Options</code> header, which preserves normal security
+ assumptions. If a script does not set an <code>X-Frame-Options</code> mode, Apps Script uses this
+ mode as the default.
+ *
+ * @typedef {HtmlService.XFrameOptionsMode} HtmlService.XFrameOptionsMode.DEFAULT
+ */
+
 

@@ -3,44 +3,45 @@
  */
 
 /**
- * @typedef {Weekday} Weekday.FRIDAY
- * 
  * Friday.
+ *
+ * @typedef {Weekday} Weekday.FRIDAY
  */
 
 /**
- * @typedef {Weekday} Weekday.MONDAY
- * 
  * Monday.
+ *
+ * @typedef {Weekday} Weekday.MONDAY
  */
 
 /**
- * @typedef {Weekday} Weekday.SATURDAY
- * 
  * Saturday.
+ *
+ * @typedef {Weekday} Weekday.SATURDAY
  */
 
 /**
- * @typedef {Weekday} Weekday.SUNDAY
- * 
  * Sunday.
+ *
+ * @typedef {Weekday} Weekday.SUNDAY
  */
 
 /**
- * @typedef {Weekday} Weekday.THURSDAY
- * 
  * Thursday.
+ *
+ * @typedef {Weekday} Weekday.THURSDAY
  */
 
 /**
- * @typedef {Weekday} Weekday.TUESDAY
- * 
  * Tuesday.
+ *
+ * @typedef {Weekday} Weekday.TUESDAY
  */
 
 /**
- * @typedef {Weekday} Weekday.WEDNESDAY
- * 
  * Wednesday.
+ *
+ * @typedef {Weekday} Weekday.WEDNESDAY
  */
+
 

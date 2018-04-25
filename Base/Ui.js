@@ -1,3 +1,7 @@
+/**********************************************
+ * @namespace Ui
+ ***********************************************/
+
 /**
  * @class Ui
  */
@@ -30,7 +34,7 @@
  SpreadsheetApp.getUi().alert('Hello, world!');
  </pre>
  *
- * @function Ui.alert
+ * @function Ui#alert
  *
  * @param {String} prompt - the message to display in the dialog box
  *
@@ -59,7 +63,7 @@
  }
  </pre>
  *
- * @function Ui.alert
+ * @function Ui#alert
  *
  * @param {String} prompt - the message to display in the dialog box
  * @param {ButtonSet} buttons - the button set to display in the dialog box
@@ -89,7 +93,7 @@
  }
  </pre>
  *
- * @function Ui.alert
+ * @function Ui#alert
  *
  * @param {String} title - the title to display above the dialog box
  * @param {String} prompt - the message to display in the dialog box
@@ -115,7 +119,7 @@
        .addToUi();
  }</pre>
  *
- * @function Ui.createAddonMenu
+ * @function Ui#createAddonMenu
  *
  * @return {Menu} the new menu builder
  */
@@ -143,7 +147,7 @@
  }
  </pre>
  *
- * @function Ui.createMenu
+ * @function Ui#createMenu
  *
  * @param {String} caption - the label for the menu, with all major words capitalized for a top-level menu,
      or only the first word capitalized for a sub-menu
@@ -173,7 +177,7 @@
  }
  </pre>
  *
- * @function Ui.prompt
+ * @function Ui#prompt
  *
  * @param {String} prompt - the message to display in the dialog box
  *
@@ -204,7 +208,7 @@
  }
  </pre>
  *
- * @function Ui.prompt
+ * @function Ui#prompt
  *
  * @param {String} prompt - the message to display in the dialog box
  * @param {ButtonSet} buttons - the button set to display in the dialog box
@@ -235,7 +239,7 @@
  }
  </pre>
  *
- * @function Ui.prompt
+ * @function Ui#prompt
  *
  * @param {String} title - the title to display above the dialog box
  * @param {String} prompt - the message to display in the dialog box
@@ -274,7 +278,8 @@
  SpreadsheetApp.getUi().showDialog(uiInstance);
  </code></pre>
  *
- * @function Ui.showDialog
+ * @function Ui#showDialog
+ * @deprecated
  *
  * @param {Object} userInterface - an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../html/html-output.html'>HtmlOutput</a></code> or
      <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../ui/ui-instance.html'>UiInstance</a></s></code> web app
@@ -314,7 +319,7 @@
  SpreadsheetApp.getUi().showModalDialog(uiInstance, &#39;My add-on&#39;);
  </code></pre>
  *
- * @function Ui.showModalDialog
+ * @function Ui#showModalDialog
  *
  * @param {Object} userInterface - an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../html/html-output.html'>HtmlOutput</a></code> or
      <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../ui/ui-instance.html'>UiInstance</a></s></code> web app
@@ -357,7 +362,7 @@
  SpreadsheetApp.getUi().showModelessDialog(uiInstance, &#39;My add-on&#39;);
  </code></pre>
  *
- * @function Ui.showModelessDialog
+ * @function Ui#showModelessDialog
  *
  * @param {Object} userInterface - an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../html/html-output.html'>HtmlOutput</a></code> or
      <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../ui/ui-instance.html'>UiInstance</a></s></code> web app
@@ -397,11 +402,12 @@
  SpreadsheetApp.getUi().showSidebar(uiInstance);
  </code></pre>
  *
- * @function Ui.showSidebar
+ * @function Ui#showSidebar
  *
  * @param {Object} userInterface - an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../html/html-output.html'>HtmlOutput</a></code> or
      <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../ui/ui-instance.html'>UiInstance</a></s></code> web app
  *
  * @return void
  */
+
 

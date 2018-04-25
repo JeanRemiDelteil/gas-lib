@@ -2,55 +2,12 @@
  * @namespace SitesApp
  ***********************************************/
 
-
 /**
- * @class SitesApp.AttachmentType
+ * @typedef {SitesApp.AttachmentType} SitesApp.AttachmentType
  */
 
 /**
- * @typedef {SitesApp.AttachmentType} SitesApp.AttachmentType.HOSTED
- * 
- * 
- */
-
-/**
- * @typedef {SitesApp.AttachmentType} SitesApp.AttachmentType.WEB
- * 
- * 
- */
-
-/**
- * @class SitesApp.PageType
- */
-
-/**
- * @typedef {SitesApp.PageType} SitesApp.PageType.ANNOUNCEMENT
- * 
- * 
- */
-
-/**
- * @typedef {SitesApp.PageType} SitesApp.PageType.ANNOUNCEMENTS_PAGE
- * 
- * 
- */
-
-/**
- * @typedef {SitesApp.PageType} SitesApp.PageType.FILE_CABINET_PAGE
- * 
- * 
- */
-
-/**
- * @typedef {SitesApp.PageType} SitesApp.PageType.LIST_PAGE
- * 
- * 
- */
-
-/**
- * @typedef {SitesApp.PageType} SitesApp.PageType.WEB_PAGE
- * 
- * 
+ * @typedef {SitesApp.PageType} SitesApp.PageType
  */
 
 /**
@@ -170,8 +127,8 @@
  * @function SitesApp.getAllSites
  *
  * @param {String} domain - The G Suite hosted domain (e.g. example.com)
- * @param {number} start - the index of the first site to return
- * @param {number} max - the maximum number of results to return
+ * @param {IntegerNum} start - the index of the first site to return
+ * @param {IntegerNum} max - the maximum number of results to return
  *
  * @return {SitesApp.Site[]} an array of sites belonging to the domain
  */
@@ -276,8 +233,8 @@
  *
  * @function SitesApp.getSites
  *
- * @param {number} start - the index of the first site to return
- * @param {number} max - the maximum number of results to return
+ * @param {IntegerNum} start - the index of the first site to return
+ * @param {IntegerNum} max - the maximum number of results to return
  *
  * @return {SitesApp.Site[]} an array of all the sites owned for a user
  */
@@ -316,11 +273,12 @@
  * @function SitesApp.getSites
  *
  * @param {String} domain - The G Suite hosted domain (e.g. example.com)
- * @param {number} start - the index of the first site to return
- * @param {number} max - the maximum number of results to return
+ * @param {IntegerNum} start - the index of the first site to return
+ * @param {IntegerNum} max - the maximum number of results to return
  *
  * @return {SitesApp.Site[]} an array of sites belonging to the user
  */
+
 
 /**
  * @class SitesApp.Attachment
@@ -605,10 +563,24 @@
  *
  * @function SitesApp.Attachment#setUrl
  *
- * @param {String} url - 
+ * @param {String} url
  *
  * @return {SitesApp.Attachment} this Attachment for chaining
  */
+
+
+/**
+ * @class SitesApp.AttachmentType
+ */
+
+/**
+ * @typedef {SitesApp.AttachmentType} SitesApp.AttachmentType.HOSTED
+ */
+
+/**
+ * @typedef {SitesApp.AttachmentType} SitesApp.AttachmentType.WEB
+ */
+
 
 /**
  * @class SitesApp.Column
@@ -673,6 +645,7 @@
  *
  * @return {SitesApp.Column} this Column for chaining
  */
+
 
 /**
  * @class SitesApp.Comment
@@ -821,6 +794,7 @@
  * @return {SitesApp.Comment} this Comment for chaining
  */
 
+
 /**
  * @class SitesApp.ListItem
  */
@@ -902,7 +876,7 @@
  *
  * @function SitesApp.ListItem#getValueByIndex
  *
- * @param {number} index - the column to get the value of
+ * @param {IntegerNum} index - the column to get the value of
  *
  * @return {String} the value of that column
  */
@@ -960,7 +934,7 @@
  *
  * @function SitesApp.ListItem#setValueByIndex
  *
- * @param {number} index - the column to set the value of
+ * @param {IntegerNum} index - the column to set the value of
  * @param {String} value - the new value
  *
  * @return {SitesApp.ListItem} this ListItem for chaining
@@ -984,6 +958,7 @@
  *
  * @return {SitesApp.ListItem} this ListItem for chaining
  */
+
 
 /**
  * @class SitesApp.Page
@@ -1020,6 +995,7 @@
  </code></pre>
  *
  * @function SitesApp.Page#addComment
+ * @deprecated
  *
  * @param {String} content - the comment content
  *
@@ -1550,6 +1526,7 @@
  </code></pre>
  *
  * @function SitesApp.Page#getComments
+ * @deprecated
  *
  * @return {SitesApp.Comment[]} an array of Comments.
  */
@@ -1569,6 +1546,7 @@
  </code></pre>
  *
  * @function SitesApp.Page#getComments
+ * @deprecated
  *
  * @param {Object} optOptions - a JavaScript object containing optional parameters
  *
@@ -1715,6 +1693,7 @@
  </code></pre>
  *
  * @function SitesApp.Page#getPageName
+ * @deprecated
  *
  * @return {String} the name of this page
  */
@@ -1760,6 +1739,7 @@
  </code></pre>
  *
  * @function SitesApp.Page#getSelfLink
+ * @deprecated
  *
  * @return {String} the gData feed link
  */
@@ -1977,6 +1957,32 @@
  * @return {SitesApp.Page} this Page for chaining
  */
 
+
+/**
+ * @class SitesApp.PageType
+ */
+
+/**
+ * @typedef {SitesApp.PageType} SitesApp.PageType.ANNOUNCEMENT
+ */
+
+/**
+ * @typedef {SitesApp.PageType} SitesApp.PageType.ANNOUNCEMENTS_PAGE
+ */
+
+/**
+ * @typedef {SitesApp.PageType} SitesApp.PageType.FILE_CABINET_PAGE
+ */
+
+/**
+ * @typedef {SitesApp.PageType} SitesApp.PageType.LIST_PAGE
+ */
+
+/**
+ * @typedef {SitesApp.PageType} SitesApp.PageType.WEB_PAGE
+ */
+
+
 /**
  * @class SitesApp.Site
  */
@@ -1990,6 +1996,7 @@
  </code></pre>
  *
  * @function SitesApp.Site#addCollaborator
+ * @deprecated
  *
  * @param {String} email - The email of the user to add as a collaborator
  *
@@ -2006,6 +2013,7 @@
  </code></pre>
  *
  * @function SitesApp.Site#addCollaborator
+ * @deprecated
  *
  * @param {User} user - The user to add as a collaborator
  *
@@ -2114,6 +2122,7 @@
  * Create a new Announcement
  *
  * @function SitesApp.Site#createAnnouncement
+ * @deprecated
  *
  * @param {String} title - The title of the Announcement page to create
  * @param {String} html - The HTML body of the page
@@ -2156,6 +2165,7 @@
  <p>Create a new Comment.
  *
  * @function SitesApp.Site#createComment
+ * @deprecated
  *
  * @param {String} inReplyTo - a GData feed url - meaningless and broken
  * @param {String} html - the comment content
@@ -2197,6 +2207,7 @@
  <p>Create a new ListItem.
  *
  * @function SitesApp.Site#createListItem
+ * @deprecated
  *
  * @param {String} html - the item content - meaningless and broken.
  * @param {String[]} columnNames - the names of the columns, which are unnecessary
@@ -2263,6 +2274,7 @@
  <p>Create a new Web Attachment.
  *
  * @function SitesApp.Site#createWebAttachment
+ * @deprecated
  *
  * @param {String} title - the attachment title
  * @param {String} url - the url of the attachment
@@ -2306,6 +2318,7 @@
  </code></pre>
  *
  * @function SitesApp.Site#deleteSite
+ * @deprecated
  *
  * @return void
  */
@@ -2362,6 +2375,7 @@
  </code></pre>
  *
  * @function SitesApp.Site#getAnnouncements
+ * @deprecated
  *
  * @return {SitesApp.Page[]} an array of announcement @link Page} instances
  */
@@ -2379,6 +2393,7 @@
  </code></pre>
  *
  * @function SitesApp.Site#getAnnouncementsPages
+ * @deprecated
  *
  * @return {SitesApp.Page[]} an array of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code> instances
  */
@@ -2397,6 +2412,7 @@
  </code></pre>
  *
  * @function SitesApp.Site#getAttachments
+ * @deprecated
  *
  * @return {SitesApp.Attachment[]} an array of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/attachment.html'>Attachment</a></code> instances
  */
@@ -2466,6 +2482,7 @@
  </code></pre>
  *
  * @function SitesApp.Site#getCollaborators
+ * @deprecated
  *
  * @return {User[]} an array containing <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/../base/user.html'>User</a></code> instances representing collaborators
  */
@@ -2483,6 +2500,7 @@
  </code></pre>
  *
  * @function SitesApp.Site#getComments
+ * @deprecated
  *
  * @return {SitesApp.Comment[]} an array of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/comment.html'>Comment</a></code> instances
  */
@@ -2509,6 +2527,7 @@
  </code></pre>
  *
  * @function SitesApp.Site#getFileCabinetPages
+ * @deprecated
  *
  * @return {SitesApp.Page[]} an array of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code> instances
  */
@@ -2526,6 +2545,7 @@
  </code></pre>
  *
  * @function SitesApp.Site#getListItems
+ * @deprecated
  *
  * @return {SitesApp.ListItem[]} an array of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/list-item.html'>ListItem</a></code> instances
  */
@@ -2543,6 +2563,7 @@
  </code></pre>
  *
  * @function SitesApp.Site#getListPages
+ * @deprecated
  *
  * @return {SitesApp.Page[]} an array of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code> instances
  */
@@ -2583,6 +2604,7 @@
  </code></pre>
  *
  * @function SitesApp.Site#getSelfLink
+ * @deprecated
  *
  * @return {String} the url of this Site's feed
  */
@@ -2596,6 +2618,7 @@
  </code></pre>
  *
  * @function SitesApp.Site#getSiteName
+ * @deprecated
  *
  * @return {String} the siteName of the site
  */
@@ -2686,6 +2709,7 @@
  </code></pre>
  *
  * @function SitesApp.Site#getWebAttachments
+ * @deprecated
  *
  * @return {SitesApp.Attachment[]} an array of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/attachment.html'>Attachment</a></code> instances
  */
@@ -2703,6 +2727,7 @@
  </code></pre>
  *
  * @function SitesApp.Site#getWebPages
+ * @deprecated
  *
  * @return {SitesApp.Page[]} an array of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/page.html'>Page</a></code> instances
  */
@@ -2717,6 +2742,7 @@
  </code></pre>
  *
  * @function SitesApp.Site#removeCollaborator
+ * @deprecated
  *
  * @param {String} email - The email of the user to remove from the collaborators
  *
@@ -2733,6 +2759,7 @@
  </code></pre>
  *
  * @function SitesApp.Site#removeCollaborator
+ * @deprecated
  *
  * @param {User} user - A user to remove from the list of collaborators
  *
@@ -2931,4 +2958,5 @@
  *
  * @return {SitesApp.Site} the site for method chaining
  */
+
 

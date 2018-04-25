@@ -2,110 +2,18 @@
  * @namespace DriveApp
  ***********************************************/
 
-
 /**
  * An enum representing classes of users who can access a file or folder, besides any individual
  users who have been explicitly given access.
  *
- * @class DriveApp.Access
- */
-
-/**
- * @typedef {DriveApp.Access} DriveApp.Access.ANYONE
- * 
- * Anyone on the Internet can find and access. No sign-in required.
-
- <p>Domain administrators can prohibit this setting for users of a G Suite domain. If the
- setting is disabled, passing this value to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code>
- throws an exception.
- */
-
-/**
- * @typedef {DriveApp.Access} DriveApp.Access.ANYONE_WITH_LINK
- * 
- * Anyone who has the link can access. No sign-in required.
-
- <p>Domain administrators can prohibit this setting for users of a G Suite domain. If the
- setting is disabled, passing this value to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code>
- throws an exception.
- */
-
-/**
- * @typedef {DriveApp.Access} DriveApp.Access.DOMAIN
- * 
- * People in your domain can find and access. Sign-in required.
-
- <p>This setting is available only for users of a G Suite domain. For other types of Google
- accounts, passing this value to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code> throws an
- exception.
- */
-
-/**
- * @typedef {DriveApp.Access} DriveApp.Access.DOMAIN_WITH_LINK
- * 
- * People in your domain who have the link can access. Sign-in required.
-
- <p>This setting is available only for users of a G Suite domain. For other types of Google
- accounts, passing this value to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code> throws an
- exception.
- */
-
-/**
- * @typedef {DriveApp.Access} DriveApp.Access.PRIVATE
- * 
- * Only people explicitly granted permission can access. Sign-in required.
+ * @typedef {DriveApp.Access} DriveApp.Access
  */
 
 /**
  * An enum representing the permissions granted to users who can access a file or folder, besides
  any individual users who have been explicitly given access.
  *
- * @class DriveApp.Permission
- */
-
-/**
- * @typedef {DriveApp.Permission} DriveApp.Permission.COMMENT
- * 
- * Users who can access the file or folder are able only to view it, copy it, or comment on it.
- Passing this value to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code> throws an exception if
- the type of file does not support it.
- */
-
-/**
- * @typedef {DriveApp.Permission} DriveApp.Permission.EDIT
- * 
- * Users who can access the file or folder are able to edit it. Unless <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setShareableByEditors(Boolean)'>File.setShareableByEditors(shareable)</a></code> is set to <code>false</code>, users can also change the sharing
- settings. Passing this value to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code> throws an
- exception if the type of file does not support it.
- */
-
-/**
- * @typedef {DriveApp.Permission} DriveApp.Permission.NONE
- * 
- * The user does not have any permissions for the file or folder. This value can be returned, but
- passing it to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code> throws an exception unless it
- is set in combination with <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/access.html#ANYONE'>Access.ANYONE</a></code>.
- */
-
-/**
- * @typedef {DriveApp.Permission} DriveApp.Permission.ORGANIZER
- * 
- * Users who can organize files and folders within a Team Drive. This value can be returned, but
- passing it to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code> throws an exception.
- */
-
-/**
- * @typedef {DriveApp.Permission} DriveApp.Permission.OWNER
- * 
- * The user owns the file or folder. This value can be returned, but passing it to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code> throws an exception.
- */
-
-/**
- * @typedef {DriveApp.Permission} DriveApp.Permission.VIEW
- * 
- * Users who can access the file or folder are able only to view it or copy it. Passing this value
- to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code> throws an exception if the type of file
- does not support it.
+ * @typedef {DriveApp.Permission} DriveApp.Permission
  */
 
 /**
@@ -298,7 +206,7 @@
  *
  * @function DriveApp.getStorageLimit
  *
- * @return {number} the number of bytes the user is allowed to store in Drive
+ * @return {IntegerNum} the number of bytes the user is allowed to store in Drive
  */
 
 /**
@@ -306,7 +214,7 @@
  *
  * @function DriveApp.getStorageUsed
  *
- * @return {number} the number of bytes the user is currently storing in Drive
+ * @return {IntegerNum} the number of bytes the user is currently storing in Drive
  */
 
 /**
@@ -400,6 +308,58 @@
  * @return {DriveApp.FolderIterator} a collection of all folders in the user's Drive that match the search
      criteria
  */
+
+
+/**
+ * @class DriveApp.Access
+ */
+
+/**
+ * Anyone on the Internet can find and access. No sign-in required.
+
+ <p>Domain administrators can prohibit this setting for users of a G Suite domain. If the
+ setting is disabled, passing this value to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code>
+ throws an exception.
+ *
+ * @typedef {DriveApp.Access} DriveApp.Access.ANYONE
+ */
+
+/**
+ * Anyone who has the link can access. No sign-in required.
+
+ <p>Domain administrators can prohibit this setting for users of a G Suite domain. If the
+ setting is disabled, passing this value to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code>
+ throws an exception.
+ *
+ * @typedef {DriveApp.Access} DriveApp.Access.ANYONE_WITH_LINK
+ */
+
+/**
+ * People in your domain can find and access. Sign-in required.
+
+ <p>This setting is available only for users of a G Suite domain. For other types of Google
+ accounts, passing this value to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code> throws an
+ exception.
+ *
+ * @typedef {DriveApp.Access} DriveApp.Access.DOMAIN
+ */
+
+/**
+ * People in your domain who have the link can access. Sign-in required.
+
+ <p>This setting is available only for users of a G Suite domain. For other types of Google
+ accounts, passing this value to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code> throws an
+ exception.
+ *
+ * @typedef {DriveApp.Access} DriveApp.Access.DOMAIN_WITH_LINK
+ */
+
+/**
+ * Only people explicitly granted permission can access. Sign-in required.
+ *
+ * @typedef {DriveApp.Access} DriveApp.Access.PRIVATE
+ */
+
 
 /**
  * @class DriveApp.File
@@ -657,7 +617,7 @@
  *
  * @function DriveApp.File#getSize
  *
- * @return {number} the number of bytes used to store the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> in Drive
+ * @return {IntegerNum} the number of bytes used to store the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> in Drive
  */
 
 /**
@@ -967,6 +927,7 @@
  * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
  */
 
+
 /**
  * @class DriveApp.FileIterator
  */
@@ -998,6 +959,7 @@
  *
  * @return {DriveApp.File} the next item in the collection
  */
+
 
 /**
  * @class DriveApp.Folder
@@ -1309,7 +1271,7 @@
  *
  * @function DriveApp.Folder#getSize
  *
- * @return {number} the number of bytes used to store the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> in Drive
+ * @return {IntegerNum} the number of bytes used to store the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> in Drive
  */
 
 /**
@@ -1610,6 +1572,7 @@
  * @return {DriveApp.Folder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>, for chaining
  */
 
+
 /**
  * @class DriveApp.FolderIterator
  */
@@ -1641,6 +1604,57 @@
  *
  * @return {DriveApp.Folder} the next item in the collection
  */
+
+
+/**
+ * @class DriveApp.Permission
+ */
+
+/**
+ * Users who can access the file or folder are able only to view it, copy it, or comment on it.
+ Passing this value to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code> throws an exception if
+ the type of file does not support it.
+ *
+ * @typedef {DriveApp.Permission} DriveApp.Permission.COMMENT
+ */
+
+/**
+ * Users who can access the file or folder are able to edit it. Unless <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setShareableByEditors(Boolean)'>File.setShareableByEditors(shareable)</a></code> is set to <code>false</code>, users can also change the sharing
+ settings. Passing this value to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code> throws an
+ exception if the type of file does not support it.
+ *
+ * @typedef {DriveApp.Permission} DriveApp.Permission.EDIT
+ */
+
+/**
+ * The user does not have any permissions for the file or folder. This value can be returned, but
+ passing it to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code> throws an exception unless it
+ is set in combination with <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/access.html#ANYONE'>Access.ANYONE</a></code>.
+ *
+ * @typedef {DriveApp.Permission} DriveApp.Permission.NONE
+ */
+
+/**
+ * Users who can organize files and folders within a Team Drive. This value can be returned, but
+ passing it to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code> throws an exception.
+ *
+ * @typedef {DriveApp.Permission} DriveApp.Permission.ORGANIZER
+ */
+
+/**
+ * The user owns the file or folder. This value can be returned, but passing it to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code> throws an exception.
+ *
+ * @typedef {DriveApp.Permission} DriveApp.Permission.OWNER
+ */
+
+/**
+ * Users who can access the file or folder are able only to view it or copy it. Passing this value
+ to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code> throws an exception if the type of file
+ does not support it.
+ *
+ * @typedef {DriveApp.Permission} DriveApp.Permission.VIEW
+ */
+
 
 /**
  * @class DriveApp.User
@@ -1727,7 +1741,9 @@
  </pre>
  *
  * @function DriveApp.User#getUserLoginId
+ * @deprecated
  *
  * @return {String} the user's email's address
  */
+
 

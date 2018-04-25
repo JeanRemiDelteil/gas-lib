@@ -2,365 +2,52 @@
  * @namespace CardService
  ***********************************************/
 
-
 /**
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/composed-email-type.html'>ComposedEmailType</a></code> enumeration.
  *
- * @class CardService.ComposedEmailType
- */
-
-/**
- * @typedef {CardService.ComposedEmailType} CardService.ComposedEmailType.REPLY_AS_DRAFT
- * 
- * A draft that is a reply to another message. Default.
- */
-
-/**
- * @typedef {CardService.ComposedEmailType} CardService.ComposedEmailType.STANDALONE_DRAFT
- * 
- * A draft that is a standalone message.
+ * @typedef {CardService.ComposedEmailType} CardService.ComposedEmailType
  */
 
 /**
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/icon.html'>Icon</a></code> enumeration.
  *
- * @class CardService.Icon
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.AIRPLANE
- * 
- * <img alt="Airplane flight icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/flight_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.BOOKMARK
- * 
- * <img alt="Bookmark icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/bookmark_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.BUS
- * 
- * <img alt="Bus icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/directions_bus_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.CAR
- * 
- * <img alt="Car icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/directions_car_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.CLOCK
- * 
- * <img alt="Clock icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/schedule_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.CONFIRMATION_NUMBER_ICON
- * 
- * <img alt="Confirmation number icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/confirmation_num_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.DESCRIPTION
- * 
- * <img alt="Description icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/subject_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.DOLLAR
- * 
- * <img alt="Dollar icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/attach_money_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.EMAIL
- * 
- * <img alt="Email icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/email_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.EVENT_PERFORMER
- * 
- * <img alt="Email icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/people_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.EVENT_SEAT
- * 
- * <img alt="Event seat icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/event_seat_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.FLIGHT_ARRIVAL
- * 
- * <img alt="Flight arrival icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/flight_land_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.FLIGHT_DEPARTURE
- * 
- * <img alt="Flight departure icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/flight_takeoff_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.HOTEL
- * 
- * <img alt="Hotel icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/hotel_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.HOTEL_ROOM_TYPE
- * 
- * <img alt="Hotel icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/star_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.INVITE
- * 
- * <img alt="Invite icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/event_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.MAP_PIN
- * 
- * <img alt="Map pin icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/place_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.MEMBERSHIP
- * 
- * <img alt="Membershipt icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/card_membership_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.MULTIPLE_PEOPLE
- * 
- * <img alt="Multiple people icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/people_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.NONE
- * 
- * No icon. Default.
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.OFFER
- * 
- * <img alt="Offer icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/local_offer_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.PERSON
- * 
- * <img alt="Person icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/person_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.PHONE
- * 
- * <img alt="Phone icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/call_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.RESTAURANT_ICON
- * 
- * <img alt="Restaurant icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/restaurant_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.SHOPPING_CART
- * 
- * <img alt="Shopping cart icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/shopping_cart_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.STAR
- * 
- * <img alt="Star icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/star_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.STORE
- * 
- * <img alt="Store icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/store_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.TICKET
- * 
- * <img alt="Ticket icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/local_attraction_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.TRAIN
- * 
- * <img alt="Train icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/train_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.VIDEO_CAMERA
- * 
- * <img alt="Video camera icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/videocam_grey600_48dp.png"/>
- */
-
-/**
- * @typedef {CardService.Icon} CardService.Icon.VIDEO_PLAY
- * 
- * <img alt="Video play icon"
- src="https://www.gstatic.com/images/icons/material/system/1x/play_circle_filled_grey600_48dp.png"/>
+ * @typedef {CardService.Icon} CardService.Icon
  */
 
 /**
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/image-style.html'>ImageStyle</a></code> enumeration.
  *
- * @class CardService.ImageStyle
- */
-
-/**
- * @typedef {CardService.ImageStyle} CardService.ImageStyle.CIRCLE
- * 
- * Crop to a circle shape.
- */
-
-/**
- * @typedef {CardService.ImageStyle} CardService.ImageStyle.SQUARE
- * 
- * No cropping. Default.
+ * @typedef {CardService.ImageStyle} CardService.ImageStyle
  */
 
 /**
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/load-indicator.html'>LoadIndicator</a></code> enumeration.
  *
- * @class CardService.LoadIndicator
- */
-
-/**
- * @typedef {CardService.LoadIndicator} CardService.LoadIndicator.NONE
- * 
- * Do not use an indicator.
- */
-
-/**
- * @typedef {CardService.LoadIndicator} CardService.LoadIndicator.SPINNER
- * 
- * Use a spinner indicator. Default.
+ * @typedef {CardService.LoadIndicator} CardService.LoadIndicator
  */
 
 /**
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/notification-type.html'>NotificationType</a></code> enumeration.
  *
- * @class CardService.NotificationType
- */
-
-/**
- * @typedef {CardService.NotificationType} CardService.NotificationType.ERROR
- * 
- * An error-level notification.
- */
-
-/**
- * @typedef {CardService.NotificationType} CardService.NotificationType.INFO
- * 
- * An info-level notification. Default.
- */
-
-/**
- * @typedef {CardService.NotificationType} CardService.NotificationType.WARNING
- * 
- * A warning-level notification.
+ * @typedef {CardService.NotificationType} CardService.NotificationType
  */
 
 /**
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/on-close.html'>OnClose</a></code> enumeration.
  *
- * @class CardService.OnClose
- */
-
-/**
- * @typedef {CardService.OnClose} CardService.OnClose.NOTHING
- * 
- * Do nothing on close. Default.
- */
-
-/**
- * @typedef {CardService.OnClose} CardService.OnClose.RELOAD_ADD_ON
- * 
- * Reload the add-on on closing the URL.
+ * @typedef {CardService.OnClose} CardService.OnClose
  */
 
 /**
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/open-as.html'>OpenAs</a></code> enumeration.
  *
- * @class CardService.OpenAs
- */
-
-/**
- * @typedef {CardService.OpenAs} CardService.OpenAs.FULL_SIZE
- * 
- * Open in a full window or tab. Default.
- */
-
-/**
- * @typedef {CardService.OpenAs} CardService.OpenAs.OVERLAY
- * 
- * Open as an overlay such as a pop-up.
+ * @typedef {CardService.OpenAs} CardService.OpenAs
  */
 
 /**
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/selection-input-type.html'>SelectionInputType</a></code> enumeration.
  *
- * @class CardService.SelectionInputType
- */
-
-/**
- * @typedef {CardService.SelectionInputType} CardService.SelectionInputType.CHECK_BOX
- * 
- * Checkbox input style. Default.
- */
-
-/**
- * @typedef {CardService.SelectionInputType} CardService.SelectionInputType.DROPDOWN
- * 
- * Dropdown menu selection input style.
- */
-
-/**
- * @typedef {CardService.SelectionInputType} CardService.SelectionInputType.RADIO_BUTTON
- * 
- * Radio buton input style. At most one item in the group can be selected.
+ * @typedef {CardService.SelectionInputType} CardService.SelectionInputType
  */
 
 /**
@@ -555,6 +242,7 @@
  * @return {CardService.UniversalActionResponseBuilder} an empty UniversalActionResponse builder
  */
 
+
 /**
  * @class CardService.Action
  */
@@ -581,8 +269,9 @@
 
 /**
  * @function CardService.Action#setMethodName
+ * @deprecated
  *
- * @param {String} functionName - 
+ * @param {String} functionName
  *
  * @return {CardService.Action}
  */
@@ -597,6 +286,7 @@
  * @return {CardService.Action} this object, for chaining.
  */
 
+
 /**
  * @class CardService.ActionResponse
  */
@@ -606,6 +296,7 @@
  *
  * @return {String}
  */
+
 
 /**
  * @class CardService.ActionResponseBuilder
@@ -661,6 +352,7 @@
  * @return {CardService.ActionResponseBuilder} this object, for chaining.
  */
 
+
 /**
  * @class CardService.AuthorizationAction
  */
@@ -674,6 +366,7 @@
  *
  * @return {CardService.AuthorizationAction} this object, for chaining.
  */
+
 
 /**
  * @class CardService.AuthorizationException
@@ -722,6 +415,7 @@
  *
  * @return void
  */
+
 
 /**
  * @class CardService.Button
@@ -860,6 +554,7 @@
  * @return {CardService.Button} this object, for chaining.
  */
 
+
 /**
  * @class CardService.ButtonSet
  */
@@ -874,6 +569,7 @@
  * @return {CardService.ButtonSet} this object, for chaining.
  */
 
+
 /**
  * @class CardService.Card
  */
@@ -883,6 +579,7 @@
  *
  * @return {String}
  */
+
 
 /**
  * @class CardService.CardAction
@@ -1031,6 +728,7 @@
  * @return {CardService.CardAction} this object, for chaining.
  */
 
+
 /**
  * @class CardService.CardBuilder
  */
@@ -1083,6 +781,7 @@
  *
  * @return {CardService.CardBuilder} this object, for chaining.
  */
+
 
 /**
  * @class CardService.CardHeader
@@ -1138,6 +837,7 @@
  * @return {CardService.CardHeader} this object, for chaining.
  */
 
+
 /**
  * @class CardService.CardSection
  */
@@ -1178,10 +878,11 @@
  *
  * @function CardService.CardSection#setNumUncollapsibleWidgets
  *
- * @param {number} numUncollapsibleWidgets - the number of widgets to show.
+ * @param {IntegerNum} numUncollapsibleWidgets - the number of widgets to show.
  *
  * @return {CardService.CardSection} this object, for chaining.
  */
+
 
 /**
  * @class CardService.ComposeActionResponse
@@ -1192,6 +893,7 @@
  *
  * @return {String}
  */
+
 
 /**
  * @class CardService.ComposeActionResponseBuilder
@@ -1216,6 +918,245 @@
  *
  * @return {CardService.ComposeActionResponseBuilder} this object, for chaining.
  */
+
+
+/**
+ * @class CardService.ComposedEmailType
+ */
+
+/**
+ * A draft that is a reply to another message. Default.
+ *
+ * @typedef {CardService.ComposedEmailType} CardService.ComposedEmailType.REPLY_AS_DRAFT
+ */
+
+/**
+ * A draft that is a standalone message.
+ *
+ * @typedef {CardService.ComposedEmailType} CardService.ComposedEmailType.STANDALONE_DRAFT
+ */
+
+
+/**
+ * @class CardService.Icon
+ */
+
+/**
+ * <img alt="Airplane flight icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/flight_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.AIRPLANE
+ */
+
+/**
+ * <img alt="Bookmark icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/bookmark_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.BOOKMARK
+ */
+
+/**
+ * <img alt="Bus icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/directions_bus_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.BUS
+ */
+
+/**
+ * <img alt="Car icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/directions_car_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.CAR
+ */
+
+/**
+ * <img alt="Clock icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/schedule_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.CLOCK
+ */
+
+/**
+ * <img alt="Confirmation number icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/confirmation_num_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.CONFIRMATION_NUMBER_ICON
+ */
+
+/**
+ * <img alt="Description icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/subject_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.DESCRIPTION
+ */
+
+/**
+ * <img alt="Dollar icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/attach_money_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.DOLLAR
+ */
+
+/**
+ * <img alt="Email icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/email_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.EMAIL
+ */
+
+/**
+ * <img alt="Email icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/people_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.EVENT_PERFORMER
+ */
+
+/**
+ * <img alt="Event seat icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/event_seat_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.EVENT_SEAT
+ */
+
+/**
+ * <img alt="Flight arrival icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/flight_land_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.FLIGHT_ARRIVAL
+ */
+
+/**
+ * <img alt="Flight departure icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/flight_takeoff_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.FLIGHT_DEPARTURE
+ */
+
+/**
+ * <img alt="Hotel icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/hotel_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.HOTEL
+ */
+
+/**
+ * <img alt="Hotel icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/star_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.HOTEL_ROOM_TYPE
+ */
+
+/**
+ * <img alt="Invite icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/event_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.INVITE
+ */
+
+/**
+ * <img alt="Map pin icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/place_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.MAP_PIN
+ */
+
+/**
+ * <img alt="Membershipt icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/card_membership_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.MEMBERSHIP
+ */
+
+/**
+ * <img alt="Multiple people icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/people_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.MULTIPLE_PEOPLE
+ */
+
+/**
+ * No icon. Default.
+ *
+ * @typedef {CardService.Icon} CardService.Icon.NONE
+ */
+
+/**
+ * <img alt="Offer icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/local_offer_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.OFFER
+ */
+
+/**
+ * <img alt="Person icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/person_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.PERSON
+ */
+
+/**
+ * <img alt="Phone icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/call_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.PHONE
+ */
+
+/**
+ * <img alt="Restaurant icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/restaurant_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.RESTAURANT_ICON
+ */
+
+/**
+ * <img alt="Shopping cart icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/shopping_cart_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.SHOPPING_CART
+ */
+
+/**
+ * <img alt="Star icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/star_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.STAR
+ */
+
+/**
+ * <img alt="Store icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/store_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.STORE
+ */
+
+/**
+ * <img alt="Ticket icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/local_attraction_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.TICKET
+ */
+
+/**
+ * <img alt="Train icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/train_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.TRAIN
+ */
+
+/**
+ * <img alt="Video camera icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/videocam_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.VIDEO_CAMERA
+ */
+
+/**
+ * <img alt="Video play icon"
+ src="https://www.gstatic.com/images/icons/material/system/1x/play_circle_filled_grey600_48dp.png"/>
+ *
+ * @typedef {CardService.Icon} CardService.Icon.VIDEO_PLAY
+ */
+
 
 /**
  * @class CardService.Image
@@ -1373,6 +1314,7 @@
  *
  * @return {CardService.Image} this object, for chaining.
  */
+
 
 /**
  * @class CardService.ImageButton
@@ -1542,6 +1484,24 @@
  *
  * @return {CardService.ImageButton} this object, for chaining.
  */
+
+
+/**
+ * @class CardService.ImageStyle
+ */
+
+/**
+ * Crop to a circle shape.
+ *
+ * @typedef {CardService.ImageStyle} CardService.ImageStyle.CIRCLE
+ */
+
+/**
+ * No cropping. Default.
+ *
+ * @typedef {CardService.ImageStyle} CardService.ImageStyle.SQUARE
+ */
+
 
 /**
  * @class CardService.KeyValue
@@ -1775,6 +1735,24 @@
  * @return {CardService.KeyValue} this object, for chaining.
  */
 
+
+/**
+ * @class CardService.LoadIndicator
+ */
+
+/**
+ * Do not use an indicator.
+ *
+ * @typedef {CardService.LoadIndicator} CardService.LoadIndicator.NONE
+ */
+
+/**
+ * Use a spinner indicator. Default.
+ *
+ * @typedef {CardService.LoadIndicator} CardService.LoadIndicator.SPINNER
+ */
+
+
 /**
  * @class CardService.Navigation
  */
@@ -1832,6 +1810,7 @@
  * @return {CardService.Navigation} this object, for chaining.
  */
 
+
 /**
  * @class CardService.Notification
  */
@@ -1855,6 +1834,64 @@
  *
  * @return {CardService.Notification} this object, for chaining.
  */
+
+
+/**
+ * @class CardService.NotificationType
+ */
+
+/**
+ * An error-level notification.
+ *
+ * @typedef {CardService.NotificationType} CardService.NotificationType.ERROR
+ */
+
+/**
+ * An info-level notification. Default.
+ *
+ * @typedef {CardService.NotificationType} CardService.NotificationType.INFO
+ */
+
+/**
+ * A warning-level notification.
+ *
+ * @typedef {CardService.NotificationType} CardService.NotificationType.WARNING
+ */
+
+
+/**
+ * @class CardService.OnClose
+ */
+
+/**
+ * Do nothing on close. Default.
+ *
+ * @typedef {CardService.OnClose} CardService.OnClose.NOTHING
+ */
+
+/**
+ * Reload the add-on on closing the URL.
+ *
+ * @typedef {CardService.OnClose} CardService.OnClose.RELOAD_ADD_ON
+ */
+
+
+/**
+ * @class CardService.OpenAs
+ */
+
+/**
+ * Open in a full window or tab. Default.
+ *
+ * @typedef {CardService.OpenAs} CardService.OpenAs.FULL_SIZE
+ */
+
+/**
+ * Open as an overlay such as a pop-up.
+ *
+ * @typedef {CardService.OpenAs} CardService.OpenAs.OVERLAY
+ */
+
 
 /**
  * @class CardService.OpenLink
@@ -1891,6 +1928,7 @@
  *
  * @return {CardService.OpenLink} this object, for chaining.
  */
+
 
 /**
  * @class CardService.SelectionInput
@@ -1951,6 +1989,30 @@
  * @return {CardService.SelectionInput} this object, for chaining.
  */
 
+
+/**
+ * @class CardService.SelectionInputType
+ */
+
+/**
+ * Checkbox input style. Default.
+ *
+ * @typedef {CardService.SelectionInputType} CardService.SelectionInputType.CHECK_BOX
+ */
+
+/**
+ * Dropdown menu selection input style.
+ *
+ * @typedef {CardService.SelectionInputType} CardService.SelectionInputType.DROPDOWN
+ */
+
+/**
+ * Radio buton input style. At most one item in the group can be selected.
+ *
+ * @typedef {CardService.SelectionInputType} CardService.SelectionInputType.RADIO_BUTTON
+ */
+
+
 /**
  * @class CardService.Suggestions
  */
@@ -1975,6 +2037,7 @@
  * @return {CardService.Suggestions} this object, for chaining.
  */
 
+
 /**
  * @class CardService.SuggestionsResponse
  */
@@ -1984,6 +2047,7 @@
  *
  * @return {String}
  */
+
 
 /**
  * @class CardService.SuggestionsResponseBuilder
@@ -2006,6 +2070,7 @@
  *
  * @return {CardService.SuggestionsResponseBuilder} this object.
  */
+
 
 /**
  * @class CardService.Switch
@@ -2052,6 +2117,7 @@
  *
  * @return {CardService.Switch} this object, for chaining.
  */
+
 
 /**
  * @class CardService.TextButton
@@ -2200,6 +2266,7 @@
  * @return {CardService.TextButton} this object, for chaining.
  */
 
+
 /**
  * @class CardService.TextInput
  */
@@ -2312,6 +2379,7 @@
  * @return {CardService.TextInput} this object, for chaining.
  */
 
+
 /**
  * @class CardService.TextParagraph
  */
@@ -2326,6 +2394,7 @@
  * @return {CardService.TextParagraph} this object, for chaining.
  */
 
+
 /**
  * @class CardService.UniversalActionResponse
  */
@@ -2335,6 +2404,7 @@
  *
  * @return {String}
  */
+
 
 /**
  * @class CardService.UniversalActionResponseBuilder
@@ -2368,7 +2438,9 @@
  * @return {CardService.UniversalActionResponseBuilder} this object, for chaining.
  */
 
+
 /**
  * @class CardService.Widget
  */
+
 

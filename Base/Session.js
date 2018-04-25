@@ -2,7 +2,6 @@
  * @namespace Session
  ***********************************************/
 
-
 /**
  * Gets information about the current user. If security policies do not allow access to the user's
  identity, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/user.html#getEmail()'>User.getEmail()</a></code> returns a blank string. The circumstances in which the
@@ -101,6 +100,7 @@
  </code></pre>
  *
  * @function Session.getTimeZone
+ * @deprecated
  *
  * @return {String} the time zone of the script
  */
@@ -109,7 +109,9 @@
  * Gets information about the current user.
  *
  * @function Session.getUser
+ * @deprecated
  *
  * @return {User} the currently signed in user
  */
+
 

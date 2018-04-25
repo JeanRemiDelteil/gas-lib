@@ -2,63 +2,8 @@
  * @namespace ContentService
  ***********************************************/
 
-
 /**
- * @class ContentService.MimeType
- */
-
-/**
- * @typedef {ContentService.MimeType} ContentService.MimeType.ATOM
- * 
- * 
- */
-
-/**
- * @typedef {ContentService.MimeType} ContentService.MimeType.CSV
- * 
- * 
- */
-
-/**
- * @typedef {ContentService.MimeType} ContentService.MimeType.ICAL
- * 
- * 
- */
-
-/**
- * @typedef {ContentService.MimeType} ContentService.MimeType.JAVASCRIPT
- * 
- * 
- */
-
-/**
- * @typedef {ContentService.MimeType} ContentService.MimeType.JSON
- * 
- * 
- */
-
-/**
- * @typedef {ContentService.MimeType} ContentService.MimeType.RSS
- * 
- * 
- */
-
-/**
- * @typedef {ContentService.MimeType} ContentService.MimeType.TEXT
- * 
- * 
- */
-
-/**
- * @typedef {ContentService.MimeType} ContentService.MimeType.VCARD
- * 
- * 
- */
-
-/**
- * @typedef {ContentService.MimeType} ContentService.MimeType.XML
- * 
- * 
+ * @typedef {ContentService.MimeType} ContentService.MimeType
  */
 
 /**
@@ -93,6 +38,48 @@
  *
  * @return {ContentService.TextOutput} the new TextOutput object.
  */
+
+
+/**
+ * @class ContentService.MimeType
+ */
+
+/**
+ * @typedef {ContentService.MimeType} ContentService.MimeType.ATOM
+ */
+
+/**
+ * @typedef {ContentService.MimeType} ContentService.MimeType.CSV
+ */
+
+/**
+ * @typedef {ContentService.MimeType} ContentService.MimeType.ICAL
+ */
+
+/**
+ * @typedef {ContentService.MimeType} ContentService.MimeType.JAVASCRIPT
+ */
+
+/**
+ * @typedef {ContentService.MimeType} ContentService.MimeType.JSON
+ */
+
+/**
+ * @typedef {ContentService.MimeType} ContentService.MimeType.RSS
+ */
+
+/**
+ * @typedef {ContentService.MimeType} ContentService.MimeType.TEXT
+ */
+
+/**
+ * @typedef {ContentService.MimeType} ContentService.MimeType.VCARD
+ */
+
+/**
+ * @typedef {ContentService.MimeType} ContentService.MimeType.XML
+ */
+
 
 /**
  * @class ContentService.TextOutput
@@ -173,4 +160,5 @@
  *
  * @return {ContentService.TextOutput} this TextOutput itself, useful for chaining
  */
+
 

@@ -2,7 +2,6 @@
  * @namespace CacheService
  ***********************************************/
 
-
 /**
  * Gets the cache instance scoped to the current document and script. Document caches are specific
  to the current document which contains the script. Use these to store script information that
@@ -47,6 +46,7 @@
  *
  * @return {CacheService.Cache} a user cache instance
  */
+
 
 /**
  * @class CacheService.Cache
@@ -119,7 +119,7 @@
  *
  * @param {String} key - the key to store the value under
  * @param {String} value - the value to be cached
- * @param {number} expirationInSeconds - the maximum time the value will remain in the cache, in seconds. The
+ * @param {IntegerNum} expirationInSeconds - the maximum time the value will remain in the cache, in seconds. The
      minimum is 1 second and the maximum is 21600 seconds (6 hours).
  *
  * @return void
@@ -170,7 +170,7 @@
  * @function CacheService.Cache#putAll
  *
  * @param {Object} values - A JavaScript Object containing string keys and values
- * @param {number} expirationInSeconds - The maximum time the value will remain in the cache, in seconds The
+ * @param {IntegerNum} expirationInSeconds - The maximum time the value will remain in the cache, in seconds The
      minimum allowed expiration is 1 second, and the maximum allowed expiration is 21600 seconds
      (6 hours). The default expiration is 600 seconds (10 minutes).
  *
@@ -206,4 +206,5 @@
  *
  * @return void
  */
+
 

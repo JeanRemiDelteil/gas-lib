@@ -2,7 +2,6 @@
  * @namespace PropertiesService
  ***********************************************/
 
-
 /**
  * Gets a property store (for this script only) that all users can access within the open
  document, spreadsheet, or form. It is only available if the script is published and executing
@@ -33,6 +32,7 @@
  *
  * @return {PropertiesService.Properties} a property store that only the current user of the script can access
  */
+
 
 /**
  * @class PropertiesService.Properties
@@ -191,4 +191,5 @@
  *
  * @return {PropertiesService.Properties} this <code>Properties</code> store, for chaining
  */
+
 

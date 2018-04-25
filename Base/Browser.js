@@ -2,7 +2,6 @@
  * @namespace Browser
  ***********************************************/
 
-
 /**
  * @typedef {ButtonSet} Browser.Buttons
  */
@@ -136,4 +135,5 @@
  * @return {String} lower case text of the button that is clicked by the user (or 'cancel' for a dismissed
      dialog)
  */
+
 

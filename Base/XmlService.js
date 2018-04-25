@@ -2,7 +2,6 @@
  * @namespace XmlService
  ***********************************************/
 
-
 /**
  * An enumeration representing the types of XML content nodes.
  *
@@ -226,6 +225,7 @@
  * @return {XmlService.Document} the newly created document
  */
 
+
 /**
  * @class XmlService.Attribute
  */
@@ -283,6 +283,7 @@
  *
  * @return {XmlService.Attribute} the attribute, for chaining
  */
+
 
 /**
  * @class XmlService.Cdata
@@ -343,6 +344,7 @@
  * @return {XmlService.Text} the <code>Text</code> node, for chaining
  */
 
+
 /**
  * @class XmlService.Comment
  */
@@ -391,6 +393,7 @@
  *
  * @return {XmlService.Comment} the <code>Comment</code> node, for chaining
  */
+
 
 /**
  * @class XmlService.Content
@@ -495,9 +498,53 @@
  * @return {String} the text value of all nodes that are direct or indirect children of the node
  */
 
+
 /**
  * @class XmlService.ContentType
  */
+
+/**
+ * An XML <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/cdata.html'>CDATASection</a></code> node.
+ *
+ * @typedef {XmlService.ContentType} XmlService.ContentType.CDATA
+ */
+
+/**
+ * An XML <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/comment.html'>Comment</a></code> node.
+ *
+ * @typedef {XmlService.ContentType} XmlService.ContentType.COMMENT
+ */
+
+/**
+ * An XML <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/doc-type.html'>DocumentType</a></code> node.
+ *
+ * @typedef {XmlService.ContentType} XmlService.ContentType.DOCTYPE
+ */
+
+/**
+ * An XML <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/element.html'>Element</a></code> node.
+ *
+ * @typedef {XmlService.ContentType} XmlService.ContentType.ELEMENT
+ */
+
+/**
+ * An XML <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/entity-ref.html'>EntityReference</a></code> node.
+ *
+ * @typedef {XmlService.ContentType} XmlService.ContentType.ENTITYREF
+ */
+
+/**
+ * An XML <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/processing-instruction.html'>ProcessingInstruction</a></code> node.
+ *
+ * @typedef {XmlService.ContentType} XmlService.ContentType.PROCESSINGINSTRUCTION
+ */
+
+/**
+ * An XML <code><a target='_blank' href='https://developers.google.com/apps-script/reference/xml-service/text.html'>Text</a></code> node.
+ *
+ * @typedef {XmlService.ContentType} XmlService.ContentType.TEXT
+ */
+
 
 /**
  * @class XmlService.DocType
@@ -604,6 +651,7 @@
  * @return {XmlService.DocType} the <code>DocumentType</code> node, for chaining
  */
 
+
 /**
  * @class XmlService.Document
  */
@@ -617,7 +665,7 @@
  *
  * @function XmlService.Document#addContent
  *
- * @param {number} index - the index at which to insert the node among all nodes that are immediate children
+ * @param {IntegerNum} index - the index at which to insert the node among all nodes that are immediate children
      of the document
  * @param {XmlService.Content} content - the node to insert
  *
@@ -668,7 +716,7 @@
  *
  * @function XmlService.Document#getContent
  *
- * @param {number} index - the index for the node among all nodes that are immediate children of the
+ * @param {IntegerNum} index - the index for the node among all nodes that are immediate children of the
      document
  *
  * @return {XmlService.Content} the node, or <code>null</code> if there is no node at the given index
@@ -679,7 +727,7 @@
  *
  * @function XmlService.Document#getContentSize
  *
- * @return {number} the number of nodes that are immediate children of the document
+ * @return {IntegerNum} the number of nodes that are immediate children of the document
  */
 
 /**
@@ -731,7 +779,7 @@
  *
  * @function XmlService.Document#removeContent
  *
- * @param {number} index - the index for the node among all nodes that are immediate children of the
+ * @param {IntegerNum} index - the index for the node among all nodes that are immediate children of the
      document
  *
  * @return {XmlService.Content} the node that was removed, or <code>null</code> if there is no node at the given index
@@ -770,6 +818,7 @@
  * @return {XmlService.Document} the document, for chaining
  */
 
+
 /**
  * @class XmlService.Element
  */
@@ -781,7 +830,7 @@
  *
  * @function XmlService.Element#addContent
  *
- * @param {number} index - the index at which to insert the node among all nodes that are immediate children
+ * @param {IntegerNum} index - the index at which to insert the node among all nodes that are immediate children
      of the <code>Element</code> node
  * @param {XmlService.Content} content - the node to insert
  *
@@ -948,7 +997,7 @@
  *
  * @function XmlService.Element#getContent
  *
- * @param {number} index - the index for the node among all nodes that are immediate children of the
+ * @param {IntegerNum} index - the index for the node among all nodes that are immediate children of the
      {@code Element} node
  *
  * @return {XmlService.Content} the node, or <code>null</code> if there is no node at the given index
@@ -959,7 +1008,7 @@
  *
  * @function XmlService.Element#getContentSize
  *
- * @return {number} the number of nodes that are immediate children of the {@code Element} node
+ * @return {IntegerNum} the number of nodes that are immediate children of the {@code Element} node
  */
 
 /**
@@ -1108,7 +1157,7 @@
  *
  * @function XmlService.Element#removeContent
  *
- * @param {number} index - the index for the node among all nodes that are immediate children of the
+ * @param {IntegerNum} index - the index for the node among all nodes that are immediate children of the
      {@code Element} node
  *
  * @return {XmlService.Content} the node that was removed, or <code>null</code> if there is no node at the given index
@@ -1190,6 +1239,7 @@
  *
  * @return {XmlService.Element} the <code>Element</code> node, for chaining
  */
+
 
 /**
  * @class XmlService.EntityRef
@@ -1277,6 +1327,7 @@
  *
  * @return {XmlService.EntityRef} the <code>EntityReference</code> node, for chaining
  */
+
 
 /**
  * @class XmlService.Format
@@ -1389,6 +1440,7 @@
  * @return {XmlService.Format} the formatter, for chaining
  */
 
+
 /**
  * @class XmlService.Namespace
  */
@@ -1408,6 +1460,7 @@
  *
  * @return {String} the URI for the namespace
  */
+
 
 /**
  * @class XmlService.ProcessingInstruction
@@ -1455,6 +1508,7 @@
  *
  * @return {String} the text value of all nodes that are direct or indirect children of the node
  */
+
 
 /**
  * @class XmlService.Text
@@ -1514,4 +1568,5 @@
  *
  * @return {XmlService.Text} the <code>Text</code> node, for chaining
  */
+
 

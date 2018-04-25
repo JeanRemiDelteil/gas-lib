@@ -2,7 +2,6 @@
  * @namespace GmailApp
  ***********************************************/
 
-
 /**
  * Creates a draft email message. The size of the email (including headers) is <a
  href="/apps-script/guides/services/quotas#current_limitations">quota limited</a>.
@@ -129,8 +128,8 @@
  *
  * @function GmailApp.getChatThreads
  *
- * @param {number} start - the index of the first thread to retrieve
- * @param {number} max - the maximum number of threads to retrieve
+ * @param {IntegerNum} start - the index of the first thread to retrieve
+ * @param {IntegerNum} max - the maximum number of threads to retrieve
  *
  * @return {GmailApp.GmailThread[]} an array of chat Gmail threads
  */
@@ -220,8 +219,8 @@
  *
  * @function GmailApp.getInboxThreads
  *
- * @param {number} start - the index of the first thread to retrieve
- * @param {number} max - the maximum number of threads to retrieve
+ * @param {IntegerNum} start - the index of the first thread to retrieve
+ * @param {IntegerNum} max - the maximum number of threads to retrieve
  *
  * @return {GmailApp.GmailThread[]} an array of Gmail threads in the Inbox
  */
@@ -235,7 +234,7 @@
  *
  * @function GmailApp.getInboxUnreadCount
  *
- * @return {number} the number of threads in the inbox that have unread messages
+ * @return {IntegerNum} the number of threads in the inbox that have unread messages
  */
 
 /**
@@ -330,8 +329,8 @@
  *
  * @function GmailApp.getPriorityInboxThreads
  *
- * @param {number} start - the index of the first thread to retrieve
- * @param {number} max - the maximum number of threads to retrieve
+ * @param {IntegerNum} start - the index of the first thread to retrieve
+ * @param {IntegerNum} max - the maximum number of threads to retrieve
  *
  * @return {GmailApp.GmailThread[]} an array of Gmail threads in the Priority Inbox
  */
@@ -346,7 +345,7 @@
  *
  * @function GmailApp.getPriorityInboxUnreadCount
  *
- * @return {number} the number of threads in the Priority Inbox that have unread messages
+ * @return {IntegerNum} the number of threads in the Priority Inbox that have unread messages
  */
 
 /**
@@ -375,8 +374,8 @@
  *
  * @function GmailApp.getSpamThreads
  *
- * @param {number} start - the index of the first thread to retrieve
- * @param {number} max - the maximum number of threads to retrieve
+ * @param {IntegerNum} start - the index of the first thread to retrieve
+ * @param {IntegerNum} max - the maximum number of threads to retrieve
  *
  * @return {GmailApp.GmailThread[]} an array of Gmail threads in the spam folder
  */
@@ -392,7 +391,7 @@
  *
  * @function GmailApp.getSpamUnreadCount
  *
- * @return {number} the number spam threads that have unread messages
+ * @return {IntegerNum} the number spam threads that have unread messages
  */
 
 /**
@@ -422,8 +421,8 @@
  *
  * @function GmailApp.getStarredThreads
  *
- * @param {number} start - the index of the first thread to retrieve
- * @param {number} max - the maximum number of threads to retrieve
+ * @param {IntegerNum} start - the index of the first thread to retrieve
+ * @param {IntegerNum} max - the maximum number of threads to retrieve
  *
  * @return {GmailApp.GmailThread[]} an array of starred Gmail threads
  */
@@ -437,7 +436,7 @@
  *
  * @function GmailApp.getStarredUnreadCount
  *
- * @return {number} the number of starred threads that have unread messages
+ * @return {IntegerNum} the number of starred threads that have unread messages
  */
 
 /**
@@ -488,8 +487,8 @@
  *
  * @function GmailApp.getTrashThreads
  *
- * @param {number} start - the index of the first thread to retrieve
- * @param {number} max - the maximum number of threads to retrieve
+ * @param {IntegerNum} start - the index of the first thread to retrieve
+ * @param {IntegerNum} max - the maximum number of threads to retrieve
  *
  * @return {GmailApp.GmailThread[]} an array of Gmail threads in the trash
  */
@@ -988,8 +987,8 @@
  * @function GmailApp.search
  *
  * @param {String} query - the search query, as you would type it into Gmail
- * @param {number} start - the index of the starting thread
- * @param {number} max - the maximum number of threads to return
+ * @param {IntegerNum} start - the index of the starting thread
+ * @param {IntegerNum} max - the maximum number of threads to return
  *
  * @return {GmailApp.GmailThread[]} an array of Gmail threads matching this query
  */
@@ -1131,6 +1130,7 @@
  * @return {GmailApp} the Gmail service, useful for chaining
  */
 
+
 /**
  * @class GmailApp.GmailAttachment
  */
@@ -1147,6 +1147,7 @@
  * Gets all the blobs that are contained within this (possibly composite) blob.
  *
  * @function GmailApp.GmailAttachment#getAllBlobs
+ * @deprecated
  *
  * @return {Blob[]} the blobs contained within the blob
  */
@@ -1214,7 +1215,7 @@
  *
  * @function GmailApp.GmailAttachment#getSize
  *
- * @return {number} the size of the attachment, in bytes
+ * @return {IntegerNum} the size of the attachment, in bytes
  */
 
 /**
@@ -1284,6 +1285,7 @@
  *
  * @return {Blob} this blob, for chaining
  */
+
 
 /**
  * @class GmailApp.GmailDraft
@@ -1406,6 +1408,7 @@
  * @return {GmailApp.GmailDraft} the newly updated draft
  */
 
+
 /**
  * @class GmailApp.GmailLabel
  */
@@ -1504,8 +1507,8 @@
  *
  * @function GmailApp.GmailLabel#getThreads
  *
- * @param {number} start - the index of the starting thread
- * @param {number} max - the maximum number of threads to return
+ * @param {IntegerNum} start - the index of the starting thread
+ * @param {IntegerNum} max - the maximum number of threads to return
  *
  * @return {GmailApp.GmailThread[]} an array of threads marked with this label
  */
@@ -1521,7 +1524,7 @@
  *
  * @function GmailApp.GmailLabel#getUnreadCount
  *
- * @return {number} the number of unread labeled threads
+ * @return {IntegerNum} the number of unread labeled threads
  */
 
 /**
@@ -1557,6 +1560,7 @@
  *
  * @return {GmailApp.GmailLabel} this GmailLabel, useful for chaining
  */
+
 
 /**
  * @class GmailApp.GmailMessage
@@ -2147,6 +2151,7 @@
  * @return {GmailApp.GmailMessage} this GmailMessage, useful for chaining
  */
 
+
 /**
  * @class GmailApp.GmailThread
  */
@@ -2332,7 +2337,7 @@
  *
  * @function GmailApp.GmailThread#getMessageCount
  *
- * @return {number} the number of messages in the thread
+ * @return {IntegerNum} the number of messages in the thread
  */
 
 /**
@@ -2708,4 +2713,5 @@
  *
  * @return {GmailApp.GmailThread} this thread, useful for chaining
  */
+
 

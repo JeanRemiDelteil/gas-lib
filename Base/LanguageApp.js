@@ -2,7 +2,6 @@
  * @namespace LanguageApp
  ***********************************************/
 
-
 /**
  * Automatically translates some text from a source language to a destination language.
 
@@ -48,4 +47,5 @@
  *
  * @return {String} the translated text
  */
+
 

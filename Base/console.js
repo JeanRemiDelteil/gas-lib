@@ -2,7 +2,6 @@
  * @namespace console
  ***********************************************/
 
-
 /**
  * Outputs an ERROR level message to Stackdriver Logging.
  *
@@ -75,4 +74,5 @@
  *
  * @return void
  */
+
 

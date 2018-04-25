@@ -2,113 +2,22 @@
  * @namespace Charts
  ***********************************************/
 
-
 /**
  * An enumeration of chart hidden dimension strategies supported by the Charts service.
  *
- * @class Charts.ChartHiddenDimensionStrategy
- */
-
-/**
- * @typedef {Charts.ChartHiddenDimensionStrategy} Charts.ChartHiddenDimensionStrategy.IGNORE_BOTH
- * 
- * Ignore both
- */
-
-/**
- * @typedef {Charts.ChartHiddenDimensionStrategy} Charts.ChartHiddenDimensionStrategy.IGNORE_COLUMNS
- * 
- * Ignore columns
- */
-
-/**
- * @typedef {Charts.ChartHiddenDimensionStrategy} Charts.ChartHiddenDimensionStrategy.IGNORE_ROWS
- * 
- * Ignore rows
- */
-
-/**
- * @typedef {Charts.ChartHiddenDimensionStrategy} Charts.ChartHiddenDimensionStrategy.SHOW_BOTH
- * 
- * Show both
+ * @typedef {Charts.ChartHiddenDimensionStrategy} Charts.ChartHiddenDimensionStrategy
  */
 
 /**
  * An enumeration of chart merge strategies supported by the Charts service.
  *
- * @class Charts.ChartMergeStrategy
- */
-
-/**
- * @typedef {Charts.ChartMergeStrategy} Charts.ChartMergeStrategy.MERGE_COLUMNS
- * 
- * Merge columns
- */
-
-/**
- * @typedef {Charts.ChartMergeStrategy} Charts.ChartMergeStrategy.MERGE_ROWS
- * 
- * Merge rows
+ * @typedef {Charts.ChartMergeStrategy} Charts.ChartMergeStrategy
  */
 
 /**
  * An enumeration of chart types supported by the Charts service.
  *
- * @class Charts.ChartType
- */
-
-/**
- * @typedef {Charts.ChartType} Charts.ChartType.AREA
- * 
- * Area chart
- */
-
-/**
- * @typedef {Charts.ChartType} Charts.ChartType.BAR
- * 
- * Bar chart
- */
-
-/**
- * @typedef {Charts.ChartType} Charts.ChartType.COLUMN
- * 
- * Column chart
- */
-
-/**
- * @typedef {Charts.ChartType} Charts.ChartType.COMBO
- * 
- * Combo chart
- */
-
-/**
- * @typedef {Charts.ChartType} Charts.ChartType.HISTOGRAM
- * 
- * Histogram
- */
-
-/**
- * @typedef {Charts.ChartType} Charts.ChartType.LINE
- * 
- * Line chart
- */
-
-/**
- * @typedef {Charts.ChartType} Charts.ChartType.PIE
- * 
- * Pie chart
- */
-
-/**
- * @typedef {Charts.ChartType} Charts.ChartType.SCATTER
- * 
- * Scatter chart
- */
-
-/**
- * @typedef {Charts.ChartType} Charts.ChartType.TABLE
- * 
- * Table chart
+ * @typedef {Charts.ChartType} Charts.ChartType
  */
 
 /**
@@ -120,157 +29,37 @@
 /**
  * An enumeration of the styles for curves in a chart.
  *
- * @class Charts.CurveStyle
- */
-
-/**
- * @typedef {Charts.CurveStyle} Charts.CurveStyle.NORMAL
- * 
- * Straight lines without curve
- */
-
-/**
- * @typedef {Charts.CurveStyle} Charts.CurveStyle.SMOOTH
- * 
- * The angles of the line will be smoothed
+ * @typedef {Charts.CurveStyle} Charts.CurveStyle
  */
 
 /**
  * An enumeration of how a string value should be matched.
  *
- * @class Charts.MatchType
- */
-
-/**
- * @typedef {Charts.MatchType} Charts.MatchType.ANY
- * 
- * Match any substring
- */
-
-/**
- * @typedef {Charts.MatchType} Charts.MatchType.EXACT
- * 
- * Match exact values only
- */
-
-/**
- * @typedef {Charts.MatchType} Charts.MatchType.PREFIX
- * 
- * Match prefixes starting from the beginning of the value
+ * @typedef {Charts.MatchType} Charts.MatchType
  */
 
 /**
  * An enumeration of the orientation of an object.
  *
- * @class Charts.Orientation
- */
-
-/**
- * @typedef {Charts.Orientation} Charts.Orientation.HORIZONTAL
- * 
- * Horizontal orientation
- */
-
-/**
- * @typedef {Charts.Orientation} Charts.Orientation.VERTICAL
- * 
- * Vertical orientation
+ * @typedef {Charts.Orientation} Charts.Orientation
  */
 
 /**
  * An enumeration of how to display selected values in a picker widget.
  *
- * @class Charts.PickerValuesLayout
- */
-
-/**
- * @typedef {Charts.PickerValuesLayout} Charts.PickerValuesLayout.ASIDE
- * 
- * Selected values will display in a single text line next to the value picker widget
- */
-
-/**
- * @typedef {Charts.PickerValuesLayout} Charts.PickerValuesLayout.BELOW
- * 
- * Selected values will display in a single text line below the widget
- */
-
-/**
- * @typedef {Charts.PickerValuesLayout} Charts.PickerValuesLayout.BELOW_STACKED
- * 
- * Selected values will be displayed in a column below the widget
- */
-
-/**
- * @typedef {Charts.PickerValuesLayout} Charts.PickerValuesLayout.BELOW_WRAPPING
- * 
- * Similar to below, but entries that cannot fit in the picker will wrap to a new line
+ * @typedef {Charts.PickerValuesLayout} Charts.PickerValuesLayout
  */
 
 /**
  * An enumeration of the styles of points in a line.
  *
- * @class Charts.PointStyle
- */
-
-/**
- * @typedef {Charts.PointStyle} Charts.PointStyle.HUGE
- * 
- * Use largest sized line points *
- */
-
-/**
- * @typedef {Charts.PointStyle} Charts.PointStyle.LARGE
- * 
- * Use large sized line points *
- */
-
-/**
- * @typedef {Charts.PointStyle} Charts.PointStyle.MEDIUM
- * 
- * Use medium sized line points *
- */
-
-/**
- * @typedef {Charts.PointStyle} Charts.PointStyle.NONE
- * 
- * Do not display line points *
- */
-
-/**
- * @typedef {Charts.PointStyle} Charts.PointStyle.TINY
- * 
- * Use tiny line points *
+ * @typedef {Charts.PointStyle} Charts.PointStyle
  */
 
 /**
  * An enumeration of legend positions within a chart.
  *
- * @class Charts.Position
- */
-
-/**
- * @typedef {Charts.Position} Charts.Position.BOTTOM
- * 
- * Below the chart.
- */
-
-/**
- * @typedef {Charts.Position} Charts.Position.NONE
- * 
- * No legend is displayed.
- */
-
-/**
- * @typedef {Charts.Position} Charts.Position.RIGHT
- * 
- * To the right of the chart.
- */
-
-/**
- * @typedef {Charts.Position} Charts.Position.TOP
- * 
- * Above the chart.
+ * @typedef {Charts.Position} Charts.Position
  */
 
 /**
@@ -413,6 +202,7 @@
  * @return {Charts.TextStyleBuilder} a TextStyleBuilder, which can be used to build a text style configuration object
  */
 
+
 /**
  * @class Charts.AreaChartBuilder
  */
@@ -532,8 +322,8 @@
  *
  * @function Charts.AreaChartBuilder#setDimensions
  *
- * @param {number} width - the width of the chart, in pixels
- * @param {number} height - the height of the chart, in pixels
+ * @param {IntegerNum} width - the width of the chart, in pixels
+ * @param {IntegerNum} height - the height of the chart, in pixels
  *
  * @return {Charts.AreaChartBuilder} this builder, useful for chaining
  */
@@ -782,6 +572,7 @@
  * @return {Charts.AreaChartBuilder} this builder, useful for chaining
  */
 
+
 /**
  * @class Charts.BarChartBuilder
  */
@@ -910,8 +701,8 @@
  *
  * @function Charts.BarChartBuilder#setDimensions
  *
- * @param {number} width - the width of the chart, in pixels
- * @param {number} height - the height of the chart, in pixels
+ * @param {IntegerNum} width - the width of the chart, in pixels
+ * @param {IntegerNum} height - the height of the chart, in pixels
  *
  * @return {Charts.BarChartBuilder} this builder, useful for chaining
  */
@@ -1143,6 +934,7 @@
  * @return {Charts.BarChartBuilder} this builder, useful for chaining
  */
 
+
 /**
  * @class Charts.CategoryFilterBuilder
  */
@@ -1252,7 +1044,7 @@
  *
  * @function Charts.CategoryFilterBuilder#setFilterColumnIndex
  *
- * @param {number} columnIndex - the index of the data table column the filter should operate upon
+ * @param {IntegerNum} columnIndex - the index of the data table column the filter should operate upon
  *
  * @return {Charts.CategoryFilterBuilder} this builder, useful for chaining
  */
@@ -1350,6 +1142,7 @@
  * @return {Charts.CategoryFilterBuilder} this builder, useful for chaining
  */
 
+
 /**
  * @class Charts.Chart
  */
@@ -1418,6 +1211,53 @@
  * @return {Charts.Chart} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/chart.html'>Chart</a></code> itself, useful for chaining.
  */
 
+
+/**
+ * @class Charts.ChartHiddenDimensionStrategy
+ */
+
+/**
+ * Ignore both
+ *
+ * @typedef {Charts.ChartHiddenDimensionStrategy} Charts.ChartHiddenDimensionStrategy.IGNORE_BOTH
+ */
+
+/**
+ * Ignore columns
+ *
+ * @typedef {Charts.ChartHiddenDimensionStrategy} Charts.ChartHiddenDimensionStrategy.IGNORE_COLUMNS
+ */
+
+/**
+ * Ignore rows
+ *
+ * @typedef {Charts.ChartHiddenDimensionStrategy} Charts.ChartHiddenDimensionStrategy.IGNORE_ROWS
+ */
+
+/**
+ * Show both
+ *
+ * @typedef {Charts.ChartHiddenDimensionStrategy} Charts.ChartHiddenDimensionStrategy.SHOW_BOTH
+ */
+
+
+/**
+ * @class Charts.ChartMergeStrategy
+ */
+
+/**
+ * Merge columns
+ *
+ * @typedef {Charts.ChartMergeStrategy} Charts.ChartMergeStrategy.MERGE_COLUMNS
+ */
+
+/**
+ * Merge rows
+ *
+ * @typedef {Charts.ChartMergeStrategy} Charts.ChartMergeStrategy.MERGE_ROWS
+ */
+
+
 /**
  * @class Charts.ChartOptions
  */
@@ -1431,6 +1271,66 @@
  *
  * @return {Object} the value currently set for the specified option or null if the option was not set
  */
+
+
+/**
+ * @class Charts.ChartType
+ */
+
+/**
+ * Area chart
+ *
+ * @typedef {Charts.ChartType} Charts.ChartType.AREA
+ */
+
+/**
+ * Bar chart
+ *
+ * @typedef {Charts.ChartType} Charts.ChartType.BAR
+ */
+
+/**
+ * Column chart
+ *
+ * @typedef {Charts.ChartType} Charts.ChartType.COLUMN
+ */
+
+/**
+ * Combo chart
+ *
+ * @typedef {Charts.ChartType} Charts.ChartType.COMBO
+ */
+
+/**
+ * Histogram
+ *
+ * @typedef {Charts.ChartType} Charts.ChartType.HISTOGRAM
+ */
+
+/**
+ * Line chart
+ *
+ * @typedef {Charts.ChartType} Charts.ChartType.LINE
+ */
+
+/**
+ * Pie chart
+ *
+ * @typedef {Charts.ChartType} Charts.ChartType.PIE
+ */
+
+/**
+ * Scatter chart
+ *
+ * @typedef {Charts.ChartType} Charts.ChartType.SCATTER
+ */
+
+/**
+ * Table chart
+ *
+ * @typedef {Charts.ChartType} Charts.ChartType.TABLE
+ */
+
 
 /**
  * @class Charts.ColumnChartBuilder
@@ -1551,8 +1451,8 @@
  *
  * @function Charts.ColumnChartBuilder#setDimensions
  *
- * @param {number} width - the width of the chart, in pixels
- * @param {number} height - the height of the chart, in pixels
+ * @param {IntegerNum} width - the width of the chart, in pixels
+ * @param {IntegerNum} height - the height of the chart, in pixels
  *
  * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
  */
@@ -1784,6 +1684,7 @@
  * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
  */
 
+
 /**
  * @class Charts.Control
  */
@@ -1818,6 +1719,24 @@
  * @return {Charts.Control} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/control.html'>Control</a></code> itself, useful for chaining.
  */
 
+
+/**
+ * @class Charts.CurveStyle
+ */
+
+/**
+ * Straight lines without curve
+ *
+ * @typedef {Charts.CurveStyle} Charts.CurveStyle.NORMAL
+ */
+
+/**
+ * The angles of the line will be smoothed
+ *
+ * @typedef {Charts.CurveStyle} Charts.CurveStyle.SMOOTH
+ */
+
+
 /**
  * @class Charts.DashboardPanel
  */
@@ -1831,6 +1750,7 @@
  it.
  *
  * @function Charts.DashboardPanel#add
+ * @deprecated
  *
  * @param {UiApp.Widget} widget - the widget to add
  *
@@ -1867,8 +1787,93 @@
  * @return {Charts.DashboardPanel} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/dashboard-panel.html'>DashboardPanel</a></code> itself, useful for chaining.
  */
 
+
 /**
  * @class Charts.DashboardPanelBuilder
+ */
+
+/**
+ * Binds a control to a chart, so that the chart is redrawn whenever the control collects a user
+ interaction that affects the data managed by the dashboard.
+
+ <p>For example, when binding a range selector to a chart, a user interaction will be sliding
+ the the range selector to the desired range. The effect on the data will be keeping only the
+ data that's in the chosen range.
+ *
+ * @function Charts.DashboardPanelBuilder#bind
+ *
+ * @param {Charts.Control} control - a control to bind
+ * @param {Charts.Chart} chart - a chart to bind
+ *
+ * @return {Charts.DashboardPanelBuilder} this builder, useful for chaining
+ */
+
+/**
+ * Binds multiple controls to multiple charts, so that the charts are redrawn whenever the
+ controls collect a user interaction that affects the data managed by the dashboard. When
+ binding multiple controls to a chart (or multiple charts), the data that's displayed in the
+ chart is that which passes the filters of all of the controls (of this specific binding).
+
+ <p>For more information about object binding see the Gviz <a
+ href="https://developers.google.com/chart/interactive/docs/gallery/controls">documentation</a>.
+
+ <p>Here is an example that shows how multiple controls can be bound to a chart using a
+ dashboard panel:
+
+ <pre class="prettyprint"><code>
+ function doGet() {
+   // Create a data table with some sample data.
+   var data = Charts.newDataTable()
+       .addColumn(Charts.ColumnType.STRING, &quot;Name&quot;)
+       .addColumn(Charts.ColumnType.NUMBER, &quot;Age&quot;)
+       .addRow([&quot;Michael&quot;, 18])
+       .addRow([&quot;Elisa&quot;, 12])
+       .addRow([&quot;John&quot;, 20])
+       .addRow([&quot;Jessica&quot;, 25])
+       .addRow([&quot;Aaron&quot;, 14])
+       .addRow([&quot;Margareth&quot;, 19])
+       .addRow([&quot;Miranda&quot;, 22])
+       .addRow([&quot;May&quot;, 20])
+       .build();
+
+   var chart = Charts.newBarChart()
+       .setTitle(&quot;Ages&quot;)
+       .build();
+
+   var stringFilter = Charts.newStringFilter()
+       .setFilterColumnLabel(&quot;Name&quot;)
+       .build();
+
+   var numberRangeFilter = Charts.newNumberRangeFilter()
+       .setFilterColumnLabel(&quot;Age&quot;)
+       .build();
+
+   // Create a dashboard panel binding both controls to the chart.
+   var dashboard = Charts.newDashboardPanel()
+       .setDataTable(data)
+       .bind([stringFilter, numberRangeFilter], [chart])
+       .build();
+
+   var uiApp = UiApp.createApplication().setTitle(&quot;My Dashboard&quot;);
+
+   var panel = uiApp.createVerticalPanel()
+       .setSpacing(50);
+
+   panel.add(stringFilter);
+   panel.add(numberRangeFilter);
+   panel.add(chart);
+   dashboard.add(panel);
+   uiApp.add(dashboard);
+   return uiApp;
+ }
+ </code></pre>
+ *
+ * @function Charts.DashboardPanelBuilder#bind
+ *
+ * @param {Charts.Control[]} controls - an array of controls to bind
+ * @param {Charts.Chart[]} charts - an array charts to bind
+ *
+ * @return {Charts.DashboardPanelBuilder} this builder, useful for chaining
  */
 
 /**
@@ -1901,9 +1906,11 @@
  * @return {Charts.DashboardPanelBuilder} this builder, useful for chaining
  */
 
+
 /**
  * @class Charts.DataViewDefinition
  */
+
 
 /**
  * @class Charts.DataViewDefinitionBuilder
@@ -1971,6 +1978,7 @@
  *
  * @return {Charts.DataViewDefinitionBuilder} this builder, useful for chaining
  */
+
 
 /**
  * @class Charts.LineChartBuilder
@@ -2108,8 +2116,8 @@
  *
  * @function Charts.LineChartBuilder#setDimensions
  *
- * @param {number} width - the width of the chart, in pixels
- * @param {number} height - the height of the chart, in pixels
+ * @param {IntegerNum} width - the width of the chart, in pixels
+ * @param {IntegerNum} height - the height of the chart, in pixels
  *
  * @return {Charts.LineChartBuilder} this builder, useful for chaining
  */
@@ -2349,6 +2357,38 @@
  * @return {Charts.LineChartBuilder} this builder, useful for chaining
  */
 
+
+/**
+ * @class Charts.MatchType
+ */
+
+/**
+ * Match any substring
+ *
+ * @typedef {Charts.MatchType} Charts.MatchType.ANY
+ */
+
+/**
+ * Match exact values only
+ *
+ * @typedef {Charts.MatchType} Charts.MatchType.EXACT
+ */
+
+/**
+ * Match prefixes starting from the beginning of the value
+ *
+ * @typedef {Charts.MatchType} Charts.MatchType.PREFIX
+ */
+
+/**
+ * Returns the name of the MatchType to be used in the options JSON.
+ *
+ * @function Charts.MatchType#getName
+ *
+ * @return {String} the name of the MatchType
+ */
+
+
 /**
  * @class Charts.NumberRangeFilterBuilder
  */
@@ -2392,7 +2432,7 @@
  *
  * @function Charts.NumberRangeFilterBuilder#setFilterColumnIndex
  *
- * @param {number} columnIndex - the index of the data table column the filter should operate upon
+ * @param {IntegerNum} columnIndex - the index of the data table column the filter should operate upon
  *
  * @return {Charts.NumberRangeFilterBuilder} this builder, useful for chaining
  */
@@ -2458,7 +2498,7 @@
  *
  * @function Charts.NumberRangeFilterBuilder#setMaxValue
  *
- * @param {number} maxValue - the maximum value of the slider
+ * @param {IntegerNum} maxValue - the maximum value of the slider
  *
  * @return {Charts.NumberRangeFilterBuilder} this builder, useful for chaining
  */
@@ -2477,7 +2517,7 @@
  *
  * @function Charts.NumberRangeFilterBuilder#setMinValue
  *
- * @param {number} minValue - the minimum value of the slider
+ * @param {IntegerNum} minValue - the minimum value of the slider
  *
  * @return {Charts.NumberRangeFilterBuilder} this builder, useful for chaining
  */
@@ -2532,10 +2572,57 @@
  *
  * @function Charts.NumberRangeFilterBuilder#setTicks
  *
- * @param {number} ticks - the number of ticks on the slider
+ * @param {IntegerNum} ticks - the number of ticks on the slider
  *
  * @return {Charts.NumberRangeFilterBuilder} this builder, useful for chaining
  */
+
+
+/**
+ * @class Charts.Orientation
+ */
+
+/**
+ * Horizontal orientation
+ *
+ * @typedef {Charts.Orientation} Charts.Orientation.HORIZONTAL
+ */
+
+/**
+ * Vertical orientation
+ *
+ * @typedef {Charts.Orientation} Charts.Orientation.VERTICAL
+ */
+
+
+/**
+ * @class Charts.PickerValuesLayout
+ */
+
+/**
+ * Selected values will display in a single text line next to the value picker widget
+ *
+ * @typedef {Charts.PickerValuesLayout} Charts.PickerValuesLayout.ASIDE
+ */
+
+/**
+ * Selected values will display in a single text line below the widget
+ *
+ * @typedef {Charts.PickerValuesLayout} Charts.PickerValuesLayout.BELOW
+ */
+
+/**
+ * Selected values will be displayed in a column below the widget
+ *
+ * @typedef {Charts.PickerValuesLayout} Charts.PickerValuesLayout.BELOW_STACKED
+ */
+
+/**
+ * Similar to below, but entries that cannot fit in the picker will wrap to a new line
+ *
+ * @typedef {Charts.PickerValuesLayout} Charts.PickerValuesLayout.BELOW_WRAPPING
+ */
+
 
 /**
  * @class Charts.PieChartBuilder
@@ -2664,8 +2751,8 @@
  *
  * @function Charts.PieChartBuilder#setDimensions
  *
- * @param {number} width - the width of the chart, in pixels
- * @param {number} height - the height of the chart, in pixels
+ * @param {IntegerNum} width - the width of the chart, in pixels
+ * @param {IntegerNum} height - the height of the chart, in pixels
  *
  * @return {Charts.PieChartBuilder} this builder, useful for chaining
  */
@@ -2757,6 +2844,71 @@
  *
  * @return {Charts.PieChartBuilder} this builder, useful for chaining
  */
+
+
+/**
+ * @class Charts.PointStyle
+ */
+
+/**
+ * Use largest sized line points *
+ *
+ * @typedef {Charts.PointStyle} Charts.PointStyle.HUGE
+ */
+
+/**
+ * Use large sized line points *
+ *
+ * @typedef {Charts.PointStyle} Charts.PointStyle.LARGE
+ */
+
+/**
+ * Use medium sized line points *
+ *
+ * @typedef {Charts.PointStyle} Charts.PointStyle.MEDIUM
+ */
+
+/**
+ * Do not display line points *
+ *
+ * @typedef {Charts.PointStyle} Charts.PointStyle.NONE
+ */
+
+/**
+ * Use tiny line points *
+ *
+ * @typedef {Charts.PointStyle} Charts.PointStyle.TINY
+ */
+
+
+/**
+ * @class Charts.Position
+ */
+
+/**
+ * Below the chart.
+ *
+ * @typedef {Charts.Position} Charts.Position.BOTTOM
+ */
+
+/**
+ * No legend is displayed.
+ *
+ * @typedef {Charts.Position} Charts.Position.NONE
+ */
+
+/**
+ * To the right of the chart.
+ *
+ * @typedef {Charts.Position} Charts.Position.RIGHT
+ */
+
+/**
+ * Above the chart.
+ *
+ * @typedef {Charts.Position} Charts.Position.TOP
+ */
+
 
 /**
  * @class Charts.ScatterChartBuilder
@@ -2860,8 +3012,8 @@
  *
  * @function Charts.ScatterChartBuilder#setDimensions
  *
- * @param {number} width - the width of the chart, in pixels
- * @param {number} height - the height of the chart, in pixels
+ * @param {IntegerNum} width - the width of the chart, in pixels
+ * @param {IntegerNum} height - the height of the chart, in pixels
  *
  * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
  */
@@ -3131,6 +3283,7 @@
  * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
  */
 
+
 /**
  * @class Charts.StringFilterBuilder
  */
@@ -3192,7 +3345,7 @@
  *
  * @function Charts.StringFilterBuilder#setFilterColumnIndex
  *
- * @param {number} columnIndex - the index of the data table column the filter should operate upon
+ * @param {IntegerNum} columnIndex - the index of the data table column the filter should operate upon
  *
  * @return {Charts.StringFilterBuilder} this builder, useful for chaining
  */
@@ -3285,6 +3438,7 @@
  * @return {Charts.StringFilterBuilder} this builder, useful for chaining
  */
 
+
 /**
  * @class Charts.TableChartBuilder
  */
@@ -3323,7 +3477,7 @@
  *
  * @function Charts.TableChartBuilder#enablePaging
  *
- * @param {number} pageSize - the number of rows in each page of the table
+ * @param {IntegerNum} pageSize - the number of rows in each page of the table
  *
  * @return {Charts.TableChartBuilder} this builder, useful for chaining
  */
@@ -3343,8 +3497,8 @@
  *
  * @function Charts.TableChartBuilder#enablePaging
  *
- * @param {number} pageSize - the number of rows in each page of the table
- * @param {number} startPage - the first table page to display (page numbers are zero based)
+ * @param {IntegerNum} pageSize - the number of rows in each page of the table
+ * @param {IntegerNum} startPage - the first table page to display (page numbers are zero based)
  *
  * @return {Charts.TableChartBuilder} this builder, useful for chaining
  */
@@ -3435,8 +3589,8 @@
  *
  * @function Charts.TableChartBuilder#setDimensions
  *
- * @param {number} width - the width of the chart, in pixels
- * @param {number} height - the height of the chart, in pixels
+ * @param {IntegerNum} width - the width of the chart, in pixels
+ * @param {IntegerNum} height - the height of the chart, in pixels
  *
  * @return {Charts.TableChartBuilder} this builder, useful for chaining
  */
@@ -3454,7 +3608,7 @@
  *
  * @function Charts.TableChartBuilder#setFirstRowNumber
  *
- * @param {number} number - the row number for the first row in the data table
+ * @param {IntegerNum} number - the row number for the first row in the data table
  *
  * @return {Charts.TableChartBuilder} this builder, useful for chaining
  */
@@ -3474,7 +3628,7 @@
  *
  * @function Charts.TableChartBuilder#setInitialSortingAscending
  *
- * @param {number} column - the number of the column according to which the table should be initially sorted
+ * @param {IntegerNum} column - the number of the column according to which the table should be initially sorted
  *
  * @return {Charts.TableChartBuilder} this builder, useful for chaining
  */
@@ -3494,7 +3648,7 @@
  *
  * @function Charts.TableChartBuilder#setInitialSortingDescending
  *
- * @param {number} column - the number of the column according to which the table should be initially sorted
+ * @param {IntegerNum} column - the number of the column according to which the table should be initially sorted
  *
  * @return {Charts.TableChartBuilder} this builder, useful for chaining
  */
@@ -3543,6 +3697,7 @@
  * @return {Charts.TableChartBuilder} this builder, useful for chaining
  */
 
+
 /**
  * @class Charts.TextStyle
  */
@@ -3588,6 +3743,7 @@
  *
  * @return {Number} the font size in pixels
  */
+
 
 /**
  * @class Charts.TextStyleBuilder
@@ -3654,4 +3810,5 @@
  *
  * @return {Charts.TextStyleBuilder} this builder, useful for chaining.
  */
+
 

@@ -2,7 +2,6 @@
  * @namespace MailApp
  ***********************************************/
 
-
 /**
  * Returns the number of remaining emails a user can send for the rest of the day.
 
@@ -17,7 +16,7 @@
  *
  * @function MailApp.getRemainingDailyQuota
  *
- * @return {number} the number of emails remaining that the script can send
+ * @return {IntegerNum} the number of emails remaining that the script can send
  */
 
 /**
@@ -121,4 +120,5 @@
  *
  * @return void
  */
+
 

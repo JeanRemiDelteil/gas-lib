@@ -14,5 +14,5 @@
 /**
  * Not really a javascript number, it's a Integer (no floating point)
  *
- * @typedef {number} Integer
+ * @typedef {number} IntegerNum
  */

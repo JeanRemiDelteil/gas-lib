@@ -2,359 +2,16 @@
  * @namespace ContactsApp
  ***********************************************/
 
-
 /**
- * @class ContactsApp.ExtendedField
+ * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField
  */
 
 /**
- * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.BILLING_INFORMATION
- * 
- * the contact's billing information
+ * @typedef {ContactsApp.Field} ContactsApp.Field
  */
 
 /**
- * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.DIRECTORY_SERVER
- * 
- * the contact's directory server
- */
-
-/**
- * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.GENDER
- * 
- * the contact's gender
- */
-
-/**
- * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.HOBBY
- * 
- * the contact's hobby
- */
-
-/**
- * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.HOME
- * 
- * the contact's home information
- */
-
-/**
- * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.LANGUAGE
- * 
- * the contact's language
- */
-
-/**
- * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.MILEAGE
- * 
- * the contact's mileage
- */
-
-/**
- * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.OTHER
- * 
- * the contact's other information
- */
-
-/**
- * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.PRIORITY
- * 
- * the contact's priority
- */
-
-/**
- * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.SENSITIVITY
- * 
- * the contact's sensitivity
- */
-
-/**
- * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.USER
- * 
- * the contact's user information
- */
-
-/**
- * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.WORK
- * 
- * the contact's work information
- */
-
-/**
- * @class ContactsApp.Field
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.AIM
- * 
- * the contact's AIM identifier
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.ANNIVERSARY
- * 
- * the contact's anniversary
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.ASSISTANT_PHONE
- * 
- * the contact's assistant's phone number
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.BIRTHDAY
- * 
- * the contact's birthday
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.BLOG
- * 
- * the contact's blog URL
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.CALLBACK_PHONE
- * 
- * the contact's callback phone number
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.COMPANY
- * 
- * the contact's company
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.FAMILY_NAME
- * 
- * the contact's family (last) name
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.FTP
- * 
- * the contact's FTP URL
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.FULL_NAME
- * 
- * the contact's full name
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.GIVEN_NAME
- * 
- * the contact's given (first) name
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.GOOGLE_TALK
- * 
- * the contact's Google Talk identifier
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.GOOGLE_VOICE
- * 
- * the contact's Google Voice number
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.HOME_ADDRESS
- * 
- * the contact's home address
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.HOME_EMAIL
- * 
- * the contact's home email address
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.HOME_FAX
- * 
- * the contact's home fax number
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.HOME_PAGE
- * 
- * the contact's home page URL
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.HOME_PHONE
- * 
- * the contact's home phone number
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.HOME_WEBSITE
- * 
- * the contact's home website URL
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.ICQ
- * 
- * the contact's ICQ identifier
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.INITIALS
- * 
- * the contact's initials
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.JABBER
- * 
- * the contact's Jabber identifier
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.JOB_TITLE
- * 
- * the contact's job title
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.MAIDEN_NAME
- * 
- * the contact's maiden name
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.MAIN_PHONE
- * 
- * the contact's main phone number
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.MIDDLE_NAME
- * 
- * the contact's middle name
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.MOBILE_PHONE
- * 
- * the contact's mobile phone number
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.MSN
- * 
- * the contact's MSN identifier
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.NICKNAME
- * 
- * the contact's nickname
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.NOTES
- * 
- * notes about the contact
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.PAGER
- * 
- * the contact's pager number
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.PREFIX
- * 
- * the prefix for the contact's name
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.PROFILE
- * 
- * the contact's profile URL
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.QQ
- * 
- * the contact's QQ identifer
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.SHORT_NAME
- * 
- * the contact's short name
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.SKYPE
- * 
- * the contact's Skype identifier
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.SUFFIX
- * 
- * the suffix for the contact's name
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.WORK_ADDRESS
- * 
- * the contact's work address
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.WORK_EMAIL
- * 
- * the contact's work email address
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.WORK_FAX
- * 
- * the contact's work fax number
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.WORK_PHONE
- * 
- * the contact's work phone number
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.WORK_WEBSITE
- * 
- * the contact's work website URL
- */
-
-/**
- * @typedef {ContactsApp.Field} ContactsApp.Field.YAHOO
- * 
- * the contact's Yahoo instant messaging identifier
- */
-
-/**
- * @class ContactsApp.Gender
- */
-
-/**
- * @typedef {ContactsApp.Gender} ContactsApp.Gender.FEMALE
- * 
- * female gender
- */
-
-/**
- * @typedef {ContactsApp.Gender} ContactsApp.Gender.MALE
- * 
- * male gender
+ * @typedef {ContactsApp.Gender} ContactsApp.Gender
  */
 
 /**
@@ -362,53 +19,11 @@
  */
 
 /**
- * @class ContactsApp.Priority
+ * @typedef {ContactsApp.Priority} ContactsApp.Priority
  */
 
 /**
- * @typedef {ContactsApp.Priority} ContactsApp.Priority.HIGH
- * 
- * high priority
- */
-
-/**
- * @typedef {ContactsApp.Priority} ContactsApp.Priority.LOW
- * 
- * low priority
- */
-
-/**
- * @typedef {ContactsApp.Priority} ContactsApp.Priority.NORMAL
- * 
- * normal priority
- */
-
-/**
- * @class ContactsApp.Sensitivity
- */
-
-/**
- * @typedef {ContactsApp.Sensitivity} ContactsApp.Sensitivity.CONFIDENTIAL
- * 
- * confidential sensitivity
- */
-
-/**
- * @typedef {ContactsApp.Sensitivity} ContactsApp.Sensitivity.NORMAL
- * 
- * normal sensitivity
- */
-
-/**
- * @typedef {ContactsApp.Sensitivity} ContactsApp.Sensitivity.PERSONAL
- * 
- * personal sensitivity
- */
-
-/**
- * @typedef {ContactsApp.Sensitivity} ContactsApp.Sensitivity.PRIVATE
- * 
- * private sensitivity
+ * @typedef {ContactsApp.Sensitivity} ContactsApp.Sensitivity
  */
 
 /**
@@ -481,6 +96,7 @@
  * Finds a Contact with the given email address.
  *
  * @function ContactsApp.findByEmailAddress
+ * @deprecated
  *
  * @param {String} email - the email address of the contact to be found
  *
@@ -491,6 +107,7 @@
  * Finds a contact group of the given name.
  *
  * @function ContactsApp.findContactGroup
+ * @deprecated
  *
  * @param {String} name - the name of the contact group to find
  *
@@ -501,6 +118,7 @@
  * Get all the contacts belonging to this user.
  *
  * @function ContactsApp.getAllContacts
+ * @deprecated
  *
  * @return {ContactsApp.Contact[]} all the contacts for this user
  */
@@ -709,7 +327,7 @@
  * @function ContactsApp.getContactsByDate
  *
  * @param {Month} month - the month to match, as one of the values from ContactsApp.Month
- * @param {number} day - the day to match
+ * @param {IntegerNum} day - the day to match
  * @param {ContactsApp.Field} label - the field to search within, from ContactsApp.Field
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
@@ -728,8 +346,8 @@
  * @function ContactsApp.getContactsByDate
  *
  * @param {Month} month - the month to match, as one of the values from ContactsApp.Month
- * @param {number} day - the day to match
- * @param {number} year - the year to match, can be null
+ * @param {IntegerNum} day - the day to match
+ * @param {IntegerNum} year - the year to match, can be null
  * @param {ContactsApp.Field} label - the field to search within, from ContactsApp.Field
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
@@ -747,8 +365,8 @@
  * @function ContactsApp.getContactsByDate
  *
  * @param {Month} month - the month to match, as one of the values from ContactsApp.Month
- * @param {number} day - the day to match
- * @param {number} year - the year to match, can be null
+ * @param {IntegerNum} day - the day to match
+ * @param {IntegerNum} year - the year to match, can be null
  * @param {String} label - the custom field to search within
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
@@ -766,7 +384,7 @@
  * @function ContactsApp.getContactsByDate
  *
  * @param {Month} month - the month to match, as one of the values from ContactsApp.Month
- * @param {number} day - the day to match
+ * @param {IntegerNum} day - the day to match
  * @param {String} label - the custom field to search within
  *
  * @return {ContactsApp.Contact[]} an array of matching contacts
@@ -1077,6 +695,7 @@
  * @return {ContactsApp.Contact[]} an array of matching contacts
  */
 
+
 /**
  * @class ContactsApp.AddressField
  */
@@ -1222,6 +841,7 @@
  * @return {ContactsApp.AddressField} this field, useful for chaining
  */
 
+
 /**
  * @class ContactsApp.CompanyField
  */
@@ -1342,6 +962,7 @@
  * @return {ContactsApp.CompanyField} this company field, useful for chaining
  */
 
+
 /**
  * @class ContactsApp.Contact
  */
@@ -1424,8 +1045,8 @@
  *
  * @param {Object} label - the label of the new date, either from ContactsApp.Field or a custom string
  * @param {Month} month - the month, from ContactApps.Month
- * @param {number} day - the day
- * @param {number} year - the year
+ * @param {IntegerNum} day - the day
+ * @param {IntegerNum} year - the year
  *
  * @return {ContactsApp.DateField} the newly created date
  */
@@ -1699,6 +1320,7 @@
  * Gets a list of the email addresses available for this Contact.
  *
  * @function ContactsApp.Contact#getEmailAddresses
+ * @deprecated
  *
  * @return {String[]} a list of email addresses available for this Contact
  */
@@ -1795,6 +1417,7 @@
  * Gets the home address of this Contact, or empty string if none exists.
  *
  * @function ContactsApp.Contact#getHomeAddress
+ * @deprecated
  *
  * @return {String} the home address of this Contact, or empty string if none exists
  */
@@ -1803,6 +1426,7 @@
  * Gets the home fax number of this Contact or empty string if none exists.
  *
  * @function ContactsApp.Contact#getHomeFax
+ * @deprecated
  *
  * @return {String} the home fax number of this Contact or empty string if none exists
  */
@@ -1811,6 +1435,7 @@
  * Gets the home phone number of this Contact or empty string if none exists.
  *
  * @function ContactsApp.Contact#getHomePhone
+ * @deprecated
  *
  * @return {String} the home phone number of this Contact or empty string if none exists
  */
@@ -1935,6 +1560,7 @@
  * Gets the mobile phone number of this Contact or empty string if none exists.
  *
  * @function ContactsApp.Contact#getMobilePhone
+ * @deprecated
  *
  * @return {String} the mobile phone number of this Contact or empty string if none exists
  */
@@ -1975,6 +1601,7 @@
  * Gets the pager phone number of this Contact or empty string if none exists.
  *
  * @function ContactsApp.Contact#getPager
+ * @deprecated
  *
  * @return {String} the pager phone number of this Contact or empty string if none exists
  */
@@ -2124,6 +1751,7 @@
  * Gets the user defined value associated with the given key.
  *
  * @function ContactsApp.Contact#getUserDefinedField
+ * @deprecated
  *
  * @param {String} key - the key can be any basic type (String, int, etc.)
  *
@@ -2135,6 +1763,7 @@
  JavaScript Object.
  *
  * @function ContactsApp.Contact#getUserDefinedFields
+ * @deprecated
  *
  * @return {Object} the user defined fields for this Contact, as properties of a JavaScript Object
  */
@@ -2143,6 +1772,7 @@
  * Gets the work address of this Contact, or empty string if none exists.
  *
  * @function ContactsApp.Contact#getWorkAddress
+ * @deprecated
  *
  * @return {String} the work address of this Contact, or empty string if none exists
  */
@@ -2151,6 +1781,7 @@
  * Gets the work fax number of this Contact or empty string if none exists.
  *
  * @function ContactsApp.Contact#getWorkFax
+ * @deprecated
  *
  * @return {String} the work fax number of this Contact or empty string if none exists
  */
@@ -2159,6 +1790,7 @@
  * Gets the work phone number of this Contact or empty string if none exists.
  *
  * @function ContactsApp.Contact#getWorkPhone
+ * @deprecated
  *
  * @return {String} the work phone number of this Contact or empty string if none exists
  */
@@ -2244,6 +1876,7 @@
  * Sets the home address of this Contact.
  *
  * @function ContactsApp.Contact#setHomeAddress
+ * @deprecated
  *
  * @param {String} addr - the home address to set
  *
@@ -2254,6 +1887,7 @@
  * Sets the home fax number of this Contact.
  *
  * @function ContactsApp.Contact#setHomeFax
+ * @deprecated
  *
  * @param {String} phone - the home fax number to set
  *
@@ -2264,6 +1898,7 @@
  * Sets the home phone number of this Contact.
  *
  * @function ContactsApp.Contact#setHomePhone
+ * @deprecated
  *
  * @param {String} phone - the home phone number to set
  *
@@ -2331,6 +1966,7 @@
  * Sets the mobile phone number of this Contact.
  *
  * @function ContactsApp.Contact#setMobilePhone
+ * @deprecated
  *
  * @param {String} phone - the mobile phone number to set
  *
@@ -2379,6 +2015,7 @@
  * Sets the pager number of this Contact.
  *
  * @function ContactsApp.Contact#setPager
+ * @deprecated
  *
  * @param {String} phone - the pager number to set
  *
@@ -2408,6 +2045,7 @@
  * Sets the primary email address of this Contact.
  *
  * @function ContactsApp.Contact#setPrimaryEmail
+ * @deprecated
  *
  * @param {String} primaryEmail - the primary email address to set
  *
@@ -2456,6 +2094,7 @@
  * Sets a single user defined field for this Contact, to be stored with a given key.
  *
  * @function ContactsApp.Contact#setUserDefinedField
+ * @deprecated
  *
  * @param {String} key - the key can be any basic type (String, int, etc.)
  * @param {String} value - the value can be any basic type (String, int, etc.)
@@ -2467,6 +2106,7 @@
  * Sets the user defined fields for this Contact with the properties of the given Object.
  *
  * @function ContactsApp.Contact#setUserDefinedFields
+ * @deprecated
  *
  * @param {Object} o - an Object with one or more properties in the form {key: value}
  *
@@ -2477,6 +2117,7 @@
  * Sets the work address of this Contact.
  *
  * @function ContactsApp.Contact#setWorkAddress
+ * @deprecated
  *
  * @param {String} addr - the work address to set
  *
@@ -2487,6 +2128,7 @@
  * Sets the work fax number of this Contact.
  *
  * @function ContactsApp.Contact#setWorkFax
+ * @deprecated
  *
  * @param {String} phone - the work fax number to set
  *
@@ -2497,11 +2139,13 @@
  * Sets the work phone number of this Contact.
  *
  * @function ContactsApp.Contact#setWorkPhone
+ * @deprecated
  *
  * @param {String} phone - the work phone number to set
  *
  * @return void
  */
+
 
 /**
  * @class ContactsApp.ContactGroup
@@ -2558,6 +2202,7 @@
  * Returns the name of this group.
  *
  * @function ContactsApp.ContactGroup#getGroupName
+ * @deprecated
  *
  * @return {String} the name of this group
  */
@@ -2636,6 +2281,7 @@
  * Sets the name of this group.
  *
  * @function ContactsApp.ContactGroup#setGroupName
+ * @deprecated
  *
  * @param {String} name - the name to set for this group
  *
@@ -2658,6 +2304,7 @@
  *
  * @return {ContactsApp.ContactGroup} this contact group
  */
+
 
 /**
  * @class ContactsApp.CustomField
@@ -2774,6 +2421,7 @@
  * @return {ContactsApp.CustomField} this field, useful for chaining
  */
 
+
 /**
  * @class ContactsApp.DateField
  */
@@ -2811,7 +2459,7 @@
  *
  * @function ContactsApp.DateField#getDay
  *
- * @return {number} the day of the month
+ * @return {IntegerNum} the day of the month
  */
 
 /**
@@ -2860,7 +2508,7 @@
  *
  * @function ContactsApp.DateField#getYear
  *
- * @return {number} the year
+ * @return {IntegerNum} the year
  */
 
 /**
@@ -2878,7 +2526,7 @@
  * @function ContactsApp.DateField#setDate
  *
  * @param {Month} month - the month
- * @param {number} day - the day
+ * @param {IntegerNum} day - the day
  *
  * @return {ContactsApp.DateField} this date, useful for chaining
  */
@@ -2896,8 +2544,8 @@
  * @function ContactsApp.DateField#setDate
  *
  * @param {Month} month - the month
- * @param {number} day - the day
- * @param {number} year - the year
+ * @param {IntegerNum} day - the day
+ * @param {IntegerNum} year - the year
  *
  * @return {ContactsApp.DateField} this date, useful for chaining
  */
@@ -2938,6 +2586,7 @@
  *
  * @return {ContactsApp.DateField} this field, useful for chaining
  */
+
 
 /**
  * @class ContactsApp.EmailField
@@ -3114,6 +2763,364 @@
  * @return {ContactsApp.EmailField} this field, useful for chaining
  */
 
+
+/**
+ * @class ContactsApp.ExtendedField
+ */
+
+/**
+ * the contact's billing information
+ *
+ * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.BILLING_INFORMATION
+ */
+
+/**
+ * the contact's directory server
+ *
+ * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.DIRECTORY_SERVER
+ */
+
+/**
+ * the contact's gender
+ *
+ * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.GENDER
+ */
+
+/**
+ * the contact's hobby
+ *
+ * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.HOBBY
+ */
+
+/**
+ * the contact's home information
+ *
+ * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.HOME
+ */
+
+/**
+ * the contact's language
+ *
+ * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.LANGUAGE
+ */
+
+/**
+ * the contact's mileage
+ *
+ * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.MILEAGE
+ */
+
+/**
+ * the contact's other information
+ *
+ * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.OTHER
+ */
+
+/**
+ * the contact's priority
+ *
+ * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.PRIORITY
+ */
+
+/**
+ * the contact's sensitivity
+ *
+ * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.SENSITIVITY
+ */
+
+/**
+ * the contact's user information
+ *
+ * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.USER
+ */
+
+/**
+ * the contact's work information
+ *
+ * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField.WORK
+ */
+
+
+/**
+ * @class ContactsApp.Field
+ */
+
+/**
+ * the contact's AIM identifier
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.AIM
+ */
+
+/**
+ * the contact's anniversary
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.ANNIVERSARY
+ */
+
+/**
+ * the contact's assistant's phone number
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.ASSISTANT_PHONE
+ */
+
+/**
+ * the contact's birthday
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.BIRTHDAY
+ */
+
+/**
+ * the contact's blog URL
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.BLOG
+ */
+
+/**
+ * the contact's callback phone number
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.CALLBACK_PHONE
+ */
+
+/**
+ * the contact's company
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.COMPANY
+ */
+
+/**
+ * the contact's family (last) name
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.FAMILY_NAME
+ */
+
+/**
+ * the contact's FTP URL
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.FTP
+ */
+
+/**
+ * the contact's full name
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.FULL_NAME
+ */
+
+/**
+ * the contact's given (first) name
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.GIVEN_NAME
+ */
+
+/**
+ * the contact's Google Talk identifier
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.GOOGLE_TALK
+ */
+
+/**
+ * the contact's Google Voice number
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.GOOGLE_VOICE
+ */
+
+/**
+ * the contact's home address
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.HOME_ADDRESS
+ */
+
+/**
+ * the contact's home email address
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.HOME_EMAIL
+ */
+
+/**
+ * the contact's home fax number
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.HOME_FAX
+ */
+
+/**
+ * the contact's home page URL
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.HOME_PAGE
+ */
+
+/**
+ * the contact's home phone number
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.HOME_PHONE
+ */
+
+/**
+ * the contact's home website URL
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.HOME_WEBSITE
+ */
+
+/**
+ * the contact's ICQ identifier
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.ICQ
+ */
+
+/**
+ * the contact's initials
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.INITIALS
+ */
+
+/**
+ * the contact's Jabber identifier
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.JABBER
+ */
+
+/**
+ * the contact's job title
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.JOB_TITLE
+ */
+
+/**
+ * the contact's maiden name
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.MAIDEN_NAME
+ */
+
+/**
+ * the contact's main phone number
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.MAIN_PHONE
+ */
+
+/**
+ * the contact's middle name
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.MIDDLE_NAME
+ */
+
+/**
+ * the contact's mobile phone number
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.MOBILE_PHONE
+ */
+
+/**
+ * the contact's MSN identifier
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.MSN
+ */
+
+/**
+ * the contact's nickname
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.NICKNAME
+ */
+
+/**
+ * notes about the contact
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.NOTES
+ */
+
+/**
+ * the contact's pager number
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.PAGER
+ */
+
+/**
+ * the prefix for the contact's name
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.PREFIX
+ */
+
+/**
+ * the contact's profile URL
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.PROFILE
+ */
+
+/**
+ * the contact's QQ identifer
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.QQ
+ */
+
+/**
+ * the contact's short name
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.SHORT_NAME
+ */
+
+/**
+ * the contact's Skype identifier
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.SKYPE
+ */
+
+/**
+ * the suffix for the contact's name
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.SUFFIX
+ */
+
+/**
+ * the contact's work address
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.WORK_ADDRESS
+ */
+
+/**
+ * the contact's work email address
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.WORK_EMAIL
+ */
+
+/**
+ * the contact's work fax number
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.WORK_FAX
+ */
+
+/**
+ * the contact's work phone number
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.WORK_PHONE
+ */
+
+/**
+ * the contact's work website URL
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.WORK_WEBSITE
+ */
+
+/**
+ * the contact's Yahoo instant messaging identifier
+ *
+ * @typedef {ContactsApp.Field} ContactsApp.Field.YAHOO
+ */
+
+
+/**
+ * @class ContactsApp.Gender
+ */
+
+/**
+ * female gender
+ *
+ * @typedef {ContactsApp.Gender} ContactsApp.Gender.FEMALE
+ */
+
+/**
+ * male gender
+ *
+ * @typedef {ContactsApp.Gender} ContactsApp.Gender.MALE
+ */
+
+
 /**
  * @class ContactsApp.IMField
  */
@@ -3258,6 +3265,7 @@
  * @return {ContactsApp.IMField} this field, useful for chaining
  */
 
+
 /**
  * @class ContactsApp.PhoneField
  */
@@ -3399,6 +3407,59 @@
  *
  * @return {ContactsApp.PhoneField} this field, useful for chaining
  */
+
+
+/**
+ * @class ContactsApp.Priority
+ */
+
+/**
+ * high priority
+ *
+ * @typedef {ContactsApp.Priority} ContactsApp.Priority.HIGH
+ */
+
+/**
+ * low priority
+ *
+ * @typedef {ContactsApp.Priority} ContactsApp.Priority.LOW
+ */
+
+/**
+ * normal priority
+ *
+ * @typedef {ContactsApp.Priority} ContactsApp.Priority.NORMAL
+ */
+
+
+/**
+ * @class ContactsApp.Sensitivity
+ */
+
+/**
+ * confidential sensitivity
+ *
+ * @typedef {ContactsApp.Sensitivity} ContactsApp.Sensitivity.CONFIDENTIAL
+ */
+
+/**
+ * normal sensitivity
+ *
+ * @typedef {ContactsApp.Sensitivity} ContactsApp.Sensitivity.NORMAL
+ */
+
+/**
+ * personal sensitivity
+ *
+ * @typedef {ContactsApp.Sensitivity} ContactsApp.Sensitivity.PERSONAL
+ */
+
+/**
+ * private sensitivity
+ *
+ * @typedef {ContactsApp.Sensitivity} ContactsApp.Sensitivity.PRIVATE
+ */
+
 
 /**
  * @class ContactsApp.UrlField
@@ -3543,4 +3604,5 @@
  *
  * @return {ContactsApp.UrlField} this field, useful for chaining
  */
+
 

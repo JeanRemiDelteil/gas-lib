@@ -2,6 +2,37 @@
  * @namespace Jdbc
  ***********************************************/
 
+/**
+ * @typedef {Jdbc.JdbcConnection} Jdbc.Connection
+ */
+
+/**
+ * @typedef {Jdbc.JdbcDatabaseMetaData} Jdbc.DatabaseMetaData
+ */
+
+/**
+ * @typedef {Jdbc.JdbcParameterMetaData} Jdbc.ParameterMetaData
+ */
+
+/**
+ * @typedef {Jdbc.JdbcResultSet} Jdbc.ResultSet
+ */
+
+/**
+ * @typedef {Jdbc.JdbcResultSetMetaData} Jdbc.ResultSetMetaData
+ */
+
+/**
+ * @typedef {Jdbc.JdbcRowIdLifetime} Jdbc.RowIdLifetime
+ */
+
+/**
+ * @typedef {Jdbc.JdbcStatment} Jdbc.Statement
+ */
+
+/**
+ * @typedef {Jdbc.JdbcTypes} Jdbc.Types
+ */
 
 /**
  * Attempts to establish a connection to the given Google Cloud SQL URL.
@@ -100,7 +131,7 @@
  *
  * @function Jdbc.newDate
  *
- * @param {number} milliseconds - milliseconds since epoch
+ * @param {IntegerNum} milliseconds - milliseconds since epoch
  *
  * @return {Jdbc.JdbcDate} a JdbcDate object
  */
@@ -110,7 +141,7 @@
  *
  * @function Jdbc.newTime
  *
- * @param {number} milliseconds - milliseconds since epoch
+ * @param {IntegerNum} milliseconds - milliseconds since epoch
  *
  * @return {Jdbc.JdbcTime} a JdbcTime object
  */
@@ -120,7 +151,7 @@
  *
  * @function Jdbc.newTimestamp
  *
- * @param {number} milliseconds - milliseconds since epoch
+ * @param {IntegerNum} milliseconds - milliseconds since epoch
  *
  * @return {Jdbc.JdbcTimestamp} a JdbcTimestamp object
  */
@@ -155,6 +186,7 @@
  * @return {Jdbc.JdbcTimestamp} a JdbcTimestamp object
  */
 
+
 /**
  * @class Jdbc.JdbcArray
  */
@@ -180,8 +212,8 @@
  *
  * @function Jdbc.JdbcArray#getArray
  *
- * @param {number} index - 
- * @param {number} count - 
+ * @param {IntegerNum} index
+ * @param {IntegerNum} count
  *
  * @return {Object}
  */
@@ -191,7 +223,7 @@
  *
  * @function Jdbc.JdbcArray#getBaseType
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -215,11 +247,12 @@
  *
  * @function Jdbc.JdbcArray#getResultSet
  *
- * @param {number} index - 
- * @param {number} count - 
+ * @param {IntegerNum} index
+ * @param {IntegerNum} count
  *
  * @return {Jdbc.JdbcResultSet}
  */
+
 
 /**
  * @class Jdbc.JdbcBlob
@@ -262,8 +295,8 @@
  *
  * @function Jdbc.JdbcBlob#getBytes
  *
- * @param {number} position - 
- * @param {number} length - 
+ * @param {IntegerNum} position
+ * @param {IntegerNum} length
  *
  * @return {Byte[]}
  */
@@ -271,9 +304,9 @@
 /**
  * For documentation of this method, see <code>Blob.length()</code>.
  *
- * @function Jdbc.JdbcBlob#____length
+ * @function Jdbc.JdbcBlob#length
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -281,10 +314,10 @@
  *
  * @function Jdbc.JdbcBlob#position
  *
- * @param {Byte[]} pattern - 
- * @param {number} start - 
+ * @param {Byte[]} pattern
+ * @param {IntegerNum} start
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -292,10 +325,10 @@
  *
  * @function Jdbc.JdbcBlob#position
  *
- * @param {Jdbc.JdbcBlob} pattern - 
- * @param {number} start - 
+ * @param {Jdbc.JdbcBlob} pattern
+ * @param {IntegerNum} start
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -303,10 +336,10 @@
  *
  * @function Jdbc.JdbcBlob#setBytes
  *
- * @param {number} position - 
- * @param {BlobSource} blobSource - 
+ * @param {IntegerNum} position
+ * @param {BlobSource} blobSource
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -314,12 +347,12 @@
  *
  * @function Jdbc.JdbcBlob#setBytes
  *
- * @param {number} position - 
- * @param {BlobSource} blobSource - 
- * @param {number} offset - 
- * @param {number} length - 
+ * @param {IntegerNum} position
+ * @param {BlobSource} blobSource
+ * @param {IntegerNum} offset
+ * @param {IntegerNum} length
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -327,10 +360,10 @@
  *
  * @function Jdbc.JdbcBlob#setBytes
  *
- * @param {number} position - 
- * @param {Byte[]} bytes - 
+ * @param {IntegerNum} position
+ * @param {Byte[]} bytes
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -338,12 +371,12 @@
  *
  * @function Jdbc.JdbcBlob#setBytes
  *
- * @param {number} position - 
- * @param {Byte[]} bytes - 
- * @param {number} offset - 
- * @param {number} length - 
+ * @param {IntegerNum} position
+ * @param {Byte[]} bytes
+ * @param {IntegerNum} offset
+ * @param {IntegerNum} length
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -351,10 +384,11 @@
  *
  * @function Jdbc.JdbcBlob#truncate
  *
- * @param {number} length - 
+ * @param {IntegerNum} length
  *
  * @return void
  */
+
 
 /**
  * @class Jdbc.JdbcCallableStatement
@@ -373,7 +407,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#addBatch
  *
- * @param {String} sql - 
+ * @param {String} sql
  *
  * @return void
  */
@@ -431,7 +465,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#execute
  *
- * @param {String} sql - 
+ * @param {String} sql
  *
  * @return {Boolean}
  */
@@ -441,8 +475,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#execute
  *
- * @param {String} sql - 
- * @param {number} autoGeneratedKeys - 
+ * @param {String} sql
+ * @param {IntegerNum} autoGeneratedKeys
  *
  * @return {Boolean}
  */
@@ -452,8 +486,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#execute
  *
- * @param {String} sql - 
- * @param {Integer[]} columnIndexes - 
+ * @param {String} sql
+ * @param {IntegerNum[]} columnIndexes
  *
  * @return {Boolean}
  */
@@ -463,8 +497,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#execute
  *
- * @param {String} sql - 
- * @param {String[]} columnNames - 
+ * @param {String} sql
+ * @param {String[]} columnNames
  *
  * @return {Boolean}
  */
@@ -474,7 +508,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#executeBatch
  *
- * @return {Integer[]}
+ * @return {IntegerNum[]}
  */
 
 /**
@@ -490,7 +524,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#executeQuery
  *
- * @param {String} sql - 
+ * @param {String} sql
  *
  * @return {Jdbc.JdbcResultSet}
  */
@@ -500,7 +534,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#executeUpdate
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -508,9 +542,9 @@
  *
  * @function Jdbc.JdbcCallableStatement#executeUpdate
  *
- * @param {String} sql - 
+ * @param {String} sql
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -518,10 +552,10 @@
  *
  * @function Jdbc.JdbcCallableStatement#executeUpdate
  *
- * @param {String} sql - 
- * @param {number} autoGeneratedKeys - 
+ * @param {String} sql
+ * @param {IntegerNum} autoGeneratedKeys
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -529,10 +563,10 @@
  *
  * @function Jdbc.JdbcCallableStatement#executeUpdate
  *
- * @param {String} sql - 
- * @param {Integer[]} columnIndexes - 
+ * @param {String} sql
+ * @param {IntegerNum[]} columnIndexes
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -540,10 +574,10 @@
  *
  * @function Jdbc.JdbcCallableStatement#executeUpdate
  *
- * @param {String} sql - 
- * @param {String[]} columnNames - 
+ * @param {String} sql
+ * @param {String[]} columnNames
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -551,7 +585,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getArray
  *
- * @param {number} parameterIndex - 
+ * @param {IntegerNum} parameterIndex
  *
  * @return {Jdbc.JdbcArray}
  */
@@ -561,7 +595,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getArray
  *
- * @param {String} parameterName - 
+ * @param {String} parameterName
  *
  * @return {Jdbc.JdbcArray}
  */
@@ -571,7 +605,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getBigDecimal
  *
- * @param {number} parameterIndex - 
+ * @param {IntegerNum} parameterIndex
  *
  * @return {BigNumber}
  */
@@ -581,7 +615,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getBigDecimal
  *
- * @param {String} parameterName - 
+ * @param {String} parameterName
  *
  * @return {BigNumber}
  */
@@ -591,7 +625,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getBlob
  *
- * @param {number} parameterIndex - 
+ * @param {IntegerNum} parameterIndex
  *
  * @return {Jdbc.JdbcBlob}
  */
@@ -601,7 +635,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getBlob
  *
- * @param {String} parameterName - 
+ * @param {String} parameterName
  *
  * @return {Jdbc.JdbcBlob}
  */
@@ -611,7 +645,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getBoolean
  *
- * @param {number} parameterIndex - 
+ * @param {IntegerNum} parameterIndex
  *
  * @return {Boolean}
  */
@@ -621,7 +655,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getBoolean
  *
- * @param {String} parameterName - 
+ * @param {String} parameterName
  *
  * @return {Boolean}
  */
@@ -631,7 +665,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getByte
  *
- * @param {number} parameterIndex - 
+ * @param {IntegerNum} parameterIndex
  *
  * @return {Byte}
  */
@@ -641,7 +675,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getByte
  *
- * @param {String} parameterName - 
+ * @param {String} parameterName
  *
  * @return {Byte}
  */
@@ -651,7 +685,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getBytes
  *
- * @param {number} parameterIndex - 
+ * @param {IntegerNum} parameterIndex
  *
  * @return {Byte[]}
  */
@@ -661,7 +695,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getBytes
  *
- * @param {String} parameterName - 
+ * @param {String} parameterName
  *
  * @return {Byte[]}
  */
@@ -671,7 +705,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getClob
  *
- * @param {number} parameterIndex - 
+ * @param {IntegerNum} parameterIndex
  *
  * @return {Jdbc.JdbcClob}
  */
@@ -681,7 +715,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getClob
  *
- * @param {String} parameterName - 
+ * @param {String} parameterName
  *
  * @return {Jdbc.JdbcClob}
  */
@@ -699,7 +733,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getDate
  *
- * @param {number} parameterIndex - 
+ * @param {IntegerNum} parameterIndex
  *
  * @return {Jdbc.JdbcDate}
  */
@@ -709,8 +743,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#getDate
  *
- * @param {number} parameterIndex - 
- * @param {String} timeZone - 
+ * @param {IntegerNum} parameterIndex
+ * @param {String} timeZone
  *
  * @return {Jdbc.JdbcDate}
  */
@@ -720,7 +754,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getDate
  *
- * @param {String} parameterName - 
+ * @param {String} parameterName
  *
  * @return {Jdbc.JdbcDate}
  */
@@ -730,8 +764,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#getDate
  *
- * @param {String} parameterName - 
- * @param {String} timeZone - 
+ * @param {String} parameterName
+ * @param {String} timeZone
  *
  * @return {Jdbc.JdbcDate}
  */
@@ -741,7 +775,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getDouble
  *
- * @param {number} parameterIndex - 
+ * @param {IntegerNum} parameterIndex
  *
  * @return {Number}
  */
@@ -751,7 +785,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getDouble
  *
- * @param {String} parameterName - 
+ * @param {String} parameterName
  *
  * @return {Number}
  */
@@ -761,7 +795,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getFetchDirection
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -769,7 +803,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getFetchSize
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -777,7 +811,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getFloat
  *
- * @param {number} parameterIndex - 
+ * @param {IntegerNum} parameterIndex
  *
  * @return {Number}
  */
@@ -787,7 +821,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getFloat
  *
- * @param {String} parameterName - 
+ * @param {String} parameterName
  *
  * @return {Number}
  */
@@ -805,9 +839,9 @@
  *
  * @function Jdbc.JdbcCallableStatement#getInt
  *
- * @param {number} parameterIndex - 
+ * @param {IntegerNum} parameterIndex
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -815,9 +849,9 @@
  *
  * @function Jdbc.JdbcCallableStatement#getInt
  *
- * @param {String} parameterName - 
+ * @param {String} parameterName
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -825,9 +859,9 @@
  *
  * @function Jdbc.JdbcCallableStatement#getLong
  *
- * @param {number} parameterIndex - 
+ * @param {IntegerNum} parameterIndex
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -835,9 +869,9 @@
  *
  * @function Jdbc.JdbcCallableStatement#getLong
  *
- * @param {String} parameterName - 
+ * @param {String} parameterName
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -845,7 +879,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getMaxFieldSize
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -853,7 +887,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getMaxRows
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -877,7 +911,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getMoreResults
  *
- * @param {number} current - 
+ * @param {IntegerNum} current
  *
  * @return {Boolean}
  */
@@ -887,7 +921,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getNClob
  *
- * @param {number} parameterIndex - 
+ * @param {IntegerNum} parameterIndex
  *
  * @return {Jdbc.JdbcClob}
  */
@@ -897,7 +931,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getNClob
  *
- * @param {String} parameterName - 
+ * @param {String} parameterName
  *
  * @return {Jdbc.JdbcClob}
  */
@@ -907,7 +941,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getNString
  *
- * @param {number} parameterIndex - 
+ * @param {IntegerNum} parameterIndex
  *
  * @return {String}
  */
@@ -917,7 +951,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getNString
  *
- * @param {String} parameterName - 
+ * @param {String} parameterName
  *
  * @return {String}
  */
@@ -927,7 +961,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getObject
  *
- * @param {number} parameterIndex - 
+ * @param {IntegerNum} parameterIndex
  *
  * @return {Object}
  */
@@ -937,7 +971,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getObject
  *
- * @param {String} parameterName - 
+ * @param {String} parameterName
  *
  * @return {Object}
  */
@@ -955,7 +989,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getQueryTimeout
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -963,7 +997,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getRef
  *
- * @param {number} parameterIndex - 
+ * @param {IntegerNum} parameterIndex
  *
  * @return {Jdbc.JdbcRef}
  */
@@ -973,7 +1007,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getRef
  *
- * @param {String} parameterName - 
+ * @param {String} parameterName
  *
  * @return {Jdbc.JdbcRef}
  */
@@ -991,7 +1025,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getResultSetConcurrency
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -999,7 +1033,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getResultSetHoldability
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -1007,7 +1041,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getResultSetType
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -1015,7 +1049,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getRowId
  *
- * @param {number} parameterIndex - 
+ * @param {IntegerNum} parameterIndex
  *
  * @return {Jdbc.JdbcRowId}
  */
@@ -1025,7 +1059,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getRowId
  *
- * @param {String} parameterName - 
+ * @param {String} parameterName
  *
  * @return {Jdbc.JdbcRowId}
  */
@@ -1035,7 +1069,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getSQLXML
  *
- * @param {number} parameterIndex - 
+ * @param {IntegerNum} parameterIndex
  *
  * @return {Jdbc.JdbcSQLXML}
  */
@@ -1045,7 +1079,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getSQLXML
  *
- * @param {String} parameterName - 
+ * @param {String} parameterName
  *
  * @return {Jdbc.JdbcSQLXML}
  */
@@ -1055,9 +1089,9 @@
  *
  * @function Jdbc.JdbcCallableStatement#getShort
  *
- * @param {number} parameterIndex - 
+ * @param {IntegerNum} parameterIndex
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -1065,9 +1099,9 @@
  *
  * @function Jdbc.JdbcCallableStatement#getShort
  *
- * @param {String} parameterName - 
+ * @param {String} parameterName
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -1075,7 +1109,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getString
  *
- * @param {number} parameterIndex - 
+ * @param {IntegerNum} parameterIndex
  *
  * @return {String}
  */
@@ -1085,7 +1119,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getString
  *
- * @param {String} parameterName - 
+ * @param {String} parameterName
  *
  * @return {String}
  */
@@ -1095,7 +1129,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getTime
  *
- * @param {number} parameterIndex - 
+ * @param {IntegerNum} parameterIndex
  *
  * @return {Jdbc.JdbcTime}
  */
@@ -1105,8 +1139,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#getTime
  *
- * @param {number} parameterIndex - 
- * @param {String} timeZone - 
+ * @param {IntegerNum} parameterIndex
+ * @param {String} timeZone
  *
  * @return {Jdbc.JdbcTime}
  */
@@ -1116,7 +1150,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getTime
  *
- * @param {String} parameterName - 
+ * @param {String} parameterName
  *
  * @return {Jdbc.JdbcTime}
  */
@@ -1126,8 +1160,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#getTime
  *
- * @param {String} parameterName - 
- * @param {String} timeZone - 
+ * @param {String} parameterName
+ * @param {String} timeZone
  *
  * @return {Jdbc.JdbcTime}
  */
@@ -1137,7 +1171,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getTimestamp
  *
- * @param {number} parameterIndex - 
+ * @param {IntegerNum} parameterIndex
  *
  * @return {Jdbc.JdbcTimestamp}
  */
@@ -1147,8 +1181,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#getTimestamp
  *
- * @param {number} parameterIndex - 
- * @param {String} timeZone - 
+ * @param {IntegerNum} parameterIndex
+ * @param {String} timeZone
  *
  * @return {Jdbc.JdbcTimestamp}
  */
@@ -1158,7 +1192,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getTimestamp
  *
- * @param {String} parameterName - 
+ * @param {String} parameterName
  *
  * @return {Jdbc.JdbcTimestamp}
  */
@@ -1168,8 +1202,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#getTimestamp
  *
- * @param {String} parameterName - 
- * @param {String} timeZone - 
+ * @param {String} parameterName
+ * @param {String} timeZone
  *
  * @return {Jdbc.JdbcTimestamp}
  */
@@ -1179,7 +1213,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getURL
  *
- * @param {number} parameterIndex - 
+ * @param {IntegerNum} parameterIndex
  *
  * @return {String}
  */
@@ -1189,7 +1223,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getURL
  *
- * @param {String} parameterName - 
+ * @param {String} parameterName
  *
  * @return {String}
  */
@@ -1199,7 +1233,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#getUpdateCount
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -1232,8 +1266,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#registerOutParameter
  *
- * @param {number} parameterIndex - 
- * @param {number} sqlType - 
+ * @param {IntegerNum} parameterIndex
+ * @param {IntegerNum} sqlType
  *
  * @return void
  */
@@ -1243,9 +1277,9 @@
  *
  * @function Jdbc.JdbcCallableStatement#registerOutParameter
  *
- * @param {number} parameterIndex - 
- * @param {number} sqlType - 
- * @param {number} scale - 
+ * @param {IntegerNum} parameterIndex
+ * @param {IntegerNum} sqlType
+ * @param {IntegerNum} scale
  *
  * @return void
  */
@@ -1255,9 +1289,9 @@
  *
  * @function Jdbc.JdbcCallableStatement#registerOutParameter
  *
- * @param {number} parameterIndex - 
- * @param {number} sqlType - 
- * @param {String} typeName - 
+ * @param {IntegerNum} parameterIndex
+ * @param {IntegerNum} sqlType
+ * @param {String} typeName
  *
  * @return void
  */
@@ -1267,8 +1301,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#registerOutParameter
  *
- * @param {String} parameterName - 
- * @param {number} sqlType - 
+ * @param {String} parameterName
+ * @param {IntegerNum} sqlType
  *
  * @return void
  */
@@ -1278,9 +1312,9 @@
  *
  * @function Jdbc.JdbcCallableStatement#registerOutParameter
  *
- * @param {String} parameterName - 
- * @param {number} sqlType - 
- * @param {number} scale - 
+ * @param {String} parameterName
+ * @param {IntegerNum} sqlType
+ * @param {IntegerNum} scale
  *
  * @return void
  */
@@ -1290,9 +1324,9 @@
  *
  * @function Jdbc.JdbcCallableStatement#registerOutParameter
  *
- * @param {String} parameterName - 
- * @param {number} sqlType - 
- * @param {String} typeName - 
+ * @param {String} parameterName
+ * @param {IntegerNum} sqlType
+ * @param {String} typeName
  *
  * @return void
  */
@@ -1302,8 +1336,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setArray
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcArray} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcArray} x
  *
  * @return void
  */
@@ -1313,8 +1347,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setBigDecimal
  *
- * @param {number} parameterIndex - 
- * @param {BigNumber} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {BigNumber} x
  *
  * @return void
  */
@@ -1324,8 +1358,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setBigDecimal
  *
- * @param {String} parameterName - 
- * @param {BigNumber} x - 
+ * @param {String} parameterName
+ * @param {BigNumber} x
  *
  * @return void
  */
@@ -1335,8 +1369,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setBlob
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcBlob} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcBlob} x
  *
  * @return void
  */
@@ -1346,8 +1380,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setBlob
  *
- * @param {String} parameterName - 
- * @param {Jdbc.JdbcBlob} x - 
+ * @param {String} parameterName
+ * @param {Jdbc.JdbcBlob} x
  *
  * @return void
  */
@@ -1357,8 +1391,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setBoolean
  *
- * @param {number} parameterIndex - 
- * @param {Boolean} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Boolean} x
  *
  * @return void
  */
@@ -1368,8 +1402,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setBoolean
  *
- * @param {String} parameterName - 
- * @param {Boolean} x - 
+ * @param {String} parameterName
+ * @param {Boolean} x
  *
  * @return void
  */
@@ -1379,8 +1413,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setByte
  *
- * @param {number} parameterIndex - 
- * @param {Byte} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Byte} x
  *
  * @return void
  */
@@ -1390,8 +1424,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setByte
  *
- * @param {String} parameterName - 
- * @param {Byte} x - 
+ * @param {String} parameterName
+ * @param {Byte} x
  *
  * @return void
  */
@@ -1401,8 +1435,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setBytes
  *
- * @param {number} parameterIndex - 
- * @param {Byte[]} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Byte[]} x
  *
  * @return void
  */
@@ -1412,8 +1446,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setBytes
  *
- * @param {String} parameterName - 
- * @param {Byte[]} x - 
+ * @param {String} parameterName
+ * @param {Byte[]} x
  *
  * @return void
  */
@@ -1423,8 +1457,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setClob
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcClob} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcClob} x
  *
  * @return void
  */
@@ -1434,8 +1468,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setClob
  *
- * @param {String} parameterName - 
- * @param {Jdbc.JdbcClob} x - 
+ * @param {String} parameterName
+ * @param {Jdbc.JdbcClob} x
  *
  * @return void
  */
@@ -1445,7 +1479,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#setCursorName
  *
- * @param {String} name - 
+ * @param {String} name
  *
  * @return void
  */
@@ -1455,8 +1489,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setDate
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcDate} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcDate} x
  *
  * @return void
  */
@@ -1466,9 +1500,9 @@
  *
  * @function Jdbc.JdbcCallableStatement#setDate
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcDate} x - 
- * @param {String} timeZone - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcDate} x
+ * @param {String} timeZone
  *
  * @return void
  */
@@ -1478,8 +1512,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setDate
  *
- * @param {String} parameterName - 
- * @param {Jdbc.JdbcDate} x - 
+ * @param {String} parameterName
+ * @param {Jdbc.JdbcDate} x
  *
  * @return void
  */
@@ -1489,9 +1523,9 @@
  *
  * @function Jdbc.JdbcCallableStatement#setDate
  *
- * @param {String} parameterName - 
- * @param {Jdbc.JdbcDate} x - 
- * @param {String} timeZone - 
+ * @param {String} parameterName
+ * @param {Jdbc.JdbcDate} x
+ * @param {String} timeZone
  *
  * @return void
  */
@@ -1501,8 +1535,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setDouble
  *
- * @param {number} parameterIndex - 
- * @param {Number} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Number} x
  *
  * @return void
  */
@@ -1512,8 +1546,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setDouble
  *
- * @param {String} parameterName - 
- * @param {Number} x - 
+ * @param {String} parameterName
+ * @param {Number} x
  *
  * @return void
  */
@@ -1523,7 +1557,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#setEscapeProcessing
  *
- * @param {Boolean} enable - 
+ * @param {Boolean} enable
  *
  * @return void
  */
@@ -1533,7 +1567,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#setFetchDirection
  *
- * @param {number} direction - 
+ * @param {IntegerNum} direction
  *
  * @return void
  */
@@ -1543,7 +1577,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#setFetchSize
  *
- * @param {number} rows - 
+ * @param {IntegerNum} rows
  *
  * @return void
  */
@@ -1553,8 +1587,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setFloat
  *
- * @param {number} parameterIndex - 
- * @param {Number} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Number} x
  *
  * @return void
  */
@@ -1564,8 +1598,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setFloat
  *
- * @param {String} parameterName - 
- * @param {Number} x - 
+ * @param {String} parameterName
+ * @param {Number} x
  *
  * @return void
  */
@@ -1575,8 +1609,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setInt
  *
- * @param {number} parameterIndex - 
- * @param {number} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {IntegerNum} x
  *
  * @return void
  */
@@ -1586,8 +1620,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setInt
  *
- * @param {String} parameterName - 
- * @param {number} x - 
+ * @param {String} parameterName
+ * @param {IntegerNum} x
  *
  * @return void
  */
@@ -1597,8 +1631,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setLong
  *
- * @param {number} parameterIndex - 
- * @param {number} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {IntegerNum} x
  *
  * @return void
  */
@@ -1608,8 +1642,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setLong
  *
- * @param {String} parameterName - 
- * @param {number} x - 
+ * @param {String} parameterName
+ * @param {IntegerNum} x
  *
  * @return void
  */
@@ -1619,7 +1653,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#setMaxFieldSize
  *
- * @param {number} max - 
+ * @param {IntegerNum} max
  *
  * @return void
  */
@@ -1629,7 +1663,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#setMaxRows
  *
- * @param {number} max - 
+ * @param {IntegerNum} max
  *
  * @return void
  */
@@ -1639,8 +1673,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setNClob
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcClob} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcClob} x
  *
  * @return void
  */
@@ -1650,8 +1684,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setNClob
  *
- * @param {String} parameterName - 
- * @param {Jdbc.JdbcClob} value - 
+ * @param {String} parameterName
+ * @param {Jdbc.JdbcClob} value
  *
  * @return void
  */
@@ -1661,8 +1695,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setNString
  *
- * @param {number} parameterIndex - 
- * @param {String} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {String} x
  *
  * @return void
  */
@@ -1672,8 +1706,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setNString
  *
- * @param {String} parameterName - 
- * @param {String} value - 
+ * @param {String} parameterName
+ * @param {String} value
  *
  * @return void
  */
@@ -1683,8 +1717,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setNull
  *
- * @param {number} parameterIndex - 
- * @param {number} sqlType - 
+ * @param {IntegerNum} parameterIndex
+ * @param {IntegerNum} sqlType
  *
  * @return void
  */
@@ -1694,9 +1728,9 @@
  *
  * @function Jdbc.JdbcCallableStatement#setNull
  *
- * @param {number} parameterIndex - 
- * @param {number} sqlType - 
- * @param {String} typeName - 
+ * @param {IntegerNum} parameterIndex
+ * @param {IntegerNum} sqlType
+ * @param {String} typeName
  *
  * @return void
  */
@@ -1706,8 +1740,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setNull
  *
- * @param {String} parameterName - 
- * @param {number} sqlType - 
+ * @param {String} parameterName
+ * @param {IntegerNum} sqlType
  *
  * @return void
  */
@@ -1717,9 +1751,9 @@
  *
  * @function Jdbc.JdbcCallableStatement#setNull
  *
- * @param {String} parameterName - 
- * @param {number} sqlType - 
- * @param {String} typeName - 
+ * @param {String} parameterName
+ * @param {IntegerNum} sqlType
+ * @param {String} typeName
  *
  * @return void
  */
@@ -1729,8 +1763,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setObject
  *
- * @param {number} index - 
- * @param {Object} x - 
+ * @param {IntegerNum} index
+ * @param {Object} x
  *
  * @return void
  */
@@ -1740,9 +1774,9 @@
  *
  * @function Jdbc.JdbcCallableStatement#setObject
  *
- * @param {number} parameterIndex - 
- * @param {Object} x - 
- * @param {number} targetSqlType - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Object} x
+ * @param {IntegerNum} targetSqlType
  *
  * @return void
  */
@@ -1752,10 +1786,10 @@
  *
  * @function Jdbc.JdbcCallableStatement#setObject
  *
- * @param {number} parameterIndex - 
- * @param {Object} x - 
- * @param {number} targetSqlType - 
- * @param {number} scaleOrLength - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Object} x
+ * @param {IntegerNum} targetSqlType
+ * @param {IntegerNum} scaleOrLength
  *
  * @return void
  */
@@ -1765,8 +1799,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setObject
  *
- * @param {String} parameterName - 
- * @param {Object} x - 
+ * @param {String} parameterName
+ * @param {Object} x
  *
  * @return void
  */
@@ -1776,9 +1810,9 @@
  *
  * @function Jdbc.JdbcCallableStatement#setObject
  *
- * @param {String} parameterName - 
- * @param {Object} x - 
- * @param {number} targetSqlType - 
+ * @param {String} parameterName
+ * @param {Object} x
+ * @param {IntegerNum} targetSqlType
  *
  * @return void
  */
@@ -1788,10 +1822,10 @@
  *
  * @function Jdbc.JdbcCallableStatement#setObject
  *
- * @param {String} parameterName - 
- * @param {Object} x - 
- * @param {number} targetSqlType - 
- * @param {number} scale - 
+ * @param {String} parameterName
+ * @param {Object} x
+ * @param {IntegerNum} targetSqlType
+ * @param {IntegerNum} scale
  *
  * @return void
  */
@@ -1801,7 +1835,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#setPoolable
  *
- * @param {Boolean} poolable - 
+ * @param {Boolean} poolable
  *
  * @return void
  */
@@ -1811,7 +1845,7 @@
  *
  * @function Jdbc.JdbcCallableStatement#setQueryTimeout
  *
- * @param {number} seconds - 
+ * @param {IntegerNum} seconds
  *
  * @return void
  */
@@ -1821,8 +1855,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setRef
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcRef} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcRef} x
  *
  * @return void
  */
@@ -1832,8 +1866,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setRowId
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcRowId} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcRowId} x
  *
  * @return void
  */
@@ -1843,8 +1877,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setRowId
  *
- * @param {String} parameterName - 
- * @param {Jdbc.JdbcRowId} x - 
+ * @param {String} parameterName
+ * @param {Jdbc.JdbcRowId} x
  *
  * @return void
  */
@@ -1854,8 +1888,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setSQLXML
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcSQLXML} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcSQLXML} x
  *
  * @return void
  */
@@ -1865,8 +1899,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setSQLXML
  *
- * @param {String} parameterName - 
- * @param {Jdbc.JdbcSQLXML} xmlObject - 
+ * @param {String} parameterName
+ * @param {Jdbc.JdbcSQLXML} xmlObject
  *
  * @return void
  */
@@ -1876,8 +1910,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setShort
  *
- * @param {number} parameterIndex - 
- * @param {number} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {IntegerNum} x
  *
  * @return void
  */
@@ -1887,8 +1921,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setShort
  *
- * @param {String} parameterName - 
- * @param {number} x - 
+ * @param {String} parameterName
+ * @param {IntegerNum} x
  *
  * @return void
  */
@@ -1898,8 +1932,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setString
  *
- * @param {number} parameterIndex - 
- * @param {String} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {String} x
  *
  * @return void
  */
@@ -1909,8 +1943,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setString
  *
- * @param {String} parameterName - 
- * @param {String} x - 
+ * @param {String} parameterName
+ * @param {String} x
  *
  * @return void
  */
@@ -1920,8 +1954,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setTime
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcTime} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcTime} x
  *
  * @return void
  */
@@ -1931,9 +1965,9 @@
  *
  * @function Jdbc.JdbcCallableStatement#setTime
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcTime} x - 
- * @param {String} timeZone - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcTime} x
+ * @param {String} timeZone
  *
  * @return void
  */
@@ -1943,8 +1977,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setTime
  *
- * @param {String} parameterName - 
- * @param {Jdbc.JdbcTime} x - 
+ * @param {String} parameterName
+ * @param {Jdbc.JdbcTime} x
  *
  * @return void
  */
@@ -1954,9 +1988,9 @@
  *
  * @function Jdbc.JdbcCallableStatement#setTime
  *
- * @param {String} parameterName - 
- * @param {Jdbc.JdbcTime} x - 
- * @param {String} timeZone - 
+ * @param {String} parameterName
+ * @param {Jdbc.JdbcTime} x
+ * @param {String} timeZone
  *
  * @return void
  */
@@ -1966,8 +2000,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setTimestamp
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcTimestamp} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcTimestamp} x
  *
  * @return void
  */
@@ -1977,9 +2011,9 @@
  *
  * @function Jdbc.JdbcCallableStatement#setTimestamp
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcTimestamp} x - 
- * @param {String} timeZone - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcTimestamp} x
+ * @param {String} timeZone
  *
  * @return void
  */
@@ -1989,8 +2023,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setTimestamp
  *
- * @param {String} parameterName - 
- * @param {Jdbc.JdbcTimestamp} x - 
+ * @param {String} parameterName
+ * @param {Jdbc.JdbcTimestamp} x
  *
  * @return void
  */
@@ -2000,9 +2034,9 @@
  *
  * @function Jdbc.JdbcCallableStatement#setTimestamp
  *
- * @param {String} parameterName - 
- * @param {Jdbc.JdbcTimestamp} x - 
- * @param {String} timeZone - 
+ * @param {String} parameterName
+ * @param {Jdbc.JdbcTimestamp} x
+ * @param {String} timeZone
  *
  * @return void
  */
@@ -2012,8 +2046,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setURL
  *
- * @param {number} parameterIndex - 
- * @param {String} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {String} x
  *
  * @return void
  */
@@ -2023,8 +2057,8 @@
  *
  * @function Jdbc.JdbcCallableStatement#setURL
  *
- * @param {String} parameterName - 
- * @param {String} val - 
+ * @param {String} parameterName
+ * @param {String} val
  *
  * @return void
  */
@@ -2036,6 +2070,7 @@
  *
  * @return {Boolean}
  */
+
 
 /**
  * @class Jdbc.JdbcClob
@@ -2078,8 +2113,8 @@
  *
  * @function Jdbc.JdbcClob#getSubString
  *
- * @param {number} position - 
- * @param {number} length - 
+ * @param {IntegerNum} position
+ * @param {IntegerNum} length
  *
  * @return {String}
  */
@@ -2087,9 +2122,9 @@
 /**
  * For documentation of this method, see <code>Clob.length()</code>.
  *
- * @function Jdbc.JdbcClob#____length
+ * @function Jdbc.JdbcClob#length
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -2097,10 +2132,10 @@
  *
  * @function Jdbc.JdbcClob#position
  *
- * @param {Jdbc.JdbcClob} search - 
- * @param {number} start - 
+ * @param {Jdbc.JdbcClob} search
+ * @param {IntegerNum} start
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -2108,10 +2143,10 @@
  *
  * @function Jdbc.JdbcClob#position
  *
- * @param {String} search - 
- * @param {number} start - 
+ * @param {String} search
+ * @param {IntegerNum} start
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -2119,10 +2154,10 @@
  *
  * @function Jdbc.JdbcClob#setString
  *
- * @param {number} position - 
- * @param {BlobSource} blobSource - 
+ * @param {IntegerNum} position
+ * @param {BlobSource} blobSource
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -2130,12 +2165,12 @@
  *
  * @function Jdbc.JdbcClob#setString
  *
- * @param {number} position - 
- * @param {BlobSource} blobSource - 
- * @param {number} offset - 
- * @param {number} len - 
+ * @param {IntegerNum} position
+ * @param {BlobSource} blobSource
+ * @param {IntegerNum} offset
+ * @param {IntegerNum} len
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -2143,10 +2178,10 @@
  *
  * @function Jdbc.JdbcClob#setString
  *
- * @param {number} position - 
- * @param {String} value - 
+ * @param {IntegerNum} position
+ * @param {String} value
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -2154,12 +2189,12 @@
  *
  * @function Jdbc.JdbcClob#setString
  *
- * @param {number} position - 
- * @param {String} value - 
- * @param {number} offset - 
- * @param {number} len - 
+ * @param {IntegerNum} position
+ * @param {String} value
+ * @param {IntegerNum} offset
+ * @param {IntegerNum} len
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -2167,13 +2202,34 @@
  *
  * @function Jdbc.JdbcClob#truncate
  *
- * @param {number} length - 
+ * @param {IntegerNum} length
  *
  * @return void
  */
 
+
 /**
  * @class Jdbc.JdbcConnection
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcConnection.TRANSACTION_NONE
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcConnection.TRANSACTION_READ_COMMITTED
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcConnection.TRANSACTION_READ_UNCOMMITTED
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcConnection.TRANSACTION_REPEATABLE_READ
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcConnection.TRANSACTION_SERIALIZABLE
  */
 
 /**
@@ -2226,8 +2282,8 @@
  *
  * @function Jdbc.JdbcConnection#createArrayOf
  *
- * @param {String} typeName - 
- * @param {Object[]} elements - 
+ * @param {String} typeName
+ * @param {Object[]} elements
  *
  * @return {Jdbc.JdbcArray}
  */
@@ -2323,9 +2379,9 @@
  *
  * @function Jdbc.JdbcConnection#createStatement
  *
- * @param {number} resultSetType - a result set type; one of Jdbc.ResultSet.TYPE_FORWARD_ONLY,
+ * @param {IntegerNum} resultSetType - a result set type; one of Jdbc.ResultSet.TYPE_FORWARD_ONLY,
      Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE, or Jdbc.ResultSet.TYPE_SCROLL_SENSITIVE
- * @param {number} resultSetConcurrency - a concurrency type; one of Jdbc.ResultSet.CONCUR_READ_ONLY or
+ * @param {IntegerNum} resultSetConcurrency - a concurrency type; one of Jdbc.ResultSet.CONCUR_READ_ONLY or
      Jdbc.ResultSet.CONCUR_UPDATABLE
  *
  * @return {Jdbc.JdbcStatement} a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/jdbc/jdbc-statement.html'>JdbcStatement</a></code> instance to execute queries with
@@ -2359,11 +2415,11 @@
  *
  * @function Jdbc.JdbcConnection#createStatement
  *
- * @param {number} resultSetType - a result set type; one of Jdbc.ResultSet.TYPE_FORWARD_ONLY,
+ * @param {IntegerNum} resultSetType - a result set type; one of Jdbc.ResultSet.TYPE_FORWARD_ONLY,
      Jdbc.ResultSet.TYPE_SCROLL_INSENSITIVE, or Jdbc.ResultSet.TYPE_SCROLL_SENSITIVE
- * @param {number} resultSetConcurrency - a concurrency type; one of Jdbc.ResultSet.CONCUR_READ_ONLY or
+ * @param {IntegerNum} resultSetConcurrency - a concurrency type; one of Jdbc.ResultSet.CONCUR_READ_ONLY or
      Jdbc.ResultSet.CONCUR_UPDATABLE
- * @param {number} resultSetHoldability - a Jdbc.ResultSet holdability constant; one of
+ * @param {IntegerNum} resultSetHoldability - a Jdbc.ResultSet holdability constant; one of
      Jdbc.ResultSet.HOLD_CURSORS_OVER_COMMIT or Jdbc.ResultSet.CLOSE_CURSORS_AT_COMMIT
  *
  * @return {Jdbc.JdbcStatement} a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/jdbc/jdbc-statement.html'>JdbcStatement</a></code> instance to execute queries with
@@ -2374,8 +2430,8 @@
  *
  * @function Jdbc.JdbcConnection#createStruct
  *
- * @param {String} typeName - 
- * @param {Object[]} attributes - 
+ * @param {String} typeName
+ * @param {Object[]} attributes
  *
  * @return {Jdbc.JdbcStruct}
  */
@@ -2401,7 +2457,7 @@
  *
  * @function Jdbc.JdbcConnection#getHoldability
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -2417,7 +2473,7 @@
  *
  * @function Jdbc.JdbcConnection#getTransactionIsolation
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -2449,7 +2505,7 @@
  *
  * @function Jdbc.JdbcConnection#isValid
  *
- * @param {number} timeout - 
+ * @param {IntegerNum} timeout
  *
  * @return {Boolean}
  */
@@ -2459,7 +2515,7 @@
  *
  * @function Jdbc.JdbcConnection#nativeSQL
  *
- * @param {String} sql - 
+ * @param {String} sql
  *
  * @return {String}
  */
@@ -2469,7 +2525,7 @@
  *
  * @function Jdbc.JdbcConnection#prepareCall
  *
- * @param {String} sql - 
+ * @param {String} sql
  *
  * @return {Jdbc.JdbcCallableStatement}
  */
@@ -2479,9 +2535,9 @@
  *
  * @function Jdbc.JdbcConnection#prepareCall
  *
- * @param {String} sql - 
- * @param {number} resultSetType - 
- * @param {number} resultSetConcurrency - 
+ * @param {String} sql
+ * @param {IntegerNum} resultSetType
+ * @param {IntegerNum} resultSetConcurrency
  *
  * @return {Jdbc.JdbcCallableStatement}
  */
@@ -2491,10 +2547,10 @@
  *
  * @function Jdbc.JdbcConnection#prepareCall
  *
- * @param {String} sql - 
- * @param {number} resultSetType - 
- * @param {number} resultSetConcurrency - 
- * @param {number} resultSetHoldability - 
+ * @param {String} sql
+ * @param {IntegerNum} resultSetType
+ * @param {IntegerNum} resultSetConcurrency
+ * @param {IntegerNum} resultSetHoldability
  *
  * @return {Jdbc.JdbcCallableStatement}
  */
@@ -2504,7 +2560,7 @@
  *
  * @function Jdbc.JdbcConnection#prepareStatement
  *
- * @param {String} sql - 
+ * @param {String} sql
  *
  * @return {Jdbc.JdbcPreparedStatement}
  */
@@ -2514,8 +2570,8 @@
  *
  * @function Jdbc.JdbcConnection#prepareStatement
  *
- * @param {String} sql - 
- * @param {number} autoGeneratedKeys - 
+ * @param {String} sql
+ * @param {IntegerNum} autoGeneratedKeys
  *
  * @return {Jdbc.JdbcPreparedStatement}
  */
@@ -2525,9 +2581,9 @@
  *
  * @function Jdbc.JdbcConnection#prepareStatement
  *
- * @param {String} sql - 
- * @param {number} resultSetType - 
- * @param {number} resultSetConcurrency - 
+ * @param {String} sql
+ * @param {IntegerNum} resultSetType
+ * @param {IntegerNum} resultSetConcurrency
  *
  * @return {Jdbc.JdbcPreparedStatement}
  */
@@ -2537,10 +2593,10 @@
  *
  * @function Jdbc.JdbcConnection#prepareStatement
  *
- * @param {String} sql - 
- * @param {number} resultSetType - 
- * @param {number} resultSetConcurrency - 
- * @param {number} resultSetHoldability - 
+ * @param {String} sql
+ * @param {IntegerNum} resultSetType
+ * @param {IntegerNum} resultSetConcurrency
+ * @param {IntegerNum} resultSetHoldability
  *
  * @return {Jdbc.JdbcPreparedStatement}
  */
@@ -2550,8 +2606,8 @@
  *
  * @function Jdbc.JdbcConnection#prepareStatementByIndex
  *
- * @param {String} sql - 
- * @param {Integer[]} indices - 
+ * @param {String} sql
+ * @param {IntegerNum[]} indices
  *
  * @return {Jdbc.JdbcPreparedStatement}
  */
@@ -2561,8 +2617,8 @@
  *
  * @function Jdbc.JdbcConnection#prepareStatementByName
  *
- * @param {String} sql - 
- * @param {String[]} columnNames - 
+ * @param {String} sql
+ * @param {String[]} columnNames
  *
  * @return {Jdbc.JdbcPreparedStatement}
  */
@@ -2572,7 +2628,7 @@
  *
  * @function Jdbc.JdbcConnection#releaseSavepoint
  *
- * @param {Jdbc.JdbcSavepoint} savepoint - 
+ * @param {Jdbc.JdbcSavepoint} savepoint
  *
  * @return void
  */
@@ -2590,7 +2646,7 @@
  *
  * @function Jdbc.JdbcConnection#rollback
  *
- * @param {Jdbc.JdbcSavepoint} savepoint - 
+ * @param {Jdbc.JdbcSavepoint} savepoint
  *
  * @return void
  */
@@ -2600,7 +2656,7 @@
  *
  * @function Jdbc.JdbcConnection#setAutoCommit
  *
- * @param {Boolean} autoCommit - 
+ * @param {Boolean} autoCommit
  *
  * @return void
  */
@@ -2610,7 +2666,7 @@
  *
  * @function Jdbc.JdbcConnection#setCatalog
  *
- * @param {String} catalog - 
+ * @param {String} catalog
  *
  * @return void
  */
@@ -2620,7 +2676,7 @@
  *
  * @function Jdbc.JdbcConnection#setHoldability
  *
- * @param {number} holdability - 
+ * @param {IntegerNum} holdability
  *
  * @return void
  */
@@ -2630,7 +2686,7 @@
  *
  * @function Jdbc.JdbcConnection#setReadOnly
  *
- * @param {Boolean} readOnly - 
+ * @param {Boolean} readOnly
  *
  * @return void
  */
@@ -2648,7 +2704,7 @@
  *
  * @function Jdbc.JdbcConnection#setSavepoint
  *
- * @param {String} name - 
+ * @param {String} name
  *
  * @return {Jdbc.JdbcSavepoint}
  */
@@ -2658,13 +2714,246 @@
  *
  * @function Jdbc.JdbcConnection#setTransactionIsolation
  *
- * @param {number} level - 
+ * @param {IntegerNum} level
  *
  * @return void
  */
 
+
 /**
  * @class Jdbc.JdbcDatabaseMetaData
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.attributeNoNulls
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.attributeNullable
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.attributeNullableUnknown
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.bestRowNotPseudo
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.bestRowPseudo
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.bestRowSession
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.bestRowTemporary
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.bestRowTransaction
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.bestRowUnknown
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.columnNoNulls
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.columnNullable
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.columnNullableUnknown
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.functionColumnIn
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.functionColumnInOut
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.functionColumnOut
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.functionColumnResult
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.functionColumnUnknown
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.functionNoNulls
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.functionNoTable
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.functionNullable
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.functionNullableUnknown
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.functionResultUnknown
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.functionReturn
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.functionReturnsTable
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.importedKeyCascade
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.importedKeyInitiallyDeferred
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.importedKeyInitiallyImmediate
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.importedKeyNoAction
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.importedKeyNotDeferrable
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.importedKeyRestrict
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.importedKeySetDefault
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.importedKeySetNull
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.procedureColumnIn
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.procedureColumnInOut
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.procedureColumnOut
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.procedureColumnResult
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.procedureColumnReturn
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.procedureColumnUnknown
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.procedureNoNulls
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.procedureNullable
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.procedureNullableUnknown
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.sqlStateSQL
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.sqlStateSQL99
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.sqlStateXOpen
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.tableIndexClustered
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.tableIndexHashed
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.tableIndexOther
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.tableIndexStatistic
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.typeNoNulls
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.typeNullable
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.typeNullableUnknown
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.typePredBasic
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.typePredChar
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.typePredNone
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.typeSearchable
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.versionColumnNotPseudo
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.versionColumnPseudo
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcDatabaseMetaData.versionColumnUnknown
  */
 
 /**
@@ -2712,7 +3001,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#deletesAreDetected
  *
- * @param {number} type - 
+ * @param {IntegerNum} type
  *
  * @return {Boolean}
  */
@@ -2730,10 +3019,10 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getAttributes
  *
- * @param {String} catalog - 
- * @param {String} schemaPattern - 
- * @param {String} typeNamePattern - 
- * @param {String} attributeNamePattern - 
+ * @param {String} catalog
+ * @param {String} schemaPattern
+ * @param {String} typeNamePattern
+ * @param {String} attributeNamePattern
  *
  * @return {Jdbc.JdbcResultSet}
  */
@@ -2743,11 +3032,11 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getBestRowIdentifier
  *
- * @param {String} catalog - 
- * @param {String} schema - 
- * @param {String} table - 
- * @param {number} scope - 
- * @param {Boolean} nullable - 
+ * @param {String} catalog
+ * @param {String} schema
+ * @param {String} table
+ * @param {IntegerNum} scope
+ * @param {Boolean} nullable
  *
  * @return {Jdbc.JdbcResultSet}
  */
@@ -2789,10 +3078,10 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getColumnPrivileges
  *
- * @param {String} catalog - 
- * @param {String} schema - 
- * @param {String} table - 
- * @param {String} columnNamePattern - 
+ * @param {String} catalog
+ * @param {String} schema
+ * @param {String} table
+ * @param {String} columnNamePattern
  *
  * @return {Jdbc.JdbcResultSet}
  */
@@ -2802,10 +3091,10 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getColumns
  *
- * @param {String} catalog - 
- * @param {String} schemaPattern - 
- * @param {String} tableNamePattern - 
- * @param {String} columnNamePattern - 
+ * @param {String} catalog
+ * @param {String} schemaPattern
+ * @param {String} tableNamePattern
+ * @param {String} columnNamePattern
  *
  * @return {Jdbc.JdbcResultSet}
  */
@@ -2823,12 +3112,12 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getCrossReference
  *
- * @param {String} parentCatalog - 
- * @param {String} parentSchema - 
- * @param {String} parentTable - 
- * @param {String} foreignCatalog - 
- * @param {String} foreignSchema - 
- * @param {String} foreignTable - 
+ * @param {String} parentCatalog
+ * @param {String} parentSchema
+ * @param {String} parentTable
+ * @param {String} foreignCatalog
+ * @param {String} foreignSchema
+ * @param {String} foreignTable
  *
  * @return {Jdbc.JdbcResultSet}
  */
@@ -2838,7 +3127,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getDatabaseMajorVersion
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -2846,7 +3135,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getDatabaseMinorVersion
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -2870,7 +3159,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getDefaultTransactionIsolation
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -2878,7 +3167,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getDriverMajorVersion
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -2886,7 +3175,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getDriverMinorVersion
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -2910,9 +3199,9 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getExportedKeys
  *
- * @param {String} catalog - 
- * @param {String} schema - 
- * @param {String} table - 
+ * @param {String} catalog
+ * @param {String} schema
+ * @param {String} table
  *
  * @return {Jdbc.JdbcResultSet}
  */
@@ -2930,10 +3219,10 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getFunctionColumns
  *
- * @param {String} catalog - 
- * @param {String} schemaPattern - 
- * @param {String} functionNamePattern - 
- * @param {String} columnNamePattern - 
+ * @param {String} catalog
+ * @param {String} schemaPattern
+ * @param {String} functionNamePattern
+ * @param {String} columnNamePattern
  *
  * @return {Jdbc.JdbcResultSet}
  */
@@ -2943,9 +3232,9 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getFunctions
  *
- * @param {String} catalog - 
- * @param {String} schemaPattern - 
- * @param {String} functionNamePattern - 
+ * @param {String} catalog
+ * @param {String} schemaPattern
+ * @param {String} functionNamePattern
  *
  * @return {Jdbc.JdbcResultSet}
  */
@@ -2963,9 +3252,9 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getImportedKeys
  *
- * @param {String} catalog - 
- * @param {String} schema - 
- * @param {String} table - 
+ * @param {String} catalog
+ * @param {String} schema
+ * @param {String} table
  *
  * @return {Jdbc.JdbcResultSet}
  */
@@ -2975,11 +3264,11 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getIndexInfo
  *
- * @param {String} catalog - 
- * @param {String} schema - 
- * @param {String} table - 
- * @param {Boolean} unique - 
- * @param {Boolean} approximate - 
+ * @param {String} catalog
+ * @param {String} schema
+ * @param {String} table
+ * @param {Boolean} unique
+ * @param {Boolean} approximate
  *
  * @return {Jdbc.JdbcResultSet}
  */
@@ -2989,7 +3278,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getJDBCMajorVersion
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -2997,7 +3286,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getJDBCMinorVersion
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3005,7 +3294,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getMaxBinaryLiteralLength
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3013,7 +3302,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getMaxCatalogNameLength
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3021,7 +3310,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getMaxCharLiteralLength
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3029,7 +3318,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getMaxColumnNameLength
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3037,7 +3326,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getMaxColumnsInGroupBy
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3045,7 +3334,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getMaxColumnsInIndex
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3053,7 +3342,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getMaxColumnsInOrderBy
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3061,7 +3350,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getMaxColumnsInSelect
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3069,7 +3358,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getMaxColumnsInTable
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3077,7 +3366,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getMaxConnections
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3085,7 +3374,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getMaxCursorNameLength
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3093,7 +3382,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getMaxIndexLength
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3101,7 +3390,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getMaxProcedureNameLength
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3109,7 +3398,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getMaxRowSize
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3117,7 +3406,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getMaxSchemaNameLength
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3125,7 +3414,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getMaxStatementLength
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3133,7 +3422,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getMaxStatements
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3141,7 +3430,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getMaxTableNameLength
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3149,7 +3438,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getMaxTablesInSelect
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3157,7 +3446,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getMaxUserNameLength
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3173,9 +3462,9 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getPrimaryKeys
  *
- * @param {String} catalog - 
- * @param {String} schema - 
- * @param {String} table - 
+ * @param {String} catalog
+ * @param {String} schema
+ * @param {String} table
  *
  * @return {Jdbc.JdbcResultSet}
  */
@@ -3185,10 +3474,10 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getProcedureColumns
  *
- * @param {String} catalog - 
- * @param {String} schemaPattern - 
- * @param {String} procedureNamePattern - 
- * @param {String} columnNamePattern - 
+ * @param {String} catalog
+ * @param {String} schemaPattern
+ * @param {String} procedureNamePattern
+ * @param {String} columnNamePattern
  *
  * @return {Jdbc.JdbcResultSet}
  */
@@ -3206,9 +3495,9 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getProcedures
  *
- * @param {String} catalog - 
- * @param {String} schemaPattern - 
- * @param {String} procedureNamePattern - 
+ * @param {String} catalog
+ * @param {String} schemaPattern
+ * @param {String} procedureNamePattern
  *
  * @return {Jdbc.JdbcResultSet}
  */
@@ -3218,7 +3507,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getResultSetHoldability
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3226,7 +3515,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getRowIdLifetime
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3242,7 +3531,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getSQLStateType
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -3266,8 +3555,8 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getSchemas
  *
- * @param {String} catalog - 
- * @param {String} schemaPattern - 
+ * @param {String} catalog
+ * @param {String} schemaPattern
  *
  * @return {Jdbc.JdbcResultSet}
  */
@@ -3293,9 +3582,9 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getSuperTables
  *
- * @param {String} catalog - 
- * @param {String} schemaPattern - 
- * @param {String} tableNamePattern - 
+ * @param {String} catalog
+ * @param {String} schemaPattern
+ * @param {String} tableNamePattern
  *
  * @return {Jdbc.JdbcResultSet}
  */
@@ -3305,9 +3594,9 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getSuperTypes
  *
- * @param {String} catalog - 
- * @param {String} schemaPattern - 
- * @param {String} typeNamePattern - 
+ * @param {String} catalog
+ * @param {String} schemaPattern
+ * @param {String} typeNamePattern
  *
  * @return {Jdbc.JdbcResultSet}
  */
@@ -3325,9 +3614,9 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getTablePrivileges
  *
- * @param {String} catalog - 
- * @param {String} schemaPattern - 
- * @param {String} tableNamePattern - 
+ * @param {String} catalog
+ * @param {String} schemaPattern
+ * @param {String} tableNamePattern
  *
  * @return {Jdbc.JdbcResultSet}
  */
@@ -3345,10 +3634,10 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getTables
  *
- * @param {String} catalog - 
- * @param {String} schemaPattern - 
- * @param {String} tableNamePattern - 
- * @param {String[]} types - 
+ * @param {String} catalog
+ * @param {String} schemaPattern
+ * @param {String} tableNamePattern
+ * @param {String[]} types
  *
  * @return {Jdbc.JdbcResultSet}
  */
@@ -3374,10 +3663,10 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getUDTs
  *
- * @param {String} catalog - 
- * @param {String} schemaPattern - 
- * @param {String} typeNamePattern - 
- * @param {Integer[]} types - 
+ * @param {String} catalog
+ * @param {String} schemaPattern
+ * @param {String} typeNamePattern
+ * @param {IntegerNum[]} types
  *
  * @return {Jdbc.JdbcResultSet}
  */
@@ -3403,9 +3692,9 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#getVersionColumns
  *
- * @param {String} catalog - 
- * @param {String} schema - 
- * @param {String} table - 
+ * @param {String} catalog
+ * @param {String} schema
+ * @param {String} table
  *
  * @return {Jdbc.JdbcResultSet}
  */
@@ -3415,7 +3704,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#insertsAreDetected
  *
- * @param {number} type - 
+ * @param {IntegerNum} type
  *
  * @return {Boolean}
  */
@@ -3489,7 +3778,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#othersDeletesAreVisible
  *
- * @param {number} type - 
+ * @param {IntegerNum} type
  *
  * @return {Boolean}
  */
@@ -3499,7 +3788,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#othersInsertsAreVisible
  *
- * @param {number} type - 
+ * @param {IntegerNum} type
  *
  * @return {Boolean}
  */
@@ -3509,7 +3798,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#othersUpdatesAreVisible
  *
- * @param {number} type - 
+ * @param {IntegerNum} type
  *
  * @return {Boolean}
  */
@@ -3519,7 +3808,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#ownDeletesAreVisible
  *
- * @param {number} type - 
+ * @param {IntegerNum} type
  *
  * @return {Boolean}
  */
@@ -3529,7 +3818,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#ownInsertsAreVisible
  *
- * @param {number} type - 
+ * @param {IntegerNum} type
  *
  * @return {Boolean}
  */
@@ -3539,7 +3828,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#ownUpdatesAreVisible
  *
- * @param {number} type - 
+ * @param {IntegerNum} type
  *
  * @return {Boolean}
  */
@@ -3701,8 +3990,8 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#supportsConvert
  *
- * @param {number} fromType - 
- * @param {number} toType - 
+ * @param {IntegerNum} fromType
+ * @param {IntegerNum} toType
  *
  * @return {Boolean}
  */
@@ -3960,8 +4249,8 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#supportsResultSetConcurrency
  *
- * @param {number} type - 
- * @param {number} concurrency - 
+ * @param {IntegerNum} type
+ * @param {IntegerNum} concurrency
  *
  * @return {Boolean}
  */
@@ -3971,7 +4260,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#supportsResultSetHoldability
  *
- * @param {number} holdability - 
+ * @param {IntegerNum} holdability
  *
  * @return {Boolean}
  */
@@ -3981,7 +4270,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#supportsResultSetType
  *
- * @param {number} type - 
+ * @param {IntegerNum} type
  *
  * @return {Boolean}
  */
@@ -4111,7 +4400,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#supportsTransactionIsolationLevel
  *
- * @param {number} level - 
+ * @param {IntegerNum} level
  *
  * @return {Boolean}
  */
@@ -4145,7 +4434,7 @@
  *
  * @function Jdbc.JdbcDatabaseMetaData#updatesAreDetected
  *
- * @param {number} type - 
+ * @param {IntegerNum} type
  *
  * @return {Boolean}
  */
@@ -4166,6 +4455,7 @@
  * @return {Boolean}
  */
 
+
 /**
  * @class Jdbc.JdbcDate
  */
@@ -4175,7 +4465,7 @@
  *
  * @function Jdbc.JdbcDate#after
  *
- * @param {Jdbc.JdbcDate} when - 
+ * @param {Jdbc.JdbcDate} when
  *
  * @return {Boolean}
  */
@@ -4185,7 +4475,7 @@
  *
  * @function Jdbc.JdbcDate#before
  *
- * @param {Jdbc.JdbcDate} when - 
+ * @param {Jdbc.JdbcDate} when
  *
  * @return {Boolean}
  */
@@ -4195,7 +4485,7 @@
  *
  * @function Jdbc.JdbcDate#getDate
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4203,7 +4493,7 @@
  *
  * @function Jdbc.JdbcDate#getMonth
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4211,7 +4501,7 @@
  *
  * @function Jdbc.JdbcDate#getTime
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4219,7 +4509,7 @@
  *
  * @function Jdbc.JdbcDate#getYear
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4227,7 +4517,7 @@
  *
  * @function Jdbc.JdbcDate#setDate
  *
- * @param {number} date - 
+ * @param {IntegerNum} date
  *
  * @return void
  */
@@ -4237,7 +4527,7 @@
  *
  * @function Jdbc.JdbcDate#setMonth
  *
- * @param {number} month - 
+ * @param {IntegerNum} month
  *
  * @return void
  */
@@ -4247,7 +4537,7 @@
  *
  * @function Jdbc.JdbcDate#setTime
  *
- * @param {number} milliseconds - 
+ * @param {IntegerNum} milliseconds
  *
  * @return void
  */
@@ -4257,13 +4547,42 @@
  *
  * @function Jdbc.JdbcDate#setYear
  *
- * @param {number} year - 
+ * @param {IntegerNum} year
  *
  * @return void
  */
 
+
 /**
  * @class Jdbc.JdbcParameterMetaData
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcParameterMetaData.parameterModeIn
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcParameterMetaData.parameterModeInOut
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcParameterMetaData.parameterModeOut
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcParameterMetaData.parameterModeUnknown
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcParameterMetaData.parameterNoNulls
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcParameterMetaData.parameterNullable
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcParameterMetaData.parameterNullableUnknown
  */
 
 /**
@@ -4271,7 +4590,7 @@
  *
  * @function Jdbc.JdbcParameterMetaData#getParameterClassName
  *
- * @param {number} param - 
+ * @param {IntegerNum} param
  *
  * @return {String}
  */
@@ -4281,7 +4600,7 @@
  *
  * @function Jdbc.JdbcParameterMetaData#getParameterCount
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4289,9 +4608,9 @@
  *
  * @function Jdbc.JdbcParameterMetaData#getParameterMode
  *
- * @param {number} param - 
+ * @param {IntegerNum} param
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4299,9 +4618,9 @@
  *
  * @function Jdbc.JdbcParameterMetaData#getParameterType
  *
- * @param {number} param - 
+ * @param {IntegerNum} param
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4309,7 +4628,7 @@
  *
  * @function Jdbc.JdbcParameterMetaData#getParameterTypeName
  *
- * @param {number} param - 
+ * @param {IntegerNum} param
  *
  * @return {String}
  */
@@ -4319,9 +4638,9 @@
  *
  * @function Jdbc.JdbcParameterMetaData#getPrecision
  *
- * @param {number} param - 
+ * @param {IntegerNum} param
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4329,9 +4648,9 @@
  *
  * @function Jdbc.JdbcParameterMetaData#getScale
  *
- * @param {number} param - 
+ * @param {IntegerNum} param
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4339,9 +4658,9 @@
  *
  * @function Jdbc.JdbcParameterMetaData#isNullable
  *
- * @param {number} param - 
+ * @param {IntegerNum} param
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4349,10 +4668,11 @@
  *
  * @function Jdbc.JdbcParameterMetaData#isSigned
  *
- * @param {number} param - 
+ * @param {IntegerNum} param
  *
  * @return {Boolean}
  */
+
 
 /**
  * @class Jdbc.JdbcPreparedStatement
@@ -4371,7 +4691,7 @@
  *
  * @function Jdbc.JdbcPreparedStatement#addBatch
  *
- * @param {String} sql - 
+ * @param {String} sql
  *
  * @return void
  */
@@ -4429,7 +4749,7 @@
  *
  * @function Jdbc.JdbcPreparedStatement#execute
  *
- * @param {String} sql - 
+ * @param {String} sql
  *
  * @return {Boolean}
  */
@@ -4439,8 +4759,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#execute
  *
- * @param {String} sql - 
- * @param {number} autoGeneratedKeys - 
+ * @param {String} sql
+ * @param {IntegerNum} autoGeneratedKeys
  *
  * @return {Boolean}
  */
@@ -4450,8 +4770,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#execute
  *
- * @param {String} sql - 
- * @param {Integer[]} columnIndexes - 
+ * @param {String} sql
+ * @param {IntegerNum[]} columnIndexes
  *
  * @return {Boolean}
  */
@@ -4461,8 +4781,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#execute
  *
- * @param {String} sql - 
- * @param {String[]} columnNames - 
+ * @param {String} sql
+ * @param {String[]} columnNames
  *
  * @return {Boolean}
  */
@@ -4472,7 +4792,7 @@
  *
  * @function Jdbc.JdbcPreparedStatement#executeBatch
  *
- * @return {Integer[]}
+ * @return {IntegerNum[]}
  */
 
 /**
@@ -4488,7 +4808,7 @@
  *
  * @function Jdbc.JdbcPreparedStatement#executeQuery
  *
- * @param {String} sql - 
+ * @param {String} sql
  *
  * @return {Jdbc.JdbcResultSet}
  */
@@ -4498,7 +4818,7 @@
  *
  * @function Jdbc.JdbcPreparedStatement#executeUpdate
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4506,9 +4826,9 @@
  *
  * @function Jdbc.JdbcPreparedStatement#executeUpdate
  *
- * @param {String} sql - 
+ * @param {String} sql
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4516,10 +4836,10 @@
  *
  * @function Jdbc.JdbcPreparedStatement#executeUpdate
  *
- * @param {String} sql - 
- * @param {number} autoGeneratedKeys - 
+ * @param {String} sql
+ * @param {IntegerNum} autoGeneratedKeys
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4527,10 +4847,10 @@
  *
  * @function Jdbc.JdbcPreparedStatement#executeUpdate
  *
- * @param {String} sql - 
- * @param {Integer[]} columnIndexes - 
+ * @param {String} sql
+ * @param {IntegerNum[]} columnIndexes
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4538,10 +4858,10 @@
  *
  * @function Jdbc.JdbcPreparedStatement#executeUpdate
  *
- * @param {String} sql - 
- * @param {String[]} columnNames - 
+ * @param {String} sql
+ * @param {String[]} columnNames
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4557,7 +4877,7 @@
  *
  * @function Jdbc.JdbcPreparedStatement#getFetchDirection
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4565,7 +4885,7 @@
  *
  * @function Jdbc.JdbcPreparedStatement#getFetchSize
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4581,7 +4901,7 @@
  *
  * @function Jdbc.JdbcPreparedStatement#getMaxFieldSize
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4589,7 +4909,7 @@
  *
  * @function Jdbc.JdbcPreparedStatement#getMaxRows
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4613,7 +4933,7 @@
  *
  * @function Jdbc.JdbcPreparedStatement#getMoreResults
  *
- * @param {number} current - 
+ * @param {IntegerNum} current
  *
  * @return {Boolean}
  */
@@ -4631,7 +4951,7 @@
  *
  * @function Jdbc.JdbcPreparedStatement#getQueryTimeout
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4647,7 +4967,7 @@
  *
  * @function Jdbc.JdbcPreparedStatement#getResultSetConcurrency
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4655,7 +4975,7 @@
  *
  * @function Jdbc.JdbcPreparedStatement#getResultSetHoldability
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4663,7 +4983,7 @@
  *
  * @function Jdbc.JdbcPreparedStatement#getResultSetType
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4671,7 +4991,7 @@
  *
  * @function Jdbc.JdbcPreparedStatement#getUpdateCount
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -4704,8 +5024,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setArray
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcArray} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcArray} x
  *
  * @return void
  */
@@ -4715,8 +5035,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setBigDecimal
  *
- * @param {number} parameterIndex - 
- * @param {BigNumber} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {BigNumber} x
  *
  * @return void
  */
@@ -4726,8 +5046,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setBlob
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcBlob} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcBlob} x
  *
  * @return void
  */
@@ -4737,8 +5057,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setBoolean
  *
- * @param {number} parameterIndex - 
- * @param {Boolean} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Boolean} x
  *
  * @return void
  */
@@ -4748,8 +5068,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setByte
  *
- * @param {number} parameterIndex - 
- * @param {Byte} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Byte} x
  *
  * @return void
  */
@@ -4759,8 +5079,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setBytes
  *
- * @param {number} parameterIndex - 
- * @param {Byte[]} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Byte[]} x
  *
  * @return void
  */
@@ -4770,8 +5090,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setClob
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcClob} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcClob} x
  *
  * @return void
  */
@@ -4781,7 +5101,7 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setCursorName
  *
- * @param {String} name - 
+ * @param {String} name
  *
  * @return void
  */
@@ -4791,8 +5111,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setDate
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcDate} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcDate} x
  *
  * @return void
  */
@@ -4802,9 +5122,9 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setDate
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcDate} x - 
- * @param {String} timeZone - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcDate} x
+ * @param {String} timeZone
  *
  * @return void
  */
@@ -4814,8 +5134,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setDouble
  *
- * @param {number} parameterIndex - 
- * @param {Number} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Number} x
  *
  * @return void
  */
@@ -4825,7 +5145,7 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setEscapeProcessing
  *
- * @param {Boolean} enable - 
+ * @param {Boolean} enable
  *
  * @return void
  */
@@ -4835,7 +5155,7 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setFetchDirection
  *
- * @param {number} direction - 
+ * @param {IntegerNum} direction
  *
  * @return void
  */
@@ -4845,7 +5165,7 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setFetchSize
  *
- * @param {number} rows - 
+ * @param {IntegerNum} rows
  *
  * @return void
  */
@@ -4855,8 +5175,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setFloat
  *
- * @param {number} parameterIndex - 
- * @param {Number} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Number} x
  *
  * @return void
  */
@@ -4866,8 +5186,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setInt
  *
- * @param {number} parameterIndex - 
- * @param {number} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {IntegerNum} x
  *
  * @return void
  */
@@ -4877,8 +5197,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setLong
  *
- * @param {number} parameterIndex - 
- * @param {number} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {IntegerNum} x
  *
  * @return void
  */
@@ -4888,7 +5208,7 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setMaxFieldSize
  *
- * @param {number} max - 
+ * @param {IntegerNum} max
  *
  * @return void
  */
@@ -4898,7 +5218,7 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setMaxRows
  *
- * @param {number} max - 
+ * @param {IntegerNum} max
  *
  * @return void
  */
@@ -4908,8 +5228,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setNClob
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcClob} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcClob} x
  *
  * @return void
  */
@@ -4919,8 +5239,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setNString
  *
- * @param {number} parameterIndex - 
- * @param {String} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {String} x
  *
  * @return void
  */
@@ -4930,8 +5250,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setNull
  *
- * @param {number} parameterIndex - 
- * @param {number} sqlType - 
+ * @param {IntegerNum} parameterIndex
+ * @param {IntegerNum} sqlType
  *
  * @return void
  */
@@ -4941,9 +5261,9 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setNull
  *
- * @param {number} parameterIndex - 
- * @param {number} sqlType - 
- * @param {String} typeName - 
+ * @param {IntegerNum} parameterIndex
+ * @param {IntegerNum} sqlType
+ * @param {String} typeName
  *
  * @return void
  */
@@ -4953,8 +5273,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setObject
  *
- * @param {number} index - 
- * @param {Object} x - 
+ * @param {IntegerNum} index
+ * @param {Object} x
  *
  * @return void
  */
@@ -4964,9 +5284,9 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setObject
  *
- * @param {number} parameterIndex - 
- * @param {Object} x - 
- * @param {number} targetSqlType - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Object} x
+ * @param {IntegerNum} targetSqlType
  *
  * @return void
  */
@@ -4976,10 +5296,10 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setObject
  *
- * @param {number} parameterIndex - 
- * @param {Object} x - 
- * @param {number} targetSqlType - 
- * @param {number} scaleOrLength - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Object} x
+ * @param {IntegerNum} targetSqlType
+ * @param {IntegerNum} scaleOrLength
  *
  * @return void
  */
@@ -4989,7 +5309,7 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setPoolable
  *
- * @param {Boolean} poolable - 
+ * @param {Boolean} poolable
  *
  * @return void
  */
@@ -4999,7 +5319,7 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setQueryTimeout
  *
- * @param {number} seconds - 
+ * @param {IntegerNum} seconds
  *
  * @return void
  */
@@ -5009,8 +5329,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setRef
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcRef} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcRef} x
  *
  * @return void
  */
@@ -5020,8 +5340,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setRowId
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcRowId} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcRowId} x
  *
  * @return void
  */
@@ -5031,8 +5351,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setSQLXML
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcSQLXML} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcSQLXML} x
  *
  * @return void
  */
@@ -5042,8 +5362,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setShort
  *
- * @param {number} parameterIndex - 
- * @param {number} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {IntegerNum} x
  *
  * @return void
  */
@@ -5053,8 +5373,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setString
  *
- * @param {number} parameterIndex - 
- * @param {String} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {String} x
  *
  * @return void
  */
@@ -5064,8 +5384,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setTime
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcTime} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcTime} x
  *
  * @return void
  */
@@ -5075,9 +5395,9 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setTime
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcTime} x - 
- * @param {String} timeZone - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcTime} x
+ * @param {String} timeZone
  *
  * @return void
  */
@@ -5087,8 +5407,8 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setTimestamp
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcTimestamp} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcTimestamp} x
  *
  * @return void
  */
@@ -5098,9 +5418,9 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setTimestamp
  *
- * @param {number} parameterIndex - 
- * @param {Jdbc.JdbcTimestamp} x - 
- * @param {String} timeZone - 
+ * @param {IntegerNum} parameterIndex
+ * @param {Jdbc.JdbcTimestamp} x
+ * @param {String} timeZone
  *
  * @return void
  */
@@ -5110,11 +5430,12 @@
  *
  * @function Jdbc.JdbcPreparedStatement#setURL
  *
- * @param {number} parameterIndex - 
- * @param {String} x - 
+ * @param {IntegerNum} parameterIndex
+ * @param {String} x
  *
  * @return void
  */
+
 
 /**
  * @class Jdbc.JdbcRef
@@ -5141,13 +5462,54 @@
  *
  * @function Jdbc.JdbcRef#setObject
  *
- * @param {Object} object - 
+ * @param {Object} object
  *
  * @return void
  */
 
+
 /**
  * @class Jdbc.JdbcResultSet
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcResultSet.CLOSE_CURSORS_AT_COMMIT
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcResultSet.CONCUR_READ_ONLY
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcResultSet.CONCUR_UPDATABLE
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcResultSet.FETCH_FORWARD
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcResultSet.FETCH_REVERSE
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcResultSet.FETCH_UNKNOWN
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcResultSet.HOLD_CURSORS_OVER_COMMIT
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcResultSet.TYPE_FORWARD_ONLY
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcResultSet.TYPE_SCROLL_INSENSITIVE
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcResultSet.TYPE_SCROLL_SENSITIVE
  */
 
 /**
@@ -5155,7 +5517,7 @@
  *
  * @function Jdbc.JdbcResultSet#absolute
  *
- * @param {number} row - 
+ * @param {IntegerNum} row
  *
  * @return {Boolean}
  */
@@ -5213,9 +5575,9 @@
  *
  * @function Jdbc.JdbcResultSet#findColumn
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -5231,7 +5593,7 @@
  *
  * @function Jdbc.JdbcResultSet#getArray
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
  * @return {Jdbc.JdbcArray}
  */
@@ -5241,7 +5603,7 @@
  *
  * @function Jdbc.JdbcResultSet#getArray
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
  * @return {Jdbc.JdbcArray}
  */
@@ -5251,7 +5613,7 @@
  *
  * @function Jdbc.JdbcResultSet#getBigDecimal
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
  * @return {BigNumber}
  */
@@ -5261,7 +5623,7 @@
  *
  * @function Jdbc.JdbcResultSet#getBigDecimal
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
  * @return {BigNumber}
  */
@@ -5271,7 +5633,7 @@
  *
  * @function Jdbc.JdbcResultSet#getBlob
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
  * @return {Jdbc.JdbcBlob}
  */
@@ -5281,7 +5643,7 @@
  *
  * @function Jdbc.JdbcResultSet#getBlob
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
  * @return {Jdbc.JdbcBlob}
  */
@@ -5291,7 +5653,7 @@
  *
  * @function Jdbc.JdbcResultSet#getBoolean
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
  * @return {Boolean}
  */
@@ -5301,7 +5663,7 @@
  *
  * @function Jdbc.JdbcResultSet#getBoolean
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
  * @return {Boolean}
  */
@@ -5311,7 +5673,7 @@
  *
  * @function Jdbc.JdbcResultSet#getByte
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
  * @return {Byte}
  */
@@ -5321,7 +5683,7 @@
  *
  * @function Jdbc.JdbcResultSet#getByte
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
  * @return {Byte}
  */
@@ -5331,7 +5693,7 @@
  *
  * @function Jdbc.JdbcResultSet#getBytes
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
  * @return {Byte[]}
  */
@@ -5341,7 +5703,7 @@
  *
  * @function Jdbc.JdbcResultSet#getBytes
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
  * @return {Byte[]}
  */
@@ -5351,7 +5713,7 @@
  *
  * @function Jdbc.JdbcResultSet#getClob
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
  * @return {Jdbc.JdbcClob}
  */
@@ -5361,7 +5723,7 @@
  *
  * @function Jdbc.JdbcResultSet#getClob
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
  * @return {Jdbc.JdbcClob}
  */
@@ -5371,7 +5733,7 @@
  *
  * @function Jdbc.JdbcResultSet#getConcurrency
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -5387,7 +5749,7 @@
  *
  * @function Jdbc.JdbcResultSet#getDate
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
  * @return {Jdbc.JdbcDate}
  */
@@ -5397,8 +5759,8 @@
  *
  * @function Jdbc.JdbcResultSet#getDate
  *
- * @param {number} columnIndex - 
- * @param {String} timeZone - 
+ * @param {IntegerNum} columnIndex
+ * @param {String} timeZone
  *
  * @return {Jdbc.JdbcDate}
  */
@@ -5408,7 +5770,7 @@
  *
  * @function Jdbc.JdbcResultSet#getDate
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
  * @return {Jdbc.JdbcDate}
  */
@@ -5418,8 +5780,8 @@
  *
  * @function Jdbc.JdbcResultSet#getDate
  *
- * @param {String} columnLabel - 
- * @param {String} timeZone - 
+ * @param {String} columnLabel
+ * @param {String} timeZone
  *
  * @return {Jdbc.JdbcDate}
  */
@@ -5429,7 +5791,7 @@
  *
  * @function Jdbc.JdbcResultSet#getDouble
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
  * @return {Number}
  */
@@ -5439,7 +5801,7 @@
  *
  * @function Jdbc.JdbcResultSet#getDouble
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
  * @return {Number}
  */
@@ -5449,7 +5811,7 @@
  *
  * @function Jdbc.JdbcResultSet#getFetchDirection
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -5457,7 +5819,7 @@
  *
  * @function Jdbc.JdbcResultSet#getFetchSize
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -5465,7 +5827,7 @@
  *
  * @function Jdbc.JdbcResultSet#getFloat
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
  * @return {Number}
  */
@@ -5475,7 +5837,7 @@
  *
  * @function Jdbc.JdbcResultSet#getFloat
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
  * @return {Number}
  */
@@ -5485,7 +5847,7 @@
  *
  * @function Jdbc.JdbcResultSet#getHoldability
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -5493,9 +5855,9 @@
  *
  * @function Jdbc.JdbcResultSet#getInt
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -5503,9 +5865,9 @@
  *
  * @function Jdbc.JdbcResultSet#getInt
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -5513,9 +5875,9 @@
  *
  * @function Jdbc.JdbcResultSet#getLong
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -5523,9 +5885,9 @@
  *
  * @function Jdbc.JdbcResultSet#getLong
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -5541,7 +5903,7 @@
  *
  * @function Jdbc.JdbcResultSet#getNClob
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
  * @return {Jdbc.JdbcClob}
  */
@@ -5551,7 +5913,7 @@
  *
  * @function Jdbc.JdbcResultSet#getNClob
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
  * @return {Jdbc.JdbcClob}
  */
@@ -5561,7 +5923,7 @@
  *
  * @function Jdbc.JdbcResultSet#getNString
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
  * @return {String}
  */
@@ -5571,7 +5933,7 @@
  *
  * @function Jdbc.JdbcResultSet#getNString
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
  * @return {String}
  */
@@ -5581,7 +5943,7 @@
  *
  * @function Jdbc.JdbcResultSet#getObject
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
  * @return {Object}
  */
@@ -5591,7 +5953,7 @@
  *
  * @function Jdbc.JdbcResultSet#getObject
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
  * @return {Object}
  */
@@ -5601,7 +5963,7 @@
  *
  * @function Jdbc.JdbcResultSet#getRef
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
  * @return {Jdbc.JdbcRef}
  */
@@ -5611,7 +5973,7 @@
  *
  * @function Jdbc.JdbcResultSet#getRef
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
  * @return {Jdbc.JdbcRef}
  */
@@ -5621,7 +5983,7 @@
  *
  * @function Jdbc.JdbcResultSet#getRow
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -5629,7 +5991,7 @@
  *
  * @function Jdbc.JdbcResultSet#getRowId
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
  * @return {Jdbc.JdbcRowId}
  */
@@ -5639,7 +6001,7 @@
  *
  * @function Jdbc.JdbcResultSet#getRowId
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
  * @return {Jdbc.JdbcRowId}
  */
@@ -5649,7 +6011,7 @@
  *
  * @function Jdbc.JdbcResultSet#getSQLXML
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
  * @return {Jdbc.JdbcSQLXML}
  */
@@ -5659,7 +6021,7 @@
  *
  * @function Jdbc.JdbcResultSet#getSQLXML
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
  * @return {Jdbc.JdbcSQLXML}
  */
@@ -5669,9 +6031,9 @@
  *
  * @function Jdbc.JdbcResultSet#getShort
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -5679,9 +6041,9 @@
  *
  * @function Jdbc.JdbcResultSet#getShort
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -5697,7 +6059,7 @@
  *
  * @function Jdbc.JdbcResultSet#getString
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
  * @return {String}
  */
@@ -5707,7 +6069,7 @@
  *
  * @function Jdbc.JdbcResultSet#getString
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
  * @return {String}
  */
@@ -5717,7 +6079,7 @@
  *
  * @function Jdbc.JdbcResultSet#getTime
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
  * @return {Jdbc.JdbcTime}
  */
@@ -5727,8 +6089,8 @@
  *
  * @function Jdbc.JdbcResultSet#getTime
  *
- * @param {number} columnIndex - 
- * @param {String} timeZone - 
+ * @param {IntegerNum} columnIndex
+ * @param {String} timeZone
  *
  * @return {Jdbc.JdbcTime}
  */
@@ -5738,7 +6100,7 @@
  *
  * @function Jdbc.JdbcResultSet#getTime
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
  * @return {Jdbc.JdbcTime}
  */
@@ -5748,8 +6110,8 @@
  *
  * @function Jdbc.JdbcResultSet#getTime
  *
- * @param {String} columnLabel - 
- * @param {String} timeZone - 
+ * @param {String} columnLabel
+ * @param {String} timeZone
  *
  * @return {Jdbc.JdbcTime}
  */
@@ -5759,7 +6121,7 @@
  *
  * @function Jdbc.JdbcResultSet#getTimestamp
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
  * @return {Jdbc.JdbcTimestamp}
  */
@@ -5769,8 +6131,8 @@
  *
  * @function Jdbc.JdbcResultSet#getTimestamp
  *
- * @param {number} columnIndex - 
- * @param {String} timeZone - 
+ * @param {IntegerNum} columnIndex
+ * @param {String} timeZone
  *
  * @return {Jdbc.JdbcTimestamp}
  */
@@ -5780,7 +6142,7 @@
  *
  * @function Jdbc.JdbcResultSet#getTimestamp
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
  * @return {Jdbc.JdbcTimestamp}
  */
@@ -5790,8 +6152,8 @@
  *
  * @function Jdbc.JdbcResultSet#getTimestamp
  *
- * @param {String} columnLabel - 
- * @param {String} timeZone - 
+ * @param {String} columnLabel
+ * @param {String} timeZone
  *
  * @return {Jdbc.JdbcTimestamp}
  */
@@ -5801,7 +6163,7 @@
  *
  * @function Jdbc.JdbcResultSet#getType
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -5809,7 +6171,7 @@
  *
  * @function Jdbc.JdbcResultSet#getURL
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
  * @return {String}
  */
@@ -5819,7 +6181,7 @@
  *
  * @function Jdbc.JdbcResultSet#getURL
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
  * @return {String}
  */
@@ -5933,7 +6295,7 @@
  *
  * @function Jdbc.JdbcResultSet#relative
  *
- * @param {number} rows - 
+ * @param {IntegerNum} rows
  *
  * @return {Boolean}
  */
@@ -5967,7 +6329,7 @@
  *
  * @function Jdbc.JdbcResultSet#setFetchDirection
  *
- * @param {number} direction - 
+ * @param {IntegerNum} direction
  *
  * @return void
  */
@@ -5977,7 +6339,7 @@
  *
  * @function Jdbc.JdbcResultSet#setFetchSize
  *
- * @param {number} rows - 
+ * @param {IntegerNum} rows
  *
  * @return void
  */
@@ -5987,8 +6349,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateArray
  *
- * @param {number} columnIndex - 
- * @param {Jdbc.JdbcArray} x - 
+ * @param {IntegerNum} columnIndex
+ * @param {Jdbc.JdbcArray} x
  *
  * @return void
  */
@@ -5998,8 +6360,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateArray
  *
- * @param {String} columnLabel - 
- * @param {Jdbc.JdbcArray} x - 
+ * @param {String} columnLabel
+ * @param {Jdbc.JdbcArray} x
  *
  * @return void
  */
@@ -6009,8 +6371,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateBigDecimal
  *
- * @param {number} columnIndex - 
- * @param {BigNumber} x - 
+ * @param {IntegerNum} columnIndex
+ * @param {BigNumber} x
  *
  * @return void
  */
@@ -6020,8 +6382,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateBigDecimal
  *
- * @param {String} columnLabel - 
- * @param {BigNumber} x - 
+ * @param {String} columnLabel
+ * @param {BigNumber} x
  *
  * @return void
  */
@@ -6031,8 +6393,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateBlob
  *
- * @param {number} columnIndex - 
- * @param {Jdbc.JdbcBlob} x - 
+ * @param {IntegerNum} columnIndex
+ * @param {Jdbc.JdbcBlob} x
  *
  * @return void
  */
@@ -6042,8 +6404,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateBlob
  *
- * @param {String} columnLabel - 
- * @param {Jdbc.JdbcBlob} x - 
+ * @param {String} columnLabel
+ * @param {Jdbc.JdbcBlob} x
  *
  * @return void
  */
@@ -6053,8 +6415,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateBoolean
  *
- * @param {number} columnIndex - 
- * @param {Boolean} x - 
+ * @param {IntegerNum} columnIndex
+ * @param {Boolean} x
  *
  * @return void
  */
@@ -6064,8 +6426,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateBoolean
  *
- * @param {String} columnLabel - 
- * @param {Boolean} x - 
+ * @param {String} columnLabel
+ * @param {Boolean} x
  *
  * @return void
  */
@@ -6075,8 +6437,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateByte
  *
- * @param {number} columnIndex - 
- * @param {Byte} x - 
+ * @param {IntegerNum} columnIndex
+ * @param {Byte} x
  *
  * @return void
  */
@@ -6086,8 +6448,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateByte
  *
- * @param {String} columnLabel - 
- * @param {Byte} x - 
+ * @param {String} columnLabel
+ * @param {Byte} x
  *
  * @return void
  */
@@ -6097,8 +6459,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateBytes
  *
- * @param {number} columnIndex - 
- * @param {Byte[]} x - 
+ * @param {IntegerNum} columnIndex
+ * @param {Byte[]} x
  *
  * @return void
  */
@@ -6108,8 +6470,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateBytes
  *
- * @param {String} columnLabel - 
- * @param {Byte[]} x - 
+ * @param {String} columnLabel
+ * @param {Byte[]} x
  *
  * @return void
  */
@@ -6119,8 +6481,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateClob
  *
- * @param {number} columnIndex - 
- * @param {Jdbc.JdbcClob} x - 
+ * @param {IntegerNum} columnIndex
+ * @param {Jdbc.JdbcClob} x
  *
  * @return void
  */
@@ -6130,8 +6492,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateClob
  *
- * @param {String} columnLabel - 
- * @param {Jdbc.JdbcClob} x - 
+ * @param {String} columnLabel
+ * @param {Jdbc.JdbcClob} x
  *
  * @return void
  */
@@ -6141,8 +6503,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateDate
  *
- * @param {number} columnIndex - 
- * @param {Jdbc.JdbcDate} x - 
+ * @param {IntegerNum} columnIndex
+ * @param {Jdbc.JdbcDate} x
  *
  * @return void
  */
@@ -6152,8 +6514,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateDate
  *
- * @param {String} columnLabel - 
- * @param {Jdbc.JdbcDate} x - 
+ * @param {String} columnLabel
+ * @param {Jdbc.JdbcDate} x
  *
  * @return void
  */
@@ -6163,8 +6525,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateDouble
  *
- * @param {number} columnIndex - 
- * @param {Number} x - 
+ * @param {IntegerNum} columnIndex
+ * @param {Number} x
  *
  * @return void
  */
@@ -6174,8 +6536,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateDouble
  *
- * @param {String} columnLabel - 
- * @param {Number} x - 
+ * @param {String} columnLabel
+ * @param {Number} x
  *
  * @return void
  */
@@ -6185,8 +6547,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateFloat
  *
- * @param {number} columnIndex - 
- * @param {Number} x - 
+ * @param {IntegerNum} columnIndex
+ * @param {Number} x
  *
  * @return void
  */
@@ -6196,8 +6558,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateFloat
  *
- * @param {String} columnLabel - 
- * @param {Number} x - 
+ * @param {String} columnLabel
+ * @param {Number} x
  *
  * @return void
  */
@@ -6207,8 +6569,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateInt
  *
- * @param {number} columnIndex - 
- * @param {number} x - 
+ * @param {IntegerNum} columnIndex
+ * @param {IntegerNum} x
  *
  * @return void
  */
@@ -6218,8 +6580,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateInt
  *
- * @param {String} columnLabel - 
- * @param {number} x - 
+ * @param {String} columnLabel
+ * @param {IntegerNum} x
  *
  * @return void
  */
@@ -6229,8 +6591,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateLong
  *
- * @param {number} columnIndex - 
- * @param {number} x - 
+ * @param {IntegerNum} columnIndex
+ * @param {IntegerNum} x
  *
  * @return void
  */
@@ -6240,8 +6602,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateLong
  *
- * @param {String} columnLabel - 
- * @param {number} x - 
+ * @param {String} columnLabel
+ * @param {IntegerNum} x
  *
  * @return void
  */
@@ -6251,8 +6613,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateNClob
  *
- * @param {number} columnIndex - 
- * @param {Jdbc.JdbcClob} x - 
+ * @param {IntegerNum} columnIndex
+ * @param {Jdbc.JdbcClob} x
  *
  * @return void
  */
@@ -6262,8 +6624,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateNClob
  *
- * @param {String} columnLabel - 
- * @param {Jdbc.JdbcClob} x - 
+ * @param {String} columnLabel
+ * @param {Jdbc.JdbcClob} x
  *
  * @return void
  */
@@ -6273,8 +6635,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateNString
  *
- * @param {number} columnIndex - 
- * @param {String} x - 
+ * @param {IntegerNum} columnIndex
+ * @param {String} x
  *
  * @return void
  */
@@ -6284,8 +6646,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateNString
  *
- * @param {String} columnLabel - 
- * @param {String} x - 
+ * @param {String} columnLabel
+ * @param {String} x
  *
  * @return void
  */
@@ -6295,7 +6657,7 @@
  *
  * @function Jdbc.JdbcResultSet#updateNull
  *
- * @param {number} columnIndex - 
+ * @param {IntegerNum} columnIndex
  *
  * @return void
  */
@@ -6305,7 +6667,7 @@
  *
  * @function Jdbc.JdbcResultSet#updateNull
  *
- * @param {String} columnLabel - 
+ * @param {String} columnLabel
  *
  * @return void
  */
@@ -6315,8 +6677,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateObject
  *
- * @param {number} columnIndex - 
- * @param {Object} x - 
+ * @param {IntegerNum} columnIndex
+ * @param {Object} x
  *
  * @return void
  */
@@ -6326,9 +6688,9 @@
  *
  * @function Jdbc.JdbcResultSet#updateObject
  *
- * @param {number} columnIndex - 
- * @param {Object} x - 
- * @param {number} scaleOrLength - 
+ * @param {IntegerNum} columnIndex
+ * @param {Object} x
+ * @param {IntegerNum} scaleOrLength
  *
  * @return void
  */
@@ -6338,8 +6700,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateObject
  *
- * @param {String} columnLabel - 
- * @param {Object} x - 
+ * @param {String} columnLabel
+ * @param {Object} x
  *
  * @return void
  */
@@ -6349,9 +6711,9 @@
  *
  * @function Jdbc.JdbcResultSet#updateObject
  *
- * @param {String} columnLabel - 
- * @param {Object} x - 
- * @param {number} scaleOrLength - 
+ * @param {String} columnLabel
+ * @param {Object} x
+ * @param {IntegerNum} scaleOrLength
  *
  * @return void
  */
@@ -6361,8 +6723,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateRef
  *
- * @param {number} columnIndex - 
- * @param {Jdbc.JdbcRef} x - 
+ * @param {IntegerNum} columnIndex
+ * @param {Jdbc.JdbcRef} x
  *
  * @return void
  */
@@ -6372,8 +6734,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateRef
  *
- * @param {String} columnLabel - 
- * @param {Jdbc.JdbcRef} x - 
+ * @param {String} columnLabel
+ * @param {Jdbc.JdbcRef} x
  *
  * @return void
  */
@@ -6391,8 +6753,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateRowId
  *
- * @param {number} columnIndex - 
- * @param {Jdbc.JdbcRowId} x - 
+ * @param {IntegerNum} columnIndex
+ * @param {Jdbc.JdbcRowId} x
  *
  * @return void
  */
@@ -6402,8 +6764,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateRowId
  *
- * @param {String} columnLabel - 
- * @param {Jdbc.JdbcRowId} x - 
+ * @param {String} columnLabel
+ * @param {Jdbc.JdbcRowId} x
  *
  * @return void
  */
@@ -6413,8 +6775,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateSQLXML
  *
- * @param {number} columnIndex - 
- * @param {Jdbc.JdbcSQLXML} x - 
+ * @param {IntegerNum} columnIndex
+ * @param {Jdbc.JdbcSQLXML} x
  *
  * @return void
  */
@@ -6424,8 +6786,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateSQLXML
  *
- * @param {String} columnLabel - 
- * @param {Jdbc.JdbcSQLXML} x - 
+ * @param {String} columnLabel
+ * @param {Jdbc.JdbcSQLXML} x
  *
  * @return void
  */
@@ -6435,8 +6797,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateShort
  *
- * @param {number} columnIndex - 
- * @param {number} x - 
+ * @param {IntegerNum} columnIndex
+ * @param {IntegerNum} x
  *
  * @return void
  */
@@ -6446,8 +6808,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateShort
  *
- * @param {String} columnLabel - 
- * @param {number} x - 
+ * @param {String} columnLabel
+ * @param {IntegerNum} x
  *
  * @return void
  */
@@ -6457,8 +6819,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateString
  *
- * @param {number} columnIndex - 
- * @param {String} x - 
+ * @param {IntegerNum} columnIndex
+ * @param {String} x
  *
  * @return void
  */
@@ -6468,8 +6830,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateString
  *
- * @param {String} columnLabel - 
- * @param {String} x - 
+ * @param {String} columnLabel
+ * @param {String} x
  *
  * @return void
  */
@@ -6479,8 +6841,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateTime
  *
- * @param {number} columnIndex - 
- * @param {Jdbc.JdbcTime} x - 
+ * @param {IntegerNum} columnIndex
+ * @param {Jdbc.JdbcTime} x
  *
  * @return void
  */
@@ -6490,8 +6852,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateTime
  *
- * @param {String} columnLabel - 
- * @param {Jdbc.JdbcTime} x - 
+ * @param {String} columnLabel
+ * @param {Jdbc.JdbcTime} x
  *
  * @return void
  */
@@ -6501,8 +6863,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateTimestamp
  *
- * @param {number} columnIndex - 
- * @param {Jdbc.JdbcTimestamp} x - 
+ * @param {IntegerNum} columnIndex
+ * @param {Jdbc.JdbcTimestamp} x
  *
  * @return void
  */
@@ -6512,8 +6874,8 @@
  *
  * @function Jdbc.JdbcResultSet#updateTimestamp
  *
- * @param {String} columnLabel - 
- * @param {Jdbc.JdbcTimestamp} x - 
+ * @param {String} columnLabel
+ * @param {Jdbc.JdbcTimestamp} x
  *
  * @return void
  */
@@ -6526,8 +6888,21 @@
  * @return {Boolean}
  */
 
+
 /**
  * @class Jdbc.JdbcResultSetMetaData
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcResultSetMetaData.columnNoNulls
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcResultSetMetaData.columnNullable
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcResultSetMetaData.columnNullableUnknown
  */
 
 /**
@@ -6535,7 +6910,7 @@
  *
  * @function Jdbc.JdbcResultSetMetaData#getCatalogName
  *
- * @param {number} column - 
+ * @param {IntegerNum} column
  *
  * @return {String}
  */
@@ -6545,7 +6920,7 @@
  *
  * @function Jdbc.JdbcResultSetMetaData#getColumnClassName
  *
- * @param {number} column - 
+ * @param {IntegerNum} column
  *
  * @return {String}
  */
@@ -6555,7 +6930,7 @@
  *
  * @function Jdbc.JdbcResultSetMetaData#getColumnCount
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -6563,9 +6938,9 @@
  *
  * @function Jdbc.JdbcResultSetMetaData#getColumnDisplaySize
  *
- * @param {number} column - 
+ * @param {IntegerNum} column
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -6573,7 +6948,7 @@
  *
  * @function Jdbc.JdbcResultSetMetaData#getColumnLabel
  *
- * @param {number} column - 
+ * @param {IntegerNum} column
  *
  * @return {String}
  */
@@ -6583,7 +6958,7 @@
  *
  * @function Jdbc.JdbcResultSetMetaData#getColumnName
  *
- * @param {number} column - 
+ * @param {IntegerNum} column
  *
  * @return {String}
  */
@@ -6593,9 +6968,9 @@
  *
  * @function Jdbc.JdbcResultSetMetaData#getColumnType
  *
- * @param {number} column - 
+ * @param {IntegerNum} column
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -6603,7 +6978,7 @@
  *
  * @function Jdbc.JdbcResultSetMetaData#getColumnTypeName
  *
- * @param {number} column - 
+ * @param {IntegerNum} column
  *
  * @return {String}
  */
@@ -6613,9 +6988,9 @@
  *
  * @function Jdbc.JdbcResultSetMetaData#getPrecision
  *
- * @param {number} column - 
+ * @param {IntegerNum} column
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -6623,9 +6998,9 @@
  *
  * @function Jdbc.JdbcResultSetMetaData#getScale
  *
- * @param {number} column - 
+ * @param {IntegerNum} column
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -6633,7 +7008,7 @@
  *
  * @function Jdbc.JdbcResultSetMetaData#getSchemaName
  *
- * @param {number} column - 
+ * @param {IntegerNum} column
  *
  * @return {String}
  */
@@ -6643,7 +7018,7 @@
  *
  * @function Jdbc.JdbcResultSetMetaData#getTableName
  *
- * @param {number} column - 
+ * @param {IntegerNum} column
  *
  * @return {String}
  */
@@ -6653,7 +7028,7 @@
  *
  * @function Jdbc.JdbcResultSetMetaData#isAutoIncrement
  *
- * @param {number} column - 
+ * @param {IntegerNum} column
  *
  * @return {Boolean}
  */
@@ -6663,7 +7038,7 @@
  *
  * @function Jdbc.JdbcResultSetMetaData#isCaseSensitive
  *
- * @param {number} column - 
+ * @param {IntegerNum} column
  *
  * @return {Boolean}
  */
@@ -6673,7 +7048,7 @@
  *
  * @function Jdbc.JdbcResultSetMetaData#isCurrency
  *
- * @param {number} column - 
+ * @param {IntegerNum} column
  *
  * @return {Boolean}
  */
@@ -6683,7 +7058,7 @@
  *
  * @function Jdbc.JdbcResultSetMetaData#isDefinitelyWritable
  *
- * @param {number} column - 
+ * @param {IntegerNum} column
  *
  * @return {Boolean}
  */
@@ -6693,9 +7068,9 @@
  *
  * @function Jdbc.JdbcResultSetMetaData#isNullable
  *
- * @param {number} column - 
+ * @param {IntegerNum} column
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -6703,7 +7078,7 @@
  *
  * @function Jdbc.JdbcResultSetMetaData#isReadOnly
  *
- * @param {number} column - 
+ * @param {IntegerNum} column
  *
  * @return {Boolean}
  */
@@ -6713,7 +7088,7 @@
  *
  * @function Jdbc.JdbcResultSetMetaData#isSearchable
  *
- * @param {number} column - 
+ * @param {IntegerNum} column
  *
  * @return {Boolean}
  */
@@ -6723,7 +7098,7 @@
  *
  * @function Jdbc.JdbcResultSetMetaData#isSigned
  *
- * @param {number} column - 
+ * @param {IntegerNum} column
  *
  * @return {Boolean}
  */
@@ -6733,10 +7108,11 @@
  *
  * @function Jdbc.JdbcResultSetMetaData#isWritable
  *
- * @param {number} column - 
+ * @param {IntegerNum} column
  *
  * @return {Boolean}
  */
+
 
 /**
  * @class Jdbc.JdbcRowId
@@ -6750,9 +7126,31 @@
  * @return {Byte[]}
  */
 
+
 /**
  * @class Jdbc.JdbcRowIdLifetime
  */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcRowIdLifetime.ROWID_UNSUPPORTED
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcRowIdLifetime.ROWID_VALID_FOREVER
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcRowIdLifetime.ROWID_VALID_OTHER
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcRowIdLifetime.ROWID_VALID_SESSION
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcRowIdLifetime.ROWID_VALID_TRANSACTION
+ */
+
 
 /**
  * @class Jdbc.JdbcSQLXML
@@ -6779,10 +7177,11 @@
  *
  * @function Jdbc.JdbcSQLXML#setString
  *
- * @param {String} value - 
+ * @param {String} value
  *
  * @return void
  */
+
 
 /**
  * @class Jdbc.JdbcSavepoint
@@ -6793,7 +7192,7 @@
  *
  * @function Jdbc.JdbcSavepoint#getSavepointId
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -6804,6 +7203,7 @@
  * @return {String}
  */
 
+
 /**
  * @class Jdbc.JdbcStatement
  */
@@ -6813,7 +7213,7 @@
  *
  * @function Jdbc.JdbcStatement#addBatch
  *
- * @param {String} sql - 
+ * @param {String} sql
  *
  * @return void
  */
@@ -6855,7 +7255,7 @@
  *
  * @function Jdbc.JdbcStatement#execute
  *
- * @param {String} sql - 
+ * @param {String} sql
  *
  * @return {Boolean}
  */
@@ -6865,8 +7265,8 @@
  *
  * @function Jdbc.JdbcStatement#execute
  *
- * @param {String} sql - 
- * @param {number} autoGeneratedKeys - 
+ * @param {String} sql
+ * @param {IntegerNum} autoGeneratedKeys
  *
  * @return {Boolean}
  */
@@ -6876,8 +7276,8 @@
  *
  * @function Jdbc.JdbcStatement#execute
  *
- * @param {String} sql - 
- * @param {Integer[]} columnIndexes - 
+ * @param {String} sql
+ * @param {IntegerNum[]} columnIndexes
  *
  * @return {Boolean}
  */
@@ -6887,8 +7287,8 @@
  *
  * @function Jdbc.JdbcStatement#execute
  *
- * @param {String} sql - 
- * @param {String[]} columnNames - 
+ * @param {String} sql
+ * @param {String[]} columnNames
  *
  * @return {Boolean}
  */
@@ -6898,7 +7298,7 @@
  *
  * @function Jdbc.JdbcStatement#executeBatch
  *
- * @return {Integer[]}
+ * @return {IntegerNum[]}
  */
 
 /**
@@ -6906,7 +7306,7 @@
  *
  * @function Jdbc.JdbcStatement#executeQuery
  *
- * @param {String} sql - 
+ * @param {String} sql
  *
  * @return {Jdbc.JdbcResultSet}
  */
@@ -6916,9 +7316,9 @@
  *
  * @function Jdbc.JdbcStatement#executeUpdate
  *
- * @param {String} sql - 
+ * @param {String} sql
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -6926,10 +7326,10 @@
  *
  * @function Jdbc.JdbcStatement#executeUpdate
  *
- * @param {String} sql - 
- * @param {number} autoGeneratedKeys - 
+ * @param {String} sql
+ * @param {IntegerNum} autoGeneratedKeys
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -6937,10 +7337,10 @@
  *
  * @function Jdbc.JdbcStatement#executeUpdate
  *
- * @param {String} sql - 
- * @param {Integer[]} columnIndexes - 
+ * @param {String} sql
+ * @param {IntegerNum[]} columnIndexes
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -6948,10 +7348,10 @@
  *
  * @function Jdbc.JdbcStatement#executeUpdate
  *
- * @param {String} sql - 
- * @param {String[]} columnNames - 
+ * @param {String} sql
+ * @param {String[]} columnNames
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -6967,7 +7367,7 @@
  *
  * @function Jdbc.JdbcStatement#getFetchDirection
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -6975,7 +7375,7 @@
  *
  * @function Jdbc.JdbcStatement#getFetchSize
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -6991,7 +7391,7 @@
  *
  * @function Jdbc.JdbcStatement#getMaxFieldSize
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -6999,7 +7399,7 @@
  *
  * @function Jdbc.JdbcStatement#getMaxRows
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -7015,7 +7415,7 @@
  *
  * @function Jdbc.JdbcStatement#getMoreResults
  *
- * @param {number} current - 
+ * @param {IntegerNum} current
  *
  * @return {Boolean}
  */
@@ -7025,7 +7425,7 @@
  *
  * @function Jdbc.JdbcStatement#getQueryTimeout
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -7041,7 +7441,7 @@
  *
  * @function Jdbc.JdbcStatement#getResultSetConcurrency
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -7049,7 +7449,7 @@
  *
  * @function Jdbc.JdbcStatement#getResultSetHoldability
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -7057,7 +7457,7 @@
  *
  * @function Jdbc.JdbcStatement#getResultSetType
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -7065,7 +7465,7 @@
  *
  * @function Jdbc.JdbcStatement#getUpdateCount
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -7098,7 +7498,7 @@
  *
  * @function Jdbc.JdbcStatement#setCursorName
  *
- * @param {String} name - 
+ * @param {String} name
  *
  * @return void
  */
@@ -7108,7 +7508,7 @@
  *
  * @function Jdbc.JdbcStatement#setEscapeProcessing
  *
- * @param {Boolean} enable - 
+ * @param {Boolean} enable
  *
  * @return void
  */
@@ -7118,7 +7518,7 @@
  *
  * @function Jdbc.JdbcStatement#setFetchDirection
  *
- * @param {number} direction - 
+ * @param {IntegerNum} direction
  *
  * @return void
  */
@@ -7128,7 +7528,7 @@
  *
  * @function Jdbc.JdbcStatement#setFetchSize
  *
- * @param {number} rows - 
+ * @param {IntegerNum} rows
  *
  * @return void
  */
@@ -7138,7 +7538,7 @@
  *
  * @function Jdbc.JdbcStatement#setMaxFieldSize
  *
- * @param {number} max - 
+ * @param {IntegerNum} max
  *
  * @return void
  */
@@ -7148,7 +7548,7 @@
  *
  * @function Jdbc.JdbcStatement#setMaxRows
  *
- * @param {number} max - 
+ * @param {IntegerNum} max
  *
  * @return void
  */
@@ -7158,7 +7558,7 @@
  *
  * @function Jdbc.JdbcStatement#setPoolable
  *
- * @param {Boolean} poolable - 
+ * @param {Boolean} poolable
  *
  * @return void
  */
@@ -7168,14 +7568,44 @@
  *
  * @function Jdbc.JdbcStatement#setQueryTimeout
  *
- * @param {number} seconds - 
+ * @param {IntegerNum} seconds
  *
  * @return void
  */
 
+
 /**
  * @class Jdbc.JdbcStatment
  */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcStatment.CLOSE_ALL_RESULTS
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcStatment.CLOSE_CURRENT_RESULT
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcStatment.EXECUTE_FAILED
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcStatment.KEEP_CURRENT_RESULT
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcStatment.NO_GENERATED_KEYS
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcStatment.RETURN_GENERATED_KEYS
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcStatment.SUCCESS_NO_INFO
+ */
+
 
 /**
  * @class Jdbc.JdbcStruct
@@ -7197,6 +7627,7 @@
  * @return {String}
  */
 
+
 /**
  * @class Jdbc.JdbcTime
  */
@@ -7206,7 +7637,7 @@
  *
  * @function Jdbc.JdbcTime#after
  *
- * @param {Jdbc.JdbcTime} when - 
+ * @param {Jdbc.JdbcTime} when
  *
  * @return {Boolean}
  */
@@ -7216,7 +7647,7 @@
  *
  * @function Jdbc.JdbcTime#before
  *
- * @param {Jdbc.JdbcTime} when - 
+ * @param {Jdbc.JdbcTime} when
  *
  * @return {Boolean}
  */
@@ -7226,7 +7657,7 @@
  *
  * @function Jdbc.JdbcTime#getHours
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -7234,7 +7665,7 @@
  *
  * @function Jdbc.JdbcTime#getMinutes
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -7242,7 +7673,7 @@
  *
  * @function Jdbc.JdbcTime#getSeconds
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -7250,7 +7681,7 @@
  *
  * @function Jdbc.JdbcTime#getTime
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -7258,7 +7689,7 @@
  *
  * @function Jdbc.JdbcTime#setHours
  *
- * @param {number} hours - 
+ * @param {IntegerNum} hours
  *
  * @return void
  */
@@ -7268,7 +7699,7 @@
  *
  * @function Jdbc.JdbcTime#setMinutes
  *
- * @param {number} minutes - 
+ * @param {IntegerNum} minutes
  *
  * @return void
  */
@@ -7278,7 +7709,7 @@
  *
  * @function Jdbc.JdbcTime#setSeconds
  *
- * @param {number} seconds - 
+ * @param {IntegerNum} seconds
  *
  * @return void
  */
@@ -7288,10 +7719,11 @@
  *
  * @function Jdbc.JdbcTime#setTime
  *
- * @param {number} milliseconds - 
+ * @param {IntegerNum} milliseconds
  *
  * @return void
  */
+
 
 /**
  * @class Jdbc.JdbcTimestamp
@@ -7302,7 +7734,7 @@
  *
  * @function Jdbc.JdbcTimestamp#after
  *
- * @param {Jdbc.JdbcTimestamp} when - 
+ * @param {Jdbc.JdbcTimestamp} when
  *
  * @return {Boolean}
  */
@@ -7312,7 +7744,7 @@
  *
  * @function Jdbc.JdbcTimestamp#before
  *
- * @param {Jdbc.JdbcTimestamp} when - 
+ * @param {Jdbc.JdbcTimestamp} when
  *
  * @return {Boolean}
  */
@@ -7322,7 +7754,7 @@
  *
  * @function Jdbc.JdbcTimestamp#getDate
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -7330,7 +7762,7 @@
  *
  * @function Jdbc.JdbcTimestamp#getHours
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -7338,7 +7770,7 @@
  *
  * @function Jdbc.JdbcTimestamp#getMinutes
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -7346,7 +7778,7 @@
  *
  * @function Jdbc.JdbcTimestamp#getMonth
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -7354,7 +7786,7 @@
  *
  * @function Jdbc.JdbcTimestamp#getNanos
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -7362,7 +7794,7 @@
  *
  * @function Jdbc.JdbcTimestamp#getSeconds
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -7370,7 +7802,7 @@
  *
  * @function Jdbc.JdbcTimestamp#getTime
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -7378,7 +7810,7 @@
  *
  * @function Jdbc.JdbcTimestamp#getYear
  *
- * @return {number}
+ * @return {IntegerNum}
  */
 
 /**
@@ -7386,7 +7818,7 @@
  *
  * @function Jdbc.JdbcTimestamp#setDate
  *
- * @param {number} date - 
+ * @param {IntegerNum} date
  *
  * @return void
  */
@@ -7396,7 +7828,7 @@
  *
  * @function Jdbc.JdbcTimestamp#setHours
  *
- * @param {number} hours - 
+ * @param {IntegerNum} hours
  *
  * @return void
  */
@@ -7406,7 +7838,7 @@
  *
  * @function Jdbc.JdbcTimestamp#setMinutes
  *
- * @param {number} minutes - 
+ * @param {IntegerNum} minutes
  *
  * @return void
  */
@@ -7416,7 +7848,7 @@
  *
  * @function Jdbc.JdbcTimestamp#setMonth
  *
- * @param {number} month - 
+ * @param {IntegerNum} month
  *
  * @return void
  */
@@ -7426,7 +7858,7 @@
  *
  * @function Jdbc.JdbcTimestamp#setNanos
  *
- * @param {number} nanoseconds - 
+ * @param {IntegerNum} nanoseconds
  *
  * @return void
  */
@@ -7436,7 +7868,7 @@
  *
  * @function Jdbc.JdbcTimestamp#setSeconds
  *
- * @param {number} seconds - 
+ * @param {IntegerNum} seconds
  *
  * @return void
  */
@@ -7446,7 +7878,7 @@
  *
  * @function Jdbc.JdbcTimestamp#setTime
  *
- * @param {number} milliseconds - 
+ * @param {IntegerNum} milliseconds
  *
  * @return void
  */
@@ -7456,12 +7888,158 @@
  *
  * @function Jdbc.JdbcTimestamp#setYear
  *
- * @param {number} year - 
+ * @param {IntegerNum} year
  *
  * @return void
  */
 
+
 /**
  * @class Jdbc.JdbcTypes
  */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.ARRAY
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.BIGINT
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.BINARY
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.BIT
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.BLOB
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.BOOLEAN
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.CHAR
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.CLOB
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.DATALINK
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.DATE
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.DECIMAL
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.DISTINCT
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.DOUBLE
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.FLOAT
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.INTEGER
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.JAVA_OBJECT
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.LONGNVARCHAR
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.LONGVARBINARY
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.LONGVARCHAR
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.NCHAR
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.NCLOB
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.NULL
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.NUMERIC
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.NVARCHAR
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.OTHER
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.REAL
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.REF
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.ROWID
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.SMALLINT
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.SQLXML
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.STRUCT
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.TIME
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.TIMESTAMP
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.TINYINT
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.VARBINARY
+ */
+
+/**
+ * @typedef {IntegerNum} Jdbc.JdbcTypes.VARCHAR
+ */
+
 

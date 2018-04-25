@@ -2,7 +2,6 @@
  * @namespace UrlFetchApp
  ***********************************************/
 
-
 /**
  * Makes a request to fetch a URL.
 
@@ -144,6 +143,7 @@
      contentType, payload, headers.
  */
 
+
 /**
  * @class UrlFetchApp.HTTPResponse
  */
@@ -261,6 +261,7 @@
  *
  * @function UrlFetchApp.HTTPResponse#getResponseCode
  *
- * @return {number} HTTP response code (e.g. 200 for OK)
+ * @return {IntegerNum} HTTP response code (e.g. 200 for OK)
  */
+
 

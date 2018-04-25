@@ -1,4 +1,5 @@
 /**
- * @typedef {DataTable} undefined
+ * @class DataTable
  */
+
 

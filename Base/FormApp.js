@@ -2,203 +2,34 @@
  * @namespace FormApp
  ***********************************************/
 
-
 /**
  * An enumeration of types of image alignment.
  *
- * @class FormApp.Alignment
- */
-
-/**
- * @typedef {FormApp.Alignment} FormApp.Alignment.CENTER
- * 
- * Align the image to the center of the form.
- */
-
-/**
- * @typedef {FormApp.Alignment} FormApp.Alignment.LEFT
- * 
- * Align the image to the left side of the form.
- */
-
-/**
- * @typedef {FormApp.Alignment} FormApp.Alignment.RIGHT
- * 
- * Align the image to the right side of the form.
+ * @typedef {FormApp.Alignment} FormApp.Alignment
  */
 
 /**
  * An enumeration of types of destinations that can store form responses.
  *
- * @class FormApp.DestinationType
- */
-
-/**
- * @typedef {FormApp.DestinationType} FormApp.DestinationType.SPREADSHEET
- * 
- * A Google Sheets spreadsheet as a destination for form responses.
+ * @typedef {FormApp.DestinationType} FormApp.DestinationType
  */
 
 /**
  * An enumeration of types of form <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/quiz-feedback.html'>Feedbacks</a></code>.
  *
- * @class FormApp.FeedbackType
- */
-
-/**
- * @typedef {FormApp.FeedbackType} FormApp.FeedbackType.CORRECT
- * 
- * Feedback that is automatically displayed to respondents for a question answered correctly.
- Correct feedback can only be attached to a question type that supports autograding (e.g. radio,
- checkbox, select)
- */
-
-/**
- * @typedef {FormApp.FeedbackType} FormApp.FeedbackType.GENERAL
- * 
- * Feedback that is automatically displayed to respondents when they submit their response.
- General feedback can only be attached to question types that do not support auto-grading, but
- are gradeable (ie everything but grid)
- */
-
-/**
- * @typedef {FormApp.FeedbackType} FormApp.FeedbackType.INCORRECT
- * 
- * Feedback that is automatically displayed to respondents for a question answered incorrectly.
- Incorrect feedback can only be attached to a question type that supports autograding (e.g.
- radio, checkbox, select)
+ * @typedef {FormApp.FeedbackType} FormApp.FeedbackType
  */
 
 /**
  * An enumeration of types of form <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/item.html'>Items</a></code>.
  *
- * @class FormApp.ItemType
- */
-
-/**
- * @typedef {FormApp.ItemType} FormApp.ItemType.CHECKBOX
- * 
- * A question item that allows the respondent to select one or more checkboxes, as well as an
- optional "other" field.
- */
-
-/**
- * @typedef {FormApp.ItemType} FormApp.ItemType.CHECKBOX_GRID
- * 
- * A question item, presented as a grid of columns and rows, that allows the respondent to select
- multiple choices per row from a sequence of checkboxes.
- */
-
-/**
- * @typedef {FormApp.ItemType} FormApp.ItemType.DATE
- * 
- * A question item that allows the respondent to indicate a date.
- */
-
-/**
- * @typedef {FormApp.ItemType} FormApp.ItemType.DATETIME
- * 
- * A question item that allows the respondent to indicate a date and time.
- */
-
-/**
- * @typedef {FormApp.ItemType} FormApp.ItemType.DURATION
- * 
- * A question item that allows the respondent to indicate a length of time.
- */
-
-/**
- * @typedef {FormApp.ItemType} FormApp.ItemType.GRID
- * 
- * A question item, presented as a grid of columns and rows, that allows the respondent to select
- one choice per row from a sequence of radio buttons.
- */
-
-/**
- * @typedef {FormApp.ItemType} FormApp.ItemType.IMAGE
- * 
- * A layout item that displays an image.
- */
-
-/**
- * @typedef {FormApp.ItemType} FormApp.ItemType.LIST
- * 
- * A question item that allows the respondent to select one choice from a drop-down list.
- */
-
-/**
- * @typedef {FormApp.ItemType} FormApp.ItemType.MULTIPLE_CHOICE
- * 
- * A question item that allows the respondent to select one choice from a list of radio buttons or
- an optional "other" field.
- */
-
-/**
- * @typedef {FormApp.ItemType} FormApp.ItemType.PAGE_BREAK
- * 
- * A layout item that marks the start of a page.
- */
-
-/**
- * @typedef {FormApp.ItemType} FormApp.ItemType.PARAGRAPH_TEXT
- * 
- * A question item that allows the respondent to enter a block of text.
- */
-
-/**
- * @typedef {FormApp.ItemType} FormApp.ItemType.SCALE
- * 
- * A question item that allows the respondent to choose one option from a numbered sequence of
- radio buttons.
- */
-
-/**
- * @typedef {FormApp.ItemType} FormApp.ItemType.SECTION_HEADER
- * 
- * A layout item that visually indicates the start of a section.
- */
-
-/**
- * @typedef {FormApp.ItemType} FormApp.ItemType.TEXT
- * 
- * A question item that allows the respondent to enter a single line of text.
- */
-
-/**
- * @typedef {FormApp.ItemType} FormApp.ItemType.TIME
- * 
- * A question item that allows the respondent to indicate a time of day.
+ * @typedef {FormApp.ItemType} FormApp.ItemType
  */
 
 /**
  * An enumeration of possible behaviors for navigating pages.
  *
- * @class FormApp.PageNavigationType
- */
-
-/**
- * @typedef {FormApp.PageNavigationType} FormApp.PageNavigationType.CONTINUE
- * 
- * Continue to the next page of the form after completing the current page.
- */
-
-/**
- * @typedef {FormApp.PageNavigationType} FormApp.PageNavigationType.GO_TO_PAGE
- * 
- * Jump to a specified page of the form after completing the current page.
- */
-
-/**
- * @typedef {FormApp.PageNavigationType} FormApp.PageNavigationType.RESTART
- * 
- * Restart the form from the beginning, without clearing answers entered so far, after completing
- the current page.
- */
-
-/**
- * @typedef {FormApp.PageNavigationType} FormApp.PageNavigationType.SUBMIT
- * 
- * Submit the form response after completing the current page.
+ * @typedef {FormApp.PageNavigationType} FormApp.PageNavigationType
  */
 
 /**
@@ -347,6 +178,30 @@
  * @return {FormApp.Form} the form with the given URL
  */
 
+
+/**
+ * @class FormApp.Alignment
+ */
+
+/**
+ * Align the image to the center of the form.
+ *
+ * @typedef {FormApp.Alignment} FormApp.Alignment.CENTER
+ */
+
+/**
+ * Align the image to the left side of the form.
+ *
+ * @typedef {FormApp.Alignment} FormApp.Alignment.LEFT
+ */
+
+/**
+ * Align the image to the right side of the form.
+ *
+ * @typedef {FormApp.Alignment} FormApp.Alignment.RIGHT
+ */
+
+
 /**
  * @class FormApp.CheckboxGridItem
  */
@@ -402,7 +257,7 @@
  *
  * @function FormApp.CheckboxGridItem#getId
  *
- * @return {number} the item's ID
+ * @return {IntegerNum} the item's ID
  */
 
 /**
@@ -410,7 +265,7 @@
  *
  * @function FormApp.CheckboxGridItem#getIndex
  *
- * @return {number} the index of the item
+ * @return {IntegerNum} the index of the item
  */
 
 /**
@@ -508,9 +363,11 @@
  * @return {FormApp.CheckboxGridItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/checkbox-grid-item.html'>CheckboxGridItem</a></code>, for chaining
  */
 
+
 /**
  * @class FormApp.CheckboxGridValidation
  */
+
 
 /**
  * @class FormApp.CheckboxGridValidationBuilder
@@ -523,6 +380,7 @@
  *
  * @return {FormApp.CheckboxGridValidationBuilder} this validation builder, for chaining
  */
+
 
 /**
  * @class FormApp.CheckboxItem
@@ -614,7 +472,7 @@
  *
  * @function FormApp.CheckboxItem#getId
  *
- * @return {number} the item's ID
+ * @return {IntegerNum} the item's ID
  */
 
 /**
@@ -622,7 +480,7 @@
  *
  * @function FormApp.CheckboxItem#getIndex
  *
- * @return {number} the index of the item
+ * @return {IntegerNum} the index of the item
  */
 
 /**
@@ -630,7 +488,7 @@
  *
  * @function FormApp.CheckboxItem#getPoints
  *
- * @return {number} the number of points a question is worth.
+ * @return {IntegerNum} the number of points a question is worth.
  */
 
 /**
@@ -755,7 +613,7 @@
  *
  * @function FormApp.CheckboxItem#setPoints
  *
- * @param {number} points - the number of a points a question item is worth
+ * @param {IntegerNum} points - the number of a points a question item is worth
  *
  * @return {FormApp.CheckboxItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/checkbox-item.html'>CheckboxItem</a></code>, for chaining
  */
@@ -802,9 +660,11 @@
  * @return {FormApp.CheckboxItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/checkbox-item.html'>CheckboxItem</a></code>, for chaining
  */
 
+
 /**
  * @class FormApp.CheckboxValidation
  */
+
 
 /**
  * @class FormApp.CheckboxValidationBuilder
@@ -815,7 +675,7 @@
  *
  * @function FormApp.CheckboxValidationBuilder#requireSelectAtLeast
  *
- * @param {number} number - 
+ * @param {IntegerNum} number
  *
  * @return {FormApp.CheckboxValidationBuilder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/checkbox-validation-builder.html'>CheckboxValidationBuilder</a></code>, for chaining
  */
@@ -825,7 +685,7 @@
  *
  * @function FormApp.CheckboxValidationBuilder#requireSelectAtMost
  *
- * @param {number} number - 
+ * @param {IntegerNum} number
  *
  * @return {FormApp.CheckboxValidationBuilder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/checkbox-validation-builder.html'>CheckboxValidationBuilder</a></code>, for chaining
  */
@@ -835,10 +695,11 @@
  *
  * @function FormApp.CheckboxValidationBuilder#requireSelectExactly
  *
- * @param {number} number - 
+ * @param {IntegerNum} number
  *
  * @return {FormApp.CheckboxValidationBuilder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/checkbox-validation-builder.html'>CheckboxValidationBuilder</a></code>, for chaining
  */
+
 
 /**
  * @class FormApp.Choice
@@ -880,6 +741,7 @@
  *
  * @return {Boolean} Whether the choice is a correct answer.
  */
+
 
 /**
  * @class FormApp.DateItem
@@ -926,7 +788,7 @@
  *
  * @function FormApp.DateItem#getId
  *
- * @return {number} the item's ID
+ * @return {IntegerNum} the item's ID
  */
 
 /**
@@ -934,7 +796,7 @@
  *
  * @function FormApp.DateItem#getIndex
  *
- * @return {number} the index of the item
+ * @return {IntegerNum} the index of the item
  */
 
 /**
@@ -942,7 +804,7 @@
  *
  * @function FormApp.DateItem#getPoints
  *
- * @return {number} the number of points a question is worth.
+ * @return {IntegerNum} the number of points a question is worth.
  */
 
 /**
@@ -1013,7 +875,7 @@
  *
  * @function FormApp.DateItem#setPoints
  *
- * @param {number} points - the number of a points a question item is worth
+ * @param {IntegerNum} points - the number of a points a question item is worth
  *
  * @return {FormApp.DateItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/date-item.html'>DateItem</a></code>, for chaining
  */
@@ -1037,6 +899,7 @@
  *
  * @return {FormApp.DateItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/date-item.html'>DateItem</a></code>, for chaining
  */
+
 
 /**
  * @class FormApp.DateTimeItem
@@ -1084,7 +947,7 @@
  *
  * @function FormApp.DateTimeItem#getId
  *
- * @return {number} the item's ID
+ * @return {IntegerNum} the item's ID
  */
 
 /**
@@ -1092,7 +955,7 @@
  *
  * @function FormApp.DateTimeItem#getIndex
  *
- * @return {number} the index of the item
+ * @return {IntegerNum} the index of the item
  */
 
 /**
@@ -1100,7 +963,7 @@
  *
  * @function FormApp.DateTimeItem#getPoints
  *
- * @return {number} the number of points a question is worth.
+ * @return {IntegerNum} the number of points a question is worth.
  */
 
 /**
@@ -1171,7 +1034,7 @@
  *
  * @function FormApp.DateTimeItem#setPoints
  *
- * @param {number} points - the number of a points a question item is worth
+ * @param {IntegerNum} points - the number of a points a question item is worth
  *
  * @return {FormApp.DateTimeItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/date-time-item.html'>DateTimeItem</a></code>, for chaining
  */
@@ -1196,6 +1059,18 @@
  * @return {FormApp.DateTimeItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/date-time-item.html'>DateTimeItem</a></code>, for chaining
  */
 
+
+/**
+ * @class FormApp.DestinationType
+ */
+
+/**
+ * A Google Sheets spreadsheet as a destination for form responses.
+ *
+ * @typedef {FormApp.DestinationType} FormApp.DestinationType.SPREADSHEET
+ */
+
+
 /**
  * @class FormApp.DurationItem
  */
@@ -1207,9 +1082,9 @@
  *
  * @function FormApp.DurationItem#createResponse
  *
- * @param {number} hours - the hours, represented as an integer from <code>0</code> to <code>72</code>
- * @param {number} minutes - the minutes, represented as an integer from <code>0</code> to <code>59</code>
- * @param {number} seconds - the seconds, represented as an integer from <code>0</code> to <code>59</code>
+ * @param {IntegerNum} hours - the hours, represented as an integer from <code>0</code> to <code>72</code>
+ * @param {IntegerNum} minutes - the minutes, represented as an integer from <code>0</code> to <code>59</code>
+ * @param {IntegerNum} seconds - the seconds, represented as an integer from <code>0</code> to <code>59</code>
  *
  * @return {FormApp.ItemResponse} the item response
  */
@@ -1243,7 +1118,7 @@
  *
  * @function FormApp.DurationItem#getId
  *
- * @return {number} the item's ID
+ * @return {IntegerNum} the item's ID
  */
 
 /**
@@ -1251,7 +1126,7 @@
  *
  * @function FormApp.DurationItem#getIndex
  *
- * @return {number} the index of the item
+ * @return {IntegerNum} the index of the item
  */
 
 /**
@@ -1259,7 +1134,7 @@
  *
  * @function FormApp.DurationItem#getPoints
  *
- * @return {number} the number of points a question is worth.
+ * @return {IntegerNum} the number of points a question is worth.
  */
 
 /**
@@ -1312,7 +1187,7 @@
  *
  * @function FormApp.DurationItem#setPoints
  *
- * @param {number} points - the number of a points a question item is worth
+ * @param {IntegerNum} points - the number of a points a question item is worth
  *
  * @return {FormApp.DurationItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/duration-item.html'>DurationItem</a></code>, for chaining
  */
@@ -1336,6 +1211,36 @@
  *
  * @return {FormApp.DurationItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/duration-item.html'>DurationItem</a></code>, for chaining
  */
+
+
+/**
+ * @class FormApp.FeedbackType
+ */
+
+/**
+ * Feedback that is automatically displayed to respondents for a question answered correctly.
+ Correct feedback can only be attached to a question type that supports autograding (e.g. radio,
+ checkbox, select)
+ *
+ * @typedef {FormApp.FeedbackType} FormApp.FeedbackType.CORRECT
+ */
+
+/**
+ * Feedback that is automatically displayed to respondents when they submit their response.
+ General feedback can only be attached to question types that do not support auto-grading, but
+ are gradeable (ie everything but grid)
+ *
+ * @typedef {FormApp.FeedbackType} FormApp.FeedbackType.GENERAL
+ */
+
+/**
+ * Feedback that is automatically displayed to respondents for a question answered incorrectly.
+ Incorrect feedback can only be attached to a question type that supports autograding (e.g.
+ radio, checkbox, select)
+ *
+ * @typedef {FormApp.FeedbackType} FormApp.FeedbackType.INCORRECT
+ */
+
 
 /**
  * @class FormApp.Form
@@ -1566,7 +1471,7 @@
  *
  * @function FormApp.Form#deleteItem
  *
- * @param {number} index - the index of the item among all the items in the form
+ * @param {IntegerNum} index - the index of the item among all the items in the form
  *
  * @return void
  */
@@ -1644,7 +1549,7 @@
  *
  * @function FormApp.Form#getItemById
  *
- * @param {number} id - the item's ID
+ * @param {IntegerNum} id - the item's ID
  *
  * @return {FormApp.Item} the item with the given ID, or <code>null</code> if the item does not exist in the form
  */
@@ -1787,7 +1692,7 @@
  * @function FormApp.Form#moveItem
  *
  * @param {FormApp.Item} item - the item to move
- * @param {number} toIndex - the new index for the item among all the items in the form
+ * @param {IntegerNum} toIndex - the new index for the item among all the items in the form
  *
  * @return {FormApp.Item} the item that was moved
  */
@@ -1798,8 +1703,8 @@
  *
  * @function FormApp.Form#moveItem
  *
- * @param {number} from - the current index of the item among all the items in the form
- * @param {number} to - the new index for the item among all the items in the form
+ * @param {IntegerNum} from - the current index of the item among all the items in the form
+ * @param {IntegerNum} to - the new index for the item among all the items in the form
  *
  * @return {FormApp.Item} the item that was moved
  */
@@ -2034,7 +1939,7 @@
  *
  * @function FormApp.Form#shortenFormUrl
  *
- * @param {String} url - 
+ * @param {String} url
  *
  * @return {String} a URL in the form <code>http://goo.gl/forms/1234</code>
  */
@@ -2044,10 +1949,11 @@
  *
  * @function FormApp.Form#submitGrades
  *
- * @param {FormApp.FormResponse[]} responses - 
+ * @param {FormApp.FormResponse[]} responses
  *
  * @return {FormApp.Form} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>, for chaining
  */
+
 
 /**
  * @class FormApp.FormResponse
@@ -2090,7 +1996,7 @@
  *
  * @function FormApp.FormResponse#getGradableResponseForItem
  *
- * @param {FormApp.Item} item - 
+ * @param {FormApp.Item} item
  *
  * @return {FormApp.ItemResponse} the response for a given item, or <code>null</code> if none exists and the item is ungraded
  */
@@ -2134,7 +2040,7 @@
  *
  * @function FormApp.FormResponse#getResponseForItem
  *
- * @param {FormApp.Item} item - 
+ * @param {FormApp.Item} item
  *
  * @return {FormApp.ItemResponse} the response for a given item, or <code>null</code> if none exists
  */
@@ -2200,7 +2106,7 @@
  *
  * @function FormApp.FormResponse#withItemGrade
  *
- * @param {FormApp.ItemResponse} gradedResponse - 
+ * @param {FormApp.ItemResponse} gradedResponse
  *
  * @return {FormApp.FormResponse} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form-response.html'>FormResponse</a></code>, for chaining
  */
@@ -2212,10 +2118,11 @@
  *
  * @function FormApp.FormResponse#withItemResponse
  *
- * @param {FormApp.ItemResponse} response - 
+ * @param {FormApp.ItemResponse} response
  *
  * @return {FormApp.FormResponse} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form-response.html'>FormResponse</a></code>, for chaining
  */
+
 
 /**
  * @class FormApp.GridItem
@@ -2270,7 +2177,7 @@
  *
  * @function FormApp.GridItem#getId
  *
- * @return {number} the item's ID
+ * @return {IntegerNum} the item's ID
  */
 
 /**
@@ -2278,7 +2185,7 @@
  *
  * @function FormApp.GridItem#getIndex
  *
- * @return {number} the index of the item
+ * @return {IntegerNum} the index of the item
  */
 
 /**
@@ -2376,9 +2283,11 @@
  * @return {FormApp.GridItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/grid-item.html'>GridItem</a></code>, for chaining
  */
 
+
 /**
  * @class FormApp.GridValidation
  */
+
 
 /**
  * @class FormApp.GridValidationBuilder
@@ -2391,6 +2300,7 @@
  *
  * @return {FormApp.GridValidationBuilder} this validation builder, for chaining
  */
+
 
 /**
  * @class FormApp.ImageItem
@@ -2425,7 +2335,7 @@
  *
  * @function FormApp.ImageItem#getId
  *
- * @return {number} the item's ID
+ * @return {IntegerNum} the item's ID
  */
 
 /**
@@ -2441,7 +2351,7 @@
  *
  * @function FormApp.ImageItem#getIndex
  *
- * @return {number} the index of the item
+ * @return {IntegerNum} the index of the item
  */
 
 /**
@@ -2465,7 +2375,7 @@
  *
  * @function FormApp.ImageItem#getWidth
  *
- * @return {number} the width in pixels
+ * @return {IntegerNum} the width in pixels
  */
 
 /**
@@ -2514,10 +2424,11 @@
  *
  * @function FormApp.ImageItem#setWidth
  *
- * @param {number} width - the width in pixels
+ * @param {IntegerNum} width - the width in pixels
  *
  * @return {FormApp.ImageItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/image-item.html'>ImageItem</a></code>, for chaining
  */
+
 
 /**
  * @class FormApp.Item
@@ -2672,7 +2583,7 @@
  *
  * @function FormApp.Item#getId
  *
- * @return {number} the item's ID
+ * @return {IntegerNum} the item's ID
  */
 
 /**
@@ -2680,7 +2591,7 @@
  *
  * @function FormApp.Item#getIndex
  *
- * @return {number} the index of the item
+ * @return {IntegerNum} the index of the item
  */
 
 /**
@@ -2718,6 +2629,7 @@
  *
  * @return {FormApp.Item} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/item.html'>Item</a></code>, for chaining
  */
+
 
 /**
  * @class FormApp.ItemResponse
@@ -2775,7 +2687,7 @@
  *
  * @function FormApp.ItemResponse#setFeedback
  *
- * @param {Object} feedback - 
+ * @param {Object} feedback
  *
  * @return {FormApp.ItemResponse} a <code>ItemResponse</code> for chaining
  */
@@ -2811,10 +2723,111 @@
  *
  * @function FormApp.ItemResponse#setScore
  *
- * @param {Object} score - 
+ * @param {Object} score
  *
  * @return {FormApp.ItemResponse} a <code>ItemResponse</code> for chaining
  */
+
+
+/**
+ * @class FormApp.ItemType
+ */
+
+/**
+ * A question item that allows the respondent to select one or more checkboxes, as well as an
+ optional "other" field.
+ *
+ * @typedef {FormApp.ItemType} FormApp.ItemType.CHECKBOX
+ */
+
+/**
+ * A question item, presented as a grid of columns and rows, that allows the respondent to select
+ multiple choices per row from a sequence of checkboxes.
+ *
+ * @typedef {FormApp.ItemType} FormApp.ItemType.CHECKBOX_GRID
+ */
+
+/**
+ * A question item that allows the respondent to indicate a date.
+ *
+ * @typedef {FormApp.ItemType} FormApp.ItemType.DATE
+ */
+
+/**
+ * A question item that allows the respondent to indicate a date and time.
+ *
+ * @typedef {FormApp.ItemType} FormApp.ItemType.DATETIME
+ */
+
+/**
+ * A question item that allows the respondent to indicate a length of time.
+ *
+ * @typedef {FormApp.ItemType} FormApp.ItemType.DURATION
+ */
+
+/**
+ * A question item, presented as a grid of columns and rows, that allows the respondent to select
+ one choice per row from a sequence of radio buttons.
+ *
+ * @typedef {FormApp.ItemType} FormApp.ItemType.GRID
+ */
+
+/**
+ * A layout item that displays an image.
+ *
+ * @typedef {FormApp.ItemType} FormApp.ItemType.IMAGE
+ */
+
+/**
+ * A question item that allows the respondent to select one choice from a drop-down list.
+ *
+ * @typedef {FormApp.ItemType} FormApp.ItemType.LIST
+ */
+
+/**
+ * A question item that allows the respondent to select one choice from a list of radio buttons or
+ an optional "other" field.
+ *
+ * @typedef {FormApp.ItemType} FormApp.ItemType.MULTIPLE_CHOICE
+ */
+
+/**
+ * A layout item that marks the start of a page.
+ *
+ * @typedef {FormApp.ItemType} FormApp.ItemType.PAGE_BREAK
+ */
+
+/**
+ * A question item that allows the respondent to enter a block of text.
+ *
+ * @typedef {FormApp.ItemType} FormApp.ItemType.PARAGRAPH_TEXT
+ */
+
+/**
+ * A question item that allows the respondent to choose one option from a numbered sequence of
+ radio buttons.
+ *
+ * @typedef {FormApp.ItemType} FormApp.ItemType.SCALE
+ */
+
+/**
+ * A layout item that visually indicates the start of a section.
+ *
+ * @typedef {FormApp.ItemType} FormApp.ItemType.SECTION_HEADER
+ */
+
+/**
+ * A question item that allows the respondent to enter a single line of text.
+ *
+ * @typedef {FormApp.ItemType} FormApp.ItemType.TEXT
+ */
+
+/**
+ * A question item that allows the respondent to indicate a time of day.
+ *
+ * @typedef {FormApp.ItemType} FormApp.ItemType.TIME
+ */
+
 
 /**
  * @class FormApp.ListItem
@@ -2931,7 +2944,7 @@
  *
  * @function FormApp.ListItem#getId
  *
- * @return {number} the item's ID
+ * @return {IntegerNum} the item's ID
  */
 
 /**
@@ -2939,7 +2952,7 @@
  *
  * @function FormApp.ListItem#getIndex
  *
- * @return {number} the index of the item
+ * @return {IntegerNum} the index of the item
  */
 
 /**
@@ -2947,7 +2960,7 @@
  *
  * @function FormApp.ListItem#getPoints
  *
- * @return {number} the number of points a question is worth.
+ * @return {IntegerNum} the number of points a question is worth.
  */
 
 /**
@@ -3064,7 +3077,7 @@
  *
  * @function FormApp.ListItem#setPoints
  *
- * @param {number} points - the number of a points a question item is worth
+ * @param {IntegerNum} points - the number of a points a question item is worth
  *
  * @return {FormApp.ListItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/list-item.html'>ListItem</a></code>, for chaining
  */
@@ -3088,6 +3101,7 @@
  *
  * @return {FormApp.ListItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/list-item.html'>ListItem</a></code>, for chaining
  */
+
 
 /**
  * @class FormApp.MultipleChoiceItem
@@ -3205,7 +3219,7 @@
  *
  * @function FormApp.MultipleChoiceItem#getId
  *
- * @return {number} the item's ID
+ * @return {IntegerNum} the item's ID
  */
 
 /**
@@ -3213,7 +3227,7 @@
  *
  * @function FormApp.MultipleChoiceItem#getIndex
  *
- * @return {number} the index of the item
+ * @return {IntegerNum} the index of the item
  */
 
 /**
@@ -3221,7 +3235,7 @@
  *
  * @function FormApp.MultipleChoiceItem#getPoints
  *
- * @return {number} the number of points a question is worth.
+ * @return {IntegerNum} the number of points a question is worth.
  */
 
 /**
@@ -3346,7 +3360,7 @@
  *
  * @function FormApp.MultipleChoiceItem#setPoints
  *
- * @param {number} points - the number of a points a question item is worth
+ * @param {IntegerNum} points - the number of a points a question item is worth
  *
  * @return {FormApp.MultipleChoiceItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/multiple-choice-item.html'>MultipleChoiceItem</a></code>, for chaining
  */
@@ -3381,6 +3395,7 @@
  *
  * @return {FormApp.MultipleChoiceItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/multiple-choice-item.html'>MultipleChoiceItem</a></code>, for chaining
  */
+
 
 /**
  * @class FormApp.PageBreakItem
@@ -3417,7 +3432,7 @@
  *
  * @function FormApp.PageBreakItem#getId
  *
- * @return {number} the item's ID
+ * @return {IntegerNum} the item's ID
  */
 
 /**
@@ -3425,7 +3440,7 @@
  *
  * @function FormApp.PageBreakItem#getIndex
  *
- * @return {number} the index of the item
+ * @return {IntegerNum} the index of the item
  */
 
 /**
@@ -3500,6 +3515,37 @@
  * @return {FormApp.PageBreakItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/page-break-item.html'>PageBreakItem</a></code>, for chaining
  */
 
+
+/**
+ * @class FormApp.PageNavigationType
+ */
+
+/**
+ * Continue to the next page of the form after completing the current page.
+ *
+ * @typedef {FormApp.PageNavigationType} FormApp.PageNavigationType.CONTINUE
+ */
+
+/**
+ * Jump to a specified page of the form after completing the current page.
+ *
+ * @typedef {FormApp.PageNavigationType} FormApp.PageNavigationType.GO_TO_PAGE
+ */
+
+/**
+ * Restart the form from the beginning, without clearing answers entered so far, after completing
+ the current page.
+ *
+ * @typedef {FormApp.PageNavigationType} FormApp.PageNavigationType.RESTART
+ */
+
+/**
+ * Submit the form response after completing the current page.
+ *
+ * @typedef {FormApp.PageNavigationType} FormApp.PageNavigationType.SUBMIT
+ */
+
+
 /**
  * @class FormApp.ParagraphTextItem
  */
@@ -3551,7 +3597,7 @@
  *
  * @function FormApp.ParagraphTextItem#getId
  *
- * @return {number} the item's ID
+ * @return {IntegerNum} the item's ID
  */
 
 /**
@@ -3559,7 +3605,7 @@
  *
  * @function FormApp.ParagraphTextItem#getIndex
  *
- * @return {number} the index of the item
+ * @return {IntegerNum} the index of the item
  */
 
 /**
@@ -3567,7 +3613,7 @@
  *
  * @function FormApp.ParagraphTextItem#getPoints
  *
- * @return {number} the number of points a question is worth.
+ * @return {IntegerNum} the number of points a question is worth.
  */
 
 /**
@@ -3620,7 +3666,7 @@
  *
  * @function FormApp.ParagraphTextItem#setPoints
  *
- * @param {number} points - the number of a points a question item is worth
+ * @param {IntegerNum} points - the number of a points a question item is worth
  *
  * @return {FormApp.ParagraphTextItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/paragraph-text-item.html'>ParagraphTextItem</a></code>, for chaining
  */
@@ -3656,9 +3702,11 @@
  * @return {FormApp.ParagraphTextItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/paragraph-text-item.html'>ParagraphTextItem</a></code>, for chaining
  */
 
+
 /**
  * @class FormApp.ParagraphTextValidation
  */
+
 
 /**
  * @class FormApp.ParagraphTextValidationBuilder
@@ -3699,7 +3747,7 @@
  *
  * @function FormApp.ParagraphTextValidationBuilder#requireTextLengthGreaterThanOrEqualTo
  *
- * @param {number} number - paragraph text length must be greater than this value
+ * @param {IntegerNum} number - paragraph text length must be greater than this value
  *
  * @return {FormApp.ParagraphTextValidationBuilder} this for chaining
  */
@@ -3709,7 +3757,7 @@
  *
  * @function FormApp.ParagraphTextValidationBuilder#requireTextLengthLessThanOrEqualTo
  *
- * @param {number} number - paragraph text length must be less than or equal to this value
+ * @param {IntegerNum} number - paragraph text length must be less than or equal to this value
  *
  * @return {FormApp.ParagraphTextValidationBuilder} this for chaining
  */
@@ -3723,6 +3771,7 @@
  *
  * @return {FormApp.ParagraphTextValidationBuilder} this for chaining
  */
+
 
 /**
  * @class FormApp.QuizFeedback
@@ -3745,6 +3794,7 @@
  *
  * @return {String} the Feedback's text
  */
+
 
 /**
  * @class FormApp.QuizFeedbackBuilder
@@ -3797,6 +3847,7 @@
  * @return {FormApp.QuizFeedbackBuilder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/quiz-feedback-builder.html'>QuizFeedbackBuilder</a></code>, for chaining
  */
 
+
 /**
  * @class FormApp.ScaleItem
  */
@@ -3806,7 +3857,7 @@
  *
  * @function FormApp.ScaleItem#createResponse
  *
- * @param {number} response - a value answer for this scale item
+ * @param {IntegerNum} response - a value answer for this scale item
  *
  * @return {FormApp.ItemResponse} the item response
  */
@@ -3840,7 +3891,7 @@
  *
  * @function FormApp.ScaleItem#getId
  *
- * @return {number} the item's ID
+ * @return {IntegerNum} the item's ID
  */
 
 /**
@@ -3848,7 +3899,7 @@
  *
  * @function FormApp.ScaleItem#getIndex
  *
- * @return {number} the index of the item
+ * @return {IntegerNum} the index of the item
  */
 
 /**
@@ -3864,7 +3915,7 @@
  *
  * @function FormApp.ScaleItem#getLowerBound
  *
- * @return {number} the scale's lower bound
+ * @return {IntegerNum} the scale's lower bound
  */
 
 /**
@@ -3872,7 +3923,7 @@
  *
  * @function FormApp.ScaleItem#getPoints
  *
- * @return {number} the number of points a question is worth.
+ * @return {IntegerNum} the number of points a question is worth.
  */
 
 /**
@@ -3904,7 +3955,7 @@
  *
  * @function FormApp.ScaleItem#getUpperBound
  *
- * @return {number} the scale's upper bound
+ * @return {IntegerNum} the scale's upper bound
  */
 
 /**
@@ -3925,8 +3976,8 @@
  *
  * @function FormApp.ScaleItem#setBounds
  *
- * @param {number} lower - the new lower bound
- * @param {number} upper - the new upper bound
+ * @param {IntegerNum} lower - the new lower bound
+ * @param {IntegerNum} upper - the new upper bound
  *
  * @return {FormApp.ScaleItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/scale-item.html'>ScaleItem</a></code>, for chaining
  */
@@ -3968,7 +4019,7 @@
  *
  * @function FormApp.ScaleItem#setPoints
  *
- * @param {number} points - the number of a points a question item is worth
+ * @param {IntegerNum} points - the number of a points a question item is worth
  *
  * @return {FormApp.ScaleItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/scale-item.html'>ScaleItem</a></code>, for chaining
  */
@@ -3992,6 +4043,7 @@
  *
  * @return {FormApp.ScaleItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/scale-item.html'>ScaleItem</a></code>, for chaining
  */
+
 
 /**
  * @class FormApp.SectionHeaderItem
@@ -4018,7 +4070,7 @@
  *
  * @function FormApp.SectionHeaderItem#getId
  *
- * @return {number} the item's ID
+ * @return {IntegerNum} the item's ID
  */
 
 /**
@@ -4026,7 +4078,7 @@
  *
  * @function FormApp.SectionHeaderItem#getIndex
  *
- * @return {number} the index of the item
+ * @return {IntegerNum} the index of the item
  */
 
 /**
@@ -4064,6 +4116,7 @@
  *
  * @return {FormApp.SectionHeaderItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/section-header-item.html'>SectionHeaderItem</a></code>, for chaining
  */
+
 
 /**
  * @class FormApp.TextItem
@@ -4116,7 +4169,7 @@
  *
  * @function FormApp.TextItem#getId
  *
- * @return {number} the item's ID
+ * @return {IntegerNum} the item's ID
  */
 
 /**
@@ -4124,7 +4177,7 @@
  *
  * @function FormApp.TextItem#getIndex
  *
- * @return {number} the index of the item
+ * @return {IntegerNum} the index of the item
  */
 
 /**
@@ -4132,7 +4185,7 @@
  *
  * @function FormApp.TextItem#getPoints
  *
- * @return {number} the number of points a question is worth.
+ * @return {IntegerNum} the number of points a question is worth.
  */
 
 /**
@@ -4185,7 +4238,7 @@
  *
  * @function FormApp.TextItem#setPoints
  *
- * @param {number} points - the number of a points a question item is worth
+ * @param {IntegerNum} points - the number of a points a question item is worth
  *
  * @return {FormApp.TextItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/text-item.html'>TextItem</a></code>, for chaining
  */
@@ -4221,9 +4274,11 @@
  * @return {FormApp.TextItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/text-item.html'>TextItem</a></code>, for chaining
  */
 
+
 /**
  * @class FormApp.TextValidation
  */
+
 
 /**
  * @class FormApp.TextValidationBuilder
@@ -4370,7 +4425,7 @@
  *
  * @function FormApp.TextValidationBuilder#requireTextLengthGreaterThanOrEqualTo
  *
- * @param {number} number - paragraph text length must be greater than this value
+ * @param {IntegerNum} number - paragraph text length must be greater than this value
  *
  * @return {FormApp.TextValidationBuilder} this for chaining
  */
@@ -4380,7 +4435,7 @@
  *
  * @function FormApp.TextValidationBuilder#requireTextLengthLessThanOrEqualTo
  *
- * @param {number} number - paragraph text length must be less than or equal to this value
+ * @param {IntegerNum} number - paragraph text length must be less than or equal to this value
  *
  * @return {FormApp.TextValidationBuilder} this for chaining
  */
@@ -4403,6 +4458,7 @@
  * @return {FormApp.TextValidationBuilder} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/text-validation.html'>TextValidation</a></code>, for chaining
  */
 
+
 /**
  * @class FormApp.TimeItem
  */
@@ -4414,8 +4470,8 @@
  *
  * @function FormApp.TimeItem#createResponse
  *
- * @param {number} hour - the hour, represented as an integer from <code>0</code> to <code>23</code>
- * @param {number} minute - the minute of the hour, represented as an integer from <code>0</code> to <code>59</code>
+ * @param {IntegerNum} hour - the hour, represented as an integer from <code>0</code> to <code>23</code>
+ * @param {IntegerNum} minute - the minute of the hour, represented as an integer from <code>0</code> to <code>59</code>
  *
  * @return {FormApp.ItemResponse} the item response
  */
@@ -4449,7 +4505,7 @@
  *
  * @function FormApp.TimeItem#getId
  *
- * @return {number} the item's ID
+ * @return {IntegerNum} the item's ID
  */
 
 /**
@@ -4457,7 +4513,7 @@
  *
  * @function FormApp.TimeItem#getIndex
  *
- * @return {number} the index of the item
+ * @return {IntegerNum} the index of the item
  */
 
 /**
@@ -4465,7 +4521,7 @@
  *
  * @function FormApp.TimeItem#getPoints
  *
- * @return {number} the number of points a question is worth.
+ * @return {IntegerNum} the number of points a question is worth.
  */
 
 /**
@@ -4518,7 +4574,7 @@
  *
  * @function FormApp.TimeItem#setPoints
  *
- * @param {number} points - the number of a points a question item is worth
+ * @param {IntegerNum} points - the number of a points a question item is worth
  *
  * @return {FormApp.TimeItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/time-item.html'>TimeItem</a></code>, for chaining
  */
@@ -4542,6 +4598,7 @@
  *
  * @return {FormApp.TimeItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/time-item.html'>TimeItem</a></code>, for chaining
  */
+
 
 /**
  * @class FormApp.VideoItem
@@ -4576,7 +4633,7 @@
  *
  * @function FormApp.VideoItem#getId
  *
- * @return {number} the item's ID
+ * @return {IntegerNum} the item's ID
  */
 
 /**
@@ -4584,7 +4641,7 @@
  *
  * @function FormApp.VideoItem#getIndex
  *
- * @return {number} the index of the item
+ * @return {IntegerNum} the index of the item
  */
 
 /**
@@ -4608,7 +4665,7 @@
  *
  * @function FormApp.VideoItem#getWidth
  *
- * @return {number} the width in pixels
+ * @return {IntegerNum} the width in pixels
  */
 
 /**
@@ -4657,8 +4714,9 @@
  *
  * @function FormApp.VideoItem#setWidth
  *
- * @param {number} width - the width in pixels
+ * @param {IntegerNum} width - the width in pixels
  *
  * @return {FormApp.VideoItem} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/video-item.html'>VideoItem</a></code>, for chaining
  */
+
 

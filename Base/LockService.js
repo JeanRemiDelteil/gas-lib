@@ -2,7 +2,6 @@
  * @namespace LockService
  ***********************************************/
 
-
 /**
  * Gets a lock that prevents any user of the current document from concurrently running a section
  of code. A code section guarded by a document lock can be executed simultaneously by script
@@ -38,6 +37,7 @@
  *
  * @return {LockService.Lock} a lock scoped to the script and current user
  */
+
 
 /**
  * @class LockService.Lock
@@ -96,7 +96,7 @@
  *
  * @function LockService.Lock#tryLock
  *
- * @param {number} timeoutInMillis - how long to wait to acquire the lock, in milliseconds
+ * @param {IntegerNum} timeoutInMillis - how long to wait to acquire the lock, in milliseconds
  *
  * @return {Boolean} true if the lock was acquired, false otherwise
  */
@@ -117,8 +117,9 @@
  *
  * @function LockService.Lock#waitLock
  *
- * @param {number} timeoutInMillis - how long to wait to acquire the lock, in milliseconds
+ * @param {IntegerNum} timeoutInMillis - how long to wait to acquire the lock, in milliseconds
  *
  * @return void
  */
+
 

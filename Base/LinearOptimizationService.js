@@ -2,71 +2,16 @@
  * @namespace LinearOptimizationService
  ***********************************************/
 
-
 /**
  * Status of the solver.
  *
- * @class LinearOptimizationService.Status
- */
-
-/**
- * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.ABNORMAL
- * 
- * Status when it failed to find a solution for unexpected reasons.
- */
-
-/**
- * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.FEASIBLE
- * 
- * Status when a feasible (not necessarily optimal) solution has been found.
- */
-
-/**
- * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.INFEASIBLE
- * 
- * Status when the current model is unfeasible (has no solution).
- */
-
-/**
- * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.MODEL_INVALID
- * 
- * Status when the model is invalid.
- */
-
-/**
- * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.NOT_SOLVED
- * 
- * Status when <code><a target='_blank' href='https://developers.google.com/apps-script/reference/optimization/linear-optimization-engine.html#solve()'>LinearOptimizationEngine.solve()</a></code> has not been called yet.
- */
-
-/**
- * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.OPTIMAL
- * 
- * Status when an optimal solution has been found.
- */
-
-/**
- * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.UNBOUNDED
- * 
- * Status when the current model is unbound.
+ * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status
  */
 
 /**
  * Type of variables created by the solver.
  *
- * @class LinearOptimizationService.VariableType
- */
-
-/**
- * @typedef {LinearOptimizationService.VariableType} LinearOptimizationService.VariableType.CONTINUOUS
- * 
- * Type of variable that can take any real value.
- */
-
-/**
- * @typedef {LinearOptimizationService.VariableType} LinearOptimizationService.VariableType.INTEGER
- * 
- * Type of variable that can only take integer values.
+ * @typedef {LinearOptimizationService.VariableType} LinearOptimizationService.VariableType
  */
 
 /**
@@ -84,6 +29,7 @@
  *
  * @return {LinearOptimizationService.LinearOptimizationEngine} a linear optimization engine
  */
+
 
 /**
  * @class LinearOptimizationService.LinearOptimizationConstraint
@@ -111,6 +57,7 @@
  *
  * @return {LinearOptimizationService.LinearOptimizationConstraint} this linear optimization constraint
  */
+
 
 /**
  * @class LinearOptimizationService.LinearOptimizationEngine
@@ -334,6 +281,7 @@
  * @return {LinearOptimizationService.LinearOptimizationSolution} solution of the optimization
  */
 
+
 /**
  * @class LinearOptimizationService.LinearOptimizationSolution
  */
@@ -430,4 +378,69 @@
  * @return {Boolean} <code>true</code> if the solution is valid (<code><a target='_blank' href='https://developers.google.com/apps-script/reference/optimization/status.html#FEASIBLE'>Status.FEASIBLE</a></code> or
      <code><a target='_blank' href='https://developers.google.com/apps-script/reference/optimization/status.html#OPTIMAL'>Status.OPTIMAL</a></code>); <code>false</code> if not
  */
+
+
+/**
+ * @class LinearOptimizationService.Status
+ */
+
+/**
+ * Status when it failed to find a solution for unexpected reasons.
+ *
+ * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.ABNORMAL
+ */
+
+/**
+ * Status when a feasible (not necessarily optimal) solution has been found.
+ *
+ * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.FEASIBLE
+ */
+
+/**
+ * Status when the current model is unfeasible (has no solution).
+ *
+ * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.INFEASIBLE
+ */
+
+/**
+ * Status when the model is invalid.
+ *
+ * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.MODEL_INVALID
+ */
+
+/**
+ * Status when <code><a target='_blank' href='https://developers.google.com/apps-script/reference/optimization/linear-optimization-engine.html#solve()'>LinearOptimizationEngine.solve()</a></code> has not been called yet.
+ *
+ * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.NOT_SOLVED
+ */
+
+/**
+ * Status when an optimal solution has been found.
+ *
+ * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.OPTIMAL
+ */
+
+/**
+ * Status when the current model is unbound.
+ *
+ * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.UNBOUNDED
+ */
+
+
+/**
+ * @class LinearOptimizationService.VariableType
+ */
+
+/**
+ * Type of variable that can take any real value.
+ *
+ * @typedef {LinearOptimizationService.VariableType} LinearOptimizationService.VariableType.CONTINUOUS
+ */
+
+/**
+ * Type of variable that can only take integer values.
+ *
+ * @typedef {LinearOptimizationService.VariableType} LinearOptimizationService.VariableType.INTEGER
+ */
+
 
