@@ -12853,7 +12853,7 @@
  *
  * @function SpreadsheetApp.Range#getValue
  *
- * @return {Object} the value in this cell
+ * @return {Object | string | Number | Date | Boolean} the value in this cell
  */
 
 /**
