@@ -1,70 +1,17 @@
-var LinearOptimizationService = {};
-
+/**********************************************
+ * @namespace LinearOptimizationService
+ ***********************************************/
 
 /**
  * Status of the solver.
- * 
- * @class LinearOptimizationService.Status
- */
-
-/**
- * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.ABNORMAL
- * 
- * Status when it failed to find a solution for unexpected reasons.
- */
-
-/**
- * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.FEASIBLE
- * 
- * Status when a feasible (not necessarily optimal) solution has been found.
- */
-
-/**
- * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.INFEASIBLE
- * 
- * Status when the current model is unfeasible (has no solution).
- */
-
-/**
- * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.MODEL_INVALID
- * 
- * Status when the model is invalid.
- */
-
-/**
- * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.NOT_SOLVED
- * 
- * Status when <code><a target='_blank' href='https://developers.google.com/apps-script/reference/optimization/linear-optimization-engine.html#solve()'>LinearOptimizationEngine.solve()</a></code> has not been called yet.
- */
-
-/**
- * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.OPTIMAL
- * 
- * Status when an optimal solution has been found.
- */
-
-/**
- * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.UNBOUNDED
- * 
- * Status when the current model is unbound.
+ *
+ * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status
  */
 
 /**
  * Type of variables created by the solver.
- * 
- * @class LinearOptimizationService.VariableType
- */
-
-/**
- * @typedef {LinearOptimizationService.VariableType} LinearOptimizationService.VariableType.CONTINUOUS
- * 
- * Type of variable that can take any real value.
- */
-
-/**
- * @typedef {LinearOptimizationService.VariableType} LinearOptimizationService.VariableType.INTEGER
- * 
- * Type of variable that can only take integer values.
+ *
+ * @typedef {LinearOptimizationService.VariableType} LinearOptimizationService.VariableType
  */
 
 /**
@@ -78,12 +25,15 @@ var LinearOptimizationService = {};
  // ...
  </code></pre>
  *
+ * @function LinearOptimizationService.createEngine
+ *
  * @return {LinearOptimizationService.LinearOptimizationEngine} a linear optimization engine
  */
-LinearOptimizationService.createEngine = function(){};
 
-/** @constructor */
-LinearOptimizationService.LinearOptimizationConstraint = function(){};
+
+/**
+ * @class LinearOptimizationService.LinearOptimizationConstraint
+ */
 
 /**
  * Sets the coefficient of a variable in the constraint. By default, variables have a coefficient
@@ -100,15 +50,18 @@ LinearOptimizationService.LinearOptimizationConstraint = function(){};
  constraint.setCoefficient(&#39;x&#39;, 2);
  </code></pre>
  *
+ * @function LinearOptimizationService.LinearOptimizationConstraint#setCoefficient
+ *
  * @param {String} variableName - the name of variable for which the coefficient is being set
  * @param {Number} coefficient - coefficient being set
  *
  * @return {LinearOptimizationService.LinearOptimizationConstraint} this linear optimization constraint
  */
-LinearOptimizationService.LinearOptimizationConstraint.prototype.setCoefficient = function(variableName, coefficient){};
 
-/** @constructor */
-LinearOptimizationService.LinearOptimizationEngine = function(){};
+
+/**
+ * @class LinearOptimizationService.LinearOptimizationEngine
+ */
 
 /**
  * Adds a new linear constraint in the model. The upper and lower bound of the constraint are
@@ -128,12 +81,13 @@ LinearOptimizationService.LinearOptimizationEngine = function(){};
  constraint.setCoefficient(&#39;x&#39;, 2);
  </code></pre>
  *
+ * @function LinearOptimizationService.LinearOptimizationEngine#addConstraint
+ *
  * @param {Number} lowerBound - lower bound of the constraint
  * @param {Number} upperBound - upper bound of the constraint
  *
  * @return {LinearOptimizationService.LinearOptimizationConstraint} the constraint created
  */
-LinearOptimizationService.LinearOptimizationEngine.prototype.addConstraint = function(lowerBound, upperBound){};
 
 /**
  * Adds a new continuous variable to the model. The variable is referenced by its name. The type
@@ -150,13 +104,14 @@ LinearOptimizationService.LinearOptimizationEngine.prototype.addConstraint = fun
  engine.addVariable(&#39;y&#39;, 0, 100);
  </code></pre>
  *
+ * @function LinearOptimizationService.LinearOptimizationEngine#addVariable
+ *
  * @param {String} name - unique name of the variable
  * @param {Number} lowerBound - lower bound of the variable
  * @param {Number} upperBound - upper bound of the variable
  *
  * @return {LinearOptimizationService.LinearOptimizationEngine} a linear optimization engine
  */
-LinearOptimizationService.LinearOptimizationEngine.prototype.addVariable = function(name, lowerBound, upperBound){};
 
 /**
  * Adds a new variable to the model. The variable is referenced by its name.
@@ -172,6 +127,8 @@ LinearOptimizationService.LinearOptimizationEngine.prototype.addVariable = funct
  engine.addVariable(&#39;y&#39;, 0, 100, LinearOptimizationService.VariableType.CONTINUOUS);
  </code></pre>
  *
+ * @function LinearOptimizationService.LinearOptimizationEngine#addVariable
+ *
  * @param {String} name - unique name of the variable
  * @param {Number} lowerBound - lower bound of the variable
  * @param {Number} upperBound - upper bound of the variable
@@ -179,7 +136,6 @@ LinearOptimizationService.LinearOptimizationEngine.prototype.addVariable = funct
  *
  * @return {LinearOptimizationService.LinearOptimizationEngine} a linear optimization engine
  */
-LinearOptimizationService.LinearOptimizationEngine.prototype.addVariable = function(name, lowerBound, upperBound, type){};
 
 /**
  * Adds a new variable to the model. The variable is referenced by its name.
@@ -197,6 +153,8 @@ LinearOptimizationService.LinearOptimizationEngine.prototype.addVariable = funct
  // The objective is now 2 * x - 5 * y.
  </code></pre>
  *
+ * @function LinearOptimizationService.LinearOptimizationEngine#addVariable
+ *
  * @param {String} name - unique name of the variable
  * @param {Number} lowerBound - lower bound of the variable
  * @param {Number} upperBound - upper bound of the variable
@@ -205,7 +163,6 @@ LinearOptimizationService.LinearOptimizationEngine.prototype.addVariable = funct
  *
  * @return {LinearOptimizationService.LinearOptimizationEngine} a linear optimization engine
  */
-LinearOptimizationService.LinearOptimizationEngine.prototype.addVariable = function(name, lowerBound, upperBound, type, objectiveCoefficient){};
 
 /**
  * Sets the optimization direction to maximizing the linear objective function.
@@ -224,9 +181,10 @@ LinearOptimizationService.LinearOptimizationEngine.prototype.addVariable = funct
  engine.setMaximization();
  </code></pre>
  *
+ * @function LinearOptimizationService.LinearOptimizationEngine#setMaximization
+ *
  * @return {LinearOptimizationService.LinearOptimizationEngine} a linear optimization engine
  */
-LinearOptimizationService.LinearOptimizationEngine.prototype.setMaximization = function(){};
 
 /**
  * Sets the optimization direction to minimizing the linear objective function.
@@ -245,9 +203,10 @@ LinearOptimizationService.LinearOptimizationEngine.prototype.setMaximization = f
  engine.setMinimization();
  </code></pre>
  *
+ * @function LinearOptimizationService.LinearOptimizationEngine#setMinimization
+ *
  * @return {LinearOptimizationService.LinearOptimizationEngine} a linear optimization engine
  */
-LinearOptimizationService.LinearOptimizationEngine.prototype.setMinimization = function(){};
 
 /**
  * Sets the coefficient of a variable in the linear objective function.
@@ -263,12 +222,13 @@ LinearOptimizationService.LinearOptimizationEngine.prototype.setMinimization = f
  engine.setObjectiveCoefficient(&#39;y&#39;, 5);
  </code></pre>
  *
+ * @function LinearOptimizationService.LinearOptimizationEngine#setObjectiveCoefficient
+ *
  * @param {String} variableName - name of variable for which the coefficient is being set
  * @param {Number} coefficient - coefficient of the variable in the objective function
  *
  * @return {LinearOptimizationService.LinearOptimizationEngine} a linear optimization engine
  */
-LinearOptimizationService.LinearOptimizationEngine.prototype.setObjectiveCoefficient = function(variableName, coefficient){};
 
 /**
  * Solves the current linear program with the default deadline of 30 seconds. Returns the solution found.
@@ -289,9 +249,10 @@ LinearOptimizationService.LinearOptimizationEngine.prototype.setObjectiveCoeffic
  Logger.log(&#39;Value of x: &#39; + solution.getVariableValue(&#39;x&#39;));
  </code></pre>
  *
+ * @function LinearOptimizationService.LinearOptimizationEngine#solve
+ *
  * @return {LinearOptimizationService.LinearOptimizationSolution} solution of the optimization
  */
-LinearOptimizationService.LinearOptimizationEngine.prototype.solve = function(){};
 
 /**
  * Solves the current linear program. Returns the solution found. and if it is an optimal
@@ -313,14 +274,17 @@ LinearOptimizationService.LinearOptimizationEngine.prototype.solve = function(){
  Logger.log(&#39;Value of x: &#39; + solution.getVariableValue(&#39;x&#39;));
  </code></pre>
  *
+ * @function LinearOptimizationService.LinearOptimizationEngine#solve
+ *
  * @param {Number} seconds - deadline for solving the problem, in seconds; the maximum deadline is 300 seconds
  *
  * @return {LinearOptimizationService.LinearOptimizationSolution} solution of the optimization
  */
-LinearOptimizationService.LinearOptimizationEngine.prototype.solve = function(seconds){};
 
-/** @constructor */
-LinearOptimizationService.LinearOptimizationSolution = function(){};
+
+/**
+ * @class LinearOptimizationService.LinearOptimizationSolution
+ */
 
 /**
  * Gets the value of the objective function in the current solution.
@@ -338,9 +302,10 @@ LinearOptimizationService.LinearOptimizationSolution = function(){};
  Logger.log(&#39;ObjectiveValue: &#39; + solution.getObjectiveValue());
  </code></pre>
  *
+ * @function LinearOptimizationService.LinearOptimizationSolution#getObjectiveValue
+ *
  * @return {Number} the value of the objective function
  */
-LinearOptimizationService.LinearOptimizationSolution.prototype.getObjectiveValue = function(){};
 
 /**
  * Gets the status of the solution. Before solving a problem, the status will be <code>NOT_SOLVED</code>.
@@ -362,9 +327,10 @@ LinearOptimizationService.LinearOptimizationSolution.prototype.getObjectiveValue
  Logger.log(&#39;Status: &#39; + solution.getStatus());
  </code></pre>
  *
+ * @function LinearOptimizationService.LinearOptimizationSolution#getStatus
+ *
  * @return {LinearOptimizationService.Status} the status of the solver
  */
-LinearOptimizationService.LinearOptimizationSolution.prototype.getStatus = function(){};
 
 /**
  * Gets the value of a variable in the solution created by the last call to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/optimization/linear-optimization-engine.html#solve()'>LinearOptimizationEngine.solve()</a></code>.
@@ -382,11 +348,12 @@ LinearOptimizationService.LinearOptimizationSolution.prototype.getStatus = funct
  Logger.log(&#39;Value of x: &#39; + solution.getVariableValue(&#39;x&#39;));
  </code></pre>
  *
+ * @function LinearOptimizationService.LinearOptimizationSolution#getVariableValue
+ *
  * @param {String} variableName - name of the variable
  *
  * @return {Number} the value of the variable in the solution
  */
-LinearOptimizationService.LinearOptimizationSolution.prototype.getVariableValue = function(variableName){};
 
 /**
  * Determines whether the solution is either feasible or optimal.
@@ -406,8 +373,74 @@ LinearOptimizationService.LinearOptimizationSolution.prototype.getVariableValue 
  }
  </code></pre>
  *
+ * @function LinearOptimizationService.LinearOptimizationSolution#isValid
+ *
  * @return {Boolean} <code>true</code> if the solution is valid (<code><a target='_blank' href='https://developers.google.com/apps-script/reference/optimization/status.html#FEASIBLE'>Status.FEASIBLE</a></code> or
      <code><a target='_blank' href='https://developers.google.com/apps-script/reference/optimization/status.html#OPTIMAL'>Status.OPTIMAL</a></code>); <code>false</code> if not
  */
-LinearOptimizationService.LinearOptimizationSolution.prototype.isValid = function(){};
+
+
+/**
+ * @class LinearOptimizationService.Status
+ */
+
+/**
+ * Status when it failed to find a solution for unexpected reasons.
+ *
+ * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.ABNORMAL
+ */
+
+/**
+ * Status when a feasible (not necessarily optimal) solution has been found.
+ *
+ * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.FEASIBLE
+ */
+
+/**
+ * Status when the current model is unfeasible (has no solution).
+ *
+ * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.INFEASIBLE
+ */
+
+/**
+ * Status when the model is invalid.
+ *
+ * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.MODEL_INVALID
+ */
+
+/**
+ * Status when <code><a target='_blank' href='https://developers.google.com/apps-script/reference/optimization/linear-optimization-engine.html#solve()'>LinearOptimizationEngine.solve()</a></code> has not been called yet.
+ *
+ * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.NOT_SOLVED
+ */
+
+/**
+ * Status when an optimal solution has been found.
+ *
+ * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.OPTIMAL
+ */
+
+/**
+ * Status when the current model is unbound.
+ *
+ * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status.UNBOUNDED
+ */
+
+
+/**
+ * @class LinearOptimizationService.VariableType
+ */
+
+/**
+ * Type of variable that can take any real value.
+ *
+ * @typedef {LinearOptimizationService.VariableType} LinearOptimizationService.VariableType.CONTINUOUS
+ */
+
+/**
+ * Type of variable that can only take integer values.
+ *
+ * @typedef {LinearOptimizationService.VariableType} LinearOptimizationService.VariableType.INTEGER
+ */
+
 

@@ -1,42 +1,9 @@
-var GroupsApp = {};
-
-
-/**
- * 
- * 
- * @class GroupsApp.Role
- */
+/**********************************************
+ * @namespace GroupsApp
+ ***********************************************/
 
 /**
- * @typedef {GroupsApp.Role} GroupsApp.Role.INVITED
- * 
- * A user who has been invited to join a group by an owner or manager of the group but who has not
- yet accepted the invitation.
- */
-
-/**
- * @typedef {GroupsApp.Role} GroupsApp.Role.MANAGER
- * 
- * The manager of a group.
- */
-
-/**
- * @typedef {GroupsApp.Role} GroupsApp.Role.MEMBER
- * 
- * A user who is a member of this group but is neither an owner nor a manager.
- */
-
-/**
- * @typedef {GroupsApp.Role} GroupsApp.Role.OWNER
- * 
- * The owner of a group.
- */
-
-/**
- * @typedef {GroupsApp.Role} GroupsApp.Role.PENDING
- * 
- * A user who has requested to join a group but who has not yet been approved by an owner or
- manager.
+ * @typedef {GroupsApp.Role} GroupsApp.Role
  */
 
 /**
@@ -57,11 +24,12 @@ var GroupsApp = {};
  }
  </code></pre>
  *
+ * @function GroupsApp.getGroupByEmail
+ *
  * @param {String} email - the email address of the group to retrieve
  *
  * @return {GroupsApp.Group} the group with the specified email address
  */
-GroupsApp.getGroupByEmail = function(email){};
 
 /**
  * Retrieves all the groups of which you are a direct member. This is an empty list if you are not
@@ -86,12 +54,15 @@ GroupsApp.getGroupByEmail = function(email){};
  you are <em>indirectly</em> subscribed to group A. Even though you receive copies of messages
  sent to the "parent" group A, you are not actually subscribed to that group.
  *
+ * @function GroupsApp.getGroups
+ *
  * @return {GroupsApp.Group[]} the list of groups of which the user is a direct member
  */
-GroupsApp.getGroups = function(){};
 
-/** @constructor */
-GroupsApp.Group = function(){};
+
+/**
+ * @class GroupsApp.Group
+ */
 
 /**
  * Gets this group's email address.
@@ -107,9 +78,10 @@ GroupsApp.Group = function(){};
  }
  </code></pre>
  *
+ * @function GroupsApp.Group#getEmail
+ *
  * @return {String} the group's email address
  */
-GroupsApp.Group.prototype.getEmail = function(){};
 
 /**
  * Retrieves the direct child groups of the group. Throws an exception if you do not have
@@ -135,9 +107,10 @@ GroupsApp.Group.prototype.getEmail = function(){};
    }
  </code>
  *
+ * @function GroupsApp.Group#getGroups
+ *
  * @return {GroupsApp.Group[]} all the direct child groups of the group
  */
-GroupsApp.Group.prototype.getGroups = function(){};
 
 /**
  * Retrieves a user's role in the context of the group. A user who is a direct member of a group
@@ -158,11 +131,12 @@ GroupsApp.Group.prototype.getGroups = function(){};
  }
  </code></pre>
  *
+ * @function GroupsApp.Group#getRole
+ *
  * @param {String} email - a user's email address
  *
  * @return {GroupsApp.Role} that user's role within the group
  */
-GroupsApp.Group.prototype.getRole = function(email){};
 
 /**
  * Retrieves a user's role in the context of the group. A user who is a direct member of a group
@@ -183,11 +157,12 @@ GroupsApp.Group.prototype.getRole = function(email){};
  }
  </code></pre>
  *
+ * @function GroupsApp.Group#getRole
+ *
  * @param {User} user - the user whose role to retrieve
  *
  * @return {GroupsApp.Role} that user's role within the group
  */
-GroupsApp.Group.prototype.getRole = function(user){};
 
 /**
  * Retrieves the direct members of the group that have a known corresponding Google account.
@@ -219,9 +194,10 @@ GroupsApp.Group.prototype.getRole = function(user){};
  href="/apps-script/advanced/admin-sdk-directory">Admin SDK Directory</a> advanced service to
  retrieve group members in a domain.
  *
+ * @function GroupsApp.Group#getUsers
+ *
  * @return {User[]} all the direct members of the group
  */
-GroupsApp.Group.prototype.getUsers = function(){};
 
 /**
  * Tests if a group is a direct member of this group. The method does not return <code>true</code> if
@@ -236,11 +212,12 @@ GroupsApp.Group.prototype.getUsers = function(){};
  }
  </code></pre>
  *
+ * @function GroupsApp.Group#hasGroup
+ *
  * @param {GroupsApp.Group} group - the group whose membership to test
  *
  * @return {Boolean} true if that group is a child group of this group
  */
-GroupsApp.Group.prototype.hasGroup = function(group){};
 
 /**
  * Tests if a group is a direct member of this group. The method does not return <code>true</code> if
@@ -254,11 +231,12 @@ GroupsApp.Group.prototype.hasGroup = function(group){};
  }
  </code></pre>
  *
+ * @function GroupsApp.Group#hasGroup
+ *
  * @param {String} email - a group's email address
  *
  * @return {Boolean} true if that group is a child group of this group
  */
-GroupsApp.Group.prototype.hasGroup = function(email){};
 
 /**
  * Tests if a user is a direct member of the group. Throws an exception if you do not have
@@ -274,11 +252,12 @@ GroupsApp.Group.prototype.hasGroup = function(email){};
  }
  </code></pre>
  *
+ * @function GroupsApp.Group#hasUser
+ *
  * @param {String} email - a user's email address
  *
  * @return {Boolean} true if that user is a member of the group
  */
-GroupsApp.Group.prototype.hasUser = function(email){};
 
 /**
  * Tests if a user is a direct member of the group. Throws an exception if you do not have
@@ -294,9 +273,48 @@ GroupsApp.Group.prototype.hasUser = function(email){};
  }
  </code></pre>
  *
+ * @function GroupsApp.Group#hasUser
+ *
  * @param {User} user - the user whose membership to test
  *
  * @return {Boolean} true if that user is a member of the group
  */
-GroupsApp.Group.prototype.hasUser = function(user){};
+
+
+/**
+ * @class GroupsApp.Role
+ */
+
+/**
+ * A user who has been invited to join a group by an owner or manager of the group but who has not
+ yet accepted the invitation.
+ *
+ * @typedef {GroupsApp.Role} GroupsApp.Role.INVITED
+ */
+
+/**
+ * The manager of a group.
+ *
+ * @typedef {GroupsApp.Role} GroupsApp.Role.MANAGER
+ */
+
+/**
+ * A user who is a member of this group but is neither an owner nor a manager.
+ *
+ * @typedef {GroupsApp.Role} GroupsApp.Role.MEMBER
+ */
+
+/**
+ * The owner of a group.
+ *
+ * @typedef {GroupsApp.Role} GroupsApp.Role.OWNER
+ */
+
+/**
+ * A user who has requested to join a group but who has not yet been approved by an owner or
+ manager.
+ *
+ * @typedef {GroupsApp.Role} GroupsApp.Role.PENDING
+ */
+
 

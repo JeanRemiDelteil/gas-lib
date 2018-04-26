@@ -1,52 +1,49 @@
-var JSON = {};
-
+/**********************************************
+ * @namespace JSON
+ ***********************************************/
 
 /**
- * undefined
+ * @function JSON.parse
  *
- * @param {String} text - undefined
+ * @param {String} text
  *
  * @return {Object}
  */
-JSON.parse = function(text){};
 
 /**
- * undefined
+ * @function JSON.parse
  *
- * @param {String} text - undefined
- * @param {Function} reviver - undefined
+ * @param {String} text
+ * @param {Function} reviver
  *
  * @return {Object}
  */
-JSON.parse = function(text, reviver){};
 
 /**
- * undefined
+ * @function JSON.stringify
  *
- * @param {Object} value - undefined
+ * @param {Object} value
  *
  * @return {String}
  */
-JSON.stringify = function(value){};
 
 /**
- * undefined
+ * @function JSON.stringify
  *
- * @param {Object} value - undefined
- * @param {Function} replacer - undefined
+ * @param {Object} value
+ * @param {Function} replacer
  *
  * @return {String}
  */
-JSON.stringify = function(value, replacer){};
 
 /**
- * undefined
+ * @function JSON.stringify
  *
- * @param {Object} value - undefined
- * @param {Function} replacer - undefined
- * @param {Object} space - undefined
+ * @param {Object} value
+ * @param {Function} replacer
+ * @param {Object} space
  *
  * @return {String}
  */
-JSON.stringify = function(value, replacer, space){};
+
 

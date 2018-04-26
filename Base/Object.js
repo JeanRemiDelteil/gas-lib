@@ -1,134 +1,122 @@
-var Object = {};
-
+/**********************************************
+ * @namespace Object
+ ***********************************************/
 
 /**
- * undefined
+ * @function Object.create
  *
- * @param {Object} proto - undefined
+ * @param {Object} proto
  *
  * @return {Object}
  */
-Object.create = function(proto){};
 
 /**
- * undefined
+ * @function Object.create
  *
- * @param {Object} proto - undefined
- * @param {Object} propertiesObject - undefined
+ * @param {Object} proto
+ * @param {Object} propertiesObject
  *
  * @return {Object}
  */
-Object.create = function(proto, propertiesObject){};
 
 /**
- * undefined
+ * @function Object.defineProperties
  *
- * @param {Object} obj - undefined
- * @param {Object} props - undefined
+ * @param {Object} obj
+ * @param {Object} props
  *
  * @return void
  */
-Object.defineProperties = function(obj, props){};
 
 /**
- * undefined
+ * @function Object.defineProperty
  *
- * @param {Object} obj - undefined
- * @param {String} prop - undefined
- * @param {Object} descriptor - undefined
+ * @param {Object} obj
+ * @param {String} prop
+ * @param {Object} descriptor
  *
  * @return void
  */
-Object.defineProperty = function(obj, prop, descriptor){};
 
 /**
- * undefined
+ * @function Object.freeze
  *
- * @param {Object} obj - undefined
+ * @param {Object} obj
  *
  * @return void
  */
-Object.freeze = function(obj){};
 
 /**
- * undefined
+ * @function Object.getOwnPropertyDescriptor
  *
- * @param {Object} obj - undefined
- * @param {String} prop - undefined
+ * @param {Object} obj
+ * @param {String} prop
  *
  * @return {Object}
  */
-Object.getOwnPropertyDescriptor = function(obj, prop){};
 
 /**
- * undefined
+ * @function Object.getOwnPropertyNames
  *
- * @param {Object} obj - undefined
+ * @param {Object} obj
  *
  * @return {String[]}
  */
-Object.getOwnPropertyNames = function(obj){};
 
 /**
- * undefined
+ * @function Object.getPrototypeOf
  *
- * @param {Object} obj - undefined
+ * @param {Object} obj
  *
  * @return {Object}
  */
-Object.getPrototypeOf = function(obj){};
 
 /**
- * undefined
+ * @function Object.isExtensible
  *
- * @param {Object} obj - undefined
+ * @param {Object} obj
  *
  * @return {Boolean}
  */
-Object.isExtensible = function(obj){};
 
 /**
- * undefined
+ * @function Object.isFrozen
  *
- * @param {Object} obj - undefined
+ * @param {Object} obj
  *
  * @return {Boolean}
  */
-Object.isFrozen = function(obj){};
 
 /**
- * undefined
+ * @function Object.isSealed
  *
- * @param {Object} obj - undefined
+ * @param {Object} obj
  *
  * @return {Boolean}
  */
-Object.isSealed = function(obj){};
 
 /**
- * undefined
+ * @function Object.keys
  *
- * @param {Object} obj - undefined
+ * @param {Object} obj
  *
  * @return {String[]}
  */
-Object.keys = function(obj){};
 
 /**
- * undefined
+ * @function Object.preventExtensions
  *
- * @param {Object} obj - undefined
+ * @param {Object} obj
  *
  * @return void
  */
-Object.preventExtensions = function(obj){};
 
 /**
- * undefined
+ * @function Object.seal
  *
- * @param {Object} obj - undefined
+ * @param {Object} obj
  *
  * @return void
  */
-Object.seal = function(obj){};
+
 

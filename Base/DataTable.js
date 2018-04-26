@@ -1,3 +1,5 @@
-var DataTable = {};
+/**
+ * @class DataTable
+ */
 
 

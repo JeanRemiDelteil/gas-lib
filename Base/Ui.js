@@ -1,18 +1,23 @@
-var Ui = function(){};
+/**********************************************
+ * @namespace Ui
+ ***********************************************/
 
+/**
+ * @class Ui
+ */
 
 /**
  * An enum representing predetermined, localized dialog buttons returned by an <a target='_blank' href='https://developers.google.com/apps-script/reference/base/ui.html#alert(String)'>alert</a> or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/prompt-response.html#getSelectedButton()'>PromptResponse.getSelectedButton()</a></code> to indicate
  which button in a dialog the user clicked.
- * 
- * @class Button
+ *
+ * @typedef {Button} Ui.Button
  */
 
 /**
  * An enum representing predetermined, localized sets of one or more dialog buttons that can be
  added to an <a target='_blank' href='https://developers.google.com/apps-script/reference/base/ui.html#alert(String,ButtonSet)'>alert</a> or a <a target='_blank' href='https://developers.google.com/apps-script/reference/base/ui.html#prompt(String,ButtonSet)'>prompt</a>.
- * 
- * @class ButtonSet
+ *
+ * @typedef {ButtonSet} Ui.ButtonSet
  */
 
 /**
@@ -29,11 +34,12 @@ var Ui = function(){};
  SpreadsheetApp.getUi().alert('Hello, world!');
  </pre>
  *
+ * @function Ui#alert
+ *
  * @param {String} prompt - the message to display in the dialog box
  *
  * @return {Button} the button the user clicked
  */
-Ui.prototype.alert = function(prompt){};
 
 /**
  * Opens a dialog box in the user's editor with the given message and set of buttons. This method
@@ -57,12 +63,13 @@ Ui.prototype.alert = function(prompt){};
  }
  </pre>
  *
+ * @function Ui#alert
+ *
  * @param {String} prompt - the message to display in the dialog box
  * @param {ButtonSet} buttons - the button set to display in the dialog box
  *
  * @return {Button} the button the user clicked
  */
-Ui.prototype.alert = function(prompt, buttons){};
 
 /**
  * Opens a dialog box in the user's editor with the given title, message, and set of buttons. This
@@ -86,13 +93,14 @@ Ui.prototype.alert = function(prompt, buttons){};
  }
  </pre>
  *
+ * @function Ui#alert
+ *
  * @param {String} title - the title to display above the dialog box
  * @param {String} prompt - the message to display in the dialog box
  * @param {ButtonSet} buttons - the button set to display in the dialog box
  *
  * @return {Button} the button the user clicked
  */
-Ui.prototype.alert = function(title, prompt, buttons){};
 
 /**
  * Creates a builder that can be used to insert a sub-menu into the editor's Add-on menu. The menu
@@ -111,9 +119,10 @@ Ui.prototype.alert = function(title, prompt, buttons){};
        .addToUi();
  }</pre>
  *
+ * @function Ui#createAddonMenu
+ *
  * @return {Menu} the new menu builder
  */
-Ui.prototype.createAddonMenu = function(){};
 
 /**
  * Creates a builder that can be used to add a menu to the editor's user interface. The menu will
@@ -138,12 +147,13 @@ Ui.prototype.createAddonMenu = function(){};
  }
  </pre>
  *
+ * @function Ui#createMenu
+ *
  * @param {String} caption - the label for the menu, with all major words capitalized for a top-level menu,
      or only the first word capitalized for a sub-menu
  *
  * @return {Menu} the new menu builder
  */
-Ui.prototype.createMenu = function(caption){};
 
 /**
  * Opens an input dialog box in the user's editor with the given message and an "OK" button. This
@@ -167,11 +177,12 @@ Ui.prototype.createMenu = function(caption){};
  }
  </pre>
  *
+ * @function Ui#prompt
+ *
  * @param {String} prompt - the message to display in the dialog box
  *
  * @return {PromptResponse} a representation of the user's response
  */
-Ui.prototype.prompt = function(prompt){};
 
 /**
  * Opens an input dialog box in the user's editor with the given message and set of buttons. This
@@ -197,12 +208,13 @@ Ui.prototype.prompt = function(prompt){};
  }
  </pre>
  *
+ * @function Ui#prompt
+ *
  * @param {String} prompt - the message to display in the dialog box
  * @param {ButtonSet} buttons - the button set to display in the dialog box
  *
  * @return {PromptResponse} a representation of the user's response
  */
-Ui.prototype.prompt = function(prompt, buttons){};
 
 /**
  * Opens an input dialog box in the user's editor with the given title, message, and set of
@@ -227,13 +239,14 @@ Ui.prototype.prompt = function(prompt, buttons){};
  }
  </pre>
  *
+ * @function Ui#prompt
+ *
  * @param {String} title - the title to display above the dialog box
  * @param {String} prompt - the message to display in the dialog box
  * @param {ButtonSet} buttons - the button set to display in the dialog box
  *
  * @return {PromptResponse} a representation of the user's response
  */
-Ui.prototype.prompt = function(title, prompt, buttons){};
 
 /**
  * Opens a dialog box in the user's editor with custom client-side content. This method does
@@ -265,12 +278,14 @@ Ui.prototype.prompt = function(title, prompt, buttons){};
  SpreadsheetApp.getUi().showDialog(uiInstance);
  </code></pre>
  *
+ * @function Ui#showDialog
+ * @deprecated
+ *
  * @param {Object} userInterface - an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../html/html-output.html'>HtmlOutput</a></code> or
      <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../ui/ui-instance.html'>UiInstance</a></s></code> web app
  *
  * @return void
  */
-Ui.prototype.showDialog = function(userInterface){};
 
 /**
  * Opens a modal dialog box in the user's editor with custom client-side content. This method does
@@ -304,6 +319,8 @@ Ui.prototype.showDialog = function(userInterface){};
  SpreadsheetApp.getUi().showModalDialog(uiInstance, &#39;My add-on&#39;);
  </code></pre>
  *
+ * @function Ui#showModalDialog
+ *
  * @param {Object} userInterface - an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../html/html-output.html'>HtmlOutput</a></code> or
      <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../ui/ui-instance.html'>UiInstance</a></s></code> web app
  * @param {String} title - the title of the dialog; overrides any title set by calling <code>setTitle()</code> on
@@ -311,7 +328,6 @@ Ui.prototype.showDialog = function(userInterface){};
  *
  * @return void
  */
-Ui.prototype.showModalDialog = function(userInterface, title){};
 
 /**
  * Opens a modeless dialog box in the user's editor with custom client-side content. This method
@@ -346,6 +362,8 @@ Ui.prototype.showModalDialog = function(userInterface, title){};
  SpreadsheetApp.getUi().showModelessDialog(uiInstance, &#39;My add-on&#39;);
  </code></pre>
  *
+ * @function Ui#showModelessDialog
+ *
  * @param {Object} userInterface - an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../html/html-output.html'>HtmlOutput</a></code> or
      <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../ui/ui-instance.html'>UiInstance</a></s></code> web app
  * @param {String} title - the title of the dialog; overrides any title set by calling <code>setTitle()</code> on
@@ -353,7 +371,6 @@ Ui.prototype.showModalDialog = function(userInterface, title){};
  *
  * @return void
  */
-Ui.prototype.showModelessDialog = function(userInterface, title){};
 
 /**
  * Opens a sidebar in the user's editor with custom client-side content. This method does
@@ -385,10 +402,12 @@ Ui.prototype.showModelessDialog = function(userInterface, title){};
  SpreadsheetApp.getUi().showSidebar(uiInstance);
  </code></pre>
  *
+ * @function Ui#showSidebar
+ *
  * @param {Object} userInterface - an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../html/html-output.html'>HtmlOutput</a></code> or
      <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../ui/ui-instance.html'>UiInstance</a></s></code> web app
  *
  * @return void
  */
-Ui.prototype.showSidebar = function(userInterface){};
+
 

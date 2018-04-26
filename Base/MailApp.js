@@ -1,5 +1,6 @@
-var MailApp = {};
-
+/**********************************************
+ * @namespace MailApp
+ ***********************************************/
 
 /**
  * Returns the number of remaining emails a user can send for the rest of the day.
@@ -13,9 +14,10 @@ var MailApp = {};
  Logger.log(&quot;Remaining email quota: &quot; + emailQuotaRemaining);
  </code></pre>
  *
- * @return {number} the number of emails remaining that the script can send
+ * @function MailApp.getRemainingDailyQuota
+ *
+ * @return {IntegerNum} the number of emails remaining that the script can send
  */
-MailApp.getRemainingDailyQuota = function(){};
 
 /**
  * Sends an email message. This variation of the method is much more flexible, allowing for many
@@ -50,11 +52,12 @@ MailApp.getRemainingDailyQuota = function(){};
  }
  </code></pre>
  *
+ * @function MailApp.sendEmail
+ *
  * @param {Object} message - a JavaScript object representing an email message
  *
  * @return void
  */
-MailApp.sendEmail = function(message){};
 
 /**
  * Sends an email message.
@@ -65,13 +68,14 @@ MailApp.sendEmail = function(message){};
                    &quot;Where are the TPS reports?&quot;);
  </code></pre>
  *
+ * @function MailApp.sendEmail
+ *
  * @param {String} recipient - the addresses of the recipients, separated by commas
  * @param {String} subject - the subject line
  * @param {String} body - the body of the email
  *
  * @return void
  */
-MailApp.sendEmail = function(recipient, subject, body){};
 
 /**
  * Sends an email message with optional arguments.
@@ -86,6 +90,8 @@ MailApp.sendEmail = function(recipient, subject, body){};
  });
  </code></pre>
  *
+ * @function MailApp.sendEmail
+ *
  * @param {String} recipient - the addresses of the recipients, separated by commas
  * @param {String} subject - the subject line
  * @param {String} body - the body of the email
@@ -93,7 +99,6 @@ MailApp.sendEmail = function(recipient, subject, body){};
  *
  * @return void
  */
-MailApp.sendEmail = function(recipient, subject, body, options){};
 
 /**
  * Sends an email message. This method allows a user to easily specify a Reply-To address for the
@@ -106,6 +111,8 @@ MailApp.sendEmail = function(recipient, subject, body, options){};
                    &quot;What is the status of those TPS reports?&quot;);
  </code></pre>
  *
+ * @function MailApp.sendEmail
+ *
  * @param {String} to - the addresses of the recipients, separated by commas
  * @param {String} replyTo - the reply-to address
  * @param {String} subject - the subject line
@@ -113,5 +120,5 @@ MailApp.sendEmail = function(recipient, subject, body, options){};
  *
  * @return void
  */
-MailApp.sendEmail = function(to, replyTo, subject, body){};
+
 

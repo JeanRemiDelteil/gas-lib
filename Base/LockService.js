@@ -1,5 +1,6 @@
-var LockService = {};
-
+/**********************************************
+ * @namespace LockService
+ ***********************************************/
 
 /**
  * Gets a lock that prevents any user of the current document from concurrently running a section
@@ -9,19 +10,21 @@ var LockService = {};
  or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/lock/lock.html#waitLock(Integer)'>Lock.waitLock(timeoutInMillis)</a></code> is called. If this method is called outside of the context of a
  containing document (such as from a standalone script or webapp), <code>null</code> is returned.
  *
+ * @function LockService.getDocumentLock
+ *
  * @return {LockService.Lock} a lock scoped to the script and current document, or <code>null</code> if called from a
      standalone script or webapp
  */
-LockService.getDocumentLock = function(){};
 
 /**
  * Gets a lock that prevents any user from concurrently running a section of code. A code section
  guarded by a script lock cannot be executed simultaneously regardless of the identity of the
  user. Note that the lock is not actually acquired until <code><a target='_blank' href='https://developers.google.com/apps-script/reference/lock/lock.html#tryLock(Integer)'>Lock.tryLock(timeoutInMillis)</a></code> or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/lock/lock.html#waitLock(Integer)'>Lock.waitLock(timeoutInMillis)</a></code> is called.
  *
+ * @function LockService.getScriptLock
+ *
  * @return {LockService.Lock} a lock scoped to the script
  */
-LockService.getScriptLock = function(){};
 
 /**
  * Gets a lock that prevents the current user from concurrently running a section of code. A code
@@ -30,12 +33,15 @@ LockService.getScriptLock = function(){};
  lock is not actually acquired until <code><a target='_blank' href='https://developers.google.com/apps-script/reference/lock/lock.html#tryLock(Integer)'>Lock.tryLock(timeoutInMillis)</a></code> or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/lock/lock.html#waitLock(Integer)'>Lock.waitLock(timeoutInMillis)</a></code> is
  called.
  *
+ * @function LockService.getUserLock
+ *
  * @return {LockService.Lock} a lock scoped to the script and current user
  */
-LockService.getUserLock = function(){};
 
-/** @constructor */
-LockService.Lock = function(){};
+
+/**
+ * @class LockService.Lock
+ */
 
 /**
  * Returns true if the lock was acquired. This method will return false if <code><a target='_blank' href='https://developers.google.com/apps-script/reference/lock/lock.html#tryLock(Integer)'>tryLock(timeoutInMillis)</a></code> or
@@ -49,9 +55,10 @@ LockService.Lock = function(){};
  }
  </code></pre>
  *
+ * @function LockService.Lock#hasLock
+ *
  * @return {Boolean} true if the lock was acquired, false otherwise
  */
-LockService.Lock.prototype.hasLock = function(){};
 
 /**
  * Releases the lock, allowing other processes waiting on the lock to continue. The lock is
@@ -70,9 +77,10 @@ LockService.Lock.prototype.hasLock = function(){};
  lock.releaseLock();
  </code></pre>
  *
+ * @function LockService.Lock#releaseLock
+ *
  * @return void
  */
-LockService.Lock.prototype.releaseLock = function(){};
 
 /**
  * Attempts to acquire the lock, timing out after the provided number of milliseconds. This method
@@ -86,11 +94,12 @@ LockService.Lock.prototype.releaseLock = function(){};
  }
  </code></pre>
  *
- * @param {number} timeoutInMillis - how long to wait to acquire the lock, in milliseconds
+ * @function LockService.Lock#tryLock
+ *
+ * @param {IntegerNum} timeoutInMillis - how long to wait to acquire the lock, in milliseconds
  *
  * @return {Boolean} true if the lock was acquired, false otherwise
  */
-LockService.Lock.prototype.tryLock = function(timeoutInMillis){};
 
 /**
  * Attempts to acquire the lock, timing out with an exception after the provided number of
@@ -106,9 +115,11 @@ LockService.Lock.prototype.tryLock = function(timeoutInMillis){};
  }
  </code></pre>
  *
- * @param {number} timeoutInMillis - how long to wait to acquire the lock, in milliseconds
+ * @function LockService.Lock#waitLock
+ *
+ * @param {IntegerNum} timeoutInMillis - how long to wait to acquire the lock, in milliseconds
  *
  * @return void
  */
-LockService.Lock.prototype.waitLock = function(timeoutInMillis){};
+
 

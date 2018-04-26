@@ -1,10 +1,9 @@
-var Browser = {};
-
+/**********************************************
+ * @namespace Browser
+ ***********************************************/
 
 /**
- * 
- * 
- * @class ButtonSet
+ * @typedef {ButtonSet} Browser.Buttons
  */
 
 /**
@@ -20,11 +19,12 @@ var Browser = {};
  var name = Browser.inputBox(&#39;Enter your name&#39;);
  </code></pre>
  *
+ * @function Browser.inputBox
+ *
  * @param {String} prompt - the text to be displayed in the dialog box
  *
  * @return {String} text entered by the user (or 'cancel' for a canceled or dismissed dialog)
  */
-Browser.inputBox = function(prompt){};
 
 /**
  * Pops up a dialog box with a text input box in the user's browser.
@@ -39,12 +39,13 @@ Browser.inputBox = function(prompt){};
  var name = Browser.inputBox(&#39;Enter your name&#39;, Browser.Buttons.OK_CANCEL);
  </code></pre>
  *
+ * @function Browser.inputBox
+ *
  * @param {String} prompt - the text to be displayed in the dialog box
  * @param {ButtonSet} buttons - an enum from Browser.Buttons
  *
  * @return {String} text entered by the user (or 'cancel' for a canceled or dismissed dialog)
  */
-Browser.inputBox = function(prompt, buttons){};
 
 /**
  * Pops up a dialog box with a text input box in the user's browser.
@@ -59,13 +60,14 @@ Browser.inputBox = function(prompt, buttons){};
  var name = Browser.inputBox(&#39;ID Check&#39;, &#39;Enter your name&#39;, Browser.Buttons.OK_CANCEL);
  </code></pre>
  *
+ * @function Browser.inputBox
+ *
  * @param {String} title - the title for the dialog box
  * @param {String} prompt - the text to be displayed in the dialog box
  * @param {ButtonSet} buttons - an enum from Browser.Buttons
  *
  * @return {String} text entered by the user (or 'cancel' for a canceled or dismissed dialog)
  */
-Browser.inputBox = function(title, prompt, buttons){};
 
 /**
  * Pops up a dialog box with the given message and an OK button in the user's browser.
@@ -80,12 +82,13 @@ Browser.inputBox = function(title, prompt, buttons){};
  Browser.msgBox(&#39;hello world&#39;);
  </code></pre>
  *
+ * @function Browser.msgBox
+ *
  * @param {String} prompt - the text to be displayed in the dialog box
  *
  * @return {String} lower case text of the button that is clicked by the user (or 'cancel' for a dismissed
      dialog)
  */
-Browser.msgBox = function(prompt){};
 
 /**
  * Pops up a dialog box with the given message and specified buttons in the user's browser.
@@ -100,13 +103,14 @@ Browser.msgBox = function(prompt){};
  Browser.msgBox(&#39;hello world&#39;, Browser.Buttons.OK_CANCEL);
  </code></pre>
  *
+ * @function Browser.msgBox
+ *
  * @param {String} prompt - the text to be displayed in the dialog box
  * @param {ButtonSet} buttons - an enum from Browser.Buttons
  *
  * @return {String} lower case text of the button that is clicked by the user (or 'cancel' for a dismissed
      dialog)
  */
-Browser.msgBox = function(prompt, buttons){};
 
 /**
  * Pops up a dialog box with the given title, message and specified buttons in the user's browser.
@@ -122,6 +126,8 @@ Browser.msgBox = function(prompt, buttons){};
  Browser.msgBox(&#39;Greetings&#39;, &#39;hello world&#39;, Browser.Buttons.YES_NO);
  </code></pre>
  *
+ * @function Browser.msgBox
+ *
  * @param {String} title - the title of the dialog box
  * @param {String} prompt - the text to be displayed in the dialog box
  * @param {ButtonSet} buttons - an enum from Browser.Buttons
@@ -129,5 +135,5 @@ Browser.msgBox = function(prompt, buttons){};
  * @return {String} lower case text of the button that is clicked by the user (or 'cancel' for a dismissed
      dialog)
  */
-Browser.msgBox = function(title, prompt, buttons){};
+
 

@@ -1,5 +1,6 @@
-var GmailApp = {};
-
+/**********************************************
+ * @namespace GmailApp
+ ***********************************************/
 
 /**
  * Creates a draft email message. The size of the email (including headers) is <a
@@ -11,13 +12,14 @@ var GmailApp = {};
  GmailApp.createDraft(&quot;mike@example.com&quot;, &quot;current time&quot;, &quot;The time is: &quot; + now.toString());
  </code></pre>
  *
+ * @function GmailApp.createDraft
+ *
  * @param {String} recipient - comma separated list of email addresses
  * @param {String} subject - subject of the email
  * @param {String} body - body of the email
  *
  * @return {GmailApp.GmailDraft} the newly created GmailDraft
  */
-GmailApp.createDraft = function(recipient, subject, body){};
 
 /**
  * Creates a draft email message with optional arguments. The email can contain plain text or an
@@ -33,6 +35,8 @@ GmailApp.createDraft = function(recipient, subject, body){};
  });
  </code></pre>
  *
+ * @function GmailApp.createDraft
+ *
  * @param {String} recipient - the addresses of the recipient
  * @param {String} subject - the subject line
  * @param {String} body - the body of the email
@@ -40,7 +44,6 @@ GmailApp.createDraft = function(recipient, subject, body){};
  *
  * @return {GmailApp.GmailDraft} the newly created GmailDraft
  */
-GmailApp.createDraft = function(recipient, subject, body, options){};
 
 /**
  * Create a new user label of the given name.
@@ -50,11 +53,12 @@ GmailApp.createDraft = function(recipient, subject, body, options){};
  Logger.log(&quot;label: &quot; + GmailApp.createLabel(&quot;FOO&quot;));
  </code></pre>
  *
+ * @function GmailApp.createLabel
+ *
  * @param {String} name - the name of the new label
  *
  * @return {GmailApp.GmailLabel} the newly created label
  */
-GmailApp.createLabel = function(name){};
 
 /**
  * Deletes the specified label.
@@ -65,11 +69,12 @@ GmailApp.createLabel = function(name){};
  GmailApp.deleteLabel(label);
  </code></pre>
  *
+ * @function GmailApp.deleteLabel
+ *
  * @param {GmailApp.GmailLabel} label - the label to delete
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.deleteLabel = function(label){};
 
 /**
  * Gets a list of the emails that are set up as aliases for this account in Gmail.
@@ -88,9 +93,10 @@ GmailApp.deleteLabel = function(label){};
  }
  </pre>
  *
+ * @function GmailApp.getAliases
+ *
  * @return {String[]} an array of aliases for this account
  */
-GmailApp.getAliases = function(){};
 
 /**
  * Retrieves all chat threads irrespective of labels.
@@ -104,9 +110,10 @@ GmailApp.getAliases = function(){};
  Logger.log(&quot;# of chat threads: &quot; + threads.length);
  </code></pre>
  *
+ * @function GmailApp.getChatThreads
+ *
  * @return {GmailApp.GmailThread[]} an array of chat Gmail threads
  */
-GmailApp.getChatThreads = function(){};
 
 /**
  * Retrieves a range of chat threads irrespective of labels.
@@ -119,12 +126,13 @@ GmailApp.getChatThreads = function(){};
  Logger.log(threads[0].getFirstMessageSubject());
  </code></pre>
  *
- * @param {number} start - the index of the first thread to retrieve
- * @param {number} max - the maximum number of threads to retrieve
+ * @function GmailApp.getChatThreads
+ *
+ * @param {IntegerNum} start - the index of the first thread to retrieve
+ * @param {IntegerNum} max - the maximum number of threads to retrieve
  *
  * @return {GmailApp.GmailThread[]} an array of chat Gmail threads
  */
-GmailApp.getChatThreads = function(start, max){};
 
 /**
  * Retrieve an email message draft by ID.
@@ -142,11 +150,12 @@ GmailApp.getChatThreads = function(start, max){};
  Logger.log(draft.getMessage().getSubject() == draftById.getMessage().getSubject());
  </code></pre>
  *
+ * @function GmailApp.getDraft
+ *
  * @param {String} draftId - the ID of the draft to retrieve
  *
  * @return {GmailApp.GmailDraft} the draft with the given ID
  */
-GmailApp.getDraft = function(draftId){};
 
 /**
  * Retrieves all draft messages.
@@ -157,9 +166,10 @@ GmailApp.getDraft = function(draftId){};
  Logger.log(drafts.length);
  </code></pre>
  *
+ * @function GmailApp.getDraftMessages
+ *
  * @return {GmailApp.GmailMessage[]} an array of draft Gmail messages
  */
-GmailApp.getDraftMessages = function(){};
 
 /**
  * Gets all Gmail draft messages.
@@ -171,9 +181,10 @@ GmailApp.getDraftMessages = function(){};
  }
  </code></pre>
  *
+ * @function GmailApp.getDrafts
+ *
  * @return {GmailApp.GmailDraft[]} an array of Gmail draft messages
  */
-GmailApp.getDrafts = function(){};
 
 /**
  * Retrieves all Inbox threads irrespective of labels.
@@ -190,9 +201,10 @@ GmailApp.getDrafts = function(){};
  }
  </code></pre>
  *
+ * @function GmailApp.getInboxThreads
+ *
  * @return {GmailApp.GmailThread[]} an array of Gmail threads in the Inbox
  */
-GmailApp.getInboxThreads = function(){};
 
 /**
  * Retrieves a range of Inbox threads irrespective of labels.
@@ -205,12 +217,13 @@ GmailApp.getInboxThreads = function(){};
  }
  </code></pre>
  *
- * @param {number} start - the index of the first thread to retrieve
- * @param {number} max - the maximum number of threads to retrieve
+ * @function GmailApp.getInboxThreads
+ *
+ * @param {IntegerNum} start - the index of the first thread to retrieve
+ * @param {IntegerNum} max - the maximum number of threads to retrieve
  *
  * @return {GmailApp.GmailThread[]} an array of Gmail threads in the Inbox
  */
-GmailApp.getInboxThreads = function(start, max){};
 
 /**
  * Gets the number of unread threads in the inbox.
@@ -219,9 +232,10 @@ GmailApp.getInboxThreads = function(start, max){};
  Logger.log(&quot;Messages unread in inbox: &quot; + GmailApp.getInboxUnreadCount());
  </code></pre>
  *
- * @return {number} the number of threads in the inbox that have unread messages
+ * @function GmailApp.getInboxUnreadCount
+ *
+ * @return {IntegerNum} the number of threads in the inbox that have unread messages
  */
-GmailApp.getInboxUnreadCount = function(){};
 
 /**
  * Gets a message by ID.
@@ -239,11 +253,12 @@ GmailApp.getInboxUnreadCount = function(){};
  Logger.log(message.getSubject() == messageById.getSubject());
  </code></pre>
  *
+ * @function GmailApp.getMessageById
+ *
  * @param {String} id - the ID of the message to retrieve
  *
  * @return {GmailApp.GmailMessage} the message with the given ID
  */
-GmailApp.getMessageById = function(id){};
 
 /**
  * Retrieve all messages in the specified thread.
@@ -257,11 +272,12 @@ GmailApp.getMessageById = function(id){};
  }
  </code></pre>
  *
+ * @function GmailApp.getMessagesForThread
+ *
  * @param {GmailApp.GmailThread} thread - the thread of messages to retrieve
  *
  * @return {GmailApp.GmailMessage[]} array of messages corresponding to this thread
  */
-GmailApp.getMessagesForThread = function(thread){};
 
 /**
  * Retrieve all messages in the specified threads.
@@ -277,12 +293,13 @@ GmailApp.getMessagesForThread = function(thread){};
  }
  </code></pre>
  *
+ * @function GmailApp.getMessagesForThreads
+ *
  * @param {GmailApp.GmailThread[]} threads - the threads of messages to retrieve
  *
  * @return {GmailApp.GmailMessage[][]} an array of arrays of messages, where each item in the outer array corresponds to a
      thread and the inner array contains the messages in that thread
  */
-GmailApp.getMessagesForThreads = function(threads){};
 
 /**
  * Retrieves all Priority Inbox threads irrespective of labels.
@@ -296,9 +313,10 @@ GmailApp.getMessagesForThreads = function(threads){};
             GmailApp.getPriorityInboxThreads().length);
  </code></pre>
  *
+ * @function GmailApp.getPriorityInboxThreads
+ *
  * @return {GmailApp.GmailThread[]} an array of Gmail threads in the Priority Inbox
  */
-GmailApp.getPriorityInboxThreads = function(){};
 
 /**
  * Retrieves a range of Priority Inbox threads irrespective of labels.
@@ -309,12 +327,13 @@ GmailApp.getPriorityInboxThreads = function(){};
             GmailApp.getPriorityInboxThreads(0, 2).length);
  </code></pre>
  *
- * @param {number} start - the index of the first thread to retrieve
- * @param {number} max - the maximum number of threads to retrieve
+ * @function GmailApp.getPriorityInboxThreads
+ *
+ * @param {IntegerNum} start - the index of the first thread to retrieve
+ * @param {IntegerNum} max - the maximum number of threads to retrieve
  *
  * @return {GmailApp.GmailThread[]} an array of Gmail threads in the Priority Inbox
  */
-GmailApp.getPriorityInboxThreads = function(start, max){};
 
 /**
  * Gets the number of unread threads in the Priority Inbox.
@@ -324,9 +343,10 @@ GmailApp.getPriorityInboxThreads = function(start, max){};
             GmailApp.getPriorityInboxUnreadCount());
  </code></pre>
  *
- * @return {number} the number of threads in the Priority Inbox that have unread messages
+ * @function GmailApp.getPriorityInboxUnreadCount
+ *
+ * @return {IntegerNum} the number of threads in the Priority Inbox that have unread messages
  */
-GmailApp.getPriorityInboxUnreadCount = function(){};
 
 /**
  * Retrieves all spam threads irrespective of labels.
@@ -339,9 +359,10 @@ GmailApp.getPriorityInboxUnreadCount = function(){};
  Logger.log(&quot;# of total spam threads: &quot; + GmailApp.getSpamThreads().length);
  </code></pre>
  *
+ * @function GmailApp.getSpamThreads
+ *
  * @return {GmailApp.GmailThread[]} an array of Gmail threads in the spam folder
  */
-GmailApp.getSpamThreads = function(){};
 
 /**
  * Retrieves a range of spam threads irrespective of labels.
@@ -351,12 +372,13 @@ GmailApp.getSpamThreads = function(){};
  Logger.log(&quot;# of total spam threads: &quot; + GmailApp.getSpamThreads(0, 5).length);
  </code></pre>
  *
- * @param {number} start - the index of the first thread to retrieve
- * @param {number} max - the maximum number of threads to retrieve
+ * @function GmailApp.getSpamThreads
+ *
+ * @param {IntegerNum} start - the index of the first thread to retrieve
+ * @param {IntegerNum} max - the maximum number of threads to retrieve
  *
  * @return {GmailApp.GmailThread[]} an array of Gmail threads in the spam folder
  */
-GmailApp.getSpamThreads = function(start, max){};
 
 /**
  * Gets the number of unread threads that are spam.
@@ -367,9 +389,10 @@ GmailApp.getSpamThreads = function(start, max){};
  Logger.log(&quot;# unread threads that are spam: &quot; + GmailApp.getSpamUnreadCount());
  </code></pre>
  *
- * @return {number} the number spam threads that have unread messages
+ * @function GmailApp.getSpamUnreadCount
+ *
+ * @return {IntegerNum} the number spam threads that have unread messages
  */
-GmailApp.getSpamUnreadCount = function(){};
 
 /**
  * Retrieves all starred threads irrespective of labels.
@@ -383,9 +406,10 @@ GmailApp.getSpamUnreadCount = function(){};
  Logger.log(&quot;# Starred threads: &quot; + GmailApp.getStarredThreads().length);
  </code></pre>
  *
+ * @function GmailApp.getStarredThreads
+ *
  * @return {GmailApp.GmailThread[]} an array of starred Gmail threads
  */
-GmailApp.getStarredThreads = function(){};
 
 /**
  * Retrieves a range of starred threads irrespective of labels.
@@ -395,12 +419,13 @@ GmailApp.getStarredThreads = function(){};
  Logger.log(&quot;# Starred threads: &quot; + GmailApp.getStarredThreads(0, 5).length);
  </code></pre>
  *
- * @param {number} start - the index of the first thread to retrieve
- * @param {number} max - the maximum number of threads to retrieve
+ * @function GmailApp.getStarredThreads
+ *
+ * @param {IntegerNum} start - the index of the first thread to retrieve
+ * @param {IntegerNum} max - the maximum number of threads to retrieve
  *
  * @return {GmailApp.GmailThread[]} an array of starred Gmail threads
  */
-GmailApp.getStarredThreads = function(start, max){};
 
 /**
  * Gets the number of unread threads that are starred.
@@ -409,9 +434,10 @@ GmailApp.getStarredThreads = function(start, max){};
  Logger.log(&quot;# unread and starred: &quot; + GmailApp.getStarredUnreadCount());
  </code></pre>
  *
- * @return {number} the number of starred threads that have unread messages
+ * @function GmailApp.getStarredUnreadCount
+ *
+ * @return {IntegerNum} the number of starred threads that have unread messages
  */
-GmailApp.getStarredUnreadCount = function(){};
 
 /**
  * Gets a thread by ID.
@@ -428,11 +454,12 @@ GmailApp.getStarredUnreadCount = function(){};
  Logger.log(firstThread.getFirstMessageSubject() == threadById.getFirstMessageSubject());
  </code></pre>
  *
+ * @function GmailApp.getThreadById
+ *
  * @param {String} id - the ID of the thread to retrieve
  *
  * @return {GmailApp.GmailThread} the thread with the given ID or null if not found
  */
-GmailApp.getThreadById = function(id){};
 
 /**
  * Retrieves all trash threads irrespective of labels.
@@ -445,9 +472,10 @@ GmailApp.getThreadById = function(id){};
  Logger.log(&quot;# of total trash threads: &quot; + GmailApp.getTrashThreads().length);
  </code></pre>
  *
+ * @function GmailApp.getTrashThreads
+ *
  * @return {GmailApp.GmailThread[]} an array of Gmail threads in the trash
  */
-GmailApp.getTrashThreads = function(){};
 
 /**
  * Retrieves a range of trash threads irrespective of labels.
@@ -457,12 +485,13 @@ GmailApp.getTrashThreads = function(){};
  Logger.log(&quot;# of total trash threads: &quot; + GmailApp.getTrashThreads(0, 5).length);
  </code></pre>
  *
- * @param {number} start - the index of the first thread to retrieve
- * @param {number} max - the maximum number of threads to retrieve
+ * @function GmailApp.getTrashThreads
+ *
+ * @param {IntegerNum} start - the index of the first thread to retrieve
+ * @param {IntegerNum} max - the maximum number of threads to retrieve
  *
  * @return {GmailApp.GmailThread[]} an array of Gmail threads in the trash
  */
-GmailApp.getTrashThreads = function(start, max){};
 
 /**
  * Retrieves a label given the label name.
@@ -471,11 +500,12 @@ GmailApp.getTrashThreads = function(start, max){};
  var labelObject = GmailApp.getUserLabelByName(&quot;myLabel&quot;);
  </code></pre>
  *
+ * @function GmailApp.getUserLabelByName
+ *
  * @param {String} name - the name of the label to retrieve
  *
  * @return {GmailApp.GmailLabel} the Gmail label with the given name
  */
-GmailApp.getUserLabelByName = function(name){};
 
 /**
  * Retrieves a list of user-created labels.
@@ -488,9 +518,10 @@ GmailApp.getUserLabelByName = function(name){};
  }
  </code></pre>
  *
+ * @function GmailApp.getUserLabels
+ *
  * @return {GmailApp.GmailLabel[]} array of user created labels
  */
-GmailApp.getUserLabels = function(){};
 
 /**
  * Marks this message read and forces the message to refresh.
@@ -501,11 +532,12 @@ GmailApp.getUserLabels = function(){};
  GmailApp.markMessageRead(message);
  </code></pre>
  *
+ * @function GmailApp.markMessageRead
+ *
  * @param {GmailApp.GmailMessage} message - the message to mark as read
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.markMessageRead = function(message){};
 
 /**
  * Marks this message unread and forces the message to refresh.
@@ -516,11 +548,12 @@ GmailApp.markMessageRead = function(message){};
  GmailApp.markMessageUnread(message);
  </code></pre>
  *
+ * @function GmailApp.markMessageUnread
+ *
  * @param {GmailApp.GmailMessage} message - the message to mark as unread
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.markMessageUnread = function(message){};
 
 /**
  * Marks these messages read and forces the messages to refresh.
@@ -533,11 +566,12 @@ GmailApp.markMessageUnread = function(message){};
  GmailApp.markMessagesRead(thread.getMessages());
  </code></pre>
  *
+ * @function GmailApp.markMessagesRead
+ *
  * @param {GmailApp.GmailMessage[]} messages - an array of messages to mark as read
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.markMessagesRead = function(messages){};
 
 /**
  * Marks these messages unread and forces the messages to refresh.
@@ -550,11 +584,12 @@ GmailApp.markMessagesRead = function(messages){};
  GmailApp.markMessagesUnread(thread.getMessages());
  </code></pre>
  *
+ * @function GmailApp.markMessagesUnread
+ *
  * @param {GmailApp.GmailMessage[]} messages - an array of messages to mark as unread
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.markMessagesUnread = function(messages){};
 
 /**
  * Marks this thread as important and forces the thread to refresh.
@@ -565,11 +600,12 @@ GmailApp.markMessagesUnread = function(messages){};
  GmailApp.markThreadImportant(thread);
  </code></pre>
  *
+ * @function GmailApp.markThreadImportant
+ *
  * @param {GmailApp.GmailThread} thread - the thread to mark as important
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.markThreadImportant = function(thread){};
 
 /**
  * Marks this thread as read and forces the thread to refresh.
@@ -580,11 +616,12 @@ GmailApp.markThreadImportant = function(thread){};
  GmailApp.markThreadRead(thread);
  </code></pre>
  *
+ * @function GmailApp.markThreadRead
+ *
  * @param {GmailApp.GmailThread} thread - the thread to mark as read
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.markThreadRead = function(thread){};
 
 /**
  * Marks this thread as unimportant and forces the thread to refresh.
@@ -595,11 +632,12 @@ GmailApp.markThreadRead = function(thread){};
  GmailApp.markThreadUnimportant(thread);
  </code></pre>
  *
+ * @function GmailApp.markThreadUnimportant
+ *
  * @param {GmailApp.GmailThread} thread - the thread to mark as unimportant
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.markThreadUnimportant = function(thread){};
 
 /**
  * Marks this thread unread and forces the thread to refresh.
@@ -610,11 +648,12 @@ GmailApp.markThreadUnimportant = function(thread){};
  GmailApp.markThreadUnread(thread);
  </code></pre>
  *
+ * @function GmailApp.markThreadUnread
+ *
  * @param {GmailApp.GmailThread} thread - the thread to mark as unread
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.markThreadUnread = function(thread){};
 
 /**
  * Marks these threads as important and forces the threads to refresh.
@@ -625,11 +664,12 @@ GmailApp.markThreadUnread = function(thread){};
  GmailApp.markThreadsImportant(threads);
  </code></pre>
  *
+ * @function GmailApp.markThreadsImportant
+ *
  * @param {GmailApp.GmailThread[]} threads - an array of threads to mark as important
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.markThreadsImportant = function(threads){};
 
 /**
  * Marks these threads as read and forces the threads to refresh.
@@ -640,11 +680,12 @@ GmailApp.markThreadsImportant = function(threads){};
  GmailApp.markThreadsRead(threads);
  </code></pre>
  *
+ * @function GmailApp.markThreadsRead
+ *
  * @param {GmailApp.GmailThread[]} threads - an array of threads to mark as read
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.markThreadsRead = function(threads){};
 
 /**
  * Marks these threads as unimportant and forces the threads to refresh.
@@ -655,11 +696,12 @@ GmailApp.markThreadsRead = function(threads){};
  GmailApp.markThreadsUnimportant(threads);
  </code></pre>
  *
+ * @function GmailApp.markThreadsUnimportant
+ *
  * @param {GmailApp.GmailThread[]} threads - an array of threads to mark as unimportant
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.markThreadsUnimportant = function(threads){};
 
 /**
  * Marks these threads as unread and forces the threads to refresh.
@@ -670,11 +712,12 @@ GmailApp.markThreadsUnimportant = function(threads){};
  GmailApp.markThreadsUnread(threads);
  </code></pre>
  *
+ * @function GmailApp.markThreadsUnread
+ *
  * @param {GmailApp.GmailThread[]} threads - an array of threads to mark as unread
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.markThreadsUnread = function(threads){};
 
 /**
  * Moves the message to the trash and forces the message to refresh.
@@ -686,11 +729,12 @@ GmailApp.markThreadsUnread = function(threads){};
  GmailApp.moveMessageToTrash(firstMessage);
  </code></pre>
  *
+ * @function GmailApp.moveMessageToTrash
+ *
  * @param {GmailApp.GmailMessage} message - the message to be trashed
  *
  * @return {GmailApp} the Gmail service (useful for chaining)
  */
-GmailApp.moveMessageToTrash = function(message){};
 
 /**
  * Moves the specified messages to the trash and forces the messages to refresh.
@@ -703,11 +747,12 @@ GmailApp.moveMessageToTrash = function(message){};
  GmailApp.moveMessagesToTrash(toDelete);
  </code></pre>
  *
+ * @function GmailApp.moveMessagesToTrash
+ *
  * @param {GmailApp.GmailMessage[]} messages - the messages to be trashed
  *
  * @return {GmailApp} the Gmail service (useful for chaining)
  */
-GmailApp.moveMessagesToTrash = function(messages){};
 
 /**
  * Moves this thread to the archive and forces the thread to refresh.
@@ -718,11 +763,12 @@ GmailApp.moveMessagesToTrash = function(messages){};
  GmailApp.moveThreadToArchive(firstThread);
  </code></pre>
  *
+ * @function GmailApp.moveThreadToArchive
+ *
  * @param {GmailApp.GmailThread} thread - the thread to be archive
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.moveThreadToArchive = function(thread){};
 
 /**
  * Moves this thread to the inbox and forces the thread to refresh.
@@ -733,11 +779,12 @@ GmailApp.moveThreadToArchive = function(thread){};
  GmailApp.moveThreadToInbox(thread);
  </code></pre>
  *
+ * @function GmailApp.moveThreadToInbox
+ *
  * @param {GmailApp.GmailThread} thread - the thread to be moved to the inbox
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.moveThreadToInbox = function(thread){};
 
 /**
  * Moves this thread to spam and forces the thread to refresh.
@@ -748,11 +795,12 @@ GmailApp.moveThreadToInbox = function(thread){};
  GmailApp.moveThreadToSpam(firstThread);
  </code></pre>
  *
+ * @function GmailApp.moveThreadToSpam
+ *
  * @param {GmailApp.GmailThread} thread - the thread to be moved to spam
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.moveThreadToSpam = function(thread){};
 
 /**
  * Moves this thread to the trash and forces the thread to refresh.
@@ -763,11 +811,12 @@ GmailApp.moveThreadToSpam = function(thread){};
  GmailApp.moveThreadToTrash(firstThread);
  </code></pre>
  *
+ * @function GmailApp.moveThreadToTrash
+ *
  * @param {GmailApp.GmailThread} thread - the thread to be trashed
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.moveThreadToTrash = function(thread){};
 
 /**
  * Moves these threads to the archive and forces the threads to refresh.
@@ -778,11 +827,12 @@ GmailApp.moveThreadToTrash = function(thread){};
  GmailApp.moveThreadsToArchive(firstTwoThreads);
  </code></pre>
  *
+ * @function GmailApp.moveThreadsToArchive
+ *
  * @param {GmailApp.GmailThread[]} threads - an array of threads to be archived
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.moveThreadsToArchive = function(threads){};
 
 /**
  * Moves these threads to the inbox and forces the threads to refresh.
@@ -793,11 +843,12 @@ GmailApp.moveThreadsToArchive = function(threads){};
  GmailApp.moveThreadsToInbox(firstTwoThreads);
  </code></pre>
  *
+ * @function GmailApp.moveThreadsToInbox
+ *
  * @param {GmailApp.GmailThread[]} threads - an array of threads to be moved to the inbox
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.moveThreadsToInbox = function(threads){};
 
 /**
  * Moves these threads to spam and forces the threads to refresh.
@@ -808,11 +859,12 @@ GmailApp.moveThreadsToInbox = function(threads){};
  GmailApp.moveThreadsToSpam(firstTwoThreads);
  </code></pre>
  *
+ * @function GmailApp.moveThreadsToSpam
+ *
  * @param {GmailApp.GmailThread[]} threads - an array of threads to be moved to spam
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.moveThreadsToSpam = function(threads){};
 
 /**
  * Moves these threads to the trash and forces the threads to refresh.
@@ -823,11 +875,12 @@ GmailApp.moveThreadsToSpam = function(threads){};
  GmailApp.moveThreadsToTrash(firstTwoThreads);
  </code></pre>
  *
+ * @function GmailApp.moveThreadsToTrash
+ *
  * @param {GmailApp.GmailThread[]} threads - an array of threads to be trashed
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.moveThreadsToTrash = function(threads){};
 
 /**
  * Reloads the message and associated state from Gmail (useful in case the labels, read state,
@@ -841,11 +894,12 @@ GmailApp.moveThreadsToTrash = function(threads){};
  // ...Do more stuff with firstMessage...
  </code></pre>
  *
+ * @function GmailApp.refreshMessage
+ *
  * @param {GmailApp.GmailMessage} message - the message to be refreshed
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.refreshMessage = function(message){};
 
 /**
  * Reloads the messages and associated state from Gmail (useful in case the labels, read state,
@@ -859,11 +913,12 @@ GmailApp.refreshMessage = function(message){};
  // ...Do more stuff with coupleOfMessages...
  </code></pre>
  *
+ * @function GmailApp.refreshMessages
+ *
  * @param {GmailApp.GmailMessage[]} messages - the messages to be refreshed
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.refreshMessages = function(messages){};
 
 /**
  * Reloads the thread and associated state from Gmail (useful in case the labels, read state,
@@ -876,11 +931,12 @@ GmailApp.refreshMessages = function(messages){};
  // ... Do more stuff with the thread ...
  </code></pre>
  *
+ * @function GmailApp.refreshThread
+ *
  * @param {GmailApp.GmailThread} thread - the thread to be refreshed
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.refreshThread = function(thread){};
 
 /**
  * Reloads the threads and associated state from Gmail (useful in case the labels, read state,
@@ -893,11 +949,12 @@ GmailApp.refreshThread = function(thread){};
  // ... Do more stuff with threads ...
  </code></pre>
  *
+ * @function GmailApp.refreshThreads
+ *
  * @param {GmailApp.GmailThread[]} threads - the threads to be refreshed
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.refreshThreads = function(threads){};
 
 /**
  * Search Gmail with the given query.
@@ -911,11 +968,12 @@ GmailApp.refreshThreads = function(threads){};
  var threads = GmailApp.search(&#39;is:starred subject:&quot;IMPORTANT&quot;&#39;);
  </code></pre>
  *
+ * @function GmailApp.search
+ *
  * @param {String} query - the search query, as you would type it into Gmail
  *
  * @return {GmailApp.GmailThread[]} an array of Gmail threads matching this query
  */
-GmailApp.search = function(query){};
 
 /**
  * Search Gmail with the given query.
@@ -926,13 +984,14 @@ GmailApp.search = function(query){};
  var threads = GmailApp.search(&#39;is:starred subject:&quot;IMPORTANT&quot;&#39;, 10, 10);
  </code></pre>
  *
+ * @function GmailApp.search
+ *
  * @param {String} query - the search query, as you would type it into Gmail
- * @param {number} start - the index of the starting thread
- * @param {number} max - the maximum number of threads to return
+ * @param {IntegerNum} start - the index of the starting thread
+ * @param {IntegerNum} max - the maximum number of threads to return
  *
  * @return {GmailApp.GmailThread[]} an array of Gmail threads matching this query
  */
-GmailApp.search = function(query, start, max){};
 
 /**
  * Sends an email message. The size of the email (including headers) is <a
@@ -944,13 +1003,14 @@ GmailApp.search = function(query, start, max){};
  GmailApp.sendEmail(&quot;mike@example.com&quot;, &quot;current time&quot;, &quot;The time is: &quot; + now.toString());
  </code></pre>
  *
+ * @function GmailApp.sendEmail
+ *
  * @param {String} recipient - comma separated list of email addresses
  * @param {String} subject - subject of the email
  * @param {String} body - body of the email
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.sendEmail = function(recipient, subject, body){};
 
 /**
  * Sends an email message with optional arguments. The email can contain plain text or an HTML
@@ -966,6 +1026,8 @@ GmailApp.sendEmail = function(recipient, subject, body){};
  });
  </code></pre>
  *
+ * @function GmailApp.sendEmail
+ *
  * @param {String} recipient - the addresses of the recipient
  * @param {String} subject - the subject line
  * @param {String} body - the body of the email
@@ -973,7 +1035,32 @@ GmailApp.sendEmail = function(recipient, subject, body){};
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.sendEmail = function(recipient, subject, body, options){};
+
+/**
+ * Sets the <a href="/gmail/add-ons/concepts/scopes#access_tokens">current message access
+ token</a> that enables the script to access the current <code><a target='_blank' href='https://developers.google.com/apps-script/reference/gmail/gmail-message.html'>GmailMessage</a></code> properties.
+
+ <p>Only <a href="/gmail/add-ons/">Gmail add-on</a> projects using Gmail <a
+ href="/gmail/add-ons/concepts/scopes#gmail_add-on_scopes">current message scopes</a> require
+ this method.
+
+ <pre class="prettyprint"><code>
+ function handleAddonActionEvent(e) {
+   var accessToken = e.messageMetadata.accessToken;
+   var messageId = e.messageMetadata.messageId;
+   GmailApp.setCurrentMessageAccessToken(accessToken);
+   var mailMessage = GmailApp.getMessageById(messageId);
+   // Do something with mailMessage
+ }
+ </code></pre>
+ *
+ * @function GmailApp.setCurrentMessageAccessToken
+ *
+ * @param {String} accessToken - the temporary access token obtained from a Gmail add-on <a
+     href="/gmail/add-ons/concepts/actions#action_event_objects">action event object</a>.
+ *
+ * @return void
+ */
 
 /**
  * Adds a star to this message and forces the message to refresh.
@@ -985,11 +1072,12 @@ GmailApp.sendEmail = function(recipient, subject, body, options){};
  GmailApp.starMessage(message);
  </code></pre>
  *
+ * @function GmailApp.starMessage
+ *
  * @param {GmailApp.GmailMessage} message - the message to star
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.starMessage = function(message){};
 
 /**
  * Adds stars to these messages and forces the messages to refresh.
@@ -1001,11 +1089,12 @@ GmailApp.starMessage = function(message){};
  GmailApp.starMessages(coupleOfMessages);
  </code></pre>
  *
+ * @function GmailApp.starMessages
+ *
  * @param {GmailApp.GmailMessage[]} messages - an array of messages to star
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.starMessages = function(messages){};
 
 /**
  * Removes a star from this message and forces the message to refresh.
@@ -1017,11 +1106,12 @@ GmailApp.starMessages = function(messages){};
  GmailApp.unstarMessage(message);
  </code></pre>
  *
+ * @function GmailApp.unstarMessage
+ *
  * @param {GmailApp.GmailMessage} message - the message to unstar
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.unstarMessage = function(message){};
 
 /**
  * Removes stars from these messages and forces the messages to refresh.
@@ -1033,35 +1123,43 @@ GmailApp.unstarMessage = function(message){};
  GmailApp.unstarMessages(coupleOfMessages);
  </code></pre>
  *
+ * @function GmailApp.unstarMessages
+ *
  * @param {GmailApp.GmailMessage[]} messages - an array of messages to unstar
  *
  * @return {GmailApp} the Gmail service, useful for chaining
  */
-GmailApp.unstarMessages = function(messages){};
 
-/** @constructor */
-GmailApp.GmailAttachment = function(){};
+
+/**
+ * @class GmailApp.GmailAttachment
+ */
 
 /**
  * Returns a copy of this blob.
  *
+ * @function GmailApp.GmailAttachment#copyBlob
+ *
  * @return {Blob} the new copy
  */
-GmailApp.GmailAttachment.prototype.copyBlob = function(){};
 
 /**
  * Gets all the blobs that are contained within this (possibly composite) blob.
  *
+ * @function GmailApp.GmailAttachment#getAllBlobs
+ * @deprecated
+ *
  * @return {Blob[]} the blobs contained within the blob
  */
-GmailApp.GmailAttachment.prototype.getAllBlobs = function(){};
 
 /**
  * Return the data inside this object as a blob converted to the specified content type. This
- method adds the appropriate extension to the filename — for example, "myfile.pdf". However, it
+ method adds the appropriate extension to the filename—for example, "myfile.pdf". However, it
  assumes that the part of the filename that follows the last period (if any) is an existing
- extension that should be replaced. Consequently, "ChristmasList.12.25.2014" will become
+ extension that should be replaced. Consequently, "ChristmasList.12.25.2014" becomes
  "ChristmasList.12.25.pdf".
+ *
+ * @function GmailApp.GmailAttachment#getAs
  *
  * @param {String} contentType - the MIME type to convert to. For most blobs, <code>&#39;application/pdf&#39;</code> is
      the only valid option. For images in BMP, GIF, JPEG, or PNG format, any of <code>&#39;image/bmp&#39;</code>, <code>&#39;image/gif&#39;</code>, <code>&#39;image/jpeg&#39;</code>, or <code>&#39;image/png&#39;</code> are also
@@ -1069,115 +1167,129 @@ GmailApp.GmailAttachment.prototype.getAllBlobs = function(){};
  *
  * @return {Blob} the data as a blob
  */
-GmailApp.GmailAttachment.prototype.getAs = function(contentType){};
 
 /**
  * Gets the data stored in this blob.
  *
+ * @function GmailApp.GmailAttachment#getBytes
+ *
  * @return {Byte[]} the stored bytes
  */
-GmailApp.GmailAttachment.prototype.getBytes = function(){};
 
 /**
  * Gets the content type of the bytes in this blob.
  *
+ * @function GmailApp.GmailAttachment#getContentType
+ *
  * @return {String} the content type of this data, if known, or null
  */
-GmailApp.GmailAttachment.prototype.getContentType = function(){};
 
 /**
  * Gets the data of this blob as a String with UTF-8 encoding.
  *
+ * @function GmailApp.GmailAttachment#getDataAsString
+ *
  * @return {String} the data as a string
  */
-GmailApp.GmailAttachment.prototype.getDataAsString = function(){};
 
 /**
  * Gets the data of this blob as a string with the specified encoding.
+ *
+ * @function GmailApp.GmailAttachment#getDataAsString
  *
  * @param {String} charset - the charset to use in encoding the data in this blob as a string
  *
  * @return {String} the data as a string
  */
-GmailApp.GmailAttachment.prototype.getDataAsString = function(charset){};
 
 /**
  * Gets the name of this blob.
  *
+ * @function GmailApp.GmailAttachment#getName
+ *
  * @return {String} the name of this data, if known, or null
  */
-GmailApp.GmailAttachment.prototype.getName = function(){};
 
 /**
  * Gets the size of this attachment. This method is faster than calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/gmail/gmail-attachment.html#getBytes()'>getBytes()</a></code><code>.length</code> and does not count against the Gmail read quota.
  *
- * @return {number} the size of the attachment, in bytes
+ * @function GmailApp.GmailAttachment#getSize
+ *
+ * @return {IntegerNum} the size of the attachment, in bytes
  */
-GmailApp.GmailAttachment.prototype.getSize = function(){};
 
 /**
  * Returns whether this blob is a G Suite file (Sheets, Docs, etc.).
  *
+ * @function GmailApp.GmailAttachment#isGoogleType
+ *
  * @return {Boolean} <code>true</code> if this blob is a G Suite file; <code>false</code> if not
  */
-GmailApp.GmailAttachment.prototype.isGoogleType = function(){};
 
 /**
  * Sets the data stored in this blob.
+ *
+ * @function GmailApp.GmailAttachment#setBytes
  *
  * @param {Byte[]} data - the new data
  *
  * @return {Blob} this blob, for chaining
  */
-GmailApp.GmailAttachment.prototype.setBytes = function(data){};
 
 /**
  * Sets the content type of the bytes in this blob.
+ *
+ * @function GmailApp.GmailAttachment#setContentType
  *
  * @param {String} contentType - the new contentType
  *
  * @return {Blob} this blob, for chaining
  */
-GmailApp.GmailAttachment.prototype.setContentType = function(contentType){};
 
 /**
  * Sets the content type of the bytes in this blob based on the file extension. The contentType
  will be <code>null</code> if it cannot be guessed from its extension.
  *
+ * @function GmailApp.GmailAttachment#setContentTypeFromExtension
+ *
  * @return {Blob} this blob, for chaining
  */
-GmailApp.GmailAttachment.prototype.setContentTypeFromExtension = function(){};
 
 /**
  * Sets the data of this blob from a string with UTF-8 encoding.
+ *
+ * @function GmailApp.GmailAttachment#setDataFromString
  *
  * @param {String} string - the string data
  *
  * @return {Blob} this blob, for chaining
  */
-GmailApp.GmailAttachment.prototype.setDataFromString = function(string){};
 
 /**
  * Sets the data of this blob from a string with the specified encoding.
+ *
+ * @function GmailApp.GmailAttachment#setDataFromString
  *
  * @param {String} string - the string data
  * @param {String} charset - the charset to use in interpreting the string as bytes
  *
  * @return {Blob} this blob, for chaining
  */
-GmailApp.GmailAttachment.prototype.setDataFromString = function(string, charset){};
 
 /**
  * Sets the name of this blob.
+ *
+ * @function GmailApp.GmailAttachment#setName
  *
  * @param {String} name - the new name
  *
  * @return {Blob} this blob, for chaining
  */
-GmailApp.GmailAttachment.prototype.setName = function(name){};
 
-/** @constructor */
-GmailApp.GmailDraft = function(){};
+
+/**
+ * @class GmailApp.GmailDraft
+ */
 
 /**
  * Deletes this draft message.
@@ -1188,9 +1300,10 @@ GmailApp.GmailDraft = function(){};
  draft.getMessage(); // Throws exception!
  </code></pre>
  *
+ * @function GmailApp.GmailDraft#deleteDraft
+ *
  * @return void
  */
-GmailApp.GmailDraft.prototype.deleteDraft = function(){};
 
 /**
  * Gets the ID of this draft message.
@@ -1202,9 +1315,10 @@ GmailApp.GmailDraft.prototype.deleteDraft = function(){};
  Logger.log(draft.getMessage().getSubject() == draftById.getMessage().getSubject());
  </code></pre>
  *
+ * @function GmailApp.GmailDraft#getId
+ *
  * @return {String} the draft ID
  */
-GmailApp.GmailDraft.prototype.getId = function(){};
 
 /**
  * Returns a GmailMessage representing this draft.
@@ -1215,9 +1329,10 @@ GmailApp.GmailDraft.prototype.getId = function(){};
  Logger.log(message.getSubject());
  </code></pre>
  *
+ * @function GmailApp.GmailDraft#getMessage
+ *
  * @return {GmailApp.GmailMessage} the message that represents the contents of this draft
  */
-GmailApp.GmailDraft.prototype.getMessage = function(){};
 
 /**
  * Returns the ID of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/gmail/gmail-message.html'>GmailMessage</a></code> representing this draft.
@@ -1228,9 +1343,10 @@ GmailApp.GmailDraft.prototype.getMessage = function(){};
  Logger.log(messageId == draft.getMessage().getId());
  </code></pre>
  *
+ * @function GmailApp.GmailDraft#getMessageId
+ *
  * @return {String} the message ID
  */
-GmailApp.GmailDraft.prototype.getMessageId = function(){};
 
 /**
  * Sends this draft email message. The size of the email (including headers) is <a
@@ -1242,9 +1358,10 @@ GmailApp.GmailDraft.prototype.getMessageId = function(){};
  Logger.log(msg.getDate()); // Should be approximately the current timestamp
  </code></pre>
  *
+ * @function GmailApp.GmailDraft#send
+ *
  * @return {GmailApp.GmailMessage} the newly sent message
  */
-GmailApp.GmailDraft.prototype.send = function(){};
 
 /**
  * Replaces the contents of this draft message. The size of the email (including headers) is <a
@@ -1257,13 +1374,14 @@ GmailApp.GmailDraft.prototype.send = function(){};
  draft.update(&quot;mike@example.com&quot;, &quot;current time&quot;, &quot;The time is: &quot; + now.toString());
  </code></pre>
  *
+ * @function GmailApp.GmailDraft#update
+ *
  * @param {String} recipient - comma separated list of email addresses
  * @param {String} subject - subject of the email
  * @param {String} body - body of the email
  *
  * @return {GmailApp.GmailDraft} the newly updated draft
  */
-GmailApp.GmailDraft.prototype.update = function(recipient, subject, body){};
 
 /**
  * Replaces the contents of this draft message using optional arguments. The email can contain
@@ -1280,6 +1398,8 @@ GmailApp.GmailDraft.prototype.update = function(recipient, subject, body){};
  });
  </code></pre>
  *
+ * @function GmailApp.GmailDraft#update
+ *
  * @param {String} recipient - comma separated list of email addresses
  * @param {String} subject - subject of the email
  * @param {String} body - body of the email
@@ -1287,10 +1407,11 @@ GmailApp.GmailDraft.prototype.update = function(recipient, subject, body){};
  *
  * @return {GmailApp.GmailDraft} the newly updated draft
  */
-GmailApp.GmailDraft.prototype.update = function(recipient, subject, body, options){};
 
-/** @constructor */
-GmailApp.GmailLabel = function(){};
+
+/**
+ * @class GmailApp.GmailLabel
+ */
 
 /**
  * Adds this label to the given thread and forces the thread to refresh (<code><a target='_blank' href='https://developers.google.com/apps-script/reference/gmail/gmail-thread.html#refresh()'>GmailThread.refresh()</a></code>).
@@ -1302,11 +1423,12 @@ GmailApp.GmailLabel = function(){};
  label.addToThread(firstThread);
  </code></pre>
  *
+ * @function GmailApp.GmailLabel#addToThread
+ *
  * @param {GmailApp.GmailThread} thread - the thread to be labeled
  *
  * @return {GmailApp.GmailLabel} this GmailLabel, useful for chaining
  */
-GmailApp.GmailLabel.prototype.addToThread = function(thread){};
 
 /**
  * Adds this label to the given threads and forces the threads to refresh.
@@ -1318,11 +1440,12 @@ GmailApp.GmailLabel.prototype.addToThread = function(thread){};
  label.addToThreads(threads);
  </code></pre>
  *
+ * @function GmailApp.GmailLabel#addToThreads
+ *
  * @param {GmailApp.GmailThread[]} threads - an array of threads to be labeled
  *
  * @return {GmailApp.GmailLabel} this GmailLabel, useful for chaining
  */
-GmailApp.GmailLabel.prototype.addToThreads = function(threads){};
 
 /**
  * Deletes this label.
@@ -1332,9 +1455,10 @@ GmailApp.GmailLabel.prototype.addToThreads = function(threads){};
  label.deleteLabel();
  </code></pre>
  *
+ * @function GmailApp.GmailLabel#deleteLabel
+ *
  * @return void
  */
-GmailApp.GmailLabel.prototype.deleteLabel = function(){};
 
 /**
  * Gets the name of this label.
@@ -1344,9 +1468,10 @@ GmailApp.GmailLabel.prototype.deleteLabel = function(){};
  Logger.log(label.getName()); //logs MyLabel
  </code></pre>
  *
+ * @function GmailApp.GmailLabel#getName
+ *
  * @return {String} the name of the label
  */
-GmailApp.GmailLabel.prototype.getName = function(){};
 
 /**
  * Gets the threads that are marked with this label.
@@ -1363,9 +1488,10 @@ GmailApp.GmailLabel.prototype.getName = function(){};
  }
  </code></pre>
  *
+ * @function GmailApp.GmailLabel#getThreads
+ *
  * @return {GmailApp.GmailThread[]} an array of threads marked with this Label
  */
-GmailApp.GmailLabel.prototype.getThreads = function(){};
 
 /**
  * Gets a range of threads marked with this label.
@@ -1379,12 +1505,13 @@ GmailApp.GmailLabel.prototype.getThreads = function(){};
  }
  </code></pre>
  *
- * @param {number} start - the index of the starting thread
- * @param {number} max - the maximum number of threads to return
+ * @function GmailApp.GmailLabel#getThreads
+ *
+ * @param {IntegerNum} start - the index of the starting thread
+ * @param {IntegerNum} max - the maximum number of threads to return
  *
  * @return {GmailApp.GmailThread[]} an array of threads marked with this label
  */
-GmailApp.GmailLabel.prototype.getThreads = function(start, max){};
 
 /**
  * Gets the number of unread threads tagged with this label.
@@ -1395,9 +1522,10 @@ GmailApp.GmailLabel.prototype.getThreads = function(start, max){};
  Logger.log(label.getUnreadCount());
  </code></pre>
  *
- * @return {number} the number of unread labeled threads
+ * @function GmailApp.GmailLabel#getUnreadCount
+ *
+ * @return {IntegerNum} the number of unread labeled threads
  */
-GmailApp.GmailLabel.prototype.getUnreadCount = function(){};
 
 /**
  * Removes this label from the given thread and forces the thread to refresh.
@@ -1409,11 +1537,12 @@ GmailApp.GmailLabel.prototype.getUnreadCount = function(){};
  label.removeFromThread(firstThread);
  </code></pre>
  *
+ * @function GmailApp.GmailLabel#removeFromThread
+ *
  * @param {GmailApp.GmailThread} thread - the thread be unlabeled
  *
  * @return {GmailApp.GmailLabel} this GmailLabel, useful for chaining
  */
-GmailApp.GmailLabel.prototype.removeFromThread = function(thread){};
 
 /**
  * Removes this label from the given threads and forces the threads to refresh.
@@ -1425,14 +1554,17 @@ GmailApp.GmailLabel.prototype.removeFromThread = function(thread){};
  label.removeFromThreads(threads);
  </code></pre>
  *
+ * @function GmailApp.GmailLabel#removeFromThreads
+ *
  * @param {GmailApp.GmailThread[]} threads - an array of threads to be unlabeled
  *
  * @return {GmailApp.GmailLabel} this GmailLabel, useful for chaining
  */
-GmailApp.GmailLabel.prototype.removeFromThreads = function(threads){};
 
-/** @constructor */
-GmailApp.GmailMessage = function(){};
+
+/**
+ * @class GmailApp.GmailMessage
+ */
 
 /**
  * Creates a draft message replying to the sender of this message using the reply-to address. The
@@ -1446,11 +1578,12 @@ GmailApp.GmailMessage = function(){};
  message.createDraftReply(&quot;Got your message&quot;);
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#createDraftReply
+ *
  * @param {String} body - the body of the email
  *
  * @return {GmailApp.GmailDraft} the newly created draft message
  */
-GmailApp.GmailMessage.prototype.createDraftReply = function(body){};
 
 /**
  * Creates a draft message replying to the sender of this message using the reply-to address, with
@@ -1470,12 +1603,13 @@ GmailApp.GmailMessage.prototype.createDraftReply = function(body){};
  });
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#createDraftReply
+ *
  * @param {String} body - the body of the email
  * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
  *
  * @return {GmailApp.GmailDraft} the newly created draft message
  */
-GmailApp.GmailMessage.prototype.createDraftReply = function(body, options){};
 
 /**
  * Creates a draft message replying to the sender using the reply-to address and all recipients of
@@ -1489,11 +1623,12 @@ GmailApp.GmailMessage.prototype.createDraftReply = function(body, options){};
  message.createDraftReplyAll(&quot;Got your message&quot;);
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#createDraftReplyAll
+ *
  * @param {String} body - the body of the email
  *
  * @return {GmailApp.GmailDraft} the newly created draft message
  */
-GmailApp.GmailMessage.prototype.createDraftReplyAll = function(body){};
 
 /**
  * Creates a draft message replying to the sender of this message using the reply-to address and
@@ -1513,12 +1648,13 @@ GmailApp.GmailMessage.prototype.createDraftReplyAll = function(body){};
  });
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#createDraftReplyAll
+ *
  * @param {String} body - the body of the email
  * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
  *
  * @return {GmailApp.GmailDraft} the newly created draft message
  */
-GmailApp.GmailMessage.prototype.createDraftReplyAll = function(body, options){};
 
 /**
  * Forwards this message to new recipients. The size of the email (including headers) is <a
@@ -1531,11 +1667,12 @@ GmailApp.GmailMessage.prototype.createDraftReplyAll = function(body, options){};
  message.forward(&quot;recipient1@example.com,recipient2@example.com&quot;);
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#forward
+ *
  * @param {String} recipient - a comma-separated list of email addresses
  *
  * @return {GmailApp.GmailMessage} this message, useful for chaining
  */
-GmailApp.GmailMessage.prototype.forward = function(recipient){};
 
 /**
  * Forwards this message to new recipients, with optional arguments.
@@ -1553,19 +1690,21 @@ GmailApp.GmailMessage.prototype.forward = function(recipient){};
  });
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#forward
+ *
  * @param {String} recipient - a comma-separated list of email addresses
  * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
  *
  * @return {GmailApp.GmailMessage} this message, useful for chaining
  */
-GmailApp.GmailMessage.prototype.forward = function(recipient, options){};
 
 /**
  * Gets all the attachments for this message.
  *
+ * @function GmailApp.GmailMessage#getAttachments
+ *
  * @return {GmailApp.GmailAttachment[]} an array of Blob attachments for this message
  */
-GmailApp.GmailMessage.prototype.getAttachments = function(){};
 
 /**
  * Gets the comma-separated recipients bcc'd on this message.
@@ -1578,9 +1717,10 @@ GmailApp.GmailMessage.prototype.getAttachments = function(){};
  Logger.log(message.getBcc()); // Log bcc&#39;d addresses
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#getBcc
+ *
  * @return {String} the comma-separated recipients bcc'd on this message
  */
-GmailApp.GmailMessage.prototype.getBcc = function(){};
 
 /**
  * Gets the HTML content of the body of this message.
@@ -1591,9 +1731,10 @@ GmailApp.GmailMessage.prototype.getBcc = function(){};
  Logger.log(message.getBody()); // Log contents of the body
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#getBody
+ *
  * @return {String} the body content of this message
  */
-GmailApp.GmailMessage.prototype.getBody = function(){};
 
 /**
  * Gets the comma-separated recipients cc'd on this message.
@@ -1604,9 +1745,10 @@ GmailApp.GmailMessage.prototype.getBody = function(){};
  Logger.log(message.getCc()); // Log cc&#39;d addresses
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#getCc
+ *
  * @return {String} the comma-separated recipients cc'd on this message
  */
-GmailApp.GmailMessage.prototype.getCc = function(){};
 
 /**
  * Gets the date and time of this message.
@@ -1617,9 +1759,10 @@ GmailApp.GmailMessage.prototype.getCc = function(){};
  Logger.log(message.getDate()); // Log date and time of the message
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#getDate
+ *
  * @return {Date} the date and time of this message
  */
-GmailApp.GmailMessage.prototype.getDate = function(){};
 
 /**
  * Gets the sender of this message.
@@ -1630,9 +1773,10 @@ GmailApp.GmailMessage.prototype.getDate = function(){};
  Logger.log(message.getFrom()); // Log from address of the message
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#getFrom
+ *
  * @return {String} the email address of the message sender
  */
-GmailApp.GmailMessage.prototype.getFrom = function(){};
 
 /**
  * Gets the ID of this message.
@@ -1645,9 +1789,10 @@ GmailApp.GmailMessage.prototype.getFrom = function(){};
  Logger.log(message.getSubject() == messageById.getMessage()); // Always logs true
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#getId
+ *
  * @return {String} the message ID
  */
-GmailApp.GmailMessage.prototype.getId = function(){};
 
 /**
  * Gets the content of the body of this message without HTML formatting. This is more complex than
@@ -1659,16 +1804,18 @@ GmailApp.GmailMessage.prototype.getId = function(){};
  Logger.log(message.getPlainBody()); // Log contents of the body
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#getPlainBody
+ *
  * @return {String} the plain body content of this message
  */
-GmailApp.GmailMessage.prototype.getPlainBody = function(){};
 
 /**
  * Gets the raw content of this message. This is equivalent to "Show Original" in the Gmail UI.
  *
+ * @function GmailApp.GmailMessage#getRawContent
+ *
  * @return {String} the raw content of this message.
  */
-GmailApp.GmailMessage.prototype.getRawContent = function(){};
 
 /**
  * Gets the reply-to address of this message (usually the sender).
@@ -1679,9 +1826,10 @@ GmailApp.GmailMessage.prototype.getRawContent = function(){};
  Logger.log(message.getReplyTo()); // Logs reply-to address
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#getReplyTo
+ *
  * @return {String} the email address for replies
  */
-GmailApp.GmailMessage.prototype.getReplyTo = function(){};
 
 /**
  * Gets the subject of this message.
@@ -1692,9 +1840,10 @@ GmailApp.GmailMessage.prototype.getReplyTo = function(){};
  Logger.log(message.getSubject()); // Log subject line
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#getSubject
+ *
  * @return {String} the subject of this message
  */
-GmailApp.GmailMessage.prototype.getSubject = function(){};
 
 /**
  * Gets the thread that contains this message.
@@ -1706,9 +1855,10 @@ GmailApp.GmailMessage.prototype.getSubject = function(){};
             thread.getFirstMessageSubject()); // Always logs true
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#getThread
+ *
  * @return {GmailApp.GmailThread} the GmailThread that contains this message
  */
-GmailApp.GmailMessage.prototype.getThread = function(){};
 
 /**
  * Gets the comma-separated recipient(s) of this message.
@@ -1719,9 +1869,10 @@ GmailApp.GmailMessage.prototype.getThread = function(){};
  Logger.log(message.getTo()); // Log the recipient of message
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#getTo
+ *
  * @return {String} the comma-separated recipient(s) of this message
  */
-GmailApp.GmailMessage.prototype.getTo = function(){};
 
 /**
  * Gets whether this message is a draft.
@@ -1732,9 +1883,10 @@ GmailApp.GmailMessage.prototype.getTo = function(){};
  Logger.log(&quot;is draft? &quot; + message.isDraft());
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#isDraft
+ *
  * @return {Boolean} whether this message is a draft
  */
-GmailApp.GmailMessage.prototype.isDraft = function(){};
 
 /**
  * Gets whether this message is a chat.
@@ -1745,9 +1897,10 @@ GmailApp.GmailMessage.prototype.isDraft = function(){};
  Logger.log(&quot;is a chat? &quot; + message.isInChats());
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#isInChats
+ *
  * @return {Boolean} whether this message is a chat
  */
-GmailApp.GmailMessage.prototype.isInChats = function(){};
 
 /**
  * Gets whether this message is in the inbox.
@@ -1758,9 +1911,10 @@ GmailApp.GmailMessage.prototype.isInChats = function(){};
  Logger.log(&quot;is in inbox? &quot; + message.isInInbox());
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#isInInbox
+ *
  * @return {Boolean} whether this message is in the inbox
  */
-GmailApp.GmailMessage.prototype.isInInbox = function(){};
 
 /**
  * Returns true if this message is in the priority inbox; returns false otherwise.
@@ -1774,9 +1928,10 @@ GmailApp.GmailMessage.prototype.isInInbox = function(){};
  }
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#isInPriorityInbox
+ *
  * @return {Boolean} whether this message is in the priority inbox
  */
-GmailApp.GmailMessage.prototype.isInPriorityInbox = function(){};
 
 /**
  * Gets whether this message is in the trash.
@@ -1787,9 +1942,10 @@ GmailApp.GmailMessage.prototype.isInPriorityInbox = function(){};
  Logger.log(&quot;is in the trash? &quot; + message.isInTrash());
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#isInTrash
+ *
  * @return {Boolean} whether this message is in the trash
  */
-GmailApp.GmailMessage.prototype.isInTrash = function(){};
 
 /**
  * Gets whether this message is starred.
@@ -1800,9 +1956,10 @@ GmailApp.GmailMessage.prototype.isInTrash = function(){};
  Logger.log(&quot;is starred? &quot; + message.isStarred());
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#isStarred
+ *
  * @return {Boolean} whether this message is starred
  */
-GmailApp.GmailMessage.prototype.isStarred = function(){};
 
 /**
  * Gets whether this message is unread.
@@ -1813,9 +1970,10 @@ GmailApp.GmailMessage.prototype.isStarred = function(){};
  Logger.log(&quot;is unread? &quot; + message.isUnread());
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#isUnread
+ *
  * @return {Boolean} the unread status of this message
  */
-GmailApp.GmailMessage.prototype.isUnread = function(){};
 
 /**
  * Marks the message as read.
@@ -1826,9 +1984,10 @@ GmailApp.GmailMessage.prototype.isUnread = function(){};
  message.markRead(); // Mark as read
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#markRead
+ *
  * @return {GmailApp.GmailMessage} this GmailMessage, useful for chaining
  */
-GmailApp.GmailMessage.prototype.markRead = function(){};
 
 /**
  * Marks the message as unread.
@@ -1839,9 +1998,10 @@ GmailApp.GmailMessage.prototype.markRead = function(){};
  message.markUnread(); // Mark as unread
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#markUnread
+ *
  * @return {GmailApp.GmailMessage} this GmailMessage, useful for chaining
  */
-GmailApp.GmailMessage.prototype.markUnread = function(){};
 
 /**
  * Moves the message to the trash.
@@ -1852,9 +2012,10 @@ GmailApp.GmailMessage.prototype.markUnread = function(){};
  message.moveToTrash(); // Move message to trash
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#moveToTrash
+ *
  * @return {GmailApp.GmailMessage} this GmailMessage, useful for chaining
  */
-GmailApp.GmailMessage.prototype.moveToTrash = function(){};
 
 /**
  * Reloads this message and associated state from Gmail (useful in case the labels, read state,
@@ -1868,9 +2029,10 @@ GmailApp.GmailMessage.prototype.moveToTrash = function(){};
  // Do more stuff to message
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#refresh
+ *
  * @return {GmailApp.GmailMessage} this message for chaining
  */
-GmailApp.GmailMessage.prototype.refresh = function(){};
 
 /**
  * Replies to the sender of this message using the reply-to address. The size of the email
@@ -1884,11 +2046,12 @@ GmailApp.GmailMessage.prototype.refresh = function(){};
  message.reply(&quot;Got your message&quot;);
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#reply
+ *
  * @param {String} body - the body of the email
  *
  * @return {GmailApp.GmailMessage} this message, useful for chaining
  */
-GmailApp.GmailMessage.prototype.reply = function(body){};
 
 /**
  * Replies to the sender of this message using the reply-to address, with optional arguments.
@@ -1907,12 +2070,13 @@ GmailApp.GmailMessage.prototype.reply = function(body){};
  });
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#reply
+ *
  * @param {String} body - the body of the email
  * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
  *
  * @return {GmailApp.GmailMessage} this message, useful for chaining
  */
-GmailApp.GmailMessage.prototype.reply = function(body, options){};
 
 /**
  * Replies to the sender using the reply-to address and all recipients of this message. The size
@@ -1926,11 +2090,12 @@ GmailApp.GmailMessage.prototype.reply = function(body, options){};
  message.replyAll(&quot;Got your message&quot;);
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#replyAll
+ *
  * @param {String} body - the body of the email
  *
  * @return {GmailApp.GmailMessage} this message,useful for chaining
  */
-GmailApp.GmailMessage.prototype.replyAll = function(body){};
 
 /**
  * Replies to the sender of this message using the reply-to address and all recipients, with
@@ -1950,12 +2115,13 @@ GmailApp.GmailMessage.prototype.replyAll = function(body){};
  });
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#replyAll
+ *
  * @param {String} body - the body of the email
  * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
  *
  * @return {GmailApp.GmailMessage} this message, useful for chaining
  */
-GmailApp.GmailMessage.prototype.replyAll = function(body, options){};
 
 /**
  * Stars the message.
@@ -1966,9 +2132,10 @@ GmailApp.GmailMessage.prototype.replyAll = function(body, options){};
  message.star(); // Star the message
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#star
+ *
  * @return {GmailApp.GmailMessage} this GmailMessage, useful for chaining
  */
-GmailApp.GmailMessage.prototype.star = function(){};
 
 /**
  * Unstars the message.
@@ -1979,12 +2146,15 @@ GmailApp.GmailMessage.prototype.star = function(){};
  message.unstar(); // Unstar the message
  </code></pre>
  *
+ * @function GmailApp.GmailMessage#unstar
+ *
  * @return {GmailApp.GmailMessage} this GmailMessage, useful for chaining
  */
-GmailApp.GmailMessage.prototype.unstar = function(){};
 
-/** @constructor */
-GmailApp.GmailThread = function(){};
+
+/**
+ * @class GmailApp.GmailThread
+ */
 
 /**
  * Adds this label to the thread.
@@ -1996,11 +2166,12 @@ GmailApp.GmailThread = function(){};
  firstThread.addLabel(label);
  </code></pre>
  *
+ * @function GmailApp.GmailThread#addLabel
+ *
  * @param {GmailApp.GmailLabel} label - the label to apply to this thread
  *
  * @return {GmailApp.GmailThread} this thread, useful for chaining
  */
-GmailApp.GmailThread.prototype.addLabel = function(label){};
 
 /**
  * Creates a draft message replying to the sender of the last message in this thread using the
@@ -2013,11 +2184,12 @@ GmailApp.GmailThread.prototype.addLabel = function(label){};
  firstThread.createDraftReply(&quot;Got your message&quot;);
  </code></pre>
  *
+ * @function GmailApp.GmailThread#createDraftReply
+ *
  * @param {String} body - the body of the email
  *
  * @return {GmailApp.GmailDraft} the newly created draft message
  */
-GmailApp.GmailThread.prototype.createDraftReply = function(body){};
 
 /**
  * Creates a draft message replying to the sender of the last message in this thread using the
@@ -2036,12 +2208,13 @@ GmailApp.GmailThread.prototype.createDraftReply = function(body){};
  });
  </code></pre>
  *
+ * @function GmailApp.GmailThread#createDraftReply
+ *
  * @param {String} body - the body of the email
  * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
  *
  * @return {GmailApp.GmailDraft} the newly created draft message
  */
-GmailApp.GmailThread.prototype.createDraftReply = function(body, options){};
 
 /**
  * Creates a draft message replying to the sender of the last message in this thread, using the
@@ -2056,11 +2229,12 @@ GmailApp.GmailThread.prototype.createDraftReply = function(body, options){};
  message.createDraftReplyAll(&quot;Got your message&quot;);
  </code></pre>
  *
+ * @function GmailApp.GmailThread#createDraftReplyAll
+ *
  * @param {String} body - the body of the email
  *
  * @return {GmailApp.GmailDraft} the newly created draft message
  */
-GmailApp.GmailThread.prototype.createDraftReplyAll = function(body){};
 
 /**
  * Creates a draft message replying to the sender of the last message in this thread, using the
@@ -2080,12 +2254,13 @@ GmailApp.GmailThread.prototype.createDraftReplyAll = function(body){};
  });
  </code></pre>
  *
+ * @function GmailApp.GmailThread#createDraftReplyAll
+ *
  * @param {String} body - the body of the email
  * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
  *
  * @return {GmailApp.GmailDraft} the newly created draft message
  */
-GmailApp.GmailThread.prototype.createDraftReplyAll = function(body, options){};
 
 /**
  * Gets the subject of the first message in the thread.
@@ -2096,9 +2271,10 @@ GmailApp.GmailThread.prototype.createDraftReplyAll = function(body, options){};
  Logger.log(firstThread.getFirstMessageSubject());
  </code></pre>
  *
+ * @function GmailApp.GmailThread#getFirstMessageSubject
+ *
  * @return {String} the subject of the first message in the thread
  */
-GmailApp.GmailThread.prototype.getFirstMessageSubject = function(){};
 
 /**
  * Gets the ID of this thread. The ID of a thread varies based on the messages it contains; for a
@@ -2114,9 +2290,10 @@ GmailApp.GmailThread.prototype.getFirstMessageSubject = function(){};
  Logger.log(thread.getFirstMessageSubject() == firstThread.getFirstMessageSubject()); // True
  </code></pre>
  *
+ * @function GmailApp.GmailThread#getId
+ *
  * @return {String} the ID of this thread
  */
-GmailApp.GmailThread.prototype.getId = function(){};
 
 /**
  * Returns the user-created labels on this thread.
@@ -2130,9 +2307,10 @@ GmailApp.GmailThread.prototype.getId = function(){};
  }
  </code></pre>
  *
+ * @function GmailApp.GmailThread#getLabels
+ *
  * @return {GmailApp.GmailLabel[]} an array of labels for this thread
  */
-GmailApp.GmailThread.prototype.getLabels = function(){};
 
 /**
  * Gets the date of this thread's most recent message.
@@ -2143,9 +2321,10 @@ GmailApp.GmailThread.prototype.getLabels = function(){};
  Logger.log(firstThread.getLastMessageDate());
  </code></pre>
  *
+ * @function GmailApp.GmailThread#getLastMessageDate
+ *
  * @return {Date} the date of the most recent message in the thread
  */
-GmailApp.GmailThread.prototype.getLastMessageDate = function(){};
 
 /**
  * Returns the number of messages in the thread.
@@ -2156,9 +2335,10 @@ GmailApp.GmailThread.prototype.getLastMessageDate = function(){};
  Logger.log(firstThread.getMessageCount());
  </code></pre>
  *
- * @return {number} the number of messages in the thread
+ * @function GmailApp.GmailThread#getMessageCount
+ *
+ * @return {IntegerNum} the number of messages in the thread
  */
-GmailApp.GmailThread.prototype.getMessageCount = function(){};
 
 /**
  * Gets the messages in this thread.
@@ -2172,9 +2352,10 @@ GmailApp.GmailThread.prototype.getMessageCount = function(){};
  }
  </code></pre>
  *
+ * @function GmailApp.GmailThread#getMessages
+ *
  * @return {GmailApp.GmailMessage[]} an array of Gmail messages in this thread
  */
-GmailApp.GmailThread.prototype.getMessages = function(){};
 
 /**
  * Gets a permalink for this thread.
@@ -2187,9 +2368,10 @@ GmailApp.GmailThread.prototype.getMessages = function(){};
  Logger.log(thread.getPermalink());
  </code></pre>
  *
+ * @function GmailApp.GmailThread#getPermalink
+ *
  * @return {String} the permalink for this thread
  */
-GmailApp.GmailThread.prototype.getPermalink = function(){};
 
 /**
  * Returns whether the thread has any starred messages.
@@ -2200,9 +2382,10 @@ GmailApp.GmailThread.prototype.getPermalink = function(){};
  Logger.log(&#39;has starred : &#39; + firstThread.hasStarredMessages());
  </code></pre>
  *
+ * @function GmailApp.GmailThread#hasStarredMessages
+ *
  * @return {Boolean} true if the thread has any starred messages
  */
-GmailApp.GmailThread.prototype.hasStarredMessages = function(){};
 
 /**
  * Returns whether the thread is marked important.
@@ -2213,9 +2396,10 @@ GmailApp.GmailThread.prototype.hasStarredMessages = function(){};
  Logger.log(&#39;Important? : &#39; + firstThread.isImportant());
  </code></pre>
  *
+ * @function GmailApp.GmailThread#isImportant
+ *
  * @return {Boolean} true if the thread is marked important
  */
-GmailApp.GmailThread.prototype.isImportant = function(){};
 
 /**
  * Returns whether the thread is labeled a chat.
@@ -2226,9 +2410,10 @@ GmailApp.GmailThread.prototype.isImportant = function(){};
  Logger.log(&#39;is in chats? : &#39; + firstThread.isInChats());
  </code></pre>
  *
+ * @function GmailApp.GmailThread#isInChats
+ *
  * @return {Boolean} true if the thread is labeled a chat
  */
-GmailApp.GmailThread.prototype.isInChats = function(){};
 
 /**
  * Returns whether the thread is in the inbox.
@@ -2239,9 +2424,10 @@ GmailApp.GmailThread.prototype.isInChats = function(){};
  Logger.log(&#39;is in the inbox? : &#39; + firstThread.isInInbox());
  </code></pre>
  *
+ * @function GmailApp.GmailThread#isInInbox
+ *
  * @return {Boolean} true if the thread is in the inbox
  */
-GmailApp.GmailThread.prototype.isInInbox = function(){};
 
 /**
  * Returns true if this thread is in the priority inbox; returns false otherwise.
@@ -2252,9 +2438,10 @@ GmailApp.GmailThread.prototype.isInInbox = function(){};
  Logger.log(&quot;is in priority inbox? &quot; + firstThread.isInPriorityInbox());
  </code></pre>
  *
+ * @function GmailApp.GmailThread#isInPriorityInbox
+ *
  * @return {Boolean} true if the thread is in the priority inbox
  */
-GmailApp.GmailThread.prototype.isInPriorityInbox = function(){};
 
 /**
  * Returns whether the thread is marked as spam.
@@ -2265,9 +2452,10 @@ GmailApp.GmailThread.prototype.isInPriorityInbox = function(){};
  Logger.log(&#39;Spam? &#39; + firstThread.isInSpam());
  </code></pre>
  *
+ * @function GmailApp.GmailThread#isInSpam
+ *
  * @return {Boolean} true if the thread is marked as spam
  */
-GmailApp.GmailThread.prototype.isInSpam = function(){};
 
 /**
  * Returns whether the thread is in the trash.
@@ -2278,9 +2466,10 @@ GmailApp.GmailThread.prototype.isInSpam = function(){};
  Logger.log(&#39;Trashed? &#39; + firstThread.isInTrash());
  </code></pre>
  *
+ * @function GmailApp.GmailThread#isInTrash
+ *
  * @return {Boolean} true if the thread is in the trash
  */
-GmailApp.GmailThread.prototype.isInTrash = function(){};
 
 /**
  * Returns whether the thread has any unread messages.
@@ -2291,9 +2480,10 @@ GmailApp.GmailThread.prototype.isInTrash = function(){};
  Logger.log(&#39;Unread? &#39; + firstThread.isUnread());
  </code></pre>
  *
+ * @function GmailApp.GmailThread#isUnread
+ *
  * @return {Boolean} true if there are unread messages
  */
-GmailApp.GmailThread.prototype.isUnread = function(){};
 
 /**
  * Marks this thread as important.
@@ -2304,9 +2494,10 @@ GmailApp.GmailThread.prototype.isUnread = function(){};
  firstThread.markImportant();
  </code></pre>
  *
+ * @function GmailApp.GmailThread#markImportant
+ *
  * @return {GmailApp.GmailThread} this thread, useful for chaining
  */
-GmailApp.GmailThread.prototype.markImportant = function(){};
 
 /**
  * Marks this thread as read.
@@ -2317,9 +2508,10 @@ GmailApp.GmailThread.prototype.markImportant = function(){};
  firstThread.markRead();
  </code></pre>
  *
+ * @function GmailApp.GmailThread#markRead
+ *
  * @return {GmailApp.GmailThread} this thread, useful for chaining
  */
-GmailApp.GmailThread.prototype.markRead = function(){};
 
 /**
  * Marks this thread as unimportant.
@@ -2330,9 +2522,10 @@ GmailApp.GmailThread.prototype.markRead = function(){};
  firstThread.markUnimportant();
  </code></pre>
  *
+ * @function GmailApp.GmailThread#markUnimportant
+ *
  * @return {GmailApp.GmailThread} this thread, useful for chaining
  */
-GmailApp.GmailThread.prototype.markUnimportant = function(){};
 
 /**
  * Marks this thread as unread.
@@ -2343,9 +2536,10 @@ GmailApp.GmailThread.prototype.markUnimportant = function(){};
  firstThread.markUnread();
  </code></pre>
  *
+ * @function GmailApp.GmailThread#markUnread
+ *
  * @return {GmailApp.GmailThread} this thread, useful for chaining
  */
-GmailApp.GmailThread.prototype.markUnread = function(){};
 
 /**
  * Moves this thread to the archive.
@@ -2356,9 +2550,10 @@ GmailApp.GmailThread.prototype.markUnread = function(){};
  firstThread.moveToArchive();
  </code></pre>
  *
+ * @function GmailApp.GmailThread#moveToArchive
+ *
  * @return {GmailApp.GmailThread} this thread, useful for chaining
  */
-GmailApp.GmailThread.prototype.moveToArchive = function(){};
 
 /**
  * Moves this thread to the inbox.
@@ -2369,9 +2564,10 @@ GmailApp.GmailThread.prototype.moveToArchive = function(){};
  firstThread.moveToInbox();
  </code></pre>
  *
+ * @function GmailApp.GmailThread#moveToInbox
+ *
  * @return {GmailApp.GmailThread} this thread, useful for chaining
  */
-GmailApp.GmailThread.prototype.moveToInbox = function(){};
 
 /**
  * Moves this thread to spam.
@@ -2382,9 +2578,10 @@ GmailApp.GmailThread.prototype.moveToInbox = function(){};
  firstThread.moveToSpam();
  </code></pre>
  *
+ * @function GmailApp.GmailThread#moveToSpam
+ *
  * @return {GmailApp.GmailThread} this thread, useful for chaining
  */
-GmailApp.GmailThread.prototype.moveToSpam = function(){};
 
 /**
  * Moves this thread to the trash.
@@ -2395,9 +2592,10 @@ GmailApp.GmailThread.prototype.moveToSpam = function(){};
  firstThread.moveToTrash();
  </code></pre>
  *
+ * @function GmailApp.GmailThread#moveToTrash
+ *
  * @return {GmailApp.GmailThread} this thread, useful for chaining
  */
-GmailApp.GmailThread.prototype.moveToTrash = function(){};
 
 /**
  * Reloads this thread, and associated state from Gmail (useful in case the labels, read state,
@@ -2410,9 +2608,10 @@ GmailApp.GmailThread.prototype.moveToTrash = function(){};
  // ...Do more stuff with firstThread ...
  </code></pre>
  *
+ * @function GmailApp.GmailThread#refresh
+ *
  * @return {GmailApp.GmailThread} this thread, useful for chaining
  */
-GmailApp.GmailThread.prototype.refresh = function(){};
 
 /**
  * Removes this label from the thread.
@@ -2426,11 +2625,12 @@ GmailApp.GmailThread.prototype.refresh = function(){};
  }
  </code></pre>
  *
+ * @function GmailApp.GmailThread#removeLabel
+ *
  * @param {GmailApp.GmailLabel} label - the label to remove from this thread
  *
  * @return {GmailApp.GmailThread} this thread, useful for chaining
  */
-GmailApp.GmailThread.prototype.removeLabel = function(label){};
 
 /**
  * Reply to the sender of the last message on this thread using the replyTo address.
@@ -2443,11 +2643,12 @@ GmailApp.GmailThread.prototype.removeLabel = function(label){};
  firstThread.reply(&quot;Got your message&quot;);
  </code></pre>
  *
+ * @function GmailApp.GmailThread#reply
+ *
  * @param {String} body - the body of the email
  *
  * @return {GmailApp.GmailThread} this thread, useful for chaining
  */
-GmailApp.GmailThread.prototype.reply = function(body){};
 
 /**
  * Reply to the sender of the last message on this thread using the replyTo address, with optional
@@ -2463,12 +2664,13 @@ GmailApp.GmailThread.prototype.reply = function(body){};
  });
  </code></pre>
  *
+ * @function GmailApp.GmailThread#reply
+ *
  * @param {String} body - the body of the email
  * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
  *
  * @return {GmailApp.GmailThread} this thread, useful for chaining
  */
-GmailApp.GmailThread.prototype.reply = function(body, options){};
 
 /**
  * Reply to the sender (using the replyTo address), and all recipients of the last message on this
@@ -2482,11 +2684,12 @@ GmailApp.GmailThread.prototype.reply = function(body, options){};
  firstThread.replyAll(&quot;Got your message&quot;);
  </code></pre>
  *
+ * @function GmailApp.GmailThread#replyAll
+ *
  * @param {String} body - the body of the email
  *
  * @return {GmailApp.GmailThread} this thread, useful for chaining
  */
-GmailApp.GmailThread.prototype.replyAll = function(body){};
 
 /**
  * Reply to the sender (using the <code>replyTo</code> address), and all recipients of the last message
@@ -2503,10 +2706,12 @@ GmailApp.GmailThread.prototype.replyAll = function(body){};
  });
  </code></pre>
  *
+ * @function GmailApp.GmailThread#replyAll
+ *
  * @param {String} body - the body of the email
  * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
  *
  * @return {GmailApp.GmailThread} this thread, useful for chaining
  */
-GmailApp.GmailThread.prototype.replyAll = function(body, options){};
+
 

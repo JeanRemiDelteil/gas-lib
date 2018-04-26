@@ -1,12 +1,14 @@
-var Logger = {};
-
+/**********************************************
+ * @namespace Logger
+ ***********************************************/
 
 /**
  * Clears the log.
  *
+ * @function Logger.clear
+ *
  * @return void
  */
-Logger.clear = function(){};
 
 /**
  * Returns a complete list of messages in the current log. This method can be used to save or
@@ -24,19 +26,21 @@ Logger.clear = function(){};
  MailApp.sendEmail(recipient, subject, body);
  </pre>
  *
+ * @function Logger.getLog
+ *
  * @return {String} the log from the logging console
  */
-Logger.getLog = function(){};
 
 /**
  * Writes the string to the logging console. To view the logged output, select <strong>View > Show
  logs</strong>. This can be very useful for debugging scripts.
  *
+ * @function Logger.log
+ *
  * @param {Object} data - the message to log
  *
  * @return {Logger} the Logger, for chaining.
  */
-Logger.log = function(data){};
 
 /**
  * Writes a formatted string to the logging console, using the format and values provided. The
@@ -49,11 +53,13 @@ Logger.log = function(data){};
  Logger.log('You are a member of %s Google Groups.', groups.length);
  </pre>
  *
+ * @function Logger.log
+ *
  * @param {String} format - a format string that contains as many instances of <code>%s</code> as the number of
      <code>values</code> arguments
  * @param {Object...} values - a variable number of values to insert into the format string
  *
  * @return {Logger} the Logger, for chaining
  */
-Logger.log = function(format, values){};
+
 
