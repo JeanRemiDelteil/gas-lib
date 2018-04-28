@@ -1380,8 +1380,8 @@
  * Return the data inside this object as a blob converted to the specified content type. This
  method adds the appropriate extension to the filename—for example, "myfile.pdf". However, it
  assumes that the part of the filename that follows the last period (if any) is an existing
- extension that should be replaced. Consequently, "ChristmasList.12.25.2014" becomes
- "ChristmasList.12.25.pdf".
+ extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
+ "ShoppingList.12.25.pdf".
  *
  * @function SlidesApp.Image#getAs
  *
@@ -6905,8 +6905,8 @@
  * Return the data inside this object as a blob converted to the specified content type. This
  method adds the appropriate extension to the filename—for example, "myfile.pdf". However, it
  assumes that the part of the filename that follows the last period (if any) is an existing
- extension that should be replaced. Consequently, "ChristmasList.12.25.2014" becomes
- "ChristmasList.12.25.pdf".
+ extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
+ "ShoppingList.12.25.pdf".
  *
  * @function SlidesApp.PictureFill#getAs
  *
@@ -7517,7 +7517,8 @@
 /**
  * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>. This method does not
  block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> if they belong to a class of users who have
- general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> is shared with the user's entire domain.
+ general access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> is shared with the user's entire
+ domain.
  *
  * @function SlidesApp.Presentation#removeEditor
  *
@@ -7529,7 +7530,8 @@
 /**
  * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>. This method does not
  block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> if they belong to a class of users who have
- general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> is shared with the user's entire domain.
+ general access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> is shared with the user's entire
+ domain.
  *
  * @function SlidesApp.Presentation#removeEditor
  *
@@ -7542,8 +7544,8 @@
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>. This
  method has no effect if the user is an editor, not a viewer or commenter. This method also does
  not block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> if they belong to a class of users who
- have general access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> is shared with the user's entire
- domain.
+ have general access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> is shared with the user's
+ entire domain.
  *
  * @function SlidesApp.Presentation#removeViewer
  *
@@ -7556,7 +7558,7 @@
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>. This
  method has no effect if the user is an editor, not a viewer. This method also does not block
  users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> if they belong to a class of users who have general
- access — for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> is shared with the user's entire domain.
+ access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> is shared with the user's entire domain.
  *
  * @function SlidesApp.Presentation#removeViewer
  *

@@ -1006,7 +1006,7 @@
  * @function GmailApp.sendEmail
  *
  * @param {String} recipient - comma separated list of email addresses
- * @param {String} subject - subject of the email
+ * @param {String} subject - subject of the email (250 characters maximum)
  * @param {String} body - body of the email
  *
  * @return {GmailApp} the Gmail service, useful for chaining
@@ -1029,7 +1029,7 @@
  * @function GmailApp.sendEmail
  *
  * @param {String} recipient - the addresses of the recipient
- * @param {String} subject - the subject line
+ * @param {String} subject - the subject line (250 characters maximum)
  * @param {String} body - the body of the email
  * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
  *
@@ -1156,8 +1156,8 @@
  * Return the data inside this object as a blob converted to the specified content type. This
  method adds the appropriate extension to the filename—for example, "myfile.pdf". However, it
  assumes that the part of the filename that follows the last period (if any) is an existing
- extension that should be replaced. Consequently, "ChristmasList.12.25.2014" becomes
- "ChristmasList.12.25.pdf".
+ extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
+ "ShoppingList.12.25.pdf".
  *
  * @function GmailApp.GmailAttachment#getAs
  *
@@ -1377,7 +1377,7 @@
  * @function GmailApp.GmailDraft#update
  *
  * @param {String} recipient - comma separated list of email addresses
- * @param {String} subject - subject of the email
+ * @param {String} subject - subject of the email (250 characters maximum)
  * @param {String} body - body of the email
  *
  * @return {GmailApp.GmailDraft} the newly updated draft
@@ -1401,7 +1401,7 @@
  * @function GmailApp.GmailDraft#update
  *
  * @param {String} recipient - comma separated list of email addresses
- * @param {String} subject - subject of the email
+ * @param {String} subject - subject of the email (250 characters maximum)
  * @param {String} body - body of the email
  * @param {Object} options - a JavaScript object that specifies advanced parameters, as listed below
  *

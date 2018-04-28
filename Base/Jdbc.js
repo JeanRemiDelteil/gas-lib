@@ -278,8 +278,8 @@
  * Return the data inside this object as a blob converted to the specified content type. This
  method adds the appropriate extension to the filename—for example, "myfile.pdf". However, it
  assumes that the part of the filename that follows the last period (if any) is an existing
- extension that should be replaced. Consequently, "ChristmasList.12.25.2014" becomes
- "ChristmasList.12.25.pdf".
+ extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
+ "ShoppingList.12.25.pdf".
  *
  * @function Jdbc.JdbcBlob#getAs
  *
@@ -2096,8 +2096,8 @@
  * Return the data inside this object as a blob converted to the specified content type. This
  method adds the appropriate extension to the filename—for example, "myfile.pdf". However, it
  assumes that the part of the filename that follows the last period (if any) is an existing
- extension that should be replaced. Consequently, "ChristmasList.12.25.2014" becomes
- "ChristmasList.12.25.pdf".
+ extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
+ "ShoppingList.12.25.pdf".
  *
  * @function Jdbc.JdbcClob#getAs
  *

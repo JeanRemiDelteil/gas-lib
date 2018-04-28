@@ -3,13 +3,13 @@
  ***********************************************/
 
 /**
- * An enumeration of chart hidden dimension strategies supported by the Charts service.
+ * An enumeration of how hidden dimensions in a source are expressed in a chart.
  *
  * @typedef {Charts.ChartHiddenDimensionStrategy} Charts.ChartHiddenDimensionStrategy
  */
 
 /**
- * An enumeration of chart merge strategies supported by the Charts service.
+ * An enumeration of how multiple ranges in the source are expressed in a chart.
  *
  * @typedef {Charts.ChartMergeStrategy} Charts.ChartMergeStrategy
  */
@@ -1151,8 +1151,8 @@
  * Return the data inside this object as a blob converted to the specified content type. This
  method adds the appropriate extension to the filename—for example, "myfile.pdf". However, it
  assumes that the part of the filename that follows the last period (if any) is an existing
- extension that should be replaced. Consequently, "ChristmasList.12.25.2014" becomes
- "ChristmasList.12.25.pdf".
+ extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
+ "ShoppingList.12.25.pdf".
  *
  * @function Charts.Chart#getAs
  *
@@ -1217,25 +1217,25 @@
  */
 
 /**
- * Ignore both
+ * Default; charts skips any hidden columns and hidden rows.
  *
  * @typedef {Charts.ChartHiddenDimensionStrategy} Charts.ChartHiddenDimensionStrategy.IGNORE_BOTH
  */
 
 /**
- * Ignore columns
+ * Charts skips hidden columns only.
  *
  * @typedef {Charts.ChartHiddenDimensionStrategy} Charts.ChartHiddenDimensionStrategy.IGNORE_COLUMNS
  */
 
 /**
- * Ignore rows
+ * Charts skips hidden rows only.
  *
  * @typedef {Charts.ChartHiddenDimensionStrategy} Charts.ChartHiddenDimensionStrategy.IGNORE_ROWS
  */
 
 /**
- * Show both
+ * Charts does not skip hidden columns or hidden rows.
  *
  * @typedef {Charts.ChartHiddenDimensionStrategy} Charts.ChartHiddenDimensionStrategy.SHOW_BOTH
  */
@@ -1246,13 +1246,13 @@
  */
 
 /**
- * Merge columns
+ * Default. Charts merges the columns of multiple ranges.
  *
  * @typedef {Charts.ChartMergeStrategy} Charts.ChartMergeStrategy.MERGE_COLUMNS
  */
 
 /**
- * Merge rows
+ * Charts merges the rows of multiple ranges.
  *
  * @typedef {Charts.ChartMergeStrategy} Charts.ChartMergeStrategy.MERGE_ROWS
  */
@@ -1290,6 +1290,18 @@
  */
 
 /**
+ * Bubble chart.
+ *
+ * @typedef {Charts.ChartType} Charts.ChartType.BUBBLE
+ */
+
+/**
+ * Candlestick chart.
+ *
+ * @typedef {Charts.ChartType} Charts.ChartType.CANDLESTICK
+ */
+
+/**
  * Column chart
  *
  * @typedef {Charts.ChartType} Charts.ChartType.COLUMN
@@ -1299,6 +1311,18 @@
  * Combo chart
  *
  * @typedef {Charts.ChartType} Charts.ChartType.COMBO
+ */
+
+/**
+ * Gauge chart.
+ *
+ * @typedef {Charts.ChartType} Charts.ChartType.GAUGE
+ */
+
+/**
+ * Geo chart.
+ *
+ * @typedef {Charts.ChartType} Charts.ChartType.GEO
  */
 
 /**
@@ -1314,9 +1338,21 @@
  */
 
 /**
+ * Org chart.
+ *
+ * @typedef {Charts.ChartType} Charts.ChartType.ORG
+ */
+
+/**
  * Pie chart
  *
  * @typedef {Charts.ChartType} Charts.ChartType.PIE
+ */
+
+/**
+ * Radar chart.
+ *
+ * @typedef {Charts.ChartType} Charts.ChartType.RADAR
  */
 
 /**
@@ -1326,9 +1362,39 @@
  */
 
 /**
+ * Sparkline chart.
+ *
+ * @typedef {Charts.ChartType} Charts.ChartType.SPARKLINE
+ */
+
+/**
+ * Stepped area chart.
+ *
+ * @typedef {Charts.ChartType} Charts.ChartType.STEPPED_AREA
+ */
+
+/**
  * Table chart
  *
  * @typedef {Charts.ChartType} Charts.ChartType.TABLE
+ */
+
+/**
+ * Timeline chart.
+ *
+ * @typedef {Charts.ChartType} Charts.ChartType.TIMELINE
+ */
+
+/**
+ * Treemap chart.
+ *
+ * @typedef {Charts.ChartType} Charts.ChartType.TREEMAP
+ */
+
+/**
+ * Waterfall chart.
+ *
+ * @typedef {Charts.ChartType} Charts.ChartType.WATERFALL
  */
 
 
