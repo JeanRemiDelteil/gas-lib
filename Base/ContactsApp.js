@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class ContactsApp
+ */
+
+/**
  * @typedef {ContactsApp.ExtendedField} ContactsApp.ExtendedField
  */
 
@@ -2514,7 +2518,7 @@
 /**
  * Sets the date to this day, without a year.
 
- <p>This method only applies to birthdays. Other dates require a year to be specified.
+ <p>This method only applies to date fields that don't require a year, such as birthdays.
 
  <pre class="prettyprint"><code>
  // Sets the birthday for contact &#39;John Doe&#39; to April 1

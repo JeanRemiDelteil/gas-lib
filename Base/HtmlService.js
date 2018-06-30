@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class HtmlService
+ */
+
+/**
  * An enum representing the sandbox modes that can be used for client-side <code>HtmlService</code>
  scripts.
  *
@@ -536,7 +540,7 @@
  it's preferable to use the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-template.html#evaluate()'>evaluate()</a></code> method, which takes explicit bindings.
 
  <pre class="prettyprint"><code>
- var template = HtmlService.createHtmlTemplate(&#39;&lt;b&gt;The time is &amp;lt;?= new Date() ?&amp;gt;&lt;/b&gt;&#39;);
+ var template = HtmlService.createTemplate(&#39;&lt;b&gt;The time is &amp;lt;?= new Date() ?&amp;gt;&lt;/b&gt;&#39;);
  Logger.log(template.getCode());
  </code></pre>
  *
@@ -557,7 +561,7 @@
  it's preferable to use the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-template.html#evaluate()'>evaluate()</a></code> method, which takes explicit bindings.
 
  <pre class="prettyprint"><code>
- var template = HtmlService.createHtmlTemplate(&#39;&lt;b&gt;The time is &amp;lt;?= new Date() ?&amp;gt;&lt;/b&gt;&#39;);
+ var template = HtmlService.createTemplate(&#39;&lt;b&gt;The time is &amp;lt;?= new Date() ?&amp;gt;&lt;/b&gt;&#39;);
  Logger.log(template.getCodeWithComments());
  </code></pre>
  *
@@ -570,7 +574,7 @@
  * Returns the unprocessed content of this template.
 
  <pre class="prettyprint"><code>
- var template = HtmlService.createHtmlTemplate(&#39;&lt;b&gt;The time is &amp;lt;?= new Date() ?&amp;gt;&lt;/b&gt;&#39;);
+ var template = HtmlService.createTemplate(&#39;&lt;b&gt;The time is &amp;lt;?= new Date() ?&amp;gt;&lt;/b&gt;&#39;);
  Logger.log(template.getRawContent());
  </code></pre>
  *

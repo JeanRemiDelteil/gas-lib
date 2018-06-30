@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class PropertiesService
+ */
+
+/**
  * Gets a property store (for this script only) that all users can access within the open
  document, spreadsheet, or form. It is only available if the script is published and executing
  as an add-on or if it is <a

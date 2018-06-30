@@ -4,6 +4,10 @@
  ***********************************************/
 
 /**
+ * @class UiApp
+ */
+
+/**
  * Constants to use with setFormat methods in UiApp widgets such as <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-picker.html'>DatePicker</a></s></code> and <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/ui/date-box.html'>DateBox</a></s></code>.
  *
  * @typedef {UiApp.DateTimeFormat} UiApp.DateTimeFormat

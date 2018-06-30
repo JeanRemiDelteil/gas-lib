@@ -4,6 +4,10 @@
  ***********************************************/
 
 /**
+ * @class ScriptProperties
+ */
+
+/**
  * Deletes all properties.
 
  <pre class="prettyprint"><code>

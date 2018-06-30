@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class Utilities
+ */
+
+/**
  * @typedef {Utilities.Charset} Utilities.Charset
  */
 
@@ -21,14 +25,14 @@
  // This is the base64 encoded form of &quot;Google グループ&quot;
  var base64data = &quot;R29vZ2xlIOOCsOODq+ODvOODlw==&quot;;
 
- // This will log:
+ // This logs:
  //     [71, 111, 111, 103, 108, 101, 32, -29, -126, -80,
  //      -29, -125, -85, -29, -125, -68, -29, -125, -105]
  var decoded = Utilities.base64Decode(base64data);
  Logger.log(decoded);
 
  // If we want a String instead of a byte array:
- // This will log the original &quot;Google グループ&quot;
+ // This logs the original &quot;Google グループ&quot;
  Logger.log(Utilities.newBlob(decoded).getDataAsString());
  </code></pre>
  *
@@ -48,13 +52,13 @@
 
  var decoded = Utilities.base64Decode(base64data, Utilities.Charset.UTF_8);
 
- // This will log:
+ // This logs:
  //     [71, 111, 111, 103, 108, 101, 32, -29, -126, -80,
  //      -29, -125, -85, -29, -125, -68, -29, -125, -105]
  Logger.log(decoded);
 
  // If we want a String instead of a byte array:
- // This will log the original &quot;Google グループ&quot;
+ // This logs the original &quot;Google グループ&quot;
  Logger.log(Utilities.newBlob(decoded).getDataAsString());
  </code></pre>
  *
@@ -75,13 +79,13 @@
 
  var decoded = Utilities.base64DecodeWebSafe(base64data);
 
- // This will log:
+ // This logs:
  //     [71, 111, 111, 103, 108, 101, 32, -29, -126, -80,
  //      -29, -125, -85, -29, -125, -68, -29, -125, -105]
  Logger.log(decoded);
 
  // If we want a String instead of a byte array:
- // This will log the original &quot;Google グループ&quot;
+ // This logs the original &quot;Google グループ&quot;
  Logger.log(Utilities.newBlob(decoded).getDataAsString());
  </code></pre>
  *
@@ -101,13 +105,13 @@
 
  var decoded = Utilities.base64DecodeWebSafe(base64data, Utilities.Charset.UTF_8);
 
- // This will log:
+ // This logs:
  //     [71, 111, 111, 103, 108, 101, 32, -29, -126, -80,
  //      -29, -125, -85, -29, -125, -68, -29, -125, -105]
  Logger.log(decoded);
 
  // If we want a String instead of a byte array:
- // This will log the original &quot;Google グループ&quot;
+ // This logs the original &quot;Google グループ&quot;
  Logger.log(Utilities.newBlob(decoded).getDataAsString());
  </code></pre>
  *
@@ -253,6 +257,23 @@
  * Compute a digest using the specified algorithm on the specified value
 
  <pre class="prettyprint"><code>
+ var input = Utilities.base64Decode(&quot;aW5wdXQgdG8gaGFzaA0K&quot;) // == base64encode(&quot;input to hash&quot;)
+ var digest = Utilities.computeDigest(Utilities.DigestAlgorithm.MD5, input);
+ Logger.log(digest);
+ </code></pre>
+ *
+ * @function Utilities.computeDigest
+ *
+ * @param {DigestAlgorithm} algorithm - a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/utilities/digest-algorithm.html'>DigestAlgorithm</a></code> to use
+ * @param {Byte[]} value - an input string value to compute a digest for
+ *
+ * @return {Byte[]} a byte[] representing the output digest
+ */
+
+/**
+ * Compute a digest using the specified algorithm on the specified value
+
+ <pre class="prettyprint"><code>
  var digest = Utilities.computeDigest(Utilities.DigestAlgorithm.MD5, &quot;input to hash&quot;);
  Logger.log(digest);
  </code></pre>
@@ -288,7 +309,27 @@
  * Signs the provided value using HMAC-SHA256 with the given key.
 
  <pre class="prettyprint"><code>
- // This will write an array of bytes to the log.
+ // This writes an array of bytes to the log.
+ var input = Utilities.base64Decode(&quot;aW5wdXQgdG8gaGFzaA0K&quot;) // == base64encode(&quot;input to hash&quot;)
+ var key = Utilities.base64Decode(&quot;a2V5&quot;); // == base64encode(&quot;key&quot;)
+ var signature = Utilities.computeHmacSha256Signature(input,
+                                                      key);
+ Logger.log(signature);
+ </code></pre>
+ *
+ * @function Utilities.computeHmacSha256Signature
+ *
+ * @param {Byte[]} value - the input value to generate a hash for
+ * @param {Byte[]} key - a key to use to generate the hash with
+ *
+ * @return {Byte[]} a byte[] representing the output signature
+ */
+
+/**
+ * Signs the provided value using HMAC-SHA256 with the given key.
+
+ <pre class="prettyprint"><code>
+ // This writes an array of bytes to the log.
  var signature = Utilities.computeHmacSha256Signature(&quot;this is my input&quot;,
                                                        &quot;my key - use a stronger one&quot;);
  Logger.log(signature);
@@ -306,7 +347,7 @@
  * Signs the provided value using HMAC-SHA256 with the given key and character set.
 
  <pre class="prettyprint"><code>
- // This will write an array of bytes to the log.
+ // This writes an array of bytes to the log.
  var signature = Utilities.computeHmacSha256Signature(&quot;this is my input&quot;,
                                                       &quot;my key - use a stronger one&quot;,
                                                       Utilities.Charset.US_ASCII);
@@ -327,7 +368,30 @@
  value.
 
  <pre class="prettyprint"><code>
- // This will write an array of bytes to the log.
+ // This writes an array of bytes to the log.
+ var input = Utilities.base64Decode(&quot;aW5wdXQgdG8gaGFzaA0K&quot;) // == base64encode(&quot;input to hash&quot;)
+ var key = Utilities.base64Decode(&quot;a2V5&quot;); // == base64encode(&quot;key&quot;)
+ var signature = Utilities.computeHmacSignature(Utilities.MacAlgorithm.HMAC_MD5,
+                                                input,
+                                                key);
+ Logger.log(signature);
+ </code></pre>
+ *
+ * @function Utilities.computeHmacSignature
+ *
+ * @param {Utilities.MacAlgorithm} algorithm - a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/utilities/mac-algorithm.html'>MacAlgorithm</a></code> algorithm to use to hash the input value
+ * @param {Byte[]} value - the input value to generate a hash for
+ * @param {Byte[]} key - a key to use to generate the hash with
+ *
+ * @return {Byte[]} a byte[] representing the output signature
+ */
+
+/**
+ * Compute a message authentication code using the specified algorithm on the specified key and
+ value.
+
+ <pre class="prettyprint"><code>
+ // This writes an array of bytes to the log.
  var signature = Utilities.computeHmacSignature(Utilities.MacAlgorithm.HMAC_MD5,
                                                 &quot;input to hash&quot;,
                                                 &quot;key&quot;);
@@ -348,7 +412,7 @@
  value.
 
  <pre class="prettyprint"><code>
- // This will write an array of bytes to the log.
+ // This writes an array of bytes to the log.
  var signature = Utilities.computeHmacSignature(Utilities.MacAlgorithm.HMAC_MD5,
                                                 &quot;input to hash&quot;,
                                                 &quot;key&quot;,
@@ -370,7 +434,7 @@
  * Signs the provided value using RSA-SHA256 with the given key.
 
  <pre class="prettyprint"><code>
- // This will write an array of bytes to the log.
+ // This writes an array of bytes to the log.
  var signature = Utilities.computeRsaSha256Signature(&quot;this is my input&quot;,
      &quot;-----BEGIN PRIVATE KEY-----\nprivatekeyhere\n-----END PRIVATE KEY-----\n&quot;);
  Logger.log(signature);
@@ -388,7 +452,7 @@
  * Signs the provided value using RSA-SHA256 with the given key.
 
  <pre class="prettyprint"><code>
- // This will write an array of bytes to the log.
+ // This writes an array of bytes to the log.
  var signature = Utilities.computeRsaSha256Signature(&quot;this is my input&quot;,
      &quot;-----BEGIN PRIVATE KEY-----\nprivatekeyhere\n-----END PRIVATE KEY-----\n&quot;);
  Logger.log(signature);
@@ -429,10 +493,10 @@
  * Performs <code>sprintf</code>-like string formatting using '%'-style format strings.
 
  <pre class="prettyprint"><code>
- // will be: &quot; 123.456000&quot;
+ // &quot; 123.456000&quot;
  Utilities.formatString(&#39;%11.6f&#39;, 123.456);
 
- // will be: &quot;   abc&quot;
+ // &quot;   abc&quot;
  Utilities.formatString(&#39;%6s&#39;, &#39;abc&#39;);
  </code></pre>
  *
@@ -606,7 +670,7 @@
  * Returns a tabular 2D array representation of a CSV string.
 
  <pre class="prettyprint"><code>
- // This will create a 2 dimensional array of the format [[a, b, c], [d, e, f]]
+ // This creates a 2 dimensional array of the format [[a, b, c], [d, e, f]]
  var csvString = &quot;a,b,c\nd,e,f&quot;;
  var data = Utilities.parseCsv(csvString);
  </code></pre>
@@ -622,7 +686,7 @@
  * Returns a tabular 2D array representation of a CSV string using a custom delimiter.
 
  <pre class="prettyprint"><code>
- // This will create a 2 dimensional array of the format [[a, b, c], [d, e, f]]
+ // This creates a 2 dimensional array of the format [[a, b, c], [d, e, f]]
  var csvString = &quot;a,b,c\td,e,f&quot;;
  var data = Utilities.parseCsv(csvString, &#39;\t&#39;);
  </code></pre>
@@ -681,7 +745,7 @@
  // zip now references a blob containing an archive of both faviconBlob and logoBlob
  var zip = Utilities.zip([faviconBlob, logoBlob], &quot;google_images.zip&quot;);
 
- // This will now unzip the blobs
+ // This now unzips the blobs
  var files = Utilities.unzip(zip);
  </code></pre>
  *

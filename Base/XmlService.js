@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class XmlService
+ */
+
+/**
  * An enumeration representing the types of XML content nodes.
  *
  * @typedef {XmlService.ContentType} XmlService.ContentTypes

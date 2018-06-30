@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class ScriptApp
+ */
+
+/**
  * An enumeration that identifies which categories of authorized services Apps Script is able to
  execute through a triggered function.
  *
@@ -96,10 +100,16 @@
  for the effective user. If the script's OAuth scopes are sufficient to authorize another Google
  API that normally requires its own OAuth flow (like <a
  href="/apps-script/guides/dialogs#file-open_dialogs">Google Picker</a>), scripts can bypass the
- second authorization prompt by passing this token instead. However, not all Google OAuth scopes
- are available in Apps Script. The token expires after a time (a few minutes at minimum);
- scripts should handle authorization failures and call this method to obtain a fresh token when
- needed.
+ second authorization prompt by passing this token instead. The token expires after a time (a
+ few minutes at minimum); scripts should handle authorization failures and call this method to
+ obtain a fresh token when needed.
+
+ <p>The token returned by this method only includes scopes that the script currently needs.
+ Scopes that were previously authorized but are no longer used by the script are not included in
+ the returned token. If additional OAuth scopes are needed beyond what the script itself
+ requires, they can be <a
+ href="/apps-script/concepts/scopes#setting_explicit_scopes">specified</a> in the script's
+ manifest file.
  *
  * @function ScriptApp.getOAuthToken
  *

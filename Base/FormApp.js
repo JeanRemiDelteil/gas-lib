@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class FormApp
+ */
+
+/**
  * An enumeration of types of image alignment.
  *
  * @typedef {FormApp.Alignment} FormApp.Alignment
@@ -1477,6 +1481,20 @@
  */
 
 /**
+ * Deletes a single response from the form's response store. This method does not delete copies of
+ responses stored in an external response destination (like a spreadsheet), but does remove the
+ response from the form's summary view. The response ID can be retrieved with <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form-response.html#getId()'>FormResponse.getId()</a></code>.
+
+ <p><aside class="warning">Beware: this method is irreversible.</aside>
+ *
+ * @function FormApp.Form#deleteResponse
+ *
+ * @param {String} responseId - the ID of the form response to delete
+ *
+ * @return {FormApp.Form} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>, for chaining
+ */
+
+/**
  * Gets the form's confirmation message.
  *
  * @function FormApp.Form#getConfirmationMessage
@@ -1712,10 +1730,9 @@
 /**
  * Unlinks the form from its current response destination. The unlinked former destination still
  retains a copy of all previous responses. All forms, including those that do not have a
- destination set explicitly, <a
- href="https://support.google.com/drive/answer/2917686?hl=en&p=forms_response">save a copy of
- responses in the form's response store</a>. If the form does not currently have a response
- destination, this method has no effect.
+ destination set explicitly, <a href="https://support.google.com/drive/answer/2917686">save a
+ copy of responses in the form's response store</a>. If the form does not currently have a
+ response destination, this method has no effect.
  *
  * @function FormApp.Form#removeDestination
  *
@@ -1827,8 +1844,8 @@
 /**
  * Sets the destination where form responses are saved. All forms, including those that do not
  have a destination set explicitly, <a
- href="https://support.google.com/drive/answer/2917686?hl=en&p=forms_response">save a copy of
- responses in the form's response store</a>.
+ href="https://support.google.com/drive/answer/2917686">save a copy of responses in the form's
+ response store</a>.
  *
  * @function FormApp.Form#setDestination
  *

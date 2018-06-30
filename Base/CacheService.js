@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class CacheService
+ */
+
+/**
  * Gets the cache instance scoped to the current document and script. Document caches are specific
  to the current document which contains the script. Use these to store script information that
  is specific to the current document. If this method is called outside of the context of a

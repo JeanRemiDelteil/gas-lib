@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class ContentService
+ */
+
+/**
  * @typedef {ContentService.MimeType} ContentService.MimeType
  */
 

@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class LinearOptimizationService
+ */
+
+/**
  * Status of the solver.
  *
  * @typedef {LinearOptimizationService.Status} LinearOptimizationService.Status

@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class GmailApp
+ */
+
+/**
  * Creates a draft email message. The size of the email (including headers) is <a
  href="/apps-script/guides/services/quotas#current_limitations">quota limited</a>.
 

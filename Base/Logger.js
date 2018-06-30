@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class Logger
+ */
+
+/**
  * Clears the log.
  *
  * @function Logger.clear

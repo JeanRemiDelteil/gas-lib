@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class LockService
+ */
+
+/**
  * Gets a lock that prevents any user of the current document from concurrently running a section
  of code. A code section guarded by a document lock can be executed simultaneously by script
  instances running in the context of different documents, but by no more than one execution for

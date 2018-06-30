@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class DocumentApp
+ */
+
+/**
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/attribute.html'>Attribute</a></code> enumeration.
  *
  * @typedef {DocumentApp.Attribute} DocumentApp.Attribute

@@ -4,6 +4,10 @@
  ***********************************************/
 
 /**
+ * @class UserProperties
+ */
+
+/**
  * Deletes all properties.
 
  <pre class="prettyprint"><code>

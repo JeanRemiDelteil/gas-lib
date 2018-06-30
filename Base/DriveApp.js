@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class DriveApp
+ */
+
+/**
  * An enum representing classes of users who can access a file or folder, besides any individual
  users who have been explicitly given access.
  *

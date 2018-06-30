@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class SpreadsheetApp
+ */
+
+/**
  * An enumeration of the types of series used to calculate auto-filled values.
  *
  * @typedef {SpreadsheetApp.AutoFillSeries} SpreadsheetApp.AutoFillSeries
@@ -52,6 +56,12 @@
  */
 
 /**
+ * An enumeration of the positions that the group control toggle can be in.
+ *
+ * @typedef {SpreadsheetApp.GroupControlTogglePosition} SpreadsheetApp.GroupControlTogglePosition
+ */
+
+/**
  * An enumeration of conditional format gradient interpolation types.
  *
  * @typedef {SpreadsheetApp.InterpolationType} SpreadsheetApp.InterpolationType
@@ -97,12 +107,6 @@
  * An enumeration of the strategies used for wrapping cells.
  *
  * @typedef {SpreadsheetApp.WrapStrategy} SpreadsheetApp.WrapStrategy
- */
-
-/**
- * An enumeration of the positions that the group control toggle can be in.
- *
- * @typedef {SpreadsheetApp.GroupControlTogglePosition} SpreadsheetApp.GroupControlTogglePosition
  */
 
 /**
@@ -2626,7 +2630,7 @@
  *
  * @function SpreadsheetApp.DataValidationBuilder#requireDate
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -2644,7 +2648,7 @@
  *
  * @param {Date} date - The latest unacceptable date.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -2662,7 +2666,7 @@
  *
  * @param {Date} date - The earliest unacceptable date.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -2683,7 +2687,7 @@
  * @param {Date} start - The earliest acceptable date.
  * @param {Date} end - The latest acceptable date.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -2702,7 +2706,7 @@
  *
  * @param {Date} date - The sole acceptable date.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -2723,7 +2727,7 @@
  * @param {Date} start - The earliest unacceptable date.
  * @param {Date} end - The latest unacceptable date.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -2742,7 +2746,7 @@
  *
  * @param {Date} date - The earliest acceptable date.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -2761,7 +2765,7 @@
  *
  * @param {Date} date - The latest acceptable date.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -2778,7 +2782,7 @@
  *
  * @param {String} formula - A custom formula that evaluates to <code>true</code> if the input is valid.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -2797,7 +2801,7 @@
  * @param {Number} start - The lowest acceptable value.
  * @param {Number} end - The highest acceptable value.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -2814,7 +2818,7 @@
  *
  * @param {Number} number - The sole acceptable value.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -2831,7 +2835,7 @@
  *
  * @param {Number} number - The highest unacceptable value.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -2848,7 +2852,7 @@
  *
  * @param {Number} number - The lowest acceptable value.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -2865,7 +2869,7 @@
  *
  * @param {Number} number - The lowest unacceptable value.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -2882,7 +2886,7 @@
  *
  * @param {Number} number - The highest acceptable value.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -2901,7 +2905,7 @@
  * @param {Number} start - The lowest unacceptable value.
  * @param {Number} end - The highest unacceptable value.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -2918,7 +2922,7 @@
  *
  * @param {Number} number - The sole unacceptable value.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -2935,7 +2939,7 @@
  *
  * @param {String} text - The value that the input must contain.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -2952,7 +2956,7 @@
  *
  * @param {String} text - The value that the input must not contain.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -2969,7 +2973,7 @@
  *
  * @param {String} text - The sole acceptable value.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -2984,7 +2988,7 @@
  *
  * @function SpreadsheetApp.DataValidationBuilder#requireTextIsEmail
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -2999,7 +3003,7 @@
  *
  * @function SpreadsheetApp.DataValidationBuilder#requireTextIsUrl
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -3016,7 +3020,7 @@
  *
  * @param {String[]} values - An array of acceptable values.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -3036,7 +3040,7 @@
  * @param {Boolean} showDropdown - <code>true</code> if the spreadsheet should show a dropdown menu for the values;
      <code>false</code> if not.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -3054,7 +3058,7 @@
  *
  * @param {SpreadsheetApp.Range} range - A range that contains the acceptable values.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -3075,7 +3079,7 @@
  * @param {Boolean} showDropdown - <code>true</code> if the spreadsheet should show a dropdown menu for the values;
      <code>false</code> if not.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -3087,7 +3091,7 @@
  * @param {Boolean} allowInvalidData - <code>true</code> if the rule should allow input that fails data validation;
      <code>false</code> if not.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -3098,7 +3102,7 @@
  *
  * @param {String} helpText - The help text to set.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 /**
@@ -3139,12 +3143,18 @@
  * @param {Object[]} args - An array of arguments appropriate to the criteria type; the number of arguments and
      their type match the corresponding <code>require...()</code> method above.
  *
- * @return {SpreadsheetApp.DataValidationBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 
 /**
  * @class SpreadsheetApp.DataValidationCriteria
+ */
+
+/**
+ * Requires that the input is a custom value or a boolean; rendered as a checkbox.
+ *
+ * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.CHECKBOX
  */
 
 /**
@@ -3343,8 +3353,8 @@
  */
 
 /**
- * Adds a range to the chart represented by this builder. Does not add the range if it has already
- been added to the chart.
+ * Adds a range to the chart this builder modifies. Does not add the range if it has already been
+ added to the chart.
 
  <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -3529,8 +3539,8 @@
  */
 
 /**
- * Removes the specified range from the chart represented by this builder. Does not throw an error
- if the range is not in this chart.
+ * Removes the specified range from the chart this builder modifies. Does not throw an error if
+ the range is not in this chart.
 
  <p>The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-area-chart-builder.html#addRange(Range)'>addRange(range)</a></code>;
  otherwise no change is made to the chart. This method cannot be used to partially remove values
@@ -4034,8 +4044,8 @@
  */
 
 /**
- * Adds a range to the chart represented by this builder. Does not add the range if it has already
- been added to the chart.
+ * Adds a range to the chart this builder modifies. Does not add the range if it has already been
+ added to the chart.
 
  <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -4220,8 +4230,8 @@
  */
 
 /**
- * Removes the specified range from the chart represented by this builder. Does not throw an error
- if the range is not in this chart.
+ * Removes the specified range from the chart this builder modifies. Does not throw an error if
+ the range is not in this chart.
 
  <p>The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-bar-chart-builder.html#addRange(Range)'>addRange(range)</a></code>;
  otherwise no change is made to the chart. This method cannot be used to partially remove values
@@ -4958,14 +4968,23 @@
  * @return {Charts.Chart} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-chart.html'>EmbeddedChart</a></code> itself, useful for chaining.
  */
 
+/**
+ * Returns a stable identifier for the chart that is unique across the spreadsheet containing the
+ chart or <code>null</code> if the chart is not in a spreadsheet.
+ *
+ * @function SpreadsheetApp.EmbeddedChart#getChartId
+ *
+ * @return {IntegerNum}
+ */
+
 
 /**
  * @class SpreadsheetApp.EmbeddedChartBuilder
  */
 
 /**
- * Adds a range to the chart represented by this builder. Does not add the range if it has already
- been added to the chart.
+ * Adds a range to the chart this builder modifies. Does not add the range if it has already been
+ added to the chart.
 
  <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -5150,8 +5169,8 @@
  */
 
 /**
- * Removes the specified range from the chart represented by this builder. Does not throw an error
- if the range is not in this chart.
+ * Removes the specified range from the chart this builder modifies. Does not throw an error if
+ the range is not in this chart.
 
  <p>The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-chart-builder.html#addRange(Range)'>addRange(range)</a></code>;
  otherwise no change is made to the chart. This method cannot be used to partially remove values
@@ -5379,8 +5398,8 @@
  */
 
 /**
- * Adds a range to the chart represented by this builder. Does not add the range if it has already
- been added to the chart.
+ * Adds a range to the chart this builder modifies. Does not add the range if it has already been
+ added to the chart.
 
  <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -5565,8 +5584,8 @@
  */
 
 /**
- * Removes the specified range from the chart represented by this builder. Does not throw an error
- if the range is not in this chart.
+ * Removes the specified range from the chart this builder modifies. Does not throw an error if
+ the range is not in this chart.
 
  <p>The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-column-chart-builder.html#addRange(Range)'>addRange(range)</a></code>;
  otherwise no change is made to the chart. This method cannot be used to partially remove values
@@ -6053,8 +6072,8 @@
  */
 
 /**
- * Adds a range to the chart represented by this builder. Does not add the range if it has already
- been added to the chart.
+ * Adds a range to the chart this builder modifies. Does not add the range if it has already been
+ added to the chart.
 
  <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -6239,8 +6258,8 @@
  */
 
 /**
- * Removes the specified range from the chart represented by this builder. Does not throw an error
- if the range is not in this chart.
+ * Removes the specified range from the chart this builder modifies. Does not throw an error if
+ the range is not in this chart.
 
  <p>The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-combo-chart-builder.html#addRange(Range)'>addRange(range)</a></code>;
  otherwise no change is made to the chart. This method cannot be used to partially remove values
@@ -6727,8 +6746,8 @@
  */
 
 /**
- * Adds a range to the chart represented by this builder. Does not add the range if it has already
- been added to the chart.
+ * Adds a range to the chart this builder modifies. Does not add the range if it has already been
+ added to the chart.
 
  <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -6913,8 +6932,8 @@
  */
 
 /**
- * Removes the specified range from the chart represented by this builder. Does not throw an error
- if the range is not in this chart.
+ * Removes the specified range from the chart this builder modifies. Does not throw an error if
+ the range is not in this chart.
 
  <p>The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-histogram-chart-builder.html#addRange(Range)'>addRange(range)</a></code>;
  otherwise no change is made to the chart. This method cannot be used to partially remove values
@@ -7401,8 +7420,8 @@
  */
 
 /**
- * Adds a range to the chart represented by this builder. Does not add the range if it has already
- been added to the chart.
+ * Adds a range to the chart this builder modifies. Does not add the range if it has already been
+ added to the chart.
 
  <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -7587,8 +7606,8 @@
  */
 
 /**
- * Removes the specified range from the chart represented by this builder. Does not throw an error
- if the range is not in this chart.
+ * Removes the specified range from the chart this builder modifies. Does not throw an error if
+ the range is not in this chart.
 
  <p>The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-line-chart-builder.html#addRange(Range)'>addRange(range)</a></code>;
  otherwise no change is made to the chart. This method cannot be used to partially remove values
@@ -8100,8 +8119,8 @@
  */
 
 /**
- * Adds a range to the chart represented by this builder. Does not add the range if it has already
- been added to the chart.
+ * Adds a range to the chart this builder modifies. Does not add the range if it has already been
+ added to the chart.
 
  <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -8286,8 +8305,8 @@
  */
 
 /**
- * Removes the specified range from the chart represented by this builder. Does not throw an error
- if the range is not in this chart.
+ * Removes the specified range from the chart this builder modifies. Does not throw an error if
+ the range is not in this chart.
 
  <p>The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-pie-chart-builder.html#addRange(Range)'>addRange(range)</a></code>;
  otherwise no change is made to the chart. This method cannot be used to partially remove values
@@ -8643,8 +8662,8 @@
  */
 
 /**
- * Adds a range to the chart represented by this builder. Does not add the range if it has already
- been added to the chart.
+ * Adds a range to the chart this builder modifies. Does not add the range if it has already been
+ added to the chart.
 
  <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -8829,8 +8848,8 @@
  */
 
 /**
- * Removes the specified range from the chart represented by this builder. Does not throw an error
- if the range is not in this chart.
+ * Removes the specified range from the chart this builder modifies. Does not throw an error if
+ the range is not in this chart.
 
  <p>The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-scatter-chart-builder.html#addRange(Range)'>addRange(range)</a></code>;
  otherwise no change is made to the chart. This method cannot be used to partially remove values
@@ -9338,8 +9357,8 @@
  */
 
 /**
- * Adds a range to the chart represented by this builder. Does not add the range if it has already
- been added to the chart.
+ * Adds a range to the chart this builder modifies. Does not add the range if it has already been
+ added to the chart.
 
  <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -9606,8 +9625,8 @@
  */
 
 /**
- * Removes the specified range from the chart represented by this builder. Does not throw an error
- if the range is not in this chart.
+ * Removes the specified range from the chart this builder modifies. Does not throw an error if
+ the range is not in this chart.
 
  <p>The range removed must match up with a range added via <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-table-chart-builder.html#addRange(Range)'>addRange(range)</a></code>;
  otherwise no change is made to the chart. This method cannot be used to partially remove values
@@ -10437,6 +10456,157 @@
  * @function SpreadsheetApp.GradientCondition#getMinValue
  *
  * @return {String} the minimum value if specified or an empty string
+ */
+
+
+/**
+ * @class SpreadsheetApp.Group
+ */
+
+/**
+ * Collapses this group.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+ var range = sheet.getRange(2:3);
+ range.shiftRowGroupDepth(1);
+ var group = sheet.getRowGroupAt(2, 1);
+
+ // Collapses this group.
+ group.collapse();
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Group#collapse
+ *
+ * @return {SpreadsheetApp.Group} this group, for chaining
+ */
+
+/**
+ * Expands this group.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+ var range = sheet.getRange(2:3);
+ range.shiftRowGroupDepth(1);
+ var group = sheet.getRowGroupAt(2, 1);
+
+ // Expands this group.
+ group.expand();
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Group#expand
+ *
+ * @return {SpreadsheetApp.Group} this group, for chaining
+ */
+
+/**
+ * Returns the control toggle index of this group. This is the index just before the range when
+ the control toggle is shown before the group, or the index just after the range otherwise.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+ sheet.setRowGroupControlAfter(true);
+ var range = sheet.getRange(2:3);
+ range.shiftRowGroupDepth(1);
+ var group = sheet.getRowGroupAt(2, 1);
+
+ // Returns 4
+ var controlIndex = group.getControlIndex();
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Group#getControlIndex
+ *
+ * @return {IntegerNum} the control toggle index of this group
+ */
+
+/**
+ * Returns the depth of this group.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+ var range = sheet.getRange(2:3);
+ range.shiftRowGroupDepth(1);
+ var group = sheet.getRowGroupAt(2, 1);
+
+ // Returns 1 if the group is at depth 1.
+ var depth = group.getDepth();
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Group#getDepth
+ *
+ * @return {IntegerNum} the depth of this group
+ */
+
+/**
+ * Returns the range over which this group exists.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+ var range = sheet.getRange(2:3);
+ range.shiftRowGroupDepth(1);
+ var group = sheet.getRowGroupAt(1, 1);
+
+ // Returns the range 2:3 if the group is over rows 2:3
+ range = group.getRange();
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Group#getRange
+ *
+ * @return {SpreadsheetApp.Range} the range over which the group exists
+ */
+
+/**
+ * Returns <code>true</code> if this group is collapsed.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+ var range = sheet.getRange(2:3);
+ range.shiftRowGroupDepth(1);
+ var group = sheet.getRowGroupAt(2, 1);
+
+ // Returns true if the group is collapsed.
+ var isCollapsed = group.isCollapsed();
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Group#isCollapsed
+ *
+ * @return {Boolean} <code>true</code> if this group is collapsed; returns <code>false</code> otherwise
+ */
+
+/**
+ * Removes this group from the sheet, reducing the group depth of the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/group.html#getRange()'>range</a></code> by
+ one. This may modify other groups. After calling this, the group object becomes invalid to use.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+ var range = sheet.getRange(2:3);
+ range.shiftRowGroupDepth(1);
+ var group = sheet.getRowGroupAt(2, 1);
+
+ // Removes this group
+ var range = group.remove();
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Group#remove
+ *
+ * @return void
+ */
+
+
+/**
+ * @class SpreadsheetApp.GroupControlTogglePosition
+ */
+
+/**
+ * The position where the control toggle is after the group (at higher indices).
+ *
+ * @typedef {SpreadsheetApp.GroupControlTogglePosition} SpreadsheetApp.GroupControlTogglePosition.AFTER
+ */
+
+/**
+ * The position where the control toggle is before the group (at lower indices).
+ *
+ * @typedef {SpreadsheetApp.GroupControlTogglePosition} SpreadsheetApp.GroupControlTogglePosition.BEFORE
  */
 
 
@@ -11897,11 +12067,11 @@
 /**
  * Clears the data validation rules for the range.
 
- <pre class="prettyprint">
+ <pre class="prettyprint"><code>
  // Clear the data validation rules for cells A1:B5.
- var range = SpreadsheetApp.getActive().getRange('A1:B5');
+ var range = SpreadsheetApp.getActive().getRange(&#39;A1:B5&#39;);
  range.clearDataValidations();
- </pre>
+ </code></pre>
  *
  * @function SpreadsheetApp.Range#clearDataValidations
  *
@@ -11939,6 +12109,23 @@
  </code></pre>
  *
  * @function SpreadsheetApp.Range#clearNote
+ *
+ * @return {SpreadsheetApp.Range} this range, for chaining
+ */
+
+/**
+ * Collapses all groups that are wholly contained within the range. If no group is fully within
+ the range, the deepest expanded group that is partially within the range is collapsed.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+ var range = sheet.getActiveRange();
+
+ // All row and column groups within the range are collapsed.
+ range.expandGroups();
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Range#collapseGroups
  *
  * @return {SpreadsheetApp.Range} this range, for chaining
  */
@@ -12147,6 +12334,25 @@
  * @param {SpreadsheetApp.Dimension} shiftDimension - The dimension along which to shift existing data.
  *
  * @return void
+ */
+
+/**
+ * Expands the collapsed groups whose range or control toggle intersects with this range. The
+ control toggle location is the index at which the control toggle is shown, directly before or
+ after the group depending on settings. If there is more than one group at the same location,
+ the shallowest group is expanded.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+ var range = sheet.getActiveRange();
+
+ // All row and column groups within the range are expanded.
+ range.expandGroups();
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Range#expandGroups
+ *
+ * @return {SpreadsheetApp.Range} this range, for chaining
  */
 
 /**
@@ -12736,11 +12942,7 @@
  */
 
 /**
- * Returns the grid ID of the range's parent sheet. The first sheet created in a spreadsheet has a
- grid ID of <code>0</code>, and each sheet created thereafter increments the ID. The ID does not
- necessarily correspond to a sheet's tab position because sheets may have been reordered or
- deleted. If a sheet is deleted, the grid ID for subsequent sheets continues to increment, and
- the grid ID of the deleted sheet is not reused.
+ * Returns the grid ID of the range's parent sheet. IDs are random non-negative int values.
 
  <pre class="prettyprint"><code>
  // Log the grid ID of the first sheet (by tab position) in the spreadsheet.
@@ -12872,7 +13074,7 @@
 /**
  * Starting at the cell in the first column and row of the range, returns the next cell in the
  given direction that is the edge of a contiguous range of cells with data in them or the cell
- at the edge of the spreadsheet in that direction. This is equivalent to hitting <code>
+ at the edge of the spreadsheet in that direction. This is equivalent to typing <code>
  Ctrl+[arrow key]</code> in the editor.
 
  <pre class="prettyprint"><code>
@@ -14520,6 +14722,67 @@
  */
 
 /**
+ * Changes the column grouping depth of the range by the specified amount.
+
+ <p>This has the effect of creating, modifying, or deleting groups that intersect with the
+ range. For positive deltas, groups are created and/or modified; for negative deltas, groups are
+ destroyed and/or modified.
+
+ <p>This has no effect when decreasing the group depth below zero or above eight.
+
+ <p>If the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/sheet.html#getColumnGroupControlPosition()'>column group control position</a></code> is
+ <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/group-control-toggle-position.html#BEFORE'>BEFORE</a></code>, this throws an error when attempting to shift
+ the depth of the first row.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+ var range = sheet.getActiveRange();
+
+ // The column grouping depth is increased by 1.
+ range.shiftColumnGroupDepth(1);
+
+ // The column grouping depth is decreased by 1.
+ range.shiftColumnGroupDepth(-1);
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Range#shiftColumnGroupDepth
+ *
+ * @param {IntegerNum} delta - The amount by which to change the column group depth of this range.
+ *
+ * @return {SpreadsheetApp.Range} this range, for chaining
+ */
+
+/**
+ * Changes the row grouping depth of the range by the specified amount.
+
+ <p>This has the effect of creating, modifying, or deleting groups that intersect with the
+ range. For positive deltas, groups are created and/or modified; for negative deltas, groups are
+ destroyed and/or modified.
+
+ <p>This has no effect when decreasing the group depth below zero or above eight.
+
+ <p>If the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/sheet.html#getRowGroupControlPosition()'>row group control position</a></code> is <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/group-control-toggle-position.html#BEFORE'>BEFORE</a></code>, this throws an error when attempting to shift the
+ depth of the first row.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+ var range = sheet.getActiveRange();
+
+ // The row grouping depth is increased by 1.
+ range.shiftRowGroupDepth(1);
+
+ // The row grouping depth is decreased by 1.
+ range.shiftRowGroupDepth(-1);
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Range#shiftRowGroupDepth
+ *
+ * @param {IntegerNum} delta - The amount by which to change the row group depth of this range.
+ *
+ * @return {SpreadsheetApp.Range} this range, for chaining
+ */
+
+/**
  * Sorts the cells in the given range, by column and order specified.
 
  <pre class="prettyprint"><code>
@@ -14637,103 +14900,6 @@
  * @param {String} delimiter - The custom delimiter to split on.
  *
  * @return void
- */
-
-/**
- * Collapses all groups that are wholly contained within the range. If no group is fully within
- the range, the deepest expanded group that is partially within the range is collapsed.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
- var range = sheet.getActiveRange();
-
- // All row and column groups within the range are collapsed.
- range.expandGroups();
- </code></pre>
- *
- * @function SpreadsheetApp.Range#collapseGroups
- *
- * @return {SpreadsheetApp.Range} this range, for chaining
- */
-
-/**
- * Expands the collapsed groups whose range or control toggle intersects with this range. The
- control toggle location is the index at which the control toggle is shown, directly before or
- after the group depending on settings. If there is more than one group at the same location,
- the shallowest group is expanded.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
- var range = sheet.getActiveRange();
-
- // All row and column groups within the range are expanded.
- range.expandGroups();
- </code></pre>
- *
- * @function SpreadsheetApp.Range#expandGroups
- *
- * @return {SpreadsheetApp.Range} this range, for chaining
- */
-
-/**
- * Changes the column grouping depth of the range by the specified amount.
-
- <p>This has the effect of creating, modifying, or deleting groups that intersect with the
- range. For positive deltas, groups are created and/or modified; for negative deltas, groups are
- destroyed and/or modified.
-
- <p>This has no effect when decreasing the group depth below zero or above eight.
-
- <p>If the <code>column group control position</code> is
- <code>BEFORE</code>, this throws an error when attempting to shift
- the depth of the first row.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
- var range = sheet.getActiveRange();
-
- // The column grouping depth is increased by 1.
- range.shiftColumnGroupDepth(1);
-
- // The column grouping depth is decreased by 1.
- range.shiftColumnGroupDepth(-1);
- </code></pre>
- *
- * @function SpreadsheetApp.Range#shiftColumnGroupDepth
- *
- * @param {IntegerNum} delta - The amount by which to change the column group depth of this range.
- *
- * @return {SpreadsheetApp.Range} this range, for chaining
- */
-
-/**
- * Changes the row grouping depth of the range by the specified amount.
-
- <p>This has the effect of creating, modifying, or deleting groups that intersect with the
- range. For positive deltas, groups are created and/or modified; for negative deltas, groups are
- destroyed and/or modified.
-
- <p>This has no effect when decreasing the group depth below zero or above eight.
-
- <p>If the <code>row group control position</code> is <code>BEFORE</code>, this throws an error when attempting to shift the
- depth of the first row.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
- var range = sheet.getActiveRange();
-
- // The row grouping depth is increased by 1.
- range.shiftRowGroupDepth(1);
-
- // The row grouping depth is decreased by 1.
- range.shiftRowGroupDepth(-1);
- </code></pre>
- *
- * @function SpreadsheetApp.Range#shiftRowGroupDepth
- *
- * @param {IntegerNum} delta - The amount by which to change the row group depth of this range.
- *
- * @return {SpreadsheetApp.Range} this range, for chaining
  */
 
 
@@ -15639,6 +15805,36 @@
  */
 
 /**
+ * Collapses all column groups on the sheet.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+
+ // All column groups on the sheet are collapsed.
+ sheet.collapseAllColumnGroups();
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Sheet#collapseAllColumnGroups
+ *
+ * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ */
+
+/**
+ * Collapses all row groups on the sheet.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+
+ // All row groups on the sheet are collapsed.
+ sheet.collapseAllRowGroups();
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Sheet#collapseAllRowGroups
+ *
+ * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ */
+
+/**
  * Copies the sheet to a given spreadsheet, which can be the same spreadsheet as the source. The
  copied sheet is named "Copy of [original name]".
 
@@ -15729,6 +15925,72 @@
  */
 
 /**
+ * Expands all column groups on the sheet.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+
+ // All column groups on the sheet are expanded.
+ sheet.expandAllColumnGroups();
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Sheet#expandAllColumnGroups
+ *
+ * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ */
+
+/**
+ * Expands all row groups on the sheet.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+
+ // All row groups on the sheet are expanded.
+ sheet.expandAllRowGroups();
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Sheet#expandAllRowGroups
+ *
+ * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ */
+
+/**
+ * Expands all column groups up to the given depth, and collapses all others.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+
+ // All column groups of depth 2 and lower are expanded, and groups with depth
+ // 3 and higher are collapsed.
+ sheet.expandColumnGroupsUpToDepth(2);
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Sheet#expandColumnGroupsUpToDepth
+ *
+ * @param {IntegerNum} groupDepth - The group depth up to which to expand the column groups.
+ *
+ * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ */
+
+/**
+ * Expands all row groups up to the given depth, and collapses all others.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+
+ // All row groups of depth 2 and lower are expanded, and groups with depth
+ // 3 and higher are collapsed.
+ sheet.expandRowGroupsUpToDepth(2);
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Sheet#expandRowGroupsUpToDepth
+ *
+ * @param {IntegerNum} groupDepth - The group depth up to which to expand the row groups.
+ *
+ * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ */
+
+/**
  * Returns the active cell in this sheet.
 
  <p><b>Note:</b> It's preferrable to use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/sheet.html#getCurrentCell()'>getCurrentCell()</a></code>, which the returns the current
@@ -15805,6 +16067,63 @@
  * @function SpreadsheetApp.Sheet#getCharts
  *
  * @return {SpreadsheetApp.EmbeddedChart[]} an array of charts
+ */
+
+/**
+ * Returns the column group at the given index and group depth.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+
+ // Returns the group whose control index is at column 2 and has a depth of 1, or
+ // null if the group doesn’t exist.
+ var columnGroup = sheet.getColumnGroup(2, 1);
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Sheet#getColumnGroup
+ *
+ * @param {IntegerNum} columnIndex - The column index of the group control toggle or an index within the group.
+ * @param {IntegerNum} groupDepth - The depth of the group.
+ *
+ * @return {SpreadsheetApp.Group} the column group at the control index and depth, or <code>null</code> if the group doesn’t
+     exist
+ */
+
+/**
+ * Returns the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/group-control-toggle-position.html'>GroupControlTogglePosition</a></code> for all column groups on the sheet.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+
+ // GroupControlTogglePosition.AFTER if the column grouping control toggle is shown after the
+ // group.
+ var columnGroupControlPosition = sheet.getColumnGroupControlPosition();
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Sheet#getColumnGroupControlPosition
+ *
+ * @return {SpreadsheetApp.GroupControlTogglePosition} <code>true</code> if the column grouping control toggle is shown after the group on this
+     sheet and <code>false</code> otherwise
+ */
+
+/**
+ * Returns the group depth of the column at the given index.
+
+ <p>The group depth indicates how many groups overlap with the column. This can range between
+ zero and eight.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+
+ // 1 if there is a group over columns 1 through 3
+ var groupDepth = sheet.getColumnGroupDepth(1);
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Sheet#getColumnGroupDepth
+ *
+ * @param {IntegerNum} columnIndex - The index of the column.
+ *
+ * @return {IntegerNum} the group depth of the column at the given index
  */
 
 /**
@@ -16229,6 +16548,63 @@
  */
 
 /**
+ * Returns the row group at the given index and group depth.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+
+ // Returns the group whose control index is at row 2 and has a depth of 1, or
+ // null if the group doesn’t exist.
+ var rowGroup = sheet.getRowGroup(2, 1);
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Sheet#getRowGroup
+ *
+ * @param {IntegerNum} rowIndex - The row index of the group control toggle or an index within the group.
+ * @param {IntegerNum} groupDepth - The depth of the group.
+ *
+ * @return {SpreadsheetApp.Group} the row group at the control index and depth, or <code>null</code> if the group doesn’t
+     exist
+ */
+
+/**
+ * Returns the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/group-control-toggle-position.html'>GroupControlTogglePosition</a></code> for all row groups on the sheet.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+
+ // GroupControlTogglePosition.AFTER if the row grouping control toggle is shown after the
+ // group.
+ var rowGroupControlPosition = sheet.getRowGroupControlPosition();
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Sheet#getRowGroupControlPosition
+ *
+ * @return {SpreadsheetApp.GroupControlTogglePosition} <code>true</code> if the row grouping control toggle is shown after the group on this sheet
+     and <code>false</code> otherwise
+ */
+
+/**
+ * Returns the group depth of the row at the given index.
+
+ <p>The group depth indicates how many groups overlap with the row. This can range between zero
+ and eight.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+
+ // 1 if there is a group over rows 1 through 3
+ var groupDepth = sheet.getRowGroupDepth(1);
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Sheet#getRowGroupDepth
+ *
+ * @param {IntegerNum} rowIndex - The index of the row.
+ *
+ * @return {IntegerNum} the group depth of the row at the given index
+ */
+
+/**
  * Gets the height in pixels of the given row.
 
  <pre class="prettyprint"><code>
@@ -16627,8 +17003,8 @@
  */
 
 /**
- * Inserts a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../base/blob.html'>Blob</a></code> as an image in the document at a given row and column. The image size
- is retrieved from the blob contents.
+ * Inserts a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../base/blob-source.html'>BlobSource</a></code> as an image in the document at a given row and column. The image
+ size is retrieved from the blob contents.
 
  <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -16640,7 +17016,7 @@
  *
  * @function SpreadsheetApp.Sheet#insertImage
  *
- * @param {Blob} blob - The blob containing the image contents, MIME type, and (optionally) name.
+ * @param {BlobSource} blobSource - The blob containing the image contents, MIME type, and (optionally) name.
  * @param {IntegerNum} column - The column position.
  * @param {IntegerNum} row - The row position.
  *
@@ -16648,8 +17024,8 @@
  */
 
 /**
- * Inserts a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../base/blob.html'>Blob</a></code> as an image in the document at a given row and column, with a pixel
- offset. The image size is retrieved from the blob contents.
+ * Inserts a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../base/blob-source.html'>BlobSource</a></code> as an image in the document at a given row and column, with a
+ pixel offset. The image size is retrieved from the blob contents.
 
  <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -16661,7 +17037,7 @@
  *
  * @function SpreadsheetApp.Sheet#insertImage
  *
- * @param {Blob} blob - The blob containing the image contents, MIME type, and (optionally) name.
+ * @param {BlobSource} blobSource - The blob containing the image contents, MIME type, and (optionally) name.
  * @param {IntegerNum} column - The column position.
  * @param {IntegerNum} row - The row position.
  * @param {IntegerNum} offsetX - The horizontal offset from cell corner in pixels.
@@ -17046,6 +17422,21 @@
  */
 
 /**
+ * Sets the position of the column group control toggle on the sheet.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+ sheet.setColumnGroupControlPosition(SpreadsheetApp.GroupControlTogglePosition.AFTER);
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Sheet#setColumnGroupControlPosition
+ *
+ * @param {SpreadsheetApp.GroupControlTogglePosition} position - The position of the column group control toggle.
+ *
+ * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ */
+
+/**
  * Sets the width of the given column in pixels.
 
  <pre class="prettyprint"><code>
@@ -17204,6 +17595,21 @@
  * @param {Boolean} rightToLeft - If <code>true</code>, the sheet layout is set to right-to-left, with cell A1 at
      the top right corner. If <code>false</code>, the sheet layout is set to the default
      left-to-right, with cell A1 at the top left.
+ *
+ * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ */
+
+/**
+ * Sets the position of the row group control toggle on the sheet.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+ sheet.setRowGroupControlPosition(SpreadsheetApp.GroupControlTogglePosition.AFTER);
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Sheet#setRowGroupControlPosition
+ *
+ * @param {SpreadsheetApp.GroupControlTogglePosition} position - The position of the row group control toggle.
  *
  * @return {SpreadsheetApp.Sheet} this sheet, for chaining
  */
@@ -17471,248 +17877,6 @@
  * @param {SpreadsheetApp.EmbeddedChart} chart - the chart to update
  *
  * @return void
- */
-
-/**
- * Collapses all column groups on the sheet.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
-
- // All column groups on the sheet are collapsed.
- sheet.collapseAllColumnGroups();
- </code></pre>
- *
- * @function SpreadsheetApp.Sheet#collapseAllColumnGroups
- *
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
- */
-
-/**
- * Collapses all row groups on the sheet.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
-
- // All row groups on the sheet are collapsed.
- sheet.collapseAllRowGroups();
- </code></pre>
- *
- * @function SpreadsheetApp.Sheet#collapseAllRowGroups
- *
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
- */
-
-/**
- * Expands all column groups on the sheet.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
-
- // All column groups on the sheet are expanded.
- sheet.expandAllColumnGroups();
- </code></pre>
- *
- * @function SpreadsheetApp.Sheet#expandAllColumnGroups
- *
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
- */
-
-/**
- * Expands all row groups on the sheet.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
-
- // All row groups on the sheet are expanded.
- sheet.expandAllRowGroups();
- </code></pre>
- *
- * @function SpreadsheetApp.Sheet#expandAllRowGroups
- *
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
- */
-
-/**
- * Expands all column groups up to the given depth, and collapses all others.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
-
- // All column groups of depth 2 and lower are expanded, and groups with depth
- // 3 and higher are collapsed.
- sheet.expandColumnGroupsUpToDepth(2);
- </code></pre>
- *
- * @function SpreadsheetApp.Sheet#expandColumnGroupsUpToDepth
- *
- * @param {IntegerNum} groupDepth - The group depth up to which to expand the column groups.
- *
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
- */
-
-/**
- * Expands all row groups up to the given depth, and collapses all others.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
-
- // All row groups of depth 2 and lower are expanded, and groups with depth
- // 3 and higher are collapsed.
- sheet.expandRowGroupsUpToDepth(2);
- </code></pre>
- *
- * @function SpreadsheetApp.Sheet#expandRowGroupsUpToDepth
- *
- * @param {IntegerNum} groupDepth - The group depth up to which to expand the row groups.
- *
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
- */
-
-/**
- * Returns the column group at the given index and group depth.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
-
- // Returns the group whose control index is at column 2 and has a depth of 1, or
- // null if the group doesn’t exist.
- var columnGroup = sheet.getColumnGroup(2, 1);
- </code></pre>
- *
- * @function SpreadsheetApp.Sheet#getColumnGroup
- *
- * @param {IntegerNum} columnIndex - The column index of the group control toggle or an index within the group.
- * @param {IntegerNum} groupDepth - The depth of the group.
- *
- * @return {SpreadsheetApp.Group} the column group at the control index and depth, or <code>null</code> if the group doesn’t
-     exist
- */
-
-/**
- * Returns the <code>GroupControlTogglePosition</code> for all column groups on the sheet.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
-
- // GroupControlTogglePosition.AFTER if the column grouping control toggle is shown after the
- // group.
- var columnGroupControlPosition = sheet.getColumnGroupControlPosition();
- </code></pre>
- *
- * @function SpreadsheetApp.Sheet#getColumnGroupControlPosition
- *
- * @return {SpreadsheetApp.GroupControlTogglePosition} <code>true</code> if the column grouping control toggle is shown after the group on this
-     sheet and <code>false</code> otherwise
- */
-
-/**
- * Returns the group depth of the column at the given index.
-
- <p>The group depth indicates how many groups overlap with the column. This can range between
- zero and eight.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
-
- // 1 if there is a group over columns 1 through 3
- var groupDepth = sheet.getColumnGroupDepth(1);
- </code></pre>
- *
- * @function SpreadsheetApp.Sheet#getColumnGroupDepth
- *
- * @param {IntegerNum} columnIndex - The index of the column.
- *
- * @return {IntegerNum} the group depth of the column at the given index
- */
-
-/**
- * Returns the row group at the given index and group depth.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
-
- // Returns the group whose control index is at row 2 and has a depth of 1, or
- // null if the group doesn’t exist.
- var rowGroup = sheet.getRowGroup(2, 1);
- </code></pre>
- *
- * @function SpreadsheetApp.Sheet#getRowGroup
- *
- * @param {IntegerNum} rowIndex - The row index of the group control toggle or an index within the group.
- * @param {IntegerNum} groupDepth - The depth of the group.
- *
- * @return {SpreadsheetApp.Group} the row group at the control index and depth, or <code>null</code> if the group doesn’t
-     exist
- */
-
-/**
- * Returns the <code>GroupControlTogglePosition</code> for all row groups on the sheet.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
-
- // GroupControlTogglePosition.AFTER if the row grouping control toggle is shown after the
- // group.
- var rowGroupControlPosition = sheet.getRowGroupControlPosition();
- </code></pre>
- *
- * @function SpreadsheetApp.Sheet#getRowGroupControlPosition
- *
- * @return {SpreadsheetApp.GroupControlTogglePosition} <code>true</code> if the row grouping control toggle is shown after the group on this sheet
-     and <code>false</code> otherwise
- */
-
-/**
- * Returns the group depth of the row at the given index.
-
- <p>The group depth indicates how many groups overlap with the row. This can range between zero
- and eight.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
-
- // 1 if there is a group over rows 1 through 3
- var groupDepth = sheet.getRowGroupDepth(1);
- </code></pre>
- *
- * @function SpreadsheetApp.Sheet#getRowGroupDepth
- *
- * @param {IntegerNum} rowIndex - The index of the row.
- *
- * @return {IntegerNum} the group depth of the row at the given index
- */
-
-/**
- * Sets the position of the column group control toggle on the sheet.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
-
- sheet.setColumnGroupControlPosition(SpreadsheetApp.GroupControlTogglePosition.AFTER);
- </code></pre>
- *
- * @function SpreadsheetApp.Sheet#setColumnGroupControlPosition
- *
- * @param {SpreadsheetApp.GroupControlTogglePosition} position - The position of the column group control toggle.
- *
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
- */
-
-/**
- * Sets the position of the row group control toggle on the sheet.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
-
- sheet.setRowGroupControlPosition(SpreadsheetApp.GroupControlTogglePosition.AFTER);
- </code></pre>
- *
- * @function SpreadsheetApp.Sheet#setRowGroupControlPosition
- *
- * @param {SpreadsheetApp.GroupControlTogglePosition} position - The position of the row group control toggle.
- *
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
  */
 
 
@@ -18714,8 +18878,8 @@
  */
 
 /**
- * Inserts a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../base/blob.html'>Blob</a></code> as an image in the document at a given row and column. The image size
- is retrieved from the blob contents.
+ * Inserts a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> as an image in the document at a given row and column. The image
+ size is retrieved from the blob contents.
 
  <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -18727,7 +18891,7 @@
  *
  * @function SpreadsheetApp.Spreadsheet#insertImage
  *
- * @param {Blob} blob - The blob containing the image contents, MIME type, and (optionally) name.
+ * @param {BlobSource} blobSource - The blob containing the image contents, MIME type, and (optionally) name.
  * @param {IntegerNum} column - The column position.
  * @param {IntegerNum} row - The row position.
  *
@@ -18735,8 +18899,8 @@
  */
 
 /**
- * Inserts a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../base/blob.html'>Blob</a></code> as an image in the document at a given row and column, with a pixel
- offset. The image size is retrieved from the blob contents.
+ * Inserts a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> as an image in the document at a given row and column, with a
+ pixel offset. The image size is retrieved from the blob contents.
 
  <pre class="prettyprint"><code>
  var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -18748,7 +18912,7 @@
  *
  * @function SpreadsheetApp.Spreadsheet#insertImage
  *
- * @param {Blob} blob - The blob containing the image contents, MIME type, and (optionally) name.
+ * @param {BlobSource} blobSource - The blob containing the image contents, MIME type, and (optionally) name.
  * @param {IntegerNum} column - The column position.
  * @param {IntegerNum} row - The row position.
  * @param {IntegerNum} offsetX - The horizontal offset from cell corner in pixels.
@@ -19710,6 +19874,24 @@
  * @return void
  */
 
+/**
+ * Creates a new <code>SheetType.OBJECT</code> sheet and moves the provided chart to it. If the chart
+ is already on its own sheet, that sheet is returned without creating a new one.
+
+ <pre class="prettyprint"><code>
+ var sheet = SpreadsheetApp.getActiveSheet();
+ var chart = sheet.newChart().setPosition(1, 1, 0, 0).build();
+ sheet.insertChart(chart);
+ var objectSheet = SpreadsheetApp.getActive().moveChartToObjectSheet(chart);
+ </code></pre>
+ *
+ * @function SpreadsheetApp.Spreadsheet#moveChartToObjectSheet
+ *
+ * @param {SpreadsheetApp.EmbeddedChart} chart - The chart to move.
+ *
+ * @return {SpreadsheetApp.Sheet} the sheet that the chart is on
+ */
+
 
 /**
  * @class SpreadsheetApp.TextDirection
@@ -19802,158 +19984,6 @@
  than a line are wrapped at the character level.
  *
  * @typedef {SpreadsheetApp.WrapStrategy} SpreadsheetApp.WrapStrategy.WRAP
- */
-
-
-/**
- * @class SpreadsheetApp.Group
- */
-
-/**
- * Collapses this group.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
- var range = sheet.getRange(2:3);
- range.shiftRowGroupDepth(1);
- var group = sheet.getRowGroupAt(2, 1);
-
- // Collapses this group.
- group.collapse();
- </code></pre>
- *
- * @function SpreadsheetApp.Group#collapse
- *
- * @return {SpreadsheetApp.Group} the range over which the group exists
- */
-
-/**
- * Expands this group.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
- var range = sheet.getRange(2:3);
- range.shiftRowGroupDepth(1);
- var group = sheet.getRowGroupAt(2, 1);
-
- // Expands this group.
- group.expand();
- </code></pre>
- *
- * @function SpreadsheetApp.Group#expand
- *
- * @return {SpreadsheetApp.Group} the range over which the group exists
- */
-
-/**
- * Returns the control toggle index of this group. This is the index just before the range when
- the control toggle is shown before the group, or the index just after the range otherwise.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
- sheet.setRowGroupControlAfter(true);
- var range = sheet.getRange(2:3);
- range.shiftRowGroupDepth(1);
- var group = sheet.getRowGroupAt(2, 1);
-
- // Returns 4
- var controlIndex = group.getControlIndex();
- </code></pre>
- *
- * @function SpreadsheetApp.Group#getControlIndex
- *
- * @return {IntegerNum} the control toggle index of this group
- */
-
-/**
- * Returns the depth of this group.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
- var range = sheet.getRange(2:3);
- range.shiftRowGroupDepth(1);
- var group = sheet.getRowGroupAt(2, 1);
-
- // Returns 1 if the group is at depth 1.
- var depth = group.getDepth();
- </code></pre>
- *
- * @function SpreadsheetApp.Group#getDepth
- *
- * @return {IntegerNum} the range over which the group exists
- */
-
-/**
- * Returns the range over which this group exists.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
- var range = sheet.getRange(2:3);
- range.shiftRowGroupDepth(1);
- var group = sheet.getRowGroupAt(1, 1);
-
- // Returns the range 2:3 if the group is over rows 2:3
- range = group.getRange();
- </code></pre>
- *
- * @function SpreadsheetApp.Group#getRange
- *
- * @return {SpreadsheetApp.Range} the range over which the group exists
- */
-
-/**
- * Returns <code>true</code> if this group is collapsed.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
- var range = sheet.getRange(2:3);
- range.shiftRowGroupDepth(1);
- var group = sheet.getRowGroupAt(2, 1);
-
- // Returns true if the group is collapsed.
- var isCollapsed = group.isCollapsed();
- </code></pre>
- *
- * @function SpreadsheetApp.Group#isCollapsed
- *
- * @return {Boolean} <code>true</code> if this group is collapsed; returns <code>false</code> otherwise
- */
-
-/**
- * Removes this group from the sheet, reducing the group depth of the <code>range</code> by
- one, which may modify other groups. After calling this, the group object becomes invalid to
- use.
-
- <pre class="prettyprint"><code>
- var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
- var range = sheet.getRange(2:3);
- range.shiftRowGroupDepth(1);
- var group = sheet.getRowGroupAt(2, 1);
-
- // Removes this group
- var range = group.remove();
- </code></pre>
- *
- * @function SpreadsheetApp.Group#remove
- *
- * @return void
- */
-
-
-/**
- * @class SpreadsheetApp.GroupControlTogglePosition
- */
-
-/**
- * The position where the control toggle is after the group (at higher indices).
- *
- * @typedef {SpreadsheetApp.GroupControlTogglePosition} SpreadsheetApp.GroupControlTogglePosition.AFTER
- */
-
-/**
- * The position where the control toggle is before the group (at lower indices).
- *
- * @typedef {SpreadsheetApp.GroupControlTogglePosition} SpreadsheetApp.GroupControlTogglePosition.BEFORE
  */
 
 

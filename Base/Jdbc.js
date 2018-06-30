@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class Jdbc
+ */
+
+/**
  * @typedef {Jdbc.JdbcConnection} Jdbc.Connection
  */
 

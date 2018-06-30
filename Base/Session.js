@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class Session
+ */
+
+/**
  * Gets information about the current user. If security policies do not allow access to the user's
  identity, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/user.html#getEmail()'>User.getEmail()</a></code> returns a blank string. The circumstances in which the
  email address is available vary: for example, the user's email address is not available in any
@@ -23,8 +27,7 @@
  */
 
 /**
- * Gets the language setting of the current user as a two-letter string — for example, <code>en</code>
- for English.
+ * Gets the language setting of the current user as a string—for example, <code>en</code> for English.
 
  <pre class="prettyprint"><code>
  // Log the language setting of the person running the script.
@@ -33,7 +36,7 @@
  *
  * @function Session.getActiveUserLocale
  *
- * @return {String} a two-letter string that represents the user's language setting
+ * @return {String} a string that represents the user's language setting
  */
 
 /**

@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class JSON
+ */
+
+/**
  * @function JSON.parse
  *
  * @param {String} text

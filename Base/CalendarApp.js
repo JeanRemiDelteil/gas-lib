@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class CalendarApp
+ */
+
+/**
  * An enum representing the named colors available in the Calendar service.
  *
  * @typedef {CalendarApp.Color} CalendarApp.Color
@@ -256,7 +260,7 @@
  * Creates an event from a free-form description.
 
  <p>The description should use the same format as the UI's <a
- href="http://support.google.com/calendar/answer/36604?hl=en">"Quick Add"</a> feature.
+ href="http://support.google.com/calendar/answer/36604">"Quick Add"</a> feature.
 
  <pre class="prettyprint"><code>
  // Creates a new event and logs its ID.
@@ -953,7 +957,7 @@
  * Creates an event from a free-form description.
 
  <p>The description should use the same format as the UI's <a
- href="http://support.google.com/calendar/answer/36604?hl=en">"Quick Add"</a> feature.
+ href="http://support.google.com/calendar/answer/36604">"Quick Add"</a> feature.
 
  <pre class="prettyprint"><code>
  // Creates a new event and logs its ID.

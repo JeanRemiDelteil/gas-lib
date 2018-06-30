@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class Object
+ */
+
+/**
  * @function Object.create
  *
  * @param {Object} proto

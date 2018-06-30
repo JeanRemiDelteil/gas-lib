@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class BigNumber
+ */
+
+/**
  * @function BigNumber.abs
  *
  * @return {BigNumber}

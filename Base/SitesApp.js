@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class SitesApp
+ */
+
+/**
  * @typedef {SitesApp.AttachmentType} SitesApp.AttachmentType
  */
 

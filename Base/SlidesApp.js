@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class SlidesApp
+ */
+
+/**
  * An enumeration of the types of alignment positions.
  *
  * @typedef {SlidesApp.AlignmentPosition} SlidesApp.AlignmentPosition
@@ -7438,78 +7442,33 @@
  */
 
 /**
- * Inserts a slide at the specified index in the presentation using the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/predefined-layout.html#BLANK'>PredefinedLayout.BLANK</a></code> predefined layout based on the current master. The current master is
- one of the following:
-
- <ul>
-   <li>The master of the previous slide.
-   <li>The master of the first slide, if the insertionIndex is zero.
-   <li>The first master in the presentation, if there is no slide.
- </ul>
- *
- * @function SlidesApp.Presentation#insertSlide
- *
- * @param {IntegerNum} insertionIndex - The zero-based index indicating where to insert the slide.
- *
- * @return {SlidesApp.Slide} the new slide
- */
-
-/**
- * Inserts a slide at the specified index in the presentation using the specified layout based on
- the current master. The current master is one of the following:
-
- <ul>
-   <li>The master of the previous slide.
-   <li>The master of the first slide, if the insertionIndex is zero.
-   <li>The first master in the presentation, if there is no slide.
- </ul>
- *
- * @function SlidesApp.Presentation#insertSlide
- *
- * @param {IntegerNum} insertionIndex - The zero-based index indicating where to insert the slide.
- * @param {SlidesApp.Layout} layout - The layout to use for the new slide; it should be present in the current master.
- *
- * @return {SlidesApp.Slide} the new slide
- */
-
-/**
- * Inserts a slide at the specified index in the presentation using the specified predefined
- layout based on the current master. The current master is one of the following:
-
- <ul>
-   <li>The master of the previous slide.
-   <li>The master of the first slide, if the insertionIndex is zero.
-   <li>The first master in the presentation, if there is no slide.
- </ul>
- *
- * @function SlidesApp.Presentation#insertSlide
- *
- * @param {IntegerNum} insertionIndex - The zero-based index indicating where to insert the slide.
- * @param {SlidesApp.PredefinedLayout} predefinedLayout - The predefined layout to use for the new slide; it should be present in
-     the current master.
- *
- * @return {SlidesApp.Slide} the new slide
- */
-
-/**
- * Inserts a copy of the provided <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/slide.html'>Slide</a></code> at the specified index in the presentation.
+ * Inserts a copy of the provided <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/slide.html'>Slide</a></code> from the source presentation into the specified
+ index in the current presentation, and sets the slide link as specified by the <code>SlideLinkType</code>.
 
  <p>If the slide being copied is from a different presentation, the parent master and layout
- pages are copied as well if they do not already exist in this presentation.
+ pages are copied as well if they do not already exist in the current presentation.
+
+ <p>If the link type is <code>SlideLinkType.LINKED</code>, the inserted slide can be updated to match
+ the provided source slide when <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/slide.html'>Slide</a></code> is called. Other collaborators can see the
+ link to the source slide. A link type of <code>SlideLinkType.LINKED</code> cannot be used if the
+ provided source slide is already in the current presentation.
 
  <pre class="prettyprint">
- // Copy a slide from another presentation and inserts it.
- var otherPresentation = SlidesApp.openById('presentationId');
+ // Copy a slide from another presentation, then insert and link it.
+ var sourcePresentation = SlidesApp.openById('presentationId');
  var currentPresentation = SlidesApp.getActivePresentation();
- var slide = otherPresentation.getSlides[0];
+ var slide = sourcePresentation.getSlides()[0];
  var insertionIndex = 1;
- currentPresentation.insertSlide(insertionIndex, slide);
+ var insertedSlide =
+     currentPresentation.insertSlide(
+     insertionIndex, slide, SlidesApp.SlideLinkType.LINKED);
  </pre>
  *
  * @function SlidesApp.Presentation#insertSlide
  *
- * @param {IntegerNum} insertionIndex - The zero-based index indicating where to insert the slide.
+ * @param {IntegerNum} insertionIndex - The zero based index indicating where to insert the slide.
  * @param {SlidesApp.Slide} slide - The slide to be copied and inserted.
+ * @param {SlidesApp.SlideLinkType} linkType - The type of link to use.
  *
  * @return {SlidesApp.Slide} the new slide
  */

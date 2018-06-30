@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class LanguageApp
+ */
+
+/**
  * Automatically translates some text from a source language to a destination language.
 
  <pre class="prettyprint"><code>

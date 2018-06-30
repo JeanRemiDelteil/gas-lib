@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class GroupsApp
+ */
+
+/**
  * @typedef {GroupsApp.Role} GroupsApp.Role
  */
 

@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class Maps
+ */
+
+/**
  * @typedef {Maps.DirectionFinderEnums} Maps.DirectionFinder
  */
 

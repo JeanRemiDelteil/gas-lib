@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class MailApp
+ */
+
+/**
  * Returns the number of remaining emails a user can send for the rest of the day.
 
  <p>Quotas are based on the number of email recipients. Specific quota information is available

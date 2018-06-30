@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class UrlFetchApp
+ */
+
+/**
  * Makes a request to fetch a URL.
 
  <p>This works over HTTP as well as HTTPS.

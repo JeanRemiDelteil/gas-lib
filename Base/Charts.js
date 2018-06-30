@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class Charts
+ */
+
+/**
  * An enumeration of how hidden dimensions in a source are expressed in a chart.
  *
  * @typedef {Charts.ChartHiddenDimensionStrategy} Charts.ChartHiddenDimensionStrategy

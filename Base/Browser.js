@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class Browser
+ */
+
+/**
  * @typedef {ButtonSet} Browser.Buttons
  */
 

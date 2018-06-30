@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class console
+ */
+
+/**
  * Outputs an ERROR level message to Stackdriver Logging.
  *
  * @function console.error

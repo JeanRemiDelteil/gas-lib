@@ -3,6 +3,10 @@
  ***********************************************/
 
 /**
+ * @class CardService
+ */
+
+/**
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/composed-email-type.html'>ComposedEmailType</a></code> enumeration.
  *
  * @typedef {CardService.ComposedEmailType} CardService.ComposedEmailType
@@ -1232,7 +1236,7 @@
  */
 
 /**
- * Sets the URL of the image. Required.
+ * Sets the URL of the image, which must be publicly accessible. Required.
  *
  * @function CardService.Image#setImageUrl
  *
