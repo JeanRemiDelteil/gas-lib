@@ -1,7 +1,7 @@
 {
 	"name": "gas-lib",
 	"description": "Google Apps Script auto-completion (stubs) in your favorite javascript editor",
-	"version": "2.0.2",
+	"version": "2.0.3",
 	"author": "jeanremidelteil",
 	"license": "Apache-2.0",
 	"repository": {
@@ -9,7 +9,9 @@
 		"url": "https://github.com/JeanRemiDelteil/gappsLib.git"
 	},
 	"keywords": [
-		"Google AppsScript", "Google Apps Script",
-		"Stubs", "auto-complete"
+		"Google AppsScript",
+		"Google Apps Script",
+		"Stubs",
+		"auto-complete"
 	]
 }
