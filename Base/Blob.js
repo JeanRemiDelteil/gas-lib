@@ -28,6 +28,10 @@
  * extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
  * "ShoppingList.12.25.pdf".
  * 
+ * <p>To view the daily quotas for conversions, see <a
+ * href="https://developers.google.com/apps-script/guides/services/quotas">Quotas for Google
+ * Services</a>. Newly created G Suite domains might be temporarily subject to stricter quotas.
+ * 
  * @function Blob#getAs
  * 
  * @param {String} contentType - The MIME type to convert to. For most blobs, <code>&#39;application/pdf&#39;</code> is

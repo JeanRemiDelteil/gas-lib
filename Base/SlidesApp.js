@@ -29,7 +29,7 @@
 /**
  * An enumeration of color types.
  * 
- * @typedef {SlidesApp.ColorType} SlidesApp.ColorType
+ * @typedef {ColorType} SlidesApp.ColorType
  */
 /**
  * An enumeration of values used to specify content alignment.
@@ -668,11 +668,11 @@
  */
 
 /**
- * Converts this color to an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/rgb-color.html'>RgbColor</a></code>.
+ * Converts this color to an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/../base/rgb-color.html'>RgbColor</a></code>.
  * 
  * @function SlidesApp.Color#asRgbColor
  * 
- * @return {SlidesApp.RgbColor}
+ * @return {RgbColor}
  */
 
 
@@ -690,7 +690,7 @@
  * 
  * @function SlidesApp.Color#getColorType
  * 
- * @return {SlidesApp.ColorType}
+ * @return {ColorType} The color type.
  */
 
 
@@ -707,9 +707,9 @@
  * 
  * @function SlidesApp.ColorScheme#getConcreteColor
  * 
- * @param {SlidesApp.ThemeColorType} theme
+ * @param {SlidesApp.ThemeColorType} theme - The theme color to derive the concrete color from.
  * 
- * @return {SlidesApp.Color}
+ * @return {SlidesApp.Color} The concrete color corresponding the theme color type in this scheme.
  */
 
 
@@ -718,30 +718,53 @@
  * 
  * @function SlidesApp.ColorScheme#getThemeColors
  * 
- * @return {SlidesApp.ThemeColorType[]}
+ * @return {SlidesApp.ThemeColorType[]} The possible theme color types in this scheme.
  */
 
 
-
 /**
- * @class SlidesApp.ColorType
- */
-
-/**
- * A color defined by red, green, blue color channels.
+ * Sets the concrete color associated with the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/theme-color-type.html'>ThemeColorType</a></code> in this color scheme to the
+ * given color in RGB format.
  * 
- * @typedef {SlidesApp.ColorType} SlidesApp.ColorType.RGB
- */
-/**
- * A color that refers to an entry in the page's color scheme.
+ * @function SlidesApp.ColorScheme#setConcreteColor
  * 
- * @typedef {SlidesApp.ColorType} SlidesApp.ColorType.THEME
- */
-/**
- * A color type that is not supported.
+ * @param {SlidesApp.ThemeColorType} type - The theme color type.
+ * @param {IntegerNum} red - The red value of the color to set the theme color type to (between 0 and 255).
+ * @param {IntegerNum} green - The green value of the color to set the theme color type to (between 0 and 255).
+ * @param {IntegerNum} blue - The blue value of the color to set the theme color type to (between 0 and 255).
  * 
- * @typedef {SlidesApp.ColorType} SlidesApp.ColorType.UNSUPPORTED
+ * @return {SlidesApp.ColorScheme} This color scheme, for chaining.
  */
+
+
+/**
+ * Sets the concrete color associated with the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/theme-color-type.html'>ThemeColorType</a></code> in this color scheme to the
+ * given color.
+ * 
+ * @function SlidesApp.ColorScheme#setConcreteColor
+ * 
+ * @param {SlidesApp.ThemeColorType} type - The theme color type.
+ * @param {SlidesApp.Color} color - The color to set the theme color type to.
+ * 
+ * @return {SlidesApp.ColorScheme} This color scheme, for chaining.
+ */
+
+
+/**
+ * Sets the concrete color associated with the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/theme-color-type.html'>ThemeColorType</a></code> in this color scheme to the
+ * given color in HEX format.
+ * 
+ * <p>The hex string must be in the format '#RRGGBB'.
+ * 
+ * @function SlidesApp.ColorScheme#setConcreteColor
+ * 
+ * @param {SlidesApp.ThemeColorType} type - The theme color type.
+ * @param {String} hexColor - The hex color to set the theme color type to, such as '#F304a7'.
+ * 
+ * @return {SlidesApp.ColorScheme} This color scheme, for chaining.
+ */
+
+
 
 /**
  * @class SlidesApp.ConnectionSite
@@ -1377,6 +1400,8 @@
 /**
  * Sets the page element's alt text description.
  * 
+ * <p>The method is not supported for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/group.html'>Group</a></code> elements.
+ * 
  * <pre class="prettyprint"><code>
  * // Set the first page element&#39;s alt text description to &quot;new alt text description&quot;.
  * var pageElement = SlidesApp.getActivePresentation().getSlides()[0].getPageElements()[0];
@@ -1429,6 +1454,8 @@
 
 /**
  * Sets the page element's alt text title.
+ * 
+ * <p>The method is not supported for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/group.html'>Group</a></code> elements.
  * 
  * <pre class="prettyprint"><code>
  * // Set the first page element&#39;s alt text title to &quot;new alt text title&quot;.
@@ -1557,6 +1584,10 @@
  * assumes that the part of the filename that follows the last period (if any) is an existing
  * extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
  * "ShoppingList.12.25.pdf".
+ * 
+ * <p>To view the daily quotas for conversions, see <a
+ * href="https://developers.google.com/apps-script/guides/services/quotas">Quotas for Google
+ * Services</a>. Newly created G Suite domains might be temporarily subject to stricter quotas.
  * 
  * @function SlidesApp.Image#getAs
  * 
@@ -2049,6 +2080,8 @@
 /**
  * Sets the page element's alt text description.
  * 
+ * <p>The method is not supported for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/group.html'>Group</a></code> elements.
+ * 
  * <pre class="prettyprint"><code>
  * // Set the first page element&#39;s alt text description to &quot;new alt text description&quot;.
  * var pageElement = SlidesApp.getActivePresentation().getSlides()[0].getPageElements()[0];
@@ -2166,6 +2199,8 @@
 
 /**
  * Sets the page element's alt text title.
+ * 
+ * <p>The method is not supported for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/group.html'>Group</a></code> elements.
  * 
  * <pre class="prettyprint"><code>
  * // Set the first page element&#39;s alt text title to &quot;new alt text title&quot;.
@@ -3725,6 +3760,8 @@
 /**
  * Sets the page element's alt text description.
  * 
+ * <p>The method is not supported for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/group.html'>Group</a></code> elements.
+ * 
  * <pre class="prettyprint"><code>
  * // Set the first page element&#39;s alt text description to &quot;new alt text description&quot;.
  * var pageElement = SlidesApp.getActivePresentation().getSlides()[0].getPageElements()[0];
@@ -3964,6 +4001,8 @@
 
 /**
  * Sets the page element's alt text title.
+ * 
+ * <p>The method is not supported for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/group.html'>Group</a></code> elements.
  * 
  * <pre class="prettyprint"><code>
  * // Set the first page element&#39;s alt text title to &quot;new alt text title&quot;.
@@ -7552,6 +7591,8 @@
 /**
  * Sets the page element's alt text description.
  * 
+ * <p>The method is not supported for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/group.html'>Group</a></code> elements.
+ * 
  * <pre class="prettyprint"><code>
  * // Set the first page element&#39;s alt text description to &quot;new alt text description&quot;.
  * var pageElement = SlidesApp.getActivePresentation().getSlides()[0].getPageElements()[0];
@@ -7604,6 +7645,8 @@
 
 /**
  * Sets the page element's alt text title.
+ * 
+ * <p>The method is not supported for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/group.html'>Group</a></code> elements.
  * 
  * <pre class="prettyprint"><code>
  * // Set the first page element&#39;s alt text title to &quot;new alt text title&quot;.
@@ -8042,6 +8085,10 @@
  * extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
  * "ShoppingList.12.25.pdf".
  * 
+ * <p>To view the daily quotas for conversions, see <a
+ * href="https://developers.google.com/apps-script/guides/services/quotas">Quotas for Google
+ * Services</a>. Newly created G Suite domains might be temporarily subject to stricter quotas.
+ * 
  * @function SlidesApp.PictureFill#getAs
  * 
  * @param {String} contentType - The MIME type to convert to. For most blobs, <code>&#39;application/pdf&#39;</code> is
@@ -8448,8 +8495,7 @@
 
 
 /**
- * Gets the list of editors for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>. If the user who executes the script does
- * not have edit access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>, this method throws an exception.
+ * Gets the list of editors for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>.
  * 
  * @function SlidesApp.Presentation#getEditors
  * 
@@ -8613,8 +8659,7 @@
 
 
 /**
- * Gets the list of viewers and commenters for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>. If the user who executes
- * the script does not have edit access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>, this method throws an exception.
+ * Gets the list of viewers and commenters for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>.
  * 
  * @function SlidesApp.Presentation#getViewers
  * 
@@ -8737,10 +8782,12 @@
 
 
 /**
- * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>. This method does not
+ * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>. This method doesn't
  * block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> if they belong to a class of users who have
  * general access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> is shared with the user's entire
- * domain.
+ * domain, or if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of viewers.
  * 
  * @function SlidesApp.Presentation#removeEditor
  * 
@@ -8751,10 +8798,12 @@
 
 
 /**
- * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>. This method does not
+ * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>. This method doesn't
  * block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> if they belong to a class of users who have
  * general access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> is shared with the user's entire
- * domain.
+ * domain, or if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of viewers.
  * 
  * @function SlidesApp.Presentation#removeEditor
  * 
@@ -8766,10 +8815,12 @@
 
 /**
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>. This
- * method has no effect if the user is an editor, not a viewer or commenter. This method also does
- * not block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> if they belong to a class of users who
+ * method has no effect if the user is an editor, not a viewer or commenter. This method also
+ * doesn't block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> if they belong to a class of users who
  * have general access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> is shared with the user's
- * entire domain.
+ * entire domain, or if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of editors.
  * 
  * @function SlidesApp.Presentation#removeViewer
  * 
@@ -8781,9 +8832,12 @@
 
 /**
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code>. This
- * method has no effect if the user is an editor, not a viewer. This method also does not block
+ * method has no effect if the user is an editor, not a viewer. This method also doesn't block
  * users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> if they belong to a class of users who have general
- * access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> is shared with the user's entire domain.
+ * access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> is shared with the user's entire domain, or
+ * if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/presentation.html'>Presentation</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of editors.
  * 
  * @function SlidesApp.Presentation#removeViewer
  * 
@@ -8842,56 +8896,6 @@
  * @param {String} name - The name to set for this presentation.
  * 
  * @return void
- */
-
-
-
-/**
- * @class SlidesApp.RgbColor
- */
-
-/**
- * Returns the color as a CSS-style 7 character hexadecimal string, #rrggbb.
- * 
- * @function SlidesApp.RgbColor#asHexString
- * 
- * @return {String}
- */
-
-
-/**
- * The blue channel of this color, as a number from 0 to 255.
- * 
- * @function SlidesApp.RgbColor#getBlue
- * 
- * @return {IntegerNum}
- */
-
-
-/**
- * Get the type of this color.
- * 
- * @function SlidesApp.RgbColor#getColorType
- * 
- * @return {SlidesApp.ColorType}
- */
-
-
-/**
- * The green channel of this color, as a number from 0 to 255.
- * 
- * @function SlidesApp.RgbColor#getGreen
- * 
- * @return {IntegerNum}
- */
-
-
-/**
- * The red channel of this color, as a number from 0 to 255.
- * 
- * @function SlidesApp.RgbColor#getRed
- * 
- * @return {IntegerNum}
  */
 
 
@@ -9684,6 +9688,8 @@
 /**
  * Sets the page element's alt text description.
  * 
+ * <p>The method is not supported for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/group.html'>Group</a></code> elements.
+ * 
  * <pre class="prettyprint"><code>
  * // Set the first page element&#39;s alt text description to &quot;new alt text description&quot;.
  * var pageElement = SlidesApp.getActivePresentation().getSlides()[0].getPageElements()[0];
@@ -9801,6 +9807,8 @@
 
 /**
  * Sets the page element's alt text title.
+ * 
+ * <p>The method is not supported for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/group.html'>Group</a></code> elements.
  * 
  * <pre class="prettyprint"><code>
  * // Set the first page element&#39;s alt text title to &quot;new alt text title&quot;.
@@ -11027,6 +11035,8 @@
 /**
  * Sets the page element's alt text description.
  * 
+ * <p>The method is not supported for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/group.html'>Group</a></code> elements.
+ * 
  * <pre class="prettyprint"><code>
  * // Set the first page element&#39;s alt text description to &quot;new alt text description&quot;.
  * var pageElement = SlidesApp.getActivePresentation().getSlides()[0].getPageElements()[0];
@@ -11145,6 +11155,8 @@
 /**
  * Sets the page element's alt text title.
  * 
+ * <p>The method is not supported for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/group.html'>Group</a></code> elements.
+ * 
  * <pre class="prettyprint"><code>
  * // Set the first page element&#39;s alt text title to &quot;new alt text title&quot;.
  * var pageElement = SlidesApp.getActivePresentation().getSlides()[0].getPageElements()[0];
@@ -11231,7 +11243,7 @@
  * 
  * @function SlidesApp.Slide#duplicate
  * 
- * @return {SlidesApp.Slide}
+ * @return {SlidesApp.Slide} The duplicated slide.
  */
 
 
@@ -12851,6 +12863,8 @@
 /**
  * Sets the page element's alt text description.
  * 
+ * <p>The method is not supported for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/group.html'>Group</a></code> elements.
+ * 
  * <pre class="prettyprint"><code>
  * // Set the first page element&#39;s alt text description to &quot;new alt text description&quot;.
  * var pageElement = SlidesApp.getActivePresentation().getSlides()[0].getPageElements()[0];
@@ -12903,6 +12917,8 @@
 
 /**
  * Sets the page element's alt text title.
+ * 
+ * <p>The method is not supported for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/group.html'>Group</a></code> elements.
  * 
  * <pre class="prettyprint"><code>
  * // Set the first page element&#39;s alt text title to &quot;new alt text title&quot;.
@@ -13475,7 +13491,7 @@
  * <pre class="prettyprint">
  * // Accesses the first link on a TextRange object.
  * var linkTextRange = textRange.getLinks()[0];
- * var textStyle = textRange.getTextStyle();
+ * var textStyle = linkTextRange.getTextStyle();
  * Logger.log(textStyle.hasLink()); // logs 'true'
  * var link = textStyle.getLink();  // Link object
  * </pre>
@@ -14208,7 +14224,7 @@
  * 
  * @function SlidesApp.ThemeColor#getColorType
  * 
- * @return {SlidesApp.ColorType}
+ * @return {ColorType} The color type.
  */
 
 
@@ -14704,6 +14720,8 @@
 /**
  * Sets the page element's alt text description.
  * 
+ * <p>The method is not supported for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/group.html'>Group</a></code> elements.
+ * 
  * <pre class="prettyprint"><code>
  * // Set the first page element&#39;s alt text description to &quot;new alt text description&quot;.
  * var pageElement = SlidesApp.getActivePresentation().getSlides()[0].getPageElements()[0];
@@ -14756,6 +14774,8 @@
 
 /**
  * Sets the page element's alt text title.
+ * 
+ * <p>The method is not supported for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/group.html'>Group</a></code> elements.
  * 
  * <pre class="prettyprint"><code>
  * // Set the first page element&#39;s alt text title to &quot;new alt text title&quot;.
@@ -15233,6 +15253,8 @@
 /**
  * Sets the page element's alt text description.
  * 
+ * <p>The method is not supported for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/group.html'>Group</a></code> elements.
+ * 
  * <pre class="prettyprint"><code>
  * // Set the first page element&#39;s alt text description to &quot;new alt text description&quot;.
  * var pageElement = SlidesApp.getActivePresentation().getSlides()[0].getPageElements()[0];
@@ -15350,6 +15372,8 @@
 
 /**
  * Sets the page element's alt text title.
+ * 
+ * <p>The method is not supported for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/slides/group.html'>Group</a></code> elements.
  * 
  * <pre class="prettyprint"><code>
  * // Set the first page element&#39;s alt text title to &quot;new alt text title&quot;.

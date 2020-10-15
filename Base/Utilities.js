@@ -804,7 +804,7 @@
  * 
  * <pre class="prettyprint"><code>
  * // This creates a two-dimensional array of the format [[a, b, c], [d, e, f]]
- * var csvString = &quot;a,b,c\td,e,f&quot;;
+ * var csvString = &quot;a\tb\tc\nd\te\tf&quot;;
  * var data = Utilities.parseCsv(csvString, &#39;\t&#39;);
  * </code></pre>
  * 

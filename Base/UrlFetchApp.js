@@ -19,9 +19,9 @@
  * 
  * @function UrlFetchApp.fetch
  * 
- * @param {String} url - the URL to fetch
+ * @param {String} url - The URL to fetch.
  * 
- * @return {UrlFetchApp.HTTPResponse} the HTTP response data
+ * @return {UrlFetchApp.HTTPResponse} The HTTP response data.
  */
 
 
@@ -44,9 +44,9 @@
  *   &#39;email&#39;: &#39;bob@example.com&#39;,
  *   &#39;resume&#39;: resumeBlob
  * };
- * // Because payload is a JavaScript object, it will be interpreted as
- * // as form data. (No need to specify contentType; it will automatically
- * // default to either &#39;application/x-www-form-urlencoded&#39;
+ * // Because payload is a JavaScript object, it is interpreted as
+ * // as form data. (No need to specify contentType; it automatically
+ * // defaults to either &#39;application/x-www-form-urlencoded&#39;
  * // or &#39;multipart/form-data&#39;)
  * var options = {
  *   &#39;method&#39; : &#39;post&#39;,
@@ -73,10 +73,10 @@
  * 
  * @function UrlFetchApp.fetch
  * 
- * @param {String} url - the URL to fetch
- * @param {Object} params - optional JavaScript object specifying advanced parameters as defined below
+ * @param {String} url - The URL to fetch.
+ * @param {Object} params - The optional JavaScript object specifying advanced parameters as defined below.
  * 
- * @return {UrlFetchApp.HTTPResponse} the http response data
+ * @return {UrlFetchApp.HTTPResponse} The HTTP response data.
  */
 
 
@@ -88,7 +88,7 @@
  * <pre class="prettyprint"><code>
  * // Make both a POST request with form data, and a GET request.
  * var resumeBlob = Utilities.newBlob(&#39;Hire me!&#39;, &#39;text/plain&#39;, &#39;resume.txt&#39;);
- * var formData1 = {
+ * var formData = {
  *   &#39;name&#39;: &#39;Bob Smith&#39;,
  *   &#39;email&#39;: &#39;bob@example.com&#39;,
  *   &#39;resume&#39;: resumeBlob
@@ -103,20 +103,20 @@
  * };
  * // A request may also just be a URL.
  * var request2 = &#39;https://httpbin.org/get?key=value&#39;;
- * UrlFetchApp.fetchAll(request1, request2);
+ * UrlFetchApp.fetchAll([request1, request2]);
  * </code></pre>
  * 
  * @function UrlFetchApp.fetchAll
  * 
- * @param {Object[]} requests - array of either URLs, or JavaScript objects specifying requests as defined
- *     below
+ * @param {Object[]} requests - An array of either URLs or JavaScript objects specifying requests as defined
+ *     below.
  * 
- * @return {UrlFetchApp.HTTPResponse[]} an array of http response data from each input request
+ * @return {UrlFetchApp.HTTPResponse[]} An array of HTTP response data from each input request.
  */
 
 
 /**
- * Returns the request that would be made if the operation was invoked.
+ * Returns the request that is made if the operation was invoked.
  * 
  * <p>This method does not actually issue the request.
  * 
@@ -130,25 +130,25 @@
  * 
  * @function UrlFetchApp.getRequest
  * 
- * @param {String} url - the URL to look up
+ * @param {String} url - The URL to look up.
  * 
- * @return {Object} a map of Field Name to Value. The map has at least the following keys: url, method,
- *     contentType, payload, headers.
+ * @return {Object} A map of Field Name to Value. The map has at least the following keys: <code>url</code>,
+ *     <code>method</code>, <code>contentType</code>, <code>payload</code>, and <code>headers</code>.
  */
 
 
 /**
- * Returns the request that would be made if the operation were invoked.
+ * Returns the request that is made if the operation were invoked.
  * 
  * <p>This method does not actually issue the request.
  * 
  * @function UrlFetchApp.getRequest
  * 
- * @param {String} url - the url to look up
- * @param {Object} params - optional JavaScript object specifying advanced parameters as defined below
+ * @param {String} url - The URL to look up.
+ * @param {Object} params - An optional JavaScript object specifying advanced parameters as defined below.
  * 
- * @return {Object} a map of Field Name to Value. The map has at least the following keys: url, method,
- *     contentType, payload, headers.
+ * @return {Object} A map of Field Name to Value. The map has at least the following keys: <code>url</code>,
+ *     <code>method</code>, <code>contentType</code>, <code>payload</code>, and <code>headers</code>.
  */
 
 
@@ -165,7 +165,7 @@
  * // The code below logs the HTTP headers from the response
  * // received when fetching the Google home page.
  * var response = UrlFetchApp.fetch(&quot;http://www.google.com/&quot;);
- * Logger.log(response.getAllHeaders().toSource());
+ * Logger.log(response.getAllHeaders());
  * </code></pre>
  * 
  * @function UrlFetchApp.HTTPResponse#getAllHeaders
@@ -180,6 +180,10 @@
  * assumes that the part of the filename that follows the last period (if any) is an existing
  * extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
  * "ShoppingList.12.25.pdf".
+ * 
+ * <p>To view the daily quotas for conversions, see <a
+ * href="https://developers.google.com/apps-script/guides/services/quotas">Quotas for Google
+ * Services</a>. Newly created G Suite domains might be temporarily subject to stricter quotas.
  * 
  * @function UrlFetchApp.HTTPResponse#getAs
  * 
@@ -255,7 +259,7 @@
  * // The code below logs the HTTP headers from the response
  * // received when fetching the Google home page.
  * var response = UrlFetchApp.fetch(&quot;http://www.google.com/&quot;);
- * Logger.log(response.getHeaders().toSource());
+ * Logger.log(response.getHeaders());
  * </code></pre>
  * 
  * @function UrlFetchApp.HTTPResponse#getHeaders

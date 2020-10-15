@@ -148,6 +148,11 @@
  * @typedef {String} MimeType.RTF
  */
 /**
+ * Representation of MIME type for a Google Drive shortcut.
+ * 
+ * @typedef {String} MimeType.SHORTCUT
+ */
+/**
  * Representation of MIME type for an SVG image file (typically .svg).
  * 
  * @typedef {String} MimeType.SVG

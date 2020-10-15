@@ -21,7 +21,7 @@
  */
 
 /**
- * Auto. Use Auth for calculated fields which reference an aggregated field.
+ * Auto. Use Auto for calculated fields which reference an aggregated field.
  * 
  * @typedef {DataStudioApp.AggregationType} DataStudioApp.AggregationType.AUTO
  */
@@ -81,6 +81,11 @@
  * @typedef {DataStudioApp.AuthType} DataStudioApp.AuthType.OAUTH2
  */
 /**
+ * Username, path, and password needed.
+ * 
+ * @typedef {DataStudioApp.AuthType} DataStudioApp.AuthType.PATH_USER_PASS
+ */
+/**
  * Username and password credentials needed.
  * 
  * @typedef {DataStudioApp.AuthType} DataStudioApp.AuthType.USER_PASS
@@ -89,6 +94,109 @@
  * Username and token needed.
  * 
  * @typedef {DataStudioApp.AuthType} DataStudioApp.AuthType.USER_TOKEN
+ */
+
+/**
+ * @class DataStudioApp.BigQueryConfig
+ */
+
+/**
+ * Adds a query parameter to this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/big-query-config.html'>BigQueryConfig</a></code>.
+ * 
+ * @function DataStudioApp.BigQueryConfig#addQueryParameter
+ * 
+ * @param {String} name - The parameter name.
+ * @param {DataStudioApp.BigQueryParameterType} type - The parameter type.
+ * @param {String} value - The parameter value.
+ * 
+ * @return {DataStudioApp.BigQueryConfig} This object, for chaining.
+ */
+
+
+/**
+ * Validates this object and returns it in the format needed by Data Studio.
+ * 
+ * @function DataStudioApp.BigQueryConfig#build
+ * 
+ * @return {Object} The validated <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/config.html'>Config</a></code> object.
+ */
+
+
+/**
+ * @function DataStudioApp.BigQueryConfig#printJson
+ * 
+ * @return {String}
+ */
+
+
+/**
+ * Sets the access token of this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/big-query-config.html'>BigQueryConfig</a></code>.
+ * 
+ * @function DataStudioApp.BigQueryConfig#setAccessToken
+ * 
+ * @param {String} accessToken - The access token to set.
+ * 
+ * @return {DataStudioApp.BigQueryConfig} This object, for chaining.
+ */
+
+
+/**
+ * Sets the billing project ID of this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/big-query-config.html'>BigQueryConfig</a></code>.
+ * 
+ * @function DataStudioApp.BigQueryConfig#setBillingProjectId
+ * 
+ * @param {String} billingProjectId - The billing project ID to set.
+ * 
+ * @return {DataStudioApp.BigQueryConfig} This object, for chaining.
+ */
+
+
+/**
+ * Sets the SQL query of this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/big-query-config.html'>BigQueryConfig</a></code>.
+ * 
+ * @function DataStudioApp.BigQueryConfig#setQuery
+ * 
+ * @param {String} query - The query to set.
+ * 
+ * @return {DataStudioApp.BigQueryConfig} This object, for chaining.
+ */
+
+
+/**
+ * Determines if the query is interpreted as standard or legacy SQL.
+ * 
+ * @function DataStudioApp.BigQueryConfig#setUseStandardSql
+ * 
+ * @param {Boolean} useStandardSql - If <code>true</code>, the query is interpreted as standard SQL. If <code>false</code>, the query is interpreted as legacy SQL.
+ * 
+ * @return {DataStudioApp.BigQueryConfig} This object, for chaining.
+ */
+
+
+
+/**
+ * @class DataStudioApp.BigQueryParameterType
+ */
+
+/**
+ * Boolean.
+ * 
+ * @typedef {DataStudioApp.BigQueryParameterType} DataStudioApp.BigQueryParameterType.BOOL
+ */
+/**
+ * 64-bit floating point number.
+ * 
+ * @typedef {DataStudioApp.BigQueryParameterType} DataStudioApp.BigQueryParameterType.FLOAT64
+ */
+/**
+ * 64-bit integer.
+ * 
+ * @typedef {DataStudioApp.BigQueryParameterType} DataStudioApp.BigQueryParameterType.INT64
+ */
+/**
+ * String.
+ * 
+ * @typedef {DataStudioApp.BigQueryParameterType} DataStudioApp.BigQueryParameterType.STRING
  */
 
 /**
@@ -130,6 +238,19 @@
 
 
 /**
+ * Sets the dynamic status for this configuration entry.
+ * 
+ * <p>If a dynamic configuration entry is modified, subsequent configuration entries are cleared.
+ * 
+ * @function DataStudioApp.Checkbox#setIsDynamic
+ * 
+ * @param {Boolean} isDynamic - The dynamic status to set.
+ * 
+ * @return {DataStudioApp.Checkbox} This builder, for chaining.
+ */
+
+
+/**
  * Sets the display name for this configuration entry.
  * 
  * @function DataStudioApp.Checkbox#setName
@@ -156,14 +277,14 @@
  * @typedef {DataStudioApp.AuthType} DataStudioApp.CommunityConnector.AuthType
  */
 /**
+ * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/big-query-parameter-type.html'>BigQueryParameterType</a></code> enumeration.
+ * 
+ * @typedef {DataStudioApp.BigQueryParameterType} DataStudioApp.CommunityConnector.BigQueryParameterType
+ */
+/**
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/field-type.html'>FieldType</a></code> enumeration.
  * 
  * @typedef {DataStudioApp.FieldType} DataStudioApp.CommunityConnector.FieldType
- */
-/**
- * The <code>BigQueryParameterType</code> enumeration.
- * 
- * @typedef {DataStudioApp.BigQueryParameterType} DataStudioApp.CommunityConnector.BigQueryParameterType
  */
 /**
  * Returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/config.html'>Config</a></code> object. Use this object to add configuration entries.
@@ -184,40 +305,70 @@
 
 
 /**
- * Returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/get-auth-type-response.html'>GetAuthTypeResponse</a></code> object. Use this object to create a response for the
+ * Returns a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/get-auth-type-response.html'>GetAuthTypeResponse</a></code> object. Use this object to create a response for the
  * <code>getAuthType()</code> function you implement in your script project.
  * 
  * @function DataStudioApp.CommunityConnector#newAuthTypeResponse
  * 
- * @return {DataStudioApp.GetAuthTypeResponse} A <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/get-auth-type-response.html'>GetAuthTypeResponse</a></code> object.
+ * @return {DataStudioApp.GetAuthTypeResponse} A new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/get-auth-type-response.html'>GetAuthTypeResponse</a></code> object.
  */
 
 
 /**
- * Returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/debug-error.html'>DebugError</a></code> object. Use this object to create debug errors.
- * 
- * @function DataStudioApp.CommunityConnector#newDebugError
- * 
- * @return {DataStudioApp.DebugError} A <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/debug-error.html'>DebugError</a></code> object.
- */
-
-
-/**
- * Returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/user-error.html'>UserError</a></code> object. Use this object to create user errors.
- * 
- * @function DataStudioApp.CommunityConnector#newUserError
- * 
- * @return {DataStudioApp.UserError} A <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/user-error.html'>UserError</a></code> object.
- */
-
-
-/**
- * Returns a new <code>BigQueryConfig</code> object. Use this object to create a response for the
+ * Returns a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/big-query-config.html'>BigQueryConfig</a></code> object. Use this object to create a response for the
  * <code>getData()</code> function you implement in your script project.
  * 
  * @function DataStudioApp.CommunityConnector#newBigQueryConfig
  * 
- * @return {DataStudioApp.BigQueryConfig} A <code>BigQueryConfig</code> object.
+ * @return {DataStudioApp.BigQueryConfig} A new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/big-query-config.html'>BigQueryConfig</a></code> object.
+ */
+
+
+/**
+ * Returns a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/debug-error.html'>DebugError</a></code> object. Use this object to create debug errors.
+ * 
+ * @function DataStudioApp.CommunityConnector#newDebugError
+ * 
+ * @return {DataStudioApp.DebugError} A new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/debug-error.html'>DebugError</a></code> object.
+ */
+
+
+/**
+ * Returns a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/get-data-response.html'>GetDataResponse</a></code> object. Use this object to create a response for the
+ * <code>getData()</code> function you implement in your script project.
+ * 
+ * @function DataStudioApp.CommunityConnector#newGetDataResponse
+ * 
+ * @return {DataStudioApp.GetDataResponse} A new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/get-data-response.html'>GetDataResponse</a></code> object.
+ */
+
+
+/**
+ * Returns a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/get-schema-response.html'>GetSchemaResponse</a></code> object. Use this object to create a response for the
+ * <code>getSchema()</code> function you implement in your script project.
+ * 
+ * @function DataStudioApp.CommunityConnector#newGetSchemaResponse
+ * 
+ * @return {DataStudioApp.GetSchemaResponse} A new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/get-schema-response.html'>GetSchemaResponse</a></code> object.
+ */
+
+
+/**
+ * Returns a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/set-credentials-response.html'>SetCredentialsResponse</a></code> object. Use this object to create a response for
+ * the <code>setCredentials()</code> function you implement in your script project.
+ * 
+ * @function DataStudioApp.CommunityConnector#newSetCredentialsResponse
+ * 
+ * @return {DataStudioApp.SetCredentialsResponse} A new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/set-credentials-response.html'>SetCredentialsResponse</a></code> object.
+ */
+
+
+/**
+ * Returns a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/user-error.html'>UserError</a></code> object. Use this object to create user errors.
+ * 
+ * @function DataStudioApp.CommunityConnector#newUserError
+ * 
+ * @return {DataStudioApp.UserError} A new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/user-error.html'>UserError</a></code> object.
  */
 
 
@@ -312,6 +463,17 @@
  * 
  * @param {Boolean} dateRangeRequired - Whether or not a date range should be provided to <code>getData()</code>
  *     requests.
+ * 
+ * @return {DataStudioApp.Config} This builder, for chaining.
+ */
+
+
+/**
+ * If <code>true</code>, <code>getConfig()</code> is called again with the current user configuration.
+ * 
+ * @function DataStudioApp.Config#setIsSteppedConfig
+ * 
+ * @param {Boolean} isSteppedConfig - The stepped config status to set.
  * 
  * @return {DataStudioApp.Config} This builder, for chaining.
  */
@@ -451,8 +613,8 @@
 
 
 /**
- * Returns <code>true</code> if this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/field.html'>Field</a></code> is hidden. Hidden fields can be used in formulas,
- * but cannot be used in charts.
+ * Returns <code>true</code> if this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/field.html'>Field</a></code> is hidden. You can use hidden fields in formulas,
+ * but not in charts. You cannot hide fields containing formulas.
  * 
  * @function DataStudioApp.Field#isHidden
  * 
@@ -530,8 +692,8 @@
 
 
 /**
- * Sets the hidden status of this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/field.html'>Field</a></code>. Hidden fields can be used in formulas, but cannot
- * be used in charts.
+ * Sets the hidden status of this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/field.html'>Field</a></code>. You can use hidden fields in formulas, but not in
+ * charts. You cannot hide fields containing formulas.
  * 
  * @function DataStudioApp.Field#setIsHidden
  * 
@@ -951,6 +1113,26 @@
  * @typedef {DataStudioApp.FieldType} DataStudioApp.FieldType.HOUR
  */
 /**
+ * A hyperlink. Only use this for calculated fields with the <a
+ * href="https://support.google.com/datastudio/answer/7431836"><code>HYPERLINK</code></a>
+ * function.
+ * 
+ * @typedef {DataStudioApp.FieldType} DataStudioApp.FieldType.HYPERLINK
+ */
+/**
+ * An image. Only use this for calculated fields with the <a
+ * href="https://support.google.com/datastudio/answer/7570489"><code>IMAGE</code></a> function.
+ * 
+ * @typedef {DataStudioApp.FieldType} DataStudioApp.FieldType.IMAGE
+ */
+/**
+ * An image link. Only use this for calculated fields with the <a
+ * href="https://support.google.com/datastudio/answer/7431836"><code>HYPERLINK</code></a> function
+ * while using <code>IMAGE</code> for the link label.
+ * 
+ * @typedef {DataStudioApp.FieldType} DataStudioApp.FieldType.IMAGE_LINK
+ */
+/**
  * A latitude longitude pair such as 51.5074, -0.1278.
  * 
  * @typedef {DataStudioApp.FieldType} DataStudioApp.FieldType.LATITUDE_LONGITUDE
@@ -1049,6 +1231,11 @@
  * Year, month, day, and hour in the format of YYYYMMDDHH such as 2017031703.
  * 
  * @typedef {DataStudioApp.FieldType} DataStudioApp.FieldType.YEAR_MONTH_DAY_HOUR
+ */
+/**
+ * Year, month, day, hour, and second in the format of YYYYMMDDHHss such as 201703170330.
+ * 
+ * @typedef {DataStudioApp.FieldType} DataStudioApp.FieldType.YEAR_MONTH_DAY_SECOND
  */
 /**
  * Year and quarter in the format of YYYYQ such as 20171.
@@ -1256,6 +1443,97 @@
 
 
 /**
+ * @class DataStudioApp.GetDataResponse
+ */
+
+/**
+ * Adds multiple rows of data to this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/get-data-response.html'>GetDataResponse</a></code>.
+ * 
+ * @function DataStudioApp.GetDataResponse#addAllRows
+ * 
+ * @param {String[][]} rows - The rows of data to set.
+ * 
+ * @return {DataStudioApp.GetDataResponse} This builder, for chaining.
+ */
+
+
+/**
+ * Adds a row of data to this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/get-data-response.html'>GetDataResponse</a></code>.
+ * 
+ * @function DataStudioApp.GetDataResponse#addRow
+ * 
+ * @param {String[]} row - The row of data to set.
+ * 
+ * @return {DataStudioApp.GetDataResponse} This builder, for chaining.
+ */
+
+
+/**
+ * Validates this object and returns it in the format needed by Data Studio.
+ * 
+ * @function DataStudioApp.GetDataResponse#build
+ * 
+ * @return {Object} The validated <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/get-data-response.html'>GetDataResponse</a></code> object.
+ */
+
+
+/**
+ * Sets the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/fields.html'>Fields</a></code> of the builder.
+ * 
+ * @function DataStudioApp.GetDataResponse#setFields
+ * 
+ * @param {DataStudioApp.Fields} fields - The fields to set.
+ * 
+ * @return {DataStudioApp.GetDataResponse} This builder, for chaining.
+ */
+
+
+/**
+ * Sets the filters applied status for this builder. Set to <code>true</code> if all filters were
+ * successfully applied, <code>false</code> otherwise.
+ * 
+ * @function DataStudioApp.GetDataResponse#setFiltersApplied
+ * 
+ * @param {Boolean} filtersApplied - - The filters applied status to set.
+ * 
+ * @return {DataStudioApp.GetDataResponse} This builder, for chaining.
+ */
+
+
+
+/**
+ * @class DataStudioApp.GetSchemaResponse
+ */
+
+/**
+ * Validates this object and returns it in the format needed by Data Studio.
+ * 
+ * @function DataStudioApp.GetSchemaResponse#build
+ * 
+ * @return {Object} The validated <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/get-schema-response.html'>GetSchemaResponse</a></code> object.
+ */
+
+
+/**
+ * @function DataStudioApp.GetSchemaResponse#printJson
+ * 
+ * @return {String}
+ */
+
+
+/**
+ * Sets the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/fields.html'>Fields</a></code> of the builder.
+ * 
+ * @function DataStudioApp.GetSchemaResponse#setFields
+ * 
+ * @param {DataStudioApp.Fields} fields - The fields to set.
+ * 
+ * @return {DataStudioApp.GetSchemaResponse} This builder, for chaining.
+ */
+
+
+
+/**
  * @class DataStudioApp.Info
  */
 
@@ -1361,6 +1639,19 @@
 
 
 /**
+ * Sets the dynamic status for this configuration entry.
+ * 
+ * <p>If a dynamic configuration entry is modified, subsequent configuration entries are cleared.
+ * 
+ * @function DataStudioApp.SelectMultiple#setIsDynamic
+ * 
+ * @param {Boolean} isDynamic - The dynamic status to set.
+ * 
+ * @return {DataStudioApp.SelectMultiple} This builder, for chaining.
+ */
+
+
+/**
  * Sets the display name for this configuration entry.
  * 
  * @function DataStudioApp.SelectMultiple#setName
@@ -1422,6 +1713,19 @@
 
 
 /**
+ * Sets the dynamic status for this configuration entry.
+ * 
+ * <p>If a dynamic configuration entry is modified, subsequent configuration entries are cleared.
+ * 
+ * @function DataStudioApp.SelectSingle#setIsDynamic
+ * 
+ * @param {Boolean} isDynamic - The dynamic status to set.
+ * 
+ * @return {DataStudioApp.SelectSingle} This builder, for chaining.
+ */
+
+
+/**
  * Sets the display name for this configuration entry.
  * 
  * @function DataStudioApp.SelectSingle#setName
@@ -1429,6 +1733,39 @@
  * @param {String} name - The name to set.
  * 
  * @return {DataStudioApp.SelectSingle} This builder, for chaining.
+ */
+
+
+
+/**
+ * @class DataStudioApp.SetCredentialsResponse
+ */
+
+/**
+ * Validates this object and returns it in the format needed by Data Studio.
+ * 
+ * @function DataStudioApp.SetCredentialsResponse#build
+ * 
+ * @return {Object} The validated <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/set-credentials-response.html'>SetCredentialsResponse</a></code> object.
+ */
+
+
+/**
+ * @function DataStudioApp.SetCredentialsResponse#printJson
+ * 
+ * @return {String}
+ */
+
+
+/**
+ * Sets the valid status of this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/set-credentials-response.html'>SetCredentialsResponse</a></code>. Set to <code>true</code> if the
+ * credentials provided in the request were valid, <code>false</code>, otherwise.
+ * 
+ * @function DataStudioApp.SetCredentialsResponse#setIsValid
+ * 
+ * @param {Boolean} isValid - The valid status to set.
+ * 
+ * @return {DataStudioApp.SetCredentialsResponse} This builder, for chaining.
  */
 
 
@@ -1466,6 +1803,19 @@
  * @function DataStudioApp.TextArea#setId
  * 
  * @param {String} id - The ID to set.
+ * 
+ * @return {DataStudioApp.TextArea} This builder, for chaining.
+ */
+
+
+/**
+ * Sets the dynamic status for this configuration entry.
+ * 
+ * <p>If a dynamic configuration entry is modified, subsequent configuration entries are cleared.
+ * 
+ * @function DataStudioApp.TextArea#setIsDynamic
+ * 
+ * @param {Boolean} isDynamic - The dynamic status to set.
  * 
  * @return {DataStudioApp.TextArea} This builder, for chaining.
  */
@@ -1527,6 +1877,19 @@
  * @function DataStudioApp.TextInput#setId
  * 
  * @param {String} id - The ID to set.
+ * 
+ * @return {DataStudioApp.TextInput} This builder, for chaining.
+ */
+
+
+/**
+ * Sets the dynamic status for this configuration entry.
+ * 
+ * <p>If a dynamic configuration entry is modified, subsequent configuration entries are cleared.
+ * 
+ * @function DataStudioApp.TextInput#setIsDynamic
+ * 
+ * @param {Boolean} isDynamic - The dynamic status to set.
  * 
  * @return {DataStudioApp.TextInput} This builder, for chaining.
  */
@@ -1597,100 +1960,4 @@
  */
 
 
-
-/**
- * @class DataStudioApp.BigQueryConfig
- */
-
-/**
- * Adds a query parameter to this <code>BigQueryConfig</code>.
- * 
- * @function DataStudioApp.BigQueryConfig#addQueryParameter
- * 
- * @param {String} name - The parameter name.
- * @param {DataStudioApp.BigQueryParameterType} type - The parameter type.
- * @param {String} value - The parameter value.
- * 
- * @return {DataStudioApp.BigQueryConfig} This object, for chaining.
- */
-
-
-/**
- * Validates this object and returns it in the format needed by Data Studio.
- * 
- * @function DataStudioApp.BigQueryConfig#build
- * 
- * @return {Object} The validated <code><a target='_blank' href='https://developers.google.com/apps-script/reference/data-studio/config.html'>Config</a></code> object.
- */
-
-
-/**
- * Sets the access token of this <code>BigQueryConfig</code>.
- * 
- * @function DataStudioApp.BigQueryConfig#setAccessToken
- * 
- * @param {String} accessToken - The access token to set.
- * 
- * @return {DataStudioApp.BigQueryConfig} This object, for chaining.
- */
-
-
-/**
- * Sets the billing project ID of this <code>BigQueryConfig</code>.
- * 
- * @function DataStudioApp.BigQueryConfig#setBillingProjectId
- * 
- * @param {String} billingProjectId - The billing project ID to set.
- * 
- * @return {DataStudioApp.BigQueryConfig} This object, for chaining.
- */
-
-
-/**
- * Sets the SQL query of this <code>BigQueryConfig</code>.
- * 
- * @function DataStudioApp.BigQueryConfig#setQuery
- * 
- * @param {String} query - The query to set.
- * 
- * @return {DataStudioApp.BigQueryConfig} This object, for chaining.
- */
-
-
-/**
- * Determines if the query is interpreted as standard or legacy SQL.
- * 
- * @function DataStudioApp.BigQueryConfig#setUseStandardSql
- * 
- * @param {Boolean} useStandardSql - If <code>true</code>, the query is interpreted as standard SQL. If <code>false</code>, the query is interpreted as legacy SQL.
- * 
- * @return {DataStudioApp.BigQueryConfig} This object, for chaining.
- */
-
-
-
-/**
- * @class DataStudioApp.BigQueryParameterType
- */
-
-/**
- * Boolean.
- * 
- * @typedef {DataStudioApp.BigQueryParameterType} DataStudioApp.BigQueryParameterType.BOOL
- */
-/**
- * 64-bit floating point number.
- * 
- * @typedef {DataStudioApp.BigQueryParameterType} DataStudioApp.BigQueryParameterType.FLOAT64
- */
-/**
- * 64-bit integer.
- * 
- * @typedef {DataStudioApp.BigQueryParameterType} DataStudioApp.BigQueryParameterType.INT64
- */
-/**
- * String.
- * 
- * @typedef {DataStudioApp.BigQueryParameterType} DataStudioApp.BigQueryParameterType.STRING
- */
 

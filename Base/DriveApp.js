@@ -23,10 +23,11 @@
  * existing parent folder; a file can have more than one parent simultaneously.
  * 
  * @function DriveApp.addFile
+ * @deprecated
  * 
- * @param {DriveApp.File} child - the child file to add
+ * @param {DriveApp.File} child - The child file to add.
  * 
- * @return {DriveApp.Folder} this The new parent of the file added as a child.
+ * @return {DriveApp.Folder} The new parent of the file added as a child.
  */
 
 
@@ -35,10 +36,11 @@
  * its existing parent folder; a folder can have more than one parent simultaneously.
  * 
  * @function DriveApp.addFolder
+ * @deprecated
  * 
- * @param {DriveApp.Folder} child - the child folder to add
+ * @param {DriveApp.Folder} child - The child folder to add.
  * 
- * @return {DriveApp.Folder} this The new parent of the folder added as a child.
+ * @return {DriveApp.Folder} The new parent of the folder added as a child.
  */
 
 
@@ -73,17 +75,17 @@
 /**
  * Creates a file in the root of the user's Drive from a given <code>Blob</code> of arbitrary data.
  * 
- * <pre class="prettyprint">
+ * <pre class="prettyprint"><code>
  * // Create an image file in Google Drive using the Maps service.
- * var blob = Maps.newStaticMap().setCenter('76 9th Avenue, New York NY').getBlob();
+ * var blob = Maps.newStaticMap().setCenter(&#39;76 9th Avenue, New York NY&#39;).getBlob();
  * DriveApp.createFile(blob);
- * </pre>
+ * </code></pre>
  * 
  * @function DriveApp.createFile
  * 
- * @param {BlobSource} blob - the data for the new file
+ * @param {BlobSource} blob - The data for the new file.
  * 
- * @return {DriveApp.File} the new file
+ * @return {DriveApp.File} The new file.
  */
 
 
@@ -91,17 +93,17 @@
  * Creates a text file in the root of the user's Drive with the given name and contents. Throws an
  * exception if <code>content</code> is larger than 50 MB.
  * 
- * <pre class="prettyprint">
- * // Create a text file with the content "Hello, world!"
- * DriveApp.createFile('New Text File', 'Hello, world!');
- * </pre>
+ * <pre class="prettyprint"><code>
+ * // Create a text file with the content &quot;Hello, world!&quot;
+ * DriveApp.createFile(&#39;New Text File&#39;, &#39;Hello, world!&#39;);
+ * </code></pre>
  * 
  * @function DriveApp.createFile
  * 
- * @param {String} name - the name of the new file
- * @param {String} content - the content for the new file
+ * @param {String} name - The name of the new file.
+ * @param {String} content - The content for the new file.
  * 
- * @return {DriveApp.File} the new file
+ * @return {DriveApp.File} The new file.
  */
 
 
@@ -116,11 +118,11 @@
  * 
  * @function DriveApp.createFile
  * 
- * @param {String} name - the name of the new file
- * @param {String} content - the content for the new file
- * @param {String} mimeType - the MIME type of the new file
+ * @param {String} name - The name of the new file.
+ * @param {String} content - The content for the new file.
+ * @param {String} mimeType - The MIME type of the new file.
  * 
- * @return {DriveApp.File} the new file
+ * @return {DriveApp.File} The new file.
  */
 
 
@@ -129,9 +131,36 @@
  * 
  * @function DriveApp.createFolder
  * 
- * @param {String} name - the name of the new folder
+ * @param {String} name - The name of the new folder.
  * 
- * @return {DriveApp.Folder} the new folder
+ * @return {DriveApp.Folder} The new folder.
+ */
+
+
+/**
+ * Creates a shortcut to the provided Drive item ID, and returns it.
+ * 
+ * @function DriveApp.createShortcut
+ * 
+ * @param {String} targetId - The file ID of the target file or folder.
+ * 
+ * @return {DriveApp.File} The new shortcut.
+ */
+
+
+/**
+ * Enables or disables enforceSingleParent behavior for all calls affecting item parents.
+ * 
+ * <p>See the <a
+ * href="https://cloud.google.com/blog/products/g-suite/simplifying-google-drives-folder-structure-and-sharing-models"
+ * target="_blank"> Simplifying Google Drive’s folder structure and sharing models</a> blog for
+ * more details.
+ * 
+ * @function DriveApp.enforceSingleParent
+ * 
+ * @param {Boolean} value - The new state of the enforceSingleParent flag.
+ * 
+ * @return void
  */
 
 
@@ -152,7 +181,7 @@
  * 
  * @function DriveApp.getFiles
  * 
- * @return {DriveApp.FileIterator} a collection of all files in the user's Drive
+ * @return {DriveApp.FileIterator} A collection of all files in the user's Drive.
  */
 
 
@@ -161,9 +190,9 @@
  * 
  * @function DriveApp.getFilesByName
  * 
- * @param {String} name - the name of the files to find
+ * @param {String} name - The name of the files to find.
  * 
- * @return {DriveApp.FileIterator} a collection of all files in the user's Drive that have the given name
+ * @return {DriveApp.FileIterator} A collection of all files in the user's Drive that have the given name.
  */
 
 
@@ -172,9 +201,10 @@
  * 
  * @function DriveApp.getFilesByType
  * 
- * @param {String} mimeType - the MIME type of the files to find
+ * @param {String} mimeType - The MIME type of the files to find.
  * 
- * @return {DriveApp.FileIterator} a collection of all files in the user's Drive that have the given MIME type
+ * @return {DriveApp.FileIterator} A collection of all files in the user's Drive that have the given MIME
+ *     type.
  */
 
 
@@ -195,7 +225,7 @@
  * 
  * @function DriveApp.getFolders
  * 
- * @return {DriveApp.FolderIterator} a collection of all folders in the user's Drive
+ * @return {DriveApp.FolderIterator} A collection of all folders in the user's Drive.
  */
 
 
@@ -204,9 +234,9 @@
  * 
  * @function DriveApp.getFoldersByName
  * 
- * @param {String} name - the name of the folders to find
+ * @param {String} name - The name of the folders to find.
  * 
- * @return {DriveApp.FolderIterator} a collection of all folders in the user's Drive that have the given name
+ * @return {DriveApp.FolderIterator} A collection of all folders in the user's Drive that have the given name.
  */
 
 
@@ -261,10 +291,11 @@
  * for it or using the "All items" view.
  * 
  * @function DriveApp.removeFile
+ * @deprecated
  * 
- * @param {DriveApp.File} child - the child file to remove
+ * @param {DriveApp.File} child - The child file to remove.
  * 
- * @return {DriveApp.Folder} this The previous parent of the child.
+ * @return {DriveApp.Folder} The previous parent of the child.
  */
 
 
@@ -274,64 +305,65 @@
  * except by searching for it or using the "All items" view.
  * 
  * @function DriveApp.removeFolder
+ * @deprecated
  * 
- * @param {DriveApp.Folder} child - the child folder to remove
+ * @param {DriveApp.Folder} child - The child folder to remove.
  * 
- * @return {DriveApp.Folder} this The previous parent of the child.
+ * @return {DriveApp.Folder} The previous parent of the child.
  */
 
 
 /**
  * Gets a collection of all files in the user's Drive that match the given search
- * criteria. The search criteria are detailed the <a href="/drive/search-parameters">Google Drive
- * SDK documentation</a>. Note that the <code>params</code> argument is a query string that may contain
- * string values, so take care to escape quotation marks correctly (for example <code>&quot;title
- * contains &#39;Gulliver\\&#39;s Travels&#39;&quot;</code> or <code>&#39;title contains &quot;Gulliver\&#39;s Travels&quot;&#39;</code>).
+ * criteria. The search criteria are detailed in the <a
+ * href="/drive/api/v2/ref-search-terms">Google Drive SDK documentation</a>. Note that the <code>params</code> argument is a query string that may contain string values, so take care to escape
+ * quotation marks correctly (for example <code>&quot;title contains &#39;Gulliver\\&#39;s Travels&#39;&quot;</code> or
+ * <code>&#39;title contains &quot;Gulliver\&#39;s Travels&quot;&#39;</code>).
  * 
- * <pre class="prettyprint">
- * // Log the name of every file in the user's Drive that modified after February 28,
- * // 2013 whose name contains "untitled".
+ * <pre class="prettyprint"><code>
+ * // Log the name of every file in the user&#39;s Drive that modified after February 28,
+ * // 2013 whose name contains &quot;untitled&quot;.
  * var files = DriveApp.searchFiles(
- *     'modifiedDate > "2013-02-28" and title contains "untitled"');
+ *     &#39;modifiedDate &gt; &quot;2013-02-28&quot; and title contains &quot;untitled&quot;&#39;);
  * while (files.hasNext()) {
  *   var file = files.next();
  *   Logger.log(file.getName());
  * }
- * </pre>
+ * </code></pre>
  * 
  * @function DriveApp.searchFiles
  * 
- * @param {String} params - the search criteria, as detailed in the <a
- *     href="/drive/v2/web/search-parameters">Google Drive SDK documentation</a>
+ * @param {String} params - The search criteria, as detailed in the <a
+ *     href="/drive/api/v2/ref-search-terms">Google Drive SDK documentation</a>.
  * 
- * @return {DriveApp.FileIterator} a collection of all files in the user's Drive that match the search
- *     criteria
+ * @return {DriveApp.FileIterator} A collection of all files in the user's Drive that match the search
+ *     criteria.
  */
 
 
 /**
  * Gets a collection of all folders in the user's Drive that match the given search
- * criteria. The search criteria are detailed the <a href="/drive/search-parameters">Google Drive
- * SDK documentation</a>. Note that the <code>params</code> argument is a query string that may contain
- * string values, so take care to escape quotation marks correctly (for example <code>&quot;title
- * contains &#39;Gulliver\\&#39;s Travels&#39;&quot;</code> or <code>&#39;title contains &quot;Gulliver\&#39;s Travels&quot;&#39;</code>).
+ * criteria. The search criteria are detailed in the <a
+ * href="/drive/api/v2/ref-search-terms">Google Drive SDK documentation</a>. Note that the <code>params</code> argument is a query string that may contain string values, so take care to escape
+ * quotation marks correctly (for example <code>&quot;title contains &#39;Gulliver\\&#39;s Travels&#39;&quot;</code> or
+ * <code>&#39;title contains &quot;Gulliver\&#39;s Travels&quot;&#39;</code>).
  * 
- * <pre class="prettyprint">
- * // Log the name of every folder in the user's Drive that you own and is starred.
- * var folders = DriveApp.searchFolders('starred = true and "me" in owners');
+ * <pre class="prettyprint"><code>
+ * // Log the name of every folder in the user&#39;s Drive that you own and is starred.
+ * var folders = DriveApp.searchFolders(&#39;starred = true and &quot;me&quot; in owners&#39;);
  * while (folders.hasNext()) {
  *   var folder = folders.next();
  *   Logger.log(folder.getName());
  * }
- * </pre>
+ * </code></pre>
  * 
  * @function DriveApp.searchFolders
  * 
- * @param {String} params - the search criteria, as detailed in the <a
- *     href="/drive/v2/web/search-parameters">Google Drive SDK documentation</a>
+ * @param {String} params - The search criteria, as detailed in the <a
+ *     href="/drive/api/v2/ref-search-terms">Google Drive SDK documentation</a>.
  * 
- * @return {DriveApp.FolderIterator} a collection of all folders in the user's Drive that match the search
- *     criteria
+ * @return {DriveApp.FolderIterator} A collection of all folders in the user's Drive that match the search
+ *     criteria.
  */
 
 
@@ -392,9 +424,9 @@
  * 
  * @function DriveApp.File#addCommenter
  * 
- * @param {String} emailAddress - the email address of the user to add
+ * @param {String} emailAddress - The email address of the user to add.
  * 
- * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
+ * @return {DriveApp.File} This <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining.
  */
 
 
@@ -404,9 +436,9 @@
  * 
  * @function DriveApp.File#addCommenter
  * 
- * @param {User} user - a representation of the user to add
+ * @param {User} user - A representation of the user to add.
  * 
- * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
+ * @return {DriveApp.File} This <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining.
  */
 
 
@@ -417,9 +449,9 @@
  * 
  * @function DriveApp.File#addCommenters
  * 
- * @param {String[]} emailAddresses - an array of email addresses of the users to add
+ * @param {String[]} emailAddresses - An array of email addresses of the users to add.
  * 
- * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
+ * @return {DriveApp.File} This <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining.
  */
 
 
@@ -525,6 +557,10 @@
  * extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
  * "ShoppingList.12.25.pdf".
  * 
+ * <p>To view the daily quotas for conversions, see <a
+ * href="https://developers.google.com/apps-script/guides/services/quotas">Quotas for Google
+ * Services</a>. Newly created G Suite domains might be temporarily subject to stricter quotas.
+ * 
  * @function DriveApp.File#getAs
  * 
  * @param {String} contentType - The MIME type to convert to. For most blobs, <code>&#39;application/pdf&#39;</code> is
@@ -564,11 +600,13 @@
 
 /**
  * Gets the URL that can be used to download the file. Only users with permission to open the file
- * in Google Drive can access the URL.
+ * in Google Drive can access the URL. You can use this URL in a browser to download the file, but
+ * you can't use to fetch the file with <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/../url-fetch/url-fetch-app.html'>UrlFetchApp</a></code>. If you want the contents of the
+ * file in the script, use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#getBlob()'>getBlob()</a></code>.
  * 
  * @function DriveApp.File#getDownloadUrl
  * 
- * @return {String} the URL that can be used to download the file
+ * @return {String} The URL that can be used to download the file.
  */
 
 
@@ -605,7 +643,7 @@
  * 
  * @function DriveApp.File#getMimeType
  * 
- * @return {String} the MIME type of the file
+ * @return {String} The MIME type of the file.
  */
 
 
@@ -668,11 +706,33 @@
 
 
 /**
+ * If this is a Shortcut, returns the ID of the item it points to.
+ * 
+ * <p>Otherwise it returns <code>null</code>.
+ * 
+ * @function DriveApp.File#getTargetId
+ * 
+ * @return {String} The target item ID.
+ */
+
+
+/**
+ * If this is a Shortcut, returns the mime type of the item it points to.
+ * 
+ * <p>Otherwise it returns <code>null</code>.
+ * 
+ * @function DriveApp.File#getTargetMimeType
+ * 
+ * @return {String} The target item mime type.
+ */
+
+
+/**
  * Gets a thumbnail image for the file, or <code>null</code> if no thumbnail exists.
  * 
  * @function DriveApp.File#getThumbnail
  * 
- * @return {Blob} the thumbnail image for the file
+ * @return {Blob} The thumbnail image for the file.
  */
 
 
@@ -733,7 +793,7 @@
  * 
  * @function DriveApp.File#makeCopy
  * 
- * @return {DriveApp.File} the new copy
+ * @return {DriveApp.File} The new copy.
  */
 
 
@@ -742,9 +802,9 @@
  * 
  * @function DriveApp.File#makeCopy
  * 
- * @param {DriveApp.Folder} destination - the directory to copy the file into.
+ * @param {DriveApp.Folder} destination - The directory to copy the file into.
  * 
- * @return {DriveApp.File} the new copy
+ * @return {DriveApp.File} The new copy.
  */
 
 
@@ -753,9 +813,9 @@
  * 
  * @function DriveApp.File#makeCopy
  * 
- * @param {String} name - the filename that should be applied to the new copy
+ * @param {String} name - The filename that should be applied to the new copy.
  * 
- * @return {DriveApp.File} the new copy
+ * @return {DriveApp.File} The new copy.
  */
 
 
@@ -764,10 +824,24 @@
  * 
  * @function DriveApp.File#makeCopy
  * 
- * @param {String} name - the filename that should be applied to the new copy
- * @param {DriveApp.Folder} destination - the directory to copy the file into.
+ * @param {String} name - The filename that should be applied to the new copy.
+ * @param {DriveApp.Folder} destination - The directory to copy the file into.
  * 
- * @return {DriveApp.File} the new copy
+ * @return {DriveApp.File} The new copy.
+ */
+
+
+/**
+ * Moves this item to the provided destination folder.
+ * 
+ * <p>The current user must be the owner of the file or have at least edit access to the item's
+ * current parent folder in order to move the item to the destination folder.
+ * 
+ * @function DriveApp.File#moveTo
+ * 
+ * @param {DriveApp.Folder} destination - The folder that becomes the new parent.
+ * 
+ * @return {DriveApp.File} This <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining.
  */
 
 
@@ -779,9 +853,9 @@
  * 
  * @function DriveApp.File#removeCommenter
  * 
- * @param {String} emailAddress - the email address of the user to remove
+ * @param {String} emailAddress - The email address of the user to remove.
  * 
- * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
+ * @return {DriveApp.File} This <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining.
  */
 
 
@@ -793,17 +867,19 @@
  * 
  * @function DriveApp.File#removeCommenter
  * 
- * @param {User} user - a representation of the user to remove
+ * @param {User} user - A representation of the user to remove.
  * 
- * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
+ * @return {DriveApp.File} This <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining.
  */
 
 
 /**
- * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. This method does not
+ * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. This method doesn't
  * block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> if they belong to a class of users who have
  * general access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> is shared with the user's entire
- * domain.
+ * domain, or if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of viewers.
  * 
  * @function DriveApp.File#removeEditor
  * 
@@ -814,10 +890,12 @@
 
 
 /**
- * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. This method does not
+ * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. This method doesn't
  * block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> if they belong to a class of users who have
  * general access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> is shared with the user's entire
- * domain.
+ * domain, or if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of viewers.
  * 
  * @function DriveApp.File#removeEditor
  * 
@@ -829,10 +907,12 @@
 
 /**
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. This
- * method has no effect if the user is an editor, not a viewer or commenter. This method also does
- * not block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> if they belong to a class of users who
+ * method has no effect if the user is an editor, not a viewer or commenter. This method also
+ * doesn't block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> if they belong to a class of users who
  * have general access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> is shared with the user's
- * entire domain.
+ * entire domain, or if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of editors.
  * 
  * @function DriveApp.File#removeViewer
  * 
@@ -844,9 +924,12 @@
 
 /**
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>. This
- * method has no effect if the user is an editor, not a viewer. This method also does not block
+ * method has no effect if the user is an editor, not a viewer. This method also doesn't block
  * users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> if they belong to a class of users who have general
- * access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> is shared with the user's entire domain.
+ * access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> is shared with the user's entire domain, or
+ * if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of editors.
  * 
  * @function DriveApp.File#removeViewer
  * 
@@ -891,9 +974,9 @@
  * 
  * @function DriveApp.File#setContent
  * 
- * @param {String} content - the new content for the file
+ * @param {String} content - The new content for the file.
  * 
- * @return {DriveApp.File} this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining
+ * @return {DriveApp.File} This <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html'>File</a></code>, for chaining.
  */
 
 
@@ -1086,10 +1169,11 @@
  * existing parent folder; a file can have more than one parent simultaneously.
  * 
  * @function DriveApp.Folder#addFile
+ * @deprecated
  * 
- * @param {DriveApp.File} child - the child file to add
+ * @param {DriveApp.File} child - The child file to add.
  * 
- * @return {DriveApp.Folder} this The new parent of the file added as a child.
+ * @return {DriveApp.Folder} The new parent of the file added as a child.
  */
 
 
@@ -1098,10 +1182,11 @@
  * its existing parent folder; a folder can have more than one parent simultaneously.
  * 
  * @function DriveApp.Folder#addFolder
+ * @deprecated
  * 
- * @param {DriveApp.Folder} child - the child folder to add
+ * @param {DriveApp.Folder} child - The child folder to add.
  * 
- * @return {DriveApp.Folder} this The new parent of the folder added as a child.
+ * @return {DriveApp.Folder} The new parent of the folder added as a child.
  */
 
 
@@ -1144,17 +1229,17 @@
 /**
  * Creates a file in the current folder from a given <code>Blob</code> of arbitrary data.
  * 
- * <pre class="prettyprint">
+ * <pre class="prettyprint"><code>
  * // Create an image file in Google Drive using the Maps service.
- * var blob = Maps.newStaticMap().setCenter('76 9th Avenue, New York NY').getBlob();
+ * var blob = Maps.newStaticMap().setCenter(&#39;76 9th Avenue, New York NY&#39;).getBlob();
  * DriveApp.getRootFolder().createFile(blob);
- * </pre>
+ * </code></pre>
  * 
  * @function DriveApp.Folder#createFile
  * 
- * @param {BlobSource} blob - the data for the new file
+ * @param {BlobSource} blob - The data for the new file.
  * 
- * @return {DriveApp.File} the new file
+ * @return {DriveApp.File} The new file.
  */
 
 
@@ -1162,17 +1247,17 @@
  * Creates a text file in the current folder with the given name and contents. Throws an
  * exception if <code>content</code> is larger than 50 MB.
  * 
- * <pre class="prettyprint">
- * // Create a text file with the content "Hello, world!"
- * DriveApp.getRootFolder().createFile('New Text File', 'Hello, world!');
- * </pre>
+ * <pre class="prettyprint"><code>
+ * // Create a text file with the content &quot;Hello, world!&quot;
+ * DriveApp.getRootFolder().createFile(&#39;New Text File&#39;, &#39;Hello, world!&#39;);
+ * </code></pre>
  * 
  * @function DriveApp.Folder#createFile
  * 
- * @param {String} name - the name of the new file
- * @param {String} content - the content for the new file
+ * @param {String} name - The name of the new file.
+ * @param {String} content - The content for the new file.
  * 
- * @return {DriveApp.File} the new file
+ * @return {DriveApp.File} The new file.
  */
 
 
@@ -1187,11 +1272,11 @@
  * 
  * @function DriveApp.Folder#createFile
  * 
- * @param {String} name - the name of the new file
- * @param {String} content - the content for the new file
- * @param {String} mimeType - the MIME type of the new file
+ * @param {String} name - The name of the new file.
+ * @param {String} content - The content for the new file.
+ * @param {String} mimeType - The MIME type of the new file.
  * 
- * @return {DriveApp.File} the new file
+ * @return {DriveApp.File} The new file.
  */
 
 
@@ -1200,9 +1285,20 @@
  * 
  * @function DriveApp.Folder#createFolder
  * 
- * @param {String} name - the name of the new folder
+ * @param {String} name - The name of the new folder.
  * 
- * @return {DriveApp.Folder} the new folder
+ * @return {DriveApp.Folder} The new folder.
+ */
+
+
+/**
+ * Creates a shortcut to the provided Drive item ID, and returns it.
+ * 
+ * @function DriveApp.Folder#createShortcut
+ * 
+ * @param {String} targetId - The file ID of the target file or folder.
+ * 
+ * @return {DriveApp.File} The new shortcut.
  */
 
 
@@ -1261,7 +1357,7 @@
  * 
  * @function DriveApp.Folder#getFiles
  * 
- * @return {DriveApp.FileIterator} a collection of all files that are children of the current folder
+ * @return {DriveApp.FileIterator} A collection of all files that are children of the current folder.
  */
 
 
@@ -1270,9 +1366,9 @@
  * 
  * @function DriveApp.Folder#getFilesByName
  * 
- * @param {String} name - the name of the files to find
+ * @param {String} name - The name of the files to find.
  * 
- * @return {DriveApp.FileIterator} a collection of all files that are children of the current folder and have the given name
+ * @return {DriveApp.FileIterator} A collection of all files that are children of the current folder and have the given name.
  */
 
 
@@ -1281,9 +1377,10 @@
  * 
  * @function DriveApp.Folder#getFilesByType
  * 
- * @param {String} mimeType - the MIME type of the files to find
+ * @param {String} mimeType - The MIME type of the files to find.
  * 
- * @return {DriveApp.FileIterator} a collection of all files that are children of the current folder and have the given MIME type
+ * @return {DriveApp.FileIterator} A collection of all files that are children of the current folder and have the given MIME
+ *     type.
  */
 
 
@@ -1292,7 +1389,7 @@
  * 
  * @function DriveApp.Folder#getFolders
  * 
- * @return {DriveApp.FolderIterator} a collection of all folders that are children of the current folder
+ * @return {DriveApp.FolderIterator} A collection of all folders that are children of the current folder.
  */
 
 
@@ -1301,9 +1398,9 @@
  * 
  * @function DriveApp.Folder#getFoldersByName
  * 
- * @param {String} name - the name of the folders to find
+ * @param {String} name - The name of the folders to find.
  * 
- * @return {DriveApp.FolderIterator} a collection of all folders that are children of the current folder and have the given name
+ * @return {DriveApp.FolderIterator} A collection of all folders that are children of the current folder and have the given name.
  */
 
 
@@ -1436,10 +1533,26 @@
 
 
 /**
- * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>. This method does not
+ * Moves this item to the provided destination folder.
+ * 
+ * <p>The current user must be the owner of the file or have at least edit access to the item's
+ * current parent folder in order to move the item to the destination folder.
+ * 
+ * @function DriveApp.Folder#moveTo
+ * 
+ * @param {DriveApp.Folder} destination - The folder that becomes the new parent.
+ * 
+ * @return {DriveApp.Folder} This <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>, for chaining.
+ */
+
+
+/**
+ * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>. This method doesn't
  * block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> if they belong to a class of users who have
  * general access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> is shared with the user's entire
- * domain.
+ * domain, or if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of viewers.
  * 
  * @function DriveApp.Folder#removeEditor
  * 
@@ -1450,10 +1563,12 @@
 
 
 /**
- * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>. This method does not
+ * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>. This method doesn't
  * block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> if they belong to a class of users who have
  * general access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> is shared with the user's entire
- * domain.
+ * domain, or if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of viewers.
  * 
  * @function DriveApp.Folder#removeEditor
  * 
@@ -1469,10 +1584,11 @@
  * for it or using the "All items" view.
  * 
  * @function DriveApp.Folder#removeFile
+ * @deprecated
  * 
- * @param {DriveApp.File} child - the child file to remove
+ * @param {DriveApp.File} child - The child file to remove.
  * 
- * @return {DriveApp.Folder} this The previous parent of the child.
+ * @return {DriveApp.Folder} The previous parent of the child.
  */
 
 
@@ -1482,19 +1598,22 @@
  * except by searching for it or using the "All items" view.
  * 
  * @function DriveApp.Folder#removeFolder
+ * @deprecated
  * 
- * @param {DriveApp.Folder} child - the child folder to remove
+ * @param {DriveApp.Folder} child - The child folder to remove.
  * 
- * @return {DriveApp.Folder} this The previous parent of the child.
+ * @return {DriveApp.Folder} The previous parent of the child.
  */
 
 
 /**
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>. This
- * method has no effect if the user is an editor, not a viewer or commenter. This method also does
- * not block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> if they belong to a class of users who
+ * method has no effect if the user is an editor, not a viewer or commenter. This method also
+ * doesn't block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> if they belong to a class of users who
  * have general access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> is shared with the user's
- * entire domain.
+ * entire domain, or if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of editors.
  * 
  * @function DriveApp.Folder#removeViewer
  * 
@@ -1506,9 +1625,12 @@
 
 /**
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code>. This
- * method has no effect if the user is an editor, not a viewer. This method also does not block
+ * method has no effect if the user is an editor, not a viewer. This method also doesn't block
  * users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> if they belong to a class of users who have general
- * access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> is shared with the user's entire domain.
+ * access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> is shared with the user's entire domain, or
+ * if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/folder.html'>Folder</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of editors.
  * 
  * @function DriveApp.Folder#removeViewer
  * 
@@ -1548,55 +1670,55 @@
 
 /**
  * Gets a collection of all files that are children of the current folder and match the given search
- * criteria. The search criteria are detailed the <a href="/drive/search-parameters">Google Drive
- * SDK documentation</a>. Note that the <code>params</code> argument is a query string that may contain
- * string values, so take care to escape quotation marks correctly (for example <code>&quot;title
- * contains &#39;Gulliver\\&#39;s Travels&#39;&quot;</code> or <code>&#39;title contains &quot;Gulliver\&#39;s Travels&quot;&#39;</code>).
+ * criteria. The search criteria are detailed in the <a
+ * href="/drive/api/v2/ref-search-terms">Google Drive SDK documentation</a>. Note that the <code>params</code> argument is a query string that may contain string values, so take care to escape
+ * quotation marks correctly (for example <code>&quot;title contains &#39;Gulliver\\&#39;s Travels&#39;&quot;</code> or
+ * <code>&#39;title contains &quot;Gulliver\&#39;s Travels&quot;&#39;</code>).
  * 
- * <pre class="prettyprint">
+ * <pre class="prettyprint"><code>
  * // Log the name of every file that are children of the current folder and modified after February 28,
- * // 2013 whose name contains "untitled".
+ * // 2013 whose name contains &quot;untitled&quot;.
  * var files = DriveApp.getRootFolder().searchFiles(
- *     'modifiedDate > "2013-02-28" and title contains "untitled"');
+ *     &#39;modifiedDate &gt; &quot;2013-02-28&quot; and title contains &quot;untitled&quot;&#39;);
  * while (files.hasNext()) {
  *   var file = files.next();
  *   Logger.log(file.getName());
  * }
- * </pre>
+ * </code></pre>
  * 
  * @function DriveApp.Folder#searchFiles
  * 
- * @param {String} params - the search criteria, as detailed in the <a
- *     href="/drive/v2/web/search-parameters">Google Drive SDK documentation</a>
+ * @param {String} params - The search criteria, as detailed in the <a
+ *     href="/drive/api/v2/ref-search-terms">Google Drive SDK documentation</a>.
  * 
- * @return {DriveApp.FileIterator} a collection of all files that are children of the current folder and match the search
- *     criteria
+ * @return {DriveApp.FileIterator} A collection of all files that are children of the current folder and match the search
+ *     criteria.
  */
 
 
 /**
  * Gets a collection of all folders that are children of the current folder and match the given search
- * criteria. The search criteria are detailed the <a href="/drive/search-parameters">Google Drive
- * SDK documentation</a>. Note that the <code>params</code> argument is a query string that may contain
- * string values, so take care to escape quotation marks correctly (for example <code>&quot;title
- * contains &#39;Gulliver\\&#39;s Travels&#39;&quot;</code> or <code>&#39;title contains &quot;Gulliver\&#39;s Travels&quot;&#39;</code>).
+ * criteria. The search criteria are detailed in the <a
+ * href="/drive/api/v2/ref-search-terms">Google Drive SDK documentation</a>. Note that the <code>params</code> argument is a query string that may contain string values, so take care to escape
+ * quotation marks correctly (for example <code>&quot;title contains &#39;Gulliver\\&#39;s Travels&#39;&quot;</code> or
+ * <code>&#39;title contains &quot;Gulliver\&#39;s Travels&quot;&#39;</code>).
  * 
- * <pre class="prettyprint">
+ * <pre class="prettyprint"><code>
  * // Log the name of every folder that are children of the current folder and you own and is starred.
- * var folders = DriveApp.getRootFolder().searchFolders('starred = true and "me" in owners');
+ * var folders = DriveApp.getRootFolder().searchFolders(&#39;starred = true and &quot;me&quot; in owners&#39;);
  * while (folders.hasNext()) {
  *   var folder = folders.next();
  *   Logger.log(folder.getName());
  * }
- * </pre>
+ * </code></pre>
  * 
  * @function DriveApp.Folder#searchFolders
  * 
- * @param {String} params - the search criteria, as detailed in the <a
- *     href="/drive/v2/web/search-parameters">Google Drive SDK documentation</a>
+ * @param {String} params - The search criteria, as detailed in the <a
+ *     href="/drive/api/v2/ref-search-terms">Google Drive SDK documentation</a>.
  * 
- * @return {DriveApp.FolderIterator} a collection of all folders that are children of the current folder and match the search
- *     criteria
+ * @return {DriveApp.FolderIterator} A collection of all folders that are children of the current folder and match the search
+ *     criteria.
  */
 
 
@@ -1762,6 +1884,12 @@
  * @typedef {DriveApp.Permission} DriveApp.Permission.EDIT
  */
 /**
+ * Users who can edit, trash, and move content within a shared drive. This value can be returned,
+ * but passing it to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code> throws an exception.
+ * 
+ * @typedef {DriveApp.Permission} DriveApp.Permission.FILE_ORGANIZER
+ */
+/**
  * The user does not have any permissions for the file or folder. This value can be returned, but
  * passing it to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code> throws an exception unless it
  * is set in combination with <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/access.html#ANYONE'>Access.ANYONE</a></code>.
@@ -1769,7 +1897,7 @@
  * @typedef {DriveApp.Permission} DriveApp.Permission.NONE
  */
 /**
- * Users who can organize files and folders within a Team Drive. This value can be returned, but
+ * Users who can organize files and folders within a shared drive. This value can be returned, but
  * passing it to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/drive/file.html#setSharing(Access,Permission)'>File.setSharing(accessType, permissionType)</a></code> throws an exception.
  * 
  * @typedef {DriveApp.Permission} DriveApp.Permission.ORGANIZER

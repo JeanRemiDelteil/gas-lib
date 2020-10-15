@@ -15,8 +15,7 @@
  *   Logger.log(spanish);
  * </code></pre>
  * 
- * A list of language codes is available <a href="/translate/v2/using_rest#language-params">
- * here</a>.
+ * A list of language codes is available <a href="/translate/docs/languages">here</a>.
  * 
  * @function LanguageApp.translate
  * 
@@ -39,8 +38,7 @@
  *   Logger.log(spanish);
  * </code></pre>
  * 
- * A list of language codes is available <a href="/translate/v2/using_rest#language-params">
- * here</a>.
+ * A list of language codes is available <a href="/translate/docs/languages">here</a>.
  * 
  * @function LanguageApp.translate
  * 

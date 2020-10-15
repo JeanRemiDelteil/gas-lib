@@ -27,9 +27,9 @@
  * 
  * @function Maps.decodePolyline
  * 
- * @param {String} polyline - an encoded polyline
+ * @param {String} polyline - An encoded polyline to decode.
  * 
- * @return {Number[]} an array of latitude longitude pairs (lat0, long0, lat1, long1, ...)
+ * @return {Number[]} An array of latitude longitude pairs (lat0, long0, lat1, long1, ...).
  */
 
 
@@ -44,9 +44,9 @@
  * 
  * @function Maps.encodePolyline
  * 
- * @param {Number[]} points - an array of latitude/longitude pairs to encode
+ * @param {Number[]} points - An array of latitude/longitude pairs to encode.
  * 
- * @return {String} an encoded string
+ * @return {String} An encoded string representing those points.
  */
 
 
@@ -55,7 +55,7 @@
  * 
  * @function Maps.newDirectionFinder
  * 
- * @return {Maps.DirectionFinder} a DirectionFinder object
+ * @return {Maps.DirectionFinder} A new direction finder object.
  */
 
 
@@ -64,7 +64,7 @@
  * 
  * @function Maps.newElevationSampler
  * 
- * @return {Maps.ElevationSampler} an ElevationSampler object
+ * @return {Maps.ElevationSampler} A new elevation sampler object.
  */
 
 
@@ -73,7 +73,7 @@
  * 
  * @function Maps.newGeocoder
  * 
- * @return {Maps.Geocoder} a Geocoder object
+ * @return {Maps.Geocoder} A new geocoder object.
  */
 
 
@@ -82,15 +82,22 @@
  * 
  * @function Maps.newStaticMap
  * 
- * @return {Maps.StaticMap} a StaticMap object
+ * @return {Maps.StaticMap} A new static map object.
  */
 
 
 /**
- * Enables the use of an externally established Maps API for Business account, to leverage
- * additional quota allowances. Your client ID and signing key can be obtained from the Google
- * Enterprise Support Portal. Set these values to null to go back to using the default quota
+ * Enables the use of an externally established <a
+ * href="https://developers.google.com/maps/premium/">Google Maps APIs Premium Plan</a> account,
+ * to leverage additional <a href="https://developers.google.com/maps/premium/usage-limits">quota
+ * allowances</a>. Your client ID and signing key can be obtained from the Google Enterprise
+ * Support Portal. Set these values to <code>null</code> to go back to using the default quota
  * allowances.
+ * 
+ * <p><aside class="note"><b>Note</b>: This method doesn't work with API keys. Additionally,
+ * please note that Premium Plan is no longer available for new customers. If you don't already
+ * have a Premium Plan license, please don't call <code><a target='_blank' href='https://developers.google.com/apps-script/reference/maps/maps.html#setAuthentication(String,String)'>setAuthentication(clientId, signingKey)</a></code>. You are able to use
+ * the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/maps/maps.html'>Maps</a></code> methods with the default quota allowances.</aside>
  * 
  * <pre class="prettyprint"><code>
  * Maps.setAuthentication(&#39;gme-123456789&#39;, &#39;VhSEZvOXVSdnlxTnpJcUE&#39;);
@@ -98,8 +105,8 @@
  * 
  * @function Maps.setAuthentication
  * 
- * @param {String} clientId - client identifier
- * @param {String} signingKey - private signing key
+ * @param {String} clientId - A client identifier.
+ * @param {String} signingKey - A private signing key.
  * 
  * @return void
  */
@@ -800,9 +807,9 @@
  * 
  * @function Maps.StaticMap#addAddress
  * 
- * @param {String} address - an address
+ * @param {String} address - An address to add.
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 
@@ -816,10 +823,10 @@
  * 
  * @function Maps.StaticMap#addMarker
  * 
- * @param {Number} latitude - the latitude of the new marker
- * @param {Number} longitude - the longitude of the new marker
+ * @param {Number} latitude - The latitude of the new marker.
+ * @param {Number} longitude - The longitude of the new marker.
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 
@@ -833,9 +840,9 @@
  * 
  * @function Maps.StaticMap#addMarker
  * 
- * @param {String} address - the address at wich to place the new marker
+ * @param {String} address - The address at wich to place the new marker.
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 
@@ -850,9 +857,9 @@
  * 
  * @function Maps.StaticMap#addPath
  * 
- * @param {Number[]} points - an array of latitude/longitude pairs that define the path
+ * @param {Number[]} points - An array of latitude/longitude pairs that define the path.
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 
@@ -867,9 +874,9 @@
  * 
  * @function Maps.StaticMap#addPath
  * 
- * @param {String} polyline - an encoded polyline
+ * @param {String} polyline - An encoded polyline.
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 
@@ -887,10 +894,10 @@
  * 
  * @function Maps.StaticMap#addPoint
  * 
- * @param {Number} latitude - the latitude of the point
- * @param {Number} longitude - the longitude of the point
+ * @param {Number} latitude - The latitude of the point.
+ * @param {Number} longitude - The longitude of the point.
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 
@@ -906,10 +913,10 @@
  * 
  * @function Maps.StaticMap#addVisible
  * 
- * @param {Number} latitude - the latitude of the point
- * @param {Number} longitude - the longitude of the point
+ * @param {Number} latitude - The latitude of the point.
+ * @param {Number} longitude - The longitude of the point.
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 
@@ -925,15 +932,15 @@
  * 
  * @function Maps.StaticMap#addVisible
  * 
- * @param {String} address - an address that must be visible in the map
+ * @param {String} address - An address that must be visible in the map.
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 
 /**
- * Starts a new path definition. Calls to addAddress() and addPoint() will define each new vertex
- * in the path. The path is completed when endPath() is called.
+ * Starts a new path definition. Calls to <code>addAddress()</code> and <code>addPoint()</code> define each
+ * new vertex in the path. The path is completed when <code>endPath()</code> is called.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a map and adds a path from New York to Boston.
@@ -946,7 +953,7 @@
  * 
  * @function Maps.StaticMap#beginPath
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 
@@ -964,7 +971,7 @@
  * 
  * @function Maps.StaticMap#clearMarkers
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 
@@ -982,7 +989,7 @@
  * 
  * @function Maps.StaticMap#clearPaths
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 
@@ -1000,7 +1007,7 @@
  * 
  * @function Maps.StaticMap#clearVisibles
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 
@@ -1018,7 +1025,7 @@
  * 
  * @function Maps.StaticMap#endPath
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 
@@ -1028,6 +1035,10 @@
  * assumes that the part of the filename that follows the last period (if any) is an existing
  * extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
  * "ShoppingList.12.25.pdf".
+ * 
+ * <p>To view the daily quotas for conversions, see <a
+ * href="https://developers.google.com/apps-script/guides/services/quotas">Quotas for Google
+ * Services</a>. Newly created G Suite domains might be temporarily subject to stricter quotas.
  * 
  * @function Maps.StaticMap#getAs
  * 
@@ -1079,12 +1090,13 @@
  * <pre class="prettyprint"><code>
  * // Creates a map centered on Times Square and gets the URL.
  * var map = Maps.newStaticMap().setCenter(&#39;Times Square, New York, NY&#39;);
- * Logger.log(map.getMapUrl());
+ * // All static map URLs require an API key.
+ * Logger.log(map.getMapUrl() + &quot;&amp;key=YOUR_API_KEY&quot;);
  * </code></pre>
  * 
  * @function Maps.StaticMap#getMapUrl
  * 
- * @return {String} URL the map image URL
+ * @return {String} URL The map image URL.
  */
 
 
@@ -1098,10 +1110,10 @@
  * 
  * @function Maps.StaticMap#setCenter
  * 
- * @param {Number} latitude - the latitude of the center
- * @param {Number} longitude - the longitude of the center
+ * @param {Number} latitude - The latitude of the center.
+ * @param {Number} longitude - The longitude of the center.
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 
@@ -1115,15 +1127,15 @@
  * 
  * @function Maps.StaticMap#setCenter
  * 
- * @param {String} address - the address of the center
+ * @param {String} address - The address of the center.
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 
 /**
  * Sets the custom marker image to use when creating new markers. Markers that have already been
- * added will not be affected.
+ * added are not affected.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a map with markers set to be medium sized, black, and labeled with the number &quot;1&quot;.
@@ -1133,12 +1145,12 @@
  * 
  * @function Maps.StaticMap#setCustomMarkerStyle
  * 
- * @param {String} imageUrl - specifies a URL to use as the marker's custom icon. Images may be in PNG, JPEG
+ * @param {String} imageUrl - Specifies a URL to use as the marker's custom icon. Images may be in PNG, JPEG
  *     or GIF formats, though PNG is recommended.
- * @param {Boolean} useShadow - indicates that the marker should have a shadow generated, based on the image's
- *     visible region and its opacity/transparency
+ * @param {Boolean} useShadow - Indicates that the marker should have a shadow generated, based on the image's
+ *     visible region and its opacity/transparency.
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 
@@ -1152,9 +1164,9 @@
  * 
  * @function Maps.StaticMap#setFormat
  * 
- * @param {String} format - a constant value from <code><a target='_blank' href='https://developers.google.com/apps-script/reference/maps/format.html'>Format</a></code>
+ * @param {String} format - A constant value from <code><a target='_blank' href='https://developers.google.com/apps-script/reference/maps/format.html'>Format</a></code>.
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 
@@ -1168,9 +1180,9 @@
  * 
  * @function Maps.StaticMap#setLanguage
  * 
- * @param {String} language - a BCP-47 language identifier
+ * @param {String} language - A BCP-47 language identifier.
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 
@@ -1184,15 +1196,15 @@
  * 
  * @function Maps.StaticMap#setMapType
  * 
- * @param {String} mapType - a constant value from <code><a target='_blank' href='https://developers.google.com/apps-script/reference/maps/type.html'>Type</a></code>
+ * @param {String} mapType - A constant value from <code><a target='_blank' href='https://developers.google.com/apps-script/reference/maps/type.html'>Type</a></code>.
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 
 /**
  * Sets the marker style to use when creating new markers. Markers that have already been added
- * will not be affected.
+ * are not affected.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a map with markers set to be medium sized, black, and labeled with the number &quot;1&quot;.
@@ -1202,11 +1214,11 @@
  * 
  * @function Maps.StaticMap#setMarkerStyle
  * 
- * @param {String} size - a constant value from <code><a target='_blank' href='https://developers.google.com/apps-script/reference/maps/marker-size.html'>MarkerSize</a></code>
- * @param {String} color - a string in the format "0xrrggbb" or a constant value from <code><a target='_blank' href='https://developers.google.com/apps-script/reference/maps/color.html'>Color</a></code>
- * @param {String} label - a string containing a single character A-Z or 0-9
+ * @param {String} size - A constant value from <code><a target='_blank' href='https://developers.google.com/apps-script/reference/maps/marker-size.html'>MarkerSize</a></code>.
+ * @param {String} color - A string in the format "0xrrggbb" or a constant value from <code><a target='_blank' href='https://developers.google.com/apps-script/reference/maps/color.html'>Color</a></code>.
+ * @param {String} label - A string containing a single character A-Z or 0-9.
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 
@@ -1220,15 +1232,15 @@
  * 
  * @function Maps.StaticMap#setMobile
  * 
- * @param {Boolean} useMobileTiles - whether or not to use mobile tiles
+ * @param {Boolean} useMobileTiles - Whether or not to use mobile tiles.
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 
 /**
- * Sets the path style to use when creating new paths. Paths that have already been added will not
- * be affected.
+ * Sets the path style to use when creating new paths. Paths that have already been added are not
+ * affected.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a map with paths set to be 1 pixel wide with a black line and a white fill.
@@ -1238,13 +1250,13 @@
  * 
  * @function Maps.StaticMap#setPathStyle
  * 
- * @param {IntegerNum} weight - the width of lines in pixels
- * @param {String} color - the line color, as a string in the format "0xrrggbb" or a constant value from
- *     <code><a target='_blank' href='https://developers.google.com/apps-script/reference/maps/color.html'>Color</a></code>
- * @param {String} fillColor - the fill color, a string in the format "0xrrggbb" or a constant value from
- *     <code><a target='_blank' href='https://developers.google.com/apps-script/reference/maps/color.html'>Color</a></code>
+ * @param {IntegerNum} weight - The width of lines in pixels.
+ * @param {String} color - The line color, as a string in the format "0xrrggbb" or a constant value from
+ *     <code><a target='_blank' href='https://developers.google.com/apps-script/reference/maps/color.html'>Color</a></code>.
+ * @param {String} fillColor - The fill color, a string in the format "0xrrggbb" or a constant value from
+ *     <code><a target='_blank' href='https://developers.google.com/apps-script/reference/maps/color.html'>Color</a></code>.
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls.
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 
@@ -1258,10 +1270,10 @@
  * 
  * @function Maps.StaticMap#setSize
  * 
- * @param {IntegerNum} width - the width of the image in pixels
- * @param {IntegerNum} height - the height of the image in pixels
+ * @param {IntegerNum} width - The width of the image in pixels.
+ * @param {IntegerNum} height - The height of the image in pixels.
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 
@@ -1275,9 +1287,9 @@
  * 
  * @function Maps.StaticMap#setZoom
  * 
- * @param {IntegerNum} zoom - a value from 0 - 21+
+ * @param {IntegerNum} zoom - A value from zero to 21, inclusive.
  * 
- * @return {Maps.StaticMap} the StaticMap instance to facilitate chaining of calls
+ * @return {Maps.StaticMap} This map instance, for chaining.
  */
 
 

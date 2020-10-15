@@ -127,7 +127,8 @@
 
 
 /**
- * Gets the user-agent string for the current browser.
+ * Gets the user-agent string for the current browser. Returns <code>null</code> for most script
+ * executions if not used in a web app's <code>doGet()</code> or <code>doPost()</code> function.
  * 
  * @function HtmlService.getUserAgent
  * 
@@ -158,10 +159,10 @@
  * 
  * @function HtmlService.HtmlOutput#addMetaTag
  * 
- * @param {String} name - the value of the meta tag's name attribute
- * @param {String} content - the value of the meta tag's content attribute
+ * @param {String} name - The value of the meta tag's name attribute.
+ * @param {String} content - The value of the meta tag's content attribute.
  * 
- * @return {HtmlService.HtmlOutput} this <code>HtmlOutput</code> itself, useful for chaining
+ * @return {HtmlService.HtmlOutput} This output, for chaining.
  */
 
 
@@ -178,19 +179,20 @@
  * 
  * @function HtmlService.HtmlOutput#append
  * 
- * @param {String} addedContent - the content to append
+ * @param {String} addedContent - The content to append.
  * 
- * @return {HtmlService.HtmlOutput} this <code>HtmlOutput</code> itself, useful for chaining
+ * @return {HtmlService.HtmlOutput} This output, for chaining.
  */
 
 
 /**
  * Appends new content to the content of this <code>HtmlOutput</code>, using contextual escaping.
  * 
- * <p>This method will correctly escape content based on the current state of the <code>HtmlOutput</code>, so that the result will be a safe string with no markup or side affects. Use this
- * instead of using append whenever you are adding content from an untrusted source, such as from
- * a user, to avoid accidentally allowing a cross site scripting (XSS) bug where content or markup
- * that you append causes unexpected code execution.
+ * <p>This method correctly escapes content based on the current state of the <code>HtmlOutput</code>,
+ * so that the result is a safe string with no markup or side affects. Use this instead of using
+ * append whenever you are adding content from an untrusted source, such as from a user, to avoid
+ * accidentally allowing a cross site scripting (XSS) bug where content or markup that you append
+ * causes unexpected code execution.
  * 
  * <pre class="prettyprint"><code>
  * // Log &quot;&lt;b&gt;Hello, world!&lt;/b&gt;&amp;lt;p&amp;gt;Hello again, world.&amp;lt;/p&amp;gt;&quot;
@@ -201,16 +203,16 @@
  * 
  * @function HtmlService.HtmlOutput#appendUntrusted
  * 
- * @param {String} addedContent - the content to append
+ * @param {String} addedContent - The content to append.
  * 
- * @return {HtmlService.HtmlOutput} this <code>HtmlOutput</code> itself, useful for chaining
+ * @return {HtmlService.HtmlOutput} This output, for chaining.
  */
 
 
 /**
  * Returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-template.html'>HtmlTemplate</a></code> backed by this <code>HtmlOutput</code>. This method can be used to
- * build up a template incrementally. Future changes to <code>HtmlOutput</code> will affect the
- * contents of the <code>HtmlTemplate</code> as well.
+ * build up a template incrementally. Future changes to <code>HtmlOutput</code> affect the contents of
+ * the <code>HtmlTemplate</code> as well.
  * 
  * <pre class="prettyprint"><code>
  * var output = HtmlService.createHtmlOutput(&#39;&lt;b&gt;Hello, world!&lt;/b&gt;&#39;);
@@ -219,7 +221,7 @@
  * 
  * @function HtmlService.HtmlOutput#asTemplate
  * 
- * @return {HtmlService.HtmlTemplate} the new <code>HtmlTemplate</code>
+ * @return {HtmlService.HtmlTemplate} The new <code>HtmlTemplate</code>.
  */
 
 
@@ -233,7 +235,7 @@
  * 
  * @function HtmlService.HtmlOutput#clear
  * 
- * @return {HtmlService.HtmlOutput} the <code>HtmlOutput</code> itself, useful for chaining
+ * @return {HtmlService.HtmlOutput} This output, for chaining.
  */
 
 
@@ -243,6 +245,10 @@
  * assumes that the part of the filename that follows the last period (if any) is an existing
  * extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
  * "ShoppingList.12.25.pdf".
+ * 
+ * <p>To view the daily quotas for conversions, see <a
+ * href="https://developers.google.com/apps-script/guides/services/quotas">Quotas for Google
+ * Services</a>. Newly created G Suite domains might be temporarily subject to stricter quotas.
  * 
  * @function HtmlService.HtmlOutput#getAs
  * 
@@ -274,7 +280,7 @@
  * 
  * @function HtmlService.HtmlOutput#getContent
  * 
- * @return {String} the content that will be served
+ * @return {String} The content that is served.
  */
 
 
@@ -290,7 +296,7 @@
  * 
  * @function HtmlService.HtmlOutput#getFaviconUrl
  * 
- * @return {String} the URL of the favicon image
+ * @return {String} The URL of the favicon image.
  */
 
 
@@ -310,7 +316,7 @@
  * 
  * @function HtmlService.HtmlOutput#getHeight
  * 
- * @return {IntegerNum} the height, in pixels
+ * @return {IntegerNum} The height, in pixels.
  */
 
 
@@ -328,7 +334,7 @@
  * 
  * @function HtmlService.HtmlOutput#getMetaTags
  * 
- * @return {HtmlService.HtmlOutputMetaTag[]} an array of objects that represent meta tags added to the page by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-output.html#addMetaTag(String,String)'>addMetaTag(name, content)</a></code>
+ * @return {HtmlService.HtmlOutputMetaTag[]} An array of objects that represent meta tags added to the page by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/html-output.html#addMetaTag(String,String)'>addMetaTag(name, content)</a></code>.
  */
 
 
@@ -342,7 +348,7 @@
  * 
  * @function HtmlService.HtmlOutput#getTitle
  * 
- * @return {String} the title of the page
+ * @return {String} The title of the page.
  */
 
 
@@ -362,7 +368,7 @@
  * 
  * @function HtmlService.HtmlOutput#getWidth
  * 
- * @return {IntegerNum} the width in pixels
+ * @return {IntegerNum} The width in pixels.
  */
 
 
@@ -376,9 +382,9 @@
  * 
  * @function HtmlService.HtmlOutput#setContent
  * 
- * @param {String} content - the content to serve
+ * @param {String} content - The content to serve.
  * 
- * @return {HtmlService.HtmlOutput} this <code>HtmlOutput</code> itself, useful for chaining
+ * @return {HtmlService.HtmlOutput} This output, for chaining.
  */
 
 
@@ -393,9 +399,10 @@
  * 
  * @function HtmlService.HtmlOutput#setFaviconUrl
  * 
- * @param {String} iconUrl - the URL of the favicon image, with the image extension indicating the image type
+ * @param {String} iconUrl - The URL of the favicon image, with the image extension indicating the image
+ *     type.
  * 
- * @return {HtmlService.HtmlOutput} this <code>HtmlOutput</code> itself, useful for chaining
+ * @return {HtmlService.HtmlOutput} This output, for chaining.
  */
 
 
@@ -414,9 +421,9 @@
  * 
  * @function HtmlService.HtmlOutput#setHeight
  * 
- * @param {IntegerNum} height - the new height in pixels; <code>null</code> results in a default value
+ * @param {IntegerNum} height - The new height in pixels; <code>null</code> results in a default value.
  * 
- * @return {HtmlService.HtmlOutput} this <code>HtmlOutput</code> itself, useful for chaining
+ * @return {HtmlService.HtmlOutput} This output, for chaining.
  */
 
 
@@ -444,15 +451,15 @@
  * 
  * @function HtmlService.HtmlOutput#setSandboxMode
  * 
- * @param {HtmlService.SandboxMode} mode - the sandbox mode to use
+ * @param {HtmlService.SandboxMode} mode - The sandbox mode to use.
  * 
- * @return {HtmlService.HtmlOutput} this <code>HtmlOutput</code> itself, useful for chaining
+ * @return {HtmlService.HtmlOutput} This output, for chaining.
  */
 
 
 /**
- * Sets the title of the output page. For web apps, this will be the title of the entire page,
- * while for <code>HtmlOutput</code> shown in Google Sheets, this will be the dialog title.
+ * Sets the title of the output page. For web apps, this is the title of the entire page, while
+ * for <code>HtmlOutput</code> shown in Google Sheets, this is the dialog title.
  * 
  * <pre class="prettyprint"><code>
  * var output = HtmlService.createHtmlOutput(&#39;&lt;b&gt;Hello, world!&lt;/b&gt;&#39;);
@@ -461,9 +468,9 @@
  * 
  * @function HtmlService.HtmlOutput#setTitle
  * 
- * @param {String} title - the new title
+ * @param {String} title - The new title.
  * 
- * @return {HtmlService.HtmlOutput} this <code>HtmlOutput</code> itself, useful for chaining
+ * @return {HtmlService.HtmlOutput} This output, for chaining.
  */
 
 
@@ -482,9 +489,9 @@
  * 
  * @function HtmlService.HtmlOutput#setWidth
  * 
- * @param {IntegerNum} width - the new width in pixels; <code>null</code> results in a default value
+ * @param {IntegerNum} width - The new width in pixels; <code>null</code> results in a default value.
  * 
- * @return {HtmlService.HtmlOutput} this <code>HtmlOutput</code> itself, useful for chaining
+ * @return {HtmlService.HtmlOutput} This output, for chaining.
  */
 
 
@@ -492,7 +499,7 @@
  * Sets the state of the page's <code>X-Frame-Options</code> header, which controls clickjacking
  * prevention.
  * 
- * <p>Setting <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/x-frame-options-mode.html#ALLOWALL'>XFrameOptionsMode.ALLOWALL</a></code> will let any site iframe the page, so the
+ * <p>Setting <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/x-frame-options-mode.html#ALLOWALL'>XFrameOptionsMode.ALLOWALL</a></code> lets any site iframe the page, so the
  * developer should implement their own protection against clickjacking.
  * 
  * <p>If a script does not set an <code>X-Frame-Options</code> mode, Apps Script uses <code><a target='_blank' href='https://developers.google.com/apps-script/reference/html/x-frame-options-mode.html#DEFAULT'>XFrameOptionsMode.DEFAULT</a></code> mode as the default.
@@ -505,9 +512,9 @@
  * 
  * @function HtmlService.HtmlOutput#setXFrameOptionsMode
  * 
- * @param {HtmlService.XFrameOptionsMode} mode
+ * @param {HtmlService.XFrameOptionsMode} mode - The XFrame options mode to set.
  * 
- * @return {HtmlService.HtmlOutput} this <code>HtmlOutput</code> itself, useful for chaining
+ * @return {HtmlService.HtmlOutput} This output, for chaining.
  */
 
 

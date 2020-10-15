@@ -32,21 +32,6 @@
  * @typedef {Charts.CurveStyle} Charts.CurveStyle
  */
 /**
- * An enumeration of how a string value should be matched.
- * 
- * @typedef {Charts.MatchType} Charts.MatchType
- */
-/**
- * An enumeration of the orientation of an object.
- * 
- * @typedef {Charts.Orientation} Charts.Orientation
- */
-/**
- * An enumeration of how to display selected values in a picker widget.
- * 
- * @typedef {Charts.PickerValuesLayout} Charts.PickerValuesLayout
- */
-/**
  * An enumeration of the styles of points in a line.
  * 
  * @typedef {Charts.PointStyle} Charts.PointStyle
@@ -63,7 +48,7 @@
  * 
  * @function Charts.newAreaChart
  * 
- * @return {Charts.AreaChartBuilder} an AreaChartBuilder, which can be used to build an area chart
+ * @return {Charts.AreaChartBuilder} An AreaChartBuilder, which can be used to build an area chart.
  */
 
 
@@ -74,18 +59,7 @@
  * 
  * @function Charts.newBarChart
  * 
- * @return {Charts.BarChartBuilder} a BarChartBuilder, which can be used to build a bar chart
- */
-
-
-/**
- * Starts building a category filter control, as described in the <a
- * href="https://developers.google.com/chart/interactive/docs/gallery/controls#categoryfilter">
- * Google Chart Tools</a> documentation.
- * 
- * @function Charts.newCategoryFilter
- * 
- * @return {Charts.CategoryFilterBuilder} a CategoryFilterBuilder, which can be used to build a category filter
+ * @return {Charts.BarChartBuilder} A BarChartBuilder, which can be used to build a bar chart.
  */
 
 
@@ -96,18 +70,7 @@
  * 
  * @function Charts.newColumnChart
  * 
- * @return {Charts.ColumnChartBuilder} a ColumnChartBuilder, which can be used to build a column chart
- */
-
-
-/**
- * Starts building a dashboard panel, as described in the <a
- * href="https://developers.google.com/chart/interactive/docs/gallery/controls#dashboardobject">
- * Google Chart Tools</a> documentation.
- * 
- * @function Charts.newDashboardPanel
- * 
- * @return {Charts.DashboardPanelBuilder} a DashboardPanelBuilder, which can be used to build a dashboard panel
+ * @return {Charts.ColumnChartBuilder} A ColumnChartBuilder, which can be used to build a column chart.
  */
 
 
@@ -118,7 +81,7 @@
  * 
  * @function Charts.newDataTable
  * 
- * @return {DataTableBuilder} a DataTableBuilder, which can hold data for charts
+ * @return {DataTableBuilder} A DataTableBuilder, which can hold data for charts.
  */
 
 
@@ -129,7 +92,7 @@
  * 
  * @function Charts.newDataViewDefinition
  * 
- * @return {Charts.DataViewDefinitionBuilder} a DataViewDefinitionBuilder, which can be used to build a data view definition
+ * @return {Charts.DataViewDefinitionBuilder} A DataViewDefinitionBuilder, which can be used to build a data view definition.
  */
 
 
@@ -140,18 +103,7 @@
  * 
  * @function Charts.newLineChart
  * 
- * @return {Charts.LineChartBuilder} a LineChartBuilder, which can be used to build a line chart
- */
-
-
-/**
- * Starts building a number range filter control, as described in the <a
- * href="https://developers.google.com/chart/interactive/docs/gallery/controls#numberrangefilter">
- * Google Chart Tools</a> documentation.
- * 
- * @function Charts.newNumberRangeFilter
- * 
- * @return {Charts.NumberRangeFilterBuilder} a NumberRangeFilterBuilder, which can be used to build a number range filter
+ * @return {Charts.LineChartBuilder} A LineChartBuilder, which can be used to build a line chart.
  */
 
 
@@ -162,7 +114,7 @@
  * 
  * @function Charts.newPieChart
  * 
- * @return {Charts.PieChartBuilder} a PieChartBuilder, which can be used to build a pie chart
+ * @return {Charts.PieChartBuilder} A PieChartBuilder, which can be used to build a pie chart.
  */
 
 
@@ -173,18 +125,7 @@
  * 
  * @function Charts.newScatterChart
  * 
- * @return {Charts.ScatterChartBuilder} a ScatterChartBuilder, which can be used to build a scatter chart
- */
-
-
-/**
- * Starts building a string filter control, as described in the <a
- * href="https://developers.google.com/chart/interactive/docs/gallery/controls#stringfilter">
- * Google Chart Tools</a> documentation.
- * 
- * @function Charts.newStringFilter
- * 
- * @return {Charts.StringFilterBuilder} a StringFilterBuilder, which can be used to build a string filter
+ * @return {Charts.ScatterChartBuilder} A ScatterChartBuilder, which can be used to build a scatter chart.
  */
 
 
@@ -195,7 +136,7 @@
  * 
  * @function Charts.newTableChart
  * 
- * @return {Charts.TableChartBuilder} a TableChartBuilder, which can be used to build a table chart
+ * @return {Charts.TableChartBuilder} A TableChartBuilder, which can be used to build a table chart.
  */
 
 
@@ -206,7 +147,7 @@
  * 
  * @function Charts.newTextStyle
  * 
- * @return {Charts.TextStyleBuilder} a TextStyleBuilder, which can be used to build a text style configuration object
+ * @return {Charts.TextStyleBuilder} A TextStyleBuilder, which can be used to build a text style configuration object.
  */
 
 
@@ -220,8 +161,8 @@
  * 
  * @function Charts.AreaChartBuilder#build
  * 
- * @return {Charts.Chart} a Chart object, which can be embedded into documents, UI elements, or used as a static
- *     image
+ * @return {Charts.Chart} A Chart object, which can be embedded into documents, UI elements, or used as a static
+ *     image.
  */
 
 
@@ -239,7 +180,7 @@
  * 
  * @function Charts.AreaChartBuilder#reverseCategories
  * 
- * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ * @return {Charts.AreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -254,9 +195,9 @@
  * 
  * @function Charts.AreaChartBuilder#setBackgroundColor
  * 
- * @param {String} cssValue - the CSS value for the color (such as "blue" or "#00f")
+ * @param {String} cssValue - The CSS value for the color (such as <code>&quot;blue&quot;</code> or <code>&quot;#00f&quot;</code>).
  * 
- * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ * @return {Charts.AreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -272,26 +213,25 @@
  * 
  * @function Charts.AreaChartBuilder#setColors
  * 
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+ * @param {String[]} cssValues - An array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
  *     in the array represents the color of the nth line in the chart.
  * 
- * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ * @return {Charts.AreaChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the data source URL that will be used to pull data in from an external source, such as
- * Google Sheets. If a data source URL and a DataTable are provided, the data source URL is
- * ignored.
+ * Sets the data source URL that is used to pull data in from an external source, such as Google
+ * Sheets. If a data source URL and a DataTable are provided, the data source URL is ignored.
  * 
  * <p>For more information about querying data sources, check out the <a
  * href="/chart/interactive/docs/queries">Google Charts documentation</a>.
  * 
  * @function Charts.AreaChartBuilder#setDataSourceUrl
  * 
- * @param {String} url - the data source URL, including any query parameters
+ * @param {String} url - The data source URL, including any query parameters.
  * 
- * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ * @return {Charts.AreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -301,10 +241,10 @@
  * 
  * @function Charts.AreaChartBuilder#setDataTable
  * 
- * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part of
- *     this call, so any further updates to the builder won't be reflected in the chart.
+ * @param {DataTableBuilder} tableBuilder - A data table builder. A new data table is created instantly as part of this
+ *     call, so any further updates to the builder won't be reflected in the chart.
  * 
- * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ * @return {Charts.AreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -315,9 +255,9 @@
  * 
  * @function Charts.AreaChartBuilder#setDataTable
  * 
- * @param {DataTableSource} table - the data table to use for the chart
+ * @param {DataTableSource} table - The data table to use for the chart.
  * 
- * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ * @return {Charts.AreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -326,10 +266,10 @@
  * 
  * @function Charts.AreaChartBuilder#setDataViewDefinition
  * 
- * @param {Charts.DataViewDefinition} dataViewDefinition - a data view definition object that defines the view that should be
- *     derived from the given data source for the chart drawing
+ * @param {Charts.DataViewDefinition} dataViewDefinition - A data view definition object that defines the view that should be
+ *     derived from the given data source for the chart drawing.
  * 
- * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ * @return {Charts.AreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -338,15 +278,15 @@
  * 
  * @function Charts.AreaChartBuilder#setDimensions
  * 
- * @param {IntegerNum} width - the width of the chart, in pixels
- * @param {IntegerNum} height - the height of the chart, in pixels
+ * @param {IntegerNum} width - The width of the chart, in pixels.
+ * @param {IntegerNum} height - The height of the chart, in pixels.
  * 
- * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ * @return {Charts.AreaChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the position of the legend with respect to the chart. By default, there will be no legend.
+ * Sets the position of the legend with respect to the chart. By default, there is no legend.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the legend position to right.
@@ -356,9 +296,9 @@
  * 
  * @function Charts.AreaChartBuilder#setLegendPosition
  * 
- * @param {Charts.Position} position - the position of the legend
+ * @param {Charts.Position} position - The position of the legend.
  * 
- * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ * @return {Charts.AreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -375,9 +315,9 @@
  * 
  * @function Charts.AreaChartBuilder#setLegendTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart legend.
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart legend.
  * 
- * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ * @return {Charts.AreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -394,16 +334,16 @@
  * 
  * @function Charts.AreaChartBuilder#setOption
  * 
- * @param {String} option - the option to set
- * @param {Object} value - the value to set
+ * @param {String} option - The option to set.
+ * @param {Object} value - The value to set.
  * 
- * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ * @return {Charts.AreaChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the style for points in the line. By default, points will have no particular styles, and
- * only the line will be visible.
+ * Sets the style for points in the line. By default, points have no particular styles, and only
+ * the line is visible.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets large point style.
@@ -413,24 +353,24 @@
  * 
  * @function Charts.AreaChartBuilder#setPointStyle
  * 
- * @param {Charts.PointStyle} style - the style to use for points in the line
+ * @param {Charts.PointStyle} style - The style to use for points in the line.
  * 
- * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ * @return {Charts.AreaChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
  * Sets the range for the chart.
  * 
- * <p>If any data points fall outside the range, the range will be expanded to include those data
+ * <p>If any data points fall outside the range, the range is expanded to include those data
  * points.
  * 
  * @function Charts.AreaChartBuilder#setRange
  * 
- * @param {Number} start - value for the lowest grid line of the range axis
- * @param {Number} end - value for the highest grid line of the range axis
+ * @param {Number} start - The value for the lowest grid line of the range axis.
+ * @param {Number} end - The value for the highest grid line of the range axis.
  * 
- * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ * @return {Charts.AreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -440,12 +380,12 @@
  * 
  * @function Charts.AreaChartBuilder#setStacked
  * 
- * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ * @return {Charts.AreaChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the title of the chart. The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title is displayed centered above the chart.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and title to &#39;My Line Chart&#39;.
@@ -457,7 +397,7 @@
  * 
  * @param {String} chartTitle - the chart title.
  * 
- * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ * @return {Charts.AreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -474,10 +414,9 @@
  * 
  * @function Charts.AreaChartBuilder#setTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
- *     created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ * @return {Charts.AreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -493,16 +432,15 @@
  * 
  * @function Charts.AreaChartBuilder#setXAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ * @return {Charts.AreaChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
- * value labels.
+ * Adds a title to the horizontal axis. The title is centered and appears below the axis value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the X-axis title.
@@ -512,9 +450,9 @@
  * 
  * @function Charts.AreaChartBuilder#setXAxisTitle
  * 
- * @param {String} title - the title for the X-axis
+ * @param {String} title - The title for the X-axis.
  * 
- * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ * @return {Charts.AreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -530,10 +468,9 @@
  * 
  * @function Charts.AreaChartBuilder#setXAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ * @return {Charts.AreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -549,16 +486,15 @@
  * 
  * @function Charts.AreaChartBuilder#setYAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ * @return {Charts.AreaChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the vertical axis. The title will be centered and will appear to the left of
- * the value labels.
+ * Adds a title to the vertical axis. The title is centered and appears to the left of the value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the Y-axis title.
@@ -568,9 +504,9 @@
  * 
  * @function Charts.AreaChartBuilder#setYAxisTitle
  * 
- * @param {String} title - the title for the Y-axis
+ * @param {String} title - The title for the Y-axis.
  * 
- * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ * @return {Charts.AreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -586,21 +522,20 @@
  * 
  * @function Charts.AreaChartBuilder#setYAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ * @return {Charts.AreaChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
  * Makes the range axis into a logarithmic scale (requires all values to be positive). The range
- * axis will be the vertical axis for vertical charts (line, area, column, etc.) and the
- * horizontal axis for horizontal charts (bar, etc.)
+ * axis are the vertical axis for vertical charts (such as line, area, or column) and the
+ * horizontal axis for horizontal charts (such as bar).
  * 
  * @function Charts.AreaChartBuilder#useLogScale
  * 
- * @return {Charts.AreaChartBuilder} this builder, useful for chaining
+ * @return {Charts.AreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -614,8 +549,8 @@
  * 
  * @function Charts.BarChartBuilder#build
  * 
- * @return {Charts.Chart} a Chart object, which can be embedded into documents, UI elements, or used as a static
- *     image
+ * @return {Charts.Chart} A Chart object, which can be embedded into documents, UI elements, or used as a static
+ *     image.
  */
 
 
@@ -633,17 +568,17 @@
  * 
  * @function Charts.BarChartBuilder#reverseCategories
  * 
- * @return {Charts.BarChartBuilder} this builder, useful for chaining
+ * @return {Charts.BarChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
  * Reverses the direction in which the bars grow along the horizontal axis. By default, values
- * grow from left to right. Calling this method will cause them to grow from right to left.
+ * grow from left to right. Calling this method causes them to grow from right to left.
  * 
  * @function Charts.BarChartBuilder#reverseDirection
  * 
- * @return {Charts.BarChartBuilder} this builder, useful for chaining
+ * @return {Charts.BarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -658,9 +593,9 @@
  * 
  * @function Charts.BarChartBuilder#setBackgroundColor
  * 
- * @param {String} cssValue - the CSS value for the color (such as "blue" or "#00f")
+ * @param {String} cssValue - The CSS value for the color (such as <code>&quot;blue&quot;</code> or <code>&quot;#00f&quot;</code>).
  * 
- * @return {Charts.BarChartBuilder} this builder, useful for chaining
+ * @return {Charts.BarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -676,26 +611,25 @@
  * 
  * @function Charts.BarChartBuilder#setColors
  * 
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+ * @param {String[]} cssValues - An array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
  *     in the array represents the color of the nth line in the chart.
  * 
- * @return {Charts.BarChartBuilder} this builder, useful for chaining
+ * @return {Charts.BarChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the data source URL that will be used to pull data in from an external source, such as
- * Google Sheets. If a data source URL and a DataTable are provided, the data source URL is
- * ignored.
+ * Sets the data source URL that is used to pull data in from an external source, such as Google
+ * Sheets. If a data source URL and a DataTable are provided, the data source URL is ignored.
  * 
  * <p>For more information about querying data sources, check out the <a
  * href="/chart/interactive/docs/queries">Google Charts documentation</a>.
  * 
  * @function Charts.BarChartBuilder#setDataSourceUrl
  * 
- * @param {String} url - the data source URL, including any query parameters
+ * @param {String} url - The data source URL, including any query parameters.
  * 
- * @return {Charts.BarChartBuilder} this builder, useful for chaining
+ * @return {Charts.BarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -705,10 +639,10 @@
  * 
  * @function Charts.BarChartBuilder#setDataTable
  * 
- * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part of
- *     this call, so any further updates to the builder won't be reflected in the chart.
+ * @param {DataTableBuilder} tableBuilder - A data table builder. A new data table is created instantly as part of this
+ *     call, so any further updates to the builder won't be reflected in the chart.
  * 
- * @return {Charts.BarChartBuilder} this builder, useful for chaining
+ * @return {Charts.BarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -719,9 +653,9 @@
  * 
  * @function Charts.BarChartBuilder#setDataTable
  * 
- * @param {DataTableSource} table - the data table to use for the chart
+ * @param {DataTableSource} table - The data table to use for the chart.
  * 
- * @return {Charts.BarChartBuilder} this builder, useful for chaining
+ * @return {Charts.BarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -730,10 +664,10 @@
  * 
  * @function Charts.BarChartBuilder#setDataViewDefinition
  * 
- * @param {Charts.DataViewDefinition} dataViewDefinition - a data view definition object that defines the view that should be
- *     derived from the given data source for the chart drawing
+ * @param {Charts.DataViewDefinition} dataViewDefinition - A data view definition object that defines the view that should be
+ *     derived from the given data source for the chart drawing.
  * 
- * @return {Charts.BarChartBuilder} this builder, useful for chaining
+ * @return {Charts.BarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -742,15 +676,15 @@
  * 
  * @function Charts.BarChartBuilder#setDimensions
  * 
- * @param {IntegerNum} width - the width of the chart, in pixels
- * @param {IntegerNum} height - the height of the chart, in pixels
+ * @param {IntegerNum} width - The width of the chart, in pixels.
+ * @param {IntegerNum} height - The height of the chart, in pixels.
  * 
- * @return {Charts.BarChartBuilder} this builder, useful for chaining
+ * @return {Charts.BarChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the position of the legend with respect to the chart. By default, there will be no legend.
+ * Sets the position of the legend with respect to the chart. By default, there is no legend.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the legend position to right.
@@ -760,9 +694,9 @@
  * 
  * @function Charts.BarChartBuilder#setLegendPosition
  * 
- * @param {Charts.Position} position - the position of the legend
+ * @param {Charts.Position} position - The position of the legend.
  * 
- * @return {Charts.BarChartBuilder} this builder, useful for chaining
+ * @return {Charts.BarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -779,9 +713,9 @@
  * 
  * @function Charts.BarChartBuilder#setLegendTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart legend.
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart legend.
  * 
- * @return {Charts.BarChartBuilder} this builder, useful for chaining
+ * @return {Charts.BarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -798,25 +732,25 @@
  * 
  * @function Charts.BarChartBuilder#setOption
  * 
- * @param {String} option - the option to set
- * @param {Object} value - the value to set
+ * @param {String} option - The option to set.
+ * @param {Object} value - The value to set.
  * 
- * @return {Charts.BarChartBuilder} this builder, useful for chaining
+ * @return {Charts.BarChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
  * Sets the range for the chart.
  * 
- * <p>If any data points fall outside the range, the range will be expanded to include those data
+ * <p>If any data points fall outside the range, the range is expanded to include those data
  * points.
  * 
  * @function Charts.BarChartBuilder#setRange
  * 
- * @param {Number} start - value for the lowest grid line of the range axis
- * @param {Number} end - value for the highest grid line of the range axis
+ * @param {Number} start - The value for the lowest grid line of the range axis.
+ * @param {Number} end - The value for the highest grid line of the range axis.
  * 
- * @return {Charts.BarChartBuilder} this builder, useful for chaining
+ * @return {Charts.BarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -826,12 +760,12 @@
  * 
  * @function Charts.BarChartBuilder#setStacked
  * 
- * @return {Charts.BarChartBuilder} this builder, useful for chaining
+ * @return {Charts.BarChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the title of the chart. The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title is displayed centered above the chart.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and title to &#39;My Line Chart&#39;.
@@ -843,7 +777,7 @@
  * 
  * @param {String} chartTitle - the chart title.
  * 
- * @return {Charts.BarChartBuilder} this builder, useful for chaining
+ * @return {Charts.BarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -860,10 +794,9 @@
  * 
  * @function Charts.BarChartBuilder#setTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
- *     created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.BarChartBuilder} this builder, useful for chaining
+ * @return {Charts.BarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -879,16 +812,15 @@
  * 
  * @function Charts.BarChartBuilder#setXAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.BarChartBuilder} this builder, useful for chaining
+ * @return {Charts.BarChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
- * value labels.
+ * Adds a title to the horizontal axis. The title is centered and appears below the axis value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the X-axis title.
@@ -898,9 +830,9 @@
  * 
  * @function Charts.BarChartBuilder#setXAxisTitle
  * 
- * @param {String} title - the title for the X-axis
+ * @param {String} title - The title for the X-axis.
  * 
- * @return {Charts.BarChartBuilder} this builder, useful for chaining
+ * @return {Charts.BarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -916,10 +848,9 @@
  * 
  * @function Charts.BarChartBuilder#setXAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.BarChartBuilder} this builder, useful for chaining
+ * @return {Charts.BarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -935,16 +866,15 @@
  * 
  * @function Charts.BarChartBuilder#setYAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.BarChartBuilder} this builder, useful for chaining
+ * @return {Charts.BarChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the vertical axis. The title will be centered and will appear to the left of
- * the value labels.
+ * Adds a title to the vertical axis. The title is centered and appears to the left of the value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the Y-axis title.
@@ -954,9 +884,9 @@
  * 
  * @function Charts.BarChartBuilder#setYAxisTitle
  * 
- * @param {String} title - the title for the Y-axis
+ * @param {String} title - The title for the Y-axis.
  * 
- * @return {Charts.BarChartBuilder} this builder, useful for chaining
+ * @return {Charts.BarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -972,244 +902,20 @@
  * 
  * @function Charts.BarChartBuilder#setYAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.BarChartBuilder} this builder, useful for chaining
+ * @return {Charts.BarChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
  * Makes the range axis into a logarithmic scale (requires all values to be positive). The range
- * axis will be the vertical axis for vertical charts (line, area, column, etc.) and the
- * horizontal axis for horizontal charts (bar, etc.)
+ * axis are the vertical axis for vertical charts (such as line, area, or column) and the
+ * horizontal axis for horizontal charts (such as bar).
  * 
  * @function Charts.BarChartBuilder#useLogScale
  * 
- * @return {Charts.BarChartBuilder} this builder, useful for chaining
- */
-
-
-
-/**
- * @class Charts.CategoryFilterBuilder
- */
-
-/**
- * Builds a control.
- * 
- * @function Charts.CategoryFilterBuilder#build
- * 
- * @return {Charts.Control} a control object, that can be used as a UI element
- */
-
-
-/**
- * Sets whether multiple values can be selected, rather than just one. The default value of this
- * option is true (allowing multiple selection).
- * 
- * <pre class="prettyprint"><code>
- * // Creates a category filter and disallows multiple value selection.
- * var builder = Charts.newCategoryFilter().setAllowMultiple(false);
- * </code></pre>
- * 
- * @function Charts.CategoryFilterBuilder#setAllowMultiple
- * 
- * @param {Boolean} allowMultiple - if false, the user will not be able to select multiple values
- * 
- * @return {Charts.CategoryFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets whether the user is allowed not to choose any value. If false the user must choose at
- * least one value from the available ones. The default value of this option is true.
- * 
- * <pre class="prettyprint"><code>
- * // Creates a category filter and force the user to choose at least one value.
- * var builder = Charts.newCategoryFilter().setAllowNone(false);
- * </code></pre>
- * 
- * @function Charts.CategoryFilterBuilder#setAllowNone
- * 
- * @param {Boolean} allowNone - if false, the user must choose at least one value
- * 
- * @return {Charts.CategoryFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets whether the user is allowed to type in a text field to narrow down the list of possible
- * choices (via an autocompleter), or not. The default value of this option is true (allowing the
- * user to type in values in the picker).
- * 
- * <pre class="prettyprint"><code>
- * // Creates a category filter and disallows the user from typing in text to filter the values,
- * // so the user must use the drop down to pick values.
- * var builder = Charts.newCategoryFilter().setAllowTyping(false);
- * </code></pre>
- * 
- * @function Charts.CategoryFilterBuilder#setAllowTyping
- * 
- * @param {Boolean} allowTyping - if false, the user will not be allowed to type in a text field to narrow
- *     down the list of possible choices
- * 
- * @return {Charts.CategoryFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets the caption to display inside the value picker widget when no item is selected.
- * 
- * <pre class="prettyprint"><code>
- * // Creates a category filter with a caption.
- * var builder = Charts.newCategoryFilter().setCaption(&#39;select a value&#39;);
- * </code></pre>
- * 
- * @function Charts.CategoryFilterBuilder#setCaption
- * 
- * @param {String} caption - the caption to display inside the value picker widget when no item is selected
- * 
- * @return {Charts.CategoryFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets the data table to use for the control using a DataTableBuilder.
- * 
- * <p>This is a convenience method for setting the data table without needing to call <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/category-filter-builder.html#build()'>build()</a></code>.
- * 
- * @function Charts.CategoryFilterBuilder#setDataTable
- * 
- * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part of
- *     this call, so any further updates to the builder won't be reflected in the control.
- * 
- * @return {Charts.CategoryFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets the control data table, which will be the control's underlying data model.
- * 
- * @function Charts.CategoryFilterBuilder#setDataTable
- * 
- * @param {DataTableSource} table - the data table to use for the control
- * 
- * @return {Charts.CategoryFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets the index of the data table column to filter on.
- * 
- * <p>The values of that column will determine whether or not each row should be filtered. It is
- * mandatory to set either this or the column label using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/category-filter-builder.html#setFilterColumnLabel(String)'>setFilterColumnLabel(columnLabel)</a></code>.
- * 
- * @function Charts.CategoryFilterBuilder#setFilterColumnIndex
- * 
- * @param {IntegerNum} columnIndex - the index of the data table column the filter should operate upon
- * 
- * @return {Charts.CategoryFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets the label of the data table column to filter on.
- * 
- * <p>The values of that column will determine whether or not each row should be filtered. It is
- * mandatory to set either this or a column index using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/category-filter-builder.html#setFilterColumnIndex(Integer)'>setFilterColumnIndex(columnIndex)</a></code>.
- * 
- * @function Charts.CategoryFilterBuilder#setFilterColumnLabel
- * 
- * @param {String} columnLabel - the label of the column to filter on
- * 
- * @return {Charts.CategoryFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets the label to display next to the slider.
- * 
- * <p>If unspecified, the label of the column the control operates on will be used.
- * 
- * @function Charts.CategoryFilterBuilder#setLabel
- * 
- * @param {String} label - the label to display next to the slider
- * 
- * @return {Charts.CategoryFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets a separator string appended to the label, to visually separate the label from the category
- * picker.
- * 
- * @function Charts.CategoryFilterBuilder#setLabelSeparator
- * 
- * @param {String} labelSeparator - the string to use to separate the label from the category picker
- * 
- * @return {Charts.CategoryFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets whether the label should display above (vertical stacking) or beside (horizontal stacking)
- * the input field.
- * 
- * @function Charts.CategoryFilterBuilder#setLabelStacking
- * 
- * @param {Charts.Orientation} orientation - the orientation of the stacking
- * 
- * @return {Charts.CategoryFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets how to display selected values, when multiple selection is allowed.
- * 
- * <pre class="prettyprint"><code>
- * // Creates a category filter and sets it to display selected values below the picker.
- * var builder = Charts.newCategoryFilter()
- *     .setSelectedValuesLayout(Charts.PickerValuesLayout.BELOW);
- * </code></pre>
- * 
- * @function Charts.CategoryFilterBuilder#setSelectedValuesLayout
- * 
- * @param {Charts.PickerValuesLayout} layout - the layout in which to display the selected values
- * 
- * @return {Charts.CategoryFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets whether the values to choose from should be sorted.
- * 
- * <pre class="prettyprint"><code>
- * // Creates a category filter that sorts the values.
- * var builder = Charts.newCategoryFilter().setSortValues(true);
- * </code></pre>
- * 
- * @function Charts.CategoryFilterBuilder#setSortValues
- * 
- * @param {Boolean} sortValues - if true, sorts the values displayed in the widget alphabetically
- * 
- * @return {Charts.CategoryFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets the list of values (categories) the user can choose from.
- * 
- * <pre class="prettyprint"><code>
- * // Creates a category filter with two choices.
- * var builder = Charts.newCategoryFilter().setValues([&#39;choice 1&#39;,&#39;choice 2&#39;]);
- * </code></pre>
- * 
- * @function Charts.CategoryFilterBuilder#setValues
- * 
- * @param {String[]} values - list of values the user can choose from
- * 
- * @return {Charts.CategoryFilterBuilder} this builder, useful for chaining
+ * @return {Charts.BarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -1224,6 +930,10 @@
  * assumes that the part of the filename that follows the last period (if any) is an existing
  * extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
  * "ShoppingList.12.25.pdf".
+ * 
+ * <p>To view the daily quotas for conversions, see <a
+ * href="https://developers.google.com/apps-script/guides/services/quotas">Quotas for Google
+ * Services</a>. Newly created G Suite domains might be temporarily subject to stricter quotas.
  * 
  * @function Charts.Chart#getAs
  * 
@@ -1245,46 +955,13 @@
 
 
 /**
- * Returns the id that has been assigned to this object.
- * 
- * <p>This can be used in conjunction with app.getElementById() to retrieve a reference to this
- * object.
- * 
- * @function Charts.Chart#getId
- * 
- * @return {String} the id that has been assigned to this object
- */
-
-
-/**
- * Returns the options for this chart, such as height, colors, axes, etc.
+ * Returns the options for this chart, such as height, colors, and axes.
  * 
  * <p>The returned options are immutable.
  * 
  * @function Charts.Chart#getOptions
  * 
- * @return {Charts.ChartOptions} the options for this chart, such as height, colors, axes, etc.
- */
-
-
-/**
- * Gets the type of this object.
- * 
- * @function Charts.Chart#getType
- * 
- * @return {String} the object type
- */
-
-
-/**
- * Sets the id of this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/chart.html'>Chart</a></code> to be used with UiApp.
- * 
- * @function Charts.Chart#setId
- * 
- * @param {String} id - the new id, which can be used to retrieve the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/chart.html'>Chart</a></code> from
- *     app.getElementById(id).
- * 
- * @return {Charts.Chart} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/chart.html'>Chart</a></code> itself, useful for chaining.
+ * @return {Charts.ChartOptions} The options for this chart, such as height, colors, and axes.
  */
 
 
@@ -1338,9 +1015,24 @@
  * 
  * @function Charts.ChartOptions#get
  * 
- * @param {String} option - string representing the desired option
+ * @param {String} option - The string representing the desired option.
  * 
- * @return {Object} the value currently set for the specified option or null if the option was not set
+ * @return {Object} The value currently set for the specified option or <code>null</code> if the option was not
+ *     set.
+ */
+
+
+/**
+ * Returns a configured option for this chart. If the chart option is not set, returns the default
+ * value of this option if available, or returns <code>null</code> if the default value is not
+ * available.
+ * 
+ * @function Charts.ChartOptions#getOrDefault
+ * 
+ * @param {String} option - The string representing the desired option.
+ * 
+ * @return {Object} The value currently set for the specified option. If the option was not set and the
+ *     default value is available, returns the default value.
  */
 
 
@@ -1459,8 +1151,8 @@
  * 
  * @function Charts.ColumnChartBuilder#build
  * 
- * @return {Charts.Chart} a Chart object, which can be embedded into documents, UI elements, or used as a static
- *     image
+ * @return {Charts.Chart} A Chart object, which can be embedded into documents, UI elements, or used as a static
+ *     image.
  */
 
 
@@ -1478,7 +1170,7 @@
  * 
  * @function Charts.ColumnChartBuilder#reverseCategories
  * 
- * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
+ * @return {Charts.ColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -1493,9 +1185,9 @@
  * 
  * @function Charts.ColumnChartBuilder#setBackgroundColor
  * 
- * @param {String} cssValue - the CSS value for the color (such as "blue" or "#00f")
+ * @param {String} cssValue - The CSS value for the color (such as <code>&quot;blue&quot;</code> or <code>&quot;#00f&quot;</code>).
  * 
- * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
+ * @return {Charts.ColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -1511,26 +1203,25 @@
  * 
  * @function Charts.ColumnChartBuilder#setColors
  * 
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+ * @param {String[]} cssValues - An array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
  *     in the array represents the color of the nth line in the chart.
  * 
- * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
+ * @return {Charts.ColumnChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the data source URL that will be used to pull data in from an external source, such as
- * Google Sheets. If a data source URL and a DataTable are provided, the data source URL is
- * ignored.
+ * Sets the data source URL that is used to pull data in from an external source, such as Google
+ * Sheets. If a data source URL and a DataTable are provided, the data source URL is ignored.
  * 
  * <p>For more information about querying data sources, check out the <a
  * href="/chart/interactive/docs/queries">Google Charts documentation</a>.
  * 
  * @function Charts.ColumnChartBuilder#setDataSourceUrl
  * 
- * @param {String} url - the data source URL, including any query parameters
+ * @param {String} url - The data source URL, including any query parameters.
  * 
- * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
+ * @return {Charts.ColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -1540,10 +1231,10 @@
  * 
  * @function Charts.ColumnChartBuilder#setDataTable
  * 
- * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part of
- *     this call, so any further updates to the builder won't be reflected in the chart.
+ * @param {DataTableBuilder} tableBuilder - A data table builder. A new data table is created instantly as part of this
+ *     call, so any further updates to the builder won't be reflected in the chart.
  * 
- * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
+ * @return {Charts.ColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -1554,9 +1245,9 @@
  * 
  * @function Charts.ColumnChartBuilder#setDataTable
  * 
- * @param {DataTableSource} table - the data table to use for the chart
+ * @param {DataTableSource} table - The data table to use for the chart.
  * 
- * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
+ * @return {Charts.ColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -1565,10 +1256,10 @@
  * 
  * @function Charts.ColumnChartBuilder#setDataViewDefinition
  * 
- * @param {Charts.DataViewDefinition} dataViewDefinition - a data view definition object that defines the view that should be
- *     derived from the given data source for the chart drawing
+ * @param {Charts.DataViewDefinition} dataViewDefinition - A data view definition object that defines the view that should be
+ *     derived from the given data source for the chart drawing.
  * 
- * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
+ * @return {Charts.ColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -1577,15 +1268,15 @@
  * 
  * @function Charts.ColumnChartBuilder#setDimensions
  * 
- * @param {IntegerNum} width - the width of the chart, in pixels
- * @param {IntegerNum} height - the height of the chart, in pixels
+ * @param {IntegerNum} width - The width of the chart, in pixels.
+ * @param {IntegerNum} height - The height of the chart, in pixels.
  * 
- * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
+ * @return {Charts.ColumnChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the position of the legend with respect to the chart. By default, there will be no legend.
+ * Sets the position of the legend with respect to the chart. By default, there is no legend.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the legend position to right.
@@ -1595,9 +1286,9 @@
  * 
  * @function Charts.ColumnChartBuilder#setLegendPosition
  * 
- * @param {Charts.Position} position - the position of the legend
+ * @param {Charts.Position} position - The position of the legend.
  * 
- * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
+ * @return {Charts.ColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -1614,9 +1305,9 @@
  * 
  * @function Charts.ColumnChartBuilder#setLegendTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart legend.
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart legend.
  * 
- * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
+ * @return {Charts.ColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -1633,25 +1324,25 @@
  * 
  * @function Charts.ColumnChartBuilder#setOption
  * 
- * @param {String} option - the option to set
- * @param {Object} value - the value to set
+ * @param {String} option - The option to set.
+ * @param {Object} value - The value to set.
  * 
- * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
+ * @return {Charts.ColumnChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
  * Sets the range for the chart.
  * 
- * <p>If any data points fall outside the range, the range will be expanded to include those data
+ * <p>If any data points fall outside the range, the range is expanded to include those data
  * points.
  * 
  * @function Charts.ColumnChartBuilder#setRange
  * 
- * @param {Number} start - value for the lowest grid line of the range axis
- * @param {Number} end - value for the highest grid line of the range axis
+ * @param {Number} start - The value for the lowest grid line of the range axis.
+ * @param {Number} end - The value for the highest grid line of the range axis.
  * 
- * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
+ * @return {Charts.ColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -1661,12 +1352,12 @@
  * 
  * @function Charts.ColumnChartBuilder#setStacked
  * 
- * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
+ * @return {Charts.ColumnChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the title of the chart. The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title is displayed centered above the chart.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and title to &#39;My Line Chart&#39;.
@@ -1678,7 +1369,7 @@
  * 
  * @param {String} chartTitle - the chart title.
  * 
- * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
+ * @return {Charts.ColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -1695,10 +1386,9 @@
  * 
  * @function Charts.ColumnChartBuilder#setTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
- *     created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
+ * @return {Charts.ColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -1714,16 +1404,15 @@
  * 
  * @function Charts.ColumnChartBuilder#setXAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
+ * @return {Charts.ColumnChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
- * value labels.
+ * Adds a title to the horizontal axis. The title is centered and appears below the axis value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the X-axis title.
@@ -1733,9 +1422,9 @@
  * 
  * @function Charts.ColumnChartBuilder#setXAxisTitle
  * 
- * @param {String} title - the title for the X-axis
+ * @param {String} title - The title for the X-axis.
  * 
- * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
+ * @return {Charts.ColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -1751,10 +1440,9 @@
  * 
  * @function Charts.ColumnChartBuilder#setXAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
+ * @return {Charts.ColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -1770,16 +1458,15 @@
  * 
  * @function Charts.ColumnChartBuilder#setYAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
+ * @return {Charts.ColumnChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the vertical axis. The title will be centered and will appear to the left of
- * the value labels.
+ * Adds a title to the vertical axis. The title is centered and appears to the left of the value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the Y-axis title.
@@ -1789,9 +1476,9 @@
  * 
  * @function Charts.ColumnChartBuilder#setYAxisTitle
  * 
- * @param {String} title - the title for the Y-axis
+ * @param {String} title - The title for the Y-axis.
  * 
- * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
+ * @return {Charts.ColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -1807,59 +1494,20 @@
  * 
  * @function Charts.ColumnChartBuilder#setYAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
+ * @return {Charts.ColumnChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
  * Makes the range axis into a logarithmic scale (requires all values to be positive). The range
- * axis will be the vertical axis for vertical charts (line, area, column, etc.) and the
- * horizontal axis for horizontal charts (bar, etc.)
+ * axis are the vertical axis for vertical charts (such as line, area, or column) and the
+ * horizontal axis for horizontal charts (such as bar).
  * 
  * @function Charts.ColumnChartBuilder#useLogScale
  * 
- * @return {Charts.ColumnChartBuilder} this builder, useful for chaining
- */
-
-
-
-/**
- * @class Charts.Control
- */
-
-/**
- * Returns the id that has been assigned to this object.
- * 
- * <p>This can be used in conjunction with app.getElementById() to retrieve a reference to this
- * object.
- * 
- * @function Charts.Control#getId
- * 
- * @return {String} the id that has been assigned to this object
- */
-
-
-/**
- * Gets the type of this object.
- * 
- * @function Charts.Control#getType
- * 
- * @return {String} the object type
- */
-
-
-/**
- * Sets the id of this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/control.html'>Control</a></code> to be used with UiApp.
- * 
- * @function Charts.Control#setId
- * 
- * @param {String} id - the new id, which can be used to retrieve the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/control.html'>Control</a></code> from
- *     app.getElementById(id).
- * 
- * @return {Charts.Control} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/control.html'>Control</a></code> itself, useful for chaining.
+ * @return {Charts.ColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -1869,143 +1517,15 @@
  */
 
 /**
- * Straight lines without curve
+ * Straight lines without curve.
  * 
  * @typedef {Charts.CurveStyle} Charts.CurveStyle.NORMAL
  */
 /**
- * The angles of the line will be smoothed
+ * The angles of the line are smoothed.
  * 
  * @typedef {Charts.CurveStyle} Charts.CurveStyle.SMOOTH
  */
-
-/**
- * @class Charts.DashboardPanel
- */
-
-/**
- * Add a widget to the DashboardPanel.
- * 
- * <p>The DashboardPanel is a simple panel which contains a single widget in it. A good practice
- * for building a dashboard to place all of its components (the charts and controls that are bound
- * in it) in a complex panel (vertical or horizontal panel for example), and to add that panel to
- * it.
- * 
- * @function Charts.DashboardPanel#add
- * @deprecated
- * 
- * @param {UiApp.Widget} widget - the widget to add
- * 
- * @return {Charts.DashboardPanel} the DashboardPanel itself, useful for chaining.
- */
-
-
-/**
- * Returns the id that has been assigned to this object.
- * 
- * <p>This can be used in conjunction with app.getElementById() to retrieve a reference to this
- * object.
- * 
- * @function Charts.DashboardPanel#getId
- * 
- * @return {String} the id that has been assigned to this object
- */
-
-
-/**
- * Gets the type of this object.
- * 
- * @function Charts.DashboardPanel#getType
- * 
- * @return {String} the object type
- */
-
-
-/**
- * Sets the id of this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/dashboard-panel.html'>DashboardPanel</a></code> to be used with UiApp.
- * 
- * @function Charts.DashboardPanel#setId
- * 
- * @param {String} id - the new id, which can be used to retrieve the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/dashboard-panel.html'>DashboardPanel</a></code> from
- *     app.getElementById(id).
- * 
- * @return {Charts.DashboardPanel} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/dashboard-panel.html'>DashboardPanel</a></code> itself, useful for chaining.
- */
-
-
-
-/**
- * @class Charts.DashboardPanelBuilder
- */
-
-/**
- * Binds a control to a chart, so that the chart is redrawn whenever the control collects a user
- * interaction that affects the data managed by the dashboard.
- * 
- * <p>For example, when binding a range selector to a chart, a user interaction will be sliding
- * the the range selector to the desired range. The effect on the data will be keeping only the
- * data that's in the chosen range.
- * 
- * @function Charts.DashboardPanelBuilder#bind
- * 
- * @param {Charts.Control} control - a control to bind
- * @param {Charts.Chart} chart - a chart to bind
- * 
- * @return {Charts.DashboardPanelBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Binds multiple controls to multiple charts, so that the charts are redrawn whenever the
- * controls collect a user interaction that affects the data managed by the dashboard. When
- * binding multiple controls to a chart (or multiple charts), the data that's displayed in the
- * chart is that which passes the filters of all of the controls (of this specific binding).
- * 
- * <p>For more information about object binding see the Gviz <a
- * href="https://developers.google.com/chart/interactive/docs/gallery/controls">documentation</a>.
- * 
- * @function Charts.DashboardPanelBuilder#bind
- * 
- * @param {Charts.Control[]} controls - an array of controls to bind
- * @param {Charts.Chart[]} charts - an array charts to bind
- * 
- * @return {Charts.DashboardPanelBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Builds a dashboard.
- * 
- * @function Charts.DashboardPanelBuilder#build
- * 
- * @return {Charts.DashboardPanel} a control object, that can be used as a UI element
- */
-
-
-/**
- * Sets the data table to use for the dashboard using a DataTableBuilder. This is a convenience
- * method for setting the data table without needing to call <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/dashboard-panel-builder.html#build()'>build()</a></code>.
- * 
- * @function Charts.DashboardPanelBuilder#setDataTable
- * 
- * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part of
- *     this call, so any further updates to the builder won't be reflected in the dashboard.
- * 
- * @return {Charts.DashboardPanelBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets the dashboard's data table, which will be the control's underlying data model.
- * 
- * @function Charts.DashboardPanelBuilder#setDataTable
- * 
- * @param {DataTableSource} source - the data source to use for the dashboard
- * 
- * @return {Charts.DashboardPanelBuilder} this builder, useful for chaining
- */
-
-
 
 /**
  * @class Charts.DataViewDefinition
@@ -2021,14 +1541,14 @@
  * 
  * @function Charts.DataViewDefinitionBuilder#build
  * 
- * @return {Charts.DataViewDefinition} a data view definition object that was built using this builder
+ * @return {Charts.DataViewDefinition} A data view definition object that was built using this builder.
  */
 
 
 /**
  * Sets the indexes of the columns to include in the data view as well as specifying role-column
  * information. This subset of column indexes refer to the columns of the data source that the
- * data view will be derived from.
+ * data view is derived from.
  * 
  * <p>A column role describes the purpose of the data in that column: for example, a column might
  * hold data describing tooltip text, data point annotations, or uncertainty indicators. For more
@@ -2037,11 +1557,11 @@
  * 
  * <p>Assuming a spreadsheet with the following data in A1:C3:
  * 
- * <pre class="prettyprint">
- *   "abc", 20, "blue"
- *   "def", 30, "red"
- *   "ghi", 40, "orange"
- * </pre>
+ * <pre class="prettyprint"><code>
+ * &quot;abc&quot;, 20, &quot;blue&quot;
+ * &quot;def&quot;, 30, &quot;red&quot;
+ * &quot;ghi&quot;, 40, &quot;orange&quot;
+ * </code></pre>
  * 
  * The following code creates a bar chart where each bar is a different color. The colors are
  * assigned via a style "role column".
@@ -2073,11 +1593,11 @@
  * 
  * @function Charts.DataViewDefinitionBuilder#setColumns
  * 
- * @param {Object[]} columns - an array of column indexes, or column descriptions (an object), to include in
+ * @param {Object[]} columns - An array of column indexes, or column descriptions (an object), to include in
  *     the data view. The column descriptions define a column role. The data table and the
  *     enumeration for data view columns are zero-based.
  * 
- * @return {Charts.DataViewDefinitionBuilder} this builder, useful for chaining
+ * @return {Charts.DataViewDefinitionBuilder} This builder, useful for chaining.
  */
 
 
@@ -2091,8 +1611,8 @@
  * 
  * @function Charts.LineChartBuilder#build
  * 
- * @return {Charts.Chart} a Chart object, which can be embedded into documents, UI elements, or used as a static
- *     image
+ * @return {Charts.Chart} A Chart object, which can be embedded into documents, UI elements, or used as a static
+ *     image.
  */
 
 
@@ -2110,7 +1630,7 @@
  * 
  * @function Charts.LineChartBuilder#reverseCategories
  * 
- * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ * @return {Charts.LineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2125,9 +1645,9 @@
  * 
  * @function Charts.LineChartBuilder#setBackgroundColor
  * 
- * @param {String} cssValue - the CSS value for the color (such as "blue" or "#00f")
+ * @param {String} cssValue - The CSS value for the color (such as <code>&quot;blue&quot;</code> or <code>&quot;#00f&quot;</code>).
  * 
- * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ * @return {Charts.LineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2143,10 +1663,10 @@
  * 
  * @function Charts.LineChartBuilder#setColors
  * 
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+ * @param {String[]} cssValues - An array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
  *     in the array represents the color of the nth line in the chart.
  * 
- * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ * @return {Charts.LineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2162,25 +1682,24 @@
  * 
  * @function Charts.LineChartBuilder#setCurveStyle
  * 
- * @param {Charts.CurveStyle} style - the style for curves in the chart
+ * @param {Charts.CurveStyle} style - The style for curves in the chart.
  * 
- * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ * @return {Charts.LineChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the data source URL that will be used to pull data in from an external source, such as
- * Google Sheets. If a data source URL and a DataTable are provided, the data source URL is
- * ignored.
+ * Sets the data source URL that is used to pull data in from an external source, such as Google
+ * Sheets. If a data source URL and a DataTable are provided, the data source URL is ignored.
  * 
  * <p>For more information about querying data sources, check out the <a
  * href="/chart/interactive/docs/queries">Google Charts documentation</a>.
  * 
  * @function Charts.LineChartBuilder#setDataSourceUrl
  * 
- * @param {String} url - the data source URL, including any query parameters
+ * @param {String} url - The data source URL, including any query parameters.
  * 
- * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ * @return {Charts.LineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2190,10 +1709,10 @@
  * 
  * @function Charts.LineChartBuilder#setDataTable
  * 
- * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part of
- *     this call, so any further updates to the builder won't be reflected in the chart.
+ * @param {DataTableBuilder} tableBuilder - A data table builder. A new data table is created instantly as part of this
+ *     call, so any further updates to the builder won't be reflected in the chart.
  * 
- * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ * @return {Charts.LineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2204,9 +1723,9 @@
  * 
  * @function Charts.LineChartBuilder#setDataTable
  * 
- * @param {DataTableSource} table - the data table to use for the chart
+ * @param {DataTableSource} table - The data table to use for the chart.
  * 
- * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ * @return {Charts.LineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2215,10 +1734,10 @@
  * 
  * @function Charts.LineChartBuilder#setDataViewDefinition
  * 
- * @param {Charts.DataViewDefinition} dataViewDefinition - a data view definition object that defines the view that should be
- *     derived from the given data source for the chart drawing
+ * @param {Charts.DataViewDefinition} dataViewDefinition - A data view definition object that defines the view that should be
+ *     derived from the given data source for the chart drawing.
  * 
- * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ * @return {Charts.LineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2227,15 +1746,15 @@
  * 
  * @function Charts.LineChartBuilder#setDimensions
  * 
- * @param {IntegerNum} width - the width of the chart, in pixels
- * @param {IntegerNum} height - the height of the chart, in pixels
+ * @param {IntegerNum} width - The width of the chart, in pixels.
+ * @param {IntegerNum} height - The height of the chart, in pixels.
  * 
- * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ * @return {Charts.LineChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the position of the legend with respect to the chart. By default, there will be no legend.
+ * Sets the position of the legend with respect to the chart. By default, there is no legend.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the legend position to right.
@@ -2245,9 +1764,9 @@
  * 
  * @function Charts.LineChartBuilder#setLegendPosition
  * 
- * @param {Charts.Position} position - the position of the legend
+ * @param {Charts.Position} position - The position of the legend.
  * 
- * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ * @return {Charts.LineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2264,9 +1783,9 @@
  * 
  * @function Charts.LineChartBuilder#setLegendTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart legend.
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart legend.
  * 
- * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ * @return {Charts.LineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2283,16 +1802,16 @@
  * 
  * @function Charts.LineChartBuilder#setOption
  * 
- * @param {String} option - the option to set
- * @param {Object} value - the value to set
+ * @param {String} option - The option to set.
+ * @param {Object} value - The value to set.
  * 
- * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ * @return {Charts.LineChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the style for points in the line. By default, points will have no particular styles, and
- * only the line will be visible.
+ * Sets the style for points in the line. By default, points have no particular styles, and only
+ * the line is visible.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets large point style.
@@ -2302,29 +1821,29 @@
  * 
  * @function Charts.LineChartBuilder#setPointStyle
  * 
- * @param {Charts.PointStyle} style - the style to use for points in the line
+ * @param {Charts.PointStyle} style - The style to use for points in the line.
  * 
- * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ * @return {Charts.LineChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
  * Sets the range for the chart.
  * 
- * <p>If any data points fall outside the range, the range will be expanded to include those data
+ * <p>If any data points fall outside the range, the range is expanded to include those data
  * points.
  * 
  * @function Charts.LineChartBuilder#setRange
  * 
- * @param {Number} start - value for the lowest grid line of the range axis
- * @param {Number} end - value for the highest grid line of the range axis
+ * @param {Number} start - The value for the lowest grid line of the range axis.
+ * @param {Number} end - The value for the highest grid line of the range axis.
  * 
- * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ * @return {Charts.LineChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the title of the chart. The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title is displayed centered above the chart.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and title to &#39;My Line Chart&#39;.
@@ -2336,7 +1855,7 @@
  * 
  * @param {String} chartTitle - the chart title.
  * 
- * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ * @return {Charts.LineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2353,10 +1872,9 @@
  * 
  * @function Charts.LineChartBuilder#setTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
- *     created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ * @return {Charts.LineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2372,16 +1890,15 @@
  * 
  * @function Charts.LineChartBuilder#setXAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ * @return {Charts.LineChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
- * value labels.
+ * Adds a title to the horizontal axis. The title is centered and appears below the axis value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the X-axis title.
@@ -2391,9 +1908,9 @@
  * 
  * @function Charts.LineChartBuilder#setXAxisTitle
  * 
- * @param {String} title - the title for the X-axis
+ * @param {String} title - The title for the X-axis.
  * 
- * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ * @return {Charts.LineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2409,10 +1926,9 @@
  * 
  * @function Charts.LineChartBuilder#setXAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ * @return {Charts.LineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2428,16 +1944,15 @@
  * 
  * @function Charts.LineChartBuilder#setYAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ * @return {Charts.LineChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the vertical axis. The title will be centered and will appear to the left of
- * the value labels.
+ * Adds a title to the vertical axis. The title is centered and appears to the left of the value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the Y-axis title.
@@ -2447,9 +1962,9 @@
  * 
  * @function Charts.LineChartBuilder#setYAxisTitle
  * 
- * @param {String} title - the title for the Y-axis
+ * @param {String} title - The title for the Y-axis.
  * 
- * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ * @return {Charts.LineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2465,21 +1980,20 @@
  * 
  * @function Charts.LineChartBuilder#setYAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ * @return {Charts.LineChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
  * Makes the range axis into a logarithmic scale (requires all values to be positive). The range
- * axis will be the vertical axis for vertical charts (line, area, column, etc.) and the
- * horizontal axis for horizontal charts (bar, etc.)
+ * axis are the vertical axis for vertical charts (such as line, area, or column) and the
+ * horizontal axis for horizontal charts (such as bar).
  * 
  * @function Charts.LineChartBuilder#useLogScale
  * 
- * @return {Charts.LineChartBuilder} this builder, useful for chaining
+ * @return {Charts.LineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2504,11 +2018,11 @@
  * @typedef {Charts.MatchType} Charts.MatchType.PREFIX
  */
 /**
- * Returns the name of the MatchType to be used in the options JSON.
+ * Returns the name of the match type to be used in the options JSON.
  * 
  * @function Charts.MatchType#getName
  * 
- * @return {String} the name of the MatchType
+ * @return {String} The name of the type.
  */
 
 
@@ -2518,107 +2032,8 @@
  */
 
 /**
- * Builds a control.
- * 
- * @function Charts.NumberRangeFilterBuilder#build
- * 
- * @return {Charts.Control} a control object, that can be used as a UI element
- */
-
-
-/**
- * Sets the data table to use for the control using a DataTableBuilder.
- * 
- * <p>This is a convenience method for setting the data table without needing to call <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/number-range-filter-builder.html#build()'>build()</a></code>.
- * 
- * @function Charts.NumberRangeFilterBuilder#setDataTable
- * 
- * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part of
- *     this call, so any further updates to the builder won't be reflected in the control.
- * 
- * @return {Charts.NumberRangeFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets the control data table, which will be the control's underlying data model.
- * 
- * @function Charts.NumberRangeFilterBuilder#setDataTable
- * 
- * @param {DataTableSource} table - the data table to use for the control
- * 
- * @return {Charts.NumberRangeFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets the index of the data table column to filter on.
- * 
- * <p>The values of that column will determine whether or not each row should be filtered. It is
- * mandatory to set either this or the column label using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/number-range-filter-builder.html#setFilterColumnLabel(String)'>setFilterColumnLabel(columnLabel)</a></code>.
- * 
- * @function Charts.NumberRangeFilterBuilder#setFilterColumnIndex
- * 
- * @param {IntegerNum} columnIndex - the index of the data table column the filter should operate upon
- * 
- * @return {Charts.NumberRangeFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets the label of the data table column to filter on.
- * 
- * <p>The values of that column will determine whether or not each row should be filtered. It is
- * mandatory to set either this or a column index using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/number-range-filter-builder.html#setFilterColumnIndex(Integer)'>setFilterColumnIndex(columnIndex)</a></code>.
- * 
- * @function Charts.NumberRangeFilterBuilder#setFilterColumnLabel
- * 
- * @param {String} columnLabel - the label of the column to filter on
- * 
- * @return {Charts.NumberRangeFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets the label to display next to the slider.
- * 
- * <p>If unspecified, the label of the column the control operates on will be used.
- * 
- * @function Charts.NumberRangeFilterBuilder#setLabel
- * 
- * @param {String} label - the label to display next to the slider
- * 
- * @return {Charts.NumberRangeFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets a separator string appended to the label, to visually separate the label from the category
- * picker.
- * 
- * @function Charts.NumberRangeFilterBuilder#setLabelSeparator
- * 
- * @param {String} labelSeparator - the string to use to separate the label from the category picker
- * 
- * @return {Charts.NumberRangeFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets whether the label should display above (vertical stacking) or beside (horizontal stacking)
- * the input field.
- * 
- * @function Charts.NumberRangeFilterBuilder#setLabelStacking
- * 
- * @param {Charts.Orientation} orientation - the orientation of the stacking
- * 
- * @return {Charts.NumberRangeFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets the maximum allowed value for the range lower extent. If undefined, the value will be
- * inferred from the contents of the DataTable managed by the control.
+ * Sets the maximum allowed value for the range lower extent. If undefined, the value is inferred
+ * from the contents of the DataTable managed by the control.
  * 
  * <pre class="prettyprint"><code>
  * // Builds a number range filter and sets the maximum value to 100.
@@ -2630,15 +2045,15 @@
  * 
  * @function Charts.NumberRangeFilterBuilder#setMaxValue
  * 
- * @param {IntegerNum} maxValue - the maximum value of the slider
+ * @param {IntegerNum} maxValue - The maximum value of the slider.
  * 
- * @return {Charts.NumberRangeFilterBuilder} this builder, useful for chaining
+ * @return {Charts.NumberRangeFilterBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the minimum allowed value for the range lower extent. If undefined, the value will be
- * inferred from the contents of the DataTable managed by the control.
+ * Sets the minimum allowed value for the range lower extent. If undefined, the value is inferred
+ * from the contents of the DataTable managed by the control.
  * 
  * <pre class="prettyprint"><code>
  * // Builds a number range filter and sets the minimum value to 10.
@@ -2650,9 +2065,9 @@
  * 
  * @function Charts.NumberRangeFilterBuilder#setMinValue
  * 
- * @param {IntegerNum} minValue - the minimum value of the slider
+ * @param {IntegerNum} minValue - The minimum value of the slider.
  * 
- * @return {Charts.NumberRangeFilterBuilder} this builder, useful for chaining
+ * @return {Charts.NumberRangeFilterBuilder} This builder, useful for chaining.
  */
 
 
@@ -2669,9 +2084,9 @@
  * 
  * @function Charts.NumberRangeFilterBuilder#setOrientation
  * 
- * @param {Charts.Orientation} orientation - the slider orientation
+ * @param {Charts.Orientation} orientation - The slider orientation to set.
  * 
- * @return {Charts.NumberRangeFilterBuilder} this builder, useful for chaining
+ * @return {Charts.NumberRangeFilterBuilder} This builder, useful for chaining.
  */
 
 
@@ -2688,9 +2103,9 @@
  * 
  * @function Charts.NumberRangeFilterBuilder#setShowRangeValues
  * 
- * @param {Boolean} showRangeValues - if true, enables showing of labels next to the slider
+ * @param {Boolean} showRangeValues - If <code>true</code>, enables showing of labels next to the slider.
  * 
- * @return {Charts.NumberRangeFilterBuilder} this builder, useful for chaining
+ * @return {Charts.NumberRangeFilterBuilder} This builder, useful for chaining.
  */
 
 
@@ -2708,9 +2123,9 @@
  * 
  * @function Charts.NumberRangeFilterBuilder#setTicks
  * 
- * @param {IntegerNum} ticks - the number of ticks on the slider
+ * @param {IntegerNum} ticks - The number of ticks on the slider.
  * 
- * @return {Charts.NumberRangeFilterBuilder} this builder, useful for chaining
+ * @return {Charts.NumberRangeFilterBuilder} This builder, useful for chaining.
  */
 
 
@@ -2720,12 +2135,12 @@
  */
 
 /**
- * Horizontal orientation
+ * Horizontal orientation.
  * 
  * @typedef {Charts.Orientation} Charts.Orientation.HORIZONTAL
  */
 /**
- * Vertical orientation
+ * Vertical orientation.
  * 
  * @typedef {Charts.Orientation} Charts.Orientation.VERTICAL
  */
@@ -2735,22 +2150,22 @@
  */
 
 /**
- * Selected values will display in a single text line next to the value picker widget
+ * Selected values display in a single text line next to the value picker widget.
  * 
  * @typedef {Charts.PickerValuesLayout} Charts.PickerValuesLayout.ASIDE
  */
 /**
- * Selected values will display in a single text line below the widget
+ * Selected values display in a single text line below the widget.
  * 
  * @typedef {Charts.PickerValuesLayout} Charts.PickerValuesLayout.BELOW
  */
 /**
- * Selected values will be displayed in a column below the widget
+ * Selected values display in a column below the widget.
  * 
  * @typedef {Charts.PickerValuesLayout} Charts.PickerValuesLayout.BELOW_STACKED
  */
 /**
- * Similar to below, but entries that cannot fit in the picker will wrap to a new line
+ * Similar to below, but entries that cannot fit in the picker wrap to a new line.
  * 
  * @typedef {Charts.PickerValuesLayout} Charts.PickerValuesLayout.BELOW_WRAPPING
  */
@@ -2764,8 +2179,8 @@
  * 
  * @function Charts.PieChartBuilder#build
  * 
- * @return {Charts.Chart} a Chart object, which can be embedded into documents, UI elements, or used as a static
- *     image
+ * @return {Charts.Chart} A Chart object, which can be embedded into documents, UI elements, or used as a static
+ *     image.
  */
 
 
@@ -2783,7 +2198,7 @@
  * 
  * @function Charts.PieChartBuilder#reverseCategories
  * 
- * @return {Charts.PieChartBuilder} this builder, useful for chaining
+ * @return {Charts.PieChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2792,7 +2207,7 @@
  * 
  * @function Charts.PieChartBuilder#set3D
  * 
- * @return {Charts.PieChartBuilder} this builder, useful for chaining
+ * @return {Charts.PieChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2807,9 +2222,9 @@
  * 
  * @function Charts.PieChartBuilder#setBackgroundColor
  * 
- * @param {String} cssValue - the CSS value for the color (such as "blue" or "#00f")
+ * @param {String} cssValue - The CSS value for the color (such as <code>&quot;blue&quot;</code> or <code>&quot;#00f&quot;</code>).
  * 
- * @return {Charts.PieChartBuilder} this builder, useful for chaining
+ * @return {Charts.PieChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2825,26 +2240,25 @@
  * 
  * @function Charts.PieChartBuilder#setColors
  * 
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+ * @param {String[]} cssValues - An array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
  *     in the array represents the color of the nth line in the chart.
  * 
- * @return {Charts.PieChartBuilder} this builder, useful for chaining
+ * @return {Charts.PieChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the data source URL that will be used to pull data in from an external source, such as
- * Google Sheets. If a data source URL and a DataTable are provided, the data source URL is
- * ignored.
+ * Sets the data source URL that is used to pull data in from an external source, such as Google
+ * Sheets. If a data source URL and a DataTable are provided, the data source URL is ignored.
  * 
  * <p>For more information about querying data sources, check out the <a
  * href="/chart/interactive/docs/queries">Google Charts documentation</a>.
  * 
  * @function Charts.PieChartBuilder#setDataSourceUrl
  * 
- * @param {String} url - the data source URL, including any query parameters
+ * @param {String} url - The data source URL, including any query parameters.
  * 
- * @return {Charts.PieChartBuilder} this builder, useful for chaining
+ * @return {Charts.PieChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2854,10 +2268,10 @@
  * 
  * @function Charts.PieChartBuilder#setDataTable
  * 
- * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part of
- *     this call, so any further updates to the builder won't be reflected in the chart.
+ * @param {DataTableBuilder} tableBuilder - A data table builder. A new data table is created instantly as part of this
+ *     call, so any further updates to the builder won't be reflected in the chart.
  * 
- * @return {Charts.PieChartBuilder} this builder, useful for chaining
+ * @return {Charts.PieChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2868,9 +2282,9 @@
  * 
  * @function Charts.PieChartBuilder#setDataTable
  * 
- * @param {DataTableSource} table - the data table to use for the chart
+ * @param {DataTableSource} table - The data table to use for the chart.
  * 
- * @return {Charts.PieChartBuilder} this builder, useful for chaining
+ * @return {Charts.PieChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2879,10 +2293,10 @@
  * 
  * @function Charts.PieChartBuilder#setDataViewDefinition
  * 
- * @param {Charts.DataViewDefinition} dataViewDefinition - a data view definition object that defines the view that should be
- *     derived from the given data source for the chart drawing
+ * @param {Charts.DataViewDefinition} dataViewDefinition - A data view definition object that defines the view that should be
+ *     derived from the given data source for the chart drawing.
  * 
- * @return {Charts.PieChartBuilder} this builder, useful for chaining
+ * @return {Charts.PieChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2891,15 +2305,15 @@
  * 
  * @function Charts.PieChartBuilder#setDimensions
  * 
- * @param {IntegerNum} width - the width of the chart, in pixels
- * @param {IntegerNum} height - the height of the chart, in pixels
+ * @param {IntegerNum} width - The width of the chart, in pixels.
+ * @param {IntegerNum} height - The height of the chart, in pixels.
  * 
- * @return {Charts.PieChartBuilder} this builder, useful for chaining
+ * @return {Charts.PieChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the position of the legend with respect to the chart. By default, there will be no legend.
+ * Sets the position of the legend with respect to the chart. By default, there is no legend.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the legend position to right.
@@ -2909,9 +2323,9 @@
  * 
  * @function Charts.PieChartBuilder#setLegendPosition
  * 
- * @param {Charts.Position} position - the position of the legend
+ * @param {Charts.Position} position - The position of the legend.
  * 
- * @return {Charts.PieChartBuilder} this builder, useful for chaining
+ * @return {Charts.PieChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2928,9 +2342,9 @@
  * 
  * @function Charts.PieChartBuilder#setLegendTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart legend.
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart legend.
  * 
- * @return {Charts.PieChartBuilder} this builder, useful for chaining
+ * @return {Charts.PieChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2947,15 +2361,15 @@
  * 
  * @function Charts.PieChartBuilder#setOption
  * 
- * @param {String} option - the option to set
- * @param {Object} value - the value to set
+ * @param {String} option - The option to set.
+ * @param {Object} value - The value to set.
  * 
- * @return {Charts.PieChartBuilder} this builder, useful for chaining
+ * @return {Charts.PieChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the title of the chart. The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title is displayed centered above the chart.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and title to &#39;My Line Chart&#39;.
@@ -2967,7 +2381,7 @@
  * 
  * @param {String} chartTitle - the chart title.
  * 
- * @return {Charts.PieChartBuilder} this builder, useful for chaining
+ * @return {Charts.PieChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2984,10 +2398,9 @@
  * 
  * @function Charts.PieChartBuilder#setTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
- *     created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.PieChartBuilder} this builder, useful for chaining
+ * @return {Charts.PieChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -2997,27 +2410,27 @@
  */
 
 /**
- * Use largest sized line points *
+ * Use largest sized line points.
  * 
  * @typedef {Charts.PointStyle} Charts.PointStyle.HUGE
  */
 /**
- * Use large sized line points *
+ * Use large sized line points.
  * 
  * @typedef {Charts.PointStyle} Charts.PointStyle.LARGE
  */
 /**
- * Use medium sized line points *
+ * Use medium sized line points.
  * 
  * @typedef {Charts.PointStyle} Charts.PointStyle.MEDIUM
  */
 /**
- * Do not display line points *
+ * Do not display line points.
  * 
  * @typedef {Charts.PointStyle} Charts.PointStyle.NONE
  */
 /**
- * Use tiny line points *
+ * Use tiny line points.
  * 
  * @typedef {Charts.PointStyle} Charts.PointStyle.TINY
  */
@@ -3056,8 +2469,8 @@
  * 
  * @function Charts.ScatterChartBuilder#build
  * 
- * @return {Charts.Chart} a Chart object, which can be embedded into documents, UI elements, or used as a static
- *     image
+ * @return {Charts.Chart} A Chart object, which can be embedded into documents, UI elements, or used as a static
+ *     image.
  */
 
 
@@ -3072,9 +2485,9 @@
  * 
  * @function Charts.ScatterChartBuilder#setBackgroundColor
  * 
- * @param {String} cssValue - the CSS value for the color (such as "blue" or "#00f")
+ * @param {String} cssValue - The CSS value for the color (such as <code>&quot;blue&quot;</code> or <code>&quot;#00f&quot;</code>).
  * 
- * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ * @return {Charts.ScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3090,26 +2503,25 @@
  * 
  * @function Charts.ScatterChartBuilder#setColors
  * 
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+ * @param {String[]} cssValues - An array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
  *     in the array represents the color of the nth line in the chart.
  * 
- * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ * @return {Charts.ScatterChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the data source URL that will be used to pull data in from an external source, such as
- * Google Sheets. If a data source URL and a DataTable are provided, the data source URL is
- * ignored.
+ * Sets the data source URL that is used to pull data in from an external source, such as Google
+ * Sheets. If a data source URL and a DataTable are provided, the data source URL is ignored.
  * 
  * <p>For more information about querying data sources, check out the <a
  * href="/chart/interactive/docs/queries">Google Charts documentation</a>.
  * 
  * @function Charts.ScatterChartBuilder#setDataSourceUrl
  * 
- * @param {String} url - the data source URL, including any query parameters
+ * @param {String} url - The data source URL, including any query parameters.
  * 
- * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ * @return {Charts.ScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3119,10 +2531,10 @@
  * 
  * @function Charts.ScatterChartBuilder#setDataTable
  * 
- * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part of
- *     this call, so any further updates to the builder won't be reflected in the chart.
+ * @param {DataTableBuilder} tableBuilder - A data table builder. A new data table is created instantly as part of this
+ *     call, so any further updates to the builder won't be reflected in the chart.
  * 
- * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ * @return {Charts.ScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3133,9 +2545,9 @@
  * 
  * @function Charts.ScatterChartBuilder#setDataTable
  * 
- * @param {DataTableSource} table - the data table to use for the chart
+ * @param {DataTableSource} table - The data table to use for the chart.
  * 
- * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ * @return {Charts.ScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3144,10 +2556,10 @@
  * 
  * @function Charts.ScatterChartBuilder#setDataViewDefinition
  * 
- * @param {Charts.DataViewDefinition} dataViewDefinition - a data view definition object that defines the view that should be
- *     derived from the given data source for the chart drawing
+ * @param {Charts.DataViewDefinition} dataViewDefinition - A data view definition object that defines the view that should be
+ *     derived from the given data source for the chart drawing.
  * 
- * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ * @return {Charts.ScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3156,15 +2568,15 @@
  * 
  * @function Charts.ScatterChartBuilder#setDimensions
  * 
- * @param {IntegerNum} width - the width of the chart, in pixels
- * @param {IntegerNum} height - the height of the chart, in pixels
+ * @param {IntegerNum} width - The width of the chart, in pixels.
+ * @param {IntegerNum} height - The height of the chart, in pixels.
  * 
- * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ * @return {Charts.ScatterChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the position of the legend with respect to the chart. By default, there will be no legend.
+ * Sets the position of the legend with respect to the chart. By default, there is no legend.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the legend position to right.
@@ -3174,9 +2586,9 @@
  * 
  * @function Charts.ScatterChartBuilder#setLegendPosition
  * 
- * @param {Charts.Position} position - the position of the legend
+ * @param {Charts.Position} position - The position of the legend.
  * 
- * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ * @return {Charts.ScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3193,9 +2605,9 @@
  * 
  * @function Charts.ScatterChartBuilder#setLegendTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart legend.
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart legend.
  * 
- * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ * @return {Charts.ScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3212,16 +2624,16 @@
  * 
  * @function Charts.ScatterChartBuilder#setOption
  * 
- * @param {String} option - the option to set
- * @param {Object} value - the value to set
+ * @param {String} option - The option to set.
+ * @param {Object} value - The value to set.
  * 
- * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ * @return {Charts.ScatterChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the style for points in the line. By default, points will have no particular styles, and
- * only the line will be visible.
+ * Sets the style for points in the line. By default, points have no particular styles, and only
+ * the line is visible.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets large point style.
@@ -3231,14 +2643,14 @@
  * 
  * @function Charts.ScatterChartBuilder#setPointStyle
  * 
- * @param {Charts.PointStyle} style - the style to use for points in the line
+ * @param {Charts.PointStyle} style - The style to use for points in the line.
  * 
- * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ * @return {Charts.ScatterChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the title of the chart. The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title is displayed centered above the chart.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and title to &#39;My Line Chart&#39;.
@@ -3250,7 +2662,7 @@
  * 
  * @param {String} chartTitle - the chart title.
  * 
- * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ * @return {Charts.ScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3267,10 +2679,9 @@
  * 
  * @function Charts.ScatterChartBuilder#setTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
- *     created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ * @return {Charts.ScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3279,14 +2690,14 @@
  * 
  * @function Charts.ScatterChartBuilder#setXAxisLogScale
  * 
- * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ * @return {Charts.ScatterChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
  * Sets the range for the horizontal axis of the chart.
  * 
- * <p>If any data points fall outside the range, the range will be expanded to include those data
+ * <p>If any data points fall outside the range, the range is expanded to include those data
  * points.
  * 
  * <pre class="prettyprint"><code>
@@ -3297,10 +2708,10 @@
  * 
  * @function Charts.ScatterChartBuilder#setXAxisRange
  * 
- * @param {Number} start - value for the lowest grid line of the horizontal axis
- * @param {Number} end - value for the highest grid line of the horizontal axis
+ * @param {Number} start - The value for the lowest grid line of the horizontal axis.
+ * @param {Number} end - The value for the highest grid line of the horizontal axis.
  * 
- * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ * @return {Charts.ScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3316,16 +2727,15 @@
  * 
  * @function Charts.ScatterChartBuilder#setXAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ * @return {Charts.ScatterChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
- * value labels.
+ * Adds a title to the horizontal axis. The title is centered and appears below the axis value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the X-axis title.
@@ -3335,9 +2745,9 @@
  * 
  * @function Charts.ScatterChartBuilder#setXAxisTitle
  * 
- * @param {String} title - the title for the X-axis
+ * @param {String} title - The title for the X-axis.
  * 
- * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ * @return {Charts.ScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3353,10 +2763,9 @@
  * 
  * @function Charts.ScatterChartBuilder#setXAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ * @return {Charts.ScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3365,13 +2774,13 @@
  * 
  * @function Charts.ScatterChartBuilder#setYAxisLogScale
  * 
- * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ * @return {Charts.ScatterChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
  * Sets the range for the vertical axis of the chart. If any data points fall outside the range,
- * the range will be expanded to include those data points.
+ * the range is expanded to include those data points.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a scatter chart builder and sets the Y-axis range to be 0 to 100.
@@ -3381,10 +2790,10 @@
  * 
  * @function Charts.ScatterChartBuilder#setYAxisRange
  * 
- * @param {Number} start - value for the lowest grid line of the vertical axis
- * @param {Number} end - value for the highest grid line of the vertical axis
+ * @param {Number} start - The value for the lowest grid line of the vertical axis.
+ * @param {Number} end - The value for the highest grid line of the vertical axis.
  * 
- * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ * @return {Charts.ScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3400,16 +2809,15 @@
  * 
  * @function Charts.ScatterChartBuilder#setYAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ * @return {Charts.ScatterChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the vertical axis. The title will be centered and will appear to the left of
- * the value labels.
+ * Adds a title to the vertical axis. The title is centered and appears to the left of the value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the Y-axis title.
@@ -3419,9 +2827,9 @@
  * 
  * @function Charts.ScatterChartBuilder#setYAxisTitle
  * 
- * @param {String} title - the title for the Y-axis
+ * @param {String} title - The title for the Y-axis.
  * 
- * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ * @return {Charts.ScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3437,10 +2845,9 @@
  * 
  * @function Charts.ScatterChartBuilder#setYAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {Charts.ScatterChartBuilder} this builder, useful for chaining
+ * @return {Charts.ScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3448,15 +2855,6 @@
 /**
  * @class Charts.StringFilterBuilder
  */
-
-/**
- * Builds a control.
- * 
- * @function Charts.StringFilterBuilder#build
- * 
- * @return {Charts.Control} a control object, that can be used as a UI element
- */
-
 
 /**
  * Sets whether matching should be case sensitive or not.
@@ -3471,99 +2869,9 @@
  * 
  * @function Charts.StringFilterBuilder#setCaseSensitive
  * 
- * @param {Boolean} caseSensitive - if true, enables string matching case sensitivity
+ * @param {Boolean} caseSensitive - If <code>true</code>, enables string matching case sensitivity.
  * 
- * @return {Charts.StringFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets the data table to use for the control using a DataTableBuilder.
- * 
- * <p>This is a convenience method for setting the data table without needing to call <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/string-filter-builder.html#build()'>build()</a></code>.
- * 
- * @function Charts.StringFilterBuilder#setDataTable
- * 
- * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part of
- *     this call, so any further updates to the builder won't be reflected in the control.
- * 
- * @return {Charts.StringFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets the control data table, which will be the control's underlying data model.
- * 
- * @function Charts.StringFilterBuilder#setDataTable
- * 
- * @param {DataTableSource} table - the data table to use for the control
- * 
- * @return {Charts.StringFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets the index of the data table column to filter on.
- * 
- * <p>The values of that column will determine whether or not each row should be filtered. It is
- * mandatory to set either this or the column label using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/string-filter-builder.html#setFilterColumnLabel(String)'>setFilterColumnLabel(columnLabel)</a></code>.
- * 
- * @function Charts.StringFilterBuilder#setFilterColumnIndex
- * 
- * @param {IntegerNum} columnIndex - the index of the data table column the filter should operate upon
- * 
- * @return {Charts.StringFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets the label of the data table column to filter on.
- * 
- * <p>The values of that column will determine whether or not each row should be filtered. It is
- * mandatory to set either this or a column index using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/charts/string-filter-builder.html#setFilterColumnIndex(Integer)'>setFilterColumnIndex(columnIndex)</a></code>.
- * 
- * @function Charts.StringFilterBuilder#setFilterColumnLabel
- * 
- * @param {String} columnLabel - the label of the column to filter on
- * 
- * @return {Charts.StringFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets the label to display next to the slider.
- * 
- * <p>If unspecified, the label of the column the control operates on will be used.
- * 
- * @function Charts.StringFilterBuilder#setLabel
- * 
- * @param {String} label - the label to display next to the slider
- * 
- * @return {Charts.StringFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets a separator string appended to the label, to visually separate the label from the category
- * picker.
- * 
- * @function Charts.StringFilterBuilder#setLabelSeparator
- * 
- * @param {String} labelSeparator - the string to use to separate the label from the category picker
- * 
- * @return {Charts.StringFilterBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Sets whether the label should display above (vertical stacking) or beside (horizontal stacking)
- * the input field.
- * 
- * @function Charts.StringFilterBuilder#setLabelStacking
- * 
- * @param {Charts.Orientation} orientation - the orientation of the stacking
- * 
- * @return {Charts.StringFilterBuilder} this builder, useful for chaining
+ * @return {Charts.StringFilterBuilder} This builder, useful for chaining.
  */
 
 
@@ -3582,9 +2890,9 @@
  * 
  * @function Charts.StringFilterBuilder#setMatchType
  * 
- * @param {Charts.MatchType} matchType - the string matching type
+ * @param {Charts.MatchType} matchType - The string matching type.
  * 
- * @return {Charts.StringFilterBuilder} this builder, useful for chaining
+ * @return {Charts.StringFilterBuilder} This builder, useful for chaining.
  */
 
 
@@ -3603,10 +2911,10 @@
  * 
  * @function Charts.StringFilterBuilder#setRealtimeTrigger
  * 
- * @param {Boolean} realtimeTrigger - if true, sets events to be triggered at real time (when a key is
- *     pressed)
+ * @param {Boolean} realtimeTrigger - If <code>true</code>, sets events to be triggered at real time (when a key is
+ *     pressed).
  * 
- * @return {Charts.StringFilterBuilder} this builder, useful for chaining
+ * @return {Charts.StringFilterBuilder} This builder, useful for chaining.
  */
 
 
@@ -3620,8 +2928,8 @@
  * 
  * @function Charts.TableChartBuilder#build
  * 
- * @return {Charts.Chart} a Chart object, which can be embedded into documents, UI elements, or used as a static
- *     image
+ * @return {Charts.Chart} A Chart object, which can be embedded into documents, UI elements, or used as a static
+ *     image.
  */
 
 
@@ -3632,9 +2940,9 @@
  * 
  * @function Charts.TableChartBuilder#enablePaging
  * 
- * @param {Boolean} enablePaging - true if paging should be enabled, false otherwise
+ * @param {Boolean} enablePaging - <code>true</code> if paging should be enabled, <code>false</code> otherwise.
  * 
- * @return {Charts.TableChartBuilder} this builder, useful for chaining
+ * @return {Charts.TableChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3651,9 +2959,9 @@
  * 
  * @function Charts.TableChartBuilder#enablePaging
  * 
- * @param {IntegerNum} pageSize - the number of rows in each page of the table
+ * @param {IntegerNum} pageSize - The number of rows in each page of the table.
  * 
- * @return {Charts.TableChartBuilder} this builder, useful for chaining
+ * @return {Charts.TableChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3672,10 +2980,10 @@
  * 
  * @function Charts.TableChartBuilder#enablePaging
  * 
- * @param {IntegerNum} pageSize - the number of rows in each page of the table
- * @param {IntegerNum} startPage - the first table page to display (page numbers are zero based)
+ * @param {IntegerNum} pageSize - The number of rows in each page of the table.
+ * @param {IntegerNum} startPage - The first table page to display (page numbers are zero-based).
  * 
- * @return {Charts.TableChartBuilder} this builder, useful for chaining
+ * @return {Charts.TableChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3686,45 +2994,45 @@
  * 
  * <p>This does not affect the column index in the underlying data, only the order of display.
  * Full bi-directional (BiDi) language display is not supported by the table visualization even
- * with this option. This option will be ignored if you enable paging (using the page option), or
- * if the table has scroll bars because you have specified height and width options smaller than
- * the required table size. The default behavior is RTL support disabled.
+ * with this option. This option is ignored if you enable paging (using the page option), or if
+ * the table has scroll bars because you have specified height and width options smaller than the
+ * required table size. The default behavior is RTL support disabled.
  * 
  * @function Charts.TableChartBuilder#enableRtlTable
  * 
- * @param {Boolean} rtlEnabled - true if right-to-left support should be enabled, false otherwise
+ * @param {Boolean} rtlEnabled - <code>true</code> if right-to-left support should be enabled, <code>false</code>
+ *     otherwise.
  * 
- * @return {Charts.TableChartBuilder} this builder, useful for chaining
+ * @return {Charts.TableChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
  * Sets whether to sort columns when the user clicks a column heading.
  * 
- * <p>If sorting is enabled, when users click on the column header the rows will be automatically
+ * <p>If sorting is enabled, when users click on the column header the rows are automatically
  * sorted. The default behavior is sorting enabled.
  * 
  * @function Charts.TableChartBuilder#enableSorting
  * 
- * @param {Boolean} enableSorting - true if to enable sorting by clicking on column headers, false otherwise
+ * @param {Boolean} enableSorting - <code>true</code> to enable sorting by clicking on column headers, <code>false</code> otherwise.
  * 
- * @return {Charts.TableChartBuilder} this builder, useful for chaining
+ * @return {Charts.TableChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the data source URL that will be used to pull data in from an external source, such as
- * Google Sheets. If a data source URL and a DataTable are provided, the data source URL is
- * ignored.
+ * Sets the data source URL that is used to pull data in from an external source, such as Google
+ * Sheets. If a data source URL and a DataTable are provided, the data source URL is ignored.
  * 
  * <p>For more information about querying data sources, check out the <a
  * href="/chart/interactive/docs/queries">Google Charts documentation</a>.
  * 
  * @function Charts.TableChartBuilder#setDataSourceUrl
  * 
- * @param {String} url - the data source URL, including any query parameters
+ * @param {String} url - The data source URL, including any query parameters.
  * 
- * @return {Charts.TableChartBuilder} this builder, useful for chaining
+ * @return {Charts.TableChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3734,10 +3042,10 @@
  * 
  * @function Charts.TableChartBuilder#setDataTable
  * 
- * @param {DataTableBuilder} tableBuilder - a data table builder. A new data table will be created instantly as part of
- *     this call, so any further updates to the builder won't be reflected in the chart.
+ * @param {DataTableBuilder} tableBuilder - A data table builder. A new data table is created instantly as part of this
+ *     call, so any further updates to the builder won't be reflected in the chart.
  * 
- * @return {Charts.TableChartBuilder} this builder, useful for chaining
+ * @return {Charts.TableChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3748,9 +3056,9 @@
  * 
  * @function Charts.TableChartBuilder#setDataTable
  * 
- * @param {DataTableSource} table - the data table to use for the chart
+ * @param {DataTableSource} table - The data table to use for the chart.
  * 
- * @return {Charts.TableChartBuilder} this builder, useful for chaining
+ * @return {Charts.TableChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3759,10 +3067,10 @@
  * 
  * @function Charts.TableChartBuilder#setDataViewDefinition
  * 
- * @param {Charts.DataViewDefinition} dataViewDefinition - a data view definition object that defines the view that should be
- *     derived from the given data source for the chart drawing
+ * @param {Charts.DataViewDefinition} dataViewDefinition - A data view definition object that defines the view that should be
+ *     derived from the given data source for the chart drawing.
  * 
- * @return {Charts.TableChartBuilder} this builder, useful for chaining
+ * @return {Charts.TableChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3771,10 +3079,10 @@
  * 
  * @function Charts.TableChartBuilder#setDimensions
  * 
- * @param {IntegerNum} width - the width of the chart, in pixels
- * @param {IntegerNum} height - the height of the chart, in pixels
+ * @param {IntegerNum} width - The width of the chart, in pixels.
+ * @param {IntegerNum} height - The height of the chart, in pixels.
  * 
- * @return {Charts.TableChartBuilder} this builder, useful for chaining
+ * @return {Charts.TableChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3791,9 +3099,9 @@
  * 
  * @function Charts.TableChartBuilder#setFirstRowNumber
  * 
- * @param {IntegerNum} number - the row number for the first row in the data table
+ * @param {IntegerNum} number - The row number for the first row in the data table.
  * 
- * @return {Charts.TableChartBuilder} this builder, useful for chaining
+ * @return {Charts.TableChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3801,8 +3109,7 @@
  * Sets the index of the column according to which the table should be initially sorted
  * (ascending).
  * 
- * <p>The column will be sorted in ascending order and will be marked with a small arrow
- * indicating that.
+ * <p>The column os sorted in ascending order and is marked with a small arrow indicating that.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a table chart builder and sorts it by the second column (ascending).
@@ -3812,9 +3119,9 @@
  * 
  * @function Charts.TableChartBuilder#setInitialSortingAscending
  * 
- * @param {IntegerNum} column - the number of the column according to which the table should be initially sorted
+ * @param {IntegerNum} column - The number of the column according to which the table should be initially sorted.
  * 
- * @return {Charts.TableChartBuilder} this builder, useful for chaining
+ * @return {Charts.TableChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3822,8 +3129,7 @@
  * Sets the index of the column according to which the table should be initially sorted
  * (descending).
  * 
- * <p>The column will be sorted in descending order and be marked with a a small arrow indicating
- * that.
+ * <p>The column os sorted in descending order and is marked with a a small arrow indicating that.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a table chart builder and sorts it by the second column (descending).
@@ -3833,9 +3139,9 @@
  * 
  * @function Charts.TableChartBuilder#setInitialSortingDescending
  * 
- * @param {IntegerNum} column - the number of the column according to which the table should be initially sorted
+ * @param {IntegerNum} column - The number of the column according to which the table should be initially sorted.
  * 
- * @return {Charts.TableChartBuilder} this builder, useful for chaining
+ * @return {Charts.TableChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3846,16 +3152,16 @@
  * <pre class="prettyprint"><code>
  * // Build a table chart which renders HTML.
  * var builder = Charts.newTableChart();
- * builder.setOption(&#39;allowHtml&#39;, true);
+ * builder.setOption(&#39;allowHtml&#39;, {@code true});
  * var chart = builder.build();
  * </code></pre>
  * 
  * @function Charts.TableChartBuilder#setOption
  * 
- * @param {String} option - the option to set
- * @param {Object} value - the value to set
+ * @param {String} option - The option to set.
+ * @param {Object} value - The value to set.
  * 
- * @return {Charts.TableChartBuilder} this builder, useful for chaining
+ * @return {Charts.TableChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3866,23 +3172,23 @@
  * 
  * @function Charts.TableChartBuilder#showRowNumberColumn
  * 
- * @param {Boolean} showRowNumber - true if the first column of the table should show the row number, false
- *     otherwise
+ * @param {Boolean} showRowNumber - <code>true</code> if the first column of the table should show the row number,
+ *     <code>false</code> otherwise.
  * 
- * @return {Charts.TableChartBuilder} this builder, useful for chaining
+ * @return {Charts.TableChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets whether alternating color style will be assigned to odd and even rows of a table chart.
+ * Sets whether alternating color style is assigned to odd and even rows of a table chart.
  * 
  * <p>The default behavior is the rows having alternating color style.
  * 
  * @function Charts.TableChartBuilder#useAlternatingRowStyle
  * 
- * @param {Boolean} alternate - true if color styles should be alternating, false otherwise
+ * @param {Boolean} alternate - <code>true</code> if color styles should be alternating, <code>false</code> otherwise.
  * 
- * @return {Charts.TableChartBuilder} this builder, useful for chaining
+ * @return {Charts.TableChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -3902,7 +3208,7 @@
  * 
  * @function Charts.TextStyle#getColor
  * 
- * @return {String} the CSS value for the color (such as "blue" or "#00f")
+ * @return {String} The CSS value for the color (such as <code>&quot;blue&quot;</code> or <code>&quot;#00f&quot;</code>).
  */
 
 
@@ -3917,7 +3223,7 @@
  * 
  * @function Charts.TextStyle#getFontName
  * 
- * @return {String} the font name
+ * @return {String} The font name.
  */
 
 
@@ -3932,7 +3238,7 @@
  * 
  * @function Charts.TextStyle#getFontSize
  * 
- * @return {Number} the font size in pixels
+ * @return {Number} The font size in pixels.
  */
 
 
@@ -3952,7 +3258,7 @@
  * 
  * @function Charts.TextStyleBuilder#build
  * 
- * @return {Charts.TextStyle} a TextStyle object built using this builder
+ * @return {Charts.TextStyle} A text style object built using this builder.
  */
 
 
@@ -3967,9 +3273,9 @@
  * 
  * @function Charts.TextStyleBuilder#setColor
  * 
- * @param {String} cssValue - the CSS value for the color (such as "blue" or "#00f").
+ * @param {String} cssValue - The CSS value for the color (such as <code>&quot;blue&quot;</code> or <code>&quot;#00f&quot;</code>).
  * 
- * @return {Charts.TextStyleBuilder} this builder, useful for chaining.
+ * @return {Charts.TextStyleBuilder} This builder, useful for chaining.
  */
 
 
@@ -3984,9 +3290,9 @@
  * 
  * @function Charts.TextStyleBuilder#setFontName
  * 
- * @param {String} fontName - the font name to use for the text style
+ * @param {String} fontName - The font name to use for the text style.
  * 
- * @return {Charts.TextStyleBuilder} this builder, useful for chaining.
+ * @return {Charts.TextStyleBuilder} This builder, useful for chaining.
  */
 
 
@@ -4001,9 +3307,9 @@
  * 
  * @function Charts.TextStyleBuilder#setFontSize
  * 
- * @param {Number} fontSize - the font size in pixels to use for the text style
+ * @param {Number} fontSize - The font size in pixels to use for the text style.
  * 
- * @return {Charts.TextStyleBuilder} this builder, useful for chaining.
+ * @return {Charts.TextStyleBuilder} This builder, useful for chaining.
  */
 
 

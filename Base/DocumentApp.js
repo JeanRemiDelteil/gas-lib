@@ -2102,14 +2102,13 @@
  * 
  * @function DocumentApp.Document#getCursor
  * 
- * @return {DocumentApp.Position} a representation of the user's cursor, or <code>null</code> if the user does not have a
- *     cursor placed in the document or if the script is not bound to the document
+ * @return {DocumentApp.Position} A representation of the user's cursor, or <code>null</code> if the user does not have a
+ *     cursor placed in the document or if the script is not bound to the document.
  */
 
 
 /**
- * Gets the list of editors for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>. If the user who executes the script does
- * not have edit access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>, this method throws an exception.
+ * Gets the list of editors for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>.
  * 
  * @function DocumentApp.Document#getEditors
  * 
@@ -2153,6 +2152,16 @@
  * @function DocumentApp.Document#getId
  * 
  * @return {String} the document's ID
+ */
+
+
+/**
+ * Gets the document's language code. This is the language shown in the document editor's <b>File
+ * > Language</b>, which may not be the actual language that the document contains.
+ * 
+ * @function DocumentApp.Document#getLanguage
+ * 
+ * @return {String} The document language, or <code>null</code> if not defined.
  */
 
 
@@ -2213,21 +2222,32 @@
  * user who is running the script, and only if the script is <a
  * href="/apps-script/scripts_containers">bound</a> to the document.
  * 
- * <pre class="prettyprint">
+ * <pre class="prettyprint"><code>
  * // Display a dialog box that tells the user how many elements are included in the selection.
  * var selection = DocumentApp.getActiveDocument().getSelection();
  * if (selection) {
  *   var elements = selection.getRangeElements();
- *   DocumentApp.getUi().alert('Number of selected elements: ' + elements.length);
+ *   DocumentApp.getUi().alert(&#39;Number of selected elements: &#39; + elements.length);
  * } else {
- *   DocumentApp.getUi().alert('Nothing is selected.');
+ *   DocumentApp.getUi().alert(&#39;Nothing is selected.&#39;);
  * }
- * </pre>
+ * </code></pre>
  * 
  * @function DocumentApp.Document#getSelection
  * 
- * @return {DocumentApp.Range} a representation of the user's selection, or <code>null</code> if the user does not have
- *     anything selected in the document or if the script is not bound to the document
+ * @return {DocumentApp.Range} A representation of the user's selection, or <code>null</code> if the user does not have
+ *     anything selected in the document, if only the end of a paragraph is selected, if only the
+ *     end of a paragraph and a new line are selected, or if the script is not bound to the
+ *     document.
+ */
+
+
+/**
+ * Gets all language codes that are supported in Google Docs files.
+ * 
+ * @function DocumentApp.Document#getSupportedLanguageCodes
+ * 
+ * @return {String[]} An array of language codes.
  */
 
 
@@ -2248,8 +2268,7 @@
 
 
 /**
- * Gets the list of viewers and commenters for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>. If the user who executes
- * the script does not have edit access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>, this method throws an exception.
+ * Gets the list of viewers and commenters for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>.
  * 
  * @function DocumentApp.Document#getViewers
  * 
@@ -2302,10 +2321,12 @@
 
 
 /**
- * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>. This method does not
+ * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>. This method doesn't
  * block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code> if they belong to a class of users who have
  * general access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code> is shared with the user's entire
- * domain.
+ * domain, or if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of viewers.
  * 
  * @function DocumentApp.Document#removeEditor
  * 
@@ -2316,10 +2337,12 @@
 
 
 /**
- * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>. This method does not
+ * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>. This method doesn't
  * block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code> if they belong to a class of users who have
  * general access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code> is shared with the user's entire
- * domain.
+ * domain, or if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of viewers.
  * 
  * @function DocumentApp.Document#removeEditor
  * 
@@ -2331,10 +2354,12 @@
 
 /**
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>. This
- * method has no effect if the user is an editor, not a viewer or commenter. This method also does
- * not block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code> if they belong to a class of users who
+ * method has no effect if the user is an editor, not a viewer or commenter. This method also
+ * doesn't block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code> if they belong to a class of users who
  * have general access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code> is shared with the user's
- * entire domain.
+ * entire domain, or if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of editors.
  * 
  * @function DocumentApp.Document#removeViewer
  * 
@@ -2346,9 +2371,12 @@
 
 /**
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code>. This
- * method has no effect if the user is an editor, not a viewer. This method also does not block
+ * method has no effect if the user is an editor, not a viewer. This method also doesn't block
  * users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code> if they belong to a class of users who have general
- * access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code> is shared with the user's entire domain.
+ * access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code> is shared with the user's entire domain, or
+ * if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html'>Document</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of editors.
  * 
  * @function DocumentApp.Document#removeViewer
  * 
@@ -2391,6 +2419,18 @@
  * @param {DocumentApp.Position} position - the new cursor location
  * 
  * @return {DocumentApp.Document} this <code>Document</code>, for chaining
+ */
+
+
+/**
+ * Sets the document's language code. This is the language shown in the document editor's <b>File
+ * > Language</b>, which may not be the actual language that the document contains. Use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/document/document.html#getSupportedLanguageCodes()'>getSupportedLanguageCodes()</a></code> to get all the valid language codes.
+ * 
+ * @function DocumentApp.Document#setLanguage
+ * 
+ * @param {String} languageCode - The language code.
+ * 
+ * @return {DocumentApp.Document} This <code>Document</code>, for chaining.
  */
 
 
@@ -7149,6 +7189,10 @@
  * extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
  * "ShoppingList.12.25.pdf".
  * 
+ * <p>To view the daily quotas for conversions, see <a
+ * href="https://developers.google.com/apps-script/guides/services/quotas">Quotas for Google
+ * Services</a>. Newly created G Suite domains might be temporarily subject to stricter quotas.
+ * 
  * @function DocumentApp.InlineImage#getAs
  * 
  * @param {String} contentType - The MIME type to convert to. For most blobs, <code>&#39;application/pdf&#39;</code> is
@@ -9577,6 +9621,10 @@
  * assumes that the part of the filename that follows the last period (if any) is an existing
  * extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
  * "ShoppingList.12.25.pdf".
+ * 
+ * <p>To view the daily quotas for conversions, see <a
+ * href="https://developers.google.com/apps-script/guides/services/quotas">Quotas for Google
+ * Services</a>. Newly created G Suite domains might be temporarily subject to stricter quotas.
  * 
  * @function DocumentApp.PositionedImage#getAs
  * 
@@ -12082,7 +12130,7 @@
  * 
  * @function DocumentApp.TableRow#getMinimumHeight
  * 
- * @return {IntegerNum} the minimum height, in points
+ * @return {Number} the minimum height, in points
  */
 
 
@@ -12389,7 +12437,7 @@
  * 
  * @function DocumentApp.TableRow#setMinimumHeight
  * 
- * @param {IntegerNum} minHeight - the minimum height, in points
+ * @param {Number} minHeight - the minimum height, in points
  * 
  * @return {DocumentApp.TableRow} the current element
  */
@@ -12418,7 +12466,7 @@
  */
 
 /**
- * Appends the specified text at the given character offset.
+ * Adds the specified text to the end of this text region.
  * 
  * @function DocumentApp.Text#appendText
  * 
@@ -12612,7 +12660,7 @@
  * 
  * @function DocumentApp.Text#getFontSize
  * 
- * @return {IntegerNum} the font size, or null if the element contains multiple values for this attribute
+ * @return {Number} the font size, or null if the element contains multiple values for this attribute
  */
 
 
@@ -12623,7 +12671,7 @@
  * 
  * @param {IntegerNum} offset - the character offset
  * 
- * @return {IntegerNum} the font size
+ * @return {Number} the font size
  */
 
 
@@ -13076,24 +13124,24 @@
 
 
 /**
- * Sets the font size.
- * 
- * @function DocumentApp.Text#setFontSize
- * 
- * @param {IntegerNum} size - the font size
- * 
- * @return {DocumentApp.Text} the current element
- */
-
-
-/**
  * Sets the font size for the specified character range.
  * 
  * @function DocumentApp.Text#setFontSize
  * 
  * @param {IntegerNum} startOffset - the text range's start offset
  * @param {IntegerNum} endOffsetInclusive - the text range's end offset
- * @param {IntegerNum} size - the font size
+ * @param {Number} size - the font size
+ * 
+ * @return {DocumentApp.Text} the current element
+ */
+
+
+/**
+ * Sets the font size.
+ * 
+ * @function DocumentApp.Text#setFontSize
+ * 
+ * @param {Number} size - the font size
  * 
  * @return {DocumentApp.Text} the current element
  */

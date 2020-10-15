@@ -27,6 +27,11 @@
  * @typedef {SpreadsheetApp.BorderStyle} SpreadsheetApp.BorderStyle
  */
 /**
+ * An enumeration of possible color types.
+ * 
+ * @typedef {ColorType} SpreadsheetApp.ColorType
+ */
+/**
  * An enumeration of the possible paste types.
  * 
  * @typedef {SpreadsheetApp.CopyPasteType} SpreadsheetApp.CopyPasteType
@@ -47,6 +52,11 @@
  * @typedef {SpreadsheetApp.DataSourceParameterType} SpreadsheetApp.DataSourceParameterType
  */
 /**
+ * An enumeration of possible data source refresh scopes.
+ * 
+ * @typedef {SpreadsheetApp.DataSourceRefreshScope} SpreadsheetApp.DataSourceRefreshScope
+ */
+/**
  * An enumeration of the possible data source types.
  * 
  * @typedef {SpreadsheetApp.DataSourceType} SpreadsheetApp.DataSourceType
@@ -55,6 +65,11 @@
  * An enumeration representing the data validation criteria that can be set on a range.
  * 
  * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria
+ */
+/**
+ * An enumeration of date time grouping rule.
+ * 
+ * @typedef {SpreadsheetApp.DateTimeGroupingRuleType} SpreadsheetApp.DateTimeGroupingRuleType
  */
 /**
  * An enumeration of possible developer metadata location types.
@@ -76,6 +91,11 @@
  * keys.
  * 
  * @typedef {SpreadsheetApp.Direction} SpreadsheetApp.Direction
+ */
+/**
+ * An enumeration of possible frequency types.
+ * 
+ * @typedef {SpreadsheetApp.FrequencyType} SpreadsheetApp.FrequencyType
  */
 /**
  * An enumeration of the positions that the group control toggle can be in.
@@ -103,9 +123,24 @@
  * @typedef {SpreadsheetApp.ProtectionType} SpreadsheetApp.ProtectionType
  */
 /**
+ * An enumeration of the possible intervals that can be used in spreadsheet recalculation.
+ * 
+ * @typedef {SpreadsheetApp.RecalculationInterval} SpreadsheetApp.RecalculationInterval
+ */
+/**
  * An enumeration of relative date options for calculating a value to be used in date-based <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/boolean-criteria.html'>BooleanCriteria</a></code>.
  * 
  * @typedef {SpreadsheetApp.RelativeDate} SpreadsheetApp.RelativeDate
+ */
+/**
+ * An enumeration of the different types of sheets that can exist in a spreadsheet.
+ * 
+ * @typedef {SpreadsheetApp.SheetType} SpreadsheetApp.SheetType
+ */
+/**
+ * An enumeration of sort order.
+ * 
+ * @typedef {SpreadsheetApp.SortOrder} SpreadsheetApp.SortOrder
  */
 /**
  * An enumeration of valid text directions.
@@ -118,19 +153,14 @@
  * @typedef {SpreadsheetApp.TextToColumnsDelimiter} SpreadsheetApp.TextToColumnsDelimiter
  */
 /**
+ * An enumeration of possible theme color types.
+ * 
+ * @typedef {SpreadsheetApp.ThemeColorType} SpreadsheetApp.ThemeColorType
+ */
+/**
  * An enumeration of the strategies used for wrapping cells.
  * 
  * @typedef {SpreadsheetApp.WrapStrategy} SpreadsheetApp.WrapStrategy
- */
-/**
- * An enumeration of the possible intervals that can be used in spreadsheet recalculation.
- * 
- * @typedef {SpreadsheetApp.RecalculationInterval} SpreadsheetApp.RecalculationInterval
- */
-/**
- * An enumeration of the different types of sheets that can exist in a spreadsheet.
- * 
- * @typedef {SpreadsheetApp.SheetType} SpreadsheetApp.SheetType
  */
 /**
  * Creates a new spreadsheet with the given name.
@@ -369,12 +399,25 @@
 
 
 /**
+ * Creates a builder for a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/color.html'>Color</a></code>.
+ * 
+ * <pre class="prettyprint"><code>
+ * var rgbColor = SpreadsheetApp.newColor().setRgbColor(&quot;#FF0000&quot;).build();
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.newColor
+ * 
+ * @return {SpreadsheetApp.ColorBuilder} The new builder.
+ */
+
+
+/**
  * Creates a builder for a conditional formatting rule.
  * 
  * <pre class="prettyprint"><code>
  * // Adds a conditional format rule to a sheet that causes all cells in range A1:B3 to turn red
  * // if they contain a number between 1 and 10.
- * var sheet = SpreadsheetApp.getActive();
+ * var sheet = SpreadsheetApp.getActive().getActiveSheet();
  * var range = sheet.getRange(&#39;A1:B3&#39;);
  * var rule = SpreadsheetApp.newConditionalFormatRule()
  *     .whenNumberBetween(1, 10)
@@ -515,7 +558,8 @@
 
 
 /**
- * Opens the spreadsheet with the given URL.
+ * Opens the spreadsheet with the given URL. Throws a scripting exception if the URL does not
+ * exist or the user does not have permission to access it.
  * 
  * <pre class="prettyprint"><code>
  * // The code below opens a spreadsheet using its id and logs the name for it.
@@ -714,7 +758,7 @@
  * 
  * @param {SpreadsheetApp.Range} range - The range to copy this banding to.
  * 
- * @return {SpreadsheetApp.Banding} the new banding
+ * @return {SpreadsheetApp.Banding} The new banding.
  */
 
 
@@ -723,8 +767,17 @@
  * 
  * @function SpreadsheetApp.Banding#getFirstColumnColor
  * 
- * @return {String} the color code in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or
- *     <code>null</code> if no color is set
+ * @return {String} The color code in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or
+ *     <code>null</code> if no color is set.
+ */
+
+
+/**
+ * Returns the first alternating column color in the banding, or <code>null</code> if no color is set.
+ * 
+ * @function SpreadsheetApp.Banding#getFirstColumnColorObject
+ * 
+ * @return {SpreadsheetApp.Color} The first alternating column color in the banding, or <code>null</code> if no color is set.
  */
 
 
@@ -733,8 +786,17 @@
  * 
  * @function SpreadsheetApp.Banding#getFirstRowColor
  * 
- * @return {String} the color code in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or
- *     <code>null</code> if no color is set
+ * @return {String} The color code in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or
+ *     <code>null</code> if no color is set.
+ */
+
+
+/**
+ * Returns the first alternating row color, or <code>null</code> if no color is set.
+ * 
+ * @function SpreadsheetApp.Banding#getFirstRowColorObject
+ * 
+ * @return {SpreadsheetApp.Color} The first alternating row color in the banding, or <code>null</code> if no color is set.
  */
 
 
@@ -743,8 +805,17 @@
  * 
  * @function SpreadsheetApp.Banding#getFooterColumnColor
  * 
- * @return {String} the color code in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or
- *     <code>null</code> if no color is set
+ * @return {String} The color code in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or
+ *     <code>null</code> if no color is set.
+ */
+
+
+/**
+ * Returns the color of the last column in the banding, or <code>null</code> if no color is set.
+ * 
+ * @function SpreadsheetApp.Banding#getFooterColumnColorObject
+ * 
+ * @return {SpreadsheetApp.Color} The last column color in the banding, or <code>null</code> if no color is set.
  */
 
 
@@ -753,8 +824,17 @@
  * 
  * @function SpreadsheetApp.Banding#getFooterRowColor
  * 
- * @return {String} the color code in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or
- *     <code>null</code> if no color is set
+ * @return {String} The color code in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or
+ *     <code>null</code> if no color is set.
+ */
+
+
+/**
+ * Returns the last row color in the banding, or <code>null</code> if no color is set.
+ * 
+ * @function SpreadsheetApp.Banding#getFooterRowColorObject
+ * 
+ * @return {SpreadsheetApp.Color} The footer row color in the banding, or <code>null</code> if no color is set.
  */
 
 
@@ -763,8 +843,17 @@
  * 
  * @function SpreadsheetApp.Banding#getHeaderColumnColor
  * 
- * @return {String} the color code in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or
- *     <code>null</code> if no color is set
+ * @return {String} The color code in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or
+ *     <code>null</code> if no color is set.
+ */
+
+
+/**
+ * Returns the color of the first column in the banding, or <code>null</code> if no color is set.
+ * 
+ * @function SpreadsheetApp.Banding#getHeaderColumnColorObject
+ * 
+ * @return {SpreadsheetApp.Color} The first column color in the banding, or <code>null</code> if no color is set.
  */
 
 
@@ -773,8 +862,17 @@
  * 
  * @function SpreadsheetApp.Banding#getHeaderRowColor
  * 
- * @return {String} the color code in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or
- *     <code>null</code> if no color is set
+ * @return {String} The color code in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or
+ *     <code>null</code> if no color is set.
+ */
+
+
+/**
+ * Returns the color of the header row or <code>null</code> if no color is set.
+ * 
+ * @function SpreadsheetApp.Banding#getHeaderRowColorObject
+ * 
+ * @return {SpreadsheetApp.Color} The color of the header row; returns <code>null</code> if no color is set.
  */
 
 
@@ -783,7 +881,7 @@
  * 
  * @function SpreadsheetApp.Banding#getRange
  * 
- * @return {SpreadsheetApp.Range} the range for this banding
+ * @return {SpreadsheetApp.Range} The range for this banding.
  */
 
 
@@ -792,7 +890,16 @@
  * 
  * @function SpreadsheetApp.Banding#getSecondColumnColor
  * 
- * @return {String} the HEX color or <code>null</code> if no color is set
+ * @return {String} The HEX color or <code>null</code> if no color is set.
+ */
+
+
+/**
+ * Returns the second alternating column color in the banding, or <code>null</code> if no color is set.
+ * 
+ * @function SpreadsheetApp.Banding#getSecondColumnColorObject
+ * 
+ * @return {SpreadsheetApp.Color} The second alternating column color in the banding, or <code>null</code> if no color is set.
  */
 
 
@@ -801,8 +908,17 @@
  * 
  * @function SpreadsheetApp.Banding#getSecondRowColor
  * 
- * @return {String} the color code in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or
- *     <code>null</code> if no color is set
+ * @return {String} The color code in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or
+ *     <code>null</code> if no color is set.
+ */
+
+
+/**
+ * Returns the second alternating row color, or <code>null</code> if no color is set.
+ * 
+ * @function SpreadsheetApp.Banding#getSecondRowColorObject
+ * 
+ * @return {SpreadsheetApp.Color} The second alternating row color in the banding, or <code>null</code> if no color is set.
  */
 
 
@@ -821,9 +937,21 @@
  * @function SpreadsheetApp.Banding#setFirstColumnColor
  * 
  * @param {String} color - The color code in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or
- *     <code>null</code> to clear the color..
+ *     <code>null</code> to clear the color.
  * 
- * @return {SpreadsheetApp.Banding} this banding, for chaining
+ * @return {SpreadsheetApp.Banding} This banding, for chaining.
+ */
+
+
+/**
+ * Sets the first alternating column color in the banding.
+ * 
+ * @function SpreadsheetApp.Banding#setFirstColumnColorObject
+ * 
+ * @param {SpreadsheetApp.Color} color - The new first alternating column color in the banding; setting to <code>null</code>
+ *     clears the color.
+ * 
+ * @return {SpreadsheetApp.Banding} This banding, for chaining.
  */
 
 
@@ -835,7 +963,19 @@
  * @param {String} color - The color code in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or
  *     <code>null</code> to clear the color.
  * 
- * @return {SpreadsheetApp.Banding} this banding, for chaining
+ * @return {SpreadsheetApp.Banding} This banding, for chaining.
+ */
+
+
+/**
+ * Sets the first alternating row color in the banding.
+ * 
+ * @function SpreadsheetApp.Banding#setFirstRowColorObject
+ * 
+ * @param {SpreadsheetApp.Color} color - The new first alternating color in the banding; setting to <code>null</code> clears the
+ *     color.
+ * 
+ * @return {SpreadsheetApp.Banding} This banding, for chaining.
  */
 
 
@@ -847,7 +987,19 @@
  * @param {String} color - The color code in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or
  *     <code>null</code> to clear the color.
  * 
- * @return {SpreadsheetApp.Banding} this banding, for chaining
+ * @return {SpreadsheetApp.Banding} This banding, for chaining.
+ */
+
+
+/**
+ * Sets the color of the last column in the banding.
+ * 
+ * @function SpreadsheetApp.Banding#setFooterColumnColorObject
+ * 
+ * @param {SpreadsheetApp.Color} color - The new color of the last column in the banding; setting to <code>null</code> clears
+ *     the color.
+ * 
+ * @return {SpreadsheetApp.Banding} This banding, for chaining.
  */
 
 
@@ -859,7 +1011,18 @@
  * @param {String} color - The color code in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or
  *     <code>null</code> to clear the color.
  * 
- * @return {SpreadsheetApp.Banding} this banding, for chaining
+ * @return {SpreadsheetApp.Banding} This banding, for chaining.
+ */
+
+
+/**
+ * Sets the color of the footer row in the banding.
+ * 
+ * @function SpreadsheetApp.Banding#setFooterRowColorObject
+ * 
+ * @param {SpreadsheetApp.Color} color - The new footer row color; setting to <code>null</code> clears the color.
+ * 
+ * @return {SpreadsheetApp.Banding} This banding, for chaining.
  */
 
 
@@ -871,7 +1034,18 @@
  * @param {String} color - The color code in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or
  *     <code>null</code> to clear the color.
  * 
- * @return {SpreadsheetApp.Banding} this banding, for chaining
+ * @return {SpreadsheetApp.Banding} This banding, for chaining.
+ */
+
+
+/**
+ * Sets the color of the header column.
+ * 
+ * @function SpreadsheetApp.Banding#setHeaderColumnColorObject
+ * 
+ * @param {SpreadsheetApp.Color} color - The new header column color; setting to <code>null</code> clears the color.
+ * 
+ * @return {SpreadsheetApp.Banding} This banding, for chaining.
  */
 
 
@@ -883,7 +1057,18 @@
  * @param {String} color - The color code in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or
  *     <code>null</code> to clear the color.
  * 
- * @return {SpreadsheetApp.Banding} this banding, for chaining
+ * @return {SpreadsheetApp.Banding} This banding, for chaining.
+ */
+
+
+/**
+ * Sets the color of the header row.
+ * 
+ * @function SpreadsheetApp.Banding#setHeaderRowColorObject
+ * 
+ * @param {SpreadsheetApp.Color} color - The new header row color; setting to <code>null</code> clears the color.
+ * 
+ * @return {SpreadsheetApp.Banding} This banding, for chaining.
  */
 
 
@@ -894,7 +1079,7 @@
  * 
  * @param {SpreadsheetApp.Range} range - The new range for this banding.
  * 
- * @return {SpreadsheetApp.Banding} this banding, for chaining
+ * @return {SpreadsheetApp.Banding} This banding, for chaining.
  */
 
 
@@ -906,7 +1091,19 @@
  * @param {String} color - The color code in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or
  *     <code>null</code> to clear the color.
  * 
- * @return {SpreadsheetApp.Banding} this banding, for chaining
+ * @return {SpreadsheetApp.Banding} This banding, for chaining.
+ */
+
+
+/**
+ * Sets the second alternating column color in the banding.
+ * 
+ * @function SpreadsheetApp.Banding#setSecondColumnColorObject
+ * 
+ * @param {SpreadsheetApp.Color} color - The new second alternating column color in the banding; setting to <code>null</code>
+ *     clears the color.
+ * 
+ * @return {SpreadsheetApp.Banding} This banding, for chaining.
  */
 
 
@@ -918,7 +1115,19 @@
  * @param {String} color - The color code in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or
  *     <code>null</code> to clear the color.
  * 
- * @return {SpreadsheetApp.Banding} this banding, for chaining
+ * @return {SpreadsheetApp.Banding} This banding, for chaining.
+ */
+
+
+/**
+ * Sets the second alternating color in the banding.
+ * 
+ * @function SpreadsheetApp.Banding#setSecondRowColorObject
+ * 
+ * @param {SpreadsheetApp.Color} color - The new second alternating color in the banding; setting to <code>null</code> clears
+ *     the color.
+ * 
+ * @return {SpreadsheetApp.Banding} This banding, for chaining.
  */
 
 
@@ -1002,6 +1211,15 @@
 
 
 /**
+ * Gets the BigQuery dataset ID.
+ * 
+ * @function SpreadsheetApp.BigQueryDataSourceSpec#getDatasetId
+ * 
+ * @return {String} The dataset ID, or an empty string if the data source spec is defined by a raw query.
+ */
+
+
+/**
  * Gets the parameters of the data source.
  * 
  * @function SpreadsheetApp.BigQueryDataSourceSpec#getParameters
@@ -1025,6 +1243,25 @@
  * @function SpreadsheetApp.BigQueryDataSourceSpec#getRawQuery
  * 
  * @return {String} The raw query string.
+ */
+
+
+/**
+ * Gets the BigQuery table ID.
+ * 
+ * @function SpreadsheetApp.BigQueryDataSourceSpec#getTableId
+ * 
+ * @return {String} The table ID, or an empty string if the data source spec is defined by a raw query.
+ */
+
+
+/**
+ * Gets the BigQuery project ID for the table.
+ * 
+ * @function SpreadsheetApp.BigQueryDataSourceSpec#getTableProjectId
+ * 
+ * @return {String} The table project ID, or an empty string if the data source spec is defined by a raw
+ *     query.
  */
 
 
@@ -1062,6 +1299,15 @@
 
 
 /**
+ * Gets the BigQuery dataset ID.
+ * 
+ * @function SpreadsheetApp.BigQueryDataSourceSpecBuilder#getDatasetId
+ * 
+ * @return {String} The dataset ID, or an empty string if the data source spec is defined by a raw query.
+ */
+
+
+/**
  * Gets the parameters of the data source.
  * 
  * @function SpreadsheetApp.BigQueryDataSourceSpecBuilder#getParameters
@@ -1085,6 +1331,25 @@
  * @function SpreadsheetApp.BigQueryDataSourceSpecBuilder#getRawQuery
  * 
  * @return {String} The raw query string.
+ */
+
+
+/**
+ * Gets the BigQuery table ID.
+ * 
+ * @function SpreadsheetApp.BigQueryDataSourceSpecBuilder#getTableId
+ * 
+ * @return {String} The table ID, or an empty string if the data source spec is defined by a raw query.
+ */
+
+
+/**
+ * Gets the BigQuery project ID for the table.
+ * 
+ * @function SpreadsheetApp.BigQueryDataSourceSpecBuilder#getTableProjectId
+ * 
+ * @return {String} The table project ID, or an empty string if the data source spec is defined by a raw
+ *     query.
  */
 
 
@@ -1114,6 +1379,17 @@
  * @param {String} parameterName - The name of the parameter to remove.
  * 
  * @return {SpreadsheetApp.BigQueryDataSourceSpecBuilder} The builder, for chaining.
+ */
+
+
+/**
+ * Sets the BigQuery dataset ID.
+ * 
+ * @function SpreadsheetApp.BigQueryDataSourceSpecBuilder#setDatasetId
+ * 
+ * @param {String} datasetId - The ID of the dataset.
+ * 
+ * @return {SpreadsheetApp.BigQueryDataSourceSpecBuilder} This builder, for chaining.
  */
 
 
@@ -1151,6 +1427,28 @@
  */
 
 
+/**
+ * Sets the BigQuery table ID.
+ * 
+ * @function SpreadsheetApp.BigQueryDataSourceSpecBuilder#setTableId
+ * 
+ * @param {String} tableId - The ID of the table.
+ * 
+ * @return {SpreadsheetApp.BigQueryDataSourceSpecBuilder} This builder, for chaining.
+ */
+
+
+/**
+ * Sets the BigQuery project ID for the table.
+ * 
+ * @function SpreadsheetApp.BigQueryDataSourceSpecBuilder#setTableProjectId
+ * 
+ * @param {String} projectId - The project ID of the BigQuery table.
+ * 
+ * @return {SpreadsheetApp.BigQueryDataSourceSpecBuilder} The builder, for chaining.
+ */
+
+
 
 /**
  * @class SpreadsheetApp.BooleanCondition
@@ -1165,13 +1463,32 @@
  * var rules = sheet.getConditionalFormatRules();
  * for (int i = 0; i &lt; rules.length; i++) {
  *   var color = rules[i].getBooleanCondition().getBackground();
- *   Logger.log(&quot;The background color for rule %d is %s&quot;, i, color);
+ *   Logger.log(&quot;The background color for rule %s is %s&quot;, i, color);
  * }
  * </code></pre>
  * 
  * @function SpreadsheetApp.BooleanCondition#getBackground
  * 
  * @return {String} the background color string, or <code>null</code> if not set for this condition
+ */
+
+
+/**
+ * Gets the background color for this boolean condition. Returns <code>null</code> if not set.
+ * 
+ * <pre class="prettyprint"><code>
+ * // Logs the boolean condition background color for each conditional format rule on a sheet.
+ * var sheet = SpreadsheetApp.getActiveSheet();
+ * var rules = sheet.getConditionalFormatRules();
+ * for (int i = 0; i &lt; rules.length; i++) {
+ *   var color = rules[i].getBooleanCondition().getBackgroundObject();
+ *   Logger.log(&quot;The background color for rule %s is %s&quot;, i, color.asRgbColor().asHexString());
+ * }
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.BooleanCondition#getBackgroundObject
+ * 
+ * @return {SpreadsheetApp.Color} The background color, or <code>null</code> if not set for this condition.
  */
 
 
@@ -1185,7 +1502,7 @@
  * var rules = sheet.getConditionalFormatRules();
  * for (int i = 0; i &lt; rules.length; i++) {
  *   var bold = rules[i].getBooleanCondition().getBold();
- *   Logger.log(&quot;The font bold setting for rule %d is %b&quot;, i, weight);
+ *   Logger.log(&quot;The font bold setting for rule %s is %b&quot;, i, weight);
  * }
  * </code></pre>
  * 
@@ -1257,13 +1574,32 @@
  * var rules = sheet.getConditionalFormatRules();
  * for (int i = 0; i &lt; rules.length; i++) {
  *   var color = rules[i].getBooleanCondition().getFontColor();
- *   Logger.log(&quot;The font color for rule %d is %s&quot;, i, color);
+ *   Logger.log(&quot;The font color for rule %s is %s&quot;, i, color);
  * }
  * </code></pre>
  * 
  * @function SpreadsheetApp.BooleanCondition#getFontColor
  * 
  * @return {String} the font color string, or <code>null</code> if not set for this condition
+ */
+
+
+/**
+ * Gets the font color for this boolean condition. Returns <code>null</code> if not set.
+ * 
+ * <pre class="prettyprint"><code>
+ * // Logs the boolean condition font color for each conditional format rule on a sheet.
+ * var sheet = SpreadsheetApp.getActiveSheet();
+ * var rules = sheet.getConditionalFormatRules();
+ * for (int i = 0; i &lt; rules.length; i++) {
+ *   var color = rules[i].getBooleanCondition().getFontColorObject();
+ *   Logger.log(&quot;The font color for rule %s is %s&quot;, i, color.asRgbColor().asHexString());
+ * }
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.BooleanCondition#getFontColorObject
+ * 
+ * @return {SpreadsheetApp.Color} The font color, or <code>null</code> if not set for this condition.
  */
 
 
@@ -1278,7 +1614,7 @@
  * var rules = sheet.getConditionalFormatRules();
  * for (int i = 0; i &lt; rules.length; i++) {
  *   var italic = rules[i].getBooleanCondition().getItalic();
- *   Logger.log(&quot;The font italic setting for rule %d is %b&quot;, i, italic);
+ *   Logger.log(&quot;The font italic setting for rule %s is %b&quot;, i, italic);
  * }
  * </code></pre>
  * 
@@ -1300,7 +1636,7 @@
  * var rules = sheet.getConditionalFormatRules();
  * for (int i = 0; i &lt; rules.length; i++) {
  *   var strikethrough = rules[i].getBooleanCondition().getStrikethrough();
- *   Logger.log(&quot;The font strikethrough setting for rule %d is %b&quot;, i, strikethrough);
+ *   Logger.log(&quot;The font strikethrough setting for rule %s is %b&quot;, i, strikethrough);
  * }
  * </code></pre>
  * 
@@ -1322,7 +1658,7 @@
  * var rules = sheet.getConditionalFormatRules();
  * for (int i = 0; i &lt; rules.length; i++) {
  *   var underline = rules[i].getBooleanCondition().getUnderline();
- *   Logger.log(&quot;The font underline setting for rule %d is %b&quot;, i, underline);
+ *   Logger.log(&quot;The font underline setting for rule %s is %b&quot;, i, underline);
  * }
  * </code></pre>
  * 
@@ -1382,6 +1718,11 @@
  * The criteria is met when a date is equal to the relative date value.
  * 
  * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.DATE_EQUAL_TO_RELATIVE
+ */
+/**
+ * The criteria is met when a date is not equal to the given value.
+ * 
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.DATE_NOT_EQUAL_TO
  */
 /**
  * The criteria is met when a number that is between the given values.
@@ -1444,6 +1785,11 @@
  * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.TEXT_EQUAL_TO
  */
 /**
+ * The criteria is met when the input is not equal to the given value.
+ * 
+ * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.TEXT_NOT_EQUAL_TO
+ */
+/**
  * The criteria is met when the input begins with the given value.
  * 
  * @typedef {SpreadsheetApp.BooleanCriteria} SpreadsheetApp.BooleanCriteria.TEXT_STARTS_WITH
@@ -1483,6 +1829,101 @@
  * 
  * @typedef {SpreadsheetApp.BorderStyle} SpreadsheetApp.BorderStyle.SOLID_THICK
  */
+
+/**
+ * @class SpreadsheetApp.Color
+ */
+
+/**
+ * Converts this color to an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../base/rgb-color.html'>RgbColor</a></code>.
+ * 
+ * @function SpreadsheetApp.Color#asRgbColor
+ * 
+ * @return {RgbColor} The RGB color.
+ */
+
+
+/**
+ * Converts this color to a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/theme-color.html'>ThemeColor</a></code>.
+ * 
+ * @function SpreadsheetApp.Color#asThemeColor
+ * 
+ * @return {SpreadsheetApp.ThemeColor} The theme color.
+ */
+
+
+/**
+ * Get the type of this color.
+ * 
+ * @function SpreadsheetApp.Color#getColorType
+ * 
+ * @return {ColorType} The color type.
+ */
+
+
+
+/**
+ * @class SpreadsheetApp.ColorBuilder
+ */
+
+/**
+ * Converts this color to an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../base/rgb-color.html'>RgbColor</a></code>.
+ * 
+ * @function SpreadsheetApp.ColorBuilder#asRgbColor
+ * 
+ * @return {RgbColor} The RGB color.
+ */
+
+
+/**
+ * Converts this color to a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/theme-color.html'>ThemeColor</a></code>.
+ * 
+ * @function SpreadsheetApp.ColorBuilder#asThemeColor
+ * 
+ * @return {SpreadsheetApp.ThemeColor} The theme color.
+ */
+
+
+/**
+ * Creates a color object from the settings supplied to the builder.
+ * 
+ * @function SpreadsheetApp.ColorBuilder#build
+ * 
+ * @return {SpreadsheetApp.Color} A color object created from this builder.
+ */
+
+
+/**
+ * Get the type of this color.
+ * 
+ * @function SpreadsheetApp.ColorBuilder#getColorType
+ * 
+ * @return {ColorType} The color type.
+ */
+
+
+/**
+ * Sets as RGB color.
+ * 
+ * @function SpreadsheetApp.ColorBuilder#setRgbColor
+ * 
+ * @param {String} cssString - The RGB color in CSS notation (such as '#ffffff').
+ * 
+ * @return {SpreadsheetApp.ColorBuilder} This builder, for chaining.
+ */
+
+
+/**
+ * Sets as theme color.
+ * 
+ * @function SpreadsheetApp.ColorBuilder#setThemeColor
+ * 
+ * @param {SpreadsheetApp.ThemeColorType} themeColorType - The theme color type.
+ * 
+ * @return {SpreadsheetApp.ColorBuilder} This builder, for chaining.
+ */
+
+
 
 /**
  * @class SpreadsheetApp.ConditionalFormatRule
@@ -1665,6 +2106,37 @@
 
 
 /**
+ * Sets the background color for the conditional format rule's format. Passing in <code>null</code>
+ * removes the background color format setting from the rule.
+ * 
+ * <pre class="prettyprint"><code>
+ * // Adds a conditional format rule to a sheet that causes cells in range A1:B3 to set their
+ * // background color to theme background color if the cell has text equal to &quot;hello&quot;.
+ * 
+ * var sheet = SpreadsheetApp.getActiveSheet();
+ * var range = sheet.getRange(&quot;A1:B3&quot;);
+ * var color = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.BACKGROUND)
+ *     .build();
+ * var rule = SpreadsheetApp.newConditionalFormatRule()
+ *     .whenTextEqualTo(&quot;hello&quot;)
+ *     .setBackground(color)
+ *     .setRanges([range])
+ *     .build();
+ * var rules = sheet.getConditionalFormatRules();
+ * rules.push(rule);
+ * sheet.setConditionalFormatRules(rules);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.ConditionalFormatRuleBuilder#setBackgroundObject
+ * 
+ * @param {SpreadsheetApp.Color} color - The desired color object or <code>null</code> to clear.
+ * 
+ * @return {SpreadsheetApp.ConditionalFormatRuleBuilder} The builder, for chaining.
+ */
+
+
+/**
  * Sets text bolding for the conditional format rule's format. If <code>bold</code> is <code>true</code>,
  * the rule bolds text if the condition is met; if <code>false</code>, the rule removes any existing
  * bolding if the condition is met. Passing in <code>null</code> removes the bold format setting from
@@ -1723,6 +2195,37 @@
 
 
 /**
+ * Sets the font color for the conditional format rule's format. Passing in <code>null</code> removes
+ * the font color format setting from the rule.
+ * 
+ * <pre class="prettyprint"><code>
+ * // Adds a conditional format rule to a sheet that causes cells in range A1:B3 to set their font
+ * // color to theme text color if the cell has text equal to &quot;hello&quot;.
+ * 
+ * var sheet = SpreadsheetApp.getActiveSheet();
+ * var range = sheet.getRange(&quot;A1:B3&quot;);
+ * var color = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.TEXT)
+ *     .build();
+ * var rule = SpreadsheetApp.newConditionalFormatRule()
+ *     .whenTextEqualTo(&quot;hello&quot;)
+ *     .setFontColor(color)
+ *     .setRanges([range])
+ *     .build();
+ * var rules = sheet.getConditionalFormatRules();
+ * rules.push(rule);
+ * sheet.setConditionalFormatRules(rules);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.ConditionalFormatRuleBuilder#setFontColorObject
+ * 
+ * @param {SpreadsheetApp.Color} color - The desired color object or <code>null</code> to clear.
+ * 
+ * @return {SpreadsheetApp.ConditionalFormatRuleBuilder} The builder, for chaining.
+ */
+
+
+/**
  * Clears the conditional format rule's gradient maxpoint value, and instead uses the maximum
  * value in the rule's ranges. Also sets the gradient's maxpoint color to the input color.
  * 
@@ -1748,6 +2251,81 @@
  * @param {String} color - The maxpoint color to set.
  * 
  * @return {SpreadsheetApp.ConditionalFormatRuleBuilder} the builder, for chaining
+ */
+
+
+/**
+ * Clears the conditional format rule's gradient maxpoint value, and instead uses the maximum
+ * value in the rule's ranges. Also sets the gradient's maxpoint color to the input color.
+ * 
+ * <pre class="prettyprint"><code>
+ * // Adds a conditional format rule to a sheet that causes cells in range A1:B3 to set their
+ * // background color somewhere between theme text and background colors, based on their values
+ * // in comparison to the ranges minimum and maximum values.
+ * 
+ * var sheet = SpreadsheetApp.getActiveSheet();
+ * var range = sheet.getRange(&quot;A1:B3&quot;);
+ * var textColor = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.TEXT)
+ *     .build();
+ * var backgroundColor = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.BACKGROUND)
+ *     .build();
+ * var rule = SpreadsheetApp.newConditionalFormatRule()
+ *     .setGradientMaxpoint(textColor)
+ *     .setGradientMinpoint(backgroundColor)
+ *     .setRanges([range])
+ *     .build();
+ * var rules = sheet.getConditionalFormatRules();
+ * rules.push(rule);
+ * sheet.setConditionalFormatRules(rules);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.ConditionalFormatRuleBuilder#setGradientMaxpointObject
+ * 
+ * @param {SpreadsheetApp.Color} color - The maxpoint color object to set.
+ * 
+ * @return {SpreadsheetApp.ConditionalFormatRuleBuilder} The builder, for chaining.
+ */
+
+
+/**
+ * Sets the conditional format rule's gradient maxpoint fields.
+ * 
+ * <pre class="prettyprint"><code>
+ * // Adds a conditional format rule to a sheet that causes cells in range A1:B3 to set their
+ * // background color somewhere from theme accent 1, accent 2 to accent 3 colors, based on their
+ * // values in comparison to the values 0, 50, and 100.
+ * 
+ * var sheet = SpreadsheetApp.getActiveSheet();
+ * var range = sheet.getRange(&quot;A1:B3&quot;);
+ * var color1 = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.ACCENT1)
+ *     .build();
+ * var color2 = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.ACCENT2)
+ *     .build();
+ * var color3 = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.ACCENT3)
+ *     .build();
+ * var rule = SpreadsheetApp.newConditionalFormatRule()
+ *     .setGradientMaxpointWithValue(color1, SpreadsheetApp.InterpolationType.NUMBER, &quot;100&quot;)
+ *     .setGradientMidpointWithValue(color2, SpreadsheetApp.InterpolationType.NUMBER, &quot;50&quot;)
+ *     .setGradientMinpointWithValue(color3, SpreadsheetApp.InterpolationType.NUMBER, &quot;0&quot;)
+ *     .setRanges([range])
+ *     .build();
+ * var rules = sheet.getConditionalFormatRules();
+ * rules.push(rule);
+ * sheet.setConditionalFormatRules(rules);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.ConditionalFormatRuleBuilder#setGradientMaxpointObjectWithValue
+ * 
+ * @param {SpreadsheetApp.Color} color - The maxpoint color to set.
+ * @param {SpreadsheetApp.InterpolationType} type - The maxpoint interpolation type to set.
+ * @param {String} value - The maxpoint value to set.
+ * 
+ * @return {SpreadsheetApp.ConditionalFormatRuleBuilder} The builder, for chaining.
  */
 
 
@@ -1779,6 +2357,47 @@
  * @param {String} value - The maxpoint value to set.
  * 
  * @return {SpreadsheetApp.ConditionalFormatRuleBuilder} the builder, for chaining
+ */
+
+
+/**
+ * Sets the conditional format rule's gradient midpoint fields. Clears all of the midpoint fields
+ * if the passed in interpolation type is <code>null</code>.
+ * 
+ * <pre class="prettyprint"><code>
+ * // Adds a conditional format rule to a sheet that causes cells in range A1:B3 to set their
+ * // background color somewhere from theme accent 1 to accent 2 to accent 3 colors, based on
+ * // their values in comparison to the values 0, 50, and 100.
+ * 
+ * var sheet = SpreadsheetApp.getActiveSheet();
+ * var range = sheet.getRange(&quot;A1:B3&quot;);
+ * var color1 = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.ACCENT1)
+ *     .build();
+ * var color2 = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.ACCENT2)
+ *     .build();
+ * var color3 = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.ACCENT3)
+ *     .build();
+ * var rule = SpreadsheetApp.newConditionalFormatRule()
+ *     .setGradientMaxpointWithValue(color1, SpreadsheetApp.InterpolationType.NUMBER, &quot;100&quot;)
+ *     .setGradientMidpointWithValue(color2, SpreadsheetApp.InterpolationType.NUMBER, &quot;50&quot;)
+ *     .setGradientMinpointWithValue(color3, SpreadsheetApp.InterpolationType.NUMBER, &quot;0&quot;)
+ *     .setRanges([range])
+ *     .build();
+ * var rules = sheet.getConditionalFormatRules();
+ * rules.push(rule);
+ * sheet.setConditionalFormatRules(rules);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.ConditionalFormatRuleBuilder#setGradientMidpointObjectWithValue
+ * 
+ * @param {SpreadsheetApp.Color} color - The midpoint color to set.
+ * @param {SpreadsheetApp.InterpolationType} type - The midpoint interpolation type to set or <code>null</code> to clear.
+ * @param {String} value - The midpoint value to set.
+ * 
+ * @return {SpreadsheetApp.ConditionalFormatRuleBuilder} The builder, for chaining.
  */
 
 
@@ -1840,6 +2459,81 @@
  * @param {String} color - The minpoint color to set.
  * 
  * @return {SpreadsheetApp.ConditionalFormatRuleBuilder} the builder, for chaining
+ */
+
+
+/**
+ * Clears the conditional format rule's gradient minpoint value, and instead uses the minimum
+ * value in the rule's ranges. Also sets the gradient's minpoint color to the input color.
+ * 
+ * <pre class="prettyprint"><code>
+ * // Adds a conditional format rule to a sheet that causes cells in range A1:B3 to set their
+ * // background color somewhere between theme text and background colors, based on their values
+ * // in comparison to the ranges minimum and maximum values.
+ * 
+ * var sheet = SpreadsheetApp.getActiveSheet();
+ * var range = sheet.getRange(&quot;A1:B3&quot;);
+ * var textColor = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.TEXT)
+ *     .build();
+ * var backgroundColor = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.BACKGROUND)
+ *     .build();
+ * var rule = SpreadsheetApp.newConditionalFormatRule()
+ *     .setGradientMaxpoint(textColor)
+ *     .setGradientMinpoint(backgroundColor)
+ *     .setRanges([range])
+ *     .build();
+ * var rules = sheet.getConditionalFormatRules();
+ * rules.push(rule);
+ * sheet.setConditionalFormatRules(rules);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.ConditionalFormatRuleBuilder#setGradientMinpointObject
+ * 
+ * @param {SpreadsheetApp.Color} color - The minpoint color object to set.
+ * 
+ * @return {SpreadsheetApp.ConditionalFormatRuleBuilder} The builder, for chaining.
+ */
+
+
+/**
+ * Sets the conditional format rule's gradient minpoint fields.
+ * 
+ * <pre class="prettyprint"><code>
+ * // Adds a conditional format rule to a sheet that causes cells in range A1:B3 to set their
+ * // background color somewhere from theme accent 1 to accent 2 to accent 3 colors, based on
+ * // their values in comparison to the values 0, 50, and 100.
+ * 
+ * var sheet = SpreadsheetApp.getActiveSheet();
+ * var range = sheet.getRange(&quot;A1:B3&quot;);
+ * var color1 = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.ACCENT1)
+ *     .build();
+ * var color2 = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.ACCENT2)
+ *     .build();
+ * var color3 = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.ACCENT3)
+ *     .build();
+ * var rule = SpreadsheetApp.newConditionalFormatRule()
+ *     .setGradientMaxpointWithValue(color1, SpreadsheetApp.InterpolationType.NUMBER, &quot;100&quot;)
+ *     .setGradientMidpointWithValue(color2, SpreadsheetApp.InterpolationType.NUMBER, &quot;50&quot;)
+ *     .setGradientMinpointWithValue(color3, SpreadsheetApp.InterpolationType.NUMBER, &quot;0&quot;)
+ *     .setRanges([range])
+ *     .build();
+ * var rules = sheet.getConditionalFormatRules();
+ * rules.push(rule);
+ * sheet.setConditionalFormatRules(rules);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.ConditionalFormatRuleBuilder#setGradientMinpointObjectWithValue
+ * 
+ * @param {SpreadsheetApp.Color} color - The minpoint color to set.
+ * @param {SpreadsheetApp.InterpolationType} type - The minpoint interpolation type to set.
+ * @param {String} value - The minpoint value to set.
+ * 
+ * @return {SpreadsheetApp.ConditionalFormatRuleBuilder} The builder, for chaining.
  */
 
 
@@ -2722,7 +3416,12 @@
  * @typedef {SpreadsheetApp.DataExecutionErrorCode} SpreadsheetApp.DataExecutionErrorCode.DATA_EXECUTION_ERROR_CODE_UNSUPPORTED
  */
 /**
- * The data execution returns duplicate column names. Please update data source <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html#updateSpec(DataSourceSpec)'>specification</a></code>.
+ * The database referenced by the data source is not found. Please update the data source <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html#updateSpec(DataSourceSpec)'>specification</a></code>.
+ * 
+ * @typedef {SpreadsheetApp.DataExecutionErrorCode} SpreadsheetApp.DataExecutionErrorCode.DATA_NOT_FOUND
+ */
+/**
+ * The data execution returns duplicate column names. Please update the data source <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html#updateSpec(DataSourceSpec)'>specification</a></code>.
  * 
  * @typedef {SpreadsheetApp.DataExecutionErrorCode} SpreadsheetApp.DataExecutionErrorCode.DUPLICATE_COLUMN_NAMES
  */
@@ -2748,33 +3447,40 @@
  */
 /**
  * Invalid data execution parameter. The source cell must exist and contain only a number or text.
- * Please update data source <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html#updateSpec(DataSourceSpec)'>specification</a></code>.
+ * Please update the data source <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html#updateSpec(DataSourceSpec)'>specification</a></code>.
  * 
  * @typedef {SpreadsheetApp.DataExecutionErrorCode} SpreadsheetApp.DataExecutionErrorCode.PARAMETER_INVALID
  */
 /**
- * The data execution timed out. Please update data source <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html#updateSpec(DataSourceSpec)'>specification</a></code>.
+ * The user does not have access to the database referenced by the data source. Please update the
+ * data source <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html#updateSpec(DataSourceSpec)'>specification</a></code> or contact the owner of the billing
+ * project to request access.
+ * 
+ * @typedef {SpreadsheetApp.DataExecutionErrorCode} SpreadsheetApp.DataExecutionErrorCode.PERMISSION_DENIED
+ */
+/**
+ * The data execution timed out. Please update the data source <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html#updateSpec(DataSourceSpec)'>specification</a></code>.
  * 
  * @typedef {SpreadsheetApp.DataExecutionErrorCode} SpreadsheetApp.DataExecutionErrorCode.TIME_OUT
  */
 /**
- * The data execution returns more cells than the limit. Please update data source <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html#updateSpec(DataSourceSpec)'>specification</a></code>.
+ * The data execution returns more cells than the limit. Please update the data source <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html#updateSpec(DataSourceSpec)'>specification</a></code>.
  * 
  * @typedef {SpreadsheetApp.DataExecutionErrorCode} SpreadsheetApp.DataExecutionErrorCode.TOO_MANY_CELLS
  */
 /**
- * The data execution returns values that exceed the maximum characters allowed in a single cell
- * Please update data source <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html#updateSpec(DataSourceSpec)'>specification</a></code>.
+ * The data execution returns values that exceed the maximum characters allowed in a single cell.
+ * Please update the data source <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html#updateSpec(DataSourceSpec)'>specification</a></code>.
  * 
  * @typedef {SpreadsheetApp.DataExecutionErrorCode} SpreadsheetApp.DataExecutionErrorCode.TOO_MANY_CHARS_PER_CELL
  */
 /**
- * The data execution returns more rows than the limit. Please update data source <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html#updateSpec(DataSourceSpec)'>specification</a></code>.
+ * The data execution returns more rows than the limit. Please update the data source <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html#updateSpec(DataSourceSpec)'>specification</a></code>.
  * 
  * @typedef {SpreadsheetApp.DataExecutionErrorCode} SpreadsheetApp.DataExecutionErrorCode.TOO_MANY_ROWS
  */
 /**
- * The data execution returns unsupported data type. Please update data source <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html#updateSpec(DataSourceSpec)'>specification</a></code>.
+ * The data execution returns unsupported data type. Please update the data source <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html#updateSpec(DataSourceSpec)'>specification</a></code>.
  * 
  * <p>For BigQuery, <code>ARRAY</code> or <code>STRUCT</code> type is not supported.
  * 
@@ -2843,6 +3549,15 @@
 
 
 /**
+ * Gets the time the last data execution completed regardless of the execution state.
+ * 
+ * @function SpreadsheetApp.DataExecutionStatus#getLastExecutionTime
+ * 
+ * @return {Date} The last execution time, or <code>null</code> if there has never been a data execution.
+ */
+
+
+/**
  * Gets the time the data last successfully refreshed.
  * 
  * @function SpreadsheetApp.DataExecutionStatus#getLastRefreshedTime
@@ -2868,6 +3583,77 @@
  */
 
 /**
+ * Creates a calculated column.
+ * 
+ * @function SpreadsheetApp.DataSource#createCalculatedColumn
+ * 
+ * @param {String} name - The name of the calculated column.
+ * @param {String} formula - The calculated column formula.
+ * 
+ * @return {SpreadsheetApp.DataSourceColumn} The newly created calculated column.
+ */
+
+
+/**
+ * Creates a data source pivot table from this data source in the first cell of a new sheet. As a
+ * side effect, makes the new sheet the active sheet.
+ * 
+ * @function SpreadsheetApp.DataSource#createDataSourcePivotTableOnNewSheet
+ * 
+ * @return {SpreadsheetApp.DataSourcePivotTable} The newly created data source pivot table.
+ */
+
+
+/**
+ * Creates a data source table from this data source in the first cell of a new sheet. As a side
+ * effect, makes the new sheet the active sheet.
+ * 
+ * @function SpreadsheetApp.DataSource#createDataSourceTableOnNewSheet
+ * 
+ * @return {SpreadsheetApp.DataSourceTable} The newly created data source table.
+ */
+
+
+/**
+ * Returns the calculated column in the data source that matches the column name.
+ * 
+ * @function SpreadsheetApp.DataSource#getCalculatedColumnByName
+ * 
+ * @param {String} columnName - The name of the calculated column to get.
+ * 
+ * @return {SpreadsheetApp.DataSourceColumn} The calculated column that matches the column name, or <code>null</code> if there is no such
+ *     calculated column.
+ */
+
+
+/**
+ * Returns all the calculated columns in the data source.
+ * 
+ * @function SpreadsheetApp.DataSource#getCalculatedColumns
+ * 
+ * @return {SpreadsheetApp.DataSourceColumn[]} An array of all the calculated columns in the data source.
+ */
+
+
+/**
+ * Returns all the columns in the data source.
+ * 
+ * @function SpreadsheetApp.DataSource#getColumns
+ * 
+ * @return {SpreadsheetApp.DataSourceColumn[]} An array of all the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-column.html'>DataSourceColumn</a></code> in the data source.
+ */
+
+
+/**
+ * Returns the data source sheets associated with this data source.
+ * 
+ * @function SpreadsheetApp.DataSource#getDataSourceSheets
+ * 
+ * @return {SpreadsheetApp.DataSourceSheet[]} An array of data source sheets.
+ */
+
+
+/**
  * Gets the data source specification.
  * 
  * @function SpreadsheetApp.DataSource#getSpec
@@ -2877,17 +3663,316 @@
 
 
 /**
+ * Refreshes all data source objects linked to the data source.
+ * 
+ * <p>Throws an exception if the data source type is not enabled. Use <code>SpreadsheetApp#enable...Execution()</code> methods to enable data execution for the specific data
+ * source type.
+ * 
+ * @function SpreadsheetApp.DataSource#refreshAllLinkedDataSourceObjects
+ * 
+ * @return void
+ */
+
+
+/**
  * Updates the data source specification and refreshes the data source objects linked with this
  * data source with the new specification.
  * 
- * <p>Throws an exception if the data source type is not enabled. Use <code>SpreadsheetApp#enable...Execution()</code> methods to enable data execution for specific data source
- * type.
+ * <p>Throws an exception if the data source type is not enabled. Use <code>SpreadsheetApp#enable...Execution()</code> methods to enable data execution for the specific data
+ * source type.
  * 
  * @function SpreadsheetApp.DataSource#updateSpec
  * 
  * @param {SpreadsheetApp.DataSourceSpec} spec - The data source specification to update with.
  * 
  * @return {SpreadsheetApp.DataSource} The data source.
+ */
+
+
+/**
+ * Updates the data source specification and refreshes the linked <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-sheet.html'>data
+ * source sheets</a></code> with the new specification.
+ * 
+ * <p>Throws an exception if the data source type is not enabled. Use <code>SpreadsheetApp#enable...Execution()</code> methods to enable data execution for the specific data
+ * source type.
+ * 
+ * @function SpreadsheetApp.DataSource#updateSpec
+ * 
+ * @param {SpreadsheetApp.DataSourceSpec} spec - The data source specification to update with.
+ * @param {Boolean} refreshAllLinkedObjects - If <code>true</code>, also refreshes all the data source objects
+ *     linked with this data source.
+ * 
+ * @return {SpreadsheetApp.DataSource} The data source.
+ */
+
+
+/**
+ * Waits until all the current executions of the linked data source objects complete, timing out
+ * after the provided number of seconds. Throws an exception if the executions are not completed
+ * when timing out, but does not cancel the data executions.
+ * 
+ * @function SpreadsheetApp.DataSource#waitForAllDataExecutionsCompletion
+ * 
+ * @param {IntegerNum} timeoutInSeconds - The time to wait for data executions, in seconds. The maximum is 300
+ *     seconds.
+ * 
+ * @return void
+ */
+
+
+
+/**
+ * @class SpreadsheetApp.DataSourceChart
+ */
+
+/**
+ * Refreshes the data of this object regardless of the current state. See <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-chart.html#refreshData()'>refreshData()</a></code> for
+ * more details.
+ * 
+ * <p>Throws an exception if the data source type is not enabled. Use <code>SpreadsheetApp#enable...Execution()</code> methods to enable data execution for specific data source
+ * type.
+ * 
+ * @function SpreadsheetApp.DataSourceChart#forceRefreshData
+ * 
+ * @return {SpreadsheetApp.DataSourceChart} The data object.
+ */
+
+
+/**
+ * Gets the data source the object is linked to.
+ * 
+ * @function SpreadsheetApp.DataSourceChart#getDataSource
+ * 
+ * @return {SpreadsheetApp.DataSource} The data source.
+ */
+
+
+/**
+ * Gets the data execution status of the object.
+ * 
+ * @function SpreadsheetApp.DataSourceChart#getStatus
+ * 
+ * @return {SpreadsheetApp.DataExecutionStatus} The data execution status.
+ */
+
+
+/**
+ * Refreshes the data of the object.
+ * 
+ * <p>Throws an exception if currently in <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-execution-state.html#ERROR'>error</a></code> state. Use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html#updateSpec(DataSourceSpec)'>DataSource#updateSpec()</a></code> to update the specification. The method is
+ * preferred over <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-chart.html#forceRefreshData()'>forceRefreshData()</a></code> to prevent unexpected edits on data source.
+ * 
+ * <p>Throws an exception if the data source type is not enabled. Use <code>SpreadsheetApp#enable...Execution()</code> methods to enable data execution for specific data source
+ * type.
+ * 
+ * @function SpreadsheetApp.DataSourceChart#refreshData
+ * 
+ * @return {SpreadsheetApp.DataSourceChart} The data object.
+ */
+
+
+/**
+ * Waits until the current execution completes, timing out after the provided number of seconds.
+ * Throws an exception if the execution is not completed when timing out, but does not cancel the
+ * data execution.
+ * 
+ * @function SpreadsheetApp.DataSourceChart#waitForCompletion
+ * 
+ * @param {IntegerNum} timeoutInSeconds - The time to wait for data execution, in seconds. The maximum is 300
+ *     seconds.
+ * 
+ * @return {SpreadsheetApp.DataExecutionStatus} The data execution status.
+ */
+
+
+
+/**
+ * @class SpreadsheetApp.DataSourceColumn
+ */
+
+/**
+ * Gets the data source associated with the data source column.
+ * 
+ * @function SpreadsheetApp.DataSourceColumn#getDataSource
+ * 
+ * @return {SpreadsheetApp.DataSource} The data source.
+ */
+
+
+/**
+ * Gets the formula for the data source column. Returns an empty string if the data source column
+ * is not a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-column.html#isCalculatedColumn()'>calculated column</a></code>.
+ * 
+ * @function SpreadsheetApp.DataSourceColumn#getFormula
+ * 
+ * @return {String} The formula.
+ */
+
+
+/**
+ * Gets the name for the data source column.
+ * 
+ * @function SpreadsheetApp.DataSourceColumn#getName
+ * 
+ * @return {String} The column name.
+ */
+
+
+/**
+ * Returns whether the column has an array dependency.
+ * 
+ * @function SpreadsheetApp.DataSourceColumn#hasArrayDependency
+ * 
+ * @return {Boolean} <code>true</code> if the column has an array dependency, or <code>false</code> otherwise.
+ */
+
+
+/**
+ * Returns whether the column is a calculated column.
+ * 
+ * @function SpreadsheetApp.DataSourceColumn#isCalculatedColumn
+ * 
+ * @return {Boolean} <code>true</code> if the column is a calculated column, or <code>false</code> otherwise.
+ */
+
+
+/**
+ * Removes the data source column.
+ * 
+ * <p>Only supported for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-column.html#isCalculatedColumn()'>calculated columns</a></code>.
+ * 
+ * @function SpreadsheetApp.DataSourceColumn#remove
+ * 
+ * @return void
+ */
+
+
+/**
+ * Sets the formula for the data source column.
+ * 
+ * <p>Only supported for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-column.html#isCalculatedColumn()'>calculated columns</a></code>.
+ * 
+ * @function SpreadsheetApp.DataSourceColumn#setFormula
+ * 
+ * @param {String} formula - The new formula.
+ * 
+ * @return {SpreadsheetApp.DataSourceColumn} The data source column, for chaining.
+ */
+
+
+/**
+ * Sets the name of the data source column.
+ * 
+ * <p>Only supported for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-column.html#isCalculatedColumn()'>calculated columns</a></code>.
+ * 
+ * @function SpreadsheetApp.DataSourceColumn#setName
+ * 
+ * @param {String} name - The name to set.
+ * 
+ * @return {SpreadsheetApp.DataSourceColumn} The data source column, for chaining.
+ */
+
+
+
+/**
+ * @class SpreadsheetApp.DataSourceFormula
+ */
+
+/**
+ * Refreshes the data of this object regardless of the current state. See <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-formula.html#refreshData()'>refreshData()</a></code> for
+ * more details.
+ * 
+ * <p>Throws an exception if the data source type is not enabled. Use <code>SpreadsheetApp#enable...Execution()</code> methods to enable data execution for specific data source
+ * type.
+ * 
+ * @function SpreadsheetApp.DataSourceFormula#forceRefreshData
+ * 
+ * @return {SpreadsheetApp.DataSourceFormula} The data object.
+ */
+
+
+/**
+ * Returns the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/range.html'>Range</a></code> representing the cell where this data source formula is anchored.
+ * 
+ * @function SpreadsheetApp.DataSourceFormula#getAnchorCell
+ * 
+ * @return {SpreadsheetApp.Range} The anchor cell.
+ */
+
+
+/**
+ * Gets the data source the object is linked to.
+ * 
+ * @function SpreadsheetApp.DataSourceFormula#getDataSource
+ * 
+ * @return {SpreadsheetApp.DataSource} The data source.
+ */
+
+
+/**
+ * Returns the display value of the data source formula.
+ * 
+ * @function SpreadsheetApp.DataSourceFormula#getDisplayValue
+ * 
+ * @return {String} The display value.
+ */
+
+
+/**
+ * Returns the formula for this data source formula.
+ * 
+ * @function SpreadsheetApp.DataSourceFormula#getFormula
+ * 
+ * @return {String} The formula.
+ */
+
+
+/**
+ * Gets the data execution status of the object.
+ * 
+ * @function SpreadsheetApp.DataSourceFormula#getStatus
+ * 
+ * @return {SpreadsheetApp.DataExecutionStatus} The data execution status.
+ */
+
+
+/**
+ * Refreshes the data of the object.
+ * 
+ * <p>Throws an exception if currently in <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-execution-state.html#ERROR'>error</a></code> state. Use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html#updateSpec(DataSourceSpec)'>DataSource#updateSpec()</a></code> to update the specification. The method is
+ * preferred over <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-formula.html#forceRefreshData()'>forceRefreshData()</a></code> to prevent unexpected edits on data source.
+ * 
+ * <p>Throws an exception if the data source type is not enabled. Use <code>SpreadsheetApp#enable...Execution()</code> methods to enable data execution for specific data source
+ * type.
+ * 
+ * @function SpreadsheetApp.DataSourceFormula#refreshData
+ * 
+ * @return {SpreadsheetApp.DataSourceFormula} The data object.
+ */
+
+
+/**
+ * Updates the formula.
+ * 
+ * @function SpreadsheetApp.DataSourceFormula#setFormula
+ * 
+ * @param {String} formula - The new formula.
+ * 
+ * @return {SpreadsheetApp.DataSourceFormula} The data source formula, for chaining.
+ */
+
+
+/**
+ * Waits until the current execution completes, timing out after the provided number of seconds.
+ * Throws an exception if the execution is not completed when timing out, but does not cancel the
+ * data execution.
+ * 
+ * @function SpreadsheetApp.DataSourceFormula#waitForCompletion
+ * 
+ * @param {IntegerNum} timeoutInSeconds - The time to wait for data execution, in seconds. The maximum is 300
+ *     seconds.
+ * 
+ * @return {SpreadsheetApp.DataExecutionStatus} The data execution status.
  */
 
 
@@ -2939,6 +4024,515 @@
  * 
  * @typedef {SpreadsheetApp.DataSourceParameterType} SpreadsheetApp.DataSourceParameterType.DATA_SOURCE_PARAMETER_TYPE_UNSUPPORTED
  */
+
+/**
+ * @class SpreadsheetApp.DataSourcePivotTable
+ */
+
+/**
+ * Adds a new pivot column group based on the specified data source column.
+ * 
+ * @function SpreadsheetApp.DataSourcePivotTable#addColumnGroup
+ * 
+ * @param {String} columnName - The data souce column name the pivot group is based on.
+ * 
+ * @return {SpreadsheetApp.PivotGroup} The new pivot group.
+ */
+
+
+/**
+ * Adds a new filter based on the specified data source column with the specified filter criteria.
+ * 
+ * @function SpreadsheetApp.DataSourcePivotTable#addFilter
+ * 
+ * @param {String} columnName - The data souce column name the filter is based on.
+ * @param {SpreadsheetApp.FilterCriteria} filterCriteria - The criteria the filter uses.
+ * 
+ * @return {SpreadsheetApp.PivotFilter} The new filter.
+ */
+
+
+/**
+ * Adds a new pivot value based on the specified data source column with the specified summarize
+ * function.
+ * 
+ * @function SpreadsheetApp.DataSourcePivotTable#addPivotValue
+ * 
+ * @param {String} columnName - The data souce column name the pivot value is based on.
+ * @param {SpreadsheetApp.PivotTableSummarizeFunction} summarizeFunction - The summarize function the pivot value uses.
+ * 
+ * @return {SpreadsheetApp.PivotValue} The new pivot value.
+ */
+
+
+/**
+ * Adds a new pivot row group based on the specified data source column.
+ * 
+ * @function SpreadsheetApp.DataSourcePivotTable#addRowGroup
+ * 
+ * @param {String} columnName - The data souce column name the pivot group is based on.
+ * 
+ * @return {SpreadsheetApp.PivotGroup} The new pivot group.
+ */
+
+
+/**
+ * Returns the data source pivot table as a regular pivot table object.
+ * 
+ * @function SpreadsheetApp.DataSourcePivotTable#asPivotTable
+ * 
+ * @return {SpreadsheetApp.PivotTable} The pivot table.
+ */
+
+
+/**
+ * Refreshes the data of this object regardless of the current state. See <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-pivot-table.html#refreshData()'>refreshData()</a></code> for
+ * more details.
+ * 
+ * <p>Throws an exception if the data source type is not enabled. Use <code>SpreadsheetApp#enable...Execution()</code> methods to enable data execution for specific data source
+ * type.
+ * 
+ * @function SpreadsheetApp.DataSourcePivotTable#forceRefreshData
+ * 
+ * @return {SpreadsheetApp.DataSourcePivotTable} The data object.
+ */
+
+
+/**
+ * Gets the data source the object is linked to.
+ * 
+ * @function SpreadsheetApp.DataSourcePivotTable#getDataSource
+ * 
+ * @return {SpreadsheetApp.DataSource} The data source.
+ */
+
+
+/**
+ * Gets the data execution status of the object.
+ * 
+ * @function SpreadsheetApp.DataSourcePivotTable#getStatus
+ * 
+ * @return {SpreadsheetApp.DataExecutionStatus} The data execution status.
+ */
+
+
+/**
+ * Refreshes the data of the object.
+ * 
+ * <p>Throws an exception if currently in <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-execution-state.html#ERROR'>error</a></code> state. Use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html#updateSpec(DataSourceSpec)'>DataSource#updateSpec()</a></code> to update the specification. The method is
+ * preferred over <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-pivot-table.html#forceRefreshData()'>forceRefreshData()</a></code> to prevent unexpected edits on data source.
+ * 
+ * <p>Throws an exception if the data source type is not enabled. Use <code>SpreadsheetApp#enable...Execution()</code> methods to enable data execution for specific data source
+ * type.
+ * 
+ * @function SpreadsheetApp.DataSourcePivotTable#refreshData
+ * 
+ * @return {SpreadsheetApp.DataSourcePivotTable} The data object.
+ */
+
+
+/**
+ * Waits until the current execution completes, timing out after the provided number of seconds.
+ * Throws an exception if the execution is not completed when timing out, but does not cancel the
+ * data execution.
+ * 
+ * @function SpreadsheetApp.DataSourcePivotTable#waitForCompletion
+ * 
+ * @param {IntegerNum} timeoutInSeconds - The time to wait for data execution, in seconds. The maximum is 300
+ *     seconds.
+ * 
+ * @return {SpreadsheetApp.DataExecutionStatus} The data execution status.
+ */
+
+
+
+/**
+ * @class SpreadsheetApp.DataSourceRefreshSchedule
+ */
+
+/**
+ * Gets the refresh schedule frequency, which specifies how often and when to refresh.
+ * 
+ * @function SpreadsheetApp.DataSourceRefreshSchedule#getFrequency
+ * 
+ * @return {SpreadsheetApp.DataSourceRefreshScheduleFrequency} The refresh schedule frequency.
+ */
+
+
+/**
+ * Gets the scope of this refresh schedule.
+ * 
+ * @function SpreadsheetApp.DataSourceRefreshSchedule#getScope
+ * 
+ * @return {SpreadsheetApp.DataSourceRefreshScope} The refresh scope.
+ */
+
+
+/**
+ * Gets the time window of the next run of this refresh schedule. Only applies if this refresh
+ * schedule is enabled.
+ * 
+ * @function SpreadsheetApp.DataSourceRefreshSchedule#getTimeIntervalOfNextRun
+ * 
+ * @return {TimeInterval} The time window of the next run.
+ */
+
+
+/**
+ * Determines whether this refresh schedule is enabled.
+ * 
+ * @function SpreadsheetApp.DataSourceRefreshSchedule#isEnabled
+ * 
+ * @return {Boolean} Whether this refresh schedule is enabled.
+ */
+
+
+
+/**
+ * @class SpreadsheetApp.DataSourceRefreshScheduleFrequency
+ */
+
+/**
+ * Gets the days of the month as numbers (1-28) on which to refresh the data source. Only applies
+ * if frequency type is monthly.
+ * 
+ * @function SpreadsheetApp.DataSourceRefreshScheduleFrequency#getDaysOfTheMonth
+ * 
+ * @return {IntegerNum[]} The days of the month on which to refresh.
+ */
+
+
+/**
+ * Gets the days of the week on which to refresh the data source. Only applies if the frequency
+ * type is weekly.
+ * 
+ * @function SpreadsheetApp.DataSourceRefreshScheduleFrequency#getDaysOfTheWeek
+ * 
+ * @return {Weekday[]} The days of the week on which to refresh.
+ */
+
+
+/**
+ * Gets the frequency type.
+ * 
+ * @function SpreadsheetApp.DataSourceRefreshScheduleFrequency#getFrequencyType
+ * 
+ * @return {SpreadsheetApp.FrequencyType} The frequency type.
+ */
+
+
+/**
+ * Gets the start hour (as a number 0-23) of the time interval during which the refresh schedule
+ * runs. For example, if the start hour is 13 and the time interval's duration is 4 hours, then
+ * the data source is refreshed between 1 p.m. and 5 p.m. The hour is in the timezone of the
+ * spreadsheet.
+ * 
+ * @function SpreadsheetApp.DataSourceRefreshScheduleFrequency#getStartHour
+ * 
+ * @return {IntegerNum} The start hour.
+ */
+
+
+
+/**
+ * @class SpreadsheetApp.DataSourceRefreshScope
+ */
+
+/**
+ * The refresh applies to all data sources in the spreadsheet.
+ * 
+ * @typedef {SpreadsheetApp.DataSourceRefreshScope} SpreadsheetApp.DataSourceRefreshScope.ALL_DATA_SOURCES
+ */
+/**
+ * The data source refresh scope is unsupported.
+ * 
+ * @typedef {SpreadsheetApp.DataSourceRefreshScope} SpreadsheetApp.DataSourceRefreshScope.DATA_SOURCE_REFRESH_SCOPE_UNSUPPORTED
+ */
+
+/**
+ * @class SpreadsheetApp.DataSourceSheet
+ */
+
+/**
+ * Adds a filter applied to the data source sheet.
+ * 
+ * @function SpreadsheetApp.DataSourceSheet#addFilter
+ * 
+ * @param {String} columnName - The name of the column to apply this filter to.
+ * @param {SpreadsheetApp.FilterCriteria} filterCriteria - The filter criteria to apply.
+ * 
+ * @return {SpreadsheetApp.DataSourceSheet} The data source sheet, for method chaining.
+ */
+
+
+/**
+ * Returns the data source sheet as a regular sheet object.
+ * 
+ * @function SpreadsheetApp.DataSourceSheet#asSheet
+ * 
+ * @return {SpreadsheetApp.Sheet} The regular sheet.
+ */
+
+
+/**
+ * Auto resizes the width of the specified column.
+ * 
+ * @function SpreadsheetApp.DataSourceSheet#autoResizeColumn
+ * 
+ * @param {String} columnName - The column name.
+ * 
+ * @return {SpreadsheetApp.DataSourceSheet} This data source sheet, for chaining.
+ */
+
+
+/**
+ * Auto resizes the width of the specified columns.
+ * 
+ * @function SpreadsheetApp.DataSourceSheet#autoResizeColumns
+ * 
+ * @param {String[]} columnNames - The list of column names to update.
+ * 
+ * @return {SpreadsheetApp.DataSourceSheet} This data source sheet, for chaining.
+ */
+
+
+/**
+ * Refreshes the data of this object regardless of the current state. See <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-sheet.html#refreshData()'>refreshData()</a></code> for
+ * more details.
+ * 
+ * <p>Throws an exception if the data source type is not enabled. Use <code>SpreadsheetApp#enable...Execution()</code> methods to enable data execution for specific data source
+ * type.
+ * 
+ * @function SpreadsheetApp.DataSourceSheet#forceRefreshData
+ * 
+ * @return {SpreadsheetApp.DataSourceSheet} The data object.
+ */
+
+
+/**
+ * Returns the width of the specified column.
+ * 
+ * @function SpreadsheetApp.DataSourceSheet#getColumnWidth
+ * 
+ * @param {String} columnName - The column name.
+ * 
+ * @return {IntegerNum} The column's width, or <code>null</code> if the column uses the default width.
+ */
+
+
+/**
+ * Gets the data source the object is linked to.
+ * 
+ * @function SpreadsheetApp.DataSourceSheet#getDataSource
+ * 
+ * @return {SpreadsheetApp.DataSource} The data source.
+ */
+
+
+/**
+ * Returns all filters applied to the data source sheet.
+ * 
+ * @function SpreadsheetApp.DataSourceSheet#getFilters
+ * 
+ * @return {SpreadsheetApp.DataSourceSheetFilter[]} An array of all filters applied to the data source sheet.
+ */
+
+
+/**
+ * Returns all the values for the data source sheet for the provided column name.
+ * 
+ * @function SpreadsheetApp.DataSourceSheet#getSheetValues
+ * 
+ * @param {String} columnName - The data source column name to fetch values for.
+ * 
+ * @return {Object[]} A one-dimensional array of values.
+ */
+
+
+/**
+ * Returns all the values for the data source sheet for the provided column name from the provided
+ * start row (based-1) and up to the provided <code>numRows</code>.
+ * 
+ * @function SpreadsheetApp.DataSourceSheet#getSheetValues
+ * 
+ * @param {String} columnName - The data source column name to fetch values for.
+ * @param {IntegerNum} startRow - The row position to start fetching values from.
+ * @param {IntegerNum} numRows - The number of rows to fetch.
+ * 
+ * @return {Object[]} A one-dimensional array of values.
+ */
+
+
+/**
+ * Gets all the sort specs in the data source sheet.
+ * 
+ * @function SpreadsheetApp.DataSourceSheet#getSortSpecs
+ * 
+ * @return {SpreadsheetApp.SortSpec[]} A list of sort specs.
+ */
+
+
+/**
+ * Gets the data execution status of the object.
+ * 
+ * @function SpreadsheetApp.DataSourceSheet#getStatus
+ * 
+ * @return {SpreadsheetApp.DataExecutionStatus} The data execution status.
+ */
+
+
+/**
+ * Refreshes the data of the object.
+ * 
+ * <p>Throws an exception if currently in <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-execution-state.html#ERROR'>error</a></code> state. Use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html#updateSpec(DataSourceSpec)'>DataSource#updateSpec()</a></code> to update the specification. The method is
+ * preferred over <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-sheet.html#forceRefreshData()'>forceRefreshData()</a></code> to prevent unexpected edits on data source.
+ * 
+ * <p>Throws an exception if the data source type is not enabled. Use <code>SpreadsheetApp#enable...Execution()</code> methods to enable data execution for specific data source
+ * type.
+ * 
+ * @function SpreadsheetApp.DataSourceSheet#refreshData
+ * 
+ * @return {SpreadsheetApp.DataSourceSheet} The data object.
+ */
+
+
+/**
+ * Removes all filters applied to the data source sheet column.
+ * 
+ * @function SpreadsheetApp.DataSourceSheet#removeFilters
+ * 
+ * @param {String} columnName - The name of the column to remove filters from.
+ * 
+ * @return {SpreadsheetApp.DataSourceSheet} The data source sheet, for method chaining.
+ */
+
+
+/**
+ * Removes the sort spec on a column in the data source sheet.
+ * 
+ * @function SpreadsheetApp.DataSourceSheet#removeSortSpec
+ * 
+ * @param {String} columnName - The name of the column.
+ * 
+ * @return {SpreadsheetApp.DataSourceSheet} The data source sheet, for chaining.
+ */
+
+
+/**
+ * Sets the width of the specified column.
+ * 
+ * @function SpreadsheetApp.DataSourceSheet#setColumnWidth
+ * 
+ * @param {String} columnName - The column name.
+ * @param {IntegerNum} width - The new width for the column.
+ * 
+ * @return {SpreadsheetApp.DataSourceSheet} This data source sheet, for chaining.
+ */
+
+
+/**
+ * Sets the width of the specified columns.
+ * 
+ * @function SpreadsheetApp.DataSourceSheet#setColumnWidths
+ * 
+ * @param {String[]} columnNames - The list of column names to update.
+ * @param {IntegerNum} width - The new width for the columns.
+ * 
+ * @return {SpreadsheetApp.DataSourceSheet} This data source sheet, for chaining.
+ */
+
+
+/**
+ * Sets the sort spec on a column in the data source sheet.
+ * 
+ * @function SpreadsheetApp.DataSourceSheet#setSortSpec
+ * 
+ * @param {String} columnName - The name of the column to sort.
+ * @param {Boolean} ascending - If <code>true</code>, sort the column in ascending order; if <code>false</code>, sort
+ *     the column in descending order.
+ * 
+ * @return {SpreadsheetApp.DataSourceSheet} The data source sheet, for chaining.
+ */
+
+
+/**
+ * Sets the sort spec on a column in the data source sheet.
+ * 
+ * @function SpreadsheetApp.DataSourceSheet#setSortSpec
+ * 
+ * @param {String} columnName - The name of the column to sort.
+ * @param {SpreadsheetApp.SortOrder} sortOrder - The sort order.
+ * 
+ * @return {SpreadsheetApp.DataSourceSheet} The data source sheet, for chaining.
+ */
+
+
+/**
+ * Waits until the current execution completes, timing out after the provided number of seconds.
+ * Throws an exception if the execution is not completed when timing out, but does not cancel the
+ * data execution.
+ * 
+ * @function SpreadsheetApp.DataSourceSheet#waitForCompletion
+ * 
+ * @param {IntegerNum} timeoutInSeconds - The time to wait for data execution, in seconds. The maximum is 300
+ *     seconds.
+ * 
+ * @return {SpreadsheetApp.DataExecutionStatus} The data execution status.
+ */
+
+
+
+/**
+ * @class SpreadsheetApp.DataSourceSheetFilter
+ */
+
+/**
+ * Returns the data source column this filter applies to.
+ * 
+ * @function SpreadsheetApp.DataSourceSheetFilter#getDataSourceColumn
+ * 
+ * @return {SpreadsheetApp.DataSourceColumn} The data source column.
+ */
+
+
+/**
+ * Returns the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-sheet.html'>DataSourceSheet</a></code> that this filter belongs to.
+ * 
+ * @function SpreadsheetApp.DataSourceSheetFilter#getDataSourceSheet
+ * 
+ * @return {SpreadsheetApp.DataSourceSheet} The data source sheet, to which this filter belongs.
+ */
+
+
+/**
+ * Returns the filter criteria for this filter.
+ * 
+ * @function SpreadsheetApp.DataSourceSheetFilter#getFilterCriteria
+ * 
+ * @return {SpreadsheetApp.FilterCriteria} The filter criteria for this filter.
+ */
+
+
+/**
+ * Removes this filter from the data source object.
+ * 
+ * @function SpreadsheetApp.DataSourceSheetFilter#remove
+ * 
+ * @return void
+ */
+
+
+/**
+ * Sets the filter criteria for this filter.
+ * 
+ * @function SpreadsheetApp.DataSourceSheetFilter#setFilterCriteria
+ * 
+ * @param {SpreadsheetApp.FilterCriteria} filterCriteria - The filter criteria to set.
+ * 
+ * @return {SpreadsheetApp.DataSourceSheetFilter} The filter for chaining.
+ */
+
+
 
 /**
  * @class SpreadsheetApp.DataSourceSpec
@@ -3069,6 +4663,54 @@
  */
 
 /**
+ * Adds columns to the data source table.
+ * 
+ * @function SpreadsheetApp.DataSourceTable#addColumns
+ * 
+ * @param {String[]} columnNames - The list of the names of the columns to add.
+ * 
+ * @return {SpreadsheetApp.DataSourceTable} The data source table, for chaining.
+ */
+
+
+/**
+ * Adds a filter applied to the data source table.
+ * 
+ * @function SpreadsheetApp.DataSourceTable#addFilter
+ * 
+ * @param {String} columnName - The name of the column to apply this filter to.
+ * @param {SpreadsheetApp.FilterCriteria} filterCriteria - The filter criteria to apply.
+ * 
+ * @return {SpreadsheetApp.DataSourceTable} The data source table, for chaining.
+ */
+
+
+/**
+ * Adds a sort spec on a column in the data source table.
+ * 
+ * @function SpreadsheetApp.DataSourceTable#addSortSpec
+ * 
+ * @param {String} columnName - The name of the column to sort.
+ * @param {Boolean} ascending - If <code>true</code>, sort the column in ascending order; if <code>false</code>, sort
+ *     the column in descending order.
+ * 
+ * @return {SpreadsheetApp.DataSourceTable} The data source sheet, for chaining.
+ */
+
+
+/**
+ * Adds a sort spec on a column in the data source table.
+ * 
+ * @function SpreadsheetApp.DataSourceTable#addSortSpec
+ * 
+ * @param {String} columnName - The name of the column to sort.
+ * @param {SpreadsheetApp.SortOrder} sortOrder - The sort order.
+ * 
+ * @return {SpreadsheetApp.DataSourceTable} The data source sheet, for chaining.
+ */
+
+
+/**
  * Refreshes the data of this object regardless of the current state. See <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-table.html#refreshData()'>refreshData()</a></code> for
  * more details.
  * 
@@ -3082,11 +4724,29 @@
 
 
 /**
+ * Gets all the data source columns added to the data source table.
+ * 
+ * @function SpreadsheetApp.DataSourceTable#getColumns
+ * 
+ * @return {SpreadsheetApp.DataSourceTableColumn[]} A list of data source table columns.
+ */
+
+
+/**
  * Gets the data source the object is linked to.
  * 
  * @function SpreadsheetApp.DataSourceTable#getDataSource
  * 
  * @return {SpreadsheetApp.DataSource} The data source.
+ */
+
+
+/**
+ * Returns all filters applied to the data source table.
+ * 
+ * @function SpreadsheetApp.DataSourceTable#getFilters
+ * 
+ * @return {SpreadsheetApp.DataSourceTableFilter[]} An array of all filters applied to the data source table.
  */
 
 
@@ -3100,6 +4760,25 @@
 
 
 /**
+ * Returns the row limit for the data source table.
+ * 
+ * @function SpreadsheetApp.DataSourceTable#getRowLimit
+ * 
+ * @return {IntegerNum} The row limit for the data source table, or <code>null</code> if no limit is set and the
+ *     table uses the default max limit as in Google Sheets UI.
+ */
+
+
+/**
+ * Gets all the sort specs in the data source table.
+ * 
+ * @function SpreadsheetApp.DataSourceTable#getSortSpecs
+ * 
+ * @return {SpreadsheetApp.SortSpec[]} A list of sort specs.
+ */
+
+
+/**
  * Gets the data execution status of the object.
  * 
  * @function SpreadsheetApp.DataSourceTable#getStatus
@@ -3109,9 +4788,19 @@
 
 
 /**
+ * Returns whether the data source table is syncing all columns in the associated data source.
+ * 
+ * @function SpreadsheetApp.DataSourceTable#isSyncingAllColumns
+ * 
+ * @return {Boolean} <code>True</code> if the data source table is syncing all columns in the associated data
+ *     source, or <code>false</code> otherwise.
+ */
+
+
+/**
  * Refreshes the data of the object.
  * 
- * <p>Throws an exception if currently in <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-execution-state.html#ERROR'>error</a></code> state. Use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html#updateSpec(DataSourceSpec)'>DataSource#updateSpec()</a></code> to update specificiation. The method is
+ * <p>Throws an exception if currently in <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-execution-state.html#ERROR'>error</a></code> state. Use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html#updateSpec(DataSourceSpec)'>DataSource#updateSpec()</a></code> to update the specification. The method is
  * preferred over <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-table.html#forceRefreshData()'>forceRefreshData()</a></code> to prevent unexpected edits on data source.
  * 
  * <p>Throws an exception if the data source type is not enabled. Use <code>SpreadsheetApp#enable...Execution()</code> methods to enable data execution for specific data source
@@ -3120,6 +4809,46 @@
  * @function SpreadsheetApp.DataSourceTable#refreshData
  * 
  * @return {SpreadsheetApp.DataSourceTable} The data object.
+ */
+
+
+/**
+ * Removes all the columns in the data source table.
+ * 
+ * @function SpreadsheetApp.DataSourceTable#removeAllColumns
+ * 
+ * @return {SpreadsheetApp.DataSourceTable} The data source table, for chaining.
+ */
+
+
+/**
+ * Removes all the sort specs in the data source table.
+ * 
+ * @function SpreadsheetApp.DataSourceTable#removeAllSortSpecs
+ * 
+ * @return {SpreadsheetApp.DataSourceTable} The data source sheet, for chaining.
+ */
+
+
+/**
+ * Updates the row limit for the data source table. If the provided row limit is <code>null</code>,
+ * then updates the data source table to use the default max row limit as in Google Sheets UI.
+ * 
+ * @function SpreadsheetApp.DataSourceTable#setRowLimit
+ * 
+ * @param {IntegerNum} rowLimit - The new row limit for the data table. If <code>null</code>, updates the table to use
+ *     the default row limit.
+ * 
+ * @return {SpreadsheetApp.DataSourceTable} The data source table, for chaining.
+ */
+
+
+/**
+ * Sync all current and future columns in the associated data source to the data source table.
+ * 
+ * @function SpreadsheetApp.DataSourceTable#syncAllColumns
+ * 
+ * @return {SpreadsheetApp.DataSourceTable} The data source table, for chaining.
  */
 
 
@@ -3134,6 +4863,81 @@
  *     seconds.
  * 
  * @return {SpreadsheetApp.DataExecutionStatus} The data execution status.
+ */
+
+
+
+/**
+ * @class SpreadsheetApp.DataSourceTableColumn
+ */
+
+/**
+ * Gets the data souce column.
+ * 
+ * @function SpreadsheetApp.DataSourceTableColumn#getDataSourceColumn
+ * 
+ * @return {SpreadsheetApp.DataSourceColumn} The data source column.
+ */
+
+
+/**
+ * Removes the column from the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-table.html'>DataSourceTable</a></code>.
+ * 
+ * @function SpreadsheetApp.DataSourceTableColumn#remove
+ * 
+ * @return void
+ */
+
+
+
+/**
+ * @class SpreadsheetApp.DataSourceTableFilter
+ */
+
+/**
+ * Returns the data source column this filter applies to.
+ * 
+ * @function SpreadsheetApp.DataSourceTableFilter#getDataSourceColumn
+ * 
+ * @return {SpreadsheetApp.DataSourceColumn} The data source column.
+ */
+
+
+/**
+ * Returns the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-table.html'>DataSourceTable</a></code> that this filter belongs to.
+ * 
+ * @function SpreadsheetApp.DataSourceTableFilter#getDataSourceTable
+ * 
+ * @return {SpreadsheetApp.DataSourceTable} The data source table, to which this filter belongs.
+ */
+
+
+/**
+ * Returns the filter criteria for this filter.
+ * 
+ * @function SpreadsheetApp.DataSourceTableFilter#getFilterCriteria
+ * 
+ * @return {SpreadsheetApp.FilterCriteria} The filter criteria for this filter.
+ */
+
+
+/**
+ * Removes this filter from the data source object.
+ * 
+ * @function SpreadsheetApp.DataSourceTableFilter#remove
+ * 
+ * @return void
+ */
+
+
+/**
+ * Sets the filter criteria for this filter.
+ * 
+ * @function SpreadsheetApp.DataSourceTableFilter#setFilterCriteria
+ * 
+ * @param {SpreadsheetApp.FilterCriteria} filterCriteria - The filter criteria to set.
+ * 
+ * @return {SpreadsheetApp.DataSourceTableFilter} The filter for chaining.
  */
 
 
@@ -3372,6 +5176,67 @@
  * @function SpreadsheetApp.DataValidationBuilder#getHelpText
  * 
  * @return {String} the rule's help text, or <code>null</code> if no help text is set
+ */
+
+
+/**
+ * Sets the data validation rule to require that the input is a boolean value; this value is
+ * rendered as a checkbox.
+ * 
+ * <pre class="prettyprint">
+ * // Set the data validation for cell A1 to require a boolean value; the value is rendered as a
+ * // checkbox.
+ * var cell = SpreadsheetApp.getActive().getRange('A1');
+ * var rule = SpreadsheetApp.newDataValidation().requireCheckbox().build();
+ * cell.setDataValidation(rule);
+ * </pre>
+ * 
+ * @function SpreadsheetApp.DataValidationBuilder#requireCheckbox
+ * 
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
+ */
+
+
+/**
+ * Sets the data validation rule to require that the input is the specified value or blank. When
+ * the input matches the specified value the cell is rendered as a checked checkbox. When the
+ * input is blank the cell is rendered as an unchecked checkbox.
+ * 
+ * <pre class="prettyprint">
+ * // Set the data validation for cell A1 to require a custom checked value that is rendered as a
+ * // checkbox.
+ * var cell = SpreadsheetApp.getActive().getRange('A1');
+ * var rule = SpreadsheetApp.newDataValidation().requireCheckbox('APPROVED').build();
+ * cell.setDataValidation(rule);
+ * </pre>
+ * 
+ * @function SpreadsheetApp.DataValidationBuilder#requireCheckbox
+ * 
+ * @param {Object} checkedValue - The value assigned to a checked box.
+ * 
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
+ */
+
+
+/**
+ * Sets the data validation rule to require that the input is one of the specified values. When
+ * the input is <code>checkedValue</code> the cell is rendered as a checked checkbox. When the
+ * input is <code>uncheckedValue</code> the cell is rendered as an unchecked checkbox.
+ * 
+ * <pre class="prettyprint">
+ * // Set the data validation for cell A1 to require custom checked values that are rendered as a
+ * // checkbox.
+ * var cell = SpreadsheetApp.getActive().getRange('A1');
+ * var rule = SpreadsheetApp.newDataValidation().requireCheckbox('APPROVED', 'PENDING').build();
+ * cell.setDataValidation(rule);
+ * </pre>
+ * 
+ * @function SpreadsheetApp.DataValidationBuilder#requireCheckbox
+ * 
+ * @param {Object} checkedValue - The value assigned to a checked box.
+ * @param {Object} uncheckedValue - The value assigned to an unchecked box.
+ * 
+ * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
  */
 
 
@@ -3932,49 +5797,6 @@
  */
 
 
-/**
- * Sets the data validation rule to require that the input is the specified value or blank. When
- * the input matches the specified value the cell is rendered as a checked checkbox. When the
- * input is blank the cell is rendered as an unchecked checkbox.
- * 
- * <pre class="prettyprint">
- * // Set the data validation for cell A1 to require a custom checked value that is rendered as a
- * // checkbox.
- * var cell = SpreadsheetApp.getActive().getRange('A1');
- * var rule = SpreadsheetApp.newDataValidation().requireCheckbox('APPROVED').build();
- * cell.setDataValidation(rule);
- * </pre>
- * 
- * @function SpreadsheetApp.DataValidationBuilder#requireCheckbox
- * 
- * @param {Object} checkedValue
- * 
- * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
- */
-
-
-/**
- * Sets the data validation rule to require that the input is one of the specified values. When
- * the input is <code>checkedValue</code> the cell is rendered as a checked checkbox. When the
- * input is <code>uncheckedValue</code> the cell is rendered as an unchecked checkbox.
- * 
- * <pre class="prettyprint">
- * // Set the data validation for cell A1 to require custom checked values that are rendered as a
- * // checkbox.
- * var cell = SpreadsheetApp.getActive().getRange('A1');
- * var rule = SpreadsheetApp.newDataValidation().requireCheckbox('APPROVED', 'PENDING').build();
- * cell.setDataValidation(rule);
- * </pre>
- * 
- * @function SpreadsheetApp.DataValidationBuilder#requireCheckbox
- * 
- * @param {Object} checkedValue
- * @param {Object} uncheckedValue
- * 
- * @return {SpreadsheetApp.DataValidationBuilder} this builder, for chaining
- */
-
-
 
 /**
  * @class SpreadsheetApp.DataValidationCriteria
@@ -4104,6 +5926,105 @@
  * Requires that the input is equal to a value in the given range.
  * 
  * @typedef {SpreadsheetApp.DataValidationCriteria} SpreadsheetApp.DataValidationCriteria.VALUE_IN_RANGE
+ */
+
+/**
+ * @class SpreadsheetApp.DateTimeGroupingRule
+ */
+
+/**
+ * Gets the type of the date-time grouping rule.
+ * 
+ * @function SpreadsheetApp.DateTimeGroupingRule#getRuleType
+ * 
+ * @return {SpreadsheetApp.DateTimeGroupingRuleType} The rule type.
+ */
+
+
+
+/**
+ * @class SpreadsheetApp.DateTimeGroupingRuleType
+ */
+
+/**
+ * Group date-time by day and month, for example <code>22-Nov</code>.
+ * 
+ * @typedef {SpreadsheetApp.DateTimeGroupingRuleType} SpreadsheetApp.DateTimeGroupingRuleType.DAY_MONTH
+ */
+/**
+ * Group date-time by day of month, from 1 to 31.
+ * 
+ * @typedef {SpreadsheetApp.DateTimeGroupingRuleType} SpreadsheetApp.DateTimeGroupingRuleType.DAY_OF_MONTH
+ */
+/**
+ * Group date-time by day of week, for example <code>Sunday</code>.
+ * 
+ * @typedef {SpreadsheetApp.DateTimeGroupingRuleType} SpreadsheetApp.DateTimeGroupingRuleType.DAY_OF_WEEK
+ */
+/**
+ * Group date-time by day of year, from 1 to 366.
+ * 
+ * @typedef {SpreadsheetApp.DateTimeGroupingRuleType} SpreadsheetApp.DateTimeGroupingRuleType.DAY_OF_YEAR
+ */
+/**
+ * Group date-time by hour using a 24-hour system, from 0 to 23.
+ * 
+ * @typedef {SpreadsheetApp.DateTimeGroupingRuleType} SpreadsheetApp.DateTimeGroupingRuleType.HOUR
+ */
+/**
+ * Group date-time by hour and minute using a 24-hour system, for example <code>19:45</code>.
+ * 
+ * @typedef {SpreadsheetApp.DateTimeGroupingRuleType} SpreadsheetApp.DateTimeGroupingRuleType.HOUR_MINUTE
+ */
+/**
+ * Group date-time by hour and minute using a 12-hour system, for example <code>7:45 PM</code>.
+ * 
+ * @typedef {SpreadsheetApp.DateTimeGroupingRuleType} SpreadsheetApp.DateTimeGroupingRuleType.HOUR_MINUTE_AMPM
+ */
+/**
+ * Group date-time by minute, from 0 to 59.
+ * 
+ * @typedef {SpreadsheetApp.DateTimeGroupingRuleType} SpreadsheetApp.DateTimeGroupingRuleType.MINUTE
+ */
+/**
+ * Group date-time by month, for example <code>Nov</code>.
+ * 
+ * @typedef {SpreadsheetApp.DateTimeGroupingRuleType} SpreadsheetApp.DateTimeGroupingRuleType.MONTH
+ */
+/**
+ * Group date-time by quarter, for example Q1 (which represents Jan-Mar).
+ * 
+ * @typedef {SpreadsheetApp.DateTimeGroupingRuleType} SpreadsheetApp.DateTimeGroupingRuleType.QUARTER
+ */
+/**
+ * Group date-time by second, from 0 to 59.
+ * 
+ * @typedef {SpreadsheetApp.DateTimeGroupingRuleType} SpreadsheetApp.DateTimeGroupingRuleType.SECOND
+ */
+/**
+ * A date-time grouping rule type that is not supported.
+ * 
+ * @typedef {SpreadsheetApp.DateTimeGroupingRuleType} SpreadsheetApp.DateTimeGroupingRuleType.UNSUPPORTED
+ */
+/**
+ * Group date-time by year, for example 2008.
+ * 
+ * @typedef {SpreadsheetApp.DateTimeGroupingRuleType} SpreadsheetApp.DateTimeGroupingRuleType.YEAR
+ */
+/**
+ * Group date-time by year and month, for example <code>2008-Nov</code>.
+ * 
+ * @typedef {SpreadsheetApp.DateTimeGroupingRuleType} SpreadsheetApp.DateTimeGroupingRuleType.YEAR_MONTH
+ */
+/**
+ * Group date-time by year, month, and day, for example <code>2008-11-22</code>.
+ * 
+ * @typedef {SpreadsheetApp.DateTimeGroupingRuleType} SpreadsheetApp.DateTimeGroupingRuleType.YEAR_MONTH_DAY
+ */
+/**
+ * Group date-time by year and quarter, for example <code>2008 Q4</code> .
+ * 
+ * @typedef {SpreadsheetApp.DateTimeGroupingRuleType} SpreadsheetApp.DateTimeGroupingRuleType.YEAR_QUARTER
  */
 
 /**
@@ -4465,6 +6386,182 @@
  */
 
 /**
+ * @class SpreadsheetApp.Drawing
+ */
+
+/**
+ * Gets information about where the drawing is positioned in the sheet.
+ * 
+ * @function SpreadsheetApp.Drawing#getContainerInfo
+ * 
+ * @return {SpreadsheetApp.ContainerInfo} An object containing the drawing's container position.
+ */
+
+
+/**
+ * Returns the actual height of this drawing in pixels.
+ * 
+ * <pre class="prettyprint"><code>
+ * // Logs the height of all drawings in a sheet
+ * var drawings = SpreadsheetApp.getActiveSheet().getDrawings();
+ * for (var i = 0; i &lt; drawings.length; i++) {
+ *   Logger.log(drawings[i].getHeight());
+ * }
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Drawing#getHeight
+ * 
+ * @return {IntegerNum} The height of the drawing in pixels.
+ */
+
+
+/**
+ * Returns the name of the macro attached to this drawing.
+ * 
+ * <pre class="prettyprint"><code>
+ * // Logs the macro name of all drawings on the active sheet.
+ * var drawings = SpreadsheetApp.getActiveSheet().getDrawings();
+ * for (var i = 0; i &lt; drawings.length; i++) {
+ *   Logger.log(drawings[i].getOnAction());
+ * }
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Drawing#getOnAction
+ * 
+ * @return {String} The macro name attached to this drawing.
+ */
+
+
+/**
+ * Returns the sheet this drawing appears on.
+ * 
+ * <pre class="prettyprint"><code>
+ * // Logs the parent sheet of all drawings on the active sheet.
+ * var drawings = SpreadsheetApp.getActiveSheet().getDrawings();
+ * for (var i = 0; i &lt; drawings.length; i++) {
+ *   Logger.log(drawings[i].getSheet());
+ * }
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Drawing#getSheet
+ * 
+ * @return {SpreadsheetApp.Sheet} The sheet the drawing appears on.
+ */
+
+
+/**
+ * Returns the actual width of this drawing in pixels.
+ * 
+ * <pre class="prettyprint"><code>
+ * // Logs the width of all drawings in a sheet
+ * var drawings = SpreadsheetApp.getActiveSheet().getDrawings();
+ * for (var i = 0; i &lt; drawings.length; i++) {
+ *   Logger.log(drawings[i].getWidth());
+ * }
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Drawing#getWidth
+ * 
+ * @return {IntegerNum} The width of the drawing in pixels.
+ */
+
+
+/**
+ * Returns the z-index of this drawing.
+ * 
+ * <pre class="prettyprint"><code>
+ * // Logs the z-index of all drawings on the active sheet.
+ * var drawings = SpreadsheetApp.getActiveSheet().getDrawings();
+ * for (var i = 0; i &lt; drawings.length; i++) {
+ *   Logger.log(drawings[i].getZIndex());
+ * }
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Drawing#getZIndex
+ * 
+ * @return {Number} Z-Index of this drawing.
+ */
+
+
+/**
+ * Deletes this drawing from the spreadsheet. Any further operation on the drawing results in a
+ * script error.
+ * 
+ * <pre class="prettyprint"><code>
+ * // Deletes all drawings from the active sheet.
+ * var drawings = SpreadsheetApp.getActiveSheet().getDrawings();
+ * for (var i = 0; i &lt; drawings.length; i++) {
+ *   drawings[i].remove();
+ * }
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Drawing#remove
+ * 
+ * @return void
+ */
+
+
+/**
+ * Sets the actual height of this drawing in pixels.
+ * 
+ * @function SpreadsheetApp.Drawing#setHeight
+ * 
+ * @param {IntegerNum} height - The desired height in pixels.
+ * 
+ * @return {SpreadsheetApp.Drawing} This drawing, for chaining.
+ */
+
+
+/**
+ * Assigns a macro function to this drawing.
+ * 
+ * @function SpreadsheetApp.Drawing#setOnAction
+ * 
+ * @param {String} macroName - Name of the macro function.
+ * 
+ * @return {SpreadsheetApp.Drawing} This drawing, for chaining.
+ */
+
+
+/**
+ * Sets the position where the drawing appears on the sheet. The anchor row and column position
+ * indices are 1-indexed.
+ * 
+ * @function SpreadsheetApp.Drawing#setPosition
+ * 
+ * @param {IntegerNum} anchorRowPos - The drawing's top side is anchored in this row.
+ * @param {IntegerNum} anchorColPos - The drawing's top side is anchored in this col.
+ * @param {IntegerNum} offsetX - The horizontal offset from the cell corner in pixels.
+ * @param {IntegerNum} offsetY - The vertical offset from the cell corner in pixels.
+ * 
+ * @return {SpreadsheetApp.Drawing} This drawing, for chaining.
+ */
+
+
+/**
+ * Sets the actual width of this drawing in pixels.
+ * 
+ * @function SpreadsheetApp.Drawing#setWidth
+ * 
+ * @param {IntegerNum} width - The desired width in pixels.
+ * 
+ * @return {SpreadsheetApp.Drawing} This drawing, for chaining.
+ */
+
+
+/**
+ * Sets the z-index of this drawing.
+ * 
+ * @function SpreadsheetApp.Drawing#setZIndex
+ * 
+ * @param {Number} zIndex - Z-Index of this drawing.
+ * 
+ * @return {SpreadsheetApp.Drawing} This drawing, for chaining.
+ */
+
+
+
+/**
  * @class SpreadsheetApp.EmbeddedAreaChartBuilder
  */
 
@@ -4602,6 +6699,31 @@
 
 
 /**
+ * Removes all ranges from the chart this builder modifies.
+ * 
+ * <pre class="prettyprint"><code>
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var sheet = ss.getSheets()[0];
+ * 
+ * // This code updates the chart to use only the new ranges while preserving the existing
+ * // formatting of the chart.
+ * var chart = sheet.getCharts()[0];
+ * var newChart = chart
+ *     .modify()
+ *     .clearRanges()
+ *     .addRange(sheet.getRange(&quot;A1:A5&quot;))
+ *     .addRange(sheet.getRange(&quot;B1:B5&quot;))
+ *     .build();
+ * sheet.updateChart(newChart);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.EmbeddedAreaChartBuilder#clearRanges
+ * 
+ * @return {SpreadsheetApp.EmbeddedChartBuilder} this builder, for chaining
+ */
+
+
+/**
  * Returns the current chart type.
  * 
  * @function SpreadsheetApp.EmbeddedAreaChartBuilder#getChartType
@@ -4723,7 +6845,7 @@
  * 
  * @function SpreadsheetApp.EmbeddedAreaChartBuilder#reverseCategories
  * 
- * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -4738,9 +6860,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedAreaChartBuilder#setBackgroundColor
  * 
- * @param {String} cssValue - the CSS value for the color (such as "blue" or "#00f")
+ * @param {String} cssValue - The CSS value for the color (such as <code>&quot;blue&quot;</code> or <code>&quot;#00f&quot;</code>).
  * 
- * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -4781,10 +6903,10 @@
  * 
  * @function SpreadsheetApp.EmbeddedAreaChartBuilder#setColors
  * 
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+ * @param {String[]} cssValues - An array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
  *     in the array represents the color of the nth line in the chart.
  * 
- * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -4815,7 +6937,7 @@
 
 
 /**
- * Sets the position of the legend with respect to the chart. By default, there will be no legend.
+ * Sets the position of the legend with respect to the chart. By default, there is no legend.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the legend position to right.
@@ -4825,9 +6947,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedAreaChartBuilder#setLegendPosition
  * 
- * @param {Charts.Position} position - the position of the legend
+ * @param {Charts.Position} position - The position of the legend.
  * 
- * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -4844,9 +6966,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedAreaChartBuilder#setLegendTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart legend.
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart legend.
  * 
- * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -4934,8 +7056,8 @@
 
 
 /**
- * Sets the style for points in the line. By default, points will have no particular styles, and
- * only the line will be visible.
+ * Sets the style for points in the line. By default, points have no particular styles, and only
+ * the line is visible.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets large point style.
@@ -4945,9 +7067,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedAreaChartBuilder#setPointStyle
  * 
- * @param {Charts.PointStyle} style - the style to use for points in the line
+ * @param {Charts.PointStyle} style - The style to use for points in the line.
  * 
- * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -4983,15 +7105,15 @@
 /**
  * Sets the range for the chart.
  * 
- * <p>If any data points fall outside the range, the range will be expanded to include those data
+ * <p>If any data points fall outside the range, the range is expanded to include those data
  * points.
  * 
  * @function SpreadsheetApp.EmbeddedAreaChartBuilder#setRange
  * 
- * @param {Number} start - value for the lowest grid line of the range axis
- * @param {Number} end - value for the highest grid line of the range axis
+ * @param {Number} start - The value for the lowest grid line of the range axis.
+ * @param {Number} end - The value for the highest grid line of the range axis.
  * 
- * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -5001,12 +7123,12 @@
  * 
  * @function SpreadsheetApp.EmbeddedAreaChartBuilder#setStacked
  * 
- * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the title of the chart. The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title is displayed centered above the chart.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and title to &#39;My Line Chart&#39;.
@@ -5018,7 +7140,7 @@
  * 
  * @param {String} chartTitle - the chart title.
  * 
- * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -5035,10 +7157,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedAreaChartBuilder#setTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
- *     created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -5082,16 +7203,15 @@
  * 
  * @function SpreadsheetApp.EmbeddedAreaChartBuilder#setXAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
- * value labels.
+ * Adds a title to the horizontal axis. The title is centered and appears below the axis value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the X-axis title.
@@ -5101,9 +7221,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedAreaChartBuilder#setXAxisTitle
  * 
- * @param {String} title - the title for the X-axis
+ * @param {String} title - The title for the X-axis.
  * 
- * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -5119,10 +7239,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedAreaChartBuilder#setXAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -5138,16 +7257,15 @@
  * 
  * @function SpreadsheetApp.EmbeddedAreaChartBuilder#setYAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the vertical axis. The title will be centered and will appear to the left of
- * the value labels.
+ * Adds a title to the vertical axis. The title is centered and appears to the left of the value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the Y-axis title.
@@ -5157,9 +7275,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedAreaChartBuilder#setYAxisTitle
  * 
- * @param {String} title - the title for the Y-axis
+ * @param {String} title - The title for the Y-axis.
  * 
- * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -5175,46 +7293,20 @@
  * 
  * @function SpreadsheetApp.EmbeddedAreaChartBuilder#setYAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
  * Makes the range axis into a logarithmic scale (requires all values to be positive). The range
- * axis will be the vertical axis for vertical charts (line, area, column, etc.) and the
- * horizontal axis for horizontal charts (bar, etc.)
+ * axis are the vertical axis for vertical charts (such as line, area, or column) and the
+ * horizontal axis for horizontal charts (such as bar).
  * 
  * @function SpreadsheetApp.EmbeddedAreaChartBuilder#useLogScale
  * 
- * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Removes all ranges from the chart this builder modifies.
- * 
- * <pre class="prettyprint"><code>
- * var ss = SpreadsheetApp.getActiveSpreadsheet();
- * var sheet = ss.getSheets()[0];
- * 
- * // This code updates the chart to use only the new ranges while preserving the existing
- * // formatting of the chart.
- * var chart = sheet.getCharts()[0];
- * var newChart = chart
- *     .modify()
- *     .clearRanges()
- *     .addRange(sheet.getRange(&quot;A1:A5&quot;))
- *     .addRange(sheet.getRange(&quot;B1:B5&quot;))
- *     .build();
- * sheet.updateChart(newChart);
- * </code></pre>
- * 
- * @function SpreadsheetApp.EmbeddedAreaChartBuilder#clearRanges
- * 
- * @return {SpreadsheetApp.EmbeddedChartBuilder} this builder, for chaining
+ * @return {SpreadsheetApp.EmbeddedAreaChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -5357,6 +7449,31 @@
 
 
 /**
+ * Removes all ranges from the chart this builder modifies.
+ * 
+ * <pre class="prettyprint"><code>
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var sheet = ss.getSheets()[0];
+ * 
+ * // This code updates the chart to use only the new ranges while preserving the existing
+ * // formatting of the chart.
+ * var chart = sheet.getCharts()[0];
+ * var newChart = chart
+ *     .modify()
+ *     .clearRanges()
+ *     .addRange(sheet.getRange(&quot;A1:A5&quot;))
+ *     .addRange(sheet.getRange(&quot;B1:B5&quot;))
+ *     .build();
+ * sheet.updateChart(newChart);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.EmbeddedBarChartBuilder#clearRanges
+ * 
+ * @return {SpreadsheetApp.EmbeddedChartBuilder} this builder, for chaining
+ */
+
+
+/**
  * Returns the current chart type.
  * 
  * @function SpreadsheetApp.EmbeddedBarChartBuilder#getChartType
@@ -5478,17 +7595,17 @@
  * 
  * @function SpreadsheetApp.EmbeddedBarChartBuilder#reverseCategories
  * 
- * @return {SpreadsheetApp.EmbeddedBarChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedBarChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
  * Reverses the direction in which the bars grow along the horizontal axis. By default, values
- * grow from left to right. Calling this method will cause them to grow from right to left.
+ * grow from left to right. Calling this method causes them to grow from right to left.
  * 
  * @function SpreadsheetApp.EmbeddedBarChartBuilder#reverseDirection
  * 
- * @return {SpreadsheetApp.EmbeddedBarChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedBarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -5503,9 +7620,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedBarChartBuilder#setBackgroundColor
  * 
- * @param {String} cssValue - the CSS value for the color (such as "blue" or "#00f")
+ * @param {String} cssValue - The CSS value for the color (such as <code>&quot;blue&quot;</code> or <code>&quot;#00f&quot;</code>).
  * 
- * @return {SpreadsheetApp.EmbeddedBarChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedBarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -5546,10 +7663,10 @@
  * 
  * @function SpreadsheetApp.EmbeddedBarChartBuilder#setColors
  * 
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+ * @param {String[]} cssValues - An array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
  *     in the array represents the color of the nth line in the chart.
  * 
- * @return {SpreadsheetApp.EmbeddedBarChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedBarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -5580,7 +7697,7 @@
 
 
 /**
- * Sets the position of the legend with respect to the chart. By default, there will be no legend.
+ * Sets the position of the legend with respect to the chart. By default, there is no legend.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the legend position to right.
@@ -5590,9 +7707,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedBarChartBuilder#setLegendPosition
  * 
- * @param {Charts.Position} position - the position of the legend
+ * @param {Charts.Position} position - The position of the legend.
  * 
- * @return {SpreadsheetApp.EmbeddedBarChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedBarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -5609,9 +7726,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedBarChartBuilder#setLegendTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart legend.
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart legend.
  * 
- * @return {SpreadsheetApp.EmbeddedBarChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedBarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -5730,15 +7847,15 @@
 /**
  * Sets the range for the chart.
  * 
- * <p>If any data points fall outside the range, the range will be expanded to include those data
+ * <p>If any data points fall outside the range, the range is expanded to include those data
  * points.
  * 
  * @function SpreadsheetApp.EmbeddedBarChartBuilder#setRange
  * 
- * @param {Number} start - value for the lowest grid line of the range axis
- * @param {Number} end - value for the highest grid line of the range axis
+ * @param {Number} start - The value for the lowest grid line of the range axis.
+ * @param {Number} end - The value for the highest grid line of the range axis.
  * 
- * @return {SpreadsheetApp.EmbeddedBarChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedBarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -5748,12 +7865,12 @@
  * 
  * @function SpreadsheetApp.EmbeddedBarChartBuilder#setStacked
  * 
- * @return {SpreadsheetApp.EmbeddedBarChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedBarChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the title of the chart. The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title is displayed centered above the chart.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and title to &#39;My Line Chart&#39;.
@@ -5765,7 +7882,7 @@
  * 
  * @param {String} chartTitle - the chart title.
  * 
- * @return {SpreadsheetApp.EmbeddedBarChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedBarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -5782,10 +7899,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedBarChartBuilder#setTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
- *     created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedBarChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedBarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -5829,16 +7945,15 @@
  * 
  * @function SpreadsheetApp.EmbeddedBarChartBuilder#setXAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedBarChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedBarChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
- * value labels.
+ * Adds a title to the horizontal axis. The title is centered and appears below the axis value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the X-axis title.
@@ -5848,9 +7963,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedBarChartBuilder#setXAxisTitle
  * 
- * @param {String} title - the title for the X-axis
+ * @param {String} title - The title for the X-axis.
  * 
- * @return {SpreadsheetApp.EmbeddedBarChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedBarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -5866,10 +7981,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedBarChartBuilder#setXAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedBarChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedBarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -5885,16 +7999,15 @@
  * 
  * @function SpreadsheetApp.EmbeddedBarChartBuilder#setYAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedBarChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedBarChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the vertical axis. The title will be centered and will appear to the left of
- * the value labels.
+ * Adds a title to the vertical axis. The title is centered and appears to the left of the value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the Y-axis title.
@@ -5904,9 +8017,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedBarChartBuilder#setYAxisTitle
  * 
- * @param {String} title - the title for the Y-axis
+ * @param {String} title - The title for the Y-axis.
  * 
- * @return {SpreadsheetApp.EmbeddedBarChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedBarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -5922,46 +8035,20 @@
  * 
  * @function SpreadsheetApp.EmbeddedBarChartBuilder#setYAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedBarChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedBarChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
  * Makes the range axis into a logarithmic scale (requires all values to be positive). The range
- * axis will be the vertical axis for vertical charts (line, area, column, etc.) and the
- * horizontal axis for horizontal charts (bar, etc.)
+ * axis are the vertical axis for vertical charts (such as line, area, or column) and the
+ * horizontal axis for horizontal charts (such as bar).
  * 
  * @function SpreadsheetApp.EmbeddedBarChartBuilder#useLogScale
  * 
- * @return {SpreadsheetApp.EmbeddedBarChartBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Removes all ranges from the chart this builder modifies.
- * 
- * <pre class="prettyprint"><code>
- * var ss = SpreadsheetApp.getActiveSpreadsheet();
- * var sheet = ss.getSheets()[0];
- * 
- * // This code updates the chart to use only the new ranges while preserving the existing
- * // formatting of the chart.
- * var chart = sheet.getCharts()[0];
- * var newChart = chart
- *     .modify()
- *     .clearRanges()
- *     .addRange(sheet.getRange(&quot;A1:A5&quot;))
- *     .addRange(sheet.getRange(&quot;B1:B5&quot;))
- *     .build();
- * sheet.updateChart(newChart);
- * </code></pre>
- * 
- * @function SpreadsheetApp.EmbeddedBarChartBuilder#clearRanges
- * 
- * @return {SpreadsheetApp.EmbeddedChartBuilder} this builder, for chaining
+ * @return {SpreadsheetApp.EmbeddedBarChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -5971,11 +8058,25 @@
  */
 
 /**
+ * Casts to a data source chart instance if the chart is a data source chart, or <code>null</code>
+ * otherwise.
+ * 
+ * @function SpreadsheetApp.EmbeddedChart#asDataSourceChart
+ * 
+ * @return {SpreadsheetApp.DataSourceChart} The data source chart.
+ */
+
+
+/**
  * Return the data inside this object as a blob converted to the specified content type. This
  * method adds the appropriate extension to the filename—for example, "myfile.pdf". However, it
  * assumes that the part of the filename that follows the last period (if any) is an existing
  * extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
  * "ShoppingList.12.25.pdf".
+ * 
+ * <p>To view the daily quotas for conversions, see <a
+ * href="https://developers.google.com/apps-script/guides/services/quotas">Quotas for Google
+ * Services</a>. Newly created G Suite domains might be temporarily subject to stricter quotas.
  * 
  * @function SpreadsheetApp.EmbeddedChart#getAs
  * 
@@ -5993,6 +8094,16 @@
  * @function SpreadsheetApp.EmbeddedChart#getBlob
  * 
  * @return {Blob} The data as a blob.
+ */
+
+
+/**
+ * Returns a stable identifier for the chart that is unique across the spreadsheet containing the
+ * chart or <code>null</code> if the chart is not in a spreadsheet.
+ * 
+ * @function SpreadsheetApp.EmbeddedChart#getChartId
+ * 
+ * @return {IntegerNum} A stable chart identifier.
  */
 
 
@@ -6052,18 +8163,6 @@
 
 
 /**
- * Returns the id that has been assigned to this object.
- * 
- * <p>This can be used in conjunction with app.getElementById() to retrieve a reference to this
- * object.
- * 
- * @function SpreadsheetApp.EmbeddedChart#getId
- * 
- * @return {String} the id that has been assigned to this object
- */
-
-
-/**
  * Returns the merge strategy used when more than one range exists. If <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/chart-merge-strategy.html#MERGE_ROWS'>MERGE_ROWS</a></code>, row are merged; if <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/chart-merge-strategy.html#MERGE_COLUMNS'>MERGE_COLUMNS</a></code>, columns are merged. Defaults to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/chart-merge-strategy.html#MERGE_COLUMNS'>MERGE_COLUMNS</a></code>.
  * 
  * <pre class="prettyprint"><code>
@@ -6119,13 +8218,13 @@
 
 
 /**
- * Returns the options for this chart, such as height, colors, axes, etc.
+ * Returns the options for this chart, such as height, colors, and axes.
  * 
  * <p>The returned options are immutable.
  * 
  * @function SpreadsheetApp.EmbeddedChart#getOptions
  * 
- * @return {Charts.ChartOptions} the options for this chart, such as height, colors, axes, etc.
+ * @return {Charts.ChartOptions} The options for this chart, such as height, colors, and axes.
  */
 
 
@@ -6185,15 +8284,6 @@
 
 
 /**
- * Gets the type of this object.
- * 
- * @function SpreadsheetApp.EmbeddedChart#getType
- * 
- * @return {String} the object type
- */
-
-
-/**
  * Returns an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-chart-builder.html'>EmbeddedChartBuilder</a></code> that can be used to modify this chart. Invoke <code>sheet.updateChart(chart)</code> to save any changes.
  * 
  * <pre class="prettyprint"><code>
@@ -6210,28 +8300,6 @@
  * @function SpreadsheetApp.EmbeddedChart#modify
  * 
  * @return {SpreadsheetApp.EmbeddedChartBuilder} a builder for creating embedded charts
- */
-
-
-/**
- * Sets the id of this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-chart.html'>EmbeddedChart</a></code> to be used with UiApp.
- * 
- * @function SpreadsheetApp.EmbeddedChart#setId
- * 
- * @param {String} id - the new id, which can be used to retrieve the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-chart.html'>EmbeddedChart</a></code> from
- *     app.getElementById(id).
- * 
- * @return {Charts.Chart} the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-chart.html'>EmbeddedChart</a></code> itself, useful for chaining.
- */
-
-
-/**
- * Returns a stable identifier for the chart that is unique across the spreadsheet containing the
- * chart or <code>null</code> if the chart is not in a spreadsheet.
- * 
- * @function SpreadsheetApp.EmbeddedChart#getChartId
- * 
- * @return {IntegerNum}
  */
 
 
@@ -6370,6 +8438,31 @@
  * @function SpreadsheetApp.EmbeddedChartBuilder#build
  * 
  * @return {SpreadsheetApp.EmbeddedChart} the created chart, which must still be added to the spreadsheet
+ */
+
+
+/**
+ * Removes all ranges from the chart this builder modifies.
+ * 
+ * <pre class="prettyprint"><code>
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var sheet = ss.getSheets()[0];
+ * 
+ * // This code updates the chart to use only the new ranges while preserving the existing
+ * // formatting of the chart.
+ * var chart = sheet.getCharts()[0];
+ * var newChart = chart
+ *     .modify()
+ *     .clearRanges()
+ *     .addRange(sheet.getRange(&quot;A1:A5&quot;))
+ *     .addRange(sheet.getRange(&quot;B1:B5&quot;))
+ *     .build();
+ * sheet.updateChart(newChart);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.EmbeddedChartBuilder#clearRanges
+ * 
+ * @return {SpreadsheetApp.EmbeddedChartBuilder} this builder, for chaining
  */
 
 
@@ -6672,31 +8765,6 @@
  */
 
 
-/**
- * Removes all ranges from the chart this builder modifies.
- * 
- * <pre class="prettyprint"><code>
- * var ss = SpreadsheetApp.getActiveSpreadsheet();
- * var sheet = ss.getSheets()[0];
- * 
- * // This code updates the chart to use only the new ranges while preserving the existing
- * // formatting of the chart.
- * var chart = sheet.getCharts()[0];
- * var newChart = chart
- *     .modify()
- *     .clearRanges()
- *     .addRange(sheet.getRange(&quot;A1:A5&quot;))
- *     .addRange(sheet.getRange(&quot;B1:B5&quot;))
- *     .build();
- * sheet.updateChart(newChart);
- * </code></pre>
- * 
- * @function SpreadsheetApp.EmbeddedChartBuilder#clearRanges
- * 
- * @return {SpreadsheetApp.EmbeddedChartBuilder} this builder, for chaining
- */
-
-
 
 /**
  * @class SpreadsheetApp.EmbeddedColumnChartBuilder
@@ -6836,6 +8904,31 @@
 
 
 /**
+ * Removes all ranges from the chart this builder modifies.
+ * 
+ * <pre class="prettyprint"><code>
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var sheet = ss.getSheets()[0];
+ * 
+ * // This code updates the chart to use only the new ranges while preserving the existing
+ * // formatting of the chart.
+ * var chart = sheet.getCharts()[0];
+ * var newChart = chart
+ *     .modify()
+ *     .clearRanges()
+ *     .addRange(sheet.getRange(&quot;A1:A5&quot;))
+ *     .addRange(sheet.getRange(&quot;B1:B5&quot;))
+ *     .build();
+ * sheet.updateChart(newChart);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.EmbeddedColumnChartBuilder#clearRanges
+ * 
+ * @return {SpreadsheetApp.EmbeddedChartBuilder} this builder, for chaining
+ */
+
+
+/**
  * Returns the current chart type.
  * 
  * @function SpreadsheetApp.EmbeddedColumnChartBuilder#getChartType
@@ -6957,7 +9050,7 @@
  * 
  * @function SpreadsheetApp.EmbeddedColumnChartBuilder#reverseCategories
  * 
- * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -6972,9 +9065,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedColumnChartBuilder#setBackgroundColor
  * 
- * @param {String} cssValue - the CSS value for the color (such as "blue" or "#00f")
+ * @param {String} cssValue - The CSS value for the color (such as <code>&quot;blue&quot;</code> or <code>&quot;#00f&quot;</code>).
  * 
- * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -7015,10 +9108,10 @@
  * 
  * @function SpreadsheetApp.EmbeddedColumnChartBuilder#setColors
  * 
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+ * @param {String[]} cssValues - An array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
  *     in the array represents the color of the nth line in the chart.
  * 
- * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -7049,7 +9142,7 @@
 
 
 /**
- * Sets the position of the legend with respect to the chart. By default, there will be no legend.
+ * Sets the position of the legend with respect to the chart. By default, there is no legend.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the legend position to right.
@@ -7059,9 +9152,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedColumnChartBuilder#setLegendPosition
  * 
- * @param {Charts.Position} position - the position of the legend
+ * @param {Charts.Position} position - The position of the legend.
  * 
- * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -7078,9 +9171,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedColumnChartBuilder#setLegendTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart legend.
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart legend.
  * 
- * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -7199,15 +9292,15 @@
 /**
  * Sets the range for the chart.
  * 
- * <p>If any data points fall outside the range, the range will be expanded to include those data
+ * <p>If any data points fall outside the range, the range is expanded to include those data
  * points.
  * 
  * @function SpreadsheetApp.EmbeddedColumnChartBuilder#setRange
  * 
- * @param {Number} start - value for the lowest grid line of the range axis
- * @param {Number} end - value for the highest grid line of the range axis
+ * @param {Number} start - The value for the lowest grid line of the range axis.
+ * @param {Number} end - The value for the highest grid line of the range axis.
  * 
- * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -7217,12 +9310,12 @@
  * 
  * @function SpreadsheetApp.EmbeddedColumnChartBuilder#setStacked
  * 
- * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the title of the chart. The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title is displayed centered above the chart.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and title to &#39;My Line Chart&#39;.
@@ -7234,7 +9327,7 @@
  * 
  * @param {String} chartTitle - the chart title.
  * 
- * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -7251,10 +9344,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedColumnChartBuilder#setTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
- *     created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -7298,16 +9390,15 @@
  * 
  * @function SpreadsheetApp.EmbeddedColumnChartBuilder#setXAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
- * value labels.
+ * Adds a title to the horizontal axis. The title is centered and appears below the axis value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the X-axis title.
@@ -7317,9 +9408,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedColumnChartBuilder#setXAxisTitle
  * 
- * @param {String} title - the title for the X-axis
+ * @param {String} title - The title for the X-axis.
  * 
- * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -7335,10 +9426,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedColumnChartBuilder#setXAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -7354,16 +9444,15 @@
  * 
  * @function SpreadsheetApp.EmbeddedColumnChartBuilder#setYAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the vertical axis. The title will be centered and will appear to the left of
- * the value labels.
+ * Adds a title to the vertical axis. The title is centered and appears to the left of the value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the Y-axis title.
@@ -7373,9 +9462,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedColumnChartBuilder#setYAxisTitle
  * 
- * @param {String} title - the title for the Y-axis
+ * @param {String} title - The title for the Y-axis.
  * 
- * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -7391,46 +9480,20 @@
  * 
  * @function SpreadsheetApp.EmbeddedColumnChartBuilder#setYAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
  * Makes the range axis into a logarithmic scale (requires all values to be positive). The range
- * axis will be the vertical axis for vertical charts (line, area, column, etc.) and the
- * horizontal axis for horizontal charts (bar, etc.)
+ * axis are the vertical axis for vertical charts (such as line, area, or column) and the
+ * horizontal axis for horizontal charts (such as bar).
  * 
  * @function SpreadsheetApp.EmbeddedColumnChartBuilder#useLogScale
  * 
- * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Removes all ranges from the chart this builder modifies.
- * 
- * <pre class="prettyprint"><code>
- * var ss = SpreadsheetApp.getActiveSpreadsheet();
- * var sheet = ss.getSheets()[0];
- * 
- * // This code updates the chart to use only the new ranges while preserving the existing
- * // formatting of the chart.
- * var chart = sheet.getCharts()[0];
- * var newChart = chart
- *     .modify()
- *     .clearRanges()
- *     .addRange(sheet.getRange(&quot;A1:A5&quot;))
- *     .addRange(sheet.getRange(&quot;B1:B5&quot;))
- *     .build();
- * sheet.updateChart(newChart);
- * </code></pre>
- * 
- * @function SpreadsheetApp.EmbeddedColumnChartBuilder#clearRanges
- * 
- * @return {SpreadsheetApp.EmbeddedChartBuilder} this builder, for chaining
+ * @return {SpreadsheetApp.EmbeddedColumnChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -7573,6 +9636,31 @@
 
 
 /**
+ * Removes all ranges from the chart this builder modifies.
+ * 
+ * <pre class="prettyprint"><code>
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var sheet = ss.getSheets()[0];
+ * 
+ * // This code updates the chart to use only the new ranges while preserving the existing
+ * // formatting of the chart.
+ * var chart = sheet.getCharts()[0];
+ * var newChart = chart
+ *     .modify()
+ *     .clearRanges()
+ *     .addRange(sheet.getRange(&quot;A1:A5&quot;))
+ *     .addRange(sheet.getRange(&quot;B1:B5&quot;))
+ *     .build();
+ * sheet.updateChart(newChart);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.EmbeddedComboChartBuilder#clearRanges
+ * 
+ * @return {SpreadsheetApp.EmbeddedChartBuilder} this builder, for chaining
+ */
+
+
+/**
  * Returns the current chart type.
  * 
  * @function SpreadsheetApp.EmbeddedComboChartBuilder#getChartType
@@ -7694,7 +9782,7 @@
  * 
  * @function SpreadsheetApp.EmbeddedComboChartBuilder#reverseCategories
  * 
- * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -7709,9 +9797,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedComboChartBuilder#setBackgroundColor
  * 
- * @param {String} cssValue - the CSS value for the color (such as "blue" or "#00f")
+ * @param {String} cssValue - The CSS value for the color (such as <code>&quot;blue&quot;</code> or <code>&quot;#00f&quot;</code>).
  * 
- * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -7752,10 +9840,10 @@
  * 
  * @function SpreadsheetApp.EmbeddedComboChartBuilder#setColors
  * 
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+ * @param {String[]} cssValues - An array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
  *     in the array represents the color of the nth line in the chart.
  * 
- * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -7786,7 +9874,7 @@
 
 
 /**
- * Sets the position of the legend with respect to the chart. By default, there will be no legend.
+ * Sets the position of the legend with respect to the chart. By default, there is no legend.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the legend position to right.
@@ -7796,9 +9884,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedComboChartBuilder#setLegendPosition
  * 
- * @param {Charts.Position} position - the position of the legend
+ * @param {Charts.Position} position - The position of the legend.
  * 
- * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -7815,9 +9903,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedComboChartBuilder#setLegendTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart legend.
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart legend.
  * 
- * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -7936,15 +10024,15 @@
 /**
  * Sets the range for the chart.
  * 
- * <p>If any data points fall outside the range, the range will be expanded to include those data
+ * <p>If any data points fall outside the range, the range is expanded to include those data
  * points.
  * 
  * @function SpreadsheetApp.EmbeddedComboChartBuilder#setRange
  * 
- * @param {Number} start - value for the lowest grid line of the range axis
- * @param {Number} end - value for the highest grid line of the range axis
+ * @param {Number} start - The value for the lowest grid line of the range axis.
+ * @param {Number} end - The value for the highest grid line of the range axis.
  * 
- * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -7954,12 +10042,12 @@
  * 
  * @function SpreadsheetApp.EmbeddedComboChartBuilder#setStacked
  * 
- * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the title of the chart. The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title is displayed centered above the chart.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and title to &#39;My Line Chart&#39;.
@@ -7971,7 +10059,7 @@
  * 
  * @param {String} chartTitle - the chart title.
  * 
- * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -7988,10 +10076,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedComboChartBuilder#setTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
- *     created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -8035,16 +10122,15 @@
  * 
  * @function SpreadsheetApp.EmbeddedComboChartBuilder#setXAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
- * value labels.
+ * Adds a title to the horizontal axis. The title is centered and appears below the axis value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the X-axis title.
@@ -8054,9 +10140,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedComboChartBuilder#setXAxisTitle
  * 
- * @param {String} title - the title for the X-axis
+ * @param {String} title - The title for the X-axis.
  * 
- * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -8072,10 +10158,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedComboChartBuilder#setXAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -8091,16 +10176,15 @@
  * 
  * @function SpreadsheetApp.EmbeddedComboChartBuilder#setYAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the vertical axis. The title will be centered and will appear to the left of
- * the value labels.
+ * Adds a title to the vertical axis. The title is centered and appears to the left of the value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the Y-axis title.
@@ -8110,9 +10194,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedComboChartBuilder#setYAxisTitle
  * 
- * @param {String} title - the title for the Y-axis
+ * @param {String} title - The title for the Y-axis.
  * 
- * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -8128,46 +10212,20 @@
  * 
  * @function SpreadsheetApp.EmbeddedComboChartBuilder#setYAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
  * Makes the range axis into a logarithmic scale (requires all values to be positive). The range
- * axis will be the vertical axis for vertical charts (line, area, column, etc.) and the
- * horizontal axis for horizontal charts (bar, etc.)
+ * axis are the vertical axis for vertical charts (such as line, area, or column) and the
+ * horizontal axis for horizontal charts (such as bar).
  * 
  * @function SpreadsheetApp.EmbeddedComboChartBuilder#useLogScale
  * 
- * @return {SpreadsheetApp.EmbeddedComboChartBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Removes all ranges from the chart this builder modifies.
- * 
- * <pre class="prettyprint"><code>
- * var ss = SpreadsheetApp.getActiveSpreadsheet();
- * var sheet = ss.getSheets()[0];
- * 
- * // This code updates the chart to use only the new ranges while preserving the existing
- * // formatting of the chart.
- * var chart = sheet.getCharts()[0];
- * var newChart = chart
- *     .modify()
- *     .clearRanges()
- *     .addRange(sheet.getRange(&quot;A1:A5&quot;))
- *     .addRange(sheet.getRange(&quot;B1:B5&quot;))
- *     .build();
- * sheet.updateChart(newChart);
- * </code></pre>
- * 
- * @function SpreadsheetApp.EmbeddedComboChartBuilder#clearRanges
- * 
- * @return {SpreadsheetApp.EmbeddedChartBuilder} this builder, for chaining
+ * @return {SpreadsheetApp.EmbeddedComboChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -8310,6 +10368,31 @@
 
 
 /**
+ * Removes all ranges from the chart this builder modifies.
+ * 
+ * <pre class="prettyprint"><code>
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var sheet = ss.getSheets()[0];
+ * 
+ * // This code updates the chart to use only the new ranges while preserving the existing
+ * // formatting of the chart.
+ * var chart = sheet.getCharts()[0];
+ * var newChart = chart
+ *     .modify()
+ *     .clearRanges()
+ *     .addRange(sheet.getRange(&quot;A1:A5&quot;))
+ *     .addRange(sheet.getRange(&quot;B1:B5&quot;))
+ *     .build();
+ * sheet.updateChart(newChart);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.EmbeddedHistogramChartBuilder#clearRanges
+ * 
+ * @return {SpreadsheetApp.EmbeddedChartBuilder} this builder, for chaining
+ */
+
+
+/**
  * Returns the current chart type.
  * 
  * @function SpreadsheetApp.EmbeddedHistogramChartBuilder#getChartType
@@ -8431,7 +10514,7 @@
  * 
  * @function SpreadsheetApp.EmbeddedHistogramChartBuilder#reverseCategories
  * 
- * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -8446,9 +10529,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedHistogramChartBuilder#setBackgroundColor
  * 
- * @param {String} cssValue - the CSS value for the color (such as "blue" or "#00f")
+ * @param {String} cssValue - The CSS value for the color (such as <code>&quot;blue&quot;</code> or <code>&quot;#00f&quot;</code>).
  * 
- * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -8489,10 +10572,10 @@
  * 
  * @function SpreadsheetApp.EmbeddedHistogramChartBuilder#setColors
  * 
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+ * @param {String[]} cssValues - An array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
  *     in the array represents the color of the nth line in the chart.
  * 
- * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -8523,7 +10606,7 @@
 
 
 /**
- * Sets the position of the legend with respect to the chart. By default, there will be no legend.
+ * Sets the position of the legend with respect to the chart. By default, there is no legend.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the legend position to right.
@@ -8533,9 +10616,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedHistogramChartBuilder#setLegendPosition
  * 
- * @param {Charts.Position} position - the position of the legend
+ * @param {Charts.Position} position - The position of the legend.
  * 
- * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -8552,9 +10635,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedHistogramChartBuilder#setLegendTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart legend.
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart legend.
  * 
- * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -8673,15 +10756,15 @@
 /**
  * Sets the range for the chart.
  * 
- * <p>If any data points fall outside the range, the range will be expanded to include those data
+ * <p>If any data points fall outside the range, the range is expanded to include those data
  * points.
  * 
  * @function SpreadsheetApp.EmbeddedHistogramChartBuilder#setRange
  * 
- * @param {Number} start - value for the lowest grid line of the range axis
- * @param {Number} end - value for the highest grid line of the range axis
+ * @param {Number} start - The value for the lowest grid line of the range axis.
+ * @param {Number} end - The value for the highest grid line of the range axis.
  * 
- * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -8691,12 +10774,12 @@
  * 
  * @function SpreadsheetApp.EmbeddedHistogramChartBuilder#setStacked
  * 
- * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the title of the chart. The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title is displayed centered above the chart.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and title to &#39;My Line Chart&#39;.
@@ -8708,7 +10791,7 @@
  * 
  * @param {String} chartTitle - the chart title.
  * 
- * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -8725,10 +10808,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedHistogramChartBuilder#setTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
- *     created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -8772,16 +10854,15 @@
  * 
  * @function SpreadsheetApp.EmbeddedHistogramChartBuilder#setXAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
- * value labels.
+ * Adds a title to the horizontal axis. The title is centered and appears below the axis value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the X-axis title.
@@ -8791,9 +10872,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedHistogramChartBuilder#setXAxisTitle
  * 
- * @param {String} title - the title for the X-axis
+ * @param {String} title - The title for the X-axis.
  * 
- * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -8809,10 +10890,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedHistogramChartBuilder#setXAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -8828,16 +10908,15 @@
  * 
  * @function SpreadsheetApp.EmbeddedHistogramChartBuilder#setYAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the vertical axis. The title will be centered and will appear to the left of
- * the value labels.
+ * Adds a title to the vertical axis. The title is centered and appears to the left of the value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the Y-axis title.
@@ -8847,9 +10926,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedHistogramChartBuilder#setYAxisTitle
  * 
- * @param {String} title - the title for the Y-axis
+ * @param {String} title - The title for the Y-axis.
  * 
- * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -8865,46 +10944,20 @@
  * 
  * @function SpreadsheetApp.EmbeddedHistogramChartBuilder#setYAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
  * Makes the range axis into a logarithmic scale (requires all values to be positive). The range
- * axis will be the vertical axis for vertical charts (line, area, column, etc.) and the
- * horizontal axis for horizontal charts (bar, etc.)
+ * axis are the vertical axis for vertical charts (such as line, area, or column) and the
+ * horizontal axis for horizontal charts (such as bar).
  * 
  * @function SpreadsheetApp.EmbeddedHistogramChartBuilder#useLogScale
  * 
- * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Removes all ranges from the chart this builder modifies.
- * 
- * <pre class="prettyprint"><code>
- * var ss = SpreadsheetApp.getActiveSpreadsheet();
- * var sheet = ss.getSheets()[0];
- * 
- * // This code updates the chart to use only the new ranges while preserving the existing
- * // formatting of the chart.
- * var chart = sheet.getCharts()[0];
- * var newChart = chart
- *     .modify()
- *     .clearRanges()
- *     .addRange(sheet.getRange(&quot;A1:A5&quot;))
- *     .addRange(sheet.getRange(&quot;B1:B5&quot;))
- *     .build();
- * sheet.updateChart(newChart);
- * </code></pre>
- * 
- * @function SpreadsheetApp.EmbeddedHistogramChartBuilder#clearRanges
- * 
- * @return {SpreadsheetApp.EmbeddedChartBuilder} this builder, for chaining
+ * @return {SpreadsheetApp.EmbeddedHistogramChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -9047,6 +11100,31 @@
 
 
 /**
+ * Removes all ranges from the chart this builder modifies.
+ * 
+ * <pre class="prettyprint"><code>
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var sheet = ss.getSheets()[0];
+ * 
+ * // This code updates the chart to use only the new ranges while preserving the existing
+ * // formatting of the chart.
+ * var chart = sheet.getCharts()[0];
+ * var newChart = chart
+ *     .modify()
+ *     .clearRanges()
+ *     .addRange(sheet.getRange(&quot;A1:A5&quot;))
+ *     .addRange(sheet.getRange(&quot;B1:B5&quot;))
+ *     .build();
+ * sheet.updateChart(newChart);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.EmbeddedLineChartBuilder#clearRanges
+ * 
+ * @return {SpreadsheetApp.EmbeddedChartBuilder} this builder, for chaining
+ */
+
+
+/**
  * Returns the current chart type.
  * 
  * @function SpreadsheetApp.EmbeddedLineChartBuilder#getChartType
@@ -9168,7 +11246,7 @@
  * 
  * @function SpreadsheetApp.EmbeddedLineChartBuilder#reverseCategories
  * 
- * @return {SpreadsheetApp.EmbeddedLineChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedLineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -9183,9 +11261,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedLineChartBuilder#setBackgroundColor
  * 
- * @param {String} cssValue - the CSS value for the color (such as "blue" or "#00f")
+ * @param {String} cssValue - The CSS value for the color (such as <code>&quot;blue&quot;</code> or <code>&quot;#00f&quot;</code>).
  * 
- * @return {SpreadsheetApp.EmbeddedLineChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedLineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -9226,10 +11304,10 @@
  * 
  * @function SpreadsheetApp.EmbeddedLineChartBuilder#setColors
  * 
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+ * @param {String[]} cssValues - An array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
  *     in the array represents the color of the nth line in the chart.
  * 
- * @return {SpreadsheetApp.EmbeddedLineChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedLineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -9245,9 +11323,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedLineChartBuilder#setCurveStyle
  * 
- * @param {Charts.CurveStyle} style - the style for curves in the chart
+ * @param {Charts.CurveStyle} style - The style for curves in the chart.
  * 
- * @return {SpreadsheetApp.EmbeddedLineChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedLineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -9278,7 +11356,7 @@
 
 
 /**
- * Sets the position of the legend with respect to the chart. By default, there will be no legend.
+ * Sets the position of the legend with respect to the chart. By default, there is no legend.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the legend position to right.
@@ -9288,9 +11366,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedLineChartBuilder#setLegendPosition
  * 
- * @param {Charts.Position} position - the position of the legend
+ * @param {Charts.Position} position - The position of the legend.
  * 
- * @return {SpreadsheetApp.EmbeddedLineChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedLineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -9307,9 +11385,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedLineChartBuilder#setLegendTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart legend.
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart legend.
  * 
- * @return {SpreadsheetApp.EmbeddedLineChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedLineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -9397,8 +11475,8 @@
 
 
 /**
- * Sets the style for points in the line. By default, points will have no particular styles, and
- * only the line will be visible.
+ * Sets the style for points in the line. By default, points have no particular styles, and only
+ * the line is visible.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets large point style.
@@ -9408,9 +11486,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedLineChartBuilder#setPointStyle
  * 
- * @param {Charts.PointStyle} style - the style to use for points in the line
+ * @param {Charts.PointStyle} style - The style to use for points in the line.
  * 
- * @return {SpreadsheetApp.EmbeddedLineChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedLineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -9446,20 +11524,20 @@
 /**
  * Sets the range for the chart.
  * 
- * <p>If any data points fall outside the range, the range will be expanded to include those data
+ * <p>If any data points fall outside the range, the range is expanded to include those data
  * points.
  * 
  * @function SpreadsheetApp.EmbeddedLineChartBuilder#setRange
  * 
- * @param {Number} start - value for the lowest grid line of the range axis
- * @param {Number} end - value for the highest grid line of the range axis
+ * @param {Number} start - The value for the lowest grid line of the range axis.
+ * @param {Number} end - The value for the highest grid line of the range axis.
  * 
- * @return {SpreadsheetApp.EmbeddedLineChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedLineChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets the title of the chart. The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title is displayed centered above the chart.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and title to &#39;My Line Chart&#39;.
@@ -9471,7 +11549,7 @@
  * 
  * @param {String} chartTitle - the chart title.
  * 
- * @return {SpreadsheetApp.EmbeddedLineChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedLineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -9488,10 +11566,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedLineChartBuilder#setTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
- *     created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedLineChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedLineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -9535,16 +11612,15 @@
  * 
  * @function SpreadsheetApp.EmbeddedLineChartBuilder#setXAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedLineChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedLineChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
- * value labels.
+ * Adds a title to the horizontal axis. The title is centered and appears below the axis value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the X-axis title.
@@ -9554,9 +11630,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedLineChartBuilder#setXAxisTitle
  * 
- * @param {String} title - the title for the X-axis
+ * @param {String} title - The title for the X-axis.
  * 
- * @return {SpreadsheetApp.EmbeddedLineChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedLineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -9572,10 +11648,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedLineChartBuilder#setXAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedLineChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedLineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -9591,16 +11666,15 @@
  * 
  * @function SpreadsheetApp.EmbeddedLineChartBuilder#setYAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedLineChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedLineChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the vertical axis. The title will be centered and will appear to the left of
- * the value labels.
+ * Adds a title to the vertical axis. The title is centered and appears to the left of the value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the Y-axis title.
@@ -9610,9 +11684,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedLineChartBuilder#setYAxisTitle
  * 
- * @param {String} title - the title for the Y-axis
+ * @param {String} title - The title for the Y-axis.
  * 
- * @return {SpreadsheetApp.EmbeddedLineChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedLineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -9628,46 +11702,20 @@
  * 
  * @function SpreadsheetApp.EmbeddedLineChartBuilder#setYAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedLineChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedLineChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
  * Makes the range axis into a logarithmic scale (requires all values to be positive). The range
- * axis will be the vertical axis for vertical charts (line, area, column, etc.) and the
- * horizontal axis for horizontal charts (bar, etc.)
+ * axis are the vertical axis for vertical charts (such as line, area, or column) and the
+ * horizontal axis for horizontal charts (such as bar).
  * 
  * @function SpreadsheetApp.EmbeddedLineChartBuilder#useLogScale
  * 
- * @return {SpreadsheetApp.EmbeddedLineChartBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Removes all ranges from the chart this builder modifies.
- * 
- * <pre class="prettyprint"><code>
- * var ss = SpreadsheetApp.getActiveSpreadsheet();
- * var sheet = ss.getSheets()[0];
- * 
- * // This code updates the chart to use only the new ranges while preserving the existing
- * // formatting of the chart.
- * var chart = sheet.getCharts()[0];
- * var newChart = chart
- *     .modify()
- *     .clearRanges()
- *     .addRange(sheet.getRange(&quot;A1:A5&quot;))
- *     .addRange(sheet.getRange(&quot;B1:B5&quot;))
- *     .build();
- * sheet.updateChart(newChart);
- * </code></pre>
- * 
- * @function SpreadsheetApp.EmbeddedLineChartBuilder#clearRanges
- * 
- * @return {SpreadsheetApp.EmbeddedChartBuilder} this builder, for chaining
+ * @return {SpreadsheetApp.EmbeddedLineChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -9810,6 +11858,31 @@
 
 
 /**
+ * Removes all ranges from the chart this builder modifies.
+ * 
+ * <pre class="prettyprint"><code>
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var sheet = ss.getSheets()[0];
+ * 
+ * // This code updates the chart to use only the new ranges while preserving the existing
+ * // formatting of the chart.
+ * var chart = sheet.getCharts()[0];
+ * var newChart = chart
+ *     .modify()
+ *     .clearRanges()
+ *     .addRange(sheet.getRange(&quot;A1:A5&quot;))
+ *     .addRange(sheet.getRange(&quot;B1:B5&quot;))
+ *     .build();
+ * sheet.updateChart(newChart);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.EmbeddedPieChartBuilder#clearRanges
+ * 
+ * @return {SpreadsheetApp.EmbeddedChartBuilder} this builder, for chaining
+ */
+
+
+/**
  * Returns the current chart type.
  * 
  * @function SpreadsheetApp.EmbeddedPieChartBuilder#getChartType
@@ -9931,7 +12004,7 @@
  * 
  * @function SpreadsheetApp.EmbeddedPieChartBuilder#reverseCategories
  * 
- * @return {SpreadsheetApp.EmbeddedPieChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedPieChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -9940,7 +12013,7 @@
  * 
  * @function SpreadsheetApp.EmbeddedPieChartBuilder#set3D
  * 
- * @return {SpreadsheetApp.EmbeddedPieChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedPieChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -9955,9 +12028,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedPieChartBuilder#setBackgroundColor
  * 
- * @param {String} cssValue - the CSS value for the color (such as "blue" or "#00f")
+ * @param {String} cssValue - The CSS value for the color (such as <code>&quot;blue&quot;</code> or <code>&quot;#00f&quot;</code>).
  * 
- * @return {SpreadsheetApp.EmbeddedPieChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedPieChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -9998,10 +12071,10 @@
  * 
  * @function SpreadsheetApp.EmbeddedPieChartBuilder#setColors
  * 
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+ * @param {String[]} cssValues - An array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
  *     in the array represents the color of the nth line in the chart.
  * 
- * @return {SpreadsheetApp.EmbeddedPieChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedPieChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -10032,7 +12105,7 @@
 
 
 /**
- * Sets the position of the legend with respect to the chart. By default, there will be no legend.
+ * Sets the position of the legend with respect to the chart. By default, there is no legend.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the legend position to right.
@@ -10042,9 +12115,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedPieChartBuilder#setLegendPosition
  * 
- * @param {Charts.Position} position - the position of the legend
+ * @param {Charts.Position} position - The position of the legend.
  * 
- * @return {SpreadsheetApp.EmbeddedPieChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedPieChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -10061,9 +12134,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedPieChartBuilder#setLegendTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart legend.
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart legend.
  * 
- * @return {SpreadsheetApp.EmbeddedPieChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedPieChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -10180,7 +12253,7 @@
 
 
 /**
- * Sets the title of the chart. The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title is displayed centered above the chart.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and title to &#39;My Line Chart&#39;.
@@ -10192,7 +12265,7 @@
  * 
  * @param {String} chartTitle - the chart title.
  * 
- * @return {SpreadsheetApp.EmbeddedPieChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedPieChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -10209,10 +12282,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedPieChartBuilder#setTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
- *     created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedPieChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedPieChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -10239,31 +12311,6 @@
  * 
  * @param {Boolean} transpose - If <code>true</code>, the rows and columns used to construct the chart are
  *     transposed.
- * 
- * @return {SpreadsheetApp.EmbeddedChartBuilder} this builder, for chaining
- */
-
-
-/**
- * Removes all ranges from the chart this builder modifies.
- * 
- * <pre class="prettyprint"><code>
- * var ss = SpreadsheetApp.getActiveSpreadsheet();
- * var sheet = ss.getSheets()[0];
- * 
- * // This code updates the chart to use only the new ranges while preserving the existing
- * // formatting of the chart.
- * var chart = sheet.getCharts()[0];
- * var newChart = chart
- *     .modify()
- *     .clearRanges()
- *     .addRange(sheet.getRange(&quot;A1:A5&quot;))
- *     .addRange(sheet.getRange(&quot;B1:B5&quot;))
- *     .build();
- * sheet.updateChart(newChart);
- * </code></pre>
- * 
- * @function SpreadsheetApp.EmbeddedPieChartBuilder#clearRanges
  * 
  * @return {SpreadsheetApp.EmbeddedChartBuilder} this builder, for chaining
  */
@@ -10408,6 +12455,31 @@
 
 
 /**
+ * Removes all ranges from the chart this builder modifies.
+ * 
+ * <pre class="prettyprint"><code>
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var sheet = ss.getSheets()[0];
+ * 
+ * // This code updates the chart to use only the new ranges while preserving the existing
+ * // formatting of the chart.
+ * var chart = sheet.getCharts()[0];
+ * var newChart = chart
+ *     .modify()
+ *     .clearRanges()
+ *     .addRange(sheet.getRange(&quot;A1:A5&quot;))
+ *     .addRange(sheet.getRange(&quot;B1:B5&quot;))
+ *     .build();
+ * sheet.updateChart(newChart);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.EmbeddedScatterChartBuilder#clearRanges
+ * 
+ * @return {SpreadsheetApp.EmbeddedChartBuilder} this builder, for chaining
+ */
+
+
+/**
  * Returns the current chart type.
  * 
  * @function SpreadsheetApp.EmbeddedScatterChartBuilder#getChartType
@@ -10526,9 +12598,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedScatterChartBuilder#setBackgroundColor
  * 
- * @param {String} cssValue - the CSS value for the color (such as "blue" or "#00f")
+ * @param {String} cssValue - The CSS value for the color (such as <code>&quot;blue&quot;</code> or <code>&quot;#00f&quot;</code>).
  * 
- * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -10569,10 +12641,10 @@
  * 
  * @function SpreadsheetApp.EmbeddedScatterChartBuilder#setColors
  * 
- * @param {String[]} cssValues - an array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
+ * @param {String[]} cssValues - An array of color CSS values, such as <code>[&quot;red&quot;, &quot;#acf&quot;]</code>. The nth element
  *     in the array represents the color of the nth line in the chart.
  * 
- * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -10603,7 +12675,7 @@
 
 
 /**
- * Sets the position of the legend with respect to the chart. By default, there will be no legend.
+ * Sets the position of the legend with respect to the chart. By default, there is no legend.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the legend position to right.
@@ -10613,9 +12685,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedScatterChartBuilder#setLegendPosition
  * 
- * @param {Charts.Position} position - the position of the legend
+ * @param {Charts.Position} position - The position of the legend.
  * 
- * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -10632,9 +12704,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedScatterChartBuilder#setLegendTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart legend.
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart legend.
  * 
- * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -10722,8 +12794,8 @@
 
 
 /**
- * Sets the style for points in the line. By default, points will have no particular styles, and
- * only the line will be visible.
+ * Sets the style for points in the line. By default, points have no particular styles, and only
+ * the line is visible.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets large point style.
@@ -10733,9 +12805,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedScatterChartBuilder#setPointStyle
  * 
- * @param {Charts.PointStyle} style - the style to use for points in the line
+ * @param {Charts.PointStyle} style - The style to use for points in the line.
  * 
- * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -10769,7 +12841,7 @@
 
 
 /**
- * Sets the title of the chart. The title will be displayed centered above the chart.
+ * Sets the title of the chart. The title is displayed centered above the chart.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and title to &#39;My Line Chart&#39;.
@@ -10781,7 +12853,7 @@
  * 
  * @param {String} chartTitle - the chart title.
  * 
- * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -10798,10 +12870,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedScatterChartBuilder#setTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the chart title. TextStyleBuilder object can be
- *     created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the chart title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -10838,14 +12909,14 @@
  * 
  * @function SpreadsheetApp.EmbeddedScatterChartBuilder#setXAxisLogScale
  * 
- * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
  * Sets the range for the horizontal axis of the chart.
  * 
- * <p>If any data points fall outside the range, the range will be expanded to include those data
+ * <p>If any data points fall outside the range, the range is expanded to include those data
  * points.
  * 
  * <pre class="prettyprint"><code>
@@ -10856,10 +12927,10 @@
  * 
  * @function SpreadsheetApp.EmbeddedScatterChartBuilder#setXAxisRange
  * 
- * @param {Number} start - value for the lowest grid line of the horizontal axis
- * @param {Number} end - value for the highest grid line of the horizontal axis
+ * @param {Number} start - The value for the lowest grid line of the horizontal axis.
+ * @param {Number} end - The value for the highest grid line of the horizontal axis.
  * 
- * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -10875,16 +12946,15 @@
  * 
  * @function SpreadsheetApp.EmbeddedScatterChartBuilder#setXAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the horizontal axis. The title will be centered and will appear below the axis
- * value labels.
+ * Adds a title to the horizontal axis. The title is centered and appears below the axis value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the X-axis title.
@@ -10894,9 +12964,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedScatterChartBuilder#setXAxisTitle
  * 
- * @param {String} title - the title for the X-axis
+ * @param {String} title - The title for the X-axis.
  * 
- * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -10912,10 +12982,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedScatterChartBuilder#setXAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -10924,13 +12993,13 @@
  * 
  * @function SpreadsheetApp.EmbeddedScatterChartBuilder#setYAxisLogScale
  * 
- * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
  * Sets the range for the vertical axis of the chart. If any data points fall outside the range,
- * the range will be expanded to include those data points.
+ * the range is expanded to include those data points.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a scatter chart builder and sets the Y-axis range to be 0 to 100.
@@ -10940,10 +13009,10 @@
  * 
  * @function SpreadsheetApp.EmbeddedScatterChartBuilder#setYAxisRange
  * 
- * @param {Number} start - value for the lowest grid line of the vertical axis
- * @param {Number} end - value for the highest grid line of the vertical axis
+ * @param {Number} start - The value for the lowest grid line of the vertical axis.
+ * @param {Number} end - The value for the highest grid line of the vertical axis.
  * 
- * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -10959,16 +13028,15 @@
  * 
  * @function SpreadsheetApp.EmbeddedScatterChartBuilder#setYAxisTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Adds a title to the vertical axis. The title will be centered and will appear to the left of
- * the value labels.
+ * Adds a title to the vertical axis. The title is centered and appears to the left of the value
+ * labels.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a line chart builder and sets the Y-axis title.
@@ -10978,9 +13046,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedScatterChartBuilder#setYAxisTitle
  * 
- * @param {String} title - the title for the Y-axis
+ * @param {String} title - The title for the Y-axis.
  * 
- * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -10996,35 +13064,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedScatterChartBuilder#setYAxisTitleTextStyle
  * 
- * @param {Charts.TextStyle} textStyle - the text style to use for the horizontal axis title. TextStyleBuilder object
- *     can be created by calling Charts.newTextStyle().
+ * @param {Charts.TextStyle} textStyle - The text style to use for the horizontal axis title. You can create a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/text-style-builder.html'>TextStyleBuilder</a></code> object by calling <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../charts/charts.html#newTextStyle()'>Charts.newTextStyle()</a></code>.
  * 
- * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Removes all ranges from the chart this builder modifies.
- * 
- * <pre class="prettyprint"><code>
- * var ss = SpreadsheetApp.getActiveSpreadsheet();
- * var sheet = ss.getSheets()[0];
- * 
- * // This code updates the chart to use only the new ranges while preserving the existing
- * // formatting of the chart.
- * var chart = sheet.getCharts()[0];
- * var newChart = chart
- *     .modify()
- *     .clearRanges()
- *     .addRange(sheet.getRange(&quot;A1:A5&quot;))
- *     .addRange(sheet.getRange(&quot;B1:B5&quot;))
- *     .build();
- * sheet.updateChart(newChart);
- * </code></pre>
- * 
- * @function SpreadsheetApp.EmbeddedScatterChartBuilder#clearRanges
- * 
- * @return {SpreadsheetApp.EmbeddedChartBuilder} this builder, for chaining
+ * @return {SpreadsheetApp.EmbeddedScatterChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -11167,15 +13209,40 @@
 
 
 /**
+ * Removes all ranges from the chart this builder modifies.
+ * 
+ * <pre class="prettyprint"><code>
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var sheet = ss.getSheets()[0];
+ * 
+ * // This code updates the chart to use only the new ranges while preserving the existing
+ * // formatting of the chart.
+ * var chart = sheet.getCharts()[0];
+ * var newChart = chart
+ *     .modify()
+ *     .clearRanges()
+ *     .addRange(sheet.getRange(&quot;A1:A5&quot;))
+ *     .addRange(sheet.getRange(&quot;B1:B5&quot;))
+ *     .build();
+ * sheet.updateChart(newChart);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.EmbeddedTableChartBuilder#clearRanges
+ * 
+ * @return {SpreadsheetApp.EmbeddedChartBuilder} this builder, for chaining
+ */
+
+
+/**
  * Sets whether to enable paging through the data.
  * 
  * <p>The default behavior is paging disabled. If paging is enabled the default page size is 10.
  * 
  * @function SpreadsheetApp.EmbeddedTableChartBuilder#enablePaging
  * 
- * @param {Boolean} enablePaging - true if paging should be enabled, false otherwise
+ * @param {Boolean} enablePaging - <code>true</code> if paging should be enabled, <code>false</code> otherwise.
  * 
- * @return {SpreadsheetApp.EmbeddedTableChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedTableChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -11192,9 +13259,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedTableChartBuilder#enablePaging
  * 
- * @param {IntegerNum} pageSize - the number of rows in each page of the table
+ * @param {IntegerNum} pageSize - The number of rows in each page of the table.
  * 
- * @return {SpreadsheetApp.EmbeddedTableChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedTableChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -11213,10 +13280,10 @@
  * 
  * @function SpreadsheetApp.EmbeddedTableChartBuilder#enablePaging
  * 
- * @param {IntegerNum} pageSize - the number of rows in each page of the table
- * @param {IntegerNum} startPage - the first table page to display (page numbers are zero based)
+ * @param {IntegerNum} pageSize - The number of rows in each page of the table.
+ * @param {IntegerNum} startPage - The first table page to display (page numbers are zero-based).
  * 
- * @return {SpreadsheetApp.EmbeddedTableChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedTableChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -11227,29 +13294,30 @@
  * 
  * <p>This does not affect the column index in the underlying data, only the order of display.
  * Full bi-directional (BiDi) language display is not supported by the table visualization even
- * with this option. This option will be ignored if you enable paging (using the page option), or
- * if the table has scroll bars because you have specified height and width options smaller than
- * the required table size. The default behavior is RTL support disabled.
+ * with this option. This option is ignored if you enable paging (using the page option), or if
+ * the table has scroll bars because you have specified height and width options smaller than the
+ * required table size. The default behavior is RTL support disabled.
  * 
  * @function SpreadsheetApp.EmbeddedTableChartBuilder#enableRtlTable
  * 
- * @param {Boolean} rtlEnabled - true if right-to-left support should be enabled, false otherwise
+ * @param {Boolean} rtlEnabled - <code>true</code> if right-to-left support should be enabled, <code>false</code>
+ *     otherwise.
  * 
- * @return {SpreadsheetApp.EmbeddedTableChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedTableChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
  * Sets whether to sort columns when the user clicks a column heading.
  * 
- * <p>If sorting is enabled, when users click on the column header the rows will be automatically
+ * <p>If sorting is enabled, when users click on the column header the rows are automatically
  * sorted. The default behavior is sorting enabled.
  * 
  * @function SpreadsheetApp.EmbeddedTableChartBuilder#enableSorting
  * 
- * @param {Boolean} enableSorting - true if to enable sorting by clicking on column headers, false otherwise
+ * @param {Boolean} enableSorting - <code>true</code> to enable sorting by clicking on column headers, <code>false</code> otherwise.
  * 
- * @return {SpreadsheetApp.EmbeddedTableChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedTableChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -11399,9 +13467,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedTableChartBuilder#setFirstRowNumber
  * 
- * @param {IntegerNum} number - the row number for the first row in the data table
+ * @param {IntegerNum} number - The row number for the first row in the data table.
  * 
- * @return {SpreadsheetApp.EmbeddedTableChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedTableChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -11435,8 +13503,7 @@
  * Sets the index of the column according to which the table should be initially sorted
  * (ascending).
  * 
- * <p>The column will be sorted in ascending order and will be marked with a small arrow
- * indicating that.
+ * <p>The column os sorted in ascending order and is marked with a small arrow indicating that.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a table chart builder and sorts it by the second column (ascending).
@@ -11446,9 +13513,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedTableChartBuilder#setInitialSortingAscending
  * 
- * @param {IntegerNum} column - the number of the column according to which the table should be initially sorted
+ * @param {IntegerNum} column - The number of the column according to which the table should be initially sorted.
  * 
- * @return {SpreadsheetApp.EmbeddedTableChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedTableChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -11456,8 +13523,7 @@
  * Sets the index of the column according to which the table should be initially sorted
  * (descending).
  * 
- * <p>The column will be sorted in descending order and be marked with a a small arrow indicating
- * that.
+ * <p>The column os sorted in descending order and is marked with a a small arrow indicating that.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a table chart builder and sorts it by the second column (descending).
@@ -11467,9 +13533,9 @@
  * 
  * @function SpreadsheetApp.EmbeddedTableChartBuilder#setInitialSortingDescending
  * 
- * @param {IntegerNum} column - the number of the column according to which the table should be initially sorted
+ * @param {IntegerNum} column - The number of the column according to which the table should be initially sorted.
  * 
- * @return {SpreadsheetApp.EmbeddedTableChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedTableChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -11620,48 +13686,23 @@
  * 
  * @function SpreadsheetApp.EmbeddedTableChartBuilder#showRowNumberColumn
  * 
- * @param {Boolean} showRowNumber - true if the first column of the table should show the row number, false
- *     otherwise
+ * @param {Boolean} showRowNumber - <code>true</code> if the first column of the table should show the row number,
+ *     <code>false</code> otherwise.
  * 
- * @return {SpreadsheetApp.EmbeddedTableChartBuilder} this builder, useful for chaining
+ * @return {SpreadsheetApp.EmbeddedTableChartBuilder} This builder, useful for chaining.
  */
 
 
 /**
- * Sets whether alternating color style will be assigned to odd and even rows of a table chart.
+ * Sets whether alternating color style is assigned to odd and even rows of a table chart.
  * 
  * <p>The default behavior is the rows having alternating color style.
  * 
  * @function SpreadsheetApp.EmbeddedTableChartBuilder#useAlternatingRowStyle
  * 
- * @param {Boolean} alternate - true if color styles should be alternating, false otherwise
+ * @param {Boolean} alternate - <code>true</code> if color styles should be alternating, <code>false</code> otherwise.
  * 
- * @return {SpreadsheetApp.EmbeddedTableChartBuilder} this builder, useful for chaining
- */
-
-
-/**
- * Removes all ranges from the chart this builder modifies.
- * 
- * <pre class="prettyprint"><code>
- * var ss = SpreadsheetApp.getActiveSpreadsheet();
- * var sheet = ss.getSheets()[0];
- * 
- * // This code updates the chart to use only the new ranges while preserving the existing
- * // formatting of the chart.
- * var chart = sheet.getCharts()[0];
- * var newChart = chart
- *     .modify()
- *     .clearRanges()
- *     .addRange(sheet.getRange(&quot;A1:A5&quot;))
- *     .addRange(sheet.getRange(&quot;B1:B5&quot;))
- *     .build();
- * sheet.updateChart(newChart);
- * </code></pre>
- * 
- * @function SpreadsheetApp.EmbeddedTableChartBuilder#clearRanges
- * 
- * @return {SpreadsheetApp.EmbeddedChartBuilder} this builder, for chaining
+ * @return {SpreadsheetApp.EmbeddedTableChartBuilder} This builder, useful for chaining.
  */
 
 
@@ -11737,6 +13778,17 @@
  */
 
 
+/**
+ * Gets the sort specification on the specified column, or <code>null</code> if no sort spec is set.
+ * 
+ * @function SpreadsheetApp.Filter#getColumnSortSpec
+ * 
+ * @param {IntegerNum} columnPosition - The 1-indexed position of the column.
+ * 
+ * @return {SpreadsheetApp.SortSpec} The sort specification.
+ */
+
+
 
 /**
  * @class SpreadsheetApp.FilterCriteria
@@ -11783,6 +13835,26 @@
 
 
 /**
+ * Returns the background color used as a filter criteria. Cells with this background color remain
+ * visible.
+ * 
+ * @function SpreadsheetApp.FilterCriteria#getVisibleBackgroundColor
+ * 
+ * @return {SpreadsheetApp.Color} The background color used as a filter criteria.
+ */
+
+
+/**
+ * Returns the foreground color used as a filter criteria. Cells with this foreground color remain
+ * visible.
+ * 
+ * @function SpreadsheetApp.FilterCriteria#getVisibleForegroundColor
+ * 
+ * @return {SpreadsheetApp.Color} The foreground color used as a filter criteria.
+ */
+
+
+/**
  * Returns the values to show.
  * 
  * @function SpreadsheetApp.FilterCriteria#getVisibleValues
@@ -11801,7 +13873,7 @@
  * 
  * @function SpreadsheetApp.FilterCriteriaBuilder#build
  * 
- * @return {SpreadsheetApp.FilterCriteria} a representation of the filter criteria
+ * @return {SpreadsheetApp.FilterCriteria} A representation of the filter criteria.
  */
 
 
@@ -11846,6 +13918,26 @@
 
 
 /**
+ * Returns the background color used as a filter criteria. Cells with this background color remain
+ * visible.
+ * 
+ * @function SpreadsheetApp.FilterCriteriaBuilder#getVisibleBackgroundColor
+ * 
+ * @return {SpreadsheetApp.Color} The background color used as a filter criteria.
+ */
+
+
+/**
+ * Returns the foreground color used as a filter criteria. Cells with this foreground color remain
+ * visible.
+ * 
+ * @function SpreadsheetApp.FilterCriteriaBuilder#getVisibleForegroundColor
+ * 
+ * @return {SpreadsheetApp.Color} The foreground color used as a filter criteria.
+ */
+
+
+/**
  * Returns the values to show.
  * 
  * @function SpreadsheetApp.FilterCriteriaBuilder#getVisibleValues
@@ -11861,7 +13953,35 @@
  * 
  * @param {String[]} values - The list of values to hide.
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
+ */
+
+
+/**
+ * Sets the background color used as a filter criteria. Cells with this background color remain
+ * visible. Setting a background color filter criteria removes the current color filter criteria
+ * from this builder.
+ * 
+ * @function SpreadsheetApp.FilterCriteriaBuilder#setVisibleBackgroundColor
+ * 
+ * @param {SpreadsheetApp.Color} visibleBackgroundColor - The background color to set. This must be an RGB-style color,
+ *     theme colors are not supported.
+ * 
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
+ */
+
+
+/**
+ * Sets the foreground color used as a filter criteria. Cells with this foreground color remain
+ * visible. Setting a foreground color filter criteria removes the current color filter criteria
+ * from this builder.
+ * 
+ * @function SpreadsheetApp.FilterCriteriaBuilder#setVisibleForegroundColor
+ * 
+ * @param {SpreadsheetApp.Color} visibleForegroundColor - The foreground color to set. This must be an RGB-style color,
+ *     theme colors are not supported.
+ * 
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -11872,7 +13992,7 @@
  * 
  * @param {String[]} values - The list of values to show.
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -11881,7 +14001,7 @@
  * 
  * @function SpreadsheetApp.FilterCriteriaBuilder#whenCellEmpty
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -11890,7 +14010,7 @@
  * 
  * @function SpreadsheetApp.FilterCriteriaBuilder#whenCellNotEmpty
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -11901,7 +14021,7 @@
  * 
  * @param {Date} date - The latest date.
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -11913,7 +14033,7 @@
  * 
  * @param {SpreadsheetApp.RelativeDate} date - The latest date relative to the date type selected.
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -11924,7 +14044,7 @@
  * 
  * @param {Date} date - The earliest unacceptable date.
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -11935,7 +14055,7 @@
  * 
  * @param {SpreadsheetApp.RelativeDate} date - The latest date relative to the date type selected.
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -11946,7 +14066,7 @@
  * 
  * @param {Date} date - The sole acceptable date.
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -11958,7 +14078,42 @@
  * 
  * @param {SpreadsheetApp.RelativeDate} date - The latest date relative to the date type selected.
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
+ */
+
+
+/**
+ * Sets the filter criteria to show cells where the cell date is equal to any of the specified
+ * dates.
+ * 
+ * @function SpreadsheetApp.FilterCriteriaBuilder#whenDateEqualToAny
+ * 
+ * @param {Date[]} dates - The acceptable values.
+ * 
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
+ */
+
+
+/**
+ * Sets the filter criteria to show cells where the cell date is not equal to the specified date.
+ * 
+ * @function SpreadsheetApp.FilterCriteriaBuilder#whenDateNotEqualTo
+ * 
+ * @param {Date} date - The latest date relative to the date type selected.
+ * 
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
+ */
+
+
+/**
+ * Sets the filter criteria to show cells where the cell date is not equal to any of the specified
+ * dates.
+ * 
+ * @function SpreadsheetApp.FilterCriteriaBuilder#whenDateNotEqualToAny
+ * 
+ * @param {Date[]} dates - The acceptable values.
+ * 
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -11970,7 +14125,7 @@
  * 
  * @param {String} formula - A custom formula that evaluates to <code>true</code> if the input is valid.
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -11983,7 +14138,7 @@
  * @param {Number} start - The lowest acceptable value.
  * @param {Number} end - The highest acceptable value.
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -11994,7 +14149,19 @@
  * 
  * @param {Number} number - The sole acceptable value.
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
+ */
+
+
+/**
+ * Sets the filter criteria to show cells where the cell number is equal to any of the specified
+ * numbers.
+ * 
+ * @function SpreadsheetApp.FilterCriteriaBuilder#whenNumberEqualToAny
+ * 
+ * @param {Number[]} numbers - The acceptable values.
+ * 
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -12006,7 +14173,7 @@
  * 
  * @param {Number} number - The highest unacceptable value.
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -12018,7 +14185,7 @@
  * 
  * @param {Number} number - The lowest acceptable value.
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -12030,7 +14197,7 @@
  * 
  * @param {Number} number - The lowest unacceptable value.
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -12042,7 +14209,7 @@
  * 
  * @param {Number} number - The highest acceptable value.
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -12055,7 +14222,7 @@
  * @param {Number} start - The lowest unacceptable value.
  * @param {Number} end - The highest unacceptable value.
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -12067,7 +14234,19 @@
  * 
  * @param {Number} number - The sole unacceptable value.
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
+ */
+
+
+/**
+ * Sets the filter criteria to show cells where the cell number is not equal to any of the
+ * specified numbers.
+ * 
+ * @function SpreadsheetApp.FilterCriteriaBuilder#whenNumberNotEqualToAny
+ * 
+ * @param {Number[]} numbers - The unacceptable values.
+ * 
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -12078,7 +14257,7 @@
  * 
  * @param {String} text - The value that the input must contain.
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -12089,7 +14268,7 @@
  * 
  * @param {String} text - The value that the input must not contain.
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -12100,7 +14279,7 @@
  * 
  * @param {String} text - Text to compare against the end of the string.
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -12111,7 +14290,42 @@
  * 
  * @param {String} text - The sole acceptable value.
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
+ */
+
+
+/**
+ * Sets the filter criteria to show cells where the cell text is equal to any of the specified
+ * values.
+ * 
+ * @function SpreadsheetApp.FilterCriteriaBuilder#whenTextEqualToAny
+ * 
+ * @param {String[]} texts - The acceptable values.
+ * 
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
+ */
+
+
+/**
+ * Sets the filter criteria to show cells where the cell text is not equal to the specified text.
+ * 
+ * @function SpreadsheetApp.FilterCriteriaBuilder#whenTextNotEqualTo
+ * 
+ * @param {String} text - The unacceptable value.
+ * 
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
+ */
+
+
+/**
+ * Sets the filter criteria to show cells where the cell text is not equal to any of the specified
+ * values.
+ * 
+ * @function SpreadsheetApp.FilterCriteriaBuilder#whenTextNotEqualToAny
+ * 
+ * @param {String[]} texts - The unacceptable values.
+ * 
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -12122,7 +14336,7 @@
  * 
  * @param {String} text - Text to compare against the beginning of the string.
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
@@ -12147,10 +14361,35 @@
  * @param {Object[]} args - An array of arguments appropriate to the criteria type; the number of arguments and
  *     their type match the corresponding <code>when...()</code> method above.
  * 
- * @return {SpreadsheetApp.FilterCriteriaBuilder} the builder, for chaining
+ * @return {SpreadsheetApp.FilterCriteriaBuilder} This builder, for chaining.
  */
 
 
+
+/**
+ * @class SpreadsheetApp.FrequencyType
+ */
+
+/**
+ * Refresh daily.
+ * 
+ * @typedef {SpreadsheetApp.FrequencyType} SpreadsheetApp.FrequencyType.DAILY
+ */
+/**
+ * The frequency type is unsupported.
+ * 
+ * @typedef {SpreadsheetApp.FrequencyType} SpreadsheetApp.FrequencyType.FREQUENCY_TYPE_UNSUPPORTED
+ */
+/**
+ * Refresh monthly, on given days of the month.
+ * 
+ * @typedef {SpreadsheetApp.FrequencyType} SpreadsheetApp.FrequencyType.MONTHLY
+ */
+/**
+ * Refresh weekly, on given days of the week.
+ * 
+ * @typedef {SpreadsheetApp.FrequencyType} SpreadsheetApp.FrequencyType.WEEKLY
+ */
 
 /**
  * @class SpreadsheetApp.GradientCondition
@@ -12163,6 +14402,16 @@
  * @function SpreadsheetApp.GradientCondition#getMaxColor
  * 
  * @return {String} the color set for the maximum value of this gradient condition or an empty string
+ */
+
+
+/**
+ * Gets the color set for the maximum value of this gradient condition. Returns <code>null</code> if
+ * the color hasn't been set.
+ * 
+ * @function SpreadsheetApp.GradientCondition#getMaxColorObject
+ * 
+ * @return {SpreadsheetApp.Color} The color set for the maximum value of this gradient condition or <code>null</code>.
  */
 
 
@@ -12196,6 +14445,16 @@
 
 
 /**
+ * Gets the color set for the midpoint value of this gradient condition. Returns <code>null</code> if
+ * the color hasn't been set.
+ * 
+ * @function SpreadsheetApp.GradientCondition#getMidColorObject
+ * 
+ * @return {SpreadsheetApp.Color} The color set for the midpoint value of this gradient condition or <code>null</code>.
+ */
+
+
+/**
  * Gets the interpolation type for the mid-point value of this gradient condition. Returns <code>null</code> if the gradient mid type hasn't been set.
  * 
  * @function SpreadsheetApp.GradientCondition#getMidType
@@ -12221,6 +14480,16 @@
  * @function SpreadsheetApp.GradientCondition#getMinColor
  * 
  * @return {String} the color set for the minimum value of this gradient condition or an empty string
+ */
+
+
+/**
+ * Gets the color set for the minimum value of this gradient condition. Returns <code>null</code> if
+ * the color hasn't been set.
+ * 
+ * @function SpreadsheetApp.GradientCondition#getMinColorObject
+ * 
+ * @return {SpreadsheetApp.Color} The color set for the minimum value of this gradient condition or <code>null</code>.
  */
 
 
@@ -12517,20 +14786,20 @@
 
 
 /**
- * Returns the alt-text description for this image.
+ * Returns the alt text description for this image.
  * 
  * @function SpreadsheetApp.OverGridImage#getAltTextDescription
  * 
- * @return {String} The alt-text description.
+ * @return {String} The alt text description.
  */
 
 
 /**
- * Returns the alt-text title for this image.
+ * Returns the alt text title for this image.
  * 
  * @function SpreadsheetApp.OverGridImage#getAltTextTitle
  * 
- * @return {String} The alt-text title.
+ * @return {String} The alt text title.
  */
 
 
@@ -12623,21 +14892,13 @@
 
 
 /**
- * Returns a Google-hosted URL to the image. This is not the same URL used to originally specify
- * the image and is only guaranteed to be valid as long as the image is not deleted from the
- * spreadsheet.
- * 
- * <pre class="prettyprint"><code>
- * // Logs the url of all images in a spreadsheet
- * var images = SpreadsheetApp.getActiveSpreadsheet().getImages();
- * for (var i = 0; i &lt; images.length; i++) {
- *   Logger.log(images[i].getUrl());
- * }
- * </code></pre>
+ * Gets the image's source URL; returns <code>null</code> if the URL is unavailable. If the image was
+ * inserted by URL using an API, this method returns the URL provided during image insertion.
  * 
  * @function SpreadsheetApp.OverGridImage#getUrl
  * 
- * @return {String} The Google-hosted URL of the image.
+ * @return {String} The image URL if available; returns <code>null</code> if the image is unavailable or doesn't
+ *     have a source URL.
  */
 
 
@@ -12712,18 +14973,18 @@
  * 
  * @function SpreadsheetApp.OverGridImage#setAltTextDescription
  * 
- * @param {String} description - The new alt-text description for the image.
+ * @param {String} description - The new alt text description for the image.
  * 
  * @return {SpreadsheetApp.OverGridImage} This image, for chaining.
  */
 
 
 /**
- * Sets the alt-text title for this image.
+ * Sets the alt text title for this image.
  * 
  * @function SpreadsheetApp.OverGridImage#setAltTextTitle
  * 
- * @param {String} title - The new alt-text tile for the image.
+ * @param {String} title - The new alt text title for the image.
  * 
  * @return {SpreadsheetApp.OverGridImage} This image, for chaining.
  */
@@ -12916,6 +15177,16 @@
 
 
 /**
+ * Returns the data source column the filter operates on. Returns <code>null</code> if the pivot table
+ * is not a {DataSourcePivotTableApi}.
+ * 
+ * @function SpreadsheetApp.PivotFilter#getSourceDataSourceColumn
+ * 
+ * @return {SpreadsheetApp.DataSourceColumn} The data source column the filter operates on.
+ */
+
+
+/**
  * Removes this pivot filter from the pivot table.
  * 
  * @function SpreadsheetApp.PivotFilter#remove
@@ -12980,11 +15251,31 @@
 
 
 /**
+ * Returns the date-time grouping rule on the pivot group, or <code>null</code> if no date-time
+ * grouping rule is set.
+ * 
+ * @function SpreadsheetApp.PivotGroup#getDateTimeGroupingRule
+ * 
+ * @return {SpreadsheetApp.DateTimeGroupingRule} The date-time grouping rule.
+ */
+
+
+/**
  * Returns whether this is a row or column group.
  * 
  * @function SpreadsheetApp.PivotGroup#getDimension
  * 
  * @return {SpreadsheetApp.Dimension} the dimension representing this group's type
+ */
+
+
+/**
+ * Returns the pivot group limit on the pivot group. Returns <code>null</code> if no pivot group limit
+ * is set.
+ * 
+ * @function SpreadsheetApp.PivotGroup#getGroupLimit
+ * 
+ * @return {SpreadsheetApp.PivotGroupLimit} The pivot group limit.
  */
 
 
@@ -13013,6 +15304,16 @@
  * @function SpreadsheetApp.PivotGroup#getSourceDataColumn
  * 
  * @return {IntegerNum} the source data column number
+ */
+
+
+/**
+ * Returns the data source column the pivot group operates on. Returns <code>null</code> if the pivot
+ * table is not a {DataSourcePivotTableApi}.
+ * 
+ * @function SpreadsheetApp.PivotGroup#getSourceDataSourceColumn
+ * 
+ * @return {SpreadsheetApp.DataSourceColumn} The data source column the pivot group operates on.
  */
 
 
@@ -13080,6 +15381,19 @@
 
 
 /**
+ * Sets the date-time grouping rule on the pivot group.
+ * 
+ * <p>To remove the rule, use <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/pivot-group.html#clearGroupingRule()'>clearGroupingRule()</a></code>.
+ * 
+ * @function SpreadsheetApp.PivotGroup#setDateTimeGroupingRule
+ * 
+ * @param {SpreadsheetApp.DateTimeGroupingRuleType} dateTimeGroupingRuleType - The rule type to set.
+ * 
+ * @return {SpreadsheetApp.PivotGroup} The pivot group, for chaining.
+ */
+
+
+/**
  * Sets the display name of this group in the pivot table.
  * 
  * @function SpreadsheetApp.PivotGroup#setDisplayName
@@ -13087,6 +15401,17 @@
  * @param {String} name - The display name to set.
  * 
  * @return {SpreadsheetApp.PivotGroup} the pivot group for chaining
+ */
+
+
+/**
+ * Sets the pivot group limit on the pivot group. The operation is only supported for <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-pivot-table.html'>DataSourcePivotTable</a></code>.
+ * 
+ * @function SpreadsheetApp.PivotGroup#setGroupLimit
+ * 
+ * @param {IntegerNum} countLimit - The count limit of rows or columns to set. Must be positive.
+ * 
+ * @return {SpreadsheetApp.PivotGroup} The pivot group for chaining.
  */
 
 
@@ -13183,6 +15508,49 @@
 
 
 /**
+ * @class SpreadsheetApp.PivotGroupLimit
+ */
+
+/**
+ * Gets the count limit on rows or columns in the pivot group.
+ * 
+ * @function SpreadsheetApp.PivotGroupLimit#getCountLimit
+ * 
+ * @return {IntegerNum} The count limit on rows or columns.
+ */
+
+
+/**
+ * Returns the pivot group the limit belongs to.
+ * 
+ * @function SpreadsheetApp.PivotGroupLimit#getPivotGroup
+ * 
+ * @return {SpreadsheetApp.PivotGroup} The pivot group.
+ */
+
+
+/**
+ * Removes the pivot group limit.
+ * 
+ * @function SpreadsheetApp.PivotGroupLimit#remove
+ * 
+ * @return void
+ */
+
+
+/**
+ * Sets the count limit on rows or columns in the pivot group.
+ * 
+ * @function SpreadsheetApp.PivotGroupLimit#setCountLimit
+ * 
+ * @param {IntegerNum} countLimit - The count limit on rows or columns to set. Must be positive.
+ * 
+ * @return {SpreadsheetApp.PivotGroupLimit} The pivot group limit, for chaining.
+ */
+
+
+
+/**
  * @class SpreadsheetApp.PivotTable
  */
 
@@ -13259,6 +15627,15 @@
 
 
 /**
+ * Returns the pivot table as a data source pivot table if the pivot table is linked to a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html'>DataSource</a></code>, or <code>null</code> otherwise.
+ * 
+ * @function SpreadsheetApp.PivotTable#asDataSourcePivotTable
+ * 
+ * @return {SpreadsheetApp.DataSourcePivotTable} A data source pivot table.
+ */
+
+
+/**
  * Returns the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/range.html'>Range</a></code> representing the cell where this pivot table is anchored.
  * 
  * @function SpreadsheetApp.PivotTable#getAnchorCell
@@ -13300,6 +15677,15 @@
  * @function SpreadsheetApp.PivotTable#getRowGroups
  * 
  * @return {SpreadsheetApp.PivotGroup[]} the row groups in this pivot table
+ */
+
+
+/**
+ * Returns the source data range on which the pivot table is constructed.
+ * 
+ * @function SpreadsheetApp.PivotTable#getSourceDataRange
+ * 
+ * @return {SpreadsheetApp.Range} The source data range of this pivot table.
  */
 
 
@@ -13441,11 +15827,41 @@
 
 
 /**
+ * Returns the number of the source data column the pivot value summarizes. This index is 1-based,
+ * if this group summarizes source data in column "A" of the spreadsheet this method returns
+ * <code>1</code>.
+ * 
+ * @function SpreadsheetApp.PivotValue#getSourceDataColumn
+ * 
+ * @return {IntegerNum} The source data column number.
+ */
+
+
+/**
+ * Returns the data source column the pivot value summarizes. Returns <code>null</code> if the pivot
+ * table is not a {DataSourcePivotTableApi}.
+ * 
+ * @function SpreadsheetApp.PivotValue#getSourceDataSourceColumn
+ * 
+ * @return {SpreadsheetApp.DataSourceColumn} The source data source column the pivot value summarizes.
+ */
+
+
+/**
  * Returns this group’s summarization function.
  * 
  * @function SpreadsheetApp.PivotValue#getSummarizedBy
  * 
  * @return {SpreadsheetApp.PivotTableSummarizeFunction} the group's summarization function
+ */
+
+
+/**
+ * Remove this value from the pivot table.
+ * 
+ * @function SpreadsheetApp.PivotValue#remove
+ * 
+ * @return void
  */
 
 
@@ -14004,7 +16420,7 @@
  * 
  * @param {String} key - The key for the new developer metadata.
  * 
- * @return {SpreadsheetApp.Range} This range, for chaining..
+ * @return {SpreadsheetApp.Range} This range, for chaining.
  */
 
 
@@ -14016,7 +16432,7 @@
  * @param {String} key - The key for the new developer metadata.
  * @param {SpreadsheetApp.DeveloperMetadataVisibility} visibility - The visibility of the new developer metadata.
  * 
- * @return {SpreadsheetApp.Range} This range, for chaining..
+ * @return {SpreadsheetApp.Range} This range, for chaining.
  */
 
 
@@ -14028,7 +16444,7 @@
  * @param {String} key - The key for the new developer metadata.
  * @param {String} value - The value for the new developer metadata.
  * 
- * @return {SpreadsheetApp.Range} This range, for chaining..
+ * @return {SpreadsheetApp.Range} This range, for chaining.
  */
 
 
@@ -14041,7 +16457,7 @@
  * @param {String} value - The value for the new developer metadata.
  * @param {SpreadsheetApp.DeveloperMetadataVisibility} visibility - The visibility of the new developer metadata.
  * 
- * @return {SpreadsheetApp.Range} This range, for chaining..
+ * @return {SpreadsheetApp.Range} This range, for chaining.
  */
 
 
@@ -14207,6 +16623,23 @@
 
 
 /**
+ * Changes the state of the checkboxes in the range to “checked”. Ignores the cells in the range
+ * which currently do not contain either the checked or unchecked value configured.
+ * 
+ * <pre class="prettyprint"><code>
+ * // Changes the state of cells which currently contain either the checked or unchecked value
+ * // configured in the range A1:B10 to &#39;checked&#39;.
+ * var range = SpreadsheetApp.getActive().getRange(&#39;A1:B10&#39;);
+ * range.check();
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Range#check
+ * 
+ * @return {SpreadsheetApp.Range} This range, for chaining.
+ */
+
+
+/**
  * Clears the range of contents, formats, and data validation rules.
  * 
  * <pre class="prettyprint"><code>
@@ -14230,7 +16663,7 @@
  * <pre class="prettyprint"><code>
  * // The code below clears range C2:G8 in the active sheet, but preserves the format,
  * // data validation rules, and comments.
- * SpreadsheetApp.getActiveSheet().getRange(2, 3, 6, 4).clear({contentsOnly: true});
+ * SpreadsheetApp.getActiveSheet().getRange(2, 3, 6, 5).clear({contentsOnly: true});
  * </code></pre>
  * 
  * @function SpreadsheetApp.Range#clear
@@ -14432,7 +16865,7 @@
  * <pre class="prettyprint"><code>
  * // The code below copies only the values of the first 5 columns over to the 6th column.
  * var sheet = SpreadsheetApp.getActiveSheet();
- * sheet.getRange(&quot;A:E&quot;).copyTo(sheet.getRange(&quot;F1&quot;), spreadsheetApp.CopyPasteType.PASTE_VALUES);
+ * sheet.getRange(&quot;A:E&quot;).copyTo(sheet.getRange(&quot;F1&quot;), SpreadsheetApp.CopyPasteType.PASTE_VALUES);
  * </code></pre>
  * 
  * @function SpreadsheetApp.Range#copyTo
@@ -14504,6 +16937,58 @@
 
 
 /**
+ * Creates an empty data source pivot table from the data source, anchored at the first cell in
+ * this range.
+ * 
+ * <p>This example shows how to create and configure a new data source pivot table.
+ * 
+ * <pre class="prettyprint"><code>
+ * var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+ * var anchorCell = spreadsheet.getSheets()[0].getRange(&#39;A1&#39;);
+ * var dataSource = spreadsheet.getDataSources()[0];
+ * 
+ * var pivotTable = anchorCell.createDataSourcePivotTable(dataSource);
+ * pivotTable.addRowGroup(&#39;dataColumnA&#39;);
+ * pivotTable.addColumnGroup(&#39;dataColumnB&#39;);
+ * pivotTable.addPivotValue(&#39;dataColumnC&#39;, SpreadsheetApp.PivotTableSummarizeFunction.SUM);
+ * pivotTable.addFilter(&#39;dataColumnA&#39;,
+ *                      SpreadsheetApp.newFilterCriteria().whenTextStartsWith(&#39;A&#39;).build());
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Range#createDataSourcePivotTable
+ * 
+ * @param {SpreadsheetApp.DataSource} dataSource - The data source to create the pivot table from.
+ * 
+ * @return {SpreadsheetApp.DataSourcePivotTable} The newly created data source pivot table.
+ */
+
+
+/**
+ * Creates an empty data source table from the data source, anchored at the first cell in this
+ * range.
+ * 
+ * <p>This example shows how to create and configure a new data source table.
+ * 
+ * <pre class="prettyprint"><code>
+ * var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+ * var anchorCell = spreadsheet.getSheets()[0].getRange(&#39;A1&#39;);
+ * var dataSource = spreadsheet.getDataSources()[0];
+ * 
+ * var dataSourceTable = anchorCell.createDataSourceTable(dataSource);
+ *     .addColumns(&#39;dataColumnA&#39;, &#39;dataColumnB&#39;, &#39;dataColumnC&#39;)
+ *     .addSortSpec(&#39;dataColumnA&#39;, /* ascending= *\/ true)
+ *     .addSortSpec(&#39;dataColumnB&#39;, /* ascending= *\/ false);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Range#createDataSourceTable
+ * 
+ * @param {SpreadsheetApp.DataSource} dataSource - The data source to create the pivot table from.
+ * 
+ * @return {SpreadsheetApp.DataSourceTable} The newly created data source table.
+ */
+
+
+/**
  * Returns a DeveloperMetadataFinderApi for finding developer metadata within the scope of this
  * range. Metadata is within the scope of the range only if it is wholly contained within that
  * range. For example, metadata associated with the row ‘3:3’ is not in the scope of a range
@@ -14533,6 +17018,32 @@
  * @param {SpreadsheetApp.Range} sourceData - The data to create the pivot table from.
  * 
  * @return {SpreadsheetApp.PivotTable} The newly created <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/pivot-table.html'>PivotTable</a></code>.
+ */
+
+
+/**
+ * Creates a text finder for the range, which can find and replace text in this range.
+ * 
+ * <pre class="prettyprint"><code>
+ * var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+ * var range = sheet.getActiveRange();
+ * 
+ * // Creates  a text finder for the range.
+ * var textFinder = range.createTextFinder(&#39;dog&#39;);
+ * 
+ * // Returns the first occurrence of &#39;dog&#39;.
+ * var firstOccurrence = textFinder.findNext();
+ * 
+ * // Replaces the last found occurrence of &#39;dog&#39; with &#39;cat&#39; and returns the number
+ * // of occurrences replaced.
+ * var numOccurrencesReplaced = findOccurrence.replaceWith(&#39;cat&#39;);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Range#createTextFinder
+ * 
+ * @param {String} findText - The text to search for.
+ * 
+ * @return {SpreadsheetApp.TextFinder} The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/text-finder.html'>TextFinder</a></code> for the range
  */
 
 
@@ -14612,6 +17123,45 @@
 
 
 /**
+ * Returns the background color of the top-left cell in the range.
+ * 
+ * <pre class="prettyprint"><code>
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var sheet = ss.getSheets()[0];
+ * 
+ * var cell = sheet.getRange(&quot;B5&quot;);
+ * Logger.log(cell.getBackgroundObject().asRgbColor().asHexString());
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Range#getBackgroundObject
+ * 
+ * @return {SpreadsheetApp.Color} The background color of the top-left cell in the range.
+ */
+
+
+/**
+ * Returns the background colors of the cells in the range.
+ * 
+ * <pre class="prettyprint"><code>
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var sheet = ss.getSheets()[0];
+ * 
+ * var range = sheet.getRange(&quot;B5:C6&quot;);
+ * var bgColors = range.getBackgroundObjects();
+ * for (var i in bgColors) {
+ *   for (var j in bgColors[i]) {
+ *     Logger.log(bgColors[i][j].asRgbColor().asHexString());
+ *   }
+ * }
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Range#getBackgroundObjects
+ * 
+ * @return {SpreadsheetApp.Color[][]} A two-dimensional array of background colors.
+ */
+
+
+/**
  * Returns the background colors of the cells in the range (for example, <code>&#39;#ffffff&#39;</code>).
  * 
  * <pre class="prettyprint"><code>
@@ -14681,6 +17231,91 @@
  * @function SpreadsheetApp.Range#getColumn
  * 
  * @return {IntegerNum} The range's starting column position in the spreadsheet.
+ */
+
+
+/**
+ * Returns a copy of the range expanded in the four cardinal <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/direction.html'>Direction</a></code>s to cover all
+ * adjacent cells with data in them. If the range is surrounded by empty cells not including those
+ * along the diagonals, the range itself is returned. This is similar to selecting the range and
+ * typing <code>Ctrl+A</code> in the editor.
+ * 
+ * <pre class="prettyprint"><code>
+ * // Assume the active spreadsheet is blank.
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var sheet = ss.getSheets()[0];
+ * sheet.getRange(&quot;C2&quot;).setValue(100);
+ * sheet.getRange(&quot;B3&quot;).setValue(100);
+ * sheet.getRange(&quot;D3&quot;).setValue(100);
+ * sheet.getRange(&quot;C4&quot;).setValue(100);
+ * // Logs &quot;B2:D4&quot;
+ * Logger.log(sheet.getRange(&quot;C3&quot;).getDataRegion().getA1Notation());
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Range#getDataRegion
+ * 
+ * @return {SpreadsheetApp.Range} The range's data region or a range for the entire spreadsheet.
+ */
+
+
+/**
+ * Returns a copy of the range expanded <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/direction.html#UP'>Direction.UP</a></code> and <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/direction.html#DOWN'>Direction.DOWN</a></code> if the
+ * specified dimension is <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/dimension.html#ROWS'>Dimension.ROWS</a></code>, or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/direction.html#NEXT'>Direction.NEXT</a></code> and <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/direction.html#PREVIOUS'>Direction.PREVIOUS</a></code> if the dimension is <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/dimension.html#COLUMNS'>Dimension.COLUMNS</a></code>. The expansion of the range
+ * is based on detecting data next to the range that is organized like a table. The expanded range
+ * covers all adjacent cells with data in them along the specified dimension including the table
+ * boundaries. If the original range is surrounded by empty cells along the specified dimension,
+ * the range itself is returned. This method is similar to selecting the range and typing <code>
+ * Ctrl+Space</code> for columns or <code>Shift+Space</code> for rows in the editor.
+ * 
+ * <pre class="prettyprint"><code>
+ * // Assume the active spreadsheet is blank.
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var sheet = ss.getSheets()[0];
+ * sheet.getRange(&quot;C2&quot;).setValue(100);
+ * sheet.getRange(&quot;B3&quot;).setValue(100);
+ * sheet.getRange(&quot;D3&quot;).setValue(100);
+ * sheet.getRange(&quot;C4&quot;).setValue(100);
+ * // Logs &quot;C2:C4&quot;
+ * Logger.log(sheet.getRange(&quot;C3&quot;).getDataRegion(SpreadsheetApp.Dimension.ROWS).getA1Notation());
+ * // Logs &quot;B3:D3&quot;
+ * Logger.log(
+ *     sheet.getRange(&quot;C3&quot;).getDataRegion(SpreadsheetApp.Dimension.COLUMNS).getA1Notation());
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Range#getDataRegion
+ * 
+ * @param {SpreadsheetApp.Dimension} dimension - The dimension along which to expand the range.
+ * 
+ * @return {SpreadsheetApp.Range} The range's data region or a range covering each column or each row spanned by the
+ *     original range.
+ */
+
+
+/**
+ * Returns the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-formula.html'>DataSourceFormula</a></code> for the first cell in the range, or <code>null</code> if
+ * the cell doesn't contain a data source formula.
+ * 
+ * @function SpreadsheetApp.Range#getDataSourceFormula
+ * 
+ * @return {SpreadsheetApp.DataSourceFormula} The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-formula.html'>DataSourceFormula</a></code> for the cell.
+ */
+
+
+/**
+ * Returns the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-formula.html'>DataSourceFormula</a></code>s for the cells in the range.
+ * 
+ * @function SpreadsheetApp.Range#getDataSourceFormulas
+ * 
+ * @return {SpreadsheetApp.DataSourceFormula[]} An array of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-formula.html'>DataSourceFormula</a></code>s.
+ */
+
+
+/**
+ * Gets all the data source pivot tables intersecting with the range.
+ * 
+ * @function SpreadsheetApp.Range#getDataSourcePivotTables
+ * 
+ * @return {SpreadsheetApp.DataSourcePivotTable[]} A list of data source pivot tables.
  */
 
 
@@ -14938,6 +17573,46 @@
  * @function SpreadsheetApp.Range#getFontColor
  * 
  * @return {String} The font color in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>).
+ */
+
+
+/**
+ * Returns the font color of the cell in the top-left corner of the range.
+ * 
+ * <pre class="prettyprint"><code>
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var sheet = ss.getSheets()[0];
+ * var range = sheet.getRange(&quot;B2:D4&quot;);
+ * 
+ * Logger.log(range.getFontColorObject().asRgbColor().asHexString());
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Range#getFontColorObject
+ * 
+ * @return {SpreadsheetApp.Color} The font color of the top-left cell in the range.
+ */
+
+
+/**
+ * Returns the font colors of the cells in the range.
+ * 
+ * <pre class="prettyprint"><code>
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var sheet = ss.getSheets()[0];
+ * var range = sheet.getRange(&quot;B2:D4&quot;);
+ * 
+ * var results = range.getFontColorObjects();
+ * 
+ * for (var i in results) {
+ *   for (var j in results[i]) {
+ *     Logger.log(results[i][j].asRgbColor().asHexString());
+ *   }
+ * }
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Range#getFontColorObjects
+ * 
+ * @return {SpreadsheetApp.Color[][]} A two-dimensional array of font colors associated with cells in the range.
  */
 
 
@@ -15406,7 +18081,7 @@
  * 
  * var range = sheet.getRange(&quot;C3:E5&quot;);
  * // Logs &quot;C1&quot;
- * Logger.log(range.getNextDataCell(Direction.UP).getA1Notation());
+ * Logger.log(range.getNextDataCell(SpreadsheetApp.Direction.UP).getA1Notation());
  * </code></pre>
  * 
  * @function SpreadsheetApp.Range#getNextDataCell
@@ -15534,7 +18209,8 @@
 
 
 /**
- * Returns the Rich Text value for the top left cell of the range.
+ * Returns the Rich Text value for the top left cell of the range, or <code>null</code> if the cell
+ * value is not text.
  * 
  * <pre class="prettyprint"><code>
  * // Get the Rich Text value of cell D4.
@@ -15546,7 +18222,8 @@
  * 
  * @function SpreadsheetApp.Range#getRichTextValue
  * 
- * @return {SpreadsheetApp.RichTextValue} The Rich Text value of the top left cell in the range.
+ * @return {SpreadsheetApp.RichTextValue} The Rich Text value of the top left cell in the range, or <code>null</code> if the cell
+ *     value is not text.
  */
 
 
@@ -15923,6 +18600,66 @@
 
 
 /**
+ * Inserts checkboxes into each cell in the range, configured with <code>true</code> for checked and
+ * <code>false</code> for unchecked. Sets the value of all cells in the range to <code>false</code>.
+ * 
+ * <pre class="prettyprint"><code>
+ * var range = SpreadsheetApp.getActive().getRange(&#39;A1:B10&#39;);
+ * 
+ * // Inserts checkboxes into each cell in the range A1:B10 configured with &#39;true&#39; for checked
+ * // and &#39;false&#39; for unchecked. Also, sets the value of each cell in the range A1:B10 to &#39;false&#39;.
+ * range.insertCheckboxes();
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Range#insertCheckboxes
+ * 
+ * @return {SpreadsheetApp.Range} This range, for chaining.
+ */
+
+
+/**
+ * Inserts checkboxes into each cell in the range, configured with a custom value for checked and
+ * the empty string for unchecked. Sets the value of each cell in the range to the empty string.
+ * 
+ * <pre class="prettyprint"><code>
+ * var range = SpreadsheetApp.getActive().getRange(&#39;A1:B10&#39;);
+ * 
+ * // Inserts checkboxes into each cell in the range A1:B10 configured with &#39;yes&#39; for checked
+ * // and the empty string for unchecked. Also, sets the value of each cell in the range A1:B10 to
+ * //  the empty string.
+ * range.insertCheckboxes(&#39;yes&#39;);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Range#insertCheckboxes
+ * 
+ * @param {Object} checkedValue - The checked value for the checkbox data validation.
+ * 
+ * @return {SpreadsheetApp.Range} This range, for chaining.
+ */
+
+
+/**
+ * Inserts checkboxes into each cell in the range, configured with custom values for the checked
+ * and unchecked states. Sets the value of each cell in the range to the custom unchecked value.
+ * 
+ * <pre class="prettyprint"><code>
+ * var range = SpreadsheetApp.getActive().getRange(&#39;A1:B10&#39;);
+ * 
+ * // Inserts checkboxes into each cell in the range A1:B10 configured with &#39;yes&#39; for checked
+ * // and &#39;no&#39; for unchecked. Also, sets the value of each cell in the range A1:B10 to &#39;no&#39;.
+ * range.insertCheckboxes(&#39;yes&#39;, &#39;no&#39;);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Range#insertCheckboxes
+ * 
+ * @param {Object} checkedValue - The checked value for the checkbox data validation.
+ * @param {Object} uncheckedValue - The unchecked value for the checkbox data validation.
+ * 
+ * @return {SpreadsheetApp.Range} This range, for chaining.
+ */
+
+
+/**
  * Returns <code>true</code> if the range is totally blank.
  * 
  * <pre class="prettyprint"><code>
@@ -15936,6 +18673,40 @@
  * @function SpreadsheetApp.Range#isBlank
  * 
  * @return {Boolean} <code>true</code> if the range is blank; <code>false</code> otherwise.
+ */
+
+
+/**
+ * Returns whether all cells in the range have their checkbox state as 'checked'. Returns <code>null</code> if some cells are checked and the rest unchecked, or if some cells do not have checkbox
+ * data validation.
+ * 
+ * <pre class="prettyprint"><code>
+ * var range = SpreadsheetApp.getActive().getRange(&#39;A1:A3&#39;);
+ * 
+ * // Inserts checkboxes and sets each cell value to &#39;no&#39; in the range A1:A3.
+ * range.insertCheckboxes(&#39;yes&#39;, &#39;no&#39;);
+ * 
+ * var range1 = SpreadsheetApp.getActive().getRange(&#39;A1&#39;);
+ * range1.setValue(&#39;yes&#39;);
+ * // Sets the value of isRange1Checked as true as it contains the checked value.
+ * var isRange1Checked = range1.isChecked();
+ * 
+ * var range2 = SpreadsheetApp.getActive().getRange(&#39;A2&#39;);
+ * range2.setValue(&#39;no&#39;);
+ * // Sets the value of isRange2Checked as false as it contains the unchecked value.
+ * var isRange2Checked = range2.isChecked();
+ * 
+ * var range3 = SpreadsheetApp.getActive().getRange(&#39;A3&#39;);
+ * range3.setValue(&#39;random&#39;);
+ * // Sets the value of isRange3Checked as null, as it contains an invalid checkbox value.
+ * var isRange3Checked = range3.isChecked();
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Range#isChecked
+ * 
+ * @return {Boolean} <code>true</code>, if all cells in the range are checked, <code>false</code> if all cells in the
+ *     range are unchecked, or <code>null</code> if any of the cells are unchecked or do not have
+ *     checkbox data validation.
  */
 
 
@@ -16215,6 +18986,83 @@
 
 
 /**
+ * Removes all checkboxes from the range. Clears the data validation of each cell, and
+ * additionally clears its value if the cell contains either the checked or unchecked value.
+ * 
+ * <pre class="prettyprint"><code>
+ * var range = SpreadsheetApp.getActive().getRange(&#39;A1:B10&#39;);
+ * 
+ * // Inserts checkboxes and sets each cell value to &#39;no&#39; in the range A1:B10.
+ * range.insertCheckboxes(&#39;yes&#39;, &#39;no&#39;);
+ * 
+ * var range1 = SpreadsheetApp.getActive().getRange(&#39;A1&#39;);
+ * range1.setValue(&#39;yes&#39;);
+ * // Removes the checkbox data validation in cell A1 and clears its value.
+ * range1.removeCheckboxes();
+ * 
+ * var range2 = SpreadsheetApp.getActive().getRange(&#39;A2&#39;);
+ * range2.setValue(&#39;random&#39;);
+ * // Removes the checkbox data validation in cell A2 but does not clear its value.
+ * range2.removeCheckboxes();
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Range#removeCheckboxes
+ * 
+ * @return {SpreadsheetApp.Range} This range, for chaining.
+ */
+
+
+/**
+ * Removes rows within this range that contain values that are duplicates of values in any
+ * previous row. Rows with identical values but different letter cases, formatting, or formulas
+ * are considered to be duplicates. This method also removes duplicates rows hidden from view (for
+ * example, due to a filter). Content outside of this range isn't removed.
+ * 
+ * <pre class="prettyprint"><code>
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var sheet = ss.getSheets()[0];
+ * var range = sheet.getRange(&quot;B1:D7&quot;);
+ * 
+ * // Remove duplicate rows in the range.
+ * range.removeDuplicates();
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Range#removeDuplicates
+ * 
+ * @return {SpreadsheetApp.Range} The resulting range after removing duplicates. The size of the range is reduced by a
+ *     row for every row removed.
+ */
+
+
+/**
+ * Removes rows within this range that contain values in the specified columns that are duplicates
+ * of values any previous row. Rows with identical values but different letter cases, formatting,
+ * or formulas are considered to be duplicates. This method also removes duplicates rows hidden
+ * from view (for example, due to a filter). Content outside of this range isn't removed.
+ * 
+ * <pre class="prettyprint"><code>
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var sheet = ss.getSheets()[0];
+ * var range = sheet.getRange(&quot;B1:D7&quot;);
+ * 
+ * // Remove rows which have duplicate values in column B.
+ * range.removeDuplicates([2]);
+ * 
+ * // Remove rows which have duplicate values in both columns B and D.
+ * range.removeDuplicates([2,4]);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Range#removeDuplicates
+ * 
+ * @param {IntegerNum[]} columnsToCompare - The columns to analyze for duplicate values. If no columns are provided
+ *     then all columns are analyzed for duplicates.
+ * 
+ * @return {SpreadsheetApp.Range} The resulting range after removing duplicates. The size of the range is reduced by a
+ *     row for every row removed.
+ */
+
+
+/**
  * Sets the background color of all cells in the range in CSS notation (such as <code>&#39;#ffffff&#39;</code>
  * or <code>&#39;white&#39;</code>).
  * 
@@ -16230,6 +19078,65 @@
  * 
  * @param {String} color - A color code in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>); a
  *     <code>null</code> value resets the color.
+ * 
+ * @return {SpreadsheetApp.Range} This range, for chaining.
+ */
+
+
+/**
+ * Sets the background color of all cells in the range.
+ * 
+ * <pre class="prettyprint"><code>
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var sheet = ss.getSheets()[0];
+ * var bgColor = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.BACKGROUND)
+ *     .build();
+ * 
+ * var range = sheet.getRange(&quot;B2:D5&quot;);
+ * range.setBackgroundObject(bgColor);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Range#setBackgroundObject
+ * 
+ * @param {SpreadsheetApp.Color} color - The background color to set; <code>null</code> value resets the background color.
+ * 
+ * @return {SpreadsheetApp.Range} This range, for chaining.
+ */
+
+
+/**
+ * Sets a rectangular grid of background colors (must match dimensions of this range).
+ * 
+ * <pre class="prettyprint"><code>
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var sheet = ss.getSheets()[0];
+ * 
+ * var colorAccent1 = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.ACCENT1)
+ *     .build();
+ * var colorAccent2 = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.ACCENT2)
+ *     .build();
+ * var colorAccent3 = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.ACCENT3)
+ *     .build();
+ * var colorAccent4 = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.ACCENT4)
+ *     .build();
+ * 
+ * var colors = [
+ *   [colorAccent1, colorAccent2],
+ *   [colorAccent3, colorAccent4]
+ * ];
+ * 
+ * var cell = sheet.getRange(&quot;B5:C6&quot;);
+ * cell.setBackgroundObjects(colors);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Range#setBackgroundObjects
+ * 
+ * @param {SpreadsheetApp.Color[][]} color - A two-dimensional array of colors; <code>null</code> values reset the color.
  * 
  * @return {SpreadsheetApp.Range} This range, for chaining.
  */
@@ -16402,6 +19309,65 @@
  * 
  * @param {String} color - The font color in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>); a
  *     <code>null</code> value resets the color.
+ * 
+ * @return {SpreadsheetApp.Range} This range, for chaining.
+ */
+
+
+/**
+ * Sets the font color of the given range.
+ * 
+ * <pre class="prettyprint"><code>
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var sheet = ss.getSheets()[0];
+ * var color = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.TEXT)
+ *     .build();
+ * 
+ * var cell = sheet.getRange(&quot;B2&quot;);
+ * cell.setFontColor(color);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Range#setFontColorObject
+ * 
+ * @param {SpreadsheetApp.Color} color - The font color to set; a <code>null</code> value resets the color.
+ * 
+ * @return {SpreadsheetApp.Range} This range, for chaining.
+ */
+
+
+/**
+ * Sets a rectangular grid of font colors (must match dimensions of this range).
+ * 
+ * <pre class="prettyprint"><code>
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var sheet = ss.getSheets()[0];
+ * 
+ * var colorAccent1 = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.ACCENT1)
+ *     .build();
+ * var colorAccent2 = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.ACCENT2)
+ *     .build();
+ * var colorAccent3 = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.ACCENT3)
+ *     .build();
+ * var colorAccent4 = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.ACCENT4)
+ *     .build();
+ * 
+ * var colors = [
+ *   [colorAccent1, colorAccent2],
+ *   [colorAccent3, colorAccent4]
+ * ];
+ * 
+ * var cell = sheet.getRange(&quot;B5:C6&quot;);
+ * cell.setFontColorObjects(colors);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Range#setFontColorObjects
+ * 
+ * @param {SpreadsheetApp.Color[][]} colors - A two-dimensional array of colors; <code>null</code> values reset the font color.
  * 
  * @return {SpreadsheetApp.Range} This range, for chaining.
  */
@@ -16974,7 +19940,7 @@
  * @param {SpreadsheetApp.TextDirection} direction - The desired text direction; if <code>null</code> the direction is inferred before
  *     setting.
  * 
- * @return {SpreadsheetApp.Range} This range, for chaining..
+ * @return {SpreadsheetApp.Range} This range, for chaining.
  */
 
 
@@ -17501,179 +20467,27 @@
 
 
 /**
- * Changes the state of the checkboxes in the range to “checked”. Ignores the cells in the range
- * which currently do not contain either the checked or unchecked value configured.
+ * Trims the whitespace (such as spaces, tabs, or new lines) in every cell in this range. Removes
+ * all whitespace from the start and end of each cell's text, and reduces any subsequence of
+ * remaining whitespace characters to a single space.
  * 
- * <pre class="prettyprint"><code>
- * // Changes the state of cells which currently contain either the checked or unchecked value
- * // configured in the range A1:B10 to &#39;checked&#39;.
- * var range = SpreadsheetApp.getActive().getRange(&#39;A1:B10&#39;);
- * range.check();
- * </code></pre>
- * 
- * @function SpreadsheetApp.Range#check
- * 
- * @return {SpreadsheetApp.Range} This range, for chaining.
- */
-
-
-/**
- * Creates a text finder for the range, which can find and replace text in this range.
+ * <p><aside class="note"><b>Note</b>: If the resulting trimmed text starts with a '+' or '='
+ * character, the text remains as a string value and isn't interpreted as a formula.</aside>
  * 
  * <pre class="prettyprint"><code>
  * var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
- * var range = sheet.getActiveRange();
+ * var range = sheet.getRange(&#39;A1:A4&#39;);
+ * range.activate();
+ * range.setValues(
+ *     [&#39; preceding space&#39;, &#39;following space &#39;, &#39;two  middle  spaces&#39;, &#39;   =SUM(1,2)&#39;])
  * 
- * // Creates  a text finder for the range.
- * var textFinder = range.createTextFinder(&#39;dog&#39;);
+ * range.trimWhitespace();
  * 
- * // Returns the first occurrence of &#39;dog&#39;.
- * var firstOccurrence = textFinder.findNext();
- * 
- * // Replaces the last found occurrence of &#39;dog&#39; with &#39;cat&#39; and returns the number
- * // of occurrences replaced.
- * var numOccurrencesReplaced = findOccurrence.replaceWith(&#39;cat&#39;);
+ * var values = range.getValues();
+ * // Values are [&#39;preceding space&#39;, &#39;following space&#39;, &#39;two middle spaces&#39;, &#39;=SUM(1,2)&#39;]
  * </code></pre>
  * 
- * @function SpreadsheetApp.Range#createTextFinder
- * 
- * @param {String} findText - The text to search for.
- * 
- * @return {SpreadsheetApp.TextFinder} The <code>TextFinder</code> for the range
- */
-
-
-/**
- * Returns a copy of the range expanded <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/direction.html#UP'>Direction.UP</a></code> and <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/direction.html#DOWN'>Direction.DOWN</a></code> if the
- * specified dimension is <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/dimension.html#ROWS'>Dimension.ROWS</a></code>, or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/direction.html#NEXT'>Direction.NEXT</a></code> and <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/direction.html#PREVIOUS'>Direction.PREVIOUS</a></code> if the dimension is <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/dimension.html#COLUMNS'>Dimension.COLUMNS</a></code>. The expansion of the range
- * is based on detecting data next to the range that is organized like a table. The expanded range
- * covers all adjacent cells with data in them along the specified dimension including the table
- * boundaries. If the original range is surrounded by empty cells along the specified dimension,
- * the range itself is returned. This method is similar to selecting the range and typing <code>
- * Ctrl+Space</code> for columns or <code>Shift+Space</code> for rows in the editor.
- * 
- * <pre class="prettyprint"><code>
- * // Assume the active spreadsheet is blank.
- * var ss = SpreadsheetApp.getActiveSpreadsheet();
- * var sheet = ss.getSheets()[0];
- * sheet.getRange(&quot;C2&quot;).setValue(100);
- * sheet.getRange(&quot;B3&quot;).setValue(100);
- * sheet.getRange(&quot;D3&quot;).setValue(100);
- * sheet.getRange(&quot;C4&quot;).setValue(100);
- * // Logs &quot;C2:C4&quot;
- * Logger.log(sheet.getRange(&quot;C3&quot;).getDataRegion(SpreadsheetApp.Dimension.ROWS).getA1Notation());
- * // Logs &quot;B3:D3&quot;
- * Logger.log(
- *     sheet.getRange(&quot;C3&quot;).getDataRegion(SpreadsheetApp.Dimension.COLUMNS).getA1Notation());
- * </code></pre>
- * 
- * @function SpreadsheetApp.Range#getDataRegion
- * 
- * @param {SpreadsheetApp.Dimension} dimension - The dimension along which to expand the range.
- * 
- * @return {SpreadsheetApp.Range} The range's data region or a range covering each column or each row spanned by the
- *     original range.
- */
-
-
-/**
- * Inserts checkboxes into each cell in the range, configured with a custom value for checked and
- * the empty string for unchecked. Sets the value of each cell in the range to the empty string.
- * 
- * <pre class="prettyprint"><code>
- * var range = SpreadsheetApp.getActive().getRange(&#39;A1:B10&#39;);
- * 
- * // Inserts checkboxes into each cell in the range A1:B10 configured with &#39;yes&#39; for checked
- * // and the empty string for unchecked. Also, sets the value of each cell in the range A1:B10 to
- * //  the empty string.
- * range.insertCheckboxes(&#39;yes&#39;);
- * </code></pre>
- * 
- * @function SpreadsheetApp.Range#insertCheckboxes
- * 
- * @param {Object} checkedValue - The checked value for the checkbox data validation.
- * 
- * @return {SpreadsheetApp.Range} This range, for chaining.
- */
-
-
-/**
- * Inserts checkboxes into each cell in the range, configured with custom values for the checked
- * and unchecked states. Sets the value of each cell in the range to the custom unchecked value.
- * 
- * <pre class="prettyprint"><code>
- * var range = SpreadsheetApp.getActive().getRange(&#39;A1:B10&#39;);
- * 
- * // Inserts checkboxes into each cell in the range A1:B10 configured with &#39;yes&#39; for checked
- * // and &#39;no&#39; for unchecked. Also, sets the value of each cell in the range A1:B10 to &#39;no&#39;.
- * range.insertCheckboxes(&#39;yes&#39;, &#39;no&#39;);
- * </code></pre>
- * 
- * @function SpreadsheetApp.Range#insertCheckboxes
- * 
- * @param {Object} checkedValue - The checked value for the checkbox data validation.
- * @param {Object} uncheckedValue - The unchecked value for the checkbox data validation.
- * 
- * @return {SpreadsheetApp.Range} This range, for chaining.
- */
-
-
-/**
- * Returns whether all cells in the range have their checkbox state as 'checked'. Returns <code>null</code> if some cells are checked and the rest unchecked, or if some cells do not have checkbox
- * data validation.
- * 
- * <pre class="prettyprint"><code>
- * var range = SpreadsheetApp.getActive().getRange(&#39;A1:A3&#39;);
- * 
- * // Inserts checkboxes and sets each cell value to &#39;no&#39; in the range A1:A3.
- * range.insertCheckboxes(&#39;yes&#39;, &#39;no&#39;);
- * 
- * var range1 = SpreadsheetApp.getActive().getRange(&#39;A1&#39;);
- * range1.setValue(&#39;yes&#39;);
- * // Sets the value of isRange1Checked as true as it contains the checked value.
- * var isRange1Checked = range1.isChecked();
- * 
- * var range2 = SpreadsheetApp.getActive().getRange(&#39;A2&#39;);
- * range2.setValue(&#39;no&#39;);
- * // Sets the value of isRange2Checked as false as it contains the unchecked value.
- * var isRange2Checked = range2.isChecked();
- * 
- * var range3 = SpreadsheetApp.getActive().getRange(&#39;A3&#39;);
- * range3.setValue(&#39;random&#39;);
- * // Sets the value of isRange3Checked as null, as it contains an invalid checkbox value.
- * var isRange3Checked = range3.isChecked();
- * </code></pre>
- * 
- * @function SpreadsheetApp.Range#isChecked
- * 
- * @return {Boolean} <code>true</code>, if all cells in the range are checked, <code>false</code> if all cells in the
- *     range are unchecked, or <code>null</code> if any of the cells are unchecked or do not have
- *     checkbox data validation.
- */
-
-
-/**
- * Removes all checkboxes from the range. Clears the data validation of each cell, and
- * additionally clears its value if the cell contains either the checked or unchecked value.
- * 
- * <pre class="prettyprint"><code>
- * var range = SpreadsheetApp.getActive().getRange(&#39;A1:B10&#39;);
- * 
- * // Inserts checkboxes and sets each cell value to &#39;no&#39; in the range A1:B10.
- * range.insertCheckboxes(&#39;yes&#39;, &#39;no&#39;);
- * 
- * var range1 = SpreadsheetApp.getActive().getRange(&#39;A1&#39;);
- * range1.setValue(&#39;yes&#39;);
- * // Removes the checkbox data validation in cell A1 and clears its value.
- * range1.removeCheckboxes();
- * 
- * var range2 = SpreadsheetApp.getActive().getRange(&#39;A2&#39;);
- * range2.setValue(&#39;random&#39;);
- * // Removes the checkbox data validation in cell A2 but does not clear its value.
- * range2.removeCheckboxes();
- * </code></pre>
- * 
- * @function SpreadsheetApp.Range#removeCheckboxes
+ * @function SpreadsheetApp.Range#trimWhitespace
  * 
  * @return {SpreadsheetApp.Range} This range, for chaining.
  */
@@ -17693,6 +20507,24 @@
  * @function SpreadsheetApp.Range#uncheck
  * 
  * @return {SpreadsheetApp.Range} This range, for chaining.
+ */
+
+
+/**
+ * Returns top, left, bottom, and right border for the first cell in the range.
+ * 
+ * @function SpreadsheetApp.Range#getBorder
+ * 
+ * @return {SpreadsheetApp.Borders} The borders for the first cell in the range.
+ */
+
+
+/**
+ * Returns top, left, bottom, and right borders for all the enclosed cells.
+ * 
+ * @function SpreadsheetApp.Range#getBorders
+ * 
+ * @return {SpreadsheetApp.Borders[][]} The borders for the enclosed cells.
  */
 
 
@@ -17722,7 +20554,7 @@
  * 
  * @function SpreadsheetApp.RangeList#activate
  * 
- * @return {SpreadsheetApp.RangeList} the list of active ranges for chaining
+ * @return {SpreadsheetApp.RangeList} The list of active ranges, for chaining.
  */
 
 
@@ -17741,7 +20573,24 @@
  * 
  * @function SpreadsheetApp.RangeList#breakApart
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
+ */
+
+
+/**
+ * Changes the state of the checkboxes in the range to “checked”. Ignores the cells in the range
+ * which currently do not contain either the checked or unchecked value configured.
+ * 
+ * <pre class="prettyprint"><code>
+ * // Changes the state of cells which currently contain either the checked or unchecked value
+ * // configured in the ranges D4 and E6 to &#39;checked&#39;.
+ * var rangeList = SpreadsheetApp.getActive().getRangeList([&#39;D4&#39;, &#39;E6&#39;]);
+ * rangeList.check();
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.RangeList#check
+ * 
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -17757,7 +20606,7 @@
  * 
  * @function SpreadsheetApp.RangeList#clear
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -17777,7 +20626,7 @@
  * 
  * @param {Object} options - A JavaScript object that specifies advanced parameters, as listed below.
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -17792,22 +20641,22 @@
  * 
  * @function SpreadsheetApp.RangeList#clearContent
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
 /**
  * Clears the data validation rules for each <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/range.html'>Range</a></code> in the range list.
  * 
- * <pre class="prettyprint">
+ * <pre class="prettyprint"><code>
  * var sheet = SpreadsheetApp.getActiveSheet();
- * var rangeList = sheet.getRangeList(['A:A', 'C:C']);
+ * var rangeList = sheet.getRangeList([&#39;A:A&#39;, &#39;C:C&#39;]);
  * rangeList.clearDataValidations();
- * </pre>
+ * </code></pre>
  * 
  * @function SpreadsheetApp.RangeList#clearDataValidations
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -17824,7 +20673,7 @@
  * 
  * @function SpreadsheetApp.RangeList#clearFormat
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -17839,7 +20688,7 @@
  * 
  * @function SpreadsheetApp.RangeList#clearNote
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -17848,7 +20697,95 @@
  * 
  * @function SpreadsheetApp.RangeList#getRanges
  * 
- * @return {SpreadsheetApp.Range[]} the list of ranges
+ * @return {SpreadsheetApp.Range[]} The list of ranges.
+ */
+
+
+/**
+ * Inserts checkboxes into each cell in the range, configured with <code>true</code> for checked and
+ * <code>false</code> for unchecked. Sets the value of all cells in the range to <code>false</code>.
+ * 
+ * <pre class="prettyprint"><code>
+ * var rangeList = SpreadsheetApp.getActive().getRangeList([&#39;D4&#39;, &#39;E6&#39;]);
+ * 
+ * // Inserts checkboxes into each cell in the ranges D4 and E6 configured with &#39;true&#39; for checked
+ * // and &#39;false&#39; for unchecked. Also, sets the value of each cell in the ranges D4 and E6 to
+ * // &#39;false&#39;.
+ * rangeList.insertCheckboxes();
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.RangeList#insertCheckboxes
+ * 
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
+ */
+
+
+/**
+ * Inserts checkboxes into each cell in the range, configured with a custom value for checked and
+ * the empty string for unchecked. Sets the value of each cell in the range to the empty string.
+ * 
+ * <pre class="prettyprint"><code>
+ * var rangeList = SpreadsheetApp.getActive().getRangeList([&#39;D4&#39;, &#39;E6&#39;]);
+ * 
+ * // Inserts checkboxes into each cell in the ranges D4 and E6 configured with &#39;yes&#39; for checked
+ * // and the empty string for unchecked. Also, sets the value of each cell in the ranges D4 and
+ * // E6 to the empty string.
+ * rangeList.insertCheckboxes(&#39;yes&#39;);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.RangeList#insertCheckboxes
+ * 
+ * @param {Object} checkedValue - The checked value for the checkbox data validation.
+ * 
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
+ */
+
+
+/**
+ * Inserts checkboxes into each cell in the range, configured with custom values for the checked
+ * and unchecked states. Sets the value of each cell in the range to the custom unchecked value.
+ * 
+ * <pre class="prettyprint"><code>
+ * var rangeList = SpreadsheetApp.getActive().getRangeList([&#39;D4&#39;, &#39;E6&#39;]);
+ * 
+ * // Inserts checkboxes into each cell in the ranges D4 and E6 configured with &#39;yes&#39; for checked
+ * // and &#39;no&#39; for unchecked. Also, sets the value of each cell in the ranges D4 and E6 to &#39;no&#39;.
+ * rangeList.insertCheckboxes(&#39;yes&#39;, &#39;no&#39;);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.RangeList#insertCheckboxes
+ * 
+ * @param {Object} checkedValue - The checked value for the checkbox data validation.
+ * @param {Object} uncheckedValue - The unchecked value for the checkbox data validation.
+ * 
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
+ */
+
+
+/**
+ * Removes all checkboxes from the range. Clears the data validation of each cell, and
+ * additionally clears its value if the cell contains either the checked or unchecked value.
+ * 
+ * <pre class="prettyprint"><code>
+ * var range = SpreadsheetApp.getActive().getRange(&#39;A1:B10&#39;);
+ * 
+ * // Inserts checkboxes and sets each cell value to &#39;no&#39; in the range A1:B10.
+ * range.insertCheckboxes(&#39;yes&#39;, &#39;no&#39;);
+ * 
+ * var rangeList1 = SpreadsheetApp.getActive().getRangeList([&#39;A1&#39;, &#39;A3&#39;]);
+ * rangeList1.setValue(&#39;yes&#39;);
+ * // Removes the checkbox data validation in cells A1 and A3 and clears their value.
+ * rangeList1.removeCheckboxes();
+ * 
+ * var rangeList2 = SpreadsheetApp.getActive().getRangeList([&#39;A5&#39;, &#39;A7&#39;]);
+ * rangeList2.setValue(&#39;random&#39;);
+ * // Removes the checkbox data validation in cells A5 and A7 but does not clear their value.
+ * rangeList2.removeCheckboxes();
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.RangeList#removeCheckboxes
+ * 
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -17866,7 +20803,7 @@
  * 
  * @param {String} color - The background color code in CSS notation such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>; a <code>null</code> value resets the color.
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -17886,7 +20823,7 @@
  * @param {IntegerNum} green - The green value in RGB notation.
  * @param {IntegerNum} blue - The blue value in RGB notation.
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -17911,7 +20848,7 @@
  * @param {Boolean} vertical - <code>true</code> for internal vertical borders, <code>false</code> for none, <code>null</code> for no change.
  * @param {Boolean} horizontal - <code>true</code> for internal horizontal borders, <code>false</code> for none, <code>null</code> for no change.
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -17940,7 +20877,7 @@
  * @param {String} color - The border color in CSS notation like <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>, <code>null</code> for default color (black).
  * @param {SpreadsheetApp.BorderStyle} style - The style for the borders, <code>null</code> for default style (solid).
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -17959,7 +20896,7 @@
  * @param {String} color - The font color in CSS notation such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>; a
  *     <code>null</code> value resets the color.
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -17977,7 +20914,7 @@
  * 
  * @param {String} fontFamily - The font family to set; a <code>null</code> value resets the font family.
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -17996,7 +20933,7 @@
  * @param {String} fontLine - The font line style, either <code>&#39;underline&#39;</code>, <code>&#39;line-through&#39;</code>, or
  *     <code>&#39;none&#39;</code>; a <code>null</code> value resets the font line style.
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -18013,7 +20950,7 @@
  * 
  * @param {IntegerNum} size - A font point size.
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -18032,7 +20969,7 @@
  * @param {String} fontStyle - The font style, either <code>&#39;italic&#39;</code> or <code>&#39;normal&#39;</code>; a <code>null</code>
  *     value resets the font style.
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -18051,7 +20988,7 @@
  * @param {String} fontWeight - The font weight, either <code>&#39;bold&#39;</code> or <code>&#39;normal&#39;</code>; a <code>null</code>
  *     value resets the font weight.
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -18069,7 +21006,7 @@
  * 
  * @param {String} formula - A string representing the formula to set.
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -18088,7 +21025,7 @@
  * 
  * @param {String} formula - A string formula.
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -18107,7 +21044,7 @@
  * @param {String} alignment - The alignment, either <code>&#39;left&#39;</code>, <code>&#39;center&#39;</code> or <code>&#39;normal&#39;</code>; a
  *     <code>null</code> value resets the alignment.
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -18124,7 +21061,7 @@
  * 
  * @param {String} note - The note text to set; a <code>null</code> value removes the note.
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -18145,7 +21082,7 @@
  * 
  * @param {String} numberFormat - A number format string.
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -18163,7 +21100,7 @@
  * 
  * @param {Boolean} showHyperlink - Whether or not to show the hyperlink.
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -18183,7 +21120,7 @@
  * @param {SpreadsheetApp.TextDirection} direction - The desired text direction; if <code>null</code> the direction is inferred before
  *     setting.
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -18207,7 +21144,7 @@
  * @param {IntegerNum} degrees - The desired angle between the standard orientation and the desired orientation.
  *     For left to right text, positive angles are in the counterclockwise direction.
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -18226,7 +21163,7 @@
  * 
  * @param {Object} value - The value for the range.
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -18246,7 +21183,7 @@
  * @param {String} alignment - The alignment, either <code>&#39;top&#39;</code>, <code>&#39;middle&#39;</code> or <code>&#39;bottom&#39;</code>; a
  *     <code>null</code> value resets the alignment.
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -18265,7 +21202,7 @@
  * 
  * @param {Boolean} isVertical - Whether or not to stack the text.
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -18285,7 +21222,7 @@
  * 
  * @param {Boolean} isWrapEnabled - Whether to wrap text or not.
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -18303,93 +21240,35 @@
  * 
  * @param {SpreadsheetApp.WrapStrategy} strategy - The desired wrapping strategy.
  * 
- * @return {SpreadsheetApp.RangeList} this range list, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
 /**
- * Changes the state of the checkboxes in the range to “checked”. Ignores the cells in the range
- * which currently do not contain either the checked or unchecked value configured.
+ * Trims the whitespace (such as spaces, tabs, or new lines) in every cell in this range list.
+ * Removes all whitespace from the start and end of each cell's text, and reduces any subsequence
+ * of remaining whitespace characters to a single space.
+ * 
+ * <p><aside class="note"><b>Note</b>: If the resulting trimmed text starts with a '+' or '='
+ * character, the text remains as a string value and isn't interpreted as a formula.</aside>
  * 
  * <pre class="prettyprint"><code>
- * // Changes the state of cells which currently contain either the checked or unchecked value
- * // configured in the ranges D4 and E6 to &#39;checked&#39;.
- * var rangeList = SpreadsheetApp.getActive().getRangeList([&#39;D4&#39;, &#39;E6&#39;]);
- * rangeList.check();
+ * var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+ * var range = sheet.getRange(&#39;A1:A4&#39;);
+ * range.activate();
+ * range.setValues(
+ *     [&#39; preceding space&#39;, &#39;following space &#39;, &#39;two  middle  spaces&#39;, &#39;   =SUM(1,2)&#39;]);
+ * 
+ * var rangeList = sheet.getRangeList([&#39;A1&#39;, &#39;A2&#39;, &#39;A3&#39;, &#39;A4&#39;]);
+ * rangeList.trimWhitespace();
+ * 
+ * var values = range.getValues();
+ * // Values are [&#39;preceding space&#39;, &#39;following space&#39;, &#39;two middle spaces&#39;, &#39;=SUM(1,2)&#39;]
  * </code></pre>
  * 
- * @function SpreadsheetApp.RangeList#check
+ * @function SpreadsheetApp.RangeList#trimWhitespace
  * 
- * @return {SpreadsheetApp.RangeList} this range, for chaining
- */
-
-
-/**
- * Inserts checkboxes into each cell in the range, configured with a custom value for checked and
- * the empty string for unchecked. Sets the value of each cell in the range to the empty string.
- * 
- * <pre class="prettyprint"><code>
- * var rangeList = SpreadsheetApp.getActive().getRangeList([&#39;D4&#39;, &#39;E6&#39;]);
- * 
- * // Inserts checkboxes into each cell in the ranges D4 and E6 configured with &#39;yes&#39; for checked
- * // and the empty string for unchecked. Also, sets the value of each cell in the ranges D4 and
- * // E6 to the empty string.
- * rangeList.insertCheckboxes(&#39;yes&#39;);
- * </code></pre>
- * 
- * @function SpreadsheetApp.RangeList#insertCheckboxes
- * 
- * @param {Object} checkedValue - The checked value for the checkbox data validation.
- * 
- * @return {SpreadsheetApp.RangeList} this range, for chaining
- */
-
-
-/**
- * Inserts checkboxes into each cell in the range, configured with custom values for the checked
- * and unchecked states. Sets the value of each cell in the range to the custom unchecked value.
- * 
- * <pre class="prettyprint"><code>
- * var rangeList = SpreadsheetApp.getActive().getRangeList([&#39;D4&#39;, &#39;E6&#39;]);
- * 
- * // Inserts checkboxes into each cell in the ranges D4 and E6 configured with &#39;yes&#39; for checked
- * // and &#39;no&#39; for unchecked. Also, sets the value of each cell in the ranges D4 and E6 to &#39;no&#39;.
- * rangeList.insertCheckboxes(&#39;yes&#39;, &#39;no&#39;);
- * </code></pre>
- * 
- * @function SpreadsheetApp.RangeList#insertCheckboxes
- * 
- * @param {Object} checkedValue - The checked value for the checkbox data validation.
- * @param {Object} uncheckedValue - The unchecked value for the checkbox data validation.
- * 
- * @return {SpreadsheetApp.RangeList} this range, for chaining
- */
-
-
-/**
- * Removes all checkboxes from the range. Clears the data validation of each cell, and
- * additionally clears its value if the cell contains either the checked or unchecked value.
- * 
- * <pre class="prettyprint"><code>
- * var range = SpreadsheetApp.getActive().getRange(&#39;A1:B10&#39;);
- * 
- * // Inserts checkboxes and sets each cell value to &#39;no&#39; in the range A1:B10.
- * range.insertCheckboxes(&#39;yes&#39;, &#39;no&#39;);
- * 
- * var rangeList1 = SpreadsheetApp.getActive().getRangeList([&#39;A1&#39;, &#39;A3&#39;]);
- * rangeList1.setValue(&#39;yes&#39;);
- * // Removes the checkbox data validation in cells A1 and A3 and clears their value.
- * rangeList1.removeCheckboxes();
- * 
- * var rangeList2 = SpreadsheetApp.getActive().getRangeList([&#39;A5&#39;, &#39;A7&#39;]);
- * rangeList2.setValue(&#39;random&#39;);
- * // Removes the checkbox data validation in cells A5 and A7 but does not clear their value.
- * rangeList2.removeCheckboxes();
- * </code></pre>
- * 
- * @function SpreadsheetApp.RangeList#removeCheckboxes
- * 
- * @return {SpreadsheetApp.RangeList} this range, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
@@ -18406,10 +21285,30 @@
  * 
  * @function SpreadsheetApp.RangeList#uncheck
  * 
- * @return {SpreadsheetApp.RangeList} this range, for chaining
+ * @return {SpreadsheetApp.RangeList} This range list, for chaining.
  */
 
 
+
+/**
+ * @class SpreadsheetApp.RecalculationInterval
+ */
+
+/**
+ * Recalculate when values are changed, and every hour.
+ * 
+ * @typedef {SpreadsheetApp.RecalculationInterval} SpreadsheetApp.RecalculationInterval.HOUR
+ */
+/**
+ * Recalculate when values are changed, and every minute.
+ * 
+ * @typedef {SpreadsheetApp.RecalculationInterval} SpreadsheetApp.RecalculationInterval.MINUTE
+ */
+/**
+ * Recalculate only when values are changed.
+ * 
+ * @typedef {SpreadsheetApp.RecalculationInterval} SpreadsheetApp.RecalculationInterval.ON_CHANGE
+ */
 
 /**
  * @class SpreadsheetApp.RelativeDate
@@ -18465,6 +21364,31 @@
  * @function SpreadsheetApp.RichTextValue#getEndIndex
  * 
  * @return {IntegerNum} The end index of this value in the cell.
+ */
+
+
+/**
+ * Returns the link URL for this value.
+ * 
+ * @function SpreadsheetApp.RichTextValue#getLinkUrl
+ * 
+ * @return {String} The link URL for this value, or <code>null</code> if there is no link or if there are
+ *     multiple different links.
+ */
+
+
+/**
+ * Returns the link URL for the text from <code>startOffset</code> to <code>endOffset</code>. Offsets are 0
+ * based and relative to the cell's text, with the start offset being inclusive and the end offset
+ * being exclusive.
+ * 
+ * @function SpreadsheetApp.RichTextValue#getLinkUrl
+ * 
+ * @param {IntegerNum} startOffset - The start offset.
+ * @param {IntegerNum} endOffset - The end offset.
+ * 
+ * @return {String} The link URL for this value, or <code>null</code> if there is no link or if multiple
+ *     different links are in the given range.
  */
 
 
@@ -18534,6 +21458,57 @@
 
 
 /**
+ * Sets the link URL for the given substring of this value, or clears it if <code>linkUrl</code> is
+ * <code>null</code>.
+ * 
+ * <pre class="prettyprint"><code>
+ * // Creates a Rich Text value for the text &quot;foo no baz&quot; with &quot;foo&quot; pointing to
+ * // &quot;https://bar.foo&quot; and &quot;baz&quot; to &quot;https://abc.xyz&quot;.
+ * // &quot;foo&quot; is underlined with the default link color, whereas &quot;baz&quot; has its text style
+ * // overridden by a call to `setTextStyle`, and is therefore black and bold with no underlining.
+ * const boldStyle = SpreadsheetApp.newTextStyle()
+ *     .setUnderline(false)
+ *     .setBold(true)
+ *     .setForegroundColor(&quot;#000000&quot;)
+ *     .build();
+ * const value = SpreadsheetApp.newRichTextValue()
+ *     .setText(&quot;foo no baz&quot;)
+ *     .setLinkUrl(0, 3, &quot;https://bar.foo&quot;)
+ *     .setLinkUrl(7, 10, &quot;https://abc.xyz&quot;)
+ *     .setTextStyle(7, 10, boldStyle)
+ *     .build();
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.RichTextValueBuilder#setLinkUrl
+ * 
+ * @param {IntegerNum} startOffset - The start offset for the substring, inclusive.
+ * @param {IntegerNum} endOffset - The end offset for the substring, exclusive.
+ * @param {String} linkUrl - The link URL being set.
+ * 
+ * @return {SpreadsheetApp.RichTextValueBuilder} This builder, for chaining.
+ */
+
+
+/**
+ * Sets the link URL for the entire value, or clears it if <code>linkUrl</code> is <code>null</code>.
+ * 
+ * <pre class="prettyprint"><code>
+ * // Creates a Rich Text value for the text &quot;Foo&quot; which points to &quot;https://bar.foo&quot;.
+ * const value = SpreadsheetApp.newRichTextValue()
+ *     .setText(&quot;Foo&quot;)
+ *     .setLinkUrl(&quot;https://bar.foo&quot;)
+ *     .build();
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.RichTextValueBuilder#setLinkUrl
+ * 
+ * @param {String} linkUrl - The link URL being set.
+ * 
+ * @return {SpreadsheetApp.RichTextValueBuilder} This builder, for chaining.
+ */
+
+
+/**
  * Sets the text for this value and clears any existing text style. When creating a new Rich Text
  * value, this should be called before <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/rich-text-value-builder.html#setTextStyle(Integer,Integer,TextStyle)'>setTextStyle(startOffset, endOffset, textStyle)</a></code>.
  * 
@@ -18541,7 +21516,7 @@
  * 
  * @param {String} text - The text for this value.
  * 
- * @return {SpreadsheetApp.RichTextValueBuilder} The builder for chaining.
+ * @return {SpreadsheetApp.RichTextValueBuilder} This builder, for chaining.
  */
 
 
@@ -18567,7 +21542,7 @@
  * @param {IntegerNum} endOffset - The end offset for the substring, exclusive.
  * @param {SpreadsheetApp.TextStyle} textStyle - The text style being set.
  * 
- * @return {SpreadsheetApp.RichTextValueBuilder} The builder for chaining.
+ * @return {SpreadsheetApp.RichTextValueBuilder} This builder, for chaining.
  */
 
 
@@ -18592,7 +21567,7 @@
  * 
  * @param {SpreadsheetApp.TextStyle} textStyle - The text style being set.
  * 
- * @return {SpreadsheetApp.RichTextValueBuilder} The builder for chaining.
+ * @return {SpreadsheetApp.RichTextValueBuilder} This builder, for chaining.
  */
 
 
@@ -18709,7 +21684,7 @@
  * 
  * @function SpreadsheetApp.Sheet#activate
  * 
- * @return {SpreadsheetApp.Sheet} the newly active sheet
+ * @return {SpreadsheetApp.Sheet} The newly active sheet.
  */
 
 
@@ -18784,6 +21759,15 @@
 
 
 /**
+ * Returns the sheet as a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-sheet.html'>DataSourceSheet</a></code> if the sheet is of type <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/sheet-type.html#DATASOURCE'>SheetType.DATASOURCE</a></code>, or <code>null</code> otherwise.
+ * 
+ * @function SpreadsheetApp.Sheet#asDataSourceSheet
+ * 
+ * @return {SpreadsheetApp.DataSourceSheet} A data source sheet.
+ */
+
+
+/**
  * Sets the width of the given column to fit its contents.
  * 
  * <pre class="prettyprint"><code>
@@ -18820,7 +21804,7 @@
  * @param {IntegerNum} startColumn - The starting column to auto-resize.
  * @param {IntegerNum} numColumns - The number of columns to auto-resize.
  * 
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ * @return {SpreadsheetApp.Sheet} This sheet, for chaining.
  */
 
 
@@ -18840,7 +21824,7 @@
  * @param {IntegerNum} startRow - The starting row to auto-resize.
  * @param {IntegerNum} numRows - The number of rows to auto-resize.
  * 
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ * @return {SpreadsheetApp.Sheet} This sheet, for chaining.
  */
 
 
@@ -18856,7 +21840,7 @@
  * 
  * @function SpreadsheetApp.Sheet#clear
  * 
- * @return {SpreadsheetApp.Sheet} the cleared sheet
+ * @return {SpreadsheetApp.Sheet} The cleared sheet.
  */
 
 
@@ -18873,7 +21857,7 @@
  * 
  * @param {Object} options - A JavaScript map containing advanced options, listed below.
  * 
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ * @return {SpreadsheetApp.Sheet} This sheet, for chaining.
  */
 
 
@@ -18903,7 +21887,7 @@
  * 
  * @function SpreadsheetApp.Sheet#clearContents
  * 
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ * @return {SpreadsheetApp.Sheet} This sheet, for chaining.
  */
 
 
@@ -18922,7 +21906,7 @@
  * 
  * @function SpreadsheetApp.Sheet#clearFormats
  * 
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ * @return {SpreadsheetApp.Sheet} This sheet, for chaining.
  */
 
 
@@ -18938,7 +21922,7 @@
  * 
  * @function SpreadsheetApp.Sheet#clearNotes
  * 
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ * @return {SpreadsheetApp.Sheet} This sheet, for chaining.
  */
 
 
@@ -18954,7 +21938,7 @@
  * 
  * @function SpreadsheetApp.Sheet#collapseAllColumnGroups
  * 
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ * @return {SpreadsheetApp.Sheet} This sheet, for chaining.
  */
 
 
@@ -18970,7 +21954,7 @@
  * 
  * @function SpreadsheetApp.Sheet#collapseAllRowGroups
  * 
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ * @return {SpreadsheetApp.Sheet} This sheet, for chaining.
  */
 
 
@@ -18991,7 +21975,7 @@
  * @param {SpreadsheetApp.Spreadsheet} spreadsheet - The spreadsheet to copy this sheet to, which can be the same spreadsheet as
  *     the source.
  * 
- * @return {SpreadsheetApp.Sheet} the new sheet, for chaining
+ * @return {SpreadsheetApp.Sheet} The new sheet, for chaining.
  */
 
 
@@ -19003,6 +21987,31 @@
  * @function SpreadsheetApp.Sheet#createDeveloperMetadataFinder
  * 
  * @return {SpreadsheetApp.DeveloperMetadataFinder} A developer metadata finder to search for metadata in the scope of this sheet.
+ */
+
+
+/**
+ * Creates a text finder for the sheet, which can find and replace text within the sheet.
+ * 
+ * <pre class="prettyprint"><code>
+ * var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+ * 
+ * // Creates  a text finder.
+ * var textFinder = sheet.createTextFinder(&#39;dog&#39;);
+ * 
+ * // Returns the first occurrence of &#39;dog&#39; in the sheet.
+ * var firstOccurrence = textFinder.findNext();
+ * 
+ * // Replaces the last found occurrence of &#39;dog&#39; with &#39;cat&#39; and returns the number
+ * // of occurrences replaced.
+ * var numOccurrencesReplaced = findOccurrence.replaceWith(&#39;cat&#39;);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Sheet#createTextFinder
+ * 
+ * @param {String} findText - The text to search for.
+ * 
+ * @return {SpreadsheetApp.TextFinder} The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/text-finder.html'>TextFinder</a></code> for the sheet.
  */
 
 
@@ -19081,7 +22090,7 @@
 
 
 /**
- * Expands all column groups on the sheet.
+ * Expands all column groups on the sheet. This method requires at least one column group.
  * 
  * <pre class="prettyprint"><code>
  * var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
@@ -19092,12 +22101,12 @@
  * 
  * @function SpreadsheetApp.Sheet#expandAllColumnGroups
  * 
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ * @return {SpreadsheetApp.Sheet} This sheet, for chaining.
  */
 
 
 /**
- * Expands all row groups on the sheet.
+ * Expands all row groups on the sheet. This method requires at least one row group.
  * 
  * <pre class="prettyprint"><code>
  * var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
@@ -19108,7 +22117,7 @@
  * 
  * @function SpreadsheetApp.Sheet#expandAllRowGroups
  * 
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ * @return {SpreadsheetApp.Sheet} This sheet, for chaining.
  */
 
 
@@ -19127,7 +22136,7 @@
  * 
  * @param {IntegerNum} groupDepth - The group depth up to which to expand the column groups.
  * 
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ * @return {SpreadsheetApp.Sheet} This sheet, for chaining.
  */
 
 
@@ -19146,7 +22155,7 @@
  * 
  * @param {IntegerNum} groupDepth - The group depth up to which to expand the row groups.
  * 
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ * @return {SpreadsheetApp.Sheet} This sheet, for chaining.
  */
 
 
@@ -19210,7 +22219,7 @@
  * 
  * @function SpreadsheetApp.Sheet#getBandings
  * 
- * @return {SpreadsheetApp.Banding[]} all the bandings in this sheet
+ * @return {SpreadsheetApp.Banding[]} All the bandings in this sheet.
  */
 
 
@@ -19230,7 +22239,7 @@
  * 
  * @function SpreadsheetApp.Sheet#getCharts
  * 
- * @return {SpreadsheetApp.EmbeddedChart[]} an array of charts
+ * @return {SpreadsheetApp.EmbeddedChart[]} An array of charts.
  */
 
 
@@ -19250,8 +22259,8 @@
  * @param {IntegerNum} columnIndex - The column index of the group control toggle or an index within the group.
  * @param {IntegerNum} groupDepth - The depth of the group.
  * 
- * @return {SpreadsheetApp.Group} the column group at the control index and depth, or <code>null</code> if the group doesn’t
- *     exist
+ * @return {SpreadsheetApp.Group} The column group at the control index and depth, or <code>null</code> if the group doesn’t
+ *     exist.
  */
 
 
@@ -19269,7 +22278,7 @@
  * @function SpreadsheetApp.Sheet#getColumnGroupControlPosition
  * 
  * @return {SpreadsheetApp.GroupControlTogglePosition} <code>true</code> if the column grouping control toggle is shown after the group on this
- *     sheet and <code>false</code> otherwise
+ *     sheet and <code>false</code> otherwise.
  */
 
 
@@ -19290,7 +22299,7 @@
  * 
  * @param {IntegerNum} columnIndex - The index of the column.
  * 
- * @return {IntegerNum} the group depth of the column at the given index
+ * @return {IntegerNum} The group depth of the column at the given index.
  */
 
 
@@ -19327,7 +22336,7 @@
  * 
  * @function SpreadsheetApp.Sheet#getConditionalFormatRules
  * 
- * @return {SpreadsheetApp.ConditionalFormatRule[]} an array of all rules in the sheet.
+ * @return {SpreadsheetApp.ConditionalFormatRule[]} An array of all rules in the sheet.
  */
 
 
@@ -19383,6 +22392,24 @@
 
 
 /**
+ * Gets all the data source formulas.
+ * 
+ * @function SpreadsheetApp.Sheet#getDataSourceFormulas
+ * 
+ * @return {SpreadsheetApp.DataSourceFormula[]} A list of data source formulas.
+ */
+
+
+/**
+ * Gets all the data source pivot tables.
+ * 
+ * @function SpreadsheetApp.Sheet#getDataSourcePivotTables
+ * 
+ * @return {SpreadsheetApp.DataSourcePivotTable[]} A list of data source pivot tables.
+ */
+
+
+/**
  * Gets all the data source tables.
  * 
  * @function SpreadsheetApp.Sheet#getDataSourceTables
@@ -19401,11 +22428,20 @@
 
 
 /**
+ * Returns an array of drawings on the sheet.
+ * 
+ * @function SpreadsheetApp.Sheet#getDrawings
+ * 
+ * @return {SpreadsheetApp.Drawing[]} The list of drawings on this sheet.
+ */
+
+
+/**
  * Returns the filter in this sheet, or <code>null</code> if there is no filter.
  * 
  * @function SpreadsheetApp.Sheet#getFilter
  * 
- * @return {SpreadsheetApp.Filter} the filter
+ * @return {SpreadsheetApp.Filter} The filter.
  */
 
 
@@ -19420,7 +22456,7 @@
  * 
  * @function SpreadsheetApp.Sheet#getFormUrl
  * 
- * @return {String} the URL for the form that places its responses in this sheet, or <code>null</code> if this
+ * @return {String} The URL for the form that places its responses in this sheet, or <code>null</code> if this
  *     sheet doesn't have an associated form.
  */
 
@@ -19479,7 +22515,7 @@
  * 
  * @function SpreadsheetApp.Sheet#getIndex
  * 
- * @return {IntegerNum} the position of the sheet in its parent spreadsheet
+ * @return {IntegerNum} The position of the sheet in its parent spreadsheet.
  */
 
 
@@ -19535,7 +22571,7 @@
  * 
  * @function SpreadsheetApp.Sheet#getMaxColumns
  * 
- * @return {IntegerNum} the maximum width of the sheet
+ * @return {IntegerNum} The maximum width of the sheet.
  */
 
 
@@ -19551,7 +22587,7 @@
  * 
  * @function SpreadsheetApp.Sheet#getMaxRows
  * 
- * @return {IntegerNum} the maximum height of the sheet
+ * @return {IntegerNum} The maximum height of the sheet.
  */
 
 
@@ -19566,7 +22602,7 @@
  * 
  * @function SpreadsheetApp.Sheet#getName
  * 
- * @return {String} the name of the sheet
+ * @return {String} The name of the sheet.
  */
 
 
@@ -19583,7 +22619,7 @@
  * 
  * @function SpreadsheetApp.Sheet#getNamedRanges
  * 
- * @return {SpreadsheetApp.NamedRange[]} an array of all the named ranges in the sheet
+ * @return {SpreadsheetApp.NamedRange[]} An array of all the named ranges in the sheet.
  */
 
 
@@ -19599,7 +22635,7 @@
  * 
  * @function SpreadsheetApp.Sheet#getParent
  * 
- * @return {SpreadsheetApp.Spreadsheet} the parent spreadsheet
+ * @return {SpreadsheetApp.Spreadsheet} The parent spreadsheet.
  */
 
 
@@ -19608,7 +22644,7 @@
  * 
  * @function SpreadsheetApp.Sheet#getPivotTables
  * 
- * @return {SpreadsheetApp.PivotTable[]} the pivot tables on this sheet.
+ * @return {SpreadsheetApp.PivotTable[]} The pivot tables on this sheet.
  */
 
 
@@ -19642,8 +22678,8 @@
  * @param {SpreadsheetApp.ProtectionType} type - The type of protected area, either <code>SpreadsheetApp.ProtectionType.RANGE</code> or
  *     <code>SpreadsheetApp.ProtectionType.SHEET</code>.
  * 
- * @return {SpreadsheetApp.Protection[]} an array of objects representing all protected ranges in the sheet, or a single-element
- *     array representing the protection on the sheet itself
+ * @return {SpreadsheetApp.Protection[]} An array of objects representing all protected ranges in the sheet, or a single-element
+ *     array representing the protection on the sheet itself.
  */
 
 
@@ -19781,8 +22817,8 @@
  * @param {IntegerNum} rowIndex - The row index of the group control toggle or an index within the group.
  * @param {IntegerNum} groupDepth - The depth of the group.
  * 
- * @return {SpreadsheetApp.Group} the row group at the control index and depth, or <code>null</code> if the group doesn’t
- *     exist
+ * @return {SpreadsheetApp.Group} The row group at the control index and depth, or <code>null</code> if the group doesn’t
+ *     exist.
  */
 
 
@@ -19800,7 +22836,7 @@
  * @function SpreadsheetApp.Sheet#getRowGroupControlPosition
  * 
  * @return {SpreadsheetApp.GroupControlTogglePosition} <code>true</code> if the row grouping control toggle is shown after the group on this sheet
- *     and <code>false</code> otherwise
+ *     and <code>false</code> otherwise.
  */
 
 
@@ -19821,7 +22857,7 @@
  * 
  * @param {IntegerNum} rowIndex - The index of the row.
  * 
- * @return {IntegerNum} the group depth of the row at the given index
+ * @return {IntegerNum} The group depth of the row at the given index.
  */
 
 
@@ -19950,6 +22986,15 @@
 
 
 /**
+ * Returns an array of slicers on the sheet.
+ * 
+ * @function SpreadsheetApp.Sheet#getSlicers
+ * 
+ * @return {SpreadsheetApp.Slicer[]} The list of slicers on this sheet.
+ */
+
+
+/**
  * Gets the sheet tab color, or <code>null</code> if the sheet tab has no color.
  * 
  * <pre class="prettyprint"><code>
@@ -19961,7 +23006,41 @@
  * 
  * @function SpreadsheetApp.Sheet#getTabColor
  * 
- * @return {String} color code in CSS notation (such as <code>&#39;#ffffff&#39;</code>)
+ * @return {String} Color code in CSS notation (such as <code>&#39;#ffffff&#39;</code>).
+ */
+
+
+/**
+ * Gets the sheet tab color, or <code>null</code> if the sheet tab has no color.
+ * 
+ * <pre class="prettyprint"><code>
+ * // This example assumes there is a sheet named &quot;Sheet1&quot;
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var first = ss.getSheetByName(&quot;Sheet1&quot;);
+ * var color = first.getTabColorObject();
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Sheet#getTabColorObject
+ * 
+ * @return {SpreadsheetApp.Color} The sheet tab color, or <code>null</code> if the sheet tab has no color.
+ */
+
+
+/**
+ * Returns the type of the sheet.
+ * 
+ * <p>The default type of sheet is <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/sheet-type.html#GRID'>SheetType.GRID</a></code>. A sheet that contains a single embedded
+ * object such as an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-chart.html'>EmbeddedChart</a></code> is an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/sheet-type.html#OBJECT'>SheetType.OBJECT</a></code> sheet.
+ * 
+ * <pre class="prettyprint"><code>
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var sheet = ss.getSheets()[0];
+ * Logger.log(sheet.getType());
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Sheet#getType
+ * 
+ * @return {SpreadsheetApp.SheetType} The type of the sheet.
  */
 
 
@@ -19971,7 +23050,7 @@
  * 
  * @function SpreadsheetApp.Sheet#hasHiddenGridlines
  * 
- * @return {Boolean} <code>true</code> if gridlines are hidden; <code>false</code> otherwise
+ * @return {Boolean} <code>true</code> if gridlines are hidden; <code>false</code> otherwise.
  */
 
 
@@ -20007,7 +23086,7 @@
  * 
  * @function SpreadsheetApp.Sheet#hideColumns
  * 
- * @param {IntegerNum} columnIndex - the index of the column to hide
+ * @param {IntegerNum} columnIndex - The index of the column to hide.
  * 
  * @return void
  */
@@ -20100,7 +23179,7 @@
  * 
  * @function SpreadsheetApp.Sheet#hideSheet
  * 
- * @return {SpreadsheetApp.Sheet} the current sheet
+ * @return {SpreadsheetApp.Sheet} The current sheet.
  */
 
 
@@ -20124,7 +23203,7 @@
  * 
  * @function SpreadsheetApp.Sheet#insertChart
  * 
- * @param {SpreadsheetApp.EmbeddedChart} chart - the chart to insert
+ * @param {SpreadsheetApp.EmbeddedChart} chart - The chart to insert.
  * 
  * @return void
  */
@@ -20449,6 +23528,34 @@
 
 
 /**
+ * Adds a new slicer to this sheet.
+ * 
+ * @function SpreadsheetApp.Sheet#insertSlicer
+ * 
+ * @param {SpreadsheetApp.Range} range - The range over which slicer slicer is created.
+ * @param {IntegerNum} anchorRowPos - The slicer's top side is anchored in this row.
+ * @param {IntegerNum} anchorColPos - The slicer's top side is anchored in this col.
+ * 
+ * @return {SpreadsheetApp.Slicer} The newly inserted slicer.
+ */
+
+
+/**
+ * Adds a new slicer to this sheet.
+ * 
+ * @function SpreadsheetApp.Sheet#insertSlicer
+ * 
+ * @param {SpreadsheetApp.Range} range - The range over which slicer slicer is created.
+ * @param {IntegerNum} anchorRowPos - The slicer's top side is anchored in this row.
+ * @param {IntegerNum} anchorColPos - The slicer's top side is anchored in this col.
+ * @param {IntegerNum} offsetX - The horizontal offset from cell corner in pixels.
+ * @param {IntegerNum} offsetY - The vertical offset from cell corner in pixels.
+ * 
+ * @return {SpreadsheetApp.Slicer} The newly inserted slicer.
+ */
+
+
+/**
  * Returns whether the given column is hidden by the user.
  * 
  * <pre class="prettyprint"><code>
@@ -20473,7 +23580,7 @@
  * 
  * @function SpreadsheetApp.Sheet#isRightToLeft
  * 
- * @return {Boolean} <code>true</code> if right-to-left; <code>false</code> otherwise
+ * @return {Boolean} <code>true</code> if right-to-left; <code>false</code> otherwise.
  */
 
 
@@ -20484,8 +23591,8 @@
  * var ss = SpreadsheetApp.getActiveSpreadsheet();
  * var sheet = ss.getSheets()[0];
  * 
- * // Columns start at 1
- * Logger.log(sheet.isColumnHiddenByUser(1));
+ * // Rows start at 1
+ * Logger.log(sheet.isRowHiddenByFilter(1));
  * </code></pre>
  * 
  * @function SpreadsheetApp.Sheet#isRowHiddenByFilter
@@ -20527,7 +23634,7 @@
  * 
  * @function SpreadsheetApp.Sheet#isSheetHidden
  * 
- * @return {Boolean} <code>true</code> if the sheet is hidden, <code>false</code> otherwise
+ * @return {Boolean} <code>true</code> if the sheet is hidden, <code>false</code> otherwise.
  */
 
 
@@ -20599,7 +23706,7 @@
  * 
  * @function SpreadsheetApp.Sheet#newChart
  * 
- * @return {SpreadsheetApp.EmbeddedChartBuilder} a builder for create a new chart
+ * @return {SpreadsheetApp.EmbeddedChartBuilder} A builder to create a new chart.
  */
 
 
@@ -20629,7 +23736,7 @@
  * 
  * @function SpreadsheetApp.Sheet#protect
  * 
- * @return {SpreadsheetApp.Protection} an object representing the protection settings
+ * @return {SpreadsheetApp.Protection} An object representing the protection settings.
  */
 
 
@@ -20649,7 +23756,7 @@
  * 
  * @function SpreadsheetApp.Sheet#removeChart
  * 
- * @param {SpreadsheetApp.EmbeddedChart} chart - the chart to remove
+ * @param {SpreadsheetApp.EmbeddedChart} chart - The chart to remove.
  * 
  * @return void
  */
@@ -20754,7 +23861,7 @@
  * 
  * @param {SpreadsheetApp.GroupControlTogglePosition} position - The position of the column group control toggle.
  * 
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ * @return {SpreadsheetApp.Sheet} This sheet, for chaining.
  */
 
 
@@ -20795,7 +23902,7 @@
  * @param {IntegerNum} numColumns - The number of columns to change.
  * @param {IntegerNum} width - The width in pixels to set it to.
  * 
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ * @return {SpreadsheetApp.Sheet} This sheet, for chaining.
  */
 
 
@@ -20895,7 +24002,7 @@
  * @param {Boolean} hideGridlines - If <code>true</code>, hide gridlines in this sheet; otherwise show the
  *     gridlines.
  * 
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ * @return {SpreadsheetApp.Sheet} This sheet, for chaining.
  */
 
 
@@ -20913,7 +24020,7 @@
  * 
  * @param {String} name - The new name for the sheet.
  * 
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ * @return {SpreadsheetApp.Sheet} This sheet, for chaining.
  */
 
 
@@ -20926,7 +24033,7 @@
  *     the top right corner. If <code>false</code>, the sheet layout is set to the default
  *     left-to-right, with cell A1 at the top left.
  * 
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ * @return {SpreadsheetApp.Sheet} This sheet, for chaining.
  */
 
 
@@ -20942,7 +24049,7 @@
  * 
  * @param {SpreadsheetApp.GroupControlTogglePosition} position - The position of the row group control toggle.
  * 
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ * @return {SpreadsheetApp.Sheet} This sheet, for chaining.
  */
 
 
@@ -20983,7 +24090,7 @@
  * @param {IntegerNum} numRows - The number of rows to change.
  * @param {IntegerNum} height - The height in pixels to set it to.
  * 
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ * @return {SpreadsheetApp.Sheet} This sheet, for chaining.
  */
 
 
@@ -21026,7 +24133,29 @@
  * @param {String} color - A color code in CSS notation (like <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>), or
  *     <code>null</code> to reset the tab color.
  * 
- * @return {SpreadsheetApp.Sheet} this sheet, for chaining
+ * @return {SpreadsheetApp.Sheet} This sheet, for chaining.
+ */
+
+
+/**
+ * Sets the sheet tab color.
+ * 
+ * <pre class="prettyprint"><code>
+ * // This example assumes there is a sheet named &quot;Sheet1&quot;
+ * var ss = SpreadsheetApp.getActiveSpreadsheet();
+ * var first = ss.getSheetByName(&quot;Sheet1&quot;);
+ * var color = SpreadsheetApp.newColor()
+ *     .setThemeColor(SpreadsheetApp.ThemeColorType.ACCENT1)
+ *     .build();
+ * first.setTabColorObject(color); // Set the color to theme accent 1.
+ * first.setTabColorObject(null); // Unset the color.
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Sheet#setTabColorObject
+ * 
+ * @param {SpreadsheetApp.Color} color - The sheet tab color to set.
+ * 
+ * @return {SpreadsheetApp.Sheet} This sheet, for chaining.
  */
 
 
@@ -21114,7 +24243,7 @@
  * 
  * @function SpreadsheetApp.Sheet#showSheet
  * 
- * @return {SpreadsheetApp.Sheet} the current sheet
+ * @return {SpreadsheetApp.Sheet} The current sheet.
  */
 
 
@@ -21219,52 +24348,317 @@
  * 
  * @function SpreadsheetApp.Sheet#updateChart
  * 
- * @param {SpreadsheetApp.EmbeddedChart} chart - the chart to update
+ * @param {SpreadsheetApp.EmbeddedChart} chart - The chart to update.
+ * 
+ * @return void
+ */
+
+
+
+/**
+ * @class SpreadsheetApp.SheetType
+ */
+
+/**
+ * A sheet containing a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source.html'>DataSource</a></code>.
+ * 
+ * @typedef {SpreadsheetApp.SheetType} SpreadsheetApp.SheetType.DATASOURCE
+ */
+/**
+ * A sheet containing a grid. This is the default type.
+ * 
+ * @typedef {SpreadsheetApp.SheetType} SpreadsheetApp.SheetType.GRID
+ */
+/**
+ * A sheet containing a single embedded object such as an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-chart.html'>EmbeddedChart</a></code>.
+ * 
+ * @typedef {SpreadsheetApp.SheetType} SpreadsheetApp.SheetType.OBJECT
+ */
+
+/**
+ * @class SpreadsheetApp.Slicer
+ */
+
+/**
+ * Returns the background color of the slicer in CSS notation (such as '#ffffff').
+ * 
+ * @function SpreadsheetApp.Slicer#getBackgroundColor
+ * 
+ * @return {String} The background color of this slicer. Returns <code>null</code> if no color is set.
+ */
+
+
+/**
+ * Return the background <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/color.html'>Color</a></code> of the slicer.
+ * 
+ * @function SpreadsheetApp.Slicer#getBackgroundColorObject
+ * 
+ * @return {SpreadsheetApp.Color} The background color of this slicer. Returns <code>null</code> if no color is set.
+ */
+
+
+/**
+ * Returns the column position (relative to the data range of the slicer) on which the filter is
+ * applied in the slicer, or <code>null</code> if the column position is not set. This should be
+ * 1-indexed position of the column similar to filter.
+ * 
+ * @function SpreadsheetApp.Slicer#getColumnPosition
+ * 
+ * @return {IntegerNum} The column position of this slicer.
+ */
+
+
+/**
+ * Gets information about where the slicer is positioned in the sheet.
+ * 
+ * @function SpreadsheetApp.Slicer#getContainerInfo
+ * 
+ * @return {SpreadsheetApp.ContainerInfo} An object containing the slicer's container position.
+ */
+
+
+/**
+ * Returns the filter criteria of the slicer, or <code>null</code> if the filter criteria is not set.
+ * 
+ * @function SpreadsheetApp.Slicer#getFilterCriteria
+ * 
+ * @return {SpreadsheetApp.FilterCriteria} The filter criteria of this slicer.
+ */
+
+
+/**
+ * Gets the data range on which the slicer is applied to.
+ * 
+ * @function SpreadsheetApp.Slicer#getRange
+ * 
+ * @return {SpreadsheetApp.Range} The slicer range.
+ */
+
+
+/**
+ * Returns the title of the slicer.
+ * 
+ * @function SpreadsheetApp.Slicer#getTitle
+ * 
+ * @return {String} This slicer, for chaining.
+ */
+
+
+/**
+ * Gets the horizontal alignment of the title.
+ * 
+ * @function SpreadsheetApp.Slicer#getTitleHorizontalAlignment
+ * 
+ * @return {String} The horizontal alignment of this slicer's title.
+ */
+
+
+/**
+ * Returns the text style of the slicer's title.
+ * 
+ * @function SpreadsheetApp.Slicer#getTitleTextStyle
+ * 
+ * @return {SpreadsheetApp.TextStyle} The text style of this slicer's title.
+ */
+
+
+/**
+ * Returns whether the given slicer is applied to pivot tables.
+ * 
+ * @function SpreadsheetApp.Slicer#isAppliedToPivotTables
+ * 
+ * @return {Boolean} <code>true</code> if this slicer is applied to pivot tables, otherwise <code>false</code>.
+ */
+
+
+/**
+ * Deletes the slicer.
+ * 
+ * @function SpreadsheetApp.Slicer#remove
  * 
  * @return void
  */
 
 
 /**
- * Creates a text finder for the sheet, which can find and replace text within the sheet.
+ * Sets if the given slicer should be applied to pivot tables in the worksheet.
  * 
- * <pre class="prettyprint"><code>
- * var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+ * @function SpreadsheetApp.Slicer#setApplyToPivotTables
  * 
- * // Creates  a text finder.
- * var textFinder = sheet.createTextFinder(&#39;dog&#39;);
+ * @param {Boolean} applyToPivotTables - Specifies whether this slicer should apply to pivot tables.
  * 
- * // Returns the first occurrence of &#39;dog&#39; in the sheet.
- * var firstOccurrence = textFinder.findNext();
- * 
- * // Replaces the last found occurrence of &#39;dog&#39; with &#39;cat&#39; and returns the number
- * // of occurrences replaced.
- * var numOccurrencesReplaced = findOccurrence.replaceWith(&#39;cat&#39;);
- * </code></pre>
- * 
- * @function SpreadsheetApp.Sheet#createTextFinder
- * 
- * @param {String} findText - The text to search for.
- * 
- * @return {SpreadsheetApp.TextFinder} the <code>TextFinder</code> for the sheet
+ * @return {SpreadsheetApp.Slicer} This slicer, for chaining.
  */
 
 
 /**
- * Returns the type of the sheet.
+ * Sets the background color of the slicer. A <code>null</code> value resets the background color.
  * 
- * <p>The default type of sheet is <code>SheetType.GRID</code>. A sheet that contains a single embedded
- * object such as an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-chart.html'>EmbeddedChart</a></code> is an <code>SheetType.OBJECT</code> sheet.
+ * @function SpreadsheetApp.Slicer#setBackgroundColor
  * 
- * <pre class="prettyprint"><code>
- * var ss = SpreadsheetApp.getActiveSpreadsheet();
- * var sheet = ss.getSheets()[0];
- * Logger.log(sheet.getType());
- * </code></pre>
+ * @param {String} color - The new background color of this slicer in CSS notation (such as '#ffffff').
  * 
- * @function SpreadsheetApp.Sheet#getType
+ * @return {SpreadsheetApp.Slicer} This slicer, for chaining.
+ */
+
+
+/**
+ * Sets the background <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/color.html'>Color</a></code> of the slicer. A <code>null</code> value resets the background
+ * color.
  * 
- * @return {SpreadsheetApp.SheetType} the type of the sheet
+ * @function SpreadsheetApp.Slicer#setBackgroundColorObject
+ * 
+ * @param {SpreadsheetApp.Color} color - The new background color of this slicer.
+ * 
+ * @return {SpreadsheetApp.Slicer} This slicer, for chaining.
+ */
+
+
+/**
+ * Sets the column index and filtering criteria of the slicer. A <code>null</code> value resets the
+ * slicer filter.
+ * 
+ * @function SpreadsheetApp.Slicer#setColumnFilterCriteria
+ * 
+ * @param {IntegerNum} columnPosition - The new column position of this slicer.
+ * @param {SpreadsheetApp.FilterCriteria} filterCriteria - The new filter criteria of this slicer.
+ * 
+ * @return {SpreadsheetApp.Slicer} This slicer, for chaining.
+ */
+
+
+/**
+ * Sets the position where the slicer appears on the sheet. The anchor row and column position
+ * indices are 1-indexed.
+ * 
+ * @function SpreadsheetApp.Slicer#setPosition
+ * 
+ * @param {IntegerNum} anchorRowPos - The slicer's top side is anchored in this row.
+ * @param {IntegerNum} anchorColPos - The slicer's top side is anchored in this col.
+ * @param {IntegerNum} offsetX - The horizontal offset from cell corner in pixels.
+ * @param {IntegerNum} offsetY - The vertical offset from cell corner in pixels.
+ * 
+ * @return {SpreadsheetApp.Slicer} This slicer, for chaining.
+ */
+
+
+/**
+ * Sets the data range on which the slicer is applied.
+ * 
+ * @function SpreadsheetApp.Slicer#setRange
+ * 
+ * @param {SpreadsheetApp.Range} rangeApi - The new range for this slicer.
+ * 
+ * @return {SpreadsheetApp.Slicer} This slicer, for chaining.
+ */
+
+
+/**
+ * Sets the title of the slicer. An empty title resets the title to default value.
+ * 
+ * @function SpreadsheetApp.Slicer#setTitle
+ * 
+ * @param {String} title - The new title of this slicer.
+ * 
+ * @return {SpreadsheetApp.Slicer} This slicer, for chaining.
+ */
+
+
+/**
+ * Sets the horizontal alignment of the title in the slicer. A <code>null</code> value resets the
+ * alignment.
+ * 
+ * @function SpreadsheetApp.Slicer#setTitleHorizontalAlignment
+ * 
+ * @param {String} horizontalAlignment - The new horizontal alignment of this slicer's title.
+ * 
+ * @return {SpreadsheetApp.Slicer} This slicer, for chaining.
+ */
+
+
+/**
+ * Sets the text style of the slicer.
+ * 
+ * @function SpreadsheetApp.Slicer#setTitleTextStyle
+ * 
+ * @param {SpreadsheetApp.TextStyle} textStyle - The new text style of the slicer's title.
+ * 
+ * @return {SpreadsheetApp.Slicer} This slicer, for chaining.
+ */
+
+
+
+/**
+ * @class SpreadsheetApp.SortOrder
+ */
+
+/**
+ * Ascending sort order.
+ * 
+ * @typedef {SpreadsheetApp.SortOrder} SpreadsheetApp.SortOrder.ASCENDING
+ */
+/**
+ * Descending sort order.
+ * 
+ * @typedef {SpreadsheetApp.SortOrder} SpreadsheetApp.SortOrder.DESCENDING
+ */
+
+/**
+ * @class SpreadsheetApp.SortSpec
+ */
+
+/**
+ * Returns the background color used for sorting, or <code>null</code> if absent.
+ * 
+ * @function SpreadsheetApp.SortSpec#getBackgroundColor
+ * 
+ * @return {SpreadsheetApp.Color} The background color.
+ */
+
+
+/**
+ * Gets the data source column the sort spec acts on. Returns <code>null</code> if this sort spec is
+ * not acting on a data source column.
+ * 
+ * @function SpreadsheetApp.SortSpec#getDataSourceColumn
+ * 
+ * @return {SpreadsheetApp.DataSourceColumn} The data source column the sort spec acts on.
+ */
+
+
+/**
+ * Returns the dimension index or <code>null</code> if not linked to a local filter.
+ * 
+ * @function SpreadsheetApp.SortSpec#getDimensionIndex
+ * 
+ * @return {IntegerNum} The dimension index.
+ */
+
+
+/**
+ * Returns the foreground color used for sorting, or <code>null</code> if absent.
+ * 
+ * @function SpreadsheetApp.SortSpec#getForegroundColor
+ * 
+ * @return {SpreadsheetApp.Color} The foreground color.
+ */
+
+
+/**
+ * Returns the sort order.
+ * 
+ * @function SpreadsheetApp.SortSpec#getSortOrder
+ * 
+ * @return {SpreadsheetApp.SortOrder} The sort order.
+ */
+
+
+/**
+ * Returns whether the sort order is ascending.
+ * 
+ * @function SpreadsheetApp.SortSpec#isAscending
+ * 
+ * @return {Boolean} <code>true</code> if the sort order is ascending, or <code>false</code> otherwise.
  */
 
 
@@ -21481,18 +24875,44 @@
  * 
  * @param {String} name
  * 
- * @return {SpreadsheetApp.Spreadsheet} the spreadsheet for chaining
+ * @return {SpreadsheetApp.Spreadsheet} This spreadsheet, for chaining.
  */
 
 
 /**
- * Returns a DeveloperMetadataFinderApi for finding developer metadata within the scope of this
- * spreadsheet. By default this considers all metadata associated with the spreadsheet, sheets,
- * rows, and columns.
+ * Returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/developer-metadata-finder.html'>DeveloperMetadataFinder</a></code> for finding developer metadata within the scope of
+ * this spreadsheet. By default this considers all metadata associated with the spreadsheet,
+ * sheets, rows, and columns.
  * 
  * @function SpreadsheetApp.Spreadsheet#createDeveloperMetadataFinder
  * 
  * @return {SpreadsheetApp.DeveloperMetadataFinder} A developer metadata finder to search for metadata in the scope of this spreadsheet.
+ */
+
+
+/**
+ * Creates a text finder for the spreadsheet, which can be used to find and replace text within
+ * the spreadsheet. The search starts from the first sheet of the spreadsheet.
+ * 
+ * <pre class="prettyprint"><code>
+ * var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+ * 
+ * // Creates  a text finder.
+ * var textFinder = spreadsheet.createTextFinder(&#39;dog&#39;);
+ * 
+ * // Returns the first occurrence of &#39;dog&#39; in the spreadsheet.
+ * var firstOccurrence = textFinder.findNext();
+ * 
+ * // Replaces the last found occurrence of &#39;dog&#39; with &#39;cat&#39; and returns the number
+ * // of occurrences replaced.
+ * var numOccurrencesReplaced = findOccurrence.replaceWith(&#39;cat&#39;);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Spreadsheet#createTextFinder
+ * 
+ * @param {String} findText - The text to search for.
+ * 
+ * @return {SpreadsheetApp.TextFinder} The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/text-finder.html'>TextFinder</a></code> for the spreadsheet.
  */
 
 
@@ -21507,7 +24927,7 @@
  * 
  * @function SpreadsheetApp.Spreadsheet#deleteActiveSheet
  * 
- * @return {SpreadsheetApp.Sheet} the new active sheet
+ * @return {SpreadsheetApp.Sheet} The new active sheet.
  */
 
 
@@ -21613,7 +25033,7 @@
  * 
  * @function SpreadsheetApp.Spreadsheet#duplicateActiveSheet
  * 
- * @return {SpreadsheetApp.Sheet} the new sheet
+ * @return {SpreadsheetApp.Sheet} The new sheet.
  */
 
 
@@ -21684,7 +25104,7 @@
  * 
  * @function SpreadsheetApp.Spreadsheet#getActiveSheet
  * 
- * @return {SpreadsheetApp.Sheet} the active sheet in the spreadsheet
+ * @return {SpreadsheetApp.Sheet} The active sheet in the spreadsheet.
  */
 
 
@@ -21694,6 +25114,10 @@
  * assumes that the part of the filename that follows the last period (if any) is an existing
  * extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
  * "ShoppingList.12.25.pdf".
+ * 
+ * <p>To view the daily quotas for conversions, see <a
+ * href="https://developers.google.com/apps-script/guides/services/quotas">Quotas for Google
+ * Services</a>. Newly created G Suite domains might be temporarily subject to stricter quotas.
  * 
  * @function SpreadsheetApp.Spreadsheet#getAs
  * 
@@ -21710,7 +25134,7 @@
  * 
  * @function SpreadsheetApp.Spreadsheet#getBandings
  * 
- * @return {SpreadsheetApp.Banding[]} all the bandings in this spreadsheet
+ * @return {SpreadsheetApp.Banding[]} The bandings in this spreadsheet.
  */
 
 
@@ -21794,11 +25218,56 @@
 
 
 /**
+ * Gets all the data source formulas.
+ * 
+ * @function SpreadsheetApp.Spreadsheet#getDataSourceFormulas
+ * 
+ * @return {SpreadsheetApp.DataSourceFormula[]} A list of data source formulas.
+ */
+
+
+/**
+ * Gets all the data source pivot tables.
+ * 
+ * @function SpreadsheetApp.Spreadsheet#getDataSourcePivotTables
+ * 
+ * @return {SpreadsheetApp.DataSourcePivotTable[]} A list of data source pivot tables.
+ */
+
+
+/**
+ * Gets the refresh schedules of this spreadsheet.
+ * 
+ * @function SpreadsheetApp.Spreadsheet#getDataSourceRefreshSchedules
+ * 
+ * @return {SpreadsheetApp.DataSourceRefreshSchedule[]} The refresh schedules of this spreadsheet.
+ */
+
+
+/**
+ * Returns all the data source sheets in the spreadsheet.
+ * 
+ * @function SpreadsheetApp.Spreadsheet#getDataSourceSheets
+ * 
+ * @return {SpreadsheetApp.DataSourceSheet[]} An array of all the data source sheets.
+ */
+
+
+/**
  * Gets all the data source tables.
  * 
  * @function SpreadsheetApp.Spreadsheet#getDataSourceTables
  * 
  * @return {SpreadsheetApp.DataSourceTable[]} A list of data source tables.
+ */
+
+
+/**
+ * Returns all the data sources in the spreadsheet.
+ * 
+ * @function SpreadsheetApp.Spreadsheet#getDataSources
+ * 
+ * @return {SpreadsheetApp.DataSource[]} An array of all the data sources.
  */
 
 
@@ -21812,8 +25281,7 @@
 
 
 /**
- * Gets the list of editors for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>. If the user who executes the script does
- * not have edit access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>, this method throws an exception.
+ * Gets the list of editors for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>.
  * 
  * @function SpreadsheetApp.Spreadsheet#getEditors
  * 
@@ -21829,7 +25297,7 @@
  * 
  * @function SpreadsheetApp.Spreadsheet#getFormUrl
  * 
- * @return {String} the URL for the form that places its responses in this spreadsheet, or <code>null</code> if
+ * @return {String} The URL for the form that places its responses in this spreadsheet, or <code>null</code> if
  *     this spreadsheet doesn't have an associated form.
  */
 
@@ -21878,7 +25346,7 @@
  * 
  * @function SpreadsheetApp.Spreadsheet#getId
  * 
- * @return {String} the unique id (or key) for the spreadsheet
+ * @return {String} The unique ID (or key) for the spreadsheet.
  */
 
 
@@ -21888,6 +25356,16 @@
  * @function SpreadsheetApp.Spreadsheet#getImages
  * 
  * @return {SpreadsheetApp.OverGridImage[]} An array of over-the-grid images.
+ */
+
+
+/**
+ * Returns the threshold value used during iterative calculation. When the results of successive
+ * calculation differ by less than this value, the iterative calculation stops.
+ * 
+ * @function SpreadsheetApp.Spreadsheet#getIterativeCalculationConvergenceThreshold
+ * 
+ * @return {Number} The convergence threshold.
  */
 
 
@@ -21932,6 +25410,15 @@
 
 
 /**
+ * Returns the maximum number of iterations to use during iterative calculation.
+ * 
+ * @function SpreadsheetApp.Spreadsheet#getMaxIterativeCalculationCycles
+ * 
+ * @return {IntegerNum} The maximum number of calculation iterations.
+ */
+
+
+/**
  * Gets the name of the document.
  * 
  * <pre class="prettyprint"><code>
@@ -21941,7 +25428,7 @@
  * 
  * @function SpreadsheetApp.Spreadsheet#getName
  * 
- * @return {String} the name of the spreadsheet
+ * @return {String} The name of the spreadsheet.
  */
 
 
@@ -21958,7 +25445,7 @@
  * 
  * @function SpreadsheetApp.Spreadsheet#getNamedRanges
  * 
- * @return {SpreadsheetApp.NamedRange[]} an array of all the named ranges in the spreadsheet
+ * @return {SpreadsheetApp.NamedRange[]} An array of all the named ranges in the spreadsheet.
  */
 
 
@@ -21972,13 +25459,12 @@
  * 
  * @function SpreadsheetApp.Spreadsheet#getNumSheets
  * 
- * @return {IntegerNum} the number of sheets in the spreadsheet
+ * @return {IntegerNum} The number of sheets in the spreadsheet.
  */
 
 
 /**
- * Returns the owner of the document. Documents in a Team Drive do not have an owner, in which
- * case this returns <code>null</code>.
+ * Returns the owner of the document, or <code>null</code> for a document in a shared drive.
  * 
  * <pre class="prettyprint"><code>
  * var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -21988,7 +25474,21 @@
  * 
  * @function SpreadsheetApp.Spreadsheet#getOwner
  * 
- * @return {User} the owner of the document, or <code>null</code> if the document is in a Team Drive.
+ * @return {User} The owner of the document, or <code>null</code> if the document is in a shared drive.
+ */
+
+
+/**
+ * Returns the list of predefined themes.
+ * 
+ * <pre class="prettyprint"><code>
+ * // The code below returns the list of predefined themes.
+ * var predefinedThemesList = SpreadsheetApp.getPredefinedSpreadsheetThemes();
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Spreadsheet#getPredefinedSpreadsheetThemes
+ * 
+ * @return {SpreadsheetApp.SpreadsheetTheme[]} List of predefined themes.
  */
 
 
@@ -22024,7 +25524,7 @@
  * @param {SpreadsheetApp.ProtectionType} type - The type of protected area, either <code>SpreadsheetApp.ProtectionType.RANGE</code> or
  *     <code>SpreadsheetApp.ProtectionType.SHEET</code>.
  * 
- * @return {SpreadsheetApp.Protection[]} an array of objects representing all protected ranges or sheets in the spreadsheet
+ * @return {SpreadsheetApp.Protection[]} An array of objects representing all protected ranges or sheets in the spreadsheet.
  */
 
 
@@ -22067,7 +25567,7 @@
  * 
  * @param {String} name - The name of the range to get.
  * 
- * @return {SpreadsheetApp.Range} range of cells with the given name
+ * @return {SpreadsheetApp.Range} The range of cells with the given name.
  */
 
 
@@ -22086,6 +25586,15 @@
  * @param {String[]} a1Notations - The list of ranges to return, as specified in A1 notation or R1C1 notation.
  * 
  * @return {SpreadsheetApp.RangeList} the range list at the location designated
+ */
+
+
+/**
+ * Returns the calculation interval for this spreadsheet.
+ * 
+ * @function SpreadsheetApp.Spreadsheet#getRecalculationInterval
+ * 
+ * @return {SpreadsheetApp.RecalculationInterval} The calculation interval for this spreadsheet.
  */
 
 
@@ -22140,7 +25649,7 @@
  * 
  * @param {String} name - The name of the sheet to get.
  * 
- * @return {SpreadsheetApp.Sheet} the sheet with the given name
+ * @return {SpreadsheetApp.Sheet} The sheet with the given name.
  */
 
 
@@ -22248,7 +25757,7 @@
  * 
  * @function SpreadsheetApp.Spreadsheet#getSheets
  * 
- * @return {SpreadsheetApp.Sheet[]} an array of all the sheets in the spreadsheet
+ * @return {SpreadsheetApp.Sheet[]} An array of all the sheets in the spreadsheet.
  */
 
 
@@ -22257,7 +25766,21 @@
  * 
  * @function SpreadsheetApp.Spreadsheet#getSpreadsheetLocale
  * 
- * @return {String} the spreadsheet locale
+ * @return {String} The spreadsheet locale.
+ */
+
+
+/**
+ * Returns the current theme of the spreadsheet, or <code>null</code> if no theme is applied.
+ * 
+ * <pre class="prettyprint"><code>
+ * // The code below returns the current theme of the spreadsheet.
+ * var currentTheme = SpreadsheetApp.getSpreadsheetTheme();
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Spreadsheet#getSpreadsheetTheme
+ * 
+ * @return {SpreadsheetApp.SpreadsheetTheme} The current applied theme.
  */
 
 
@@ -22266,13 +25789,13 @@
  * 
  * @function SpreadsheetApp.Spreadsheet#getSpreadsheetTimeZone
  * 
- * @return {String} the time zone, specified in "long" format (for example, "America/New_York", as listed
- *     by <a href="http://joda-time.sourceforge.net/timezones.html">Joda.org</a>)
+ * @return {String} The time zone, specified in "long" format (for example, "America/New_York", as listed
+ *     by <a href="http://joda-time.sourceforge.net/timezones.html">Joda.org</a>).
  */
 
 
 /**
- * Returns the url for the given spreadsheet.
+ * Returns the URL for the given spreadsheet.
  * 
  * <pre class="prettyprint"><code>
  * var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -22281,13 +25804,12 @@
  * 
  * @function SpreadsheetApp.Spreadsheet#getUrl
  * 
- * @return {String} the url for the given spreadsheet
+ * @return {String} The URL for the given spreadsheet.
  */
 
 
 /**
- * Gets the list of viewers and commenters for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>. If the user who executes
- * the script does not have edit access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>, this method throws an exception.
+ * Gets the list of viewers and commenters for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>.
  * 
  * @function SpreadsheetApp.Spreadsheet#getViewers
  * 
@@ -22410,6 +25932,21 @@
  * @param {IntegerNum} howMany - The number of columns to insert.
  * 
  * @return {SpreadsheetApp.Sheet} the sheet, useful for method chaining
+ */
+
+
+/**
+ * Inserts a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/data-source-sheet.html'>DataSourceSheet</a></code> in the spreadsheet and starts data execution. As a
+ * side effect, this also makes the new sheet the active sheet.
+ * 
+ * <p>Throws an exception if the data source type is not enabled. Use <code>SpreadsheetApp#enable...Execution()</code> methods to enable data execution for specific data source
+ * type.
+ * 
+ * @function SpreadsheetApp.Spreadsheet#insertDataSourceSheet
+ * 
+ * @param {SpreadsheetApp.DataSourceSpec} spec - The data source specification to insert with.
+ * 
+ * @return {SpreadsheetApp.DataSourceSheet} The new data source sheet.
  */
 
 
@@ -22590,7 +26127,7 @@
  * 
  * @function SpreadsheetApp.Spreadsheet#insertSheet
  * 
- * @return {SpreadsheetApp.Sheet} the new sheet
+ * @return {SpreadsheetApp.Sheet} The new sheet.
  */
 
 
@@ -22608,7 +26145,7 @@
  * @param {IntegerNum} sheetIndex - The index of the newly created sheet. To insert a sheet as the first one in
  *     the spreadsheet, set it to 0.
  * 
- * @return {SpreadsheetApp.Sheet} the new sheet
+ * @return {SpreadsheetApp.Sheet} The new sheet.
  */
 
 
@@ -22628,7 +26165,7 @@
  *     the spreadsheet, set it to 0.
  * @param {Object} options - Optional JavaScript advanced arguments.
  * 
- * @return {SpreadsheetApp.Sheet} the new sheet
+ * @return {SpreadsheetApp.Sheet} The new sheet.
  */
 
 
@@ -22646,7 +26183,7 @@
  * 
  * @param {Object} options - Optional JavaScript advanced arguments, listed below.
  * 
- * @return {SpreadsheetApp.Sheet} the new sheet
+ * @return {SpreadsheetApp.Sheet} The new sheet.
  */
 
 
@@ -22663,7 +26200,7 @@
  * 
  * @param {String} sheetName - The name of the new sheet.
  * 
- * @return {SpreadsheetApp.Sheet} the new sheet
+ * @return {SpreadsheetApp.Sheet} The new sheet.
  */
 
 
@@ -22678,11 +26215,11 @@
  * 
  * @function SpreadsheetApp.Spreadsheet#insertSheet
  * 
- * @param {String} sheetName - The name of the new sheet
+ * @param {String} sheetName - The name of the new sheet.
  * @param {IntegerNum} sheetIndex - The index of the newly created sheet. To insert a sheet as the first one in
  *     the spreadsheet, set it to 0.
  * 
- * @return {SpreadsheetApp.Sheet} the new sheet
+ * @return {SpreadsheetApp.Sheet} The new sheet.
  */
 
 
@@ -22703,7 +26240,7 @@
  *     a spreadsheet, set it to 0.
  * @param {Object} options - Optional JavaScript advanced arguments.
  * 
- * @return {SpreadsheetApp.Sheet} the new sheet
+ * @return {SpreadsheetApp.Sheet} The new sheet.
  */
 
 
@@ -22719,10 +26256,10 @@
  * 
  * @function SpreadsheetApp.Spreadsheet#insertSheet
  * 
- * @param {String} sheetName - The name of the new sheet
+ * @param {String} sheetName - The name of the new sheet.
  * @param {Object} options - Optional JavaScript advanced arguments.
  * 
- * @return {SpreadsheetApp.Sheet} the new sheet
+ * @return {SpreadsheetApp.Sheet} The new sheet.
  */
 
 
@@ -22761,7 +26298,7 @@
  * @function SpreadsheetApp.Spreadsheet#isAnonymousView
  * @deprecated
  * 
- * @return {Boolean} true if the document allows anonymous viewing, false otherwise
+ * @return {Boolean} <code>true</code> if the document allows anonymous viewing, <code>false</code> otherwise.
  */
 
 
@@ -22784,7 +26321,7 @@
  * @function SpreadsheetApp.Spreadsheet#isAnonymousWrite
  * @deprecated
  * 
- * @return {Boolean} true if the document allows anonymous editing, false otherwise
+ * @return {Boolean} <code>true</code> if the document allows anonymous editing, <code>false</code> otherwise.
  */
 
 
@@ -22808,14 +26345,23 @@
 
 
 /**
+ * Returns whether iterative calculation is enabled in this spreadsheet.
+ * 
+ * @function SpreadsheetApp.Spreadsheet#isIterativeCalculationEnabled
+ * 
+ * @return {Boolean} <code>true</code> if iterative calculation is enabled, <code>false</code> otherwise.
+ */
+
+
+/**
  * Returns whether the given row is hidden by a filter (not a filter view).
  * 
  * <pre class="prettyprint"><code>
  * var ss = SpreadsheetApp.getActiveSpreadsheet();
  * var sheet = ss.getSheets()[0];
  * 
- * // Columns start at 1
- * Logger.log(sheet.isColumnHiddenByUser(1));
+ * // Rows start at 1
+ * Logger.log(sheet.isRowHiddenByFilter(1));
  * </code></pre>
  * 
  * @function SpreadsheetApp.Spreadsheet#isRowHiddenByFilter
@@ -22867,17 +26413,51 @@
  * 
  * @function SpreadsheetApp.Spreadsheet#moveActiveSheet
  * 
- * @param {IntegerNum} pos - a position to move the active sheet to in the list of sheets
+ * @param {IntegerNum} pos - A position to move the active sheet to in the list of sheets.
  * 
  * @return void
  */
 
 
 /**
- * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>. This method does not
+ * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/sheet-type.html#OBJECT'>SheetType.OBJECT</a></code> sheet and moves the provided chart to it. If the chart
+ * is already on its own sheet, that sheet is returned without creating a new one.
+ * 
+ * <pre class="prettyprint"><code>
+ * var sheet = SpreadsheetApp.getActiveSheet();
+ * var chart = sheet.newChart().setPosition(1, 1, 0, 0).build();
+ * sheet.insertChart(chart);
+ * var objectSheet = SpreadsheetApp.getActive().moveChartToObjectSheet(chart);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Spreadsheet#moveChartToObjectSheet
+ * 
+ * @param {SpreadsheetApp.EmbeddedChart} chart - The chart to move.
+ * 
+ * @return {SpreadsheetApp.Sheet} The sheet that the chart is on.
+ */
+
+
+/**
+ * Refreshes all supported data sources and their linked data source objects, skipping invalid
+ * data source objects.
+ * 
+ * <p>Use <code>SpreadsheetApp#enable...Execution()</code> methods to enable data execution for
+ * specific data source type.
+ * 
+ * @function SpreadsheetApp.Spreadsheet#refreshAllDataSources
+ * 
+ * @return void
+ */
+
+
+/**
+ * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>. This method doesn't
  * block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> if they belong to a class of users who have
  * general access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> is shared with the user's entire
- * domain.
+ * domain, or if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of viewers.
  * 
  * @function SpreadsheetApp.Spreadsheet#removeEditor
  * 
@@ -22888,10 +26468,12 @@
 
 
 /**
- * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>. This method does not
+ * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>. This method doesn't
  * block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> if they belong to a class of users who have
  * general access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> is shared with the user's entire
- * domain.
+ * domain, or if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of viewers.
  * 
  * @function SpreadsheetApp.Spreadsheet#removeEditor
  * 
@@ -22914,7 +26496,7 @@
  * }
  * function removeBadMenu() {
  *   var ss = SpreadsheetApp.getActiveSpreadsheet();
- *   ss.removeMenu(&quot;badMenu&quot;);//name must match the name we used when added the menu
+ *   ss.removeMenu(&quot;badMenu&quot;);  // name must match the name used when added the menu
  * }
  * function foo(){
  * //do nothing
@@ -22950,10 +26532,12 @@
 
 /**
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>. This
- * method has no effect if the user is an editor, not a viewer or commenter. This method also does
- * not block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> if they belong to a class of users who
+ * method has no effect if the user is an editor, not a viewer or commenter. This method also
+ * doesn't block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> if they belong to a class of users who
  * have general access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> is shared with the user's
- * entire domain.
+ * entire domain, or if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of editors.
  * 
  * @function SpreadsheetApp.Spreadsheet#removeViewer
  * 
@@ -22965,9 +26549,12 @@
 
 /**
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code>. This
- * method has no effect if the user is an editor, not a viewer. This method also does not block
+ * method has no effect if the user is an editor, not a viewer. This method also doesn't block
  * users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> if they belong to a class of users who have general
- * access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> is shared with the user's entire domain.
+ * access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> is shared with the user's entire domain, or
+ * if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet.html'>Spreadsheet</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of editors.
  * 
  * @function SpreadsheetApp.Spreadsheet#removeViewer
  * 
@@ -23006,6 +26593,20 @@
  * @param {String} newName - The new name for the current active sheet.
  * 
  * @return void
+ */
+
+
+/**
+ * Removes the applied theme and sets the default theme on the spreadsheet.
+ * 
+ * <pre class="prettyprint"><code>
+ * // The code below applies default theme on the spreadsheet.
+ * SpreadsheetApp.resetSpreadsheetTheme();
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Spreadsheet#resetSpreadsheetTheme
+ * 
+ * @return {SpreadsheetApp.SpreadsheetTheme} The default theme.
  */
 
 
@@ -23110,7 +26711,7 @@
  * 
  * @param {SpreadsheetApp.Sheet} sheet - The sheet to set as the active sheet.
  * 
- * @return {SpreadsheetApp.Sheet} the active sheet
+ * @return {SpreadsheetApp.Sheet} The active sheet.
  */
 
 
@@ -23143,7 +26744,7 @@
  *     becomes selected again as the new sheet becomes active; if <code>false</code>, the new sheet
  *     becomes active without changing the current selection.
  * 
- * @return {SpreadsheetApp.Sheet} the new active sheet
+ * @return {SpreadsheetApp.Sheet} The new active sheet.
  */
 
 
@@ -23266,6 +26867,46 @@
 
 
 /**
+ * Sets the minimum threshold value for iterative calculation. When the results of successive
+ * calculation differ by less than this value, the iterative calculation stops. This value must be
+ * non-negative, and defaults to 0.05.
+ * 
+ * @function SpreadsheetApp.Spreadsheet#setIterativeCalculationConvergenceThreshold
+ * 
+ * @param {Number} minThreshold - The minimum convergence threshold (must be non-negative).
+ * 
+ * @return {SpreadsheetApp.Spreadsheet} This spreadsheet, for chaining.
+ */
+
+
+/**
+ * Sets whether iterative calculation is enabled in this spreadsheet. If the maximum number of
+ * calculation cycles and convergence threshold have not previously been set when the calculation
+ * is enabled, they default to 50 and 0.05 respectively. If either has been set previously, they
+ * retain their previous values.
+ * 
+ * @function SpreadsheetApp.Spreadsheet#setIterativeCalculationEnabled
+ * 
+ * @param {Boolean} isEnabled - <code>true</code> if iterative calculation should be enabled; <code>false</code>
+ *     otherwise.
+ * 
+ * @return {SpreadsheetApp.Spreadsheet} This spreadsheet, for chaining.
+ */
+
+
+/**
+ * Sets the maximum number of calculation iterations that should be performed during iterative
+ * calculation. This value must be between 1 and 10,000 (inclusive), and defaults to 50.
+ * 
+ * @function SpreadsheetApp.Spreadsheet#setMaxIterativeCalculationCycles
+ * 
+ * @param {IntegerNum} maxIterations - The maximum number of calculation iterations (between 1 and 10,000).
+ * 
+ * @return {SpreadsheetApp.Spreadsheet} This spreadsheet, for chaining.
+ */
+
+
+/**
  * Names a range.
  * 
  * <pre class="prettyprint"><code>
@@ -23280,6 +26921,17 @@
  * @param {SpreadsheetApp.Range} range - The range specification.
  * 
  * @return void
+ */
+
+
+/**
+ * Sets how often this spreadsheet should recalculate.
+ * 
+ * @function SpreadsheetApp.Spreadsheet#setRecalculationInterval
+ * 
+ * @param {SpreadsheetApp.RecalculationInterval} recalculationInterval - The new recalculation interval.
+ * 
+ * @return {SpreadsheetApp.Spreadsheet} This spreadsheet, for chaining.
  */
 
 
@@ -23331,9 +26983,26 @@
  * 
  * @function SpreadsheetApp.Spreadsheet#setSpreadsheetLocale
  * 
- * @param {String} locale - The locale code to use (e.g., 'en', 'fr', 'en_US').
+ * @param {String} locale - The locale code to use (for example, 'en', 'fr', or 'en_US').
  * 
  * @return void
+ */
+
+
+/**
+ * Sets a theme on the spreadsheet.
+ * 
+ * <pre class="prettyprint"><code>
+ * // The code below sets the second predefined theme as the current theme of the spreadsheet.
+ * var predefinedThemesList = SpreadsheetApp.getPredefinedSpreadsheetThemes();
+ * SpreadsheetApp.setSpreadsheetTheme(predefinedThemesList[1]);
+ * </code></pre>
+ * 
+ * @function SpreadsheetApp.Spreadsheet#setSpreadsheetTheme
+ * 
+ * @param {SpreadsheetApp.SpreadsheetTheme} theme - The theme to apply.
+ * 
+ * @return {SpreadsheetApp.SpreadsheetTheme} The new current theme.
  */
 
 
@@ -23375,8 +27044,7 @@
  * 
  * @function SpreadsheetApp.Spreadsheet#show
  * 
- * @param {Object} userInterface - An <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../html/html-output.html'>HtmlOutput</a></code> or
- *     <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../ui/ui-instance.html'>UiInstance</a></s></code> web app.
+ * @param {Object} userInterface - An <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/../html/html-output.html'>HtmlOutput</a></code>.
  * 
  * @return void
  */
@@ -23537,134 +27205,90 @@
 
 
 /**
- * Creates a text finder for the spreadsheet, which can be used to find and replace text within
- * the spreadsheet. The search starts from the first sheet of the spreadsheet.
+ * Waits until all the current executions in the spreadsheet complete, timing out after the
+ * provided number of seconds. Throws an exception if the executions are not completed when timing
+ * out, but does not cancel the data executions.
  * 
- * <pre class="prettyprint"><code>
- * var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+ * @function SpreadsheetApp.Spreadsheet#waitForAllDataExecutionsCompletion
  * 
- * // Creates  a text finder.
- * var textFinder = spreadsheet.createTextFinder(&#39;dog&#39;);
+ * @param {IntegerNum} timeoutInSeconds - The time to wait for data executions, in seconds. The maximum is 300
+ *     seconds.
  * 
- * // Returns the first occurrence of &#39;dog&#39; in the spreadsheet.
- * var firstOccurrence = textFinder.findNext();
+ * @return void
+ */
+
+
+
+/**
+ * @class SpreadsheetApp.SpreadsheetTheme
+ */
+
+/**
+ * Returns the concrete <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/color.html'>Color</a></code> for a valid theme color type. Throws exception if the theme
+ * color type is not set in the current theme.
  * 
- * // Replaces the last found occurrence of &#39;dog&#39; with &#39;cat&#39; and returns the number
- * // of occurrences replaced.
- * var numOccurrencesReplaced = findOccurrence.replaceWith(&#39;cat&#39;);
- * </code></pre>
+ * @function SpreadsheetApp.SpreadsheetTheme#getConcreteColor
  * 
- * @function SpreadsheetApp.Spreadsheet#createTextFinder
+ * @param {SpreadsheetApp.ThemeColorType} themeColorType - Theme color type.
  * 
- * @param {String} findText - The text to search for.
- * 
- * @return {SpreadsheetApp.TextFinder} the <code>TextFinder</code> for the spreadsheet
+ * @return {SpreadsheetApp.Color} Concrete color.
  */
 
 
 /**
- * Returns the threshold value used during iterative calculation. When the results of successive
- * calculation differ by less than this value, the iterative calculation stops.
+ * Returns the font family of the theme, or <code>null</code> if it's a <code>null</code> theme.
  * 
- * @function SpreadsheetApp.Spreadsheet#getIterativeCalculationConvergenceThreshold
+ * @function SpreadsheetApp.SpreadsheetTheme#getFontFamily
  * 
- * @return {Number} the convergence threshold
+ * @return {String} The theme font family.
  */
 
 
 /**
- * Returns the maximum number of iterations to use during iterative calculation.
+ * Returns a list of all possible theme color types for the current theme.
  * 
- * @function SpreadsheetApp.Spreadsheet#getMaxIterativeCalculationCycles
+ * @function SpreadsheetApp.SpreadsheetTheme#getThemeColors
  * 
- * @return {IntegerNum} the maximum number of calculation iterations
+ * @return {SpreadsheetApp.ThemeColorType[]} A list of theme colors.
  */
 
 
 /**
- * Returns the calculation interval for this spreadsheet.
+ * Sets the concrete color associated with the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/theme-color-type.html'>ThemeColorType</a></code> in this color scheme to the
+ * given color in RGB format.
  * 
- * @function SpreadsheetApp.Spreadsheet#getRecalculationInterval
+ * @function SpreadsheetApp.SpreadsheetTheme#setConcreteColor
  * 
- * @return {SpreadsheetApp.RecalculationInterval} the calculation interval for this spreadsheet
+ * @param {SpreadsheetApp.ThemeColorType} themeColorType - The theme color type.
+ * @param {IntegerNum} red - The value of red channel.
+ * @param {IntegerNum} green - The value of green channel.
+ * @param {IntegerNum} blue - The value of blue channel.
+ * 
+ * @return {SpreadsheetApp.SpreadsheetTheme} The theme, for chaining.
  */
 
 
 /**
- * Returns whether iterative calculation is enabled in this spreadsheet.
+ * Sets the concrete color associated with the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/theme-color-type.html'>ThemeColorType</a></code> in this color scheme to the
+ * given color.
  * 
- * @function SpreadsheetApp.Spreadsheet#isIterativeCalculationEnabled
+ * @function SpreadsheetApp.SpreadsheetTheme#setConcreteColor
  * 
- * @return {Boolean} whether iterative calculation is enabled
+ * @param {SpreadsheetApp.ThemeColorType} themeColorType - The theme color type.
+ * @param {SpreadsheetApp.Color} color - The color.
+ * 
+ * @return {SpreadsheetApp.SpreadsheetTheme} The theme, for chaining.
  */
 
 
 /**
- * Creates a new <code>SheetType.OBJECT</code> sheet and moves the provided chart to it. If the chart
- * is already on its own sheet, that sheet is returned without creating a new one.
+ * Sets the font family for the theme.
  * 
- * <pre class="prettyprint"><code>
- * var sheet = SpreadsheetApp.getActiveSheet();
- * var chart = sheet.newChart().setPosition(1, 1, 0, 0).build();
- * sheet.insertChart(chart);
- * var objectSheet = SpreadsheetApp.getActive().moveChartToObjectSheet(chart);
- * </code></pre>
+ * @function SpreadsheetApp.SpreadsheetTheme#setFontFamily
  * 
- * @function SpreadsheetApp.Spreadsheet#moveChartToObjectSheet
+ * @param {String} fontFamily - The new theme font family.
  * 
- * @param {SpreadsheetApp.EmbeddedChart} chart - The chart to move.
- * 
- * @return {SpreadsheetApp.Sheet} the sheet that the chart is on
- */
-
-
-/**
- * Sets the minimum threshold value for iterative calculation. When the results of successive
- * calculation differ by less than this value, the iterative calculation stops. This value must be
- * non-negative, and defaults to 0.05.
- * 
- * @function SpreadsheetApp.Spreadsheet#setIterativeCalculationConvergenceThreshold
- * 
- * @param {Number} minThreshold - the minimum convergence threshold (must be non-negative).
- * 
- * @return {SpreadsheetApp.Spreadsheet} this spreadsheet, for chaining
- */
-
-
-/**
- * Sets whether iterative calculation is enabled in this spreadsheet. If the maximum number of
- * calculation cycles and convergence threshold have not previously been set when the calculation
- * is enabled, they default to 50 and 0.05 respectively. If either has been set previously, they
- * retain their previous values.
- * 
- * @function SpreadsheetApp.Spreadsheet#setIterativeCalculationEnabled
- * 
- * @param {Boolean} isEnabled - whether iterative calculation is enabled.
- * 
- * @return {SpreadsheetApp.Spreadsheet} this spreadsheet, for chaining
- */
-
-
-/**
- * Sets the maximum number of calculation iterations that should be performed during iterative
- * calculation. This value must be between 1 and 10,000 (inclusive), and defaults to 50.
- * 
- * @function SpreadsheetApp.Spreadsheet#setMaxIterativeCalculationCycles
- * 
- * @param {IntegerNum} maxIterations - the maximum number of calculation iterations (between 1 and 10,000).
- * 
- * @return {SpreadsheetApp.Spreadsheet} this spreadsheet, for chaining
- */
-
-
-/**
- * Sets how often this spreadsheet should recalculate.
- * 
- * @function SpreadsheetApp.Spreadsheet#setRecalculationInterval
- * 
- * @param {SpreadsheetApp.RecalculationInterval} recalculationInterval - the new recalculation interval
- * 
- * @return {SpreadsheetApp.Spreadsheet} this spreadsheet, for chaining
+ * @return {SpreadsheetApp.SpreadsheetTheme} This theme, for chaining.
  */
 
 
@@ -23682,295 +27306,6 @@
  * Right-to-left text direction.
  * 
  * @typedef {SpreadsheetApp.TextDirection} SpreadsheetApp.TextDirection.RIGHT_TO_LEFT
- */
-
-/**
- * @class SpreadsheetApp.TextRotation
- */
-
-/**
- * Gets the angle between standard text orientation and the current text orientation. For
- * left-to-right text, positive angles are in the counterclockwise direction. If the text is set
- * to stack vertically, this method returns <code>0</code>.
- * 
- * @function SpreadsheetApp.TextRotation#getDegrees
- * 
- * @return {IntegerNum} The degrees between standard text rotation and the current text rotation.
- */
-
-
-/**
- * Returns <code>true</code> if the text is stacked vertically; returns <code>false</code> otherwise.
- * 
- * @function SpreadsheetApp.TextRotation#isVertical
- * 
- * @return {Boolean} Whether or not the text is stacked vertically.
- */
-
-
-
-/**
- * @class SpreadsheetApp.TextStyle
- */
-
-/**
- * Creates a text style builder initialized with the values of this text style.
- * 
- * @function SpreadsheetApp.TextStyle#copy
- * 
- * @return {SpreadsheetApp.TextStyleBuilder} A builder from this text style.
- */
-
-
-/**
- * Gets the font family of the text. Returns <code>null</code> if the font family isn't set or the
- * corresponding <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/rich-text-value.html'>RichTextValue</a></code> has multiple runs with different font
- * families.
- * 
- * @function SpreadsheetApp.TextStyle#getFontFamily
- * 
- * @return {String} The font family of the text (for example, "Arial") or <code>null</code>.
- */
-
-
-/**
- * Gets the font size of the text in points. Returns <code>null</code> if the font size isn't set or
- * the corresponding <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/rich-text-value.html'>RichTextValue</a></code> has multiple runs with different font
- * sizes.
- * 
- * @function SpreadsheetApp.TextStyle#getFontSize
- * 
- * @return {IntegerNum} The font size of the text or <code>null</code>.
- */
-
-
-/**
- * Gets the font color of the text. Returns <code>null</code> if the font color isn't set or the
- * corresponding <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/rich-text-value.html'>RichTextValue</a></code> has multiple runs with different font
- * colors.
- * 
- * @function SpreadsheetApp.TextStyle#getForegroundColor
- * 
- * @return {String} The font color of the text as a hex CSS value (for example, "#ff0000") or <code>null</code>.
- */
-
-
-/**
- * Gets whether or not the text is bold. Returns <code>null</code> if bold isn't set or the
- * corresponding <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/rich-text-value.html'>RichTextValue</a></code> has multiple runs with different bold
- * settings.
- * 
- * @function SpreadsheetApp.TextStyle#isBold
- * 
- * @return {Boolean} Whether or not the cell is bold, or <code>null</code>.
- */
-
-
-/**
- * Gets whether or not the cell is italic. Returns <code>null</code> if italic isn't set or the
- * corresponding <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/rich-text-value.html'>RichTextValue</a></code> has multiple runs with different italic
- * settings.
- * 
- * @function SpreadsheetApp.TextStyle#isItalic
- * 
- * @return {Boolean} Whether or not the cell is italic, or <code>null</code>.
- */
-
-
-/**
- * Gets whether or not the cell has strikethrough. Returns <code>null</code> if strikethrough isn't set
- * or the corresponding <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/rich-text-value.html'>RichTextValue</a></code> has multiple runs with different
- * strikethrough settings.
- * 
- * @function SpreadsheetApp.TextStyle#isStrikethrough
- * 
- * @return {Boolean} Whether or not the cell has strikethrough, or <code>null</code>.
- */
-
-
-/**
- * Gets whether or not the cell is underlined. Returns <code>null</code> if underline isn't set or the
- * corresponding <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/rich-text-value.html'>RichTextValue</a></code> has multiple runs with different underline
- * settings.
- * 
- * @function SpreadsheetApp.TextStyle#isUnderline
- * 
- * @return {Boolean} Whether or not the cell is underlined, or <code>null</code>.
- */
-
-
-
-/**
- * @class SpreadsheetApp.TextStyleBuilder
- */
-
-/**
- * Creates a text style from this builder.
- * 
- * @function SpreadsheetApp.TextStyleBuilder#build
- * 
- * @return {SpreadsheetApp.TextStyle} A text style created from this builder.
- */
-
-
-/**
- * Sets whether or not the text is bold.
- * 
- * @function SpreadsheetApp.TextStyleBuilder#setBold
- * 
- * @param {Boolean} bold - Whether or not the text is bold.
- * 
- * @return {SpreadsheetApp.TextStyleBuilder} The builder for chaining.
- */
-
-
-/**
- * Sets the text font family, such as "Arial".
- * 
- * @function SpreadsheetApp.TextStyleBuilder#setFontFamily
- * 
- * @param {String} fontFamily - The desired font family.
- * 
- * @return {SpreadsheetApp.TextStyleBuilder} The builder for chaining.
- */
-
-
-/**
- * Sets the text font size in points.
- * 
- * @function SpreadsheetApp.TextStyleBuilder#setFontSize
- * 
- * @param {IntegerNum} fontSize - The desired font size.
- * 
- * @return {SpreadsheetApp.TextStyleBuilder} The builder for chaining.
- */
-
-
-/**
- * Sets the text font color.
- * 
- * @function SpreadsheetApp.TextStyleBuilder#setForegroundColor
- * 
- * @param {String} cssString - The desired font color in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>).
- * 
- * @return {SpreadsheetApp.TextStyleBuilder} The builder for chaining.
- */
-
-
-/**
- * Sets whether or not the text is italic.
- * 
- * @function SpreadsheetApp.TextStyleBuilder#setItalic
- * 
- * @param {Boolean} italic - Whether or not the text is italic.
- * 
- * @return {SpreadsheetApp.TextStyleBuilder} The builder for chaining.
- */
-
-
-/**
- * Sets whether or not the text has strikethrough.
- * 
- * @function SpreadsheetApp.TextStyleBuilder#setStrikethrough
- * 
- * @param {Boolean} strikethrough - Whether or not the text has strikethrough.
- * 
- * @return {SpreadsheetApp.TextStyleBuilder} The builder for chaining.
- */
-
-
-/**
- * Sets whether or not the text is underlined.
- * 
- * @function SpreadsheetApp.TextStyleBuilder#setUnderline
- * 
- * @param {Boolean} underline - Whether or not the text is underlined.
- * 
- * @return {SpreadsheetApp.TextStyleBuilder} The builder for chaining.
- */
-
-
-
-/**
- * @class SpreadsheetApp.TextToColumnsDelimiter
- */
-
-/**
- * <code>&quot;,&quot;</code> delimiter.
- * 
- * @typedef {SpreadsheetApp.TextToColumnsDelimiter} SpreadsheetApp.TextToColumnsDelimiter.COMMA
- */
-/**
- * <code>&quot;.&quot;</code> delimiter.
- * 
- * @typedef {SpreadsheetApp.TextToColumnsDelimiter} SpreadsheetApp.TextToColumnsDelimiter.PERIOD
- */
-/**
- * <code>&quot;;&quot;</code> delimiter.
- * 
- * @typedef {SpreadsheetApp.TextToColumnsDelimiter} SpreadsheetApp.TextToColumnsDelimiter.SEMICOLON
- */
-/**
- * <code>&quot; &quot;</code> delimiter.
- * 
- * @typedef {SpreadsheetApp.TextToColumnsDelimiter} SpreadsheetApp.TextToColumnsDelimiter.SPACE
- */
-
-/**
- * @class SpreadsheetApp.WrapStrategy
- */
-
-/**
- * Clip lines that are longer than the cell width.
- * 
- * @typedef {SpreadsheetApp.WrapStrategy} SpreadsheetApp.WrapStrategy.CLIP
- */
-/**
- * Overflow lines into the next cell, so long as that cell is empty. If the next cell over is
- * non-empty, this behaves the same as <code>CLIP</code>.
- * 
- * @typedef {SpreadsheetApp.WrapStrategy} SpreadsheetApp.WrapStrategy.OVERFLOW
- */
-/**
- * Wrap lines that are longer than the cell width onto a new line. Single words that are longer
- * than a line are wrapped at the character level.
- * 
- * @typedef {SpreadsheetApp.WrapStrategy} SpreadsheetApp.WrapStrategy.WRAP
- */
-
-/**
- * @class SpreadsheetApp.RecalculationInterval
- */
-
-/**
- * Recalculate when values are changed, and every hour.
- * 
- * @typedef {SpreadsheetApp.RecalculationInterval} SpreadsheetApp.RecalculationInterval.HOUR
- */
-/**
- * Recalculate when values are changed, and every minute.
- * 
- * @typedef {SpreadsheetApp.RecalculationInterval} SpreadsheetApp.RecalculationInterval.MINUTE
- */
-/**
- * Recalculate only when values are changed.
- * 
- * @typedef {SpreadsheetApp.RecalculationInterval} SpreadsheetApp.RecalculationInterval.ON_CHANGE
- */
-
-/**
- * @class SpreadsheetApp.SheetType
- */
-
-/**
- * A sheet containing a grid. This is the default type.
- * 
- * @typedef {SpreadsheetApp.SheetType} SpreadsheetApp.SheetType.GRID
- */
-/**
- * A sheet containing a single embedded object such as an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/embedded-chart.html'>EmbeddedChart</a></code>.
- * 
- * @typedef {SpreadsheetApp.SheetType} SpreadsheetApp.SheetType.OBJECT
  */
 
 /**
@@ -24110,6 +27445,425 @@
  * @param {Boolean} useRegEx - Whether to interpret the search string as a regular expression.
  * 
  * @return {SpreadsheetApp.TextFinder} this text finder, for chaining
+ */
+
+
+
+/**
+ * @class SpreadsheetApp.TextRotation
+ */
+
+/**
+ * Gets the angle between standard text orientation and the current text orientation. For
+ * left-to-right text, positive angles are in the counterclockwise direction. If the text is set
+ * to stack vertically, this method returns <code>0</code>.
+ * 
+ * @function SpreadsheetApp.TextRotation#getDegrees
+ * 
+ * @return {IntegerNum} The degrees between standard text rotation and the current text rotation.
+ */
+
+
+/**
+ * Returns <code>true</code> if the text is stacked vertically; returns <code>false</code> otherwise.
+ * 
+ * @function SpreadsheetApp.TextRotation#isVertical
+ * 
+ * @return {Boolean} Whether or not the text is stacked vertically.
+ */
+
+
+
+/**
+ * @class SpreadsheetApp.TextStyle
+ */
+
+/**
+ * Creates a text style builder initialized with the values of this text style.
+ * 
+ * @function SpreadsheetApp.TextStyle#copy
+ * 
+ * @return {SpreadsheetApp.TextStyleBuilder} A builder from this text style.
+ */
+
+
+/**
+ * Gets the font family of the text. Returns <code>null</code> if the font family isn't set or the
+ * corresponding <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/rich-text-value.html'>RichTextValue</a></code> has multiple runs with different font
+ * families.
+ * 
+ * @function SpreadsheetApp.TextStyle#getFontFamily
+ * 
+ * @return {String} The font family of the text (for example, "Arial") or <code>null</code>.
+ */
+
+
+/**
+ * Gets the font size of the text in points. Returns <code>null</code> if the font size isn't set or
+ * the corresponding <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/rich-text-value.html'>RichTextValue</a></code> has multiple runs with different font
+ * sizes.
+ * 
+ * @function SpreadsheetApp.TextStyle#getFontSize
+ * 
+ * @return {IntegerNum} The font size of the text or <code>null</code>.
+ */
+
+
+/**
+ * Gets the font color of the text. Returns <code>null</code> if the font color isn't set or the
+ * corresponding <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/rich-text-value.html'>RichTextValue</a></code> has multiple runs with different font
+ * colors.
+ * 
+ * @function SpreadsheetApp.TextStyle#getForegroundColor
+ * 
+ * @return {String} The font color of the text as a hex CSS value (for example, "#ff0000") or <code>null</code>.
+ */
+
+
+/**
+ * Gets the font color of the text. Returns <code>null</code> if the font color isn't set or the
+ * corresponding <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/rich-text-value.html'>RichTextValue</a></code> has multiple runs with different font
+ * colors.
+ * 
+ * @function SpreadsheetApp.TextStyle#getForegroundColorObject
+ * 
+ * @return {SpreadsheetApp.Color} The font color of the text or <code>null</code>.
+ */
+
+
+/**
+ * Gets whether or not the text is bold. Returns <code>null</code> if bold isn't set or the
+ * corresponding <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/rich-text-value.html'>RichTextValue</a></code> has multiple runs with different bold
+ * settings.
+ * 
+ * @function SpreadsheetApp.TextStyle#isBold
+ * 
+ * @return {Boolean} Whether or not the cell is bold, or <code>null</code>.
+ */
+
+
+/**
+ * Gets whether or not the cell is italic. Returns <code>null</code> if italic isn't set or the
+ * corresponding <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/rich-text-value.html'>RichTextValue</a></code> has multiple runs with different italic
+ * settings.
+ * 
+ * @function SpreadsheetApp.TextStyle#isItalic
+ * 
+ * @return {Boolean} Whether or not the cell is italic, or <code>null</code>.
+ */
+
+
+/**
+ * Gets whether or not the cell has strikethrough. Returns <code>null</code> if strikethrough isn't set
+ * or the corresponding <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/rich-text-value.html'>RichTextValue</a></code> has multiple runs with different
+ * strikethrough settings.
+ * 
+ * @function SpreadsheetApp.TextStyle#isStrikethrough
+ * 
+ * @return {Boolean} Whether or not the cell has strikethrough, or <code>null</code>.
+ */
+
+
+/**
+ * Gets whether or not the cell is underlined. Returns <code>null</code> if underline isn't set or the
+ * corresponding <code><a target='_blank' href='https://developers.google.com/apps-script/reference/spreadsheet/rich-text-value.html'>RichTextValue</a></code> has multiple runs with different underline
+ * settings.
+ * 
+ * @function SpreadsheetApp.TextStyle#isUnderline
+ * 
+ * @return {Boolean} Whether or not the cell is underlined, or <code>null</code>.
+ */
+
+
+
+/**
+ * @class SpreadsheetApp.TextStyleBuilder
+ */
+
+/**
+ * Creates a text style from this builder.
+ * 
+ * @function SpreadsheetApp.TextStyleBuilder#build
+ * 
+ * @return {SpreadsheetApp.TextStyle} A text style created from this builder.
+ */
+
+
+/**
+ * Sets whether or not the text is bold.
+ * 
+ * @function SpreadsheetApp.TextStyleBuilder#setBold
+ * 
+ * @param {Boolean} bold - Whether or not the text is bold.
+ * 
+ * @return {SpreadsheetApp.TextStyleBuilder} The builder for chaining.
+ */
+
+
+/**
+ * Sets the text font family, such as "Arial".
+ * 
+ * @function SpreadsheetApp.TextStyleBuilder#setFontFamily
+ * 
+ * @param {String} fontFamily - The desired font family.
+ * 
+ * @return {SpreadsheetApp.TextStyleBuilder} The builder for chaining.
+ */
+
+
+/**
+ * Sets the text font size in points.
+ * 
+ * @function SpreadsheetApp.TextStyleBuilder#setFontSize
+ * 
+ * @param {IntegerNum} fontSize - The desired font size.
+ * 
+ * @return {SpreadsheetApp.TextStyleBuilder} The builder for chaining.
+ */
+
+
+/**
+ * Sets the text font color.
+ * 
+ * @function SpreadsheetApp.TextStyleBuilder#setForegroundColor
+ * 
+ * @param {String} cssString - The desired font color in CSS notation (such as <code>&#39;#ffffff&#39;</code> or <code>&#39;white&#39;</code>).
+ * 
+ * @return {SpreadsheetApp.TextStyleBuilder} The builder for chaining.
+ */
+
+
+/**
+ * Sets the text font color.
+ * 
+ * @function SpreadsheetApp.TextStyleBuilder#setForegroundColorObject
+ * 
+ * @param {SpreadsheetApp.Color} color - The desired font color.
+ * 
+ * @return {SpreadsheetApp.TextStyleBuilder} The builder for chaining.
+ */
+
+
+/**
+ * Sets whether or not the text is italic.
+ * 
+ * @function SpreadsheetApp.TextStyleBuilder#setItalic
+ * 
+ * @param {Boolean} italic - Whether or not the text is italic.
+ * 
+ * @return {SpreadsheetApp.TextStyleBuilder} The builder for chaining.
+ */
+
+
+/**
+ * Sets whether or not the text has strikethrough.
+ * 
+ * @function SpreadsheetApp.TextStyleBuilder#setStrikethrough
+ * 
+ * @param {Boolean} strikethrough - Whether or not the text has strikethrough.
+ * 
+ * @return {SpreadsheetApp.TextStyleBuilder} The builder for chaining.
+ */
+
+
+/**
+ * Sets whether or not the text is underlined.
+ * 
+ * @function SpreadsheetApp.TextStyleBuilder#setUnderline
+ * 
+ * @param {Boolean} underline - Whether or not the text is underlined.
+ * 
+ * @return {SpreadsheetApp.TextStyleBuilder} The builder for chaining.
+ */
+
+
+
+/**
+ * @class SpreadsheetApp.TextToColumnsDelimiter
+ */
+
+/**
+ * <code>&quot;,&quot;</code> delimiter.
+ * 
+ * @typedef {SpreadsheetApp.TextToColumnsDelimiter} SpreadsheetApp.TextToColumnsDelimiter.COMMA
+ */
+/**
+ * <code>&quot;.&quot;</code> delimiter.
+ * 
+ * @typedef {SpreadsheetApp.TextToColumnsDelimiter} SpreadsheetApp.TextToColumnsDelimiter.PERIOD
+ */
+/**
+ * <code>&quot;;&quot;</code> delimiter.
+ * 
+ * @typedef {SpreadsheetApp.TextToColumnsDelimiter} SpreadsheetApp.TextToColumnsDelimiter.SEMICOLON
+ */
+/**
+ * <code>&quot; &quot;</code> delimiter.
+ * 
+ * @typedef {SpreadsheetApp.TextToColumnsDelimiter} SpreadsheetApp.TextToColumnsDelimiter.SPACE
+ */
+
+/**
+ * @class SpreadsheetApp.ThemeColor
+ */
+
+/**
+ * Get the type of this color.
+ * 
+ * @function SpreadsheetApp.ThemeColor#getColorType
+ * 
+ * @return {ColorType} The color type.
+ */
+
+
+/**
+ * Gets the theme color type of this color.
+ * 
+ * @function SpreadsheetApp.ThemeColor#getThemeColorType
+ * 
+ * @return {SpreadsheetApp.ThemeColorType} The theme color type.
+ */
+
+
+
+/**
+ * @class SpreadsheetApp.ThemeColorType
+ */
+
+/**
+ * Represents the first accent color.
+ * 
+ * @typedef {SpreadsheetApp.ThemeColorType} SpreadsheetApp.ThemeColorType.ACCENT1
+ */
+/**
+ * Represents the second accent color.
+ * 
+ * @typedef {SpreadsheetApp.ThemeColorType} SpreadsheetApp.ThemeColorType.ACCENT2
+ */
+/**
+ * Represents the third accent color.
+ * 
+ * @typedef {SpreadsheetApp.ThemeColorType} SpreadsheetApp.ThemeColorType.ACCENT3
+ */
+/**
+ * Represents the fourth accent color.
+ * 
+ * @typedef {SpreadsheetApp.ThemeColorType} SpreadsheetApp.ThemeColorType.ACCENT4
+ */
+/**
+ * Represents the fifth accent color.
+ * 
+ * @typedef {SpreadsheetApp.ThemeColorType} SpreadsheetApp.ThemeColorType.ACCENT5
+ */
+/**
+ * Represents the sixth accent color.
+ * 
+ * @typedef {SpreadsheetApp.ThemeColorType} SpreadsheetApp.ThemeColorType.ACCENT6
+ */
+/**
+ * Represents the color to use for chart's background.
+ * 
+ * @typedef {SpreadsheetApp.ThemeColorType} SpreadsheetApp.ThemeColorType.BACKGROUND
+ */
+/**
+ * Represents the color to use for hyperlinks.
+ * 
+ * @typedef {SpreadsheetApp.ThemeColorType} SpreadsheetApp.ThemeColorType.HYPERLINK
+ */
+/**
+ * Represents the text color.
+ * 
+ * @typedef {SpreadsheetApp.ThemeColorType} SpreadsheetApp.ThemeColorType.TEXT
+ */
+/**
+ * Represents a theme color that is not supported.
+ * 
+ * @typedef {SpreadsheetApp.ThemeColorType} SpreadsheetApp.ThemeColorType.UNSUPPORTED
+ */
+
+/**
+ * @class SpreadsheetApp.WrapStrategy
+ */
+
+/**
+ * Clip lines that are longer than the cell width.
+ * 
+ * @typedef {SpreadsheetApp.WrapStrategy} SpreadsheetApp.WrapStrategy.CLIP
+ */
+/**
+ * Overflow lines into the next cell, so long as that cell is empty. If the next cell over is
+ * non-empty, this behaves the same as <code>CLIP</code>.
+ * 
+ * @typedef {SpreadsheetApp.WrapStrategy} SpreadsheetApp.WrapStrategy.OVERFLOW
+ */
+/**
+ * Wrap lines that are longer than the cell width onto a new line. Single words that are longer
+ * than a line are wrapped at the character level.
+ * 
+ * @typedef {SpreadsheetApp.WrapStrategy} SpreadsheetApp.WrapStrategy.WRAP
+ */
+
+/**
+ * @class SpreadsheetApp.Border
+ */
+
+/**
+ * Returns the style of this border or <code>null</code> if the border does not contains a border
+ * style.
+ * 
+ * @function SpreadsheetApp.Border#getBorderStyle
+ * 
+ * @return {SpreadsheetApp.BorderStyle} The border style.
+ */
+
+
+/**
+ * Returns the color of this border or <code>null</code> if the color is not specified in this border.
+ * 
+ * @function SpreadsheetApp.Border#getColor
+ * 
+ * @return {SpreadsheetApp.Color} The border color.
+ */
+
+
+
+/**
+ * @class SpreadsheetApp.Borders
+ */
+
+/**
+ * Returns the bottom border.
+ * 
+ * @function SpreadsheetApp.Borders#getBottom
+ * 
+ * @return {SpreadsheetApp.Border} The bottom border.
+ */
+
+
+/**
+ * Returns the left border.
+ * 
+ * @function SpreadsheetApp.Borders#getLeft
+ * 
+ * @return {SpreadsheetApp.Border} The left border.
+ */
+
+
+/**
+ * Returns the right border.
+ * 
+ * @function SpreadsheetApp.Borders#getRight
+ * 
+ * @return {SpreadsheetApp.Border} The right border.
+ */
+
+
+/**
+ * Returns the top border.
+ * 
+ * @function SpreadsheetApp.Borders#getTop
+ * 
+ * @return {SpreadsheetApp.Border} The top border.
  */
 
 

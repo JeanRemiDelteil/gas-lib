@@ -7,6 +7,11 @@
  */
 
 /**
+ * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/border-type.html'>BorderType</a></code> enumeration.
+ * 
+ * @typedef {CardService.BorderType} CardService.BorderType
+ */
+/**
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/composed-email-type.html'>ComposedEmailType</a></code> enumeration.
  * 
  * @typedef {CardService.ComposedEmailType} CardService.ComposedEmailType
@@ -17,9 +22,24 @@
  * @typedef {CardService.ContentType} CardService.ContentType
  */
 /**
+ * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/grid-item-layout.html'>GridItemLayout</a></code> enumeration.
+ * 
+ * @typedef {CardService.GridItemLayout} CardService.GridItemLayout
+ */
+/**
+ * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/horizontal-alignment.html'>HorizontalAlignment</a></code> enumeration.
+ * 
+ * @typedef {CardService.HorizontalAlignment} CardService.HorizontalAlignment
+ */
+/**
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/icon.html'>Icon</a></code> enumeration.
  * 
  * @typedef {CardService.Icon} CardService.Icon
+ */
+/**
+ * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/image-crop-type.html'>ImageCropType</a></code> enumeration.
+ * 
+ * @typedef {CardService.ImageCropType} CardService.ImageCropType
  */
 /**
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/image-style.html'>ImageStyle</a></code> enumeration.
@@ -30,11 +50,6 @@
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/load-indicator.html'>LoadIndicator</a></code> enumeration.
  * 
  * @typedef {CardService.LoadIndicator} CardService.LoadIndicator
- */
-/**
- * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/notification-type.html'>NotificationType</a></code> enumeration.
- * 
- * @typedef {CardService.NotificationType} CardService.NotificationType
  */
 /**
  * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/on-close.html'>OnClose</a></code> enumeration.
@@ -62,11 +77,21 @@
  * @typedef {CardService.UpdateDraftBodyType} CardService.UpdateDraftBodyType
  */
 /**
+ * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/display-style.html'>DisplayStyle</a></code> enumeration.
+ * 
+ * @typedef {CardService.DisplayStyle} CardService.DisplayStyle
+ */
+/**
+ * The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/switch-control-type.html'>SwitchControlType</a></code> enumeration.
+ * 
+ * @typedef {CardService.SwitchControlType} CardService.SwitchControlType
+ */
+/**
  * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action.html'>Action</a></code>.
  * 
  * @function CardService.newAction
  * 
- * @return {CardService.Action} an empty Action.
+ * @return {CardService.Action} An empty Action.
  */
 
 
@@ -75,7 +100,7 @@
  * 
  * @function CardService.newActionResponseBuilder
  * 
- * @return {CardService.ActionResponseBuilder} an empty ActionResponse builder
+ * @return {CardService.ActionResponseBuilder} An empty ActionResponse builder.
  */
 
 
@@ -84,7 +109,7 @@
  * 
  * @function CardService.newAuthorizationAction
  * 
- * @return {CardService.AuthorizationAction} an empty AuthorizationAction();
+ * @return {CardService.AuthorizationAction} An empty AuthorizationAction.
  */
 
 
@@ -93,7 +118,7 @@
  * 
  * @function CardService.newAuthorizationException
  * 
- * @return {CardService.AuthorizationException} an empty AuthorizationException.
+ * @return {CardService.AuthorizationException} An empty AuthorizationException.
  */
 
 
@@ -102,7 +127,16 @@
  * 
  * @function CardService.newButtonSet
  * 
- * @return {CardService.ButtonSet} an empty ButtonSet.
+ * @return {CardService.ButtonSet} An empty ButtonSet.
+ */
+
+
+/**
+ * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/calendar-event-action-response-builder.html'>CalendarEventActionResponseBuilder</a></code>.
+ * 
+ * @function CardService.newCalendarEventActionResponseBuilder
+ * 
+ * @return {CardService.CalendarEventActionResponseBuilder} An empty <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/calendar-event-action-response-builder.html'>CalendarEventActionResponseBuilder</a></code>.
  */
 
 
@@ -111,7 +145,7 @@
  * 
  * @function CardService.newCardAction
  * 
- * @return {CardService.CardAction} an empty CardAction.
+ * @return {CardService.CardAction} An empty CardAction.
  */
 
 
@@ -129,7 +163,7 @@
  * 
  * @function CardService.newCardHeader
  * 
- * @return {CardService.CardHeader} an empty CardHeader.
+ * @return {CardService.CardHeader} An empty CardHeader.
  */
 
 
@@ -138,7 +172,7 @@
  * 
  * @function CardService.newCardSection
  * 
- * @return {CardService.CardSection} an empty CardSection.
+ * @return {CardService.CardSection} An empty CardSection.
  */
 
 
@@ -147,7 +181,52 @@
  * 
  * @function CardService.newComposeActionResponseBuilder
  * 
- * @return {CardService.ComposeActionResponseBuilder} an empty ComposeActionResponse builder
+ * @return {CardService.ComposeActionResponseBuilder} An empty ComposeActionResponse builder.
+ */
+
+
+/**
+ * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/date-picker.html'>DatePicker</a></code>.
+ * 
+ * @function CardService.newDatePicker
+ * 
+ * @return {CardService.DatePicker} An empty DatePicker.
+ */
+
+
+/**
+ * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/date-time-picker.html'>DateTimePicker</a></code>.
+ * 
+ * @function CardService.newDateTimePicker
+ * 
+ * @return {CardService.DateTimePicker} An empty DateTimePicker.
+ */
+
+
+/**
+ * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html'>DecoratedText</a></code>.
+ * 
+ * @function CardService.newDecoratedText
+ * 
+ * @return {CardService.DecoratedText} An empty DecoratedText.
+ */
+
+
+/**
+ * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/drive-items-selected-action-response-builder.html'>DriveItemsSelectedActionResponseBuilder</a></code>.
+ * 
+ * @function CardService.newDriveItemsSelectedActionResponseBuilder
+ * 
+ * @return {CardService.DriveItemsSelectedActionResponseBuilder} An empty <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/drive-items-selected-action-response-builder.html'>DriveItemsSelectedActionResponseBuilder</a></code>.
+ */
+
+
+/**
+ * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/fixed-footer.html'>FixedFooter</a></code>.
+ * 
+ * @function CardService.newFixedFooter
+ * 
+ * @return {CardService.FixedFooter} An empty FixedFooter.
  */
 
 
@@ -156,7 +235,7 @@
  * 
  * @function CardService.newImage
  * 
- * @return {CardService.Image} an empty Image.
+ * @return {CardService.Image} An empty Image.
  */
 
 
@@ -165,7 +244,7 @@
  * 
  * @function CardService.newImageButton
  * 
- * @return {CardService.ImageButton} an empty ImageButton.
+ * @return {CardService.ImageButton} An empty ImageButton.
  */
 
 
@@ -174,7 +253,7 @@
  * 
  * @function CardService.newKeyValue
  * 
- * @return {CardService.KeyValue} an empty KeyValue.
+ * @return {CardService.KeyValue} An empty KeyValue.
  */
 
 
@@ -183,7 +262,7 @@
  * 
  * @function CardService.newNavigation
  * 
- * @return {CardService.Navigation} an empty Navigation.
+ * @return {CardService.Navigation} An empty Navigation.
  */
 
 
@@ -192,7 +271,7 @@
  * 
  * @function CardService.newNotification
  * 
- * @return {CardService.Notification} an empty Notification.
+ * @return {CardService.Notification} An empty Notification.
  */
 
 
@@ -201,7 +280,7 @@
  * 
  * @function CardService.newOpenLink
  * 
- * @return {CardService.OpenLink} an empty OpenLink.
+ * @return {CardService.OpenLink} An empty OpenLink.
  */
 
 
@@ -210,7 +289,7 @@
  * 
  * @function CardService.newSelectionInput
  * 
- * @return {CardService.SelectionInput} an empty SelectionInput.
+ * @return {CardService.SelectionInput} An empty SelectionInput.
  */
 
 
@@ -219,7 +298,7 @@
  * 
  * @function CardService.newSuggestions
  * 
- * @return {CardService.Suggestions} an empty Suggestions.
+ * @return {CardService.Suggestions} An empty Suggestions.
  */
 
 
@@ -228,7 +307,7 @@
  * 
  * @function CardService.newSuggestionsResponseBuilder
  * 
- * @return {CardService.SuggestionsResponseBuilder} an empty SuggestionsResponse builder
+ * @return {CardService.SuggestionsResponseBuilder} An empty SuggestionsResponse builder.
  */
 
 
@@ -237,7 +316,7 @@
  * 
  * @function CardService.newSwitch
  * 
- * @return {CardService.Switch} an empty Switch.
+ * @return {CardService.Switch} An empty Switch.
  */
 
 
@@ -246,7 +325,7 @@
  * 
  * @function CardService.newTextButton
  * 
- * @return {CardService.TextButton} an empty TextButton.
+ * @return {CardService.TextButton} An empty TextButton.
  */
 
 
@@ -255,7 +334,7 @@
  * 
  * @function CardService.newTextInput
  * 
- * @return {CardService.TextInput} an empty TextInput.
+ * @return {CardService.TextInput} An empty TextInput.
  */
 
 
@@ -264,7 +343,16 @@
  * 
  * @function CardService.newTextParagraph
  * 
- * @return {CardService.TextParagraph} an empty TextParagraph.
+ * @return {CardService.TextParagraph} An empty TextParagraph.
+ */
+
+
+/**
+ * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/time-picker.html'>TimePicker</a></code>.
+ * 
+ * @function CardService.newTimePicker
+ * 
+ * @return {CardService.TimePicker} An empty TimePicker.
  */
 
 
@@ -273,7 +361,7 @@
  * 
  * @function CardService.newUniversalActionResponseBuilder
  * 
- * @return {CardService.UniversalActionResponseBuilder} an empty UniversalActionResponse builder
+ * @return {CardService.UniversalActionResponseBuilder} An empty UniversalActionResponse builder.
  */
 
 
@@ -287,11 +375,56 @@
 
 
 /**
+ * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/update-draft-bcc-recipients-action.html'>UpdateDraftBccRecipientsAction</a></code>;
+ * 
+ * @function CardService.newUpdateDraftBccRecipientsAction
+ * 
+ * @return {CardService.UpdateDraftBccRecipientsAction} An empty UpdateDraftBccRecipientsAction.
+ */
+
+
+/**
  * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/update-draft-body-action.html'>UpdateDraftBodyAction</a></code>.
  * 
  * @function CardService.newUpdateDraftBodyAction
  * 
  * @return {CardService.UpdateDraftBodyAction} An empty UpdateDraftBodyAction.
+ */
+
+
+/**
+ * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/update-draft-cc-recipients-action.html'>UpdateDraftCcRecipientsAction</a></code>.
+ * 
+ * @function CardService.newUpdateDraftCcRecipientsAction
+ * 
+ * @return {CardService.UpdateDraftCcRecipientsAction} An Empty UpdateDraftCcRecipientsAction.
+ */
+
+
+/**
+ * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/update-draft-subject-action.html'>UpdateDraftSubjectAction</a></code>.
+ * 
+ * @function CardService.newUpdateDraftSubjectAction
+ * 
+ * @return {CardService.UpdateDraftSubjectAction} An empty UpdateDraftSubjectAction.
+ */
+
+
+/**
+ * Creates a new <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/update-draft-to-recipients-action.html'>UpdateDraftToRecipientsAction</a></code>.
+ * 
+ * @function CardService.newUpdateDraftToRecipientsAction
+ * 
+ * @return {CardService.UpdateDraftToRecipientsAction} An empty UpdateDraftToRecipientsAction.
+ */
+
+
+/**
+ * Creates a new <code>EditorFileScopeActionResponseBuilder</code>.
+ * 
+ * @function CardService.newEditorFileScopeActionResponseBuilder
+ * 
+ * @return {CardService.EditorFileScopeActionResponseBuilder} An empty <code>EditorFileScopeActionResponseBuilder</code>.
  */
 
 
@@ -366,7 +499,7 @@
  * 
  * @function CardService.ActionResponseBuilder#build
  * 
- * @return {CardService.ActionResponse} a validated ActionResponse.
+ * @return {CardService.ActionResponse} A validated ActionResponse.
  */
 
 
@@ -375,9 +508,9 @@
  * 
  * @function CardService.ActionResponseBuilder#setNavigation
  * 
- * @param {CardService.Navigation} navigation - the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/navigation.html'>Navigation</a></code> to use.
+ * @param {CardService.Navigation} navigation - The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/navigation.html'>Navigation</a></code> to use.
  * 
- * @return {CardService.ActionResponseBuilder} this object, for chaining.
+ * @return {CardService.ActionResponseBuilder} This object, for chaining.
  */
 
 
@@ -386,9 +519,9 @@
  * 
  * @function CardService.ActionResponseBuilder#setNotification
  * 
- * @param {CardService.Notification} notification - the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/notification.html'>Notification</a></code> to use.
+ * @param {CardService.Notification} notification - The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/notification.html'>Notification</a></code> to use.
  * 
- * @return {CardService.ActionResponseBuilder} this object, for chaining.
+ * @return {CardService.ActionResponseBuilder} This object, for chaining.
  */
 
 
@@ -397,9 +530,9 @@
  * 
  * @function CardService.ActionResponseBuilder#setOpenLink
  * 
- * @param {CardService.OpenLink} openLink - the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/open-link.html'>OpenLink</a></code> to use.
+ * @param {CardService.OpenLink} openLink - The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/open-link.html'>OpenLink</a></code> to use.
  * 
- * @return {CardService.ActionResponseBuilder} this object, for chaining.
+ * @return {CardService.ActionResponseBuilder} This object, for chaining.
  */
 
 
@@ -412,7 +545,7 @@
  * 
  * @param {Boolean} stateChanged - Whether this action has changed the existing state data. Defaults to false.
  * 
- * @return {CardService.ActionResponseBuilder} this object, for chaining.
+ * @return {CardService.ActionResponseBuilder} This object, for chaining.
  */
 
 
@@ -426,9 +559,9 @@
  * 
  * @function CardService.AuthorizationAction#setAuthorizationUrl
  * 
- * @param {String} authorizationUrl - the authorization URL to set.
+ * @param {String} authorizationUrl - The authorization URL to set.
  * 
- * @return {CardService.AuthorizationAction} this object, for chaining.
+ * @return {CardService.AuthorizationAction} This object, for chaining.
  */
 
 
@@ -449,9 +582,9 @@
  * 
  * @function CardService.AuthorizationException#setAuthorizationUrl
  * 
- * @param {String} authUrl - the authorization URL to set.
+ * @param {String} authUrl - The authorization URL to set.
  * 
- * @return {CardService.AuthorizationException} this object, for chaining.
+ * @return {CardService.AuthorizationException} This object, for chaining.
  */
 
 
@@ -460,9 +593,9 @@
  * 
  * @function CardService.AuthorizationException#setCustomUiCallback
  * 
- * @param {String} callback - the name of the function that generates a custom authorization prompt.
+ * @param {String} callback - The name of the function that generates a custom authorization prompt.
  * 
- * @return {CardService.AuthorizationException} this object, for chaining.
+ * @return {CardService.AuthorizationException} This object, for chaining.
  */
 
 
@@ -471,9 +604,9 @@
  * 
  * @function CardService.AuthorizationException#setResourceDisplayName
  * 
- * @param {String} name - the display name.
+ * @param {String} name - The display name.
  * 
- * @return {CardService.AuthorizationException} this object, for chaining.
+ * @return {CardService.AuthorizationException} This object, for chaining.
  */
 
 
@@ -486,6 +619,26 @@
  */
 
 
+
+/**
+ * @class CardService.BorderType
+ */
+
+/**
+ * Not set.
+ * 
+ * @typedef {CardService.BorderType} CardService.BorderType.BORDER_TYPE_NOT_SET
+ */
+/**
+ * No border style.
+ * 
+ * @typedef {CardService.BorderType} CardService.BorderType.NO_BORDER
+ */
+/**
+ * Stroke border style.
+ * 
+ * @typedef {CardService.BorderType} CardService.BorderType.STROKE
+ */
 
 /**
  * @class CardService.Button
@@ -549,12 +702,12 @@
  * 
  * @function CardService.Button#setComposeAction
  * 
- * @param {CardService.Action} action - the object that specifies the compose action to take when this element is
+ * @param {CardService.Action} action - The object that specifies the compose action to take when this element is
  *     clicked.
- * @param {CardService.ComposedEmailType} composedEmailType - an enum value that specifies whether the composed draft is a
+ * @param {CardService.ComposedEmailType} composedEmailType - An enum value that specifies whether the composed draft is a
  *     standalone or reply draft.
  * 
- * @return {CardService.Button} this object, for chaining.
+ * @return {CardService.Button} This object, for chaining.
  */
 
 
@@ -575,7 +728,6 @@
  * function notificationCallback() {
  *   return CardService.newActionResponseBuilder()
  *       .setNotification(CardService.newNotification()
- *           .setType(CardService.NotificationType.INFO)
  *           .setText(&quot;Some info to display to user&quot;))
  *       .build();
  * }
@@ -591,7 +743,7 @@
 
 /**
  * Sets an action that opens a URL in a tab when the object is clicked. Use this function when the
- * URL needs to be built or when you need to take other actions in addiiton to creating the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/open-link.html'>OpenLink</a></code> object. A UI object can only have one of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/button.html#setOpenLink(OpenLink)'>setOpenLink(openLink)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/button.html#setOnClickAction(Action)'>setOnClickAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/button.html#setOnClickOpenLinkAction(Action)'>setOnClickOpenLinkAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/button.html#setAuthorizationAction(AuthorizationAction)'>setAuthorizationAction(action)</a></code>, or
+ * URL needs to be built or when you need to take other actions in additon to creating the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/open-link.html'>OpenLink</a></code> object. A UI object can only have one of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/button.html#setOpenLink(OpenLink)'>setOpenLink(openLink)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/button.html#setOnClickAction(Action)'>setOnClickAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/button.html#setOnClickOpenLinkAction(Action)'>setOnClickOpenLinkAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/button.html#setAuthorizationAction(AuthorizationAction)'>setAuthorizationAction(action)</a></code>, or
  * <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/button.html#setComposeAction(Action,ComposedEmailType)'>setComposeAction(action, composedEmailType)</a></code> set.
  * 
  * <p>The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action.html'>Action</a></code> parameter must specify a callback function that returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action-response.html'>ActionResponse</a></code> object configured using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action-response-builder.html#setOpenLink(OpenLink)'>ActionResponseBuilder.setOpenLink(openLink)</a></code>.
@@ -645,9 +797,59 @@
  * 
  * @function CardService.ButtonSet#addButton
  * 
- * @param {CardService.Button} button - the button to add.
+ * @param {CardService.Button} button - The button to add.
  * 
- * @return {CardService.ButtonSet} this object, for chaining.
+ * @return {CardService.ButtonSet} This object, for chaining.
+ */
+
+
+
+/**
+ * @class CardService.CalendarEventActionResponse
+ */
+
+/**
+ * @function CardService.CalendarEventActionResponse#printJson
+ * 
+ * @return {String}
+ */
+
+
+
+/**
+ * @class CardService.CalendarEventActionResponseBuilder
+ */
+
+/**
+ * Specifies that the response should add the indicated attendees to the Calendar event when the
+ * associated UI action is taken.
+ * 
+ * @function CardService.CalendarEventActionResponseBuilder#addAttendees
+ * 
+ * @param {String[]} emails - An array of email addresses to add to the event.
+ * 
+ * @return {CardService.CalendarEventActionResponseBuilder} This object, for chaining.
+ */
+
+
+/**
+ * Builds the current Calendar event action response and validates it.
+ * 
+ * @function CardService.CalendarEventActionResponseBuilder#build
+ * 
+ * @return {CardService.CalendarEventActionResponse} A validated <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/calendar-event-action-response.html'>CalendarEventActionResponse</a></code>.
+ */
+
+
+/**
+ * Specifies that the response should set the indicated conference data to the Calendar event when
+ * the associated UI action is taken.
+ * 
+ * @function CardService.CalendarEventActionResponseBuilder#setConferenceData
+ * 
+ * @param {ConferenceDataService.ConferenceData} conferenceData - Conference data to set to the event, created by an add on.
+ * 
+ * @return {CardService.CalendarEventActionResponseBuilder} This object, for chaining.
  */
 
 
@@ -726,12 +928,12 @@
  * 
  * @function CardService.CardAction#setComposeAction
  * 
- * @param {CardService.Action} action - the object that specifies the compose action to take when this element is
+ * @param {CardService.Action} action - The object that specifies the compose action to take when this element is
  *     clicked.
- * @param {CardService.ComposedEmailType} composedEmailType - an enum value that specifies whether the composed draft is a
+ * @param {CardService.ComposedEmailType} composedEmailType - An enum value that specifies whether the composed draft is a
  *     standalone or reply draft.
  * 
- * @return {CardService.CardAction} this object, for chaining.
+ * @return {CardService.CardAction} This object, for chaining.
  */
 
 
@@ -752,7 +954,6 @@
  * function notificationCallback() {
  *   return CardService.newActionResponseBuilder()
  *       .setNotification(CardService.newNotification()
- *           .setType(CardService.NotificationType.INFO)
  *           .setText(&quot;Some info to display to user&quot;))
  *       .build();
  * }
@@ -768,7 +969,7 @@
 
 /**
  * Sets an action that opens a URL in a tab when the object is clicked. Use this function when the
- * URL needs to be built or when you need to take other actions in addiiton to creating the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/open-link.html'>OpenLink</a></code> object. A UI object can only have one of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/card-action.html#setOpenLink(OpenLink)'>setOpenLink(openLink)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/card-action.html#setOnClickAction(Action)'>setOnClickAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/card-action.html#setOnClickOpenLinkAction(Action)'>setOnClickOpenLinkAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/card-action.html#setAuthorizationAction(AuthorizationAction)'>setAuthorizationAction(action)</a></code>, or
+ * URL needs to be built or when you need to take other actions in additon to creating the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/open-link.html'>OpenLink</a></code> object. A UI object can only have one of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/card-action.html#setOpenLink(OpenLink)'>setOpenLink(openLink)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/card-action.html#setOnClickAction(Action)'>setOnClickAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/card-action.html#setOnClickOpenLinkAction(Action)'>setOnClickOpenLinkAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/card-action.html#setAuthorizationAction(AuthorizationAction)'>setAuthorizationAction(action)</a></code>, or
  * <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/card-action.html#setComposeAction(Action,ComposedEmailType)'>setComposeAction(action, composedEmailType)</a></code> set.
  * 
  * <p>The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action.html'>Action</a></code> parameter must specify a callback function that returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action-response.html'>ActionResponse</a></code> object configured using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action-response-builder.html#setOpenLink(OpenLink)'>ActionResponseBuilder.setOpenLink(openLink)</a></code>.
@@ -817,9 +1018,9 @@
  * 
  * @function CardService.CardAction#setText
  * 
- * @param {String} text - the menu item text.
+ * @param {String} text - The menu item text.
  * 
- * @return {CardService.CardAction} this object, for chaining.
+ * @return {CardService.CardAction} This object, for chaining.
  */
 
 
@@ -833,20 +1034,20 @@
  * 
  * @function CardService.CardBuilder#addCardAction
  * 
- * @param {CardService.CardAction} cardAction - the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/card-action.html'>CardAction</a></code> to use.
+ * @param {CardService.CardAction} cardAction - The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/card-action.html'>CardAction</a></code> to use.
  * 
- * @return {CardService.CardBuilder} this object, for chaining.
+ * @return {CardService.CardBuilder} This object, for chaining.
  */
 
 
 /**
- * Adds a section to this card.
+ * Adds a section to this card. You can't add more than 100 sections to a card.
  * 
  * @function CardService.CardBuilder#addSection
  * 
- * @param {CardService.CardSection} section - the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/card-section.html'>CardSection</a></code> to use.
+ * @param {CardService.CardSection} section - The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/card-section.html'>CardSection</a></code> to use.
  * 
- * @return {CardService.CardBuilder} this object, for chaining.
+ * @return {CardService.CardBuilder} This object, for chaining.
  */
 
 
@@ -855,7 +1056,39 @@
  * 
  * @function CardService.CardBuilder#build
  * 
- * @return {CardService.Card} a validated card.
+ * @return {CardService.Card} A validated card.
+ */
+
+
+/**
+ * Sets the display style for this card.
+ * 
+ * <p>If the display style is set to <code>DisplayStyle.REPLACE</code>, the card is shown by replacing
+ * the view of top card in the card stack.
+ * 
+ * <p>If the display style is set to <code>DisplayStyle.PEEK</code>, the header of the card appears at
+ * the bottom of the sidebar, partially covering the current top card of the stack. Clicking the
+ * header pops the card into the card stack. If the card has no header, a generated header is used
+ * instead.
+ * 
+ * <p><code>DisplayStyle</code> only works for card returned from contextual trigger function.
+ * 
+ * @function CardService.CardBuilder#setDisplayStyle
+ * 
+ * @param {CardService.DisplayStyle} displayStyle - The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/display-style.html'>DisplayStyle</a></code> to set.
+ * 
+ * @return {CardService.CardBuilder} This object, for chaining.
+ */
+
+
+/**
+ * Sets a fixed footer for this card.
+ * 
+ * @function CardService.CardBuilder#setFixedFooter
+ * 
+ * @param {CardService.FixedFooter} fixedFooter - The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/fixed-footer.html'>FixedFooter</a></code> to use.
+ * 
+ * @return {CardService.CardBuilder} This object, for chaining.
  */
 
 
@@ -864,9 +1097,9 @@
  * 
  * @function CardService.CardBuilder#setHeader
  * 
- * @param {CardService.CardHeader} cardHeader - the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/card-header.html'>CardHeader</a></code> to use.
+ * @param {CardService.CardHeader} cardHeader - The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/card-header.html'>CardHeader</a></code> to use.
  * 
- * @return {CardService.CardBuilder} this object, for chaining.
+ * @return {CardService.CardBuilder} This object, for chaining.
  */
 
 
@@ -876,9 +1109,24 @@
  * 
  * @function CardService.CardBuilder#setName
  * 
- * @param {String} name - the name.
+ * @param {String} name - The name.
  * 
- * @return {CardService.CardBuilder} this object, for chaining.
+ * @return {CardService.CardBuilder} This object, for chaining.
+ */
+
+
+/**
+ * Sets the peek card header.
+ * 
+ * <p>The peek card is set on the first card returned from a contextual trigger function. It is
+ * used as a descriptive placeholder widget so that users can navigate from a homepage stack to
+ * the contextual stack.
+ * 
+ * @function CardService.CardBuilder#setPeekCardHeader
+ * 
+ * @param {CardService.CardHeader} peekCardHeader - The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/card-header.html'>CardHeader</a></code> to set.
+ * 
+ * @return {CardService.CardBuilder} This object, for chaining.
  */
 
 
@@ -892,9 +1140,9 @@
  * 
  * @function CardService.CardHeader#setImageAltText
  * 
- * @param {String} imageAltText - the alternative text for the header image.
+ * @param {String} imageAltText - The alternative text for the header image.
  * 
- * @return {CardService.CardHeader} this object, for chaining.
+ * @return {CardService.CardHeader} This object, for chaining.
  */
 
 
@@ -903,20 +1151,33 @@
  * 
  * @function CardService.CardHeader#setImageStyle
  * 
- * @param {CardService.ImageStyle} imageStyle - the style setting.
+ * @param {CardService.ImageStyle} imageStyle - The style setting.
  * 
- * @return {CardService.CardHeader} this object, for chaining.
+ * @return {CardService.CardHeader} This object, for chaining.
  */
 
 
 /**
- * Sets the image to use in the header by providing its URL.
+ * Sets the image to use in the header by providing its URL or data string.
+ * 
+ * <p>The provided URL can either be a publicly accessible URL or a base64 encoded image string.
+ * To obtain the latter, you can use the following code to create an encoded image string from an
+ * image in your Google Drive, then store that string for later use with <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/card-header.html#setImageUrl(String)'>setImageUrl(imageUrl)</a></code>. This method prevents the need for your add-on to access a publicly
+ * available image URL:
+ * 
+ * <pre class="prettyprint"><code>
+ * // The following assumes you have the image to use in Google Drive and have its ID.
+ * var imageBytes = DriveApp.getFileById(imageID).getBlob().getBytes();
+ * var encodedImageURL = &quot;data:image/jpeg;base64,&quot; + Utilities.base64Encode(imageBytes);
+ * 
+ * // You can store encodeImageURL and use it as a parameter to CardHeader.setImageUrl(imageUrl).
+ * </code></pre>
  * 
  * @function CardService.CardHeader#setImageUrl
  * 
- * @param {String} imageUrl - the URL address of a hosted image to use.
+ * @param {String} imageUrl - The URL address of a hosted image to use, or an encoded image string.
  * 
- * @return {CardService.CardHeader} this object, for chaining.
+ * @return {CardService.CardHeader} This object, for chaining.
  */
 
 
@@ -925,9 +1186,9 @@
  * 
  * @function CardService.CardHeader#setSubtitle
  * 
- * @param {String} subtitle - the header subtitle text.
+ * @param {String} subtitle - The header subtitle text.
  * 
- * @return {CardService.CardHeader} this object, for chaining.
+ * @return {CardService.CardHeader} This object, for chaining.
  */
 
 
@@ -936,9 +1197,9 @@
  * 
  * @function CardService.CardHeader#setTitle
  * 
- * @param {String} title - the header text.
+ * @param {String} title - The header text.
  * 
- * @return {CardService.CardHeader} this object, for chaining.
+ * @return {CardService.CardHeader} This object, for chaining.
  */
 
 
@@ -948,13 +1209,14 @@
  */
 
 /**
- * Adds the given widget to this section. Widgets are shown in the order they were added.
+ * Adds the given widget to this section. Widgets are shown in the order they were added. You
+ * can't add more than 100 widgets to a card section.
  * 
  * @function CardService.CardSection#addWidget
  * 
- * @param {CardService.Widget} widget - a widget to add to the section.
+ * @param {CardService.Widget} widget - A widget to add to the section.
  * 
- * @return {CardService.CardSection} this object, for chaining.
+ * @return {CardService.CardSection} This object, for chaining.
  */
 
 
@@ -963,9 +1225,9 @@
  * 
  * @function CardService.CardSection#setCollapsible
  * 
- * @param {Boolean} collapsible - the collapsible setting.
+ * @param {Boolean} collapsible - The collapsible setting.
  * 
- * @return {CardService.CardSection} this object, for chaining.
+ * @return {CardService.CardSection} This object, for chaining.
  */
 
 
@@ -974,9 +1236,9 @@
  * 
  * @function CardService.CardSection#setHeader
  * 
- * @param {String} header - the header text.
+ * @param {String} header - The header text.
  * 
- * @return {CardService.CardSection} this object, for chaining.
+ * @return {CardService.CardSection} This object, for chaining.
  */
 
 
@@ -986,9 +1248,9 @@
  * 
  * @function CardService.CardSection#setNumUncollapsibleWidgets
  * 
- * @param {IntegerNum} numUncollapsibleWidgets - the number of widgets to show.
+ * @param {IntegerNum} numUncollapsibleWidgets - The number of widgets to show.
  * 
- * @return {CardService.CardSection} this object, for chaining.
+ * @return {CardService.CardSection} This object, for chaining.
  */
 
 
@@ -1067,6 +1329,526 @@
  * Indicates that the generated content is plain text. Default.
  * 
  * @typedef {CardService.ContentType} CardService.ContentType.TEXT
+ */
+
+/**
+ * @class CardService.DatePicker
+ */
+
+/**
+ * Sets the field name that identifies this picker in the event object that is generated when
+ * there is a UI interaction. The field name is visible to the user. Required; the specified field
+ * name must be unique.
+ * 
+ * @function CardService.DatePicker#setFieldName
+ * 
+ * @param {String} fieldName - The name to assign to this input.
+ * 
+ * @return {CardService.DatePicker} This picker, for chaining.
+ */
+
+
+/**
+ * Sets an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action.html'>Action</a></code> that the script performs whenever the picker input changes.
+ * 
+ * @function CardService.DatePicker#setOnChangeAction
+ * 
+ * @param {CardService.Action} action - The action to take.
+ * 
+ * @return {CardService.DatePicker} This picker, for chaining.
+ */
+
+
+/**
+ * Sets the title displayed above the input field.
+ * 
+ * @function CardService.DatePicker#setTitle
+ * 
+ * @param {String} title - The input field title.
+ * 
+ * @return {CardService.DatePicker} This picker, for chaining.
+ */
+
+
+/**
+ * Sets the prefilled value to be set in the input field.
+ * 
+ * @function CardService.DatePicker#setValueInMsSinceEpoch
+ * 
+ * @param {Number} valueMsEpoch - The default value placed in the input as a number, in milliseconds since
+ *     the epoch. Only the date of the epoch time is used, and the time of the epoch time is
+ *     discarded. It is always represented as a string in the form callback parameters.
+ * 
+ * @return {CardService.DatePicker} This picker, for chaining.
+ */
+
+
+/**
+ * Sets the prefilled value to be set in the input field.
+ * 
+ * @function CardService.DatePicker#setValueInMsSinceEpoch
+ * 
+ * @param {String} valueMsEpoch - The default value placed in the input as a string, in milliseconds since
+ *     the epoch. Only the date of the epoch time is used, and the time of the epoch time is
+ *     discarded. It is always represented as a string in the form callback parameters.
+ * 
+ * @return {CardService.DatePicker} This picker, for chaining.
+ */
+
+
+
+/**
+ * @class CardService.DateTimePicker
+ */
+
+/**
+ * Sets the field name that identifies this picker in the event object that is generated when
+ * there is a UI interaction. The field name is visible to the user. Required; the specified field
+ * name must be unique.
+ * 
+ * @function CardService.DateTimePicker#setFieldName
+ * 
+ * @param {String} fieldName - The name to assign to this input.
+ * 
+ * @return {CardService.DateTimePicker} This picker, for chaining.
+ */
+
+
+/**
+ * Sets an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action.html'>Action</a></code> that the script performs whenever the picker input changes.
+ * 
+ * @function CardService.DateTimePicker#setOnChangeAction
+ * 
+ * @param {CardService.Action} action - The action to take.
+ * 
+ * @return {CardService.DateTimePicker} This picker, for chaining.
+ */
+
+
+/**
+ * Sets the number of minutes that the time zone should be offset from UTC. If set, the date and
+ * time is displayed in the specified time zone. If not set, the time is displayed in the user's
+ * time zone.
+ * 
+ * @function CardService.DateTimePicker#setTimeZoneOffsetInMins
+ * 
+ * @param {IntegerNum} timeZoneOffsetMins - The number of minutes that the time zone is offset from UTC.
+ * 
+ * @return {CardService.DateTimePicker} This picker, for chaining.
+ */
+
+
+/**
+ * Sets the title displayed above the input field.
+ * 
+ * @function CardService.DateTimePicker#setTitle
+ * 
+ * @param {String} title - The input field title.
+ * 
+ * @return {CardService.DateTimePicker} This picker, for chaining.
+ */
+
+
+/**
+ * Sets the prefilled value to be set in the input field.
+ * 
+ * @function CardService.DateTimePicker#setValueInMsSinceEpoch
+ * 
+ * @param {Number} valueMsEpoch - The default value placed in the input as a number, in milliseconds since
+ *     the epoch. It is always represented as a string in the form callback parameters.
+ * 
+ * @return {CardService.DateTimePicker} This picker, for chaining.
+ */
+
+
+/**
+ * Sets the prefilled value to be set in the input field.
+ * 
+ * @function CardService.DateTimePicker#setValueInMsSinceEpoch
+ * 
+ * @param {String} valueMsEpoch - The default value placed in the input as a string, in milliseconds since
+ *     the epoch. It is always represented as a string in the form callback parameters.
+ * 
+ * @return {CardService.DateTimePicker} This picker, for chaining.
+ */
+
+
+
+/**
+ * @class CardService.DecoratedText
+ */
+
+/**
+ * Sets an authorization action that opens a URL to the authorization flow when the object is
+ * clicked. This opens the URL in a new window. When the user finishes the authorization flow and
+ * returns to the application, the add-on reloads.
+ * 
+ * <p>A UI object can only have one of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setOpenLink(OpenLink)'>setOpenLink(openLink)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setOnClickAction(Action)'>setOnClickAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setOnClickOpenLinkAction(Action)'>setOnClickOpenLinkAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setAuthorizationAction(AuthorizationAction)'>setAuthorizationAction(action)</a></code>, or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setComposeAction(Action,ComposedEmailType)'>setComposeAction(action, composedEmailType)</a></code> set.
+ * 
+ * <pre class="prettyprint"><code>
+ * // ...
+ * 
+ * var action = CardService.newAuthorizationAction().setAuthorizationUrl(&#39;url&#39;);
+ * CardService.newTextButton().setText(&#39;Authorize&#39;).setAuthorizationAction(action);
+ * 
+ * </code></pre>
+ * 
+ * @function CardService.DecoratedText#setAuthorizationAction
+ * 
+ * @param {CardService.AuthorizationAction} action - The object that specifies the authorization action to take when this element is
+ *     clicked.
+ * 
+ * @return {CardService.DecoratedText} This object, for chaining.
+ */
+
+
+/**
+ * Sets the label text to be used as the key and is displayed below the text content.
+ * 
+ * @function CardService.DecoratedText#setBottomLabel
+ * 
+ * @param {String} text - The label text.
+ * 
+ * @return {CardService.DecoratedText} This object, for chaining.
+ */
+
+
+/**
+ * Sets the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/button.html'>Button</a></code> that is displayed to the right of the text. A <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html'>DecoratedText</a></code> can
+ * only support one button or one switch.
+ * 
+ * @function CardService.DecoratedText#setButton
+ * 
+ * @param {CardService.Button} button - The button to add.
+ * 
+ * @return {CardService.DecoratedText} This object, for chaining.
+ */
+
+
+/**
+ * Sets an action that composes a draft email when the object is clicked. A UI object can only
+ * have one of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setOpenLink(OpenLink)'>setOpenLink(openLink)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setOnClickAction(Action)'>setOnClickAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setOnClickOpenLinkAction(Action)'>setOnClickOpenLinkAction(action)</a></code>,
+ * <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setAuthorizationAction(AuthorizationAction)'>setAuthorizationAction(action)</a></code>, or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setComposeAction(Action,ComposedEmailType)'>setComposeAction(action, composedEmailType)</a></code> set.
+ * 
+ * <p>The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action.html'>Action</a></code> parameter must specify a callback function that returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/compose-action-response.html'>ComposeActionResponse</a></code> object configured using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/compose-action-response-builder.html#setGmailDraft(GmailDraft)'>ComposeActionResponseBuilder.setGmailDraft(draft)</a></code>.
+ * 
+ * <p><aside class="note"><b>Note</b>: This method doesn't set a <b>compose action</b> that is
+ * used to <a href="/gmail/add-ons/how-tos/extending-compose-ui">extend the compose UI</a>.
+ * Rather, this method connects this UI element to an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action.html'>Action</a></code> that <a
+ * href="/gmail/add-ons/how-tos/compose">composes draft messages</a> in Apps Script that are
+ * opened in Gmail when the action completes. </aside>
+ * 
+ * <pre class="prettyprint"><code>
+ * // ...
+ * 
+ * var action = CardService.newAction().setFunctionName(&#39;composeEmailCallback&#39;);
+ * CardService.newTextButton()
+ *     .setText(&#39;Compose Email&#39;)
+ *     .setComposeAction(action, CardService.ComposedEmailType.REPLY_AS_DRAFT);
+ * 
+ * // ...
+ * 
+ * function composeEmailCallback() {
+ *   var thread = GmailApp.getThreadById(e.threadId);
+ *   var draft = thread.createDraftReply(&#39;This is a reply&#39;);
+ *   return CardService.newComposeActionResponseBuilder()
+ *       .setGmailDraft(draft)
+ *       .build();
+ * }
+ * </code></pre>
+ * 
+ * @function CardService.DecoratedText#setComposeAction
+ * 
+ * @param {CardService.Action} action - The object that specifies the compose action to take when this element is
+ *     clicked.
+ * @param {CardService.ComposedEmailType} composedEmailType - An enum value that specifies whether the composed draft is a
+ *     standalone or reply draft.
+ * 
+ * @return {CardService.DecoratedText} This object, for chaining.
+ */
+
+
+/**
+ * Sets the icon to be used as the key.
+ * 
+ * @function CardService.DecoratedText#setIcon
+ * 
+ * @param {CardService.Icon} icon - One of the predefined <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/icon.html'>Icon</a></code> values.
+ * 
+ * @return {CardService.DecoratedText} This object, for chaining.
+ */
+
+
+/**
+ * Sets the alternative text for the icon.
+ * 
+ * @function CardService.DecoratedText#setIconAltText
+ * 
+ * @param {String} altText - The alternative text for the icon.
+ * 
+ * @return {CardService.DecoratedText} This object, for chaining.
+ */
+
+
+/**
+ * Sets the URL of the icon to be used as the key.
+ * 
+ * @function CardService.DecoratedText#setIconUrl
+ * 
+ * @param {String} url - The URL address of a hosted image to use as an icon.
+ * 
+ * @return {CardService.DecoratedText} This object, for chaining.
+ */
+
+
+/**
+ * Sets an action that executes when the object is clicked. A UI object can only have one of
+ * <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setOpenLink(OpenLink)'>setOpenLink(openLink)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setOnClickAction(Action)'>setOnClickAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setOnClickOpenLinkAction(Action)'>setOnClickOpenLinkAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setAuthorizationAction(AuthorizationAction)'>setAuthorizationAction(action)</a></code>, or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setComposeAction(Action,ComposedEmailType)'>setComposeAction(action, composedEmailType)</a></code> set.
+ * 
+ * <p>The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action.html'>Action</a></code> parameter must specify a callback function that returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action-response.html'>ActionResponse</a></code> object.
+ * 
+ * <pre class="prettyprint"><code>
+ * // ...
+ * 
+ * var action = CardService.newAction().setFunctionName(&#39;notificationCallback&#39;);
+ * CardService.newTextButton().setText(&#39;Create notification&#39;).setOnClickAction(action);
+ * 
+ * // ...
+ * 
+ * function notificationCallback() {
+ *   return CardService.newActionResponseBuilder()
+ *       .setNotification(CardService.newNotification()
+ *           .setText(&quot;Some info to display to user&quot;))
+ *       .build();
+ * }
+ * </code></pre>
+ * 
+ * @function CardService.DecoratedText#setOnClickAction
+ * 
+ * @param {CardService.Action} action - The action to take when this element is clicked.
+ * 
+ * @return {CardService.DecoratedText} This object, for chaining.
+ */
+
+
+/**
+ * Sets an action that opens a URL in a tab when the object is clicked. Use this function when the
+ * URL needs to be built or when you need to take other actions in additon to creating the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/open-link.html'>OpenLink</a></code> object. A UI object can only have one of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setOpenLink(OpenLink)'>setOpenLink(openLink)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setOnClickAction(Action)'>setOnClickAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setOnClickOpenLinkAction(Action)'>setOnClickOpenLinkAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setAuthorizationAction(AuthorizationAction)'>setAuthorizationAction(action)</a></code>, or
+ * <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setComposeAction(Action,ComposedEmailType)'>setComposeAction(action, composedEmailType)</a></code> set.
+ * 
+ * <p>The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action.html'>Action</a></code> parameter must specify a callback function that returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action-response.html'>ActionResponse</a></code> object configured using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action-response-builder.html#setOpenLink(OpenLink)'>ActionResponseBuilder.setOpenLink(openLink)</a></code>.
+ * 
+ * <pre class="prettyprint"><code>
+ * // ...
+ * 
+ * var action = CardService.newAction().setFunctionName(&#39;openLinkCallback&#39;);
+ * CardService.newTextButton().setText(&#39;Open Link&#39;).setOnClickOpenLinkAction(action);
+ * 
+ * // ...
+ * 
+ * function openLinkCallback() {
+ *   return CardService.newActionResponseBuilder()
+ *       .setOpenLink(CardService.newOpenLink()
+ *           .setUrl(&#39;https://www.google.com&#39;))
+ *       .build();
+ * }
+ * </code></pre>
+ * 
+ * @function CardService.DecoratedText#setOnClickOpenLinkAction
+ * 
+ * @param {CardService.Action} action - The object that specifies the open link action to take when this element is
+ *     clicked.
+ * 
+ * @return {CardService.DecoratedText} This object, for chaining.
+ */
+
+
+/**
+ * Sets a URL to be opened when the object is clicked. Use this function when the URL is already
+ * known and only needs to be opened. A UI object can only have one of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setOpenLink(OpenLink)'>setOpenLink(openLink)</a></code>,
+ * <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setOnClickAction(Action)'>setOnClickAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setOnClickOpenLinkAction(Action)'>setOnClickOpenLinkAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setAuthorizationAction(AuthorizationAction)'>setAuthorizationAction(action)</a></code>,
+ * or <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html#setComposeAction(Action,ComposedEmailType)'>setComposeAction(action, composedEmailType)</a></code> set.
+ * 
+ * @function CardService.DecoratedText#setOpenLink
+ * 
+ * @param {CardService.OpenLink} openLink - An <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/open-link.html'>OpenLink</a></code> object describing the URL to open.
+ * 
+ * @return {CardService.DecoratedText} This object, for chaining.
+ */
+
+
+/**
+ * Sets the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/switch.html'>Switch</a></code> that is displayed to the right of the content. A <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/decorated-text.html'>DecoratedText</a></code>
+ * can only support one button or one switch.
+ * 
+ * @function CardService.DecoratedText#setSwitchControl
+ * 
+ * @param {CardService.Switch} switchToSet - The switch to add.
+ * 
+ * @return {CardService.DecoratedText} This object, for chaining.
+ */
+
+
+/**
+ * Sets the text to be used as the value. Supports <a
+ * href="/gmail/add-ons/concepts/widgets#text_formatting">basic HTML formatting</a>. Required.
+ * 
+ * @function CardService.DecoratedText#setText
+ * 
+ * @param {String} text - The text content for this widget.
+ * 
+ * @return {CardService.DecoratedText} This object, for chaining.
+ */
+
+
+/**
+ * Sets the label text to be used as the key and is displayed above the text content.
+ * 
+ * @function CardService.DecoratedText#setTopLabel
+ * 
+ * @param {String} text - The label text.
+ * 
+ * @return {CardService.DecoratedText} This object, for chaining.
+ */
+
+
+/**
+ * Sets whether the value text should be displayed on a single line or multiple lines.
+ * 
+ * @function CardService.DecoratedText#setWrapText
+ * 
+ * @param {Boolean} wrapText - If <code>true</code>, the text is wrapped and displayed on multiple lines. Otherwise
+ *     the text is truncated.
+ * 
+ * @return {CardService.DecoratedText} This object, for chaining.
+ */
+
+
+
+/**
+ * @class CardService.DisplayStyle
+ */
+
+/**
+ * Show the card header at the bottom of add-on content over existing content.
+ * 
+ * @typedef {CardService.DisplayStyle} CardService.DisplayStyle.PEEK
+ */
+/**
+ * Show the card by replacing existing content.
+ * 
+ * @typedef {CardService.DisplayStyle} CardService.DisplayStyle.REPLACE
+ */
+
+/**
+ * @class CardService.DriveItemsSelectedActionResponse
+ */
+
+/**
+ * @function CardService.DriveItemsSelectedActionResponse#printJson
+ * 
+ * @return {String}
+ */
+
+
+
+/**
+ * @class CardService.DriveItemsSelectedActionResponseBuilder
+ */
+
+/**
+ * Builds the current Drive action response.
+ * 
+ * @function CardService.DriveItemsSelectedActionResponseBuilder#build
+ * 
+ * @return {CardService.DriveItemsSelectedActionResponse} A validated <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/drive-items-selected-action-response.html'>DriveItemsSelectedActionResponse</a></code>.
+ */
+
+
+/**
+ * Specifies that the response requests file scope for the contextually-relevant item in Drive.
+ * 
+ * @function CardService.DriveItemsSelectedActionResponseBuilder#requestFileScope
+ * 
+ * @param {String} itemId - ID of the Drive item to request file scope for.
+ * 
+ * @return {CardService.DriveItemsSelectedActionResponseBuilder} This object, for chaining.
+ */
+
+
+
+/**
+ * @class CardService.FixedFooter
+ */
+
+/**
+ * Set the primary button in the fixed footer. The primary button must be a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/text-button-style.html#FILLED'>TextButtonStyle.FILLED</a></code> button. If the background color is unset for the primary button, the
+ * button uses the primary color defined in the add-on <a
+ * href="/gmail/add-ons/concepts/manifests#manifest_structure_for_gmail_add-ons">manifest</a>.
+ * 
+ * @function CardService.FixedFooter#setPrimaryButton
+ * 
+ * @param {CardService.TextButton} button - The button to add.
+ * 
+ * @return {CardService.FixedFooter} This object, for chaining.
+ */
+
+
+/**
+ * Set the secondary button in the fixed footer. The secondary button must be a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/text-button-style.html#TEXT'>TextButtonStyle.TEXT</a></code> button. This method does nothing if <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/fixed-footer.html#setPrimaryButton(TextButton)'>setPrimaryButton(button)</a></code> isn't called to set the primary button.
+ * 
+ * @function CardService.FixedFooter#setSecondaryButton
+ * 
+ * @param {CardService.TextButton} button - The button to add.
+ * 
+ * @return {CardService.FixedFooter} This object, for chaining.
+ */
+
+
+
+/**
+ * @class CardService.GridItemLayout
+ */
+
+/**
+ * Not set. Default.
+ * 
+ * @typedef {CardService.GridItemLayout} CardService.GridItemLayout.NOT_SET
+ */
+/**
+ * The title and subtitle are shown above the grid item's image.
+ * 
+ * @typedef {CardService.GridItemLayout} CardService.GridItemLayout.TEXT_ABOVE
+ */
+/**
+ * The title and subtitle are shown below the grid item's image.
+ * 
+ * @typedef {CardService.GridItemLayout} CardService.GridItemLayout.TEXT_BELOW
+ */
+
+/**
+ * @class CardService.HorizontalAlignment
+ */
+
+/**
+ * Align the widget to the center.
+ * 
+ * @typedef {CardService.HorizontalAlignment} CardService.HorizontalAlignment.CENTER
+ */
+/**
+ * Align the widget to the end of the sentence side.
+ * 
+ * @typedef {CardService.HorizontalAlignment} CardService.HorizontalAlignment.END
+ */
+/**
+ * Not set. Default.
+ * 
+ * @typedef {CardService.HorizontalAlignment} CardService.HorizontalAlignment.HORIZONTAL_ALIGNMENT_UNSPECIFIED
+ */
+/**
+ * Align the widget to the start of the sentence side.
+ * 
+ * @typedef {CardService.HorizontalAlignment} CardService.HorizontalAlignment.START
  */
 
 /**
@@ -1268,9 +2050,9 @@
  * 
  * @function CardService.Image#setAltText
  * 
- * @param {String} altText - the alternative text to assign to this image.
+ * @param {String} altText - The alternative text to assign to this image.
  * 
- * @return {CardService.Image} this object, for chaining.
+ * @return {CardService.Image} This object, for chaining.
  */
 
 
@@ -1332,23 +2114,36 @@
  * 
  * @function CardService.Image#setComposeAction
  * 
- * @param {CardService.Action} action - the object that specifies the compose action to take when this element is
+ * @param {CardService.Action} action - The object that specifies the compose action to take when this element is
  *     clicked.
- * @param {CardService.ComposedEmailType} composedEmailType - an enum value that specifies whether the composed draft is a
+ * @param {CardService.ComposedEmailType} composedEmailType - An enum value that specifies whether the composed draft is a
  *     standalone or reply draft.
  * 
- * @return {CardService.Image} this object, for chaining.
+ * @return {CardService.Image} This object, for chaining.
  */
 
 
 /**
- * Sets the URL of the image, which must be publicly accessible. Required.
+ * Sets the image to use by providing its URL or data string. Required.
+ * 
+ * <p>The provided URL can either be a publicly accessible URL or a base64 encoded image string.
+ * To obtain the latter, you can use the following code to create an encoded image string from an
+ * image in your Google Drive, then store that string for later use with <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/image.html#setImageUrl(String)'>setImageUrl(url)</a></code>. This method prevents the need for your add-on to access a publicly
+ * available image URL:
+ * 
+ * <pre class="prettyprint"><code>
+ * // The following assumes you have the image to use in Google Drive and have its ID.
+ * var imageBytes = DriveApp.getFileById(imageID).getBlob().getBytes();
+ * var encodedImageURL = &quot;data:image/jpeg;base64,&quot; + Utilities.base64Encode(imageBytes);
+ * 
+ * // You can store encodeImageURL and use it as a parameter to Image.setImageUrl(url).
+ * </code></pre>
  * 
  * @function CardService.Image#setImageUrl
  * 
- * @param {String} url - the URL address of a hosted image to use.
+ * @param {String} url - The URL address of a hosted image to use, or an encoded image string.
  * 
- * @return {CardService.Image} this object, for chaining.
+ * @return {CardService.Image} This object, for chaining.
  */
 
 
@@ -1369,7 +2164,6 @@
  * function notificationCallback() {
  *   return CardService.newActionResponseBuilder()
  *       .setNotification(CardService.newNotification()
- *           .setType(CardService.NotificationType.INFO)
  *           .setText(&quot;Some info to display to user&quot;))
  *       .build();
  * }
@@ -1385,7 +2179,7 @@
 
 /**
  * Sets an action that opens a URL in a tab when the object is clicked. Use this function when the
- * URL needs to be built or when you need to take other actions in addiiton to creating the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/open-link.html'>OpenLink</a></code> object. A UI object can only have one of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/image.html#setOpenLink(OpenLink)'>setOpenLink(openLink)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/image.html#setOnClickAction(Action)'>setOnClickAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/image.html#setOnClickOpenLinkAction(Action)'>setOnClickOpenLinkAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/image.html#setAuthorizationAction(AuthorizationAction)'>setAuthorizationAction(action)</a></code>, or
+ * URL needs to be built or when you need to take other actions in additon to creating the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/open-link.html'>OpenLink</a></code> object. A UI object can only have one of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/image.html#setOpenLink(OpenLink)'>setOpenLink(openLink)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/image.html#setOnClickAction(Action)'>setOnClickAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/image.html#setOnClickOpenLinkAction(Action)'>setOnClickOpenLinkAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/image.html#setAuthorizationAction(AuthorizationAction)'>setAuthorizationAction(action)</a></code>, or
  * <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/image.html#setComposeAction(Action,ComposedEmailType)'>setComposeAction(action, composedEmailType)</a></code> set.
  * 
  * <p>The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action.html'>Action</a></code> parameter must specify a callback function that returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action-response.html'>ActionResponse</a></code> object configured using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action-response-builder.html#setOpenLink(OpenLink)'>ActionResponseBuilder.setOpenLink(openLink)</a></code>.
@@ -1439,9 +2233,9 @@
  * 
  * @function CardService.ImageButton#setAltText
  * 
- * @param {String} altText - the alternative text to assign to this button.
+ * @param {String} altText - The alternative text to assign to this button.
  * 
- * @return {CardService.ImageButton} this object, for chaining.
+ * @return {CardService.ImageButton} This object, for chaining.
  */
 
 
@@ -1503,12 +2297,12 @@
  * 
  * @function CardService.ImageButton#setComposeAction
  * 
- * @param {CardService.Action} action - the object that specifies the compose action to take when this element is
+ * @param {CardService.Action} action - The object that specifies the compose action to take when this element is
  *     clicked.
- * @param {CardService.ComposedEmailType} composedEmailType - an enum value that specifies whether the composed draft is a
+ * @param {CardService.ComposedEmailType} composedEmailType - An enum value that specifies whether the composed draft is a
  *     standalone or reply draft.
  * 
- * @return {CardService.ImageButton} this object, for chaining.
+ * @return {CardService.ImageButton} This object, for chaining.
  */
 
 
@@ -1518,9 +2312,9 @@
  * 
  * @function CardService.ImageButton#setIcon
  * 
- * @param {CardService.Icon} icon - one of the predefined <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/icon.html'>Icon</a></code> values.
+ * @param {CardService.Icon} icon - One of the predefined <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/icon.html'>Icon</a></code> values.
  * 
- * @return {CardService.ImageButton} this object, for chaining.
+ * @return {CardService.ImageButton} This object, for chaining.
  */
 
 
@@ -1530,9 +2324,9 @@
  * 
  * @function CardService.ImageButton#setIconUrl
  * 
- * @param {String} url - the URL address of a hosted image to use as this button's icon.
+ * @param {String} url - The URL address of a hosted image to use as this button's icon.
  * 
- * @return {CardService.ImageButton} this object, for chaining.
+ * @return {CardService.ImageButton} This object, for chaining.
  */
 
 
@@ -1553,7 +2347,6 @@
  * function notificationCallback() {
  *   return CardService.newActionResponseBuilder()
  *       .setNotification(CardService.newNotification()
- *           .setType(CardService.NotificationType.INFO)
  *           .setText(&quot;Some info to display to user&quot;))
  *       .build();
  * }
@@ -1569,7 +2362,7 @@
 
 /**
  * Sets an action that opens a URL in a tab when the object is clicked. Use this function when the
- * URL needs to be built or when you need to take other actions in addiiton to creating the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/open-link.html'>OpenLink</a></code> object. A UI object can only have one of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/image-button.html#setOpenLink(OpenLink)'>setOpenLink(openLink)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/image-button.html#setOnClickAction(Action)'>setOnClickAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/image-button.html#setOnClickOpenLinkAction(Action)'>setOnClickOpenLinkAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/image-button.html#setAuthorizationAction(AuthorizationAction)'>setAuthorizationAction(action)</a></code>, or
+ * URL needs to be built or when you need to take other actions in additon to creating the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/open-link.html'>OpenLink</a></code> object. A UI object can only have one of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/image-button.html#setOpenLink(OpenLink)'>setOpenLink(openLink)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/image-button.html#setOnClickAction(Action)'>setOnClickAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/image-button.html#setOnClickOpenLinkAction(Action)'>setOnClickOpenLinkAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/image-button.html#setAuthorizationAction(AuthorizationAction)'>setAuthorizationAction(action)</a></code>, or
  * <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/image-button.html#setComposeAction(Action,ComposedEmailType)'>setComposeAction(action, composedEmailType)</a></code> set.
  * 
  * <p>The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action.html'>Action</a></code> parameter must specify a callback function that returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action-response.html'>ActionResponse</a></code> object configured using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action-response-builder.html#setOpenLink(OpenLink)'>ActionResponseBuilder.setOpenLink(openLink)</a></code>.
@@ -1615,6 +2408,36 @@
 
 
 /**
+ * @class CardService.ImageCropType
+ */
+
+/**
+ * Circle shape crop style.
+ * 
+ * @typedef {CardService.ImageCropType} CardService.ImageCropType.CIRCLE
+ */
+/**
+ * Not set.
+ * 
+ * @typedef {CardService.ImageCropType} CardService.ImageCropType.CROP_TYPE_NOT_SET
+ */
+/**
+ * Rectangle shape crop style with 4:3 ratio.
+ * 
+ * @typedef {CardService.ImageCropType} CardService.ImageCropType.RECTANGLE_4_3
+ */
+/**
+ * Rectangle shape crop style with custom ratio.
+ * 
+ * @typedef {CardService.ImageCropType} CardService.ImageCropType.RECTANGLE_CUSTOM
+ */
+/**
+ * Square shape crop style.
+ * 
+ * @typedef {CardService.ImageCropType} CardService.ImageCropType.SQUARE
+ */
+
+/**
  * @class CardService.ImageStyle
  */
 
@@ -1658,26 +2481,26 @@
 
 
 /**
- * Sets the label text to be used as the key. Displayed below the text-content and supports <a
- * href="/gmail/add-ons/concepts/widgets#text_formatting">basic HTML formatting</a>
+ * Sets the label text to be used as the key. Displayed below the text-content.
  * 
  * @function CardService.KeyValue#setBottomLabel
  * 
- * @param {String} text - the label text.
+ * @param {String} text - The label text. Note: It doesn't support <a
+ *     href="/gmail/add-ons/concepts/widgets#text_formatting">basic HTML formatting</a>.
  * 
- * @return {CardService.KeyValue} this object, for chaining.
+ * @return {CardService.KeyValue} This object, for chaining.
  */
 
 
 /**
  * Sets the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/button.html'>Button</a></code> that is displayed to the right of the context. A <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/key-value.html'>KeyValue</a></code> can
- * only support one button or one switch.
+ * only support one button, one switch or one icon.
  * 
  * @function CardService.KeyValue#setButton
  * 
- * @param {CardService.Button} button - the button to add.
+ * @param {CardService.Button} button - The button to add.
  * 
- * @return {CardService.KeyValue} this object, for chaining.
+ * @return {CardService.KeyValue} This object, for chaining.
  */
 
 
@@ -1715,12 +2538,12 @@
  * 
  * @function CardService.KeyValue#setComposeAction
  * 
- * @param {CardService.Action} action - the object that specifies the compose action to take when this element is
+ * @param {CardService.Action} action - The object that specifies the compose action to take when this element is
  *     clicked.
- * @param {CardService.ComposedEmailType} composedEmailType - an enum value that specifies whether the composed draft is a
+ * @param {CardService.ComposedEmailType} composedEmailType - An enum value that specifies whether the composed draft is a
  *     standalone or reply draft.
  * 
- * @return {CardService.KeyValue} this object, for chaining.
+ * @return {CardService.KeyValue} This object, for chaining.
  */
 
 
@@ -1730,9 +2553,9 @@
  * 
  * @function CardService.KeyValue#setContent
  * 
- * @param {String} text - the text content for this widget.
+ * @param {String} text - The text content for this widget.
  * 
- * @return {CardService.KeyValue} this object, for chaining.
+ * @return {CardService.KeyValue} This object, for chaining.
  */
 
 
@@ -1741,9 +2564,9 @@
  * 
  * @function CardService.KeyValue#setIcon
  * 
- * @param {CardService.Icon} icon - one of the predefined <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/icon.html'>Icon</a></code> values.
+ * @param {CardService.Icon} icon - One of the predefined <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/icon.html'>Icon</a></code> values.
  * 
- * @return {CardService.KeyValue} this object, for chaining.
+ * @return {CardService.KeyValue} This object, for chaining.
  */
 
 
@@ -1752,9 +2575,9 @@
  * 
  * @function CardService.KeyValue#setIconAltText
  * 
- * @param {String} altText - the alternative text for the icon.
+ * @param {String} altText - The alternative text for the icon.
  * 
- * @return {CardService.KeyValue} this object, for chaining.
+ * @return {CardService.KeyValue} This object, for chaining.
  */
 
 
@@ -1763,9 +2586,9 @@
  * 
  * @function CardService.KeyValue#setIconUrl
  * 
- * @param {String} url - the URL address of a hosted image to use as an icon.
+ * @param {String} url - The URL address of a hosted image to use as an icon.
  * 
- * @return {CardService.KeyValue} this object, for chaining.
+ * @return {CardService.KeyValue} This object, for chaining.
  */
 
 
@@ -1774,9 +2597,9 @@
  * 
  * @function CardService.KeyValue#setMultiline
  * 
- * @param {Boolean} multiline - the multiline setting.
+ * @param {Boolean} multiline - The multiline setting.
  * 
- * @return {CardService.KeyValue} this object, for chaining.
+ * @return {CardService.KeyValue} This object, for chaining.
  */
 
 
@@ -1797,7 +2620,6 @@
  * function notificationCallback() {
  *   return CardService.newActionResponseBuilder()
  *       .setNotification(CardService.newNotification()
- *           .setType(CardService.NotificationType.INFO)
  *           .setText(&quot;Some info to display to user&quot;))
  *       .build();
  * }
@@ -1813,7 +2635,7 @@
 
 /**
  * Sets an action that opens a URL in a tab when the object is clicked. Use this function when the
- * URL needs to be built or when you need to take other actions in addiiton to creating the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/open-link.html'>OpenLink</a></code> object. A UI object can only have one of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/key-value.html#setOpenLink(OpenLink)'>setOpenLink(openLink)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/key-value.html#setOnClickAction(Action)'>setOnClickAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/key-value.html#setOnClickOpenLinkAction(Action)'>setOnClickOpenLinkAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/key-value.html#setAuthorizationAction(AuthorizationAction)'>setAuthorizationAction(action)</a></code>, or
+ * URL needs to be built or when you need to take other actions in additon to creating the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/open-link.html'>OpenLink</a></code> object. A UI object can only have one of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/key-value.html#setOpenLink(OpenLink)'>setOpenLink(openLink)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/key-value.html#setOnClickAction(Action)'>setOnClickAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/key-value.html#setOnClickOpenLinkAction(Action)'>setOnClickOpenLinkAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/key-value.html#setAuthorizationAction(AuthorizationAction)'>setAuthorizationAction(action)</a></code>, or
  * <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/key-value.html#setComposeAction(Action,ComposedEmailType)'>setComposeAction(action, composedEmailType)</a></code> set.
  * 
  * <p>The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action.html'>Action</a></code> parameter must specify a callback function that returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action-response.html'>ActionResponse</a></code> object configured using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action-response-builder.html#setOpenLink(OpenLink)'>ActionResponseBuilder.setOpenLink(openLink)</a></code>.
@@ -1859,25 +2681,25 @@
 
 /**
  * Sets the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/switch.html'>Switch</a></code> that is displayed to the right of the content. A <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/key-value.html'>KeyValue</a></code> can
- * only support one button or one switch.
+ * only support one button, one switch or one icon.
  * 
  * @function CardService.KeyValue#setSwitch
  * 
- * @param {CardService.Switch} switchToSet - the switch to add.
+ * @param {CardService.Switch} switchToSet - The switch to add.
  * 
- * @return {CardService.KeyValue} this object, for chaining.
+ * @return {CardService.KeyValue} This object, for chaining.
  */
 
 
 /**
- * Sets the label text to be used as the key. Displayed above the text-content and supports <a
- * href="/gmail/add-ons/concepts/widgets#text_formatting">basic HTML formatting</a>.
+ * Sets the label text to be used as the key. Displayed above the text-content.
  * 
  * @function CardService.KeyValue#setTopLabel
  * 
- * @param {String} text - the label text.
+ * @param {String} text - The label text. Note: It doesn't support <a
+ *     href="/gmail/add-ons/concepts/widgets#text_formatting">basic HTML formatting</a>.
  * 
- * @return {CardService.KeyValue} this object, for chaining.
+ * @return {CardService.KeyValue} This object, for chaining.
  */
 
 
@@ -1906,7 +2728,7 @@
  * 
  * @function CardService.Navigation#popCard
  * 
- * @return {CardService.Navigation} this object, for chaining.
+ * @return {CardService.Navigation} This object, for chaining.
  */
 
 
@@ -1915,9 +2737,9 @@
  * 
  * @function CardService.Navigation#popToNamedCard
  * 
- * @param {String} cardName - the name of the card to navigate to.
+ * @param {String} cardName - The name of the card to navigate to.
  * 
- * @return {CardService.Navigation} this object, for chaining.
+ * @return {CardService.Navigation} This object, for chaining.
  */
 
 
@@ -1926,7 +2748,7 @@
  * 
  * @function CardService.Navigation#popToRoot
  * 
- * @return {CardService.Navigation} this object, for chaining.
+ * @return {CardService.Navigation} This object, for chaining.
  */
 
 
@@ -1942,9 +2764,9 @@
  * 
  * @function CardService.Navigation#pushCard
  * 
- * @param {CardService.Card} card - a card to add to the stack.
+ * @param {CardService.Card} card - A card to add to the stack.
  * 
- * @return {CardService.Navigation} this object, for chaining.
+ * @return {CardService.Navigation} This object, for chaining.
  */
 
 
@@ -1954,9 +2776,9 @@
  * 
  * @function CardService.Navigation#updateCard
  * 
- * @param {CardService.Card} card - a card to replace the current card with.
+ * @param {CardService.Card} card - A card to replace the current card with.
  * 
- * @return {CardService.Navigation} this object, for chaining.
+ * @return {CardService.Navigation} This object, for chaining.
  */
 
 
@@ -1970,43 +2792,12 @@
  * 
  * @function CardService.Notification#setText
  * 
- * @param {String} text - the notification text.
+ * @param {String} text - The notification text.
  * 
- * @return {CardService.Notification} this object, for chaining.
+ * @return {CardService.Notification} This object, for chaining.
  */
 
 
-/**
- * Sets the notification type to show. Required.
- * 
- * @function CardService.Notification#setType
- * 
- * @param {CardService.NotificationType} type - the notification type.
- * 
- * @return {CardService.Notification} this object, for chaining.
- */
-
-
-
-/**
- * @class CardService.NotificationType
- */
-
-/**
- * An error-level notification.
- * 
- * @typedef {CardService.NotificationType} CardService.NotificationType.ERROR
- */
-/**
- * An info-level notification. Default.
- * 
- * @typedef {CardService.NotificationType} CardService.NotificationType.INFO
- */
-/**
- * A warning-level notification.
- * 
- * @typedef {CardService.NotificationType} CardService.NotificationType.WARNING
- */
 
 /**
  * @class CardService.OnClose
@@ -2047,9 +2838,9 @@
  * 
  * @function CardService.OpenLink#setOnClose
  * 
- * @param {CardService.OnClose} onClose - the closing setting.
+ * @param {CardService.OnClose} onClose - The closing setting.
  * 
- * @return {CardService.OpenLink} this object, for chaining.
+ * @return {CardService.OpenLink} This object, for chaining.
  */
 
 
@@ -2058,9 +2849,9 @@
  * 
  * @function CardService.OpenLink#setOpenAs
  * 
- * @param {CardService.OpenAs} openAs - the opening setting.
+ * @param {CardService.OpenAs} openAs - The opening setting.
  * 
- * @return {CardService.OpenLink} this object, for chaining.
+ * @return {CardService.OpenLink} This object, for chaining.
  */
 
 
@@ -2071,9 +2862,9 @@
  * 
  * @function CardService.OpenLink#setUrl
  * 
- * @param {String} url - the URL to open.
+ * @param {String} url - The URL to open.
  * 
- * @return {CardService.OpenLink} this object, for chaining.
+ * @return {CardService.OpenLink} This object, for chaining.
  */
 
 
@@ -2087,13 +2878,13 @@
  * 
  * @function CardService.SelectionInput#addItem
  * 
- * @param {Object} text - the text to be shown for this item. Non-string primitive arguments are converted to
+ * @param {Object} text - The text to be shown for this item. Non-string primitive arguments are converted to
  *     strings automatically.
- * @param {Object} value - the form input value that is sent via the callback. Non-string primitive arguments
+ * @param {Object} value - The form input value that is sent via the callback. Non-string primitive arguments
  *     are converted to strings automatically.
- * @param {Boolean} selected - whether the item should be start as selected or un-selected.
+ * @param {Boolean} selected - Whether the item should start as selected or unselected.
  * 
- * @return {CardService.SelectionInput} this object, for chaining.
+ * @return {CardService.SelectionInput} This object, for chaining.
  */
 
 
@@ -2103,9 +2894,9 @@
  * 
  * @function CardService.SelectionInput#setFieldName
  * 
- * @param {String} fieldName - the name to assign to this input.
+ * @param {String} fieldName - The name to assign to this input.
  * 
- * @return {CardService.SelectionInput} this object, for chaining.
+ * @return {CardService.SelectionInput} This object, for chaining.
  */
 
 
@@ -2114,9 +2905,9 @@
  * 
  * @function CardService.SelectionInput#setOnChangeAction
  * 
- * @param {CardService.Action} action - the action to take.
+ * @param {CardService.Action} action - The action to take.
  * 
- * @return {CardService.SelectionInput} this object, for chaining.
+ * @return {CardService.SelectionInput} This object, for chaining.
  */
 
 
@@ -2125,9 +2916,9 @@
  * 
  * @function CardService.SelectionInput#setTitle
  * 
- * @param {String} title - the input field title.
+ * @param {String} title - The input field title.
  * 
- * @return {CardService.SelectionInput} this object, for chaining.
+ * @return {CardService.SelectionInput} This object, for chaining.
  */
 
 
@@ -2136,9 +2927,9 @@
  * 
  * @function CardService.SelectionInput#setType
  * 
- * @param {CardService.SelectionInputType} type - the selection type.
+ * @param {CardService.SelectionInputType} type - The selection type.
  * 
- * @return {CardService.SelectionInput} this object, for chaining.
+ * @return {CardService.SelectionInput} This object, for chaining.
  */
 
 
@@ -2172,9 +2963,9 @@
  * 
  * @function CardService.Suggestions#addSuggestion
  * 
- * @param {String} suggestion - the suggestion text.
+ * @param {String} suggestion - The suggestion text.
  * 
- * @return {CardService.Suggestions} this object, for chaining.
+ * @return {CardService.Suggestions} This object, for chaining.
  */
 
 
@@ -2183,9 +2974,9 @@
  * 
  * @function CardService.Suggestions#addSuggestions
  * 
- * @param {Object[]} suggestions - an array of string suggestions.
+ * @param {Object[]} suggestions - An array of string suggestions.
  * 
- * @return {CardService.Suggestions} this object, for chaining.
+ * @return {CardService.Suggestions} This object, for chaining.
  */
 
 
@@ -2211,7 +3002,7 @@
  * 
  * @function CardService.SuggestionsResponseBuilder#build
  * 
- * @return {CardService.SuggestionsResponse} a validated SuggestionsResponse.
+ * @return {CardService.SuggestionsResponse} A validated SuggestionsResponse.
  */
 
 
@@ -2220,9 +3011,9 @@
  * 
  * @function CardService.SuggestionsResponseBuilder#setSuggestions
  * 
- * @param {CardService.Suggestions} suggestions - the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/suggestions.html'>Suggestions</a></code> to use.
+ * @param {CardService.Suggestions} suggestions - The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/suggestions.html'>Suggestions</a></code> to use.
  * 
- * @return {CardService.SuggestionsResponseBuilder} this object.
+ * @return {CardService.SuggestionsResponseBuilder} This object.
  */
 
 
@@ -2230,6 +3021,17 @@
 /**
  * @class CardService.Switch
  */
+
+/**
+ * Sets the control type of the switch. Defaults to <code>SWITCH</code>.
+ * 
+ * @function CardService.Switch#setControlType
+ * 
+ * @param {CardService.SwitchControlType} controlType - The switch control type.
+ * 
+ * @return {CardService.Switch} This object, for chaining.
+ */
+
 
 /**
  * Sets the key that identifies this switch in the event object that is generated when there is a
@@ -2241,9 +3043,9 @@
  * 
  * @function CardService.Switch#setFieldName
  * 
- * @param {String} fieldName - the key that is used to identify this switch.
+ * @param {String} fieldName - The key that is used to identify this switch.
  * 
- * @return {CardService.Switch} this object, for chaining.
+ * @return {CardService.Switch} This object, for chaining.
  */
 
 
@@ -2252,9 +3054,9 @@
  * 
  * @function CardService.Switch#setOnChangeAction
  * 
- * @param {CardService.Action} action - the action to take when the switch is toggled.
+ * @param {CardService.Action} action - The action to take when the switch is toggled.
  * 
- * @return {CardService.Switch} this object, for chaining.
+ * @return {CardService.Switch} This object, for chaining.
  */
 
 
@@ -2263,9 +3065,9 @@
  * 
  * @function CardService.Switch#setSelected
  * 
- * @param {Boolean} selected - the starting switch state setting.
+ * @param {Boolean} selected - The starting switch state setting.
  * 
- * @return {CardService.Switch} this object, for chaining.
+ * @return {CardService.Switch} This object, for chaining.
  */
 
 
@@ -2274,13 +3076,28 @@
  * 
  * @function CardService.Switch#setValue
  * 
- * @param {String} value - the value associated with the name when the switch is on. When this is sent to the
+ * @param {String} value - The value associated with the name when the switch is on. When this is sent to the
  *     form callback, it is always represented as a string.
  * 
- * @return {CardService.Switch} this object, for chaining.
+ * @return {CardService.Switch} This object, for chaining.
  */
 
 
+
+/**
+ * @class CardService.SwitchControlType
+ */
+
+/**
+ * Checkbox-styled control for a switch widget.
+ * 
+ * @typedef {CardService.SwitchControlType} CardService.SwitchControlType.CHECK_BOX
+ */
+/**
+ * Toggle-styled control for a switch widget. Default.
+ * 
+ * @typedef {CardService.SwitchControlType} CardService.SwitchControlType.SWITCH
+ */
 
 /**
  * @class CardService.TextButton
@@ -2357,12 +3174,12 @@
  * 
  * @function CardService.TextButton#setComposeAction
  * 
- * @param {CardService.Action} action - the object that specifies the compose action to take when this element is
+ * @param {CardService.Action} action - The object that specifies the compose action to take when this element is
  *     clicked.
- * @param {CardService.ComposedEmailType} composedEmailType - an enum value that specifies whether the composed draft is a
+ * @param {CardService.ComposedEmailType} composedEmailType - An enum value that specifies whether the composed draft is a
  *     standalone or reply draft.
  * 
- * @return {CardService.TextButton} this object, for chaining.
+ * @return {CardService.TextButton} This object, for chaining.
  */
 
 
@@ -2394,7 +3211,6 @@
  * function notificationCallback() {
  *   return CardService.newActionResponseBuilder()
  *       .setNotification(CardService.newNotification()
- *           .setType(CardService.NotificationType.INFO)
  *           .setText(&quot;Some info to display to user&quot;))
  *       .build();
  * }
@@ -2410,7 +3226,7 @@
 
 /**
  * Sets an action that opens a URL in a tab when the object is clicked. Use this function when the
- * URL needs to be built or when you need to take other actions in addiiton to creating the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/open-link.html'>OpenLink</a></code> object. A UI object can only have one of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/text-button.html#setOpenLink(OpenLink)'>setOpenLink(openLink)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/text-button.html#setOnClickAction(Action)'>setOnClickAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/text-button.html#setOnClickOpenLinkAction(Action)'>setOnClickOpenLinkAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/text-button.html#setAuthorizationAction(AuthorizationAction)'>setAuthorizationAction(action)</a></code>, or
+ * URL needs to be built or when you need to take other actions in additon to creating the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/open-link.html'>OpenLink</a></code> object. A UI object can only have one of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/text-button.html#setOpenLink(OpenLink)'>setOpenLink(openLink)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/text-button.html#setOnClickAction(Action)'>setOnClickAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/text-button.html#setOnClickOpenLinkAction(Action)'>setOnClickOpenLinkAction(action)</a></code>, <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/text-button.html#setAuthorizationAction(AuthorizationAction)'>setAuthorizationAction(action)</a></code>, or
  * <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/text-button.html#setComposeAction(Action,ComposedEmailType)'>setComposeAction(action, composedEmailType)</a></code> set.
  * 
  * <p>The <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action.html'>Action</a></code> parameter must specify a callback function that returns a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action-response.html'>ActionResponse</a></code> object configured using <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action-response-builder.html#setOpenLink(OpenLink)'>ActionResponseBuilder.setOpenLink(openLink)</a></code>.
@@ -2502,9 +3318,9 @@
  * 
  * @function CardService.TextInput#setFieldName
  * 
- * @param {String} fieldName - the key that is used to identify this input.
+ * @param {String} fieldName - The key that is used to identify this input.
  * 
- * @return {CardService.TextInput} this object, for chaining.
+ * @return {CardService.TextInput} This object, for chaining.
  */
 
 
@@ -2514,9 +3330,9 @@
  * 
  * @function CardService.TextInput#setHint
  * 
- * @param {String} hint - the text hint to display when the input is empty
+ * @param {String} hint - The text hint to display when the input is empty.
  * 
- * @return {CardService.TextInput} this object, for chaining.
+ * @return {CardService.TextInput} This object, for chaining.
  */
 
 
@@ -2525,9 +3341,9 @@
  * 
  * @function CardService.TextInput#setMultiline
  * 
- * @param {Boolean} multiline - the multiline setting.
+ * @param {Boolean} multiline - The multiline setting.
  * 
- * @return {CardService.TextInput} this object, for chaining.
+ * @return {CardService.TextInput} This object, for chaining.
  */
 
 
@@ -2536,9 +3352,9 @@
  * 
  * @function CardService.TextInput#setOnChangeAction
  * 
- * @param {CardService.Action} action - the action to take.
+ * @param {CardService.Action} action - The action to take.
  * 
- * @return {CardService.TextInput} this object, for chaining.
+ * @return {CardService.TextInput} This object, for chaining.
  */
 
 
@@ -2547,9 +3363,9 @@
  * 
  * @function CardService.TextInput#setSuggestions
  * 
- * @param {CardService.Suggestions} suggestions - the collection of suggestions to use.
+ * @param {CardService.Suggestions} suggestions - The collection of suggestions to use.
  * 
- * @return {CardService.TextInput} this object, for chaining.
+ * @return {CardService.TextInput} This object, for chaining.
  */
 
 
@@ -2583,9 +3399,9 @@
  * 
  * @function CardService.TextInput#setSuggestionsAction
  * 
- * @param {CardService.Action} suggestionsAction - the action that fetches suggestions for this input.
+ * @param {CardService.Action} suggestionsAction - The action that fetches suggestions for this input.
  * 
- * @return {CardService.TextInput} this object, for chaining.
+ * @return {CardService.TextInput} This object, for chaining.
  */
 
 
@@ -2594,9 +3410,9 @@
  * 
  * @function CardService.TextInput#setTitle
  * 
- * @param {String} title - the text label for this input.
+ * @param {String} title - The text label for this input.
  * 
- * @return {CardService.TextInput} this object, for chaining.
+ * @return {CardService.TextInput} This object, for chaining.
  */
 
 
@@ -2605,10 +3421,10 @@
  * 
  * @function CardService.TextInput#setValue
  * 
- * @param {String} value - the default value placed in the input. It will always represented as a string in
- *     the form callback parameters.
+ * @param {String} value - The default value placed in the input. It is always represented as a string in the
+ *     form callback parameters.
  * 
- * @return {CardService.TextInput} this object, for chaining.
+ * @return {CardService.TextInput} This object, for chaining.
  */
 
 
@@ -2622,9 +3438,73 @@
  * 
  * @function CardService.TextParagraph#setText
  * 
- * @param {String} text - the text to display.
+ * @param {String} text - The text to display.
  * 
- * @return {CardService.TextParagraph} this object, for chaining.
+ * @return {CardService.TextParagraph} This object, for chaining.
+ */
+
+
+
+/**
+ * @class CardService.TimePicker
+ */
+
+/**
+ * Sets the field name that identifies this picker in the event object that is generated when
+ * there is a UI interaction. The field name is visible to the user. Required; the specified field
+ * name must be unique.
+ * 
+ * @function CardService.TimePicker#setFieldName
+ * 
+ * @param {String} fieldName - The name to assign to this input.
+ * 
+ * @return {CardService.TimePicker} This picker, for chaining.
+ */
+
+
+/**
+ * Sets the prefilled hours value to set in the input field.
+ * 
+ * @function CardService.TimePicker#setHours
+ * 
+ * @param {IntegerNum} hours - The default hour value placed in the input, range from 0 to 23. It is always
+ *     represented as a string in the form callback parameters.
+ * 
+ * @return {CardService.TimePicker} This picker, for chaining.
+ */
+
+
+/**
+ * Sets the prefilled minutes value to set in the input field.
+ * 
+ * @function CardService.TimePicker#setMinutes
+ * 
+ * @param {IntegerNum} minutes - The default minutes value placed in the input, range from 0 to 59. It is always
+ *     represented as a string in the form callback parameters.
+ * 
+ * @return {CardService.TimePicker} This picker, for chaining.
+ */
+
+
+/**
+ * Sets an <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/action.html'>Action</a></code> that the script performs whenever the picker input changes.
+ * 
+ * @function CardService.TimePicker#setOnChangeAction
+ * 
+ * @param {CardService.Action} action - The action to take.
+ * 
+ * @return {CardService.TimePicker} This picker, for chaining.
+ */
+
+
+/**
+ * Sets the title displayed above the input field.
+ * 
+ * @function CardService.TimePicker#setTitle
+ * 
+ * @param {String} title - The input field title.
+ * 
+ * @return {CardService.TimePicker} This picker, for chaining.
  */
 
 
@@ -2650,7 +3530,7 @@
  * 
  * @function CardService.UniversalActionResponseBuilder#build
  * 
- * @return {CardService.UniversalActionResponse} a validated UniversalActionResponse.
+ * @return {CardService.UniversalActionResponse} A validated UniversalActionResponse.
  */
 
 
@@ -2659,9 +3539,9 @@
  * 
  * @function CardService.UniversalActionResponseBuilder#displayAddOnCards
  * 
- * @param {Object[]} cardObjects - an array of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/card.html'>Card</a></code>s to display.
+ * @param {Object[]} cardObjects - An array of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/card.html'>Card</a></code>s to display.
  * 
- * @return {CardService.UniversalActionResponseBuilder} this object, for chaining.
+ * @return {CardService.UniversalActionResponseBuilder} This object, for chaining.
  */
 
 
@@ -2670,9 +3550,9 @@
  * 
  * @function CardService.UniversalActionResponseBuilder#setOpenLink
  * 
- * @param {CardService.OpenLink} openLink - the link object to use.
+ * @param {CardService.OpenLink} openLink - The link object to use.
  * 
- * @return {CardService.UniversalActionResponseBuilder} this object, for chaining.
+ * @return {CardService.UniversalActionResponseBuilder} This object, for chaining.
  */
 
 
@@ -2703,6 +3583,17 @@
 
 
 /**
+ * Sets an action that updates the email Bcc recipients of a draft.
+ * 
+ * @function CardService.UpdateDraftActionResponseBuilder#setUpdateDraftBccRecipientsAction
+ * 
+ * @param {CardService.UpdateDraftBccRecipientsAction} updateDraftBccRecipientsAction - The action that updates the draft Bcc recipients.
+ * 
+ * @return {CardService.UpdateDraftActionResponseBuilder} This object, for chaining.
+ */
+
+
+/**
  * Set an action that updates the email body of a draft.
  * 
  * @function CardService.UpdateDraftActionResponseBuilder#setUpdateDraftBodyAction
@@ -2713,14 +3604,63 @@
  */
 
 
+/**
+ * Sets an action that updates the Cc recipients of a draft.
+ * 
+ * @function CardService.UpdateDraftActionResponseBuilder#setUpdateDraftCcRecipientsAction
+ * 
+ * @param {CardService.UpdateDraftCcRecipientsAction} updateDraftCcRecipientsAction - The action that updates the draft Cc recipients.
+ * 
+ * @return {CardService.UpdateDraftActionResponseBuilder} This object, for chaining.
+ */
+
+
+/**
+ * Sets an action that updates the subject line of a draft.
+ * 
+ * @function CardService.UpdateDraftActionResponseBuilder#setUpdateDraftSubjectAction
+ * 
+ * @param {CardService.UpdateDraftSubjectAction} updateDraftSubjectAction - The action that updates the subject line.
+ * 
+ * @return {CardService.UpdateDraftActionResponseBuilder} This object, for chaining.
+ */
+
+
+/**
+ * Sets an action that updates the To recipients of a draft.
+ * 
+ * @function CardService.UpdateDraftActionResponseBuilder#setUpdateDraftToRecipientsAction
+ * 
+ * @param {CardService.UpdateDraftToRecipientsAction} updateDraftToRecipientsAction - The action that updates the To recipients.
+ * 
+ * @return {CardService.UpdateDraftActionResponseBuilder} This object, for chaining.
+ */
+
+
+
+/**
+ * @class CardService.UpdateDraftBccRecipientsAction
+ */
+
+/**
+ * Updates the Bcc recipients of an email draft.
+ * 
+ * @function CardService.UpdateDraftBccRecipientsAction#addUpdateBccRecipients
+ * 
+ * @param {String[]} bccRecipientEmails - The Bcc recipients to insert to the email draft.
+ * 
+ * @return {CardService.UpdateDraftBccRecipientsAction} This object, for chaining.
+ */
+
+
 
 /**
  * @class CardService.UpdateDraftBodyAction
  */
 
 /**
- * Add update content of a <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/update-draft-body-action.html'>UpdateDraftBodyAction</a></code>. The content type of the <code>content</code>
- * is specified by <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/content-type.html'>ContentType</a></code>.
+ * Adds the specified content to the draft body. The type of the <code>content</code> is specified by
+ * <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/content-type.html'>ContentType</a></code>.
  * 
  * @function CardService.UpdateDraftBodyAction#addUpdateContent
  * 
@@ -2732,7 +3672,8 @@
 
 
 /**
- * Set the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/update-draft-body-type.html'>UpdateDraftBodyType</a></code> of this update action on the draft body.
+ * Sets the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/card-service/update-draft-body-type.html'>UpdateDraftBodyType</a></code> of this update action on the draft body. For example,
+ * inserting content at the start, end, or cursor position of the draft body.
  * 
  * @function CardService.UpdateDraftBodyAction#setUpdateType
  * 
@@ -2748,6 +3689,18 @@
  */
 
 /**
+ * Update actions insert content at the end of the message body. If an email signature is present,
+ * in Gmail on the web, the update action inserts after the user's signature. In the Gmail mobile
+ * app, the update action inserts before the user's signature.
+ * 
+ * @typedef {CardService.UpdateDraftBodyType} CardService.UpdateDraftBodyType.INSERT_AT_END
+ */
+/**
+ * Update actions insert content at the start of message body.
+ * 
+ * @typedef {CardService.UpdateDraftBodyType} CardService.UpdateDraftBodyType.INSERT_AT_START
+ */
+/**
  * Default. Update actions insert content at the current cursor position, replacing any selected
  * content.
  * 
@@ -2755,7 +3708,81 @@
  */
 
 /**
+ * @class CardService.UpdateDraftCcRecipientsAction
+ */
+
+/**
+ * Updates the Cc recipients of an email draft.
+ * 
+ * @function CardService.UpdateDraftCcRecipientsAction#addUpdateCcRecipients
+ * 
+ * @param {String[]} ccRecipientEmails - The Cc recipients to insert to the email draft.
+ * 
+ * @return {CardService.UpdateDraftCcRecipientsAction} This object, for chaining.
+ */
+
+
+
+/**
+ * @class CardService.UpdateDraftSubjectAction
+ */
+
+/**
+ * Updates the subject line of an email draft.
+ * 
+ * @function CardService.UpdateDraftSubjectAction#addUpdateSubject
+ * 
+ * @param {String} subject - The subject line to insert to the email draft.
+ * 
+ * @return {CardService.UpdateDraftSubjectAction} This object, for chaining.
+ */
+
+
+
+/**
+ * @class CardService.UpdateDraftToRecipientsAction
+ */
+
+/**
+ * Updates the To recipients of an email draft.
+ * 
+ * @function CardService.UpdateDraftToRecipientsAction#addUpdateToRecipients
+ * 
+ * @param {String[]} toRecipientEmails - The To recipients to insert to the email draft.
+ * 
+ * @return {CardService.UpdateDraftToRecipientsAction} This object, for chaining.
+ */
+
+
+
+/**
  * @class CardService.Widget
  */
+
+
+/**
+ * @class CardService.EditorFileScopeActionResponseBuilder
+ */
+
+/**
+ * Builds the current editor action response.
+ * 
+ * @function CardService.EditorFileScopeActionResponseBuilder#build
+ * 
+ * @return {CardService.EditorFileScopeActionResponse} A validated <code>EditorFileScopeActionResponse</code>.
+ */
+
+
+/**
+ * Specifies that the response requests file scope for the current active editor document.
+ * 
+ * <p>Note: This method can only be called when the drive.file scope is specified as a required
+ * scope in the add-on's manifest.
+ * 
+ * @function CardService.EditorFileScopeActionResponseBuilder#requestFileScopeForActiveDocument
+ * 
+ * @return {CardService.EditorFileScopeActionResponseBuilder} This object, for chaining.
+ */
+
 
 

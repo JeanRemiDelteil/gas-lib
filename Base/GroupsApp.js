@@ -176,6 +176,33 @@
 
 
 /**
+ * Retrieves users' roles in the context of the group. A user who is a direct member of a group
+ * has exactly one role within that group. Throws an exception if any user is not a member of the
+ * group or if you do not have permission to view the group's member list.
+ * 
+ * <p>This example lists the owners of a group:
+ * 
+ * <pre class="prettyprint"><code>
+ * var group = GroupsApp.getGroupByEmail(&quot;example@googlegroups.com&quot;);
+ * var users = group.getUsers();
+ * var roles = group.getRoles(users);
+ * Logger.log(&#39;These are the group owners:&#39;);
+ * for (var i = 0; i &lt; users.length; i++) {
+ *   if (roles[i] == GroupsApp.Role.OWNER) {
+ *     Logger.log(users[i].getEmail());
+ *   }
+ * }
+ * </code></pre>
+ * 
+ * @function GroupsApp.Group#getRoles
+ * 
+ * @param {User[]} users - The users whose roles are requested.
+ * 
+ * @return {GroupsApp.Role[]} The rolese of those users within the group.
+ */
+
+
+/**
  * Retrieves the direct members of the group that have a known corresponding Google account.
  * Throws an exception if you do not have permission to view the group's member list.
  * 

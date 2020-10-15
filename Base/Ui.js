@@ -275,8 +275,8 @@
  * @function Ui#showDialog
  * @deprecated
  * 
- * @param {Object} userInterface - An <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../html/html-output.html'>HtmlOutput</a></code> or
- *     <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../ui/ui-instance.html'>UiInstance</a></s></code> web app.
+ * @param {Object} userInterface - An <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../html/html-output.html'>HtmlOutput</a></code>
+ *     representing the interface to display.
  * 
  * @return void
  */
@@ -308,8 +308,8 @@
  * 
  * @function Ui#showModalDialog
  * 
- * @param {Object} userInterface - An <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../html/html-output.html'>HtmlOutput</a></code> or
- *     <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../ui/ui-instance.html'>UiInstance</a></s></code> web app.
+ * @param {Object} userInterface - An <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../html/html-output.html'>HtmlOutput</a></code>
+ *     representing the interface to display.
  * @param {String} title - The title of the dialog; overrides any title set by calling <code>setTitle()</code> on
  *     the <code>userInterface</code> object.
  * 
@@ -343,8 +343,8 @@
  * 
  * @function Ui#showModelessDialog
  * 
- * @param {Object} userInterface - An <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../html/html-output.html'>HtmlOutput</a></code> or
- *     <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../ui/ui-instance.html'>UiInstance</a></s></code> web app.
+ * @param {Object} userInterface - An <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../html/html-output.html'>HtmlOutput</a></code>
+ *     representing the interface to display.
  * @param {String} title - The title of the dialog; overrides any title set by calling <code>setTitle()</code> on
  *     the <code>userInterface</code> object.
  * 
@@ -377,8 +377,8 @@
  * 
  * @function Ui#showSidebar
  * 
- * @param {Object} userInterface - An <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../html/html-output.html'>HtmlOutput</a></code> or
- *     <code><s><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../ui/ui-instance.html'>UiInstance</a></s></code> web app.
+ * @param {Object} userInterface - An <code><a target='_blank' href='https://developers.google.com/apps-script/reference/base/../html/html-output.html'>HtmlOutput</a></code>
+ *     representing the interface to display.
  * 
  * @return void
  */

@@ -95,6 +95,35 @@
 
 
 /**
+ * Adds constraints in batch to the model.
+ * 
+ * <pre class="prettyprint"><code>
+ * var engine = LinearOptimizationService.createEngine();
+ * 
+ * // Add a boolean variable &#39;x&#39; (integer &gt;= 0 and &lt;= 1) and a real (continuous &gt;= 0 and &lt;= 100)
+ * variable &#39;y&#39;.
+ * engine.addVariables([&#39;x&#39;, &#39;y&#39;], [0, 0], [1, 100],
+ *     [LinearOptimizationService.VariableType.INTEGER,
+ *         LinearOptimizationService.VariableType.CONTINUOUS]);
+ * 
+ * // Adds two constraints:
+ * //   0 &lt;= x + y &lt;= 3
+ * //   1 &lt;= 10 * x - y &lt;= 5
+ * engine.addConstraints([0.0, 1.0], [3.0, 5.0], [[&#39;x&#39;, &#39;y&#39;], [&#39;x&#39;, &#39;y&#39;]], [[1, 1], [10, -1]]);
+ * </code></pre>
+ * 
+ * @function LinearOptimizationService.LinearOptimizationEngine#addConstraints
+ * 
+ * @param {Number[]} lowerBounds - lower bounds of the constraints
+ * @param {Number[]} upperBounds - upper bounds of the constraints
+ * @param {String[][]} variableNames - the names of variables for which the coefficients are being set
+ * @param {Number[][]} coefficients - coefficients being set
+ * 
+ * @return {LinearOptimizationService.LinearOptimizationEngine} a linear optimization engine
+ */
+
+
+/**
  * Adds a new continuous variable to the model. The variable is referenced by its name. The type
  * is set to <code><a target='_blank' href='https://developers.google.com/apps-script/reference/optimization/variable-type.html#CONTINUOUS'>VariableType.CONTINUOUS</a></code>.
  * 
@@ -167,6 +196,31 @@
  * @param {Number} upperBound - upper bound of the variable
  * @param {LinearOptimizationService.VariableType} type - type of the variable, can be one of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/optimization/variable-type.html'>VariableType</a></code>
  * @param {Number} objectiveCoefficient - objective coefficient of the variable
+ * 
+ * @return {LinearOptimizationService.LinearOptimizationEngine} a linear optimization engine
+ */
+
+
+/**
+ * Adds variables in batch to the model. The variables are referenced by their names.
+ * 
+ * <pre class="prettyprint"><code>
+ * var engine = LinearOptimizationService.createEngine();
+ * 
+ * // Add a boolean variable &#39;x&#39; (integer &gt;= 0 and &lt;= 1) and a real (continuous &gt;=0 and &lt;= 100)
+ * // variable &#39;y&#39;.
+ * engine.addVariables([&#39;x&#39;, &#39;y&#39;], [0, 0], [1, 100],
+ *     [LinearOptimizationService.VariableType.INTEGER,
+ *         LinearOptimizationService.VariableType.CONTINUOUS]);
+ * </code></pre>
+ * 
+ * @function LinearOptimizationService.LinearOptimizationEngine#addVariables
+ * 
+ * @param {String[]} names - unique names of the variables
+ * @param {Number[]} lowerBounds - lower bounds of the variables
+ * @param {Number[]} upperBounds - upper bounds of the variables
+ * @param {LinearOptimizationService.VariableType[]} types - types of the variables, can be one of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/optimization/variable-type.html'>VariableType</a></code>
+ * @param {Number[]} objectiveCoefficients - objective coefficients of the variables
  * 
  * @return {LinearOptimizationService.LinearOptimizationEngine} a linear optimization engine
  */
@@ -291,60 +345,6 @@
  * @param {Number} seconds - deadline for solving the problem, in seconds; the maximum deadline is 300 seconds
  * 
  * @return {LinearOptimizationService.LinearOptimizationSolution} solution of the optimization
- */
-
-
-/**
- * Adds constraints in batch to the model.
- * 
- * <pre class="prettyprint"><code>
- * var engine = LinearOptimizationService.createEngine();
- * 
- * // Add a boolean variable &#39;x&#39; (integer &gt;= 0 and &lt;= 1) and a real (continuous &gt;= 0 and &lt;= 100)
- * variable &#39;y&#39;.
- * engine.addVariables([&#39;x&#39;, &#39;y&#39;], [0, 0], [1, 100],
- *     [LinearOptimizationService.VariableType.INTEGER,
- *         LinearOptimizationService.VariableType.CONTINUOUS]);
- * 
- * // Adds two constraints:
- * //   0 &lt;= x + y &lt;= 3
- * //   1 &lt;= 10 * x - y &lt;= 5
- * engine.addConstraints([0.0, 1.0], [3.0, 5.0], [[&#39;x&#39;, &#39;y&#39;], [&#39;x&#39;, &#39;y&#39;]], [[1, 1], [10, -1]]);
- * </code></pre>
- * 
- * @function LinearOptimizationService.LinearOptimizationEngine#addConstraints
- * 
- * @param {Number[]} lowerBounds - lower bounds of the constraints
- * @param {Number[]} upperBounds - upper bounds of the constraints
- * @param {String[][]} variableNames - the names of variables for which the coefficients are being set
- * @param {Number[][]} coefficients - coefficients being set
- * 
- * @return {LinearOptimizationService.LinearOptimizationEngine} a linear optimization engine
- */
-
-
-/**
- * Adds variables in batch to the model. The variables are referenced by their names.
- * 
- * <pre class="prettyprint"><code>
- * var engine = LinearOptimizationService.createEngine();
- * 
- * // Add a boolean variable &#39;x&#39; (integer &gt;= 0 and &lt;= 1) and a real (continuous &gt;=0 and &lt;= 100)
- * // variable &#39;y&#39;.
- * engine.addVariables([&#39;x&#39;, &#39;y&#39;], [0, 0], [1, 100],
- *     [LinearOptimizationService.VariableType.INTEGER,
- *         LinearOptimizationService.VariableType.CONTINUOUS]);
- * </code></pre>
- * 
- * @function LinearOptimizationService.LinearOptimizationEngine#addVariables
- * 
- * @param {String[]} names - unique names of the variables
- * @param {Number[]} lowerBounds - lower bounds of the variables
- * @param {Number[]} upperBounds - upper bounds of the variables
- * @param {LinearOptimizationService.VariableType[]} types - types of the variables, can be one of <code><a target='_blank' href='https://developers.google.com/apps-script/reference/optimization/variable-type.html'>VariableType</a></code>
- * @param {Number[]} objectiveCoefficients - objective coefficients of the variables
- * 
- * @return {LinearOptimizationService.LinearOptimizationEngine} a linear optimization engine
  */
 
 

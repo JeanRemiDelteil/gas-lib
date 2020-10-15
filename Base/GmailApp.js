@@ -1230,6 +1230,10 @@
  * extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
  * "ShoppingList.12.25.pdf".
  * 
+ * <p>To view the daily quotas for conversions, see <a
+ * href="https://developers.google.com/apps-script/guides/services/quotas">Quotas for Google
+ * Services</a>. Newly created G Suite domains might be temporarily subject to stricter quotas.
+ * 
  * @function GmailApp.GmailAttachment#getAs
  * 
  * @param {String} contentType - The MIME type to convert to. For most blobs, <code>&#39;application/pdf&#39;</code> is
@@ -1755,7 +1759,7 @@
  * <pre class="prettyprint"><code>
  * // Create a draft response to all recipients (except those bcc&#39;d) using an HTML text body.
  * var firstThread = GmailApp.getInboxThreads(0,1)[0];
- * var message = firstThread.getMessages[0];
+ * var message = firstThread.getMessages()[0];
  * message.createDraftReplyAll(&quot;incapable of HTML&quot;, {
  *   htmlBody: &quot;&lt;b&gt;some HTML body text&lt;/b&gt;&quot;,
  *   cc: &quot;another@example.com&quot;
@@ -1909,6 +1913,23 @@
  * @function GmailApp.GmailMessage#getFrom
  * 
  * @return {String} The email address of the message sender.
+ */
+
+
+/**
+ * Gets the value of an RFC 2822 header given the header name.
+ * 
+ * <pre class="prettyprint"><code>
+ * var thread = GmailApp.getInboxThreads(0,1)[0]; // Get first thread in inbox.
+ * var message = thread.getMessages()[0];         // Get the first message.
+ * Logger.log(message.getHeader(&quot;Message-ID&quot;));   // Logs the Message-ID RFC 2822 header.
+ * </code></pre>
+ * 
+ * @function GmailApp.GmailMessage#getHeader
+ * 
+ * @param {String} name - The name of the RFC header, without the colon separating it from the value.
+ * 
+ * @return {String} The value of the header, or an empty string if the header doesn't exist in the message.
  */
 
 
@@ -2263,7 +2284,7 @@
  * <pre class="prettyprint"><code>
  * // Respond with HTML body text
  * var firstThread = GmailApp.getInboxThreads(0,1)[0];
- * var message = firstThread.getMessages[0];
+ * var message = firstThread.getMessages()[0];
  * messageThread.replyAll(&quot;incapable of HTML&quot;, {
  *   htmlBody: &quot;&lt;b&gt;some HTML body text&lt;/b&gt;&quot;,
  *   noReply: true

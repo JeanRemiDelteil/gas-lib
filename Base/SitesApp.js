@@ -331,6 +331,10 @@
  * extension that should be replaced. Consequently, "ShoppingList.12.25.2014" becomes
  * "ShoppingList.12.25.pdf".
  * 
+ * <p>To view the daily quotas for conversions, see <a
+ * href="https://developers.google.com/apps-script/guides/services/quotas">Quotas for Google
+ * Services</a>. Newly created G Suite domains might be temporarily subject to stricter quotas.
+ * 
  * @function SitesApp.Attachment#getAs
  * 
  * @param {String} contentType - The MIME type to convert to. For most blobs, <code>&#39;application/pdf&#39;</code> is
@@ -2645,8 +2649,7 @@
 
 
 /**
- * Gets the list of editors for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. If the user who executes the script does
- * not have edit access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>, this method throws an exception.
+ * Gets the list of editors for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>.
  * 
  * @function SitesApp.Site#getEditors
  * 
@@ -2839,8 +2842,7 @@
 
 
 /**
- * Gets the list of viewers and commenters for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. If the user who executes
- * the script does not have edit access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>, this method throws an exception.
+ * Gets the list of viewers and commenters for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>.
  * 
  * @function SitesApp.Site#getViewers
  * 
@@ -2924,10 +2926,12 @@
 
 
 /**
- * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. This method does not
+ * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. This method doesn't
  * block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> if they belong to a class of users who have
  * general access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> is shared with the user's entire
- * domain.
+ * domain, or if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of viewers.
  * 
  * @function SitesApp.Site#removeEditor
  * 
@@ -2938,10 +2942,12 @@
 
 
 /**
- * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. This method does not
+ * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. This method doesn't
  * block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> if they belong to a class of users who have
  * general access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> is shared with the user's entire
- * domain.
+ * domain, or if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of viewers.
  * 
  * @function SitesApp.Site#removeEditor
  * 
@@ -2987,10 +2993,12 @@
 
 /**
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. This
- * method has no effect if the user is an editor, not a viewer or commenter. This method also does
- * not block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> if they belong to a class of users who
+ * method has no effect if the user is an editor, not a viewer or commenter. This method also
+ * doesn't block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> if they belong to a class of users who
  * have general access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> is shared with the user's
- * entire domain.
+ * entire domain, or if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of editors.
  * 
  * @function SitesApp.Site#removeViewer
  * 
@@ -3002,9 +3010,12 @@
 
 /**
  * Removes the given user from the list of viewers and commenters for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code>. This
- * method has no effect if the user is an editor, not a viewer. This method also does not block
+ * method has no effect if the user is an editor, not a viewer. This method also doesn't block
  * users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> if they belong to a class of users who have general
- * access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> is shared with the user's entire domain.
+ * access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> is shared with the user's entire domain, or
+ * if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/sites/site.html'>Site</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of editors.
  * 
  * @function SitesApp.Site#removeViewer
  * 

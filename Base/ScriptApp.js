@@ -82,6 +82,37 @@
 
 
 /**
+ * Gets an <a href="/identity/protocols/OpenIDConnect">OpenID Connect</a> identity token for the
+ * effective user, if the <code>openid</code> scope has been granted. This scope is not included
+ * by default, and you must add it as an <a
+ * href="/apps-script/concepts/scopes#setting_explicit_scopes">explicit scope</a> in the manifest
+ * file to request it. Include the scopes <code>https://www.googleapis.com/auth/userinfo.email
+ * </code> or <code>https://www.googleapis.com/auth/userinfo.profile</code> to return additional
+ * user information in the token.
+ * 
+ * <p>The returned ID token is an encoded <a href="https://jwt.io/">JSON Web Token (JWT)</a>, and
+ * it must be decoded to extract information from it. The following examples shows how to decode
+ * the token and extract the effective user's Google profile ID.
+ * 
+ * <pre class="prettyprint"><code>
+ * var idToken = ScriptApp.getIdentityToken();
+ * var body = idToken.split(&#39;.&#39;)[1];
+ * var decoded = Utilities.newBlob(Utilities.base64Decode(body)).getDataAsString();
+ * var payload = JSON.parse(decoded);
+ * var profileId = payload.sub;
+ * Logger.log(&#39;Profile ID: &#39; + profileId);
+ * </code></pre>
+ * 
+ * See the <a href="/identity/protocols/OpenIDConnect#obtainuserinfo">OpenID Connect</a>
+ * documentation for the full list of fields (claims) returned.
+ * 
+ * @function ScriptApp.getIdentityToken
+ * 
+ * @return {String} The identity token if available; otherwise <code>null</code>.
+ */
+
+
+/**
  * Returns an enum value that indicates how the script came to be installed as an add-on for the
  * current user (for example, whether the user installed it personally through the Chrome Web
  * Store, or whether a domain administrator installed it for all users).
@@ -129,7 +160,7 @@
 
 
 /**
- * Gets all installable triggers associated with the current project.
+ * Gets all installable triggers associated with the current project and current user.
  * 
  * <pre class="prettyprint"><code>
  * Logger.log(&#39;Current project has &#39; + ScriptApp.getProjectTriggers().length + &#39; triggers.&#39;);
@@ -137,7 +168,7 @@
  * 
  * @function ScriptApp.getProjectTriggers
  * 
- * @return {ScriptApp.Trigger[]} An array of triggers associated with this project.
+ * @return {ScriptApp.Trigger[]} An array of the current user's triggers associated with this project.
  */
 
 
@@ -153,7 +184,7 @@
 
 
 /**
- * Gets all installable triggers associated with the current script.
+ * Gets all installable triggers associated with the current project and current user.
  * 
  * <pre class="prettyprint"><code>
  * Logger.log(&#39;Current script has &#39; + ScriptApp.getScriptTriggers().length + &#39; triggers.&#39;);
@@ -162,7 +193,7 @@
  * @function ScriptApp.getScriptTriggers
  * @deprecated
  * 
- * @return {ScriptApp.Trigger[]} An array of triggers associated with this script.
+ * @return {ScriptApp.Trigger[]} An array of the current user's triggers associated with this project.
  */
 
 
@@ -437,11 +468,11 @@
  */
 
 /**
- * Specifies the duration (in milliseconds) after the current time that the trigger will run.
- * (plus or minus 15 minutes).
+ * Specifies the minimum duration (in milliseconds) after the current time that the trigger runs.
+ * The actual duration might vary, but won't be less than your specified minimum.
  * 
  * <pre class="prettyprint"><code>
- * // Creates a trigger that will run 10 minutes later
+ * // Creates a trigger that runs 10 minutes later
  * ScriptApp.newTrigger(&quot;myFunction&quot;)
  *   .timeBased()
  *   .after(10 * 60 * 1000)
@@ -450,15 +481,15 @@
  * 
  * @function ScriptApp.ClockTriggerBuilder#after
  * 
- * @param {IntegerNum} durationMilliseconds - the duration (in milliseconds) after the current time when the
- *     trigger should run
+ * @param {IntegerNum} durationMilliseconds - The minimum duration (in milliseconds) after the current time when
+ *     the trigger should run.
  * 
- * @return {ScriptApp.ClockTriggerBuilder} the builder for chaining
+ * @return {ScriptApp.ClockTriggerBuilder} The builder, for chaining.
  */
 
 
 /**
- * Specifies when the trigger will run (plus or minus 15 minutes).
+ * Specifies when the trigger runs.
  * 
  * <pre class="prettyprint"><code>
  * // Creates a trigger for December 1, 2012
@@ -471,14 +502,14 @@
  * 
  * @function ScriptApp.ClockTriggerBuilder#at
  * 
- * @param {Date} date - a Date object representing when the trigger should run
+ * @param {Date} date - A Date object representing when the trigger should run.
  * 
- * @return {ScriptApp.ClockTriggerBuilder} the builder for chaining
+ * @return {ScriptApp.ClockTriggerBuilder} The builder, for chaining.
  */
 
 
 /**
- * Specifies trigger will fire on the given date, by default near midnight (+/- 15 minutes).
+ * Specifies that the trigger fires on the given date, by default near midnight (+/- 15 minutes).
  * 
  * <pre class="prettyprint"><code>
  * // Schedules for January 1st, 2013
@@ -490,21 +521,21 @@
  * 
  * @function ScriptApp.ClockTriggerBuilder#atDate
  * 
- * @param {IntegerNum} year - the calendar year to schedule the trigger
- * @param {IntegerNum} month - the calendar month to schedule the trigger (should be a number between 1 and 12,
- *     inclusive)
- * @param {IntegerNum} day - the calendar day to schedule the trigger (should be a number between 1 and 31,
- *     inclusive)
+ * @param {IntegerNum} year - The calendar year to schedule the trigger.
+ * @param {IntegerNum} month - The calendar month to schedule the trigger (should be a number between 1 and 12,
+ *     inclusive).
+ * @param {IntegerNum} day - The calendar day to schedule the trigger (should be a number between 1 and 31,
+ *     inclusive).
  * 
- * @return {ScriptApp.ClockTriggerBuilder} The builder for chaining.
+ * @return {ScriptApp.ClockTriggerBuilder} The builder, for chaining.
  */
 
 
 /**
- * Specifies the hour the trigger will run (plus or minus 15 minutes).
+ * Specifies the hour the trigger at which the trigger runs.
  * 
  * <pre class="prettyprint"><code>
- * // Runs at 5am in the timezone of the script
+ * // Runs between 5am-6am in the timezone of the script
  * ScriptApp.newTrigger(&quot;myFunction&quot;)
  *   .timeBased()
  *   .atHour(5)
@@ -514,9 +545,9 @@
  * 
  * @function ScriptApp.ClockTriggerBuilder#atHour
  * 
- * @param {IntegerNum} hour - the hour at which to fire
+ * @param {IntegerNum} hour - The hour at which to fire.
  * 
- * @return {ScriptApp.ClockTriggerBuilder} the builder for chaining
+ * @return {ScriptApp.ClockTriggerBuilder} The builder, for chaining.
  */
 
 
@@ -541,9 +572,9 @@
  * 
  * @function ScriptApp.ClockTriggerBuilder#everyDays
  * 
- * @param {IntegerNum} n - the number of days between executions
+ * @param {IntegerNum} n - The number of days between executions.
  * 
- * @return {ScriptApp.ClockTriggerBuilder} the builder for chaining
+ * @return {ScriptApp.ClockTriggerBuilder} The builder, for chaining.
  */
 
 
@@ -559,9 +590,9 @@
  * 
  * @function ScriptApp.ClockTriggerBuilder#everyHours
  * 
- * @param {IntegerNum} n - the number of hours between executions
+ * @param {IntegerNum} n - The number of hours between executions.
  * 
- * @return {ScriptApp.ClockTriggerBuilder} the builder for chaining
+ * @return {ScriptApp.ClockTriggerBuilder} The builder, for chaining.
  */
 
 
@@ -577,9 +608,9 @@
  * 
  * @function ScriptApp.ClockTriggerBuilder#everyMinutes
  * 
- * @param {IntegerNum} n - the number of minutes between executions
+ * @param {IntegerNum} n - The number of minutes between executions.
  * 
- * @return {ScriptApp.ClockTriggerBuilder} the builder for chaining
+ * @return {ScriptApp.ClockTriggerBuilder} The builder, for chaining.
  */
 
 
@@ -595,19 +626,19 @@
  * 
  * @function ScriptApp.ClockTriggerBuilder#everyWeeks
  * 
- * @param {IntegerNum} n - the number of weeks between executions
+ * @param {IntegerNum} n - The number of weeks between executions.
  * 
- * @return {ScriptApp.ClockTriggerBuilder} the builder for chaining
+ * @return {ScriptApp.ClockTriggerBuilder} The builder, for chaining.
  */
 
 
 /**
- * Specifies the timezone that the specified dates/time that the trigger will run in. By default,
- * the timezone will be that of the script.
+ * Specifies the timezone for the specified dates/time when the trigger runs. By default, the
+ * timezone is that of the script.
  * 
  * <p>The list of valid timezone strings corresponds with the valid timezone strings listed by <a
  * href="http://joda-time.sourceforge.net/timezones.html">Joda.org</a>. An invalid timezone string
- * will cause the script to throw an error.
+ * causes the script to throw an error.
  * 
  * <pre class="prettyprint"><code>
  * // Schedule the trigger to execute at noon every day in the US/Pacific time zone
@@ -621,14 +652,14 @@
  * 
  * @function ScriptApp.ClockTriggerBuilder#inTimezone
  * 
- * @param {String} timezone - the timezone with which to treat time information in the event
+ * @param {String} timezone - The timezone with which to treat time information in the event.
  * 
  * @return {ScriptApp.ClockTriggerBuilder} This <code><a target='_blank' href='https://developers.google.com/apps-script/reference/script/clock-trigger-builder.html'>ClockTriggerBuilder</a></code>, for chaining.
  */
 
 
 /**
- * Specifies the minute the trigger will run (plus or minus 15 minutes).
+ * Specifies the minute at which the trigger runs (plus or minus 15 minutes). If <code>nearMinute()</code> is not called, a random minute value is used.
  * 
  * <pre class="prettyprint"><code>
  * // Runs at approximately 5:30am in the timezone of the script
@@ -642,14 +673,14 @@
  * 
  * @function ScriptApp.ClockTriggerBuilder#nearMinute
  * 
- * @param {IntegerNum} minute - the minute at which to fire
+ * @param {IntegerNum} minute - The minute at which to fire.
  * 
- * @return {ScriptApp.ClockTriggerBuilder} the builder for chaining
+ * @return {ScriptApp.ClockTriggerBuilder} The builder, for chaining.
  */
 
 
 /**
- * Specifies on what date in the month that the trigger will run.
+ * Specifies the date in the month that the trigger runs.
  * 
  * <pre class="prettyprint"><code>
  * // Schedules for the first of every month
@@ -661,14 +692,14 @@
  * 
  * @function ScriptApp.ClockTriggerBuilder#onMonthDay
  * 
- * @param {IntegerNum} day - the day of the month the trigger should be scheduled for
+ * @param {IntegerNum} day - The day of the month the trigger should be scheduled for.
  * 
- * @return {ScriptApp.ClockTriggerBuilder} the builder for chaining
+ * @return {ScriptApp.ClockTriggerBuilder} The builder, for chaining.
  */
 
 
 /**
- * Specifies on what day of the week that the trigger will run.
+ * Specifies the day of the week that the trigger runs.
  * 
  * <pre class="prettyprint"><code>
  * ScriptApp.newTrigger(&quot;myFunction&quot;)
@@ -679,9 +710,9 @@
  * 
  * @function ScriptApp.ClockTriggerBuilder#onWeekDay
  * 
- * @param {Weekday} day - the day of the week to fire
+ * @param {Weekday} day - The day of the week to fire.
  * 
- * @return {ScriptApp.ClockTriggerBuilder} the builder for chaining
+ * @return {ScriptApp.ClockTriggerBuilder} The builder, for chaining.
  */
 
 
@@ -837,13 +868,15 @@
  * </code></pre>
  * 
  * @function ScriptApp.Service#disable
+ * @deprecated
  * 
  * @return void
  */
 
 
 /**
- * Returns the URL of the web app, if it has been deployed; otherwise returns <code>null</code>.
+ * Returns the URL of the web app, if it has been deployed; otherwise returns <code>null</code>. If you
+ * are running the development mode web app, this returns the development mode url.
  * 
  * <pre class="prettyprint"><code>
  * // Mail the URL of the published web app.
@@ -859,14 +892,6 @@
 
 /**
  * Returns <code>true</code> if the script is accessible as a web app.
- * 
- * <pre class="prettyprint"><code>
- * var svc = ScriptApp.getService();
- * // Publish the script as a web app if it isn&#39;t currently.
- * if (!svc.isEnabled()) {
- *   svc.enable(svc.Restriction.MYSELF);
- * }
- * </code></pre>
  * 
  * @function ScriptApp.Service#isEnabled
  * 
@@ -1229,7 +1254,7 @@
  * 
  * @param {String} emailId - email ID of the user calendar the trigger monitors.
  * 
- * @return {ScriptApp.CalendarTriggerBuilder}
+ * @return {ScriptApp.CalendarTriggerBuilder} The new CalendarTriggerBuilder.
  */
 
 

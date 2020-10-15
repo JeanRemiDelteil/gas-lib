@@ -1676,8 +1676,7 @@
 
 
 /**
- * Gets the list of editors for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>. If the user who executes the script does
- * not have edit access to the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>, this method throws an exception.
+ * Gets the list of editors for this <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>.
  * 
  * @function FormApp.Form#getEditors
  * 
@@ -1892,10 +1891,12 @@
 
 
 /**
- * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>. This method does not
+ * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>. This method doesn't
  * block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code> if they belong to a class of users who have
  * general access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code> is shared with the user's entire
- * domain.
+ * domain, or if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of viewers.
  * 
  * @function FormApp.Form#removeEditor
  * 
@@ -1906,10 +1907,12 @@
 
 
 /**
- * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>. This method does not
+ * Removes the given user from the list of editors for the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code>. This method doesn't
  * block users from accessing the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code> if they belong to a class of users who have
  * general access&mdash;for example, if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code> is shared with the user's entire
- * domain.
+ * domain, or if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html'>Form</a></code> is in a shared drive that the user can access.
+ * 
+ * <p>For Drive files, this also removes the user from the list of viewers.
  * 
  * @function FormApp.Form#removeEditor
  * 
@@ -2151,9 +2154,10 @@
  */
 
 /**
- * Generates a URL that can be used to edit a response that has already been submitted, even if
- * the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html#setAllowResponseEdits(Boolean)'>Form.setAllowResponseEdits(enabled)</a></code> setting is disabled. Anyone who visits the link
- * can edit the response, although they need an account with access to the form if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html#setRequireLogin(Boolean)'>Form.setRequireLogin(requireLogin)</a></code> setting is enabled. If the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html#setCollectEmail(Boolean)'>Form.setCollectEmail(collect)</a></code>
+ * Generates a URL that can be used to edit a response that has already been submitted. If the
+ * <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html#setAllowResponseEdits(Boolean)'>Form.setAllowResponseEdits(enabled)</a></code> setting is disabled, the link leads to a page that
+ * explains that editing form responses is disabled. Anyone who visits the link can edit the
+ * response, although they need an account with access to the form if the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html#setRequireLogin(Boolean)'>Form.setRequireLogin(requireLogin)</a></code> setting is enabled. If the <code><a target='_blank' href='https://developers.google.com/apps-script/reference/forms/form.html#setCollectEmail(Boolean)'>Form.setCollectEmail(collect)</a></code>
  * setting is enabled, the form records the email address of the user who edited the response
  * instead of the email address of the original respondent.
  * 
@@ -2291,14 +2295,14 @@
  * for (var i = 0; i < formResponses.length; i++) {
  *   var formResponse = formResponses[i];
  *   for (var j = 0; j < formItems.length; j++) {
- *     var item = formItems[i];
+ *     var item = formItems[j];
  *     var points = item.asMultipleChoiceItem().getPoints();
  *     var itemResponse = formResponse.getGradableResponseForItem(item);
  *     Logger.log('Award half credit for answers containing the word "Kennedy"');
  *     var answer = itemResponse.getResponse();
  *     if (answer != null && answer.includes('Kennedy')) {
  *       itemResponse.setScore(points / 2);
- *       formResponse.withItemGrades(itemResponse);
+ *       formResponse.withItemGrade(itemResponse);
  *     }
  *   }
  * }
